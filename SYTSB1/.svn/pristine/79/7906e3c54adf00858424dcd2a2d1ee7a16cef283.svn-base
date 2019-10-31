@@ -1,0 +1,121 @@
+package com.scts.payment.service;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.khnt.core.crud.manager.impl.EntityManageImpl;
+import com.khnt.security.CurrentSessionUser;
+import com.khnt.security.util.SecurityUtil;
+import com.khnt.utils.DateUtil;
+import com.khnt.utils.StringUtil;
+import com.lsts.employee.service.EmployeesService;
+import com.lsts.log.bean.SysLog;
+import com.lsts.log.service.SysLogService;
+import com.scts.payment.bean.InspectionChangeMoney;
+import com.scts.payment.dao.InspectionChangeDao;
+import com.scts.payment.dao.InspectionChangeMoneyDao;
+
+/**
+ * 金额修改审批流程明细表业务逻辑对象
+ * @ClassName InspectionChangeMoneyService
+ * @JDK 1.7
+ * @author GaoYa
+ * @date 2016-11-16 下午15:36:00
+ */
+@Service("inspectionChangeMoneyService")
+public class InspectionChangeMoneyService extends
+		EntityManageImpl<InspectionChangeMoney, InspectionChangeMoneyDao> {
+	@Autowired
+	private InspectionChangeMoneyDao inspectionChangeMoneyDao;
+	@Autowired
+	private InspectionChangeDao inspectionChangeDao;
+	@Autowired
+	private SysLogService logService;
+	@Autowired
+	private EmployeesService employeesService;
+	
+	// 保存
+	public void saveInfo(HttpServletRequest request, InspectionChangeMoney info) throws Exception {
+		CurrentSessionUser user = SecurityUtil.getSecurityUser();
+		if (StringUtil.isNotEmpty(info.getCreate_emp_name())) { // 记录人
+			String user_id = employeesService.getUserID(info.getCreate_emp_name());
+			if (StringUtil.isNotEmpty(user_id)) {
+				info.setCreate_emp_id(user_id);
+			}
+		} else {
+			info.setCreate_emp_id(user.getId());
+			info.setCreate_emp_name(user.getName());
+		}
+		if (info.getCreate_date() == null) {
+			info.setCreate_date(
+					DateUtil.convertStringToDate("yyyy-MM-dd HH:mm:ss", DateUtil.getCurrentDateTime())); // 申请时间
+		}
+		
+		info.setData_status("0");	// 数据状态（0：未审核 1：审核通过 2：审核不通过 99：已作废）
+		inspectionChangeMoneyDao.save(info); 
+		
+		// 2、记录日志
+		logService.setLogs(info.getId(), "提交申请", "提交修改金额申请", user.getId(), user.getName(), new Date(),
+				request.getRemoteAddr());
+		logService.setLogs(info.getFk_inspection_info_id(), "提交申请", "提交修改金额申请", user.getId(), user.getName(), new Date(),
+				request.getRemoteAddr());
+	}
+
+	// 删除
+	public void del(HttpServletRequest request, String id) {
+		CurrentSessionUser user = SecurityUtil.getSecurityUser();
+		try {
+			if (StringUtil.isNotEmpty(id)) {
+				InspectionChangeMoney info = inspectionChangeMoneyDao.get(id);
+				
+				// 1、删除金额修改审批流程明细表（TZSB_INSPECTION_CHANGE_MONEY）
+				inspectionChangeMoneyDao
+							.createSQLQuery(
+									"update TZSB_INSPECTION_CHANGE_MONEY set data_status='99' where id = ? ",
+									id).executeUpdate();
+				// 2、写入日志
+				logService.setLogs(id, "删除申请", "删除修改金额申请",
+						user.getId(), user.getName(), new Date(), request
+								.getRemoteAddr());
+				logService.setLogs(info.getFk_inspection_info_id(), "删除申请", "删除修改金额申请",
+						user.getId(), user.getName(), new Date(), request
+								.getRemoteAddr());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			log.debug(e.toString());
+		}
+	}
+	
+	
+	// 获取金额修改审批流程明细表
+	@SuppressWarnings("unchecked")
+	public HashMap<String, Object> getFlowStep(String id) throws Exception {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		List<SysLog> list = new ArrayList<SysLog>();
+		if (StringUtil.isNotEmpty(id)) {
+			InspectionChangeMoney info = inspectionChangeMoneyDao.get(id);
+			if (info != null) {
+				map.put("report_sn", info.getReport_sn());
+
+				if (info.getInspectionChange() != null) {
+					list = inspectionChangeDao.createQuery(" from SysLog where business_id ='"
+							+ info.getInspectionChange().getId() + "' order by op_time,id asc").list();
+				}
+			}
+			list.addAll(inspectionChangeMoneyDao
+					.createQuery(" from SysLog where business_id ='" + id + "' order by op_time,id asc").list());
+			map.put("flowStep", list);
+			map.put("success", true);
+		}
+		return map;
+	}
+
+}

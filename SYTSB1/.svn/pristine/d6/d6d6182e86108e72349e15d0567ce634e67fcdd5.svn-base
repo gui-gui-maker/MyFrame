@@ -1,0 +1,141 @@
+#content{
+    width: 100%;
+    height: auto;
+    margin: 70px 0 60px 0;
+    background: #f0f0f0;
+}
+.top{
+    width: 100%;
+    height: auto;
+    background: #fff;
+    padding-bottom: 5%;
+}
+.topCenter{
+    width: 95%;
+    height: auto;
+    margin: 0 auto;
+}
+.need{
+    width: 100%;
+    height: auto;
+    padding-top: 1px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.need p{
+    font-size: 1.8rem;
+    border-left: 5px solid #37a3dd;
+    margin: 5% 0 5% 3%;
+    padding-left: 5%;
+}
+.examine{
+    width: 100%;
+    height: auto;
+    padding: 0 0 6% 0;
+    border-bottom: 1px solid #e6e6e6;
+}
+.examineTop{
+    width:100%;
+    height: auto;
+    padding: 5% 0;
+}
+.shenHe{
+    color: #666!important;
+    font-size: 1.7rem!important;
+}
+.examineTop p,.examineTop span{
+    font-size: 1.6rem;
+    color: #999;
+}
+.examineTop p{
+    float: left;
+    padding-left: 3%;
+}
+.examineTop span{
+    float: right;
+    display: inline-block;
+    padding-right: 5%;
+}
+.examineBottom{
+    width: 100%;
+    height: auto;
+}
+.examineBottom p{
+    float: left;
+    font-size: 1.7rem;
+    color: #fff;
+    background: #588aad;
+    border-radius: 20px;
+    padding: 1% 4%;
+    margin-left: 28%;
+}
+.examineBottom span{
+    float: right;
+    display: inline-block;
+    padding-right: 5%;
+    font-size: 1.4rem;
+    color: #999;
+    padding-top: 2%;
+}
+.center{
+    width: 100%;
+    height: auto;
+    background: #fff;
+    margin-top: 2%;
+}
+.centerCenter{
+    width: 95%;
+    height: auto;
+    margin: 0 auto;
+}
+.handling{
+    width: 100%;
+    height: auto;
+    padding-top: 1px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.handling p{
+    font-size: 1.8rem;
+    border-left: 5px solid #37a3dd;
+    margin: 5% 0 5% 3%;
+    padding-left: 5%;
+}
+.list{
+    width: 100%;
+    height: auto;
+}
+.list p{
+    font-size: 1.6rem;
+    color: #999;
+    padding: 10% 3% 10% 3%;
+}
+.bottom{
+    width: 100%;
+    height: auto;
+    background: #fff;
+    margin-top: 2%;
+}
+.btnBg{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background: #f0f0f0;
+    padding-bottom: 2%;
+}
+.btn{
+    width: 95%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 2%;
+}
+.btn a{
+    display: inline-block;
+    width: 100%;
+    color: #fff;
+    background: #006fa7;
+    text-align: center;
+    font-size: 2.0rem;
+    border-radius: 10px;
+    padding: 3% 0;
+}

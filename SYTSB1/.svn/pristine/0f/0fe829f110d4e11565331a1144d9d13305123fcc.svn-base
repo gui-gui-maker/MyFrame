@@ -1,0 +1,135 @@
+.l-icon{ width:22px; height:22px; overflow:hidden;}
+
+/* 基本按钮图标 */
+.l-icon-add{ background:url('icons/add.png') no-repeat center;}
+.l-icon-detail{ background:url('icons/detail.png') no-repeat center;}
+.l-icon-modify{ background:url('icons/modify.png') no-repeat center;}
+.l-icon-del{ background:url('icons/16/delete.png') no-repeat center;}
+.l-icon-delete{ background:url('icons/16/delete.png') no-repeat center;}
+
+
+.l-icon-copy{ background:url('icons/copy.gif') no-repeat center;}
+.l-icon-cancel{ background:url('icons/16/cancel.png') no-repeat center;}
+.l-icon-close{ background:url('icons/16/cancel.png') no-repeat center;}
+.l-icon-submit{ background:url('icons/16/submit.png') no-repeat center;}
+.l-icon-save{ background:url('icons/16/save.png') no-repeat center;}
+.l-icon-print{ background:url('icons/16/print.png') no-repeat center;}
+.l-icon-edit{ background:url('icons/16/edit.png') no-repeat center;}
+
+.l-icon-nav-prev{ background:url('icons/16/nav-prev.png') no-repeat center;}
+.l-icon-nav-next{ background:url('icons/16/nav-next.png') no-repeat center;}
+
+
+
+.l-icon-accept{ background:url('icons/16/accept.png') no-repeat center;}/*启用*/
+.l-icon-forbid{ background:url('icons/16/forbid.png') no-repeat center;}/*禁用*/
+.l-icon-photo{ background:url('icons/16/photo.png') no-repeat center;}/*照片*/
+.l-icon-compare{ background:url('icons/16/database_link.png') no-repeat center;}/*比对*/
+.l-icon-error{ background:url('icons/error.gif') no-repeat center;}/*错误*/
+.l-icon-book{ background:url('icons/book.gif') no-repeat center;}
+
+/* user add,edit,del,view */
+.l-icon-user{ background:url('icons/user.gif') no-repeat center;}
+.l-icon-userMove{ background:url('icons/user-move.gif') no-repeat center;}
+.l-icon-userLock{ background:url('icons/lock.png') no-repeat center;}
+.l-icon-userUnlock{ background:url('icons/lock-3-open.gif') no-repeat center;}
+
+.l-icon-org{ background:url('icons/org.gif') no-repeat center;}
+.l-icon-orgAdd{ background:url('icons/org-add.gif') no-repeat center;}
+.l-icon-orgDel{ background:url('icons/org-del.gif') no-repeat center;}
+
+.l-icon-ok{ background:url('icons/ok.gif') no-repeat center;}
+.l-icon-time{ background:url('icons/time.gif') no-repeat center;}
+.l-icon-date{ background:url('icons/date.gif') no-repeat center;}
+.l-icon-f5{ background:url('icons/f5.gif') no-repeat center;}
+.l-icon-folder{ background:url('icons/folder.gif') no-repeat center;}
+.l-icon-find{ background:url('icons/find.gif') no-repeat center;}
+.l-icon-door{ background:url('icons/door.gif') no-repeat center;}
+.l-icon-card{ background:url('icons/card.gif') no-repeat center;}
+.l-icon-table{ background:url('icons/table.gif') no-repeat center;}
+.l-icon-link{ background:url('icons/link.gif') no-repeat center;}
+.l-icon-tel{ background:url('icons/tel.gif') no-repeat center;}
+.l-icon-talk{ background:url('icons/talk.gif') no-repeat center;}
+
+.l-icon-back{ background:url('icons/back.gif') no-repeat center;}
+.l-icon-forward{ background:url('icons/go.gif') no-repeat center;}
+.l-icon-bluebook{ background:url('icons/bluebook.gif') no-repeat center;}
+.l-icon-bookpen{ background:url('icons/bookpen.gif') no-repeat center;} 
+.l-icon-coffee{ background:url('icons/coffee.gif') no-repeat center;}
+.l-icon-cut{ background:url('icons/cut.gif') no-repeat center;}
+.l-icon-discuss{ background:url('icons/discuss.gif') no-repeat center;} 
+.l-icon-graywarn{ background:url('icons/graywarn.gif') no-repeat center;}
+.l-icon-greenwarn{ background:url('icons/greenwarn.gif') no-repeat center;}
+.l-icon-help{ background:url('icons/help.gif') no-repeat center;}
+.l-icon-home{ background:url('icons/home.gif') no-repeat center;}
+.l-icon-lock{ background:url('icons/lock.gif') no-repeat center;}
+.l-icon-logout{ background:url('icons/logout.gif') no-repeat center;}
+.l-icon-mailbox{ background:url('icons/mailbox.gif') no-repeat center;}
+.l-icon-memeber{ background:url('icons/memeber.gif') no-repeat center;}
+.l-icon-msn{ background:url('icons/msn.gif') no-repeat center;}
+.l-icon-ok{ background:url('icons/ok.gif') no-repeat center;}
+.l-icon-outbox{ background:url('icons/outbox.gif') no-repeat center;}
+.l-icon-pager{ background:url('icons/pager.gif') no-repeat center;}
+.l-icon-photograph{ background:url('icons/photograph.gif') no-repeat center;}
+.l-icon-prev{ background:url('icons/prev.gif') no-repeat center;}
+.l-icon-qq{ background:url('icons/qq.gif') no-repeat center;}
+.l-icon-refresh{ background:url('icons/refresh.gif') no-repeat center;}
+.l-icon-right{ background:url('icons/right.png') no-repeat center;}
+.l-icon-save-disabled{ background:url('icons/save-disabled.gif') no-repeat center;}
+.l-icon-search{ background:url('icons/16/search.png') no-repeat center;}
+.l-icon-search2{ background:url('icons/search2.gif') no-repeat center;}
+.l-icon-search-list{ background:url('icons/16/search.png') no-repeat center;}
+.l-icon-settings{ background:url('icons/settings.gif') no-repeat center;}
+.l-icon-setting{ background:url('icons/setting.png') no-repeat center;}
+.l-icon-true{ background:url('icons/true.gif') no-repeat center;}
+.l-icon-up{ background:url('icons/up.gif') no-repeat center;}
+.l-icon-role{ background:url('icons/role.gif') no-repeat center;}
+.l-icon-config{ background:url('icons/config.gif') no-repeat center;}
+.l-icon-address{ background:url('icons/address.gif') no-repeat center;}
+.l-icon-process{ background:url('icons/process.gif') no-repeat center;}
+.l-icon-archives{ background:url('icons/archives.gif') no-repeat center;}
+.l-icon-attibutes{ background:url('icons/attibutes.gif') no-repeat center;}
+.l-icon-busy{ background:url('icons/busy.gif') no-repeat center;}
+.l-icon-calendar{ background:url('icons/calendar.gif') no-repeat center;}
+.l-icon-comment{ background:url('icons/comment.gif') no-repeat center;}
+.l-icon-plus{ background:url('icons/plus.gif') no-repeat center;}
+.l-icon-communication{ background:url('icons/communication.gif') no-repeat center;}
+.l-icon-customers{ background:url('icons/customers.gif') no-repeat center;}
+.l-icon-database{ background:url('icons/database.gif') no-repeat center;}
+.l-icon-myaccount{ background:url('icons/myaccount.gif') no-repeat center;}
+
+.l-icon-info-add{ background:url('icons/info-add.gif') no-repeat center;}
+.l-icon-info-edit{ background:url('icons/info-edit.gif') no-repeat center;}
+.l-icon-info-save{ background:url('icons/info-edit.gif') no-repeat center;}
+.l-icon-info-del{ background:url('icons/info-del.gif') no-repeat center;}
+
+.l-icon-book-5{ background:url('icons/book-5.gif') no-repeat center;}
+.l-icon-setting3{ background:url('icons/setting-3.gif') no-repeat center;}
+.l-icon-compute-2{ background:url('icons/compute-2.gif') no-repeat center;}
+.l-icon-refurbish{ background:url('icons/refurbish.gif') no-repeat center;}
+
+.l-icon-bulb { background:url('icons/16/lightbulb.png') no-repeat center;}
+
+.l-icon-seal { background:url('icons/16/stamp_pattern.png') no-repeat center;}
+.l-icon-appear { background:url('icons/16/sort_ascending.png') no-repeat center;}
+.l-icon-return { background:url('icons/16/return.png') no-repeat center;}
+.l-icon-return-cause { background:url('icons/16/ask_and_answer.png') no-repeat center;}
+.l-icon-follow { background:url('icons/16/control_repeat_blue.png') no-repeat center;}
+.l-icon-dispose { background:url('icons/16/small_business.png') no-repeat center;}
+.l-icon-standing-book { background:url('icons/16/total_plan_cost.png') no-repeat center;}
+.l-icon-formula { background:url('icons/16/pi_math.png') no-repeat center;}
+.l-icon-take-notes { background:url('icons/16/shape_square_edit.png') no-repeat center;}
+.l-icon-merge { background:url('icons/16/arrow_join.png') no-repeat center;}
+.l-icon-issued { background:url('icons/16/arrow_right.png') no-repeat center;}
+.l-icon-appropriation { background:url('icons/16/arrow_down.png') no-repeat center;}
+.l-icon-provide { background:url('icons/16/arrow_inout.png') no-repeat center;}
+
+.l-icon-count { background:url('icons/16/chart_pie.png') no-repeat center;}
+.l-icon-date-bz { background:url('icons/16/date-s1.png') no-repeat center;}
+.l-icon-date-by { background:url('icons/16/date-s1.png') no-repeat center;}
+.l-icon-date-bjd { background:url('icons/16/date-s1.png') no-repeat center;}
+.l-icon-date-bn { background:url('icons/16/date-s1.png') no-repeat center;}
+.l-icon-date-sz { background:url('icons/16/date-s1.png') no-repeat center;}
+.l-icon-date-sy { background:url('icons/16/date-s1.png') no-repeat center;}
+.l-icon-date-sjd { background:url('icons/16/date-s1.png') no-repeat center;}
+.l-icon-date-sn { background:url('icons/16/date-s1.png') no-repeat center;}

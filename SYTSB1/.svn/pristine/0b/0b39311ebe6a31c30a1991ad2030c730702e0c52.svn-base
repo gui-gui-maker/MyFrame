@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/mvc
+	http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd">
+	<!-- BEGIN : 工作流定时任务配置 -->
+	<!--定义定时执行流程定时类中的run()方法 -->
+	<bean id="workflowJobtask" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <!--将原来的ref="bpmJobManager" 更改为 ref="bpmTimerTaskSchedule"-->
+        <property name="targetObject" ref="bpmTimerTaskSchedule" />
+        <!--执行方法名称：execute -->
+        <property name="targetMethod" value="execute" />
+    </bean>
+	<!-- 定义触发器,触发时间: 每5分钟执行一次 -->
+<!-- 	<bean id="workflowJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean"> -->
+<!-- 		<property name="jobDetail" ref="workflowJobtask" />name 对应前面方法的ID -->
+<!-- 		<property name="cronExpression"> -->
+<!-- 			<value>0 0/5 * * * ?</value> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+	<!--定时发送短信-->
+	
+	<bean id="SendMessage"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="messageService" /><!--ref 对应serviceid  value对应方法名称-->
+		<property name="targetMethod" value="sendDrawMessage" />
+	</bean>
+	<!-- 定义触发器,触发时间: 每5分钟执行一次 -->
+<!-- 	<bean id="SendJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean"> -->
+<!-- 		<property name="jobDetail" ref="SendMessage" />name 对应前面方法的ID -->
+<!-- 		<property name="cronExpression"> -->
+<!-- 			<value>0 0/1 * * * ?</value>0 15 10 * * ? -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+	
+	
+		<!--定时发送重大任务短信提示-->
+	<bean id = "WeightyMessage" 
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="weightyTaskManager"/> <!-- ref 对应类,value对应类里的方法 -->
+		<property name="targetMethod" value="Autopush"/>
+	</bean>
+	
+	<!-- 定义触发器,触发时间: 每周一早上10点执行一次 -->
+<!-- 	<bean id="WeightyTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean"> -->
+<!-- 		<property name="jobDetail" ref="WeightyMessage"/> name 对应前面方法的ID -->
+<!-- 		<property name="cronExpression"> -->
+<!-- 			<value>0 0 7 ? * MON</value>  -->
+			<!-- 0 0 7 ? * MON  <value> 0 0/5 * * * ?</value>  测试用 5分钟一次 -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+	
+	
+	<!--定时工作任务短信提示-->
+	<bean id = "YwhbsgzMessage" 
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="ywhbsgzManager"/> <!-- ref 对应类,value对应类里的方法 -->
+		<property name="targetMethod" value="dx"/>
+	</bean>
+	
+	<!-- 定义触发器,触发时间: 每周一早上7点执行一次 -->
+<!-- 	<bean id="YwhbsgzTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean"> -->
+<!-- 		<property name="jobDetail" ref="YwhbsgzMessage"/> name 对应前面方法的ID -->
+<!-- 		<property name="cronExpression"> -->
+<!-- 			<value> 0 0 7 ? * MON </value>   -->
+<!-- 			 <value> 0 0/1 * * * ?</value>   测试用 1分钟一次  -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+	<!-- END : 工作流定时任务配置 -->
+
+	<!-- 定时任务调度器，负责对所以加入队列的触发器定时触发    schedulerFactoryBean-->
+	<bean id="startQuertz" lazy-init="false" autowire="no" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+ 		<property name="triggers"> 
+			<list>
+				<!-- <ref bean="YwhbsgzTrigger"/> -->
+				<!-- 定时发送重大任务短信提醒 -->
+				<!-- <ref bean="WeightyTrigger"/> -->
+				<!-- 报告书内控短信提醒 -->
+				<!-- <ref bean="bgTrigger"/> -->
+				<!-- 不符合报告到期提醒 -->
+				<!-- <ref bean="reportErrorMsgJobTrigger"/> -->
+				<!-- <ref bean="readFileDbJobTrigger"/> -->
+				<!-- 生日提醒 -->
+				<!-- <ref bean="sendRemindJobTrigger"/> -->
+				<!-- 公积金更新 -->
+				<!-- <ref bean="updateGjjJobTrigger"/> -->
+				<!-- 检验资料报送提醒 -->
+				<!-- <ref bean="reportPrintCheckJobTrigger"/> -->
+				<!-- 市局传递数据 -->
+				<!-- <ref bean="transferDeviceInfosJobTrigger"/> -->
+				<!-- 定时更新设备箱预警时间 -->
+				<!-- <ref bean="synBoxTimeJobTrigger"/> -->
+				<!-- 定时更新可休年假天数 -->
+				<!-- <ref bean="synTotalDaysJobTrigger"/> -->
+				<!-- 定时验证二维码 -->
+				<!-- <ref bean="validationInfosJobTrigger"/> -->
+				<!-- 合同到期提醒 -->
+				<!-- <ref bean="sendContractRemindJobTrigger"/> -->
+				<!-- 录入呼入信息 -->
+				<!-- <ref bean="disciplineCallInSaveTrigger"/> -->
+				<!-- <ref bean="instructionRwOverdueJobTrigger"/> -->
+				<!-- 用车超期未还提醒任务 -->
+				<!-- <ref bean="carApplyReturnRemindJobTrigger"/> --> 
+				<!-- 借书超期未还 -->
+				<!-- <ref bean="libraryBorrowBookExceedTrigger"/> -->
+				<!-- 定时更新可休年假天数 -->
+				<!-- <ref bean="synTotalDaysJobTrigger"/> -->
+				<!-- 车辆保险提醒任务 -->
+				<!-- <ref bean="carInsRemindJobTrigger"/> -->
+				<!-- 车辆保养提醒任务 -->
+				<!-- <ref bean="carCmRemindJobTrigger"/> -->
+				<!-- 车辆油耗更新定时任务 -->
+				<!-- <ref bean="carMpgUpdateJobTrigger"/> -->
+			</list>
+		</property>
+	</bean>
+	
+	<!--报告书内控短信提示-->
+	<bean id = "bgMessage" 
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="reportYjszManager"/> <!-- ref 对应类,value对应类里的方法 -->
+		<property name="targetMethod" value="reportYj"/>
+	</bean>
+	
+	<!--  -->
+<!-- 	<bean id="bgTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean"> -->
+<!-- 		<property name="jobDetail" ref="bgMessage"/> name 对应前面方法的ID -->
+<!-- 		<property name="cronExpression"> -->
+<!-- 			<value>0 5 14 ? * MON-FRI</value>  -->
+			<!--  <value> 0 0/5 * * * ?</value>  测试用 5分钟一次 -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+
+	<!-- 不符合报告到期提醒定时任务配置start -->
+	<bean id="reportErrorMsg"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="reportErrorService" /><!-- ref 对应业务逻辑处理类名 -->
+		<property name="targetMethod" value="reportErrorSendMsg" /><!-- value对应处理方法名 -->
+	</bean>
+	<!-- 定义触发器,触发时间: 每天早上9点执行一次 -->
+ 	<bean id="reportErrorMsgJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+ 		<property name="jobDetail" ref="reportErrorMsg" />
+ 		<property name="cronExpression">
+ 			<value>0 0 9 * * ?</value>
+ 		</property>
+ 	</bean>
+	<!-- 不符合报告到期提醒定时任务配置end -->
+	<!-- 扫描文件库end -->
+	<bean id="readFileDbRead"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="tjyptResourceInfoService" /><!-- ref 对应业务逻辑处理类名 -->
+		<property name="targetMethod" value="readFileDb" /><!-- value对应处理方法名 -->
+	</bean>
+	<!-- 定义触发器,触发时间: 每天早上9点执行一次 -->
+	
+ 	<bean id="readFileDbJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+ 		<property name="jobDetail" ref="readFileDbRead" />
+ 		<property name="cronExpression">
+ 			<value>0 0 1 * * ?</value>
+ 		</property>
+ 	</bean>
+
+	<!-- 生日提醒定时任务配置start -->
+	<bean id="sendRemind"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="remindMessageManager" /><!-- ref 对应业务逻辑处理类名 -->
+		<property name="targetMethod" value="sendBirthdayRemind" /><!-- value对应处理方法名 -->
+	</bean>
+	<!-- 定义触发器,触发时间: 每天早上9点执行一次 -->
+ 	<bean id="sendRemindJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+ 		<property name="jobDetail" ref="sendRemind" />
+ 		<property name="cronExpression">
+ 			<value>0 0 9 * * ?</value>
+ 		</property>
+ 	</bean>
+	<!-- 生日提醒定时任务配置end -->
+
+	<!-- 公积金定时更新任务配置start -->
+	<bean id="updateGjj"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="Tjy2GjjManager" /><!-- ref 对应业务逻辑处理类名 -->
+		<property name="targetMethod" value="updateBasicBySystem" /><!-- value对应处理方法名 -->
+	</bean>
+	<!-- 定义触发器,触发时间: 每天凌晨1点执行一次 -->
+ 	<bean id="updateGjjJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+ 		<property name="jobDetail" ref="updateGjj" />
+ 		<property name="cronExpression">
+ 			<value>0 0 1 * * ?</value>
+ 		</property>
+ 	</bean>
+ 	<!-- 公积金定时更新任务配置end -->
+	<!-- 检验资料报送提醒定时任务配置start -->
+	<bean id="reportPrintCheck"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="reportPrintService" /><!-- ref 对应业务逻辑处理类名 -->
+		<property name="targetMethod" value="reportPrintCheck" /><!-- value对应处理方法名 -->
+	</bean>
+	<!-- 定义触发器,触发时间: 每天早上9点执行一次 --> 
+ 	<bean id="reportPrintCheckJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+ 		<property name="jobDetail" ref="reportPrintCheck" />
+ 		<property name="cronExpression">
+ 			<value>0 0 9 * * ?</value>
+ 		</property>
+ 	</bean>
+
+	<!-- 设备数据传输定时任务配置start -->
+	<bean id="transferDeviceInfos"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="deviceTransferService" />
+		<property name="targetMethod" value="transferDeviceInfos" />
+	</bean>
+	
+	<!-- 定义触发器,触发时间: 每天凌晨1点执行一次 --> 
+ 	<bean id="transferDeviceInfosJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+ 		<property name="jobDetail" ref="transferDeviceInfos" />
+ 		<property name="cronExpression">
+ 			<value>0 0/10 * * * ?</value>
+ 		</property>
+ 	</bean>
+	
+	<!-- 检验资料报送打提醒定时任务配置end -->
+
+
+	<!-- 设备箱预警时间定时任务配置start -->
+	<bean id="synBoxTime"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="equipmentBoxManager" />
+		<property name="targetMethod" value="synNextCheckTime" />
+	</bean>
+	<!-- 定义触发器,触发时间: 每天凌晨1点执行一次 -->
+ 	<bean id="synBoxTimeJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+ 		<property name="jobDetail" ref="synBoxTime" />
+ 		<property name="cronExpression">
+ 			<value>0 0 1 * * ?</value>
+ 		</property>
+ 	</bean>
+	<!-- 设备箱预警时间定时任务配置end -->
+
+	<!-- 可休年假天数定时任务配置start -->
+	<bean id="synTotalDays"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="employeeBase" />
+		<property name="targetMethod" value="checkTotalDays" />
+	</bean>
+	<!-- 定义触发器,触发时间: 每天凌晨1点执行一次 -->
+ 	<bean id="synTotalDaysJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+ 		<property name="jobDetail" ref="synTotalDays" />
+ 		<property name="cronExpression">
+ 			<value>0 0 1 * * ?</value>
+ 		</property>
+ 	</bean>
+	<!-- 可休年假天数定时任务配置end -->
+
+	<!--定时验证二维码未通过的数据-->
+ 	<bean id="validationInfos"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="reportValidationService" />
+		<property name="targetMethod" value="autoValidation" />
+	</bean>
+	<!-- 定义触发器,触发时间: 每天凌晨1点执行一次 -->
+ 	<bean id="validationInfosJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+ 		<property name="jobDetail" ref="validationInfos" />
+ 		<property name="cronExpression">
+ 		    <value>0 0 9 * * ?</value>
+ 		</property>
+ 	</bean>  
+
+    <!-- 合同到期提醒定时任务配置start -->
+	<bean id="sendContractRemind"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="contractRemind" />
+		<property name="targetMethod" value="sendContractRemind" />
+	</bean>
+	<!-- 定义触发器,触发时间: 每天早上9点执行一次 -->
+ 	<bean id="sendContractRemindJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+ 		<property name="jobDetail" ref="sendContractRemind" />
+ 		<property name="cronExpression">
+ 			<value>0 0 9 * * ?</value>
+ 		</property>
+ 	</bean>
+	<!-- 合同到期提醒定时任务配置end -->
+
+
+	
+ 	<!-- 呼入start -->
+ 	<bean id="disciplineCallInSave"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="disciplineCallService" />
+		<property name="targetMethod" value="saveCallIn" />
+	</bean>
+	<!-- 每小时执行一次 -->
+ 	<bean id="disciplineCallInSaveTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+ 		<property name="jobDetail" ref="disciplineCallInSave" />
+ 		<property name="cronExpression">
+ 		    <value>0 * */1 * * ?</value>
+ 		</property>
+ 	</bean>  
+	<!--呼入end-->
+	
+ 	
+ 	 <bean id="instructionRwOverdue"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="instructionRwManager" /><!-- ref 对应业务逻辑处理类名 -->
+		<property name="targetMethod" value="getOverdue" /><!-- value对应处理方法名 -->
+	</bean>
+	<!-- 定义触发器,触发时间: 每5分钟执行一次 -->
+ 	<bean id="instructionRwOverdueJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+ 		<property name="jobDetail" ref="instructionRwOverdue" />
+ 		<property name="cronExpression">
+ 			<!-- <value>0 */2 * * * ?</value> -->
+ 			 <value>0 0 0 3 * ?</value> <!--  3天一次   * ?-->
+ 		</property>
+ 	</bean> 
+
+	<!-- 用车超期未还提醒任务配置start -->
+	<bean id="carApplyReturnRemindJob"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="carApplyService" /><!-- ref 对应业务逻辑处理类名 -->
+		<property name="targetMethod" value="doRemindReturn" /><!-- value对应处理方法名 -->
+	</bean>
+	<!-- 定义触发器,触发时间: 每个整点执行一次 --> 
+ 	<bean id="carApplyReturnRemindJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+ 		<property name="jobDetail" ref="carApplyReturnRemindJob" />
+ 		<property name="cronExpression">
+ 			<!-- <value>0 0 0/1 * * ?</value> -->	<!-- 每个整点执行一次 -->
+ 			<!-- <value>0 0/5 * * * ?</value> -->	<!-- 每5分钟执行一次 -->
+ 			<value>0 10 9 * * ?</value>	<!-- 每天早上9点10分执行一次 -->
+ 		</property>
+ 	</bean>
+	<!-- 用车超期未还提醒任务配置end -->
+	
+	<!-- 图书馆借书超期微信提示 -->
+	<bean id="libraryBorrowBookExceed"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="borrowManager" /><!-- ref 对应业务逻辑处理类名 -->
+		<property name="targetMethod" value="sendWxMessage" /><!-- value对应处理方法名 -->
+	</bean>
+	<!-- 定义触发器,触发时间: 每个整点执行一次 --> 
+ 	<bean id="libraryBorrowBookExceedTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+ 		<property name="jobDetail" ref="libraryBorrowBookExceed" />
+ 		<property name="cronExpression">
+ 			<!-- <value>0 0 0/1 * * ?</value> -->	<!-- 每个整点执行一次 -->
+ 			<value>0 20 9 * * ?</value>	<!-- 每天早上9点20分 执行一次 -->
+ 			<!-- <value>0 0/2 * * * ?</value> -->	<!-- 每5分钟执行一次 -->
+ 		</property>
+ 	</bean>
+	<!-- 图书馆借书超期微信提示end -->
+
+	
+	<!-- 车辆保险提醒任务配置start -->
+	<bean id="carInsRemind"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="carInsDetailManager" /><!-- ref 对应业务逻辑处理类名 -->
+		<property name="targetMethod" value="doInsRemind" /><!-- value对应处理方法名 -->
+	</bean>
+	<!-- 定义触发器,触发时间: 每个整点执行一次 --> 
+ 	<bean id="carInsRemindJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+ 		<property name="jobDetail" ref="carInsRemind" />
+ 		<property name="cronExpression">
+ 			<!-- <value>0 0 0/1 * * ?</value> -->	<!-- 每个整点执行一次 -->
+ 			<!-- <value>0 0/5 * * * ?</value> -->	<!-- 每5分钟执行一次 -->
+ 			<value>0 30 8 * * ?</value>	<!-- 每天早上9点10分执行一次 -->
+ 		</property>
+ 	</bean>
+	<!-- 车辆保险提醒任务配置end -->
+	
+	<!-- 车辆保险提醒任务配置start -->
+	<bean id="carCmRemind"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="carCmDetailManager" /><!-- ref 对应业务逻辑处理类名 -->
+		<property name="targetMethod" value="doCmRemind" /><!-- value对应处理方法名 -->
+	</bean>
+	<!-- 定义触发器,触发时间: 每个整点执行一次 --> 
+ 	<bean id="carCmRemindJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+ 		<property name="jobDetail" ref="carCmRemind" />
+ 		<property name="cronExpression">
+ 			<!-- <value>0 0 0/1 * * ?</value> -->	<!-- 每个整点执行一次 -->
+ 			<!-- <value>0 0/5 * * * ?</value> -->	<!-- 每5分钟执行一次 -->
+ 			<value>0 30 8 * * ?</value>	<!-- 每天早上9点10分执行一次 -->
+ 		</property>
+ 	</bean>
+	<!-- 车辆保险提醒任务配置end -->
+	
+	<!-- 车辆油耗更新任务配置start -->
+	<bean id="carMpgUpdate"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="carMpgManager" /><!-- ref 对应业务逻辑处理类名 -->
+		<property name="targetMethod" value="carMpgUpdate" /><!-- value对应处理方法名 -->
+	</bean>
+	<!-- 定义触发器,触发时间: 每个整点执行一次 --> 
+ 	<bean id="carMpgUpdateJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+ 		<property name="jobDetail" ref="carMpgUpdate" />
+ 		<property name="cronExpression">
+ 			<!-- <value>0 0 0/1 * * ?</value> -->	<!-- 每个整点执行一次 -->
+ 			<!-- <value>0 0/5 * * * ?</value> -->	<!-- 每5分钟执行一次 -->
+ 			<value>0 0/2 * * * ?</value>	<!-- 每天早上9点10分执行一次 -->
+ 		</property>
+ 	</bean>
+	<!-- 车辆油耗更新任务配置end -->
+</beans>

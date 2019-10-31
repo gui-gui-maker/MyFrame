@@ -1,0 +1,26 @@
+/*
+
+Create time : 2013年09月17日 23:06:25 星期二 lybide
+Last Edit Time : 2013年12月11日 09:04:13 星期三 lybide
+Create And Edit user : lybide
+
+此文件主要控制前台页面中的基本类
+
+*/
+
+/**/
+body {background:#FFFFFF;font-size:12px;font-family:"微软雅黑","宋体","Microsoft yahei","Lucida Grande","Verdana","Helvetica","Georgia";margin:0px auto 0px auto;padding:0px 0px 0px 0px;}
+td {}
+img {border:0; margin:0; padding:0;}
+input,select,textarea {font-size:12px; font-family:"微软雅黑","宋体","Microsoft yahei","Lucida Grande","Verdana","Helvetica","Georgia"; outline:0 none;}
+
+/*html {filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);}*/
+
+p {}
+br {}
+form {margin:0px;}
+div {}
+
+.hide {display:none;}
+.show { }
+

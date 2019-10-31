@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+</head>
+
+<body>
+	<input type="hidden" id="fk_report_id" name="fk_report_id"
+		value="${param.fk_report_id}">
+	<input type="hidden" id="fk_inspection_info_id"
+		name="fk_inspection_info_id" value="${param.fk_inspection_info_id}">
+
+	<input type="hidden" id="nextPage" name="nextPage" value="3">
+	<br />
+	<div class="header">
+		<table
+			style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 5.85in;">
+			<colgroup>
+				<col style="width: 50.02%;" />
+				<col style="width: 49.98%;" />
+			</colgroup>
+			<tbody>
+				<tr>
+					<td>
+						<p class="a DocDefaults ">
+							<span class="a0 " style=""><span
+								class="" style="font-family: 'SimSun';">文件编号：</span></span><span
+								class="a0 "
+								style="; font-family: 'Times New Roman';">CTJB-0412-BG01</span>
+						</p>
+					</td>
+					<td>
+						<p class="a DocDefaults "
+							style="position: relative; text-indent: 0.73in;">
+							<span class="a0 " style=""><span
+								class="" style="font-family: 'SimSun';">实施日期：2017年10月1日</span></span>
+						</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<p class="a DocDefaults " style="text-align: center;">
+		<a name="RTPAGE_1__注意事项"></a>
+	</p>
+	<p class="a DocDefaults " style="text-align: center; margin-top: 5mm;">
+			<span class="a0 dtitle" style="font-size: 18.0pt;">注意事项</span>
+		</p>
+	<table class="aa a1 " id="docx4j_tbl_3"
+		style="border-bottom-style: none; margin-top: 10mm; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; position: relative; table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 5.81in;">
+		<colgroup>
+			<col style="width: 100%;" />
+		</colgroup>
+		<tbody>
+			<tr>
+				<td
+					style="border-bottom-style: none; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; padding: 1mm 5mm;">
+					<p class="a-aa-BR DocDefaults " style="line-height: 150%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">1.</span><span
+							class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'SimSun';">本报告依据《电梯监督检验和定期检验规则---防爆电梯》（TSG
+								T7003--2011）</span><span class="" style="font-family: 'SimSun';">（及2号修改单）</span><span
+							class="" style="font-family: 'SimSun';">制定，适用于曳引式防爆电梯定期检验</span></span>
+					</p>
+					<p class="a-aa-BR DocDefaults " style="line-height: 150%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">2.</span><span
+							class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'SimSun';">本报告应当由计算机打印输出，或者用钢笔、签字笔填写，字迹应当工整，修改无效。</span></span>
+					</p>
+					<p class="a-aa-BR DocDefaults " style="line-height: 150%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">3.本报告无检验、编制、审核、批准人员签字和检验机构的核准证号、检验专用章或者公章无效。</span>
+					</p>
+					<p class="a-aa-BR DocDefaults " style="line-height: 150%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">4.</span><span
+							class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'SimSun';">本报告一式三份，由检验机构、使用单位、日常维护保养单位分别保存。</span></span>
+					</p>
+					<p class="a-aa-BR DocDefaults " style="line-height: 150%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">5.</span><span
+							class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'SimSun';">本次检验结果仅反映该设备检验时的情况，受检单位对本报告结论如有异议，请在收到报告书之日起</span></span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">15</span><span
+							class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'SimSun';">日内，向检验机构提出书面意见。</span></span>
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<p class="a DocDefaults "
+		style="position: relative; text-indent: 0.33in; line-height: 150%;">&nbsp;</p>
+	<p class="a DocDefaults ">&nbsp;</p>
+	<p class="a DocDefaults ">&nbsp;</p>
+	<p class="a DocDefaults ">&nbsp;</p>
+	<p class="a DocDefaults ">&nbsp;</p>
+	<p class="a DocDefaults ">&nbsp;</p>
+	<p class="a DocDefaults ">&nbsp;</p>
+	<p class="a DocDefaults ">&nbsp;</p>
+	<p class="a DocDefaults ">&nbsp;</p>
+	<p class="a DocDefaults ">
+		<span class="a0 " style="font-weight: bold; font-size: 12.0pt;">&nbsp;</span>
+	</p>
+	<table class="aa a1 " id="docx4j_tbl_4"
+		style="border-bottom-style: none; margin-top: 20%; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; position: relative; table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 5.76in;">
+		<colgroup>
+			<col style="width: 100%;" />
+		</colgroup>
+		<tbody>
+			<tr>
+				<td
+					style="border-bottom-style: none; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; padding: 1mm 5mm;">
+					<p class="a-aa-BR DocDefaults " style="line-height: 150%;">
+						<span class="a0 " style="font-size: 14.0pt;"><span class=""
+							style="font-family: 'SimSun';">检验机构地址：成都市东风路二段北二巷4号</span></span>
+					</p>
+					<p class="a-aa-BR DocDefaults " style="line-height: 150%;">
+						<span class="a0 " style="font-size: 14.0pt;"><span class=""
+							style="font-family: 'SimSun';">邮政编码：610061</span></span>
+					</p>
+					<p class="a-aa-BR DocDefaults " style="line-height: 150%;">
+						<span class="a0 " style="font-size: 14.0pt;"><span class=""
+							style="font-family: 'SimSun';">联系电话：028-86607888</span></span>
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

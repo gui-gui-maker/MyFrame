@@ -1,0 +1,168 @@
+package com.lsts.inspection.service;
+
+import java.io.ByteArrayOutputStream;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.khnt.core.crud.manager.impl.EntityManageImpl;
+import com.lsts.inspection.bean.ReportBHGRecord;
+import com.lsts.inspection.bean.ReportItemRecord;
+import com.lsts.inspection.bean.ReportItemValue;
+import com.lsts.inspection.bean.ReportPicValue;
+import com.lsts.inspection.dao.ReportBHGRecordDao;
+import com.lsts.inspection.dao.ReportItemValueDao;
+/**
+ * 报告检验项目业务逻辑对象
+ * @ClassName ReportItemValueService
+ * @JDK 1.7
+ * @author GaoYa
+ * @date 2014-02-26 上午09:09:00
+ */
+@Service("reportItemValueService")
+public class ReportItemValueService extends EntityManageImpl<ReportItemValue, ReportItemValueDao> {
+	@Autowired
+	private ReportItemValueDao reportItemValueDao;
+	@Autowired
+	private ReportBHGRecordDao reportBHGRecordDao;
+
+	// 获取报告检验项目
+	public List<ReportItemValue> queryByInspectionInfoId(String inspectionInfoId, String report_id) {
+		return reportItemValueDao.queryByInspectionInfoId(inspectionInfoId, report_id);
+	}
+
+	// 获取报告检验项目
+	public List<ReportItemValue> queryByitemValue(String inspectionInfoId) {
+		return reportItemValueDao.queryByitemValue(inspectionInfoId);
+	}
+
+	// 根据业务ID、报告类型ID、参数名称获取报告参数值
+	public List<ReportItemValue> getItemByItemName(String info_id, String report_type, String item_name) {
+		return reportItemValueDao.getItemByItemName(info_id, report_type, item_name);
+	}
+	
+	// 根据业务ID、报告类型ID、参数名称集合获取报告参数值
+	public List<ReportItemValue> getItemByItemNames(String info_id, String report_type, String item_names) {
+		return reportItemValueDao.getItemByItemNames(info_id, report_type, item_names);
+	}
+
+	/**
+	 * 更新报告检验项目参数值
+	 * 
+	 * @param id
+	 *            -- ID
+	 * @param info_id
+	 *            -- 报告业务ID
+	 * @param report_type
+	 *            -- 报告模板类型ID
+	 * @param item_name
+	 *            -- 检验项目name
+	 * @param item_value
+	 *            -- 报检验项目value
+	 * @return
+	 * @author GaoYa
+	 * @date 2014-02-26 上午09:29:00
+	 */
+	public void updateItemValue(String item_id, String info_id, String report_type, String item_name,
+			String item_value) {
+		try {
+			reportItemValueDao.createSQLQuery("update tzsb_report_item_value set fk_report_id='" + report_type
+					+ "', fk_inspection_info_id='" + info_id + "', item_name='" + item_name + "',item_value='"
+					+ item_value + "',item_type='String' where id='" + item_id + "'").executeUpdate();
+		} catch (Exception e) {
+			log.debug(e.toString());
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * 更新报告检验项目参数值
+	 * 
+	 * @param info_id
+	 *            -- 报告业务ID
+	 * @param report_type
+	 *            -- 报告模板类型ID
+	 * @param item_name
+	 *            -- 检验项目name
+	 * @param item_value
+	 *            -- 报检验项目value
+	 * @return
+	 * @author GaoYa
+	 * @date 2014-02-26 上午09:29:00
+	 */
+	public void updateItemValue(String info_id, String report_type, String item_name, String item_value) {
+		try {
+			reportItemValueDao.createSQLQuery("update  TZSB_REPORT_ITEM_VALUE set item_value='" + item_value
+					+ "'where fk_report_id='" + report_type + "' and item_name='" + item_name
+					+ "' and fk_inspection_info_id='" + info_id + "'").executeUpdate();
+		} catch (Exception e) {
+			log.debug(e.toString());
+			e.printStackTrace();
+		}
+	}
+
+	public Map<String, Object> getPic(String id) throws Exception {
+		Map<String, Object> picMap = new HashMap<String, Object>();
+
+		// 根据item_value内容获取相应图片 begin
+		StringBuffer picSql = new StringBuffer();
+		// picSql.append("from ReportPicValue p,ReportItemValue t ");
+		// picSql.append("where p.id = t.item_value and p.business_id =
+		// t.fk_inspection_info_id and p.business_id=? and upper(t.item_name)
+		// like 'PICTURETEXT%'");
+		picSql.append("from ReportPicValue p,ReportItemValue t ");
+		picSql.append(" where p.id = t.item_value ");
+		picSql.append(" and t.fk_inspection_info_id=? ");
+		picSql.append(" and upper(t.item_name) like 'PICTURETEXT%'");
+		List list = reportItemValueDao.createQuery(picSql.toString(), new String[] { id }).list();
+
+		for (int i = 0; i < list.size(); i++) {
+			Object o[] = (Object[]) list.get(i);
+			ReportPicValue picv = (ReportPicValue) o[0];
+			ReportItemValue ival = (ReportItemValue) o[1];
+			ByteArrayOutputStream sout = new ByteArrayOutputStream();
+			sout.write(picv.getPic_blob());
+			// picMap.put(picv.getItem_name()+"P", sout.toByteArray());
+			picMap.put(ival.getItem_name() + "P", picv.getPic_blob());
+			picMap.put(ival.getItem_name() + "C", picv.getPic_clob());
+			System.out.println("-------------------------:" + sout.toByteArray());
+		}
+
+		return picMap;
+	}
+	
+	/**
+	 * 获取报告检验项目
+	 * @param info_id -- 检验业务信息ID
+	 * @param report_id -- 检验报告模板信息ID
+	 * @param item_names -- 检验项目keys
+	 * 
+	 * @return 
+	 * @author GaoYa
+	 * @date 2017-10-30 14:44:00
+	 */
+	public Map<String, Object> getGCContent(String info_id, String report_id, String item_names) throws Exception {
+		return reportItemValueDao.getGCContent(info_id, report_id, item_names);
+	}
+
+	public boolean checkIfHg(String ids) {
+		String[] idss = ids.split(",");
+		for (int i = 0; i < idss.length; i++) {
+			List<ReportItemValue> list = reportItemValueDao.queryByitemValue(idss[i]);
+			for (int j = 0; j < list.size(); j++) {
+				ReportItemValue value = list.get(j);
+				// System.out.println("--------------------------"+value.getItem_value());
+				if ("不合格".equals(value.getItem_value())) {
+					List<ReportBHGRecord> list1 = reportBHGRecordDao.queryResourceByInfoId(idss[i]);
+					if (list1 == null || list1.size() == 0) {
+						return false;
+					}
+				}
+			}
+		}
+		return true;
+	}
+}

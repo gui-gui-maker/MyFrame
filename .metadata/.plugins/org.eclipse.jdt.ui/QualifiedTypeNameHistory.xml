@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="com.rabbitmq.client.ConnectionFactory"/>
+    <fullyQualifiedTypeName name="com.rabbitmq.client.AMQP.Connection"/>
+    <fullyQualifiedTypeName name="com.rabbitmq.client.MessageProperties"/>
+    <fullyQualifiedTypeName name="com.rabbitmq.client.Address"/>
+    <fullyQualifiedTypeName name="com.rabbitmq.client.DefaultConsumer"/>
+    <fullyQualifiedTypeName name="com.rabbitmq.client.Consumer"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.TimeUnit"/>
+    <fullyQualifiedTypeName name="com.rabbitmq.client.AMQP"/>
+    <fullyQualifiedTypeName name="com.rabbitmq.client.AMQP.BasicProperties"/>
+    <fullyQualifiedTypeName name="com.rabbitmq.client.Envelope"/>
+    <fullyQualifiedTypeName name="ch.qos.logback.core.util.TimeUtil"/>
+    <fullyQualifiedTypeName name="org.springframework.amqp.core.DirectExchange"/>
+    <fullyQualifiedTypeName name="java.io.Serializable"/>
+    <fullyQualifiedTypeName name="com.guido.model.Apple"/>
+    <fullyQualifiedTypeName name="com.guido.model.Banana"/>
+    <fullyQualifiedTypeName name="com.guido.model.Mango"/>
+    <fullyQualifiedTypeName name="com.guido.model.Fruit"/>
+    <fullyQualifiedTypeName name="org.springframework.amqp.core.MessageBuilder"/>
+    <fullyQualifiedTypeName name="org.springframework.amqp.core.MessageProperties"/>
+    <fullyQualifiedTypeName name="org.springframework.amqp.rabbit.connection.CorrelationData"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.InitializingBean"/>
+    <fullyQualifiedTypeName name="org.springframework.amqp.rabbit.core.RabbitTemplate"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="org.springframework.amqp.core.Message"/>
+    <fullyQualifiedTypeName name="org.springframework.amqp.core.Queue"/>
+    <fullyQualifiedTypeName name="java.util.Dictionary"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="org.springframework.amqp.rabbit.connection.CachingConnectionFactory"/>
+    <fullyQualifiedTypeName name="com.rabbitmq.client.Channel"/>
+</qualifiedTypeNameHistroy>

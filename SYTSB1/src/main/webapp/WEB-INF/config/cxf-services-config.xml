@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:jaxws="http://cxf.apache.org/jaxws"  
+    xsi:schemaLocation="  
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  
+    http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+	   
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+    <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+    <import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+
+	<!--<jaxws:endpoint id="Hello" implementor="com.gxqp.webservice.test.server.HelloImpl" address="/Hello" />-->    
+    <jaxws:endpoint id="QueryData" implementor="#queryDataImpl" address="/QueryData" />
+    
+    <bean id="queryDataImpl" class="com.lsts.webservice.cxf.server.QueryDataImpl">  
+ 		<!--如果webservice中有需要加载其他类，采用注解的方式不行，需要在配置文件中显示声明-->    
+        <property name="queryDataService" ref="queryDataService"></property>  
+    </bean> 
+    
+    <bean id="queryDataService" class="com.lsts.webservice.cxf.server.QueryDataService"/>
+</beans>

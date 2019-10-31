@@ -1,0 +1,366 @@
+﻿<%@ page contentType="text/html;charset=UTF-8" %>
+<%@page import="com.khnt.security.util.SecurityUtil"%>
+<%@page import="com.khnt.security.CurrentSessionUser"%>
+<%@page import="com.khnt.rbac.impl.bean.User"%>
+<%
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath() + "/";
+    CurrentSessionUser user=(CurrentSessionUser)request.getSession().getAttribute("currentSessionUser");
+%>
+<%@page import="com.khnt.security.util.SecurityUtil"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--获取当前登录人  -->
+<%CurrentSessionUser useres = SecurityUtil.getSecurityUser();%>
+<%@taglib uri="http://bpm.khnt.com" prefix="bpm" %>
+<head pageStatus="${param.status}">
+<title>设备采购申请</title>
+<%@ include file="/k/kui-base-form.jsp"%>
+<%
+	String status = request.getParameter("status");
+%>
+<script type="text/javascript" src="pub/bpm/js/util.js"></script>
+<script type="text/javascript" src="pub/selectUser/selectUnitOrUser.js"></script>
+<script type="text/javascript" src="app/common/js/render.js"></script>
+<link rel="Stylesheet" href="app/finance/css/jquery.autocomplete.css" />
+<link type="text/css" rel="stylesheet" href="app/finance/css/form_detail.css" /> 
+<script type="text/javascript" src="app/humanresources/js/doc_order.js"></script>
+<script type="text/javascript" src="pub/fileupload/js/fileupload.js"></script>
+<script type="text/javascript" src="app/common/lodop/LodopFuncs.js"></script>
+
+<script type="text/javascript">
+	//jQuery页面载入事件
+var pageStatus="<%=status%>";
+var columns=[];
+	$(function(){
+		defineColumns();
+		initGrid();
+		$("#formObj").initForm({ //参数设置示例
+          	toolbar : [ {
+   	        	text : '保存',
+   	        	id : 'save',
+   		        icon : 'save',
+   		        click : save
+   	          }, {
+   	           	text : '关闭',
+   		        id : 'close',
+   		        icon : 'cancel',
+   		        click : close
+   	          } ],
+			getSuccess : function(res) {
+				if(res.success){
+					/* deviceGrid.loadData({
+						Rows : res.inspectionDatas
+					}); */
+					$("#formObj").setValues({id:res.id});
+					$("#formObj").setValues(res.data);
+					if(pageStatus!="detail"){
+						queryEquipmentList();
+					}else{
+						queryEquipmentList1();
+					}
+					
+				}
+			}
+		});
+		$("body").append('<object style="height:1px;" id="LODOP_OB" classid="clsid:2105C259-1E0C-4534-8141-A753534CB4CA" width=0 height=0><embed id="LODOP_EM" type="application/x-print-lodop" width=0 height=0></embed></object>');
+	
+	 
+	});
+	//定义列表
+	function defineColumns(){
+		if(pageStatus!="detail"){
+			var nowDate = new Date().format("yyyy-MM-dd");
+			$("#applyDate").val(nowDate);
+			columns.push({
+				display: "<a class='l-a iconfont l-icon-add' href='javascript:deviceGrid.addEditRow();'><span>增加</span></a>",
+				isSort: false, 
+				width: '30',
+				render : function(item, index) {
+    				return "<a class='l-a l-icon-del' href='javascript:deviceGrid.deleteSelectedRow();'><span>删除</span></a>";
+    			}
+			});
+		}
+		var type=<u:dict code="instruction_type"/>
+		columns.push({display: 'id', name: 'id', hide:true},
+				{display: 'id', name: 'tjy2InstructionId', hide:true},
+				{display: '设备名称',width: '8%',name: 'deviceName',type:'text',required:true,editor : {type : 'text',maxlength:'200'}},
+				{display: '需求数量',width: '5%',name:'sum',type:'text',required:true,editor : {type : 'int',minValue:1}},
+				{display: '设备型号',width: '10%',name: 'deviceModel',type:'text',required:true,editor : {type : 'textarea',maxlength:'1000'}},
+				{display: '设备厂家',width: '10%',name: 'deviceManufacturer',type:'text' ,required:true,editor : {type : 'textarea',maxlength:'1000'}},
+				{display: '预计单价',width: '5%',name: 'money',type:'text',maxlength:'1000',required:true,editor : {type : 'float',minValue:0}},
+				{display: '购买理由',width: '12%',name: 'reason',type:'text',required:true,editor : {type : 'text',maxlength:'200'}},
+				{display: '了解渠道',width: '10%',name: 'channel',type:'text',required:true,editor : {type : 'text',maxlength:'200'}},
+				{display: '主要功能及参数',width: '25%',name: 'parameter',type:'text',required:true,editor : {type : 'text',maxlength:'200'}},
+				{display: '备注',width: '25%',name: 'remark',type:'text',required:true,editor : {type : 'text',maxlength:'200'}}
+		);
+	}
+	//detail页面加载设备列表信息
+    function createJrxxGrid(data) {
+        var jrxx_html = '<div class="l-grid-body l-grid-body2 l-scroll"><div class="l-grid-body-inner"><table id="table4" class="l-detail-table b-dyn-table decimal-table"><tr class="l-t-td-title" style="height:30px;font-weight:normal">'
+                          +'<td class="l-t-td-title" style="width:8%">设备名称</td>'
+                          +'<td class="l-t-td-title" style="width:5%">需求数量</td>'
+                          +'<td class="l-t-td-title" style="width:10%">设备型号</td>'
+                          +'<td class="l-t-td-title" style="width:10%">设备厂家</td>'
+                          +'<td class="l-t-td-title" style="width:5%">预计单价</td>'
+                          +'<td class="l-t-td-title" style="width:12%">购买理由</td>'
+                          +'<td class="l-t-td-title" style="width:10%">了解渠道</td>'
+                          +'<td class="l-t-td-title" style="width:25%">主要功能及参数</td>'
+                          +'<td class="l-t-td-title" style="width:25%">备注</td>'; 
+        if(data && data.length > 0){
+        	 for(var i=0;i<data.length;i++){ 
+        		 var deviceName="";
+            	 var sum=""; 
+            	 var deviceModel="";
+            	 var deviceManufacturer="";
+            	 var money="";
+            	 var reason="";
+            	 var channel="";
+            	 var parameter="";
+            	 var remark="";
+        		  if(data[i].deviceName!=null){
+        			  deviceName=data[i].deviceName;
+        		  }
+        		  if(data[i].sum!=null){
+        			  sum=data[i].sum;
+        		  }
+        		  if(data[i].deviceModel!=null){
+        			  deviceModel=data[i].deviceModel;
+        		  }
+        		  if(data[i].deviceManufacturer!=null){
+        			  deviceManufacturer=data[i].deviceManufacturer;
+        		  }
+        		  if(data[i].money!=null){
+        			  money=data[i].money;
+        		  }
+        		  if(data[i].reason!=null){
+        			  reason=data[i].reason;
+        		  }
+        		  if(data[i].channel!=null){
+        			  channel=data[i].channel;
+        		  }
+        		  if(data[i].parameter!=null){
+        			  parameter=data[i].parameter;
+        		  }
+        		  if(data[i].remark!=null){
+        			  remark=data[i].remark;
+        		  }
+        		  
+        		  
+                jrxx_html += '<tr class="l-t-td-right center" style="height:30px">'
+                               +'<td class="l-grid-row-cell" style="text-align:center;height:30px">'+deviceName
+                               +'</td><td class="l-grid-row-cell" style="text-align:center">' +sum
+                               +'</td><td class="l-grid-row-cell" style="text-align:center">' +deviceModel
+                               +'</td><td class="l-grid-row-cell" style="text-align:center">' +deviceManufacturer
+                               +'</td><td class="l-grid-row-cell" style="text-align:center">'+money
+                               +'</td><td class="l-grid-row-cell" style="text-align:center">'+reason
+                               +'</td><td class="l-grid-row-cell" style="text-align:center">'+channel
+                               +'</td><td class="l-grid-row-cell" style="text-align:center">'+parameter
+                               +'</td><td class="l-grid-row-cell" style="text-align:center">'+remark
+                               
+            }
+        }else{
+        	jrxx_html += '<tr><td colspan="5">无数据</td></tr>';
+        }
+        jrxx_html += '</table></div></div>';
+        $("#device").html(jrxx_html);
+    }
+		
+		
+	 function initGrid(){
+        deviceGrid = $("#device").ligerGrid({
+	    	columns: columns,
+	    	enabledEdit: pageStatus != "detail",
+	    	rownumbers : true,
+		    width:"99.6%",
+		    height:"400px",
+		    frozenRownumbers: false,
+		    usePager: false,
+	        data: {Rows: []} 
+    	});
+	 } 
+	 function initGridFalse(){
+	        deviceGrid = $("#device").ligerGrid({
+		    	columns: columns,
+		    	enabledEdit: false,
+		    	rownumbers : true,
+			    width:"99.6%",
+			    frozenRownumbers: false,
+			    usePager: false,
+		        data: {Rows: []} 
+	    	});
+	 } 
+	function save(){
+		 if ($("#formObj").validate().form()) {
+			 $("body").mask("正在保存数据，请稍后！");
+			 var formData = $("#formObj").getValues();
+			 formData.instrumentDeviceInfo=deviceGrid.getData();
+	        var instruction=$.ligerui.toJSON(formData);
+	        $.ajax({
+                url: "com/tjy2/instrumentDevice/saveBasic.do",
+                type: "POST",
+               /*    dataType: "json", 
+                contentType: "application/json; charset=utf-8",  */
+                data:{"instruction":instruction},
+                success : function(data, stats) {
+					$("body").unmask();
+					if (data["success"]) {
+						
+						top.$.dialog.notice({
+							content : '提交成功'
+						});
+						api.data.window.Qm.refreshGrid();
+					} else {
+						$.ligerDialog.error('提示：' + data.message);
+					}
+				},
+                error : function(data) {
+                    $("body").unmask();
+                    $.ligerDialog.error('保存数据失败！');
+                }
+            });
+		 }
+	}
+	function close(){	
+		 api.close();
+	}		
+	//详情页面查询设备列表
+	function queryEquipmentList1(){
+		$.ajax({
+        	url: "com/tjy2/instrumentDevice/getDetail.do?id=${param.id}",
+            type: "POST",
+            success: function (resp) {
+                if (resp.success) {
+                	var equipmentApplyLists = resp.data.instrumentDeviceInfo;
+                	//将设备显示在申请列表里面
+                	createJrxxGrid(equipmentApplyLists);
+                }else{
+                	$.ligerDialog.error('提示：' + data.msg);
+                }
+            },
+            error: function (data0,stats) {
+                $.ligerDialog.error('提示：' + data.msg);
+            }
+        });
+	}
+	//其他页面查询设备列表
+	function queryEquipmentList(){
+		$.ajax({
+        	url: "com/tjy2/instrumentDevice/getDetail.do?id=${param.id}",
+            type: "POST",
+            success: function (resp) {
+                if (resp.success) {
+                	var instrumentDeviceInfo = resp.data.instrumentDeviceInfo;
+                	//将设备显示在申请列表里面
+                	 for(var e in instrumentDeviceInfo){
+                		var bb = {id : instrumentDeviceInfo[e].id,
+                				deviceName: instrumentDeviceInfo[e].deviceName,
+                				sum : instrumentDeviceInfo[e].sum,
+                				deviceModel: instrumentDeviceInfo[e].deviceModel,
+                				deviceManufacturer : instrumentDeviceInfo[e].deviceManufacturer,
+                				money: instrumentDeviceInfo[e].money,
+                				reason: instrumentDeviceInfo[e].reason,
+                				channel: instrumentDeviceInfo[e].channel,
+                				parameter: instrumentDeviceInfo[e].parameter,
+                				remark: instrumentDeviceInfo[e].remark};
+						deviceGrid.addRow(bb);
+                	}  
+                }else{
+                	$.ligerDialog.error('提示：' + data.msg);
+                }
+            },
+            error: function (data0,stats) {
+                $.ligerDialog.error('提示：' + data.msg);
+            }
+        });
+	}
+	function chooseOrg(){
+		var dw =$("#unit-txt").val();
+		 var parent_id="100000";
+	            top.$.dialog({
+	                width: 800,
+	                height: 450,
+	                lock: true,
+	                parent: api,
+	                title: "选择部门",
+	                content: 'url:app/common/org_choose_new.jsp?par_id='+parent_id,
+	                cancel: true,
+	                ok: function(){
+	                    var p = this.iframe.contentWindow.getSelectedPerson();
+	                    if(!p){
+	                        top.$.notice("请选择部门！", 3, "k/kui/images/icons/dialog/32X32/hits.png");
+	                        return false;
+	                    }
+	                    $("#departmentId").val(p.id);
+	                    $("#departmentName").val(p.name);
+	                }
+	            });
+	        }
+	 function selectUser() {
+	        selectUnitOrUser(1, 1, "headId", "headMan");
+	    }
+      </script>
+      
+<style type="text/css" media="print" id="pstyle">
+* {font-family:"宋体";font-size:12px;letter-spacing:normal;}
+* {
+    font-family:"宋体";
+    font-size:12px;
+    letter-spacing:normal;
+    
+}
+h1{font-family:宋体;font-size:6mm; text-align:center;margin:10px 0 0 0;}
+table{ margin:-2 auto;width: 650px;}
+table td{ height:40px;}
+.l-detail-table td, .l-detail-table {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+#table1,#table2,#table3{
+ padding:5px;
+    border:0px solid #CFE3F8;
+    border-top:0px;
+    border-left:0px;
+    word-break:break-all;
+    table-layout:fixed;
+}
+#table4{
+ padding:5px;
+    border:0px solid #CFE3F8;
+    border-top:0px;
+    border-left:0px;
+    word-break:break-all;
+    table-layout:fixed;
+    text-align:center;
+    margin-left:48px;
+}
+.l-t-td-left{ text-align:center;}
+.fieldset-caption{margin:15px 0px 2px 0px;}
+.l-t-td-title{}
+</style>
+</head>
+<body>
+	<div title="计划表表" id="form1">
+	<form name="formObj" id="formObj" method="post" 
+		getAction="com/tjy2/instrumentDevice/getDetail.do?id=${param.id}">
+		<h1 style="padding:5mm 0 2mm 0;font-family:微软雅黑;font-size:6mm;text-align:center;">检&nbsp;验&nbsp;检&nbsp;测&nbsp;设&nbsp;备&nbsp;需&nbsp;求&nbsp;意&nbsp;见&nbsp;征&nbsp;集&nbsp;表</h1></br>
+		<input type="hidden" id="id" name="id"/>
+		<input type="hidden" name="status"/>
+			<table id="table1" cellpadding="3" cellspacing="0" class="l-detail-table">
+			     <tr>
+					<td class="l-t-td-left">部门</td>
+					<td class="l-t-td-right" >
+					<input type="hidden" name="departmentId"  id="departmentId"/>
+					<input readonly="readonly" value="<%=useres.getDepartment().getOrgName() %>"  validate="{maxlength:50,required:true}" ltype="text"  name="departmentName" id="departmentName"  type="text" onclick="chooseOrg()" ligerui="{iconItems:[{icon:'org',click:chooseOrg}]}"/>
+					</td>
+					<td class="l-t-td-left">负责人</td>
+					<td class="l-t-td-right"><input type="hidden" name="headId" id="headId"/>
+					<input type="text" ltype='text'
+					 validate="{required:true}" name="headMan" id="headMan" onClick="selectUser()" readonly="readonly" />
+					</td>
+				</tr>
+				</table>
+			<div id="device" style="width:100%"></div>
+	</form>
+	</div>
+</body>
+</html>

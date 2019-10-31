@@ -1,0 +1,56 @@
+<%@ page contentType="text/html;charset=UTF-8"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>压力管道安装、改造和重大修理监督检验报告20170411</title>
+<%@include file="/rtbox/public/base.jsp"%>
+<link href="rtbox/app/templates/default/supsub.css" rel="stylesheet" type="text/css">
+<link href="rtbox/app/templates/default/tpl.css" rel="stylesheet" />
+
+
+ [$RtPageHead]
+
+<script type="text/javascript">
+	var fk_report_id="${param.fk_report_id}";
+	var code_ext="${param.code_ext}";
+	
+	$(function() {
+		//页面布局
+		$("#layout2").ligerLayout({
+			rightWidth: 150,
+			space: 3,
+			allowTopResize: false
+		});
+		
+		$("form").ligerForm();
+		initForm();
+		
+		[$RtPageInitJs]
+	});
+</script>
+<script type="text/javascript" src="rtbox/app/templates/default/tpl02.js"></script>
+<!-- <script type="text/javascript" src="rtbox/app/templates/default/jquery.js"></script> -->
+<script type="text/javascript" src="rtbox/app/templates/default/SelectTool.js"></script>
+
+ <script type="text/javascript" src="pub/fileupload/js/fileupload.js"></script>
+ <script type="text/javascript" src="rtbox/app/templates/default/tpl_photo2.js"></script> 
+</head>
+
+<body>
+	<div id="layout2" style="width: 99.8%">
+		<input type="hidden" id="inputFocus" name="inputFocus" />
+		<div position="center"  style="overflow: auto;">
+		    <form id="formObj" action="com/rt/deal/saveMap.do" getAction="com/rt/deal/detailMap.do">
+	 		<input type="hidden" id="fk_report_id" name="fk_report_id"  value="${param.fk_report_id}"  >
+ 		<input type="hidden" id="fk_inspection_info_id" name="fk_inspection_info_id"  value="${param.fk_inspection_info_id}"  >
+ 
+			<input type="hidden" id="nextPage" name="nextPage" value="[$RtNextPage]"> 
+			[$RtPageBody]
+	
+			</form>
+	    </div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+﻿
+.process {/* height:55px; border:#f00 solid 1px;*/ overflow:hidden; zoom:1; text-align:center; position:relative;}
+.process_lt {width:20px; height:55px; background:url(../images/basic/nav-process/p_lt.png) no-repeat; position:absolute; left:0; top:0;}
+.process_rt {width:20px; height:55px; background:url(../images/basic/nav-process/p_rt.png) no-repeat; position:absolute; right:0px; top:0; z-index:99;}
+.process_main { position:relative; left:20px; top:0; /*font:14px "微软雅黑", "宋体";*/ z-index:1; background:#fef9e7;margin:0; padding:0;}
+.process_main li {background:#fef9e7; height:55px; float:left;}
+.process_main li a { color:#000; text-decoration:none; position:relative; margin:9px 18px 10px; padding-left:28px; line-height:36px; display:inline-block; }
+.process_main li a strong { font:36px Arial, Helvetica, sans-serif; color:#e6660f; padding-right:5px; position:absolute; left:0px; top:0px; }
+.process_main li:hover , .process_main li.hover {background:#fed3a4;}
+.process_main em { display:inline-block; background:url(../images/basic/nav-process/p_md.png) no-repeat; float:left; width:34px; height:36px; padding:9px 0px 10px;font-style:normal;}
+/**/
+.process2 {margin:0; padding:5px;list-style:none;/*font-size:12px;*/ font-weight:bold; text-align:center; overflow:hidden; /*background:url(../images/arrow0.png) no-repeat center top;*/ margin:3px 0px 0px; *padding-left:120px;}
+.process2 li {*float:left; display:inline-block; /*width:123px;*/ text-align:center; background:url(../images/basic/nav-process/arrow1.png) no-repeat center top; padding:12px 10px 0 10px; *padding:12px 2px 0 2px; overflow:hidden;cursor:pointer;min-width:130px;width:auto !important;width:130px;/*IE6最小宽度*/}
+.process2 li a {margin-top:15px; display:inline-block; color:#000; text-decoration:none;}
+.process2 li.active { background:url(../images/basic/nav-process/arrow2.png) no-repeat center top; padding-top:12px; font-weight:bold; }
+.process2 li:hover { background:url(../images/basic/nav-process/arrow2.png) no-repeat center top; padding-top:12px; font-weight:bold; color:#951d22; }
+.process2 li.active a { color:#e6640d; }

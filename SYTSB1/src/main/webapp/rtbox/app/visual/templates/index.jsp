@@ -1,0 +1,695 @@
+<%@page import="com.lsts.device.bean.ElevatorPara"%>
+<%@page import="com.lsts.device.bean.DeviceDocument"%>
+<%@page import="com.khnt.rtbox.tools.NameConfigUtil"%>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib uri="http://khnt.com/tags/ui" prefix="u"%>
+<%
+	String basePath = "http://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath()+request.getServletPath().substring(0,request.getServletPath().lastIndexOf("/")+1);   
+	String basePathUrl = "http://" + request.getServerName() + ":" + request.getServerPort();   
+
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>检验报告</title>
+<%@include file="/rtbox/app/visual/base.jsp" %>
+<meta name="keywords" content="报表工具" />
+<meta name="description" content="报表工具">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Theme CSS -->
+<link rel="stylesheet" type="text/css" href="rtbox/app/templates/default/assets/skin/default_skin/css/theme2.css">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="rtbox/app/templates/default/assets/js/html5shiv.js"></script>
+  <script src="rtbox/app/templates/default/assets/js/respond.min.js"></script>
+<![endif]-->
+<script type="text/javascript"> var relColumn='fk_report_id=${param.fk_report_id}&fk_inspection_info_id=${param.fk_inspection_info_id}';</script>
+
+<script type="text/javascript">
+var fk_report_id="${param.fk_report_id}";
+var input="${param.input}";
+var info_id="${param.id}";
+var pageStatus="${param.pageStatus}";
+var rt_code="${param.code}";
+var status = "${param.status}";
+var check_op ="${param.check_op}";
+var basePath="<%=basePath%>";
+var basePathUrl="<%=basePathUrl%>";
+var rtboxId = "${param.rtboxId}";
+var rtPageId = "${param.rtboxId}";
+var pageCode = "1";
+
+
+var inspectNamed = <%=NameConfigUtil.getInspectionNamed()%>;
+var deviceNamed = <%=NameConfigUtil.getClassFieldComment(DeviceDocument.class)%>;//getNamedByConfig(null)
+//锅炉信息
+var boilerNamed = <%=NameConfigUtil.getNamedByConfig("1000")%>;
+//电梯信息
+var elevatorNamed = <%=NameConfigUtil.getClassFieldComment(ElevatorPara.class)%>;//.getNamedByConfig("3000")
+//起重机信息
+var craneNamed = <%=NameConfigUtil.getNamedByConfig("4000")%>;
+//安全阀信息
+var accessoryNamed = <%=NameConfigUtil.getNamedByConfig("F000")%>;
+//压力容器信息
+var pressurevesselsNamed = <%=NameConfigUtil.getNamedByConfig("2000")%>;
+//厂车信息
+var engineNamed = <%=NameConfigUtil.getNamedByConfig("5000")%>;
+//游乐设施信息
+var ridesNamed = <%=NameConfigUtil.getNamedByConfig("6000")%>;
+//压力管道信息
+var pipelineNamed = <%=NameConfigUtil.getNamedByConfig("8000")%>;
+//客运索道信息
+var kysdNamed = <%=NameConfigUtil.getNamedByConfig("9000")%>;
+
+
+$(function() {
+	if(document.getElementById('tsColor')!=undefined){
+		document.getElementById('tsColor').onchange = function(){
+			rightFrame.tsColor(this.value);
+		};
+	}
+	
+	//详情时影藏按钮工具栏
+	if(status=="detail"){
+		$("#treeH").css("padding-top","0px");
+	}
+	var width = $(window).width();
+	if(width>1024){
+		//$("#rightFrame").attr("width",width-300)
+	}
+	<c:if test="${param.status!='detail'}">
+		$("#content_wrapper").addClass("top70");
+	</c:if>
+	
+	//初始化基础信息名关联
+	//检验业务
+	
+	var html = createSelectByJson(inspectNamed,"pro_db_link");
+	$("#pro_db_link").remove();
+	$("#pro_db_lable").after(html);
+});
+
+
+
+
+</script>
+
+<script type="text/javascript" src="rtbox/app/templates/default/tpl01.js"></script>
+<script type="text/javascript" src="rtbox/app/visual/js/design-tpl01.js"></script>
+<!-- <script type="text/javascript" src="rtbox/app/templates/default/tpl02.js"></script>  -->
+<script type="text/javascript" src="/k/kui/frame/main.js"></script> 
+<style type="text/css">
+	
+	.test11 td{ padding:10px 0; }
+	.input11{ height: 26px; line-height: 26px; border:1px solid #ddd;   }
+	.testl{ text-align: right; padding-right: 10px;  }
+
+	/*2017-09-06 09:32:23*/
+	
+	.bzhu { position: relative; width: 200px;   }
+	.flag { /*border: 1px dashed #e22118;*/ position: relative; padding-left:5px;  }
+	.bzhu span{ position: absolute; left: -1px; top:-1px;border:4px solid transparent; border-top:4px solid #e22118; border-left:4px solid #e22118;  }
+	.bzhu_box{ 
+		border: 1px solid #e22118; 
+		position: absolute; 
+		top:26px; 
+		display: none;
+		width: 250px; 
+		min-height: 100px; 
+		padding: 5px;
+		z-index:100;
+		/* -webkit-box-shadow: 2px 3px 0px 0px rgba(0,0,0,.15);
+		box-shadow:2px 3px 0px 0px rgba(0,0,0,.15); */
+		background-color:#fff;
+	}
+	.bzhu:hover .bzhu_box,
+	.bzhu:focus .bzhu_box,
+	.bzhu:active .bzhu_box,
+	.bzhu.active .bzhu_box{
+		display: block;
+	}
+
+.rightPrepoties{
+position: absolute;
+top: 60px;
+right: 0px;
+width:280px;
+background-color: white;
+}
+.rightPrepoties div{
+border: 1px solid white;
+margin-top: 1px;
+vertical-align: middle;
+}
+.rightPrepoties div lable{
+background-color: #EAEAEA;
+color: #36648B;
+width:30%;
+float: left;
+text-align: center;
+}
+.rightPrepoties input,select{
+width:70%;
+vertical-align: middle;
+}
+.rightPrepoties div{
+background-color: #EAEAEA;
+}
+#content_wrapper{
+margin-right:280px;
+}
+.navbar-btn {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.navbar-nav.navbar-left {
+ height:30px;
+
+}
+
+.linkUl{
+display:none;
+position: absolute;
+background-color:#FCFCFC;
+border: 1px solid gray;
+z-index: 9999;/* 浮在最上层 */
+}
+.linkUl li{
+    border-bottom-style: inset;
+    border-bottom-width: 1px;
+}
+.linkUl li a{
+    color:black;
+    text-decoration:none;
+    width: 100%;
+}
+</style>
+
+</head>
+
+<body class="dashboard-page">
+
+<!-- Start: Theme Preview Pane --> 
+
+<!-- End: Theme Preview Pane --> 
+
+<!-- Start: Main -->
+<div id="main"> 
+	  <c:if test="${param.status!='detail'}">
+	<!-- Start: Header -->
+	<div class="navbar navbar-fixed-top navbar-shadow ">
+		<div class="navbar-branding dark bg-hui">
+       <span class="caret caret-tp"></span>
+      </div>
+      <div style="height: 60px;float: left;">
+		<ul class="nav navbar-nav navbar-left" >
+			
+			<li>
+				<div class="navbar-btn btn-group">
+					<a id="leftTreeWindow" href="javascript:leftTreeWindow();"> <span
+							class="edui-for-border-menu btn btn-sm" title="菜单" value="1"></span>
+					</a>
+				</div>
+			</li>
+			<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:saveFormContent();"> <span
+							class="edui-save btn btn-sm" title="保存"></span>
+					</a>
+				</div>
+			</li>
+			<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:setLeft();"> <span
+							class="edui-for-left btn btn-sm" title="居左"></span>
+					</a>
+				</div>
+			</li>
+			<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:setCenter();"> <span
+							class="edui-for-center btn btn-sm" title="居中"></span>
+					</a>
+				</div>
+			</li>
+			<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:setRight();"> <span
+							class="edui-for-right btn btn-sm" title="居右"></span>
+					</a>
+				</div>
+			</li>
+			<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:justified();"> <span
+							class="edui-for-justified btn btn-sm" title="分散对齐"></span>
+					</a>
+				</div>
+			</li>
+			<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:rightFrame.setVerticalTop();"> <span
+							class="edui-for-input-vtop btn btn-sm" title="水平居上"></span>
+					</a>
+				</div>
+			</li>
+			<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:rightFrame.setVerticalMiddle();"> <span
+							class="edui-for-input-vmiddle btn btn-sm" title="水平居中"></span>
+					</a>
+				</div>
+			</li>
+			<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:rightFrame.setVerticalBottom();"> <span
+							class="edui-for-input-vbottom btn btn-sm" title="水平居下"></span>
+					</a>
+				</div>
+			</li>
+			
+			<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:void(0);">
+					 <select id="fontSizes" style="width:40px;"
+														   onchange="spenfontSizes(this.value);">
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="24">24</option>
+					</select>
+					</a>
+				</div>
+			</li>
+			<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:void(0);"> <select id="fontFamilys"
+														   onchange="spenFontFamilys(this.value);">
+						<option value="宋体">宋体</option>
+						<option value="黑体">黑体</option>
+						<option value="微软雅黑">微软雅黑</option>
+						<option value="微软正黑体">微软正黑体</option>
+						<option value="新宋体">新宋体</option>
+						<option value="新细明体">新细明体</option>
+						<option value="细明体">细明体</option>
+						<option value="标楷体">标楷体</option>
+						<option value="仿宋">仿宋</option>
+						<option value="楷体">楷体</option>
+
+
+					</select>
+					</a>
+				</div>
+				</li>
+				<li>
+							<div class="navbar-btn btn-group">
+								<a href="javascript:void(0);" onclick="fontBold();"> <span
+									class=" btn btn-sm" title="加粗"></span>
+								</a>
+							</div>
+						</li>
+
+						<li>
+							<div class="navbar-btn btn-group">
+								<a href="javascript:void(0);" onclick="fontItalic();"> <span
+									class="edui-for-italic btn btn-sm" title="倾斜"></span>
+								</a>
+							</div>
+						</li>
+			
+			<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:removepclick();"> <span
+							class="edui-for-clean btn btn-sm" title="清除标记"></span>
+					</a>
+				</div>
+			</li>
+			<li>
+				
+			</li>
+		
+			<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:rightFrame.mergeSpan();"> <span
+							class="edui-for-input-named btn btn-sm" title="合并文本框"></span>
+					</a>
+				</div>
+			</li>
+				<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:rightFrame.revoke();"> <span
+							class="edui-for-cancel btn btn-sm" title="撤回"></span>
+					</a>
+				</div>
+			</li>
+			
+			<!-- <li class="menu-divider hidden-xs"><i class="fa fa-circle"></i>
+			</li> -->
+			<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:rightFrame.checkSameName();"> <span
+							class="edui-for-check_sameName btn btn-sm" title="检查重复命名"></span>
+					</a>
+				</div>
+			</li>
+			<li>
+				<div class="navbar-btn btn-group">
+					<a id="managerShowName" value="1"
+					 href="javascript:managerShowName();"> <span
+							class="" title="命名显示控制">命名显示控制</span>
+					</a>
+				</div>
+			</li>
+			
+			<li>
+				<div class="navbar-btn btn-group">
+					<a id="propertiesWindow" value="1" href="javascript:propertiesWindow();"> <span
+							class="edui-for-input-property btn btn-sm" title="属性窗口"></span>
+					</a>
+				</div>
+			</li>
+			<li>
+				<div id="edui10" class="edui-box edui-separator  edui-default"></div>
+			</li>
+			<li>
+				<div class="navbar-btn btn-group">
+					<a id="sourceEdit" href="javascript:sourceEdit();" value="0"> 
+						<span class="edui-for-source btn btn-sm" title="源代码【注意：请在设计界面保存后再切换到源代码，否则修改内容将丢失！】"></span>
+					</a>
+				</div>
+			</li>
+			<li>
+				<div class="navbar-btn btn-group">
+					<a id="sourceEdit" href="javascript:rightFrame.preview();"> 
+						<span class="edui-button-body edui-default btn btn-sm" title="预览"></span>
+					</a>
+				</div>
+			</li>
+			<li>
+				<div class="navbar-btn btn-group">
+					<a id="sourceEdit" href="javascript:rightFrame.findNext(false);"> 
+						<span class="edui-for-source btn btn-sm" title="向下查找"></span>
+					</a>
+				</div>
+			</li>
+			<li>
+				<div class="navbar-btn btn-group">
+					<a id="sourceEdit" href="javascript:rightFrame.findNext(true);"> 
+						<span class="edui-for-source btn btn-sm" title="向上查找"></span>
+					</a>
+				</div>
+			</li>
+		</ul>
+		
+		
+
+		<ul class="nav navbar-nav navbar-left" style="clear:both;">
+			<li  style="vertical-align: bottom;">
+			<!-- 改变批量选中条件 -->
+				<div class="navbar-btn btn-group">
+					<a id="selectTypeBtn" href="javascript:showBtnSelectBox('selectTypeBtn','select');">
+					<img src="rtbox/app/visual/images/select.png"
+						  title="框选条件"/>
+					
+					</a>
+				</div>
+			</li>
+			<li>
+			<!-- <li  style="vertical-align: bottom;">
+			改变批量选中条件
+				<div class="navbar-btn btn-group">
+					<span style="color:#3498db;">框选条件：</span>
+					<a href="javascript:void(0);"> <select id="fontFamilys" style="width:100px;"
+														   onchange="changeSelectSeledType(this.value);">
+						<option value="input">输入框</option>
+						<option value="span">文本</option>
+						<option value="td">单元格</option>
+					</select>
+					</a>
+				</div>
+			</li> -->
+			<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:rightFrame.topLine();"> <span
+							class="edui-for-border-top btn btn-sm" title="上边框"></span>
+					</a>
+				</div>
+			</li>
+			<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:rightFrame.bottomLine();"> <span
+							class="edui-for-border-bottom btn btn-sm" title="下边框"></span>
+					</a>
+				</div>
+			</li>
+			<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:rightFrame.leftLine();"> <span
+							class="edui-for-border-left btn btn-sm" title="左边框"></span>
+					</a>
+				</div>
+			</li>
+			<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:rightFrame.rightLine();"> <span
+							class="edui-for-border-right btn btn-sm" title="右边框"></span>
+					</a>
+				</div>
+			</li>
+			<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:rightFrame.noneLine();"> <span
+							class="edui-for-border-none btn btn-sm" title="无边框"></span>
+					</a>
+				</div>
+			</li>
+			<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:rightFrame.allLine();"> <span
+							class="edui-for-border-all btn btn-sm" title="全边框"></span>
+					</a>
+				</div>
+			</li>
+				<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:rightFrame.mergeGridTd();"> <span
+							class="edui-for-input-mergetd btn btn-sm" title="合并单元格"></span>
+					</a>
+				</div>
+			</li>
+				<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:setTrHeight();"> <span
+							class="" title="行高">行高</span>
+					</a>
+				</div>
+			</li>
+			<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:rightFrame.setTopMargin();"> <span
+							class="" title="上边距">上边距</span>
+					</a>
+				</div>
+			</li>
+				<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:rightFrame.setBottomMargin();"> <span
+							class="" title="下边距">下边距</span>
+					</a>
+				</div>
+			</li>
+			
+			<li class="menu-divider hidden-xs"><i class="fa fa-circle"></i>
+			</li>
+			
+			<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:rightFrame.addText();"> <span
+							class="edui-for-text btn btn-sm" title="添加文本"></span>
+					</a>
+				</div>
+			</li>
+			<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:rightFrame.addInput();"> <span
+							class="edui-for-input btn btn-sm" title="添加输入框"></span>
+					</a>
+				</div>
+			</li>
+			<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:rightFrame.deleteControler();"> <span
+							class="edui-for-delete btn btn-sm" title="清空选中单元格内容"></span>
+					</a>
+				</div>
+			</li>
+			<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:changeScreen();"> <span
+							class="" title="切换纸张方向">横/竖页</span>
+					</a>
+				</div>
+			</li>
+			<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:showInput();"> <span
+							class="edui-for-show btn btn-sm" title="预览"></span>
+					</a>
+				</div>
+			</li>
+			<li>
+				<div class="navbar-btn btn-group">
+					<a href="javascript:void();"> <span
+							class="edui-for-help btn" title="帮助"></span>
+					</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+	</div>
+	<!-- End: Header --> 
+</c:if>	
+
+	
+	<!-- Start: Sidebar -->
+	<div id="sidebar_left" class="nano nano-light affix sidebar-light">
+		<!-- Start: Sidebar Left Content -->
+		<div class="sidebar-left-content nano-content" id="treeH"> 
+			
+			<!-- Start: Sidebar Header -->
+			<div class="sidebar-header"> 
+				
+				<div class="sidebar-widget author-widget">
+					 <ul id="tree1"></ul>
+				</div>
+
+				
+				
+				
+				
+			</div>
+			<!-- End: Sidebar Header --> 
+			
+		</div>
+		<!-- End: Sidebar Left Content --> 
+		
+	</div>
+	<!-- End: Sidebar Left --> 
+	
+	<!-- Start: Content-Wrapper -->
+	<div id="content_wrapper" align="center">
+		<div  class="cont_center">
+<!-- 		<iframe id="rightFrame" frameborder="0" name="rightFrame" width="100%" height="100%" scrolling="no" src="test.html" /></iframe> -->
+		<iframe marginwidth="0" id="rightFrame" name="rightFrame" marginheight="0" frameborder="0" valign=top 
+		src=" " name="rtree"
+	                width='100%' height=900 scrolling="no" allowTransparency>
+	     </iframe>
+		</div>
+
+		
+	</div>
+	<!-- End: Content-Wrapper --> 
+	<div class="rightPrepoties">
+		<div style="background-color: #36648B;color: white;">属性
+		<a style="float: right;" href="javascript:propertiesWindow(false)">
+			<img alt="关闭属性窗口" src="rtbox/app/visual/images/close.png">
+		</a>
+		</div>
+		<div ><lable>控件类型</lable>
+			<select id="pro_tag" onchange="changeTag(this.value);">
+						<option value="INPUT">单行输入框</option>
+						<option value="TEXTAREA">多行文本框</option>
+						<option value="SELECT">下拉框</option>
+						<option value="SELECT2">下拉多选框</option>
+						<option value="CHECKBOX">单个复选框</option>
+						<option value="CHECKBOXDIV">多个复选框</option>
+						<!-- <option value="RADIO">单选框</option> -->
+						<option value="DATE">日期选择框</option>
+						<option value="PICTRUE">图片</option>
+						</select>
+		</div>
+		<!-- <div><lable>类型</lable>
+			<select id="pro_type" onchange="rightFrame.changeTagType(this.value);">
+						<option value="text">文本框</option>
+						<option value="select">选择框</option>
+						<option value="checkbox">复选框</option>
+						<option value="radio">单选框</option>
+						<option value="date">日期选择框</option>
+						</select></div> -->
+		<div class="single"><lable>名字</lable><input  id="pro_name" onchange="rightFrame.changeInputName(this.value)"/></div>
+		
+		
+		<div class="single"><lable>命名关联</lable>
+			<select id="pro_db" onchange="changeDbLink(this.value);">
+						<option value="inspect">检验业务</option>
+						<option value="device">设备基础信息</option>
+						<option value="boiler">锅炉参数</option>
+						<option value="elevator">电梯参数</option>
+						<option value="crane">起重机参数</option>
+						<option value="accessory">安全阀参数</option>
+						<option value="pressurevessels">压力容器参数</option>
+						<option value="engine">厂车参数</option>
+						<option value="rides">游乐设施参数</option>
+						<option value="pipeline">压力管道参数</option>
+						<option value="kysd">客运索道参数</option>
+						
+				</select>
+
+		</div>
+		<div class="single"><lable id="pro_db_lable">选择命名</lable><input  id="pro_db_link" /></div>
+		<div><lable>点击事件</lable><input  id="pro_onclick" /></div>
+		<div><lable>改变事件</lable><input  id="pro_onchange" /></div>
+		<div  style="background-color: #36648B;color: white;">值关联</div>
+		<div ><textarea  style="width:100%;height:200px;" id="select_data_div" row="10" ></textarea></div>
+		
+		<div><lable>默认值</lable><input  id="pro_value" onchange="rightFrame.setinputFocusInitValue(this.value)"/></div>
+		<div class="select"><lable>SQL</lable>
+		<input  id="dict_by_sql" onkeydown="showDictData(event,this)" />
+		<div class="select"><lable>码表名字</lable>
+		<input  id="pro_code_name" onclick="linkSearchShow(this)"/>
+		</div>
+		<div class="select"><lable>码表code</lable>
+		<input  id="pro_code" onclick="linkSearchShow(this)"/>
+		</div>
+		<div class="pro-code" style="display: none;"><textarea  style="width:100%;height:200px;" id="pro_code_div" row="6" readonly></textarea></div>
+		<div  class="select pro-data" style="color:#36648B">data:</div>
+		<div class="select pro-data"><textarea  style="width:100%;height:200px;" id="pro_data_div" row="6" onchange="rightFrame.changeInputDataConfig(this.value)"></textarea></div>
+		
+	</div>
+	
+	<ul id="linkSearch" class="linkUl">
+		<li><a></a></li>
+	</ul>
+	<ul id="linkHeadBtn" class="linkUl">
+		<li><a></a></li>
+	</ul>
+	
+	
+</div>
+<!-- End: Main --> 
+
+<!-- BEGIN: PAGE SCRIPTS --> 
+
+<!-- jQuery --> 
+<!-- <script src="vendor/jquery/jquery-1.11.1.min.js"></script>  -->
+<!-- <script src="vendor/jquery/jquery_ui/jquery-ui.min.js"></script>  -->
+
+<!-- Theme Javascript --> 
+<script src="rtbox/app/templates/default/assets/js/demo/demo.js"></script> 
+<script src="rtbox/app/templates/default/assets/js/main.js"></script> 
+
+<!-- END: PAGE SCRIPTS -->
+
+</body>
+<script type="text/javascript">
+
+</script> 
+</html>

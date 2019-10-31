@@ -1,0 +1,7 @@
+﻿
+/* ie9 hack 主 2013年02月09日 星期二 13:12:45 lybide
+ ie9 兼容
+ */
+
+.l-btn-disabled .l-button-icon {opacity:1;}
+.l-panel-btn-disable {opacity:1;}

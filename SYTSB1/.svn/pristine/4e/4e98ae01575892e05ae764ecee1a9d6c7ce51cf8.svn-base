@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="init-project" default="export-resource" basedir=".">
+
+	<!-- =================================
+                 property: init ...             
+         ================================= -->
+
+	<property name="svn.k.url" value="svn://src.khnt.com/01%E5%BC%80%E5%8F%91%E5%BA%93/99%E5%BC%80%E5%8F%91%E5%B9%B3%E5%8F%B0/01%E5%8F%91%E5%B8%83%E6%96%87%E4%BB%B6/web/k" />
+	<property name="svn.app.url" value="svn://src.khnt.com/01%E5%BC%80%E5%8F%91%E5%BA%93/99%E5%BC%80%E5%8F%91%E5%B9%B3%E5%8F%B0/01%E5%8F%91%E5%B8%83%E6%96%87%E4%BB%B6/web/app" />
+	<property name="svn.pub.url" value="svn://src.khnt.com/01%E5%BC%80%E5%8F%91%E5%BA%93/99%E5%BC%80%E5%8F%91%E5%B9%B3%E5%8F%B0/01%E5%8F%91%E5%B8%83%E6%96%87%E4%BB%B6/web/pub" />
+
+	<property name="src.dir" value="${basedir}/src/main/java" />
+	<property name="test.dir" value="${basedir}/src/test/java" />
+	<property name="k.dir" value="${basedir}/src/main/webapp/k" />
+	<property name="app.dir" value="${basedir}/src/main/webapp/app" />
+	<property name="pub.dir" value="${basedir}/src/main/webapp/pub" />
+
+	<property name="svnant.lib.dir" value="D:\Application\devtools\svnant-1.3.1" />
+
+	<!-- =================================
+                 classpath, property init           
+        ================================= -->
+	<path id="svnant.classpath">
+		<fileset dir="${svnant.lib.dir}">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+	<!-- load the svn task -->
+	<typedef resource="org/tigris/subversion/svnant/svnantlib.xml" classpathref="svnant.classpath" />
+
+	<svnSetting id="svn.settings" javahl="false" username="" password="" />
+
+	<target name="init">
+		<mkdir dir="${src.dir}" />
+		<mkdir dir="${test.dir}" />
+		<mkdir dir="${k.dir}" />
+		<mkdir dir="${pub.dir}" />
+		<mkdir dir="${app.dir}" />
+	</target>
+
+	<target name="export-resource">
+		<svn refid="svn.settings">
+			<export srcUrl="${svn.k.url}" revision="HEAD" destPath="${k.dir}" force="true" />
+			<export srcUrl="${svn.app.url}" revision="HEAD" destPath="${app.dir}" force="true" />
+			<export srcUrl="${svn.pub.url}" revision="HEAD" destPath="${pub.dir}" force="true" />
+		</svn>
+	</target>
+	<target name="compile">
+		<javac fork="true" target="1.6" srcdir="${src.dir}" destdir="${class.dir}" debug="true" encoding="utf-8">
+			<classpath refid="project.class.path" />
+		</javac>
+	</target>
+</project>

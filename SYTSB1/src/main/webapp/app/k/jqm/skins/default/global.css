@@ -1,0 +1,23 @@
+/*
+
+2014/11/14 21:17 lybide
+
+此文件主要控制前台页面中的基本类
+
+*/
+
+body {background:#fff9ed;font-size:12px;font-family:"Microsoft yahe","微软雅黑","宋体","Microsoft yahei","Lucida Grande","Verdana","Helvetica","Georgia","微软雅黑","宋体";margin:0px auto 0px auto;padding:0px 0px 0px 0px;}
+td {}
+img {}
+input,select,textarea {font-size:14px;}
+textarea {overflow:auto;width:99% !important;}
+
+/*html {filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);}*/
+
+p {}
+br {}
+form {margin:0px;}
+div {}
+
+.hide {display:none;}
+.show {display:;}

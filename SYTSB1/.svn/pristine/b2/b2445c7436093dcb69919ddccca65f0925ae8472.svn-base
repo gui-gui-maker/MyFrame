@@ -1,0 +1,107 @@
+
+/* lybide 编辑 2012-03-06 17:19:02 (nframe) lybide
+ 自定义的基类样式，用于控制单个项目的元素
+ */
+
+.l-radio-group-wrappe,.l-checkbox-group-wrapper{width: 100%}
+.l-radio-group-wrapper label,.l-checkbox-group-wrapper label {padding: 0 5px 0 2px }
+
+/* 详情页面 2012-02-21 15:10:31 (nframe) lybide */
+.l-page-top { height:40px; background:#e6f0fb; padding:5px;margin:5px;border:1px solid #609fe6;}
+.l-page-top-div {text-align:center;}
+.l-page-top-div div {padding:0px 0px 0px 0px;}
+.l-page-top-div div span {line-height:40px;font-weight:bold;font-size:18px;color:#106abc;letter-spacing:10px; }
+
+#l_d_title_mzxt .l-page-top-div div {/*background:url("../../icons/once/Home.png") no-repeat 8px 0px;*/}
+#layout1 {/*margin:0 auto;border:0px; width:100%; overflow:hidden;*/}
+
+.l-search-table {}
+.l-search-table td {padding:5px;}
+
+.l-detail-big {padding:5px;margin:5px;border:0px solid #609fe6;}
+.l-detail-div {padding:5px;}
+.l-detail-table {width:100%;padding:5px;border:0px solid #CFE3F8;border-top:0px;border-left:0px;word-break:break-all;table-layout:fixed;}
+.l-detail-table td {}
+.l-detail-note {color:#7d7d7d;}
+.l-page-bottom {border:0px solid #FF0000;}
+.b-toolbar {background:#f0f7fd; border-top:0px solid #80bcee; padding:5px; text-align:right;}
+/*.b-toolbar input {border:1px solid #FF0000; padding:5px; background:#ffcc99;}*/
+.b-toolbar input{padding:0px 10px 5px 12px;padding:5px 10px 2px 12px\0;*padding:4px 10px 2px 10px;margin-left:6px;cursor:pointer;display:inline-block;
+text-align:center;line-height:1;height:23px;letter-spacing:3px;overflow:visible;color:#333;border:solid 1px #999;border-radius:3px;border-radius:0\9;background:#DDD;background:linear-gradient(top,#FAFAFA,#E4E4E4);background:-moz-linear-gradient(top,#FAFAFA,#E4E4E4);background:-webkit-gradient(linear,0% 0%,0% 100%,from(#FAFAFA),to(#E4E4E4));background:-o-linear-gradient(top,#FAFAFA,#E4E4E4);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAFAFA',endColorstr='#E4E4E4');text-shadow:0 1px 1px rgba(255,255,255,1);box-shadow:0 1px 0 rgba(255,255,255,.7),0 -1px 0 rgba(0,0,0,.09);
+-moz-transition:-moz-box-shadow linear .2s;-webkit-transition:-webkit-box-shadow linear .2s;transition:box-shadow linear .2s; }
+.b-toolbar input:focus{outline:0 none;box-shadow:0 0 3px #0e78c9; }
+.b-toolbar input:hover{/*border-color:#666;box-shadow:none;*/color:#FFF;border:solid 1px #1c6a9e;text-shadow:0 -1px 1px #1c6a9e;background:#2288cc;
+background:linear-gradient(top,#33bbee,#2288cc);background:-moz-linear-gradient(top,#33bbee,#2288cc);background:-webkit-gradient(linear,0% 0%,0% 100%,from(#33bbee),to(#2288cc));background:-o-linear-gradient(top,#33bbee,#2288cc);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#33bbee',endColorstr='#2288cc'); outline:none;}
+.b-toolbar input:active{ border-color:#666;background:linear-gradient(top,#FAFAFA,#E4E4E4);background:-moz-linear-gradient(top,#FAFAFA,#E4E4E4);
+background:-webkit-gradient(linear,0% 0%,0% 100%,from(#FAFAFA),to(#E4E4E4));background:-o-linear-gradient(top,#FAFAFA,#E4E4E4);
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAFAFA',endColorstr='#E4E4E4'); outline:none; }
+
+/* 星期二, 2012-04-10 9:24 AM 整合样式 ------------------------------------------------------------ */
+
+.l-link {display:block;	height:26px; line-height:26px; padding-left:10px; text-decoration:underline; color:#333;}
+.l-link2 {text-decoration:underline; color:white;}
+.l-layout-top {/*background:#102A49; color:White;*/}
+.l-layout-bottom {background:#E5EDEF;	text-align:center;}
+#pageloading {position:absolute; left:0px; top:0px;	background:white url('../images/common/loading.gif') no-repeat center; width:100%; height:100%;	z-index:99999;}
+.l-link {display:block;	line-height:22px;	height:22px; padding-left:20px;	border:1px solid white;	margin:4px;}
+.l-link-over {background:#FFEEAC;	border:1px solid #DB9F00;}
+.l-winbar {background:#2B5A76; height:30px;	position:absolute; left:0px; bottom:0px; width:100%; z-index:99999;}
+
+#abc , .h7px {height:7px;}
+#tree1 {margin-top:3px;}
+.myhome {height:300px;}
+.flow {display:none;}
+
+/* Monday, 2012-04-16 8:44 AM 重新修改框架头尾 ------------------------------------------------------------ */
+.m_top {height:50px;/*border-top:#759ace solid 1px;border-bottom:#bed5f3 solid 1px;*/background:url(../images/kui/top_bj1.jpg) repeat-x left top;overflow:hidden; color:#fff;}
+.m_top_bg {height:50px;overflow:hidden;background:url(../images/kui/top_bj2.png) no-repeat right top;}
+.m_caption {float:left;height:50px;padding-left:344px;font-size:14px;font-weight:bold;line-height:50px;background:url(../images/kui/logo.png) no-repeat left top;}
+
+.m_sys_icn {float:right;font-size:12px;padding-top:14px;text-align:right; margin-right:10px;}
+.m_sys_icn a {display:block;float:left;height:21px;line-height:21px;text-decoration:none; padding:0px 8px; outline:none; background: url(../images/kui/xian.png) no-repeat right center; _background: url(../images/kui/xian6.gif) no-repeat right center;}
+.m_sys_icn a.last {background:none;}
+.m_sys_icn a span {display:block; width:20px; height:21px;}
+.m_sys_icn a span.sin_hm {background:url(../images/kui/icon.png) no-repeat left top; _background:url(../images/kui/icon6.gif) no-repeat left top;}
+.m_sys_icn a span.sin_pw {background:url(../images/kui/icon.png) no-repeat left -21px; _background:url(../images/kui/icon6.gif) no-repeat left -21px;}
+.m_sys_icn a span.sin_hp {background:url(../images/kui/icon.png) no-repeat left -42px; _background:url(../images/kui/icon6.gif) no-repeat left -42px;}
+.m_sys_icn a span.sin_screen {background:url(../images/kui/icon.png) no-repeat left -63px; _background:url(../images/kui/icon6.gif) no-repeat left -63px;}
+
+.m_username {float:right;line-height:50px;margin-right:6px;}
+.m_username a {font-size:12px; color:#fff; text-decoration:none; outline:none;}
+.user_ava , .user_name , .sin_ex {display:inline-block; height:32px; margin-right:5px; overflow:hidden; vertical-align:top;}
+.user_ava {margin-top:4px;}
+.m_bottom {font-size:12px; height:30px; line-height:30px; padding:0px 15px; overflow:hidden;background:url(../images/kui/btmbj.png) repeat center top;color:#fff;}
+.m_bottom em.m_copy {float:left;}
+.m_bottom em.m_copy a {display:inline-block; height:30px; padding-left:21px; margin-right:20px; color:#fff; text-decoration:none;}
+.m_bottom em.m_copy a:hover {text-decoration:underline;}
+.sex1 {background:url("../images/kui/photo.png") no-repeat left top;border:0px solid #fffbf0;width:32px;height:32px;}
+
+.ft_mail {background:url(../images/login/foot_icon.png) no-repeat left top;}
+.ft_date {background:url(../images/login/foot_icon.png) no-repeat left -30px;}
+.ft_book {background:url(../images/login/foot_icon.png) no-repeat left -60px;}
+.ft_www {background:url(../images/login/foot_icon.png) no-repeat left -60px;}
+.ft_book2 {background:url(../images/kui/foot_icon.png) no-repeat left -60px;}
+.ft_online {background:url(../images/login/foot_icon.png) no-repeat left -90px;}
+.ft_soft {background:url(../images/login/foot_icon.png) no-repeat left -120px;}
+.ft_rank {background:url(../images/login/foot_icon.png) no-repeat left -150px;}
+.ft_check {background:url(../images/login/foot_icon.png) no-repeat left -180px;}
+.ft_msg {background:url(../../../../../webim/images/record1.gif) no-repeat left 8px;}
+.ft_msg_ss {background:url(../../../../../webim/images/face/92.gif) no-repeat -3px 4px;}
+.ft_msg_ss span {color:#FF0000;}
+
+.m_bottom em.m_agree {float:right;}
+.m_bottom em.m_agree a {display:block; width:16px; height:30px; background:url(../images/login/khlogo.png) no-repeat left center;}
+.m_bottom em.m_agree a span {display:none;}
+
+/*替换的div*/
+div .input { width:100%; padding:0px 0px 0px 0px; line-height:20px; border-bottom:1px #9db9e2 solid; }
+div .lineWrap { border-bottom:0px; }
+/*div .lineWrap li{ list-style: outside; }*/
+
+.l-lineWrap1 {margin:0px;padding:0px;list-style-type:none;}
+.l-lineWrap1-li {border-bottom:1px #9db9e2 solid;}
+.l-lineWrap1-li-div {}
+
+
+
+

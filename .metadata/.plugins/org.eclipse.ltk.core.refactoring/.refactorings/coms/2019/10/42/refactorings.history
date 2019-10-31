@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;rabbitmq&apos;&#x0D;&#x0A;- Original project: &apos;coms&apos;&#x0D;&#x0A;- Destination element: &apos;rabbitmq&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     slf4j-api-1.7.26.jar&#x0D;&#x0A;     slf4j-simple-1.7.26.jar" description="Copy files" element1="rabbitmq/slf4j-api-1.7.26.jar" element2="rabbitmq/slf4j-simple-1.7.26.jar" files="2" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1571299161661" target="/producer01/rabbitmq" units="0" version="1.0"/>
+</session>

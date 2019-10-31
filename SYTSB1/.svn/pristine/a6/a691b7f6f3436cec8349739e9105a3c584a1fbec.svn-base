@@ -1,0 +1,228 @@
+//创建一个上传实例
+function KHFileUploader(config){
+	if(!window.plupload){
+		$("head").append('<script type="text/javascript" src="pub/fileupload/js/plupload.js"></script>' +
+			'<script type="text/javascript" src="pub/fileupload/js/plupload.flash.js"></script>' +
+			'<script type="text/javascript" src="pub/fileupload/js/plupload.html5.js"></script>');
+	}
+	
+	this.fileUploaderRuntime = null;
+	this.uploadRuntime = "html5,flash";
+	this.uploadedFiles = [];
+	var khUploader = this;
+	
+	//默认的配置
+	this.uploadConfig = {
+		fileId : "",//文件ID
+		fileSize : "10mb",//文件大小限制
+		businessId : "",//业务ID
+		busUniqueName : "",//唯一业务名称
+		buttonId : "pickfiles",//上传按钮ID
+		container : "container",//上传控件容器ID
+		title : "*",//文件选择框提示
+		extName : "*",//文件扩展名限制
+		saveDB : true,//是否往数据库写信息
+		attType : "",//文件存储类型；1:数据库，0:磁盘，默认为磁盘
+		workItem : "",//页面多点上传文件标识符号
+		fileNum : 1,//限制上传文件数目
+		callback : function(files){},//上传成功后回调函数
+		fileUploaded : function(file){},//单文件上传回调
+		uploadProgress : function(file){},//上传进度回调，file={id:'',name:'',size:123,percent:33,status:''}
+		filesAdded : function(files){},//添加文件事件,如果限制上传一个文件，files为单个文件，否则为选择的文件数组
+		queueChanged : null,//上传队列发生变化,
+		startAction : function(uploader){},//外部启动上传事件
+		onError : function(errCoee){},//错误信息
+		uploadError : function(file){}//上传失败
+	};
+	if(config){
+		$.each(config,function(k,v){
+			if(v) khUploader.uploadConfig[k] = v;
+		});
+	}
+	this.fileUploaderRuntime = new plupload.Uploader({
+		runtimes : this.uploadRuntime,
+		browse_button : this.uploadConfig.buttonId,
+		container: this.uploadConfig.container,
+		max_file_size : this.uploadConfig.fileSize,
+		url : kFrameConfig.base + "fileupload/fileUp.do?businessId=" + this.uploadConfig.businessId 
+				+ "&saveDB=" + this.uploadConfig.saveDB 
+				+ "&attType=" + this.uploadConfig.attType 
+				+ "&busUniqueName=" + this.uploadConfig.busUniqueName
+				+ "&workItem=" + this.uploadConfig.workItem
+				+ "&fileId=" + this.uploadConfig.fileId,
+		flash_swf_url : kFrameConfig.base + 'pub/fileupload/js/plupload.flash.swf?ddd='+Math.random(),
+		filters : [
+			{title : this.uploadConfig.title, extensions : this.uploadConfig.extName}
+		]
+	});
+	
+	this.setParams = function(param){
+		var url = kFrameConfig.base + "fileupload/fileUp.do?_r=0";
+		if(param.businessId)
+			url += "&businessId=" + param.businessId;
+		if(param.saveDB)
+			url += "&saveDB=" + param.saveDB;
+		if(param.attType)
+			url += "&attType=" + param.attType;
+		if(param.workItem)
+			url += "&workItem=" + param.workItem;
+		if(param.busUniqueName)
+			url += "&busUniqueName=" + param.busUniqueName;
+		this.fileUploaderRuntime.settings.url = url;
+	}
+	
+	// ----------------------------------以下为绑定事件----------------------------------------
+	
+	//外部触发上传
+	this.uploadConfig.startAction(this.fileUploaderRuntime);
+	
+	//添加文件事件
+	this.fileUploaderRuntime.bind('FilesAdded', function(uploader, files) {
+		if(khUploader.uploadConfig.fileNum > 0 && files.length > khUploader.uploadConfig.fileNum){
+			$.ligerDialog.alert("选择的文件太多，超过了限制！<br/>提示：您最多可上传【<b style='color:red'>" + khUploader.uploadConfig.fileNum + "</b>】个文件！");
+			return false;
+		}
+	});
+
+	//文件列表发生变化
+	this.fileUploaderRuntime.bind('QueueChanged',function(uploader) {//上传队列发生变化
+		khUploader.uploadConfig.filesAdded(uploader.files);
+		if(khUploader.uploadConfig.queueChanged)
+			khUploader.uploadConfig.queueChanged(uploader.files);
+		else uploader.start();
+	});
+	
+	//单个文件上传完成
+	this.fileUploaderRuntime.bind('FileUploaded', function(uploader,file,resObj) {
+		var json = $.parseJSON(resObj.response);
+		if(json.success){//上传成功
+			var fobj = json.data;
+			fobj.upId = file.id;
+			//{"id":json.data.id,"name":file.name,"path":json.data.path,"workItem":json.data.workItem,"upId":file.id};
+			khUploader.uploadedFiles.push(fobj);
+			khUploader.uploadConfig.fileUploaded(fobj);
+		}
+		else{//上传失败
+			khUploader.fileUploaderRuntime.stop();
+			khUploader.uploadConfig.uploadError(file);
+			khUploader.fileUploaderRuntime.refresh();
+		}
+	});
+	
+	//所有文件上传完成
+	this.fileUploaderRuntime.bind("UploadComplete",function(uploader,files){
+		khUploader.uploadConfig.callback(khUploader.uploadedFiles);
+		khUploader.uploadedFiles = [];
+	});
+
+	//文件上传进度变化
+	this.fileUploaderRuntime.bind("UploadProgress",function(uploader,file){
+		khUploader.uploadConfig.uploadProgress(file);
+	});
+	
+	//发生错误时
+	this.fileUploaderRuntime.bind('Error', function(uploader,error) {
+		if(error.code == plupload.FILE_SIZE_ERROR){
+			$.ligerDialog.alert("所选的文件【" + error.file.name + "】太大，超过了限制(" + uploader.settings.max_file_size/1024 + "KB)！");
+		}
+		else if(error.code == plupload.FILE_EXTENSION_ERROR){
+			$.ligerDialog.alert("文件类型错误！<br/>提示：可以选择的文件类型为<" + uploader.settings.filters[0].extensions + ">");
+		}
+		else if(error.code == plupload.INIT_ERROR){
+			$.ligerDialog.alert("页面加载错误！<br/>您可以刷新本页面尝试解决问题。");
+		}
+		else{
+			$.ligerDialog.alert("发生错误：" + error.code);
+		}
+		uploader.refresh();
+	});
+
+	this.fileUploaderRuntime.init();
+}
+
+function KHKuiFileuploader(config){
+	if(!config.fileContainer){
+		$.ligerDialog.alert("请指定附件容器！参数名称：fileContainer");
+		return;
+	}
+	var myConfig = {
+		fileContainer : config.fileContainer,
+		fileSize : config.fileSize?config.fileSize:"100mb",
+		businessId : config.businessId?config.businessId:"",
+		title : config.title?config.title:"图片",
+		extName :  config.extName?config.extName:"",
+		saveDB : config.saveDB?config.saveDB:false,
+		attType : config.attType?config.attType:"",
+		workItem : config.workItem?config.workItem:"",
+		fileNum : config.fileNum?config.fileNum:-1,
+		callback : config.callback?config.callback:function(file){}
+	};
+	
+	myConfig.fileUploaded = function(file){//单个回调函数
+		if(file){
+			$("#" + file.upId).find(".progress").addClass("l-icon-close").click(function(){
+				deleteUploadFile(file.id,file.path,this,function(){
+					if(config.delCallback){
+						config.delCallback(file);
+					}
+				});
+			});
+			$("#" + file.upId).find("a").attr("href","fileupload/downloadByFilePath.do?path="+ file.path + "&fileName=" + file.name);
+		}
+	};
+	
+	myConfig.uploadProgress = function(file){//上传进度回调
+		if(file.percent==100)
+			$("#" + file.id).find(".progress").html("&nbsp;");
+		else
+			$("#" + file.id).find(".progress").html("<span>"+ file.percent + "%<span>");
+	};
+	
+	myConfig.filesAdded = function(file){//添加文件到上传队列事件
+		var htmlStr = "";
+		if($.isArray(file)){
+			$.each(file,function(i){
+				htmlStr += '<li id="' + file[i].id + '"><div><a href="javascript:void();">' + file[i].name 
+					+ '</a></div><div class="progress">&nbsp;</div></li>';
+			});
+		}
+		else{
+			htmlStr = '<li id="' + file.id + '"><div><a href="javascript:void();">' + file.name 
+				+ '</a></div><div class="progress">&nbsp;</div></li>';
+		}
+		$("#" + myConfig.fileContainer).find(".file_list").append(htmlStr);
+	};
+	
+	myConfig.container = myConfig.fileContainer + "_container";
+	myConfig.buttonId = myConfig.fileContainer + "_pickfiles";
+	
+	//创建上传区域
+	$("#" + myConfig.fileContainer).append('<p id="' + myConfig.container + '"><a class="l-button" id="' + myConfig.buttonId 
+			+ '"><span class="l-button-main"><span class="l-button-text">选择文件</span></span></a></p>'
+			+ '<div class="l-upload-ok-list"><ul class="file_list"></ul></div>');
+	return new KHFileUploader(myConfig);
+}
+
+//删除服务器文件
+function deleteUploadFile(id, path,obj, callback) {
+    $.ligerDialog.confirm("确定删除文件？<p style='color:red'>注意：删除后不可恢复！</p>", function(flag) {
+		if(flag){
+			$("body").mask("正在删除，请稍后。。。");
+		    $.getJSON('fileupload/deleteAtt.do',{"id":id,"path":path}, function(resp) {
+		    	if(resp.success){
+		    		if(obj){
+		    			$(obj).parent().remove();
+		    		}
+		    		if(callback){
+		    			callback(id,path);
+		    		}
+					$("body").unmask();
+		    	}
+		    	else{
+					$("body").unmask();
+		    		alert("删除失败！");
+		    	}
+		    });
+		}
+    });
+}

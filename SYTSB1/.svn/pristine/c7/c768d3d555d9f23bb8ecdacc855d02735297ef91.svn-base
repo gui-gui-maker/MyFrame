@@ -1,0 +1,93 @@
+<%@ page contentType="text/html;charset=UTF-8"%>
+<script type="text/javascript" src="pub/fileupload/js/attachment.js"></script>
+<style type="text/css">
+.f_name {
+	border: 1px solid #96c2f1;
+	background: #eff7ff;
+	padding: 6px;
+	margin: 2px 0;
+}
+</style>
+<script type="text/javascript">
+var pluploadParam = {
+    window : window,
+    filter : "doc,docx",
+    callback : uploadCallback,
+    sid : null,
+    maxSize : "10mb",
+    attType : "",
+    fileNum : -1,
+    workItem : null,
+    resolution:null,
+    sizeInfo:null,
+    divice:null,
+    defineCallback : null,
+      applyTime : null
+};
+function uploadCallback(idStr,files){
+	$("#uploadFileList").val(idStr);
+	$.each(files,function(i,el){
+		$('#filelist').append('<div id="' + el.id + '"><span class="f_name">' + el.name + 
+						'</span><input type="button" value="删除" class="l-button" onclick="deleteFile(\'' + el.id +'\',uploadRemoveCallback)" /></div>');
+	});
+	if(pluploadParam.defineCallback)
+		pluploadParam.defineCallback(files);
+}
+
+function uploadRemoveCallback(id){
+	var ufl = $("#uploadFileList").val();
+	$("#uploadFileList").val(ufl.replace(id,"").replace(",,",","));
+	$("#" + id).remove();
+}
+
+/**
+    isReName:是否重命名
+    filePath:文件路径
+	fileSize：文件大小
+	filtersTitle: 选择文件时弹出框的文字提示
+	ext_name: 文件类型限定，用逗号","分隔的文件扩展名
+	businessId：业务ID，在业务未保存时可以为空，但是上传文件后在保存业务时必须进行业务和附件关联
+	attType: 文件存储类型（"1"：数据库，"0":文件系统，一般情况下为空"",表示使用全局应用配置）
+	fileNum：文件数量限制
+	defineCallback : 上传完成后的回调函数，函数参数为上传的文件数组，格式为：[{"id":"附件ID","name":"文件名称"}]
+	
+*/
+function configSetting(divice,resolution,sizeInfo,fileSize,filtersTitle,ext_name,businessId,attType,fileNum, applyTime,defineCallback){
+
+	if(divice)
+		pluploadParam.divice = divice;
+	if(resolution)
+		pluploadParam.resolution = resolution;
+	if(sizeInfo)
+		pluploadParam.sizeInfo = sizeInfo;
+	if(fileSize)
+		pluploadParam.maxSize = fileSize;
+	if(filtersTitle != null && ext_name != null)
+		pluploadParam.filter = ext_name;
+	if(businessId)
+		pluploadParam.sid = businessId;
+	if(attType)
+		pluploadParam.attType = attType;
+	if(fileNum)
+		pluploadParam.fileNum = fileNum;
+	if(defineCallback)
+		pluploadParam.defineCallback = defineCallback;
+			if(applyTime)
+		pluploadParam.applyTime = applyTime;
+}
+
+/**
+ * 页面多点上传附件，可以配置每个点的标识，在同页面不同地方上传附件时，先设置该参数
+ * @param item 附件业务标识
+ */
+function setFileWorkItem(item){
+	pluploadParam.workItem = item;
+}
+
+$(function(){
+	//默认地使用ID为pickfiles的页面元素作为上传按钮
+	$("#pickfiles").bind("click",function(){
+		doAndroidUploadFiles(pluploadParam);
+	});
+});
+</script>

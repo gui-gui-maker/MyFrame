@@ -1,0 +1,13 @@
+﻿
+/* xp下的ie8 hack 主 2013-5-30 下午9:52 lybide
+ ie8 兼容
+ */
+
+/*body,input,button,select,textarea {font-family:"宋体","宋体";font-size:12px;}*/
+.l-text {padding:4px 4px;}
+.l-text-field {background:url("../../../frame/pngfix/blank.gif");}
+.l-text-field.requiredstar {background:url(../images/common/required2.gif) no-repeat right center;}
+
+.l-page-title1-text h1 {font-family:"黑休","宋体";border:0px solid #FF0000;}
+.l-page-title1.has-icon .l-page-title1-icon {display:block;position:absolute;left:10px;top:5px;}
+.l-page-title1.no-note.has-icon .l-page-title1-text {padding:10px 10px 10px 10px;}

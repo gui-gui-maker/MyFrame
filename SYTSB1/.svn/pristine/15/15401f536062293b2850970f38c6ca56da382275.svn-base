@@ -1,0 +1,1 @@
+﻿<%@ page contentType="text/html;charset=UTF-8"%>{"success":${success},"data":{"task":"${task}","total":"${total}","msg":"${msg}"}}

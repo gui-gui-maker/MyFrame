@@ -1,0 +1,53 @@
+﻿
+/* 通用效果 2014年06月17日 17:57:42 星期二 lybide */
+
+.border-1 {border:1px solid #FF9933;}
+
+/* title 效果 */
+.k-e-tooltip {position:absolute;z-index:9999;max-width:500px;overflow:hidden;}
+.k-e-tooltip-wrap {padding:5px;}
+.k-e-tooltip-trans {position:absolute;z-index:9998;border:1px solid #767676;background:#edeef5;opacity:0.5;filter:alpha(opacity=50);box-shadow:3px 3px 5px 0px #8E8E8E;filter:progid:DXImageTransform.Microsoft.shadow(direction=135,color=#8E8E8E,strength=5);box-shadow:0 0 6px rgba(0, 0, 0, 0.3);}
+
+/*外壳程序 消息提示*/
+.s-b-msg-list {width:100%;padding:0;margin:0;overflow:hidden;position:relative;}
+.s-b-msg-list .msg-item {margin:0;padding:0;display:none;}
+.s-b-msg-list .msg-item .msg-content {position:absolute;top:10px;right:5px;bottom:30px;left:5px;word-break:break-all;overflow:hidden;padding:5px;}
+.s-b-msg-list .msg-item .msg-content:hover {}
+.s-b-msg-list .msg-item .msg-content a {}
+.s-b-msg-list .msg-item .msg-content a:hover {}
+.s-b-msg-list .msg-info {position:absolute;bottom:10px;width:100%;color:#3e3f40;}
+.s-b-msg-list .msg-info .a {float:left;margin-left:10px;}
+.s-b-msg-list .msg-info .b {float:right;margin-right:10px;}
+.s-b-msg-nav {width:100%;text-align:left;position:absolute;bottom:0;border-top:1px solid #DDDDDD;height:38px;}
+.s-b-msg-nav a {text-decoration:none;display:inline-block;/*float:left;*/text-align:center;margin:0;/*height:18px;*//*color:#6666FF;font-weight:bold;*/padding:0px 5px !important;height:18px !important;line-height:18px !important;}
+.s-b-msg-nav a.prev,.s-b-msg-nav a.next {width:20px;height:20px;float:right;}
+.s-b-msg-nav a.prev:hover,.s-b-msg-nav a.next:hover {color:red}
+.s-b-msg-nav .prev {background:url("../../../images/icons/16/control_prev_blue.png") no-repeat center center;top:50%;margin-top:-10px;right:70px;position:absolute;z-index:5;display:none;}
+.s-b-msg-nav .next {background:url("../../../images/icons/16/control_play_blue.png") no-repeat center center;top:50%;margin-top:-10px;right:0px;position:absolute;z-index:5;display:none;}
+.s-b-msg-nav .no {width:50px;top:50%;margin-top:-10px;position:absolute;z-index:2;right:25px;cursor:default;display:none;text-align:center;}
+.s-b-msg-nav a.no span.count {display:inline-block;padding-left:1px;}
+.s-b-msg-nav a.no span {}
+.s-b-msg-nav a.mark {float:left;display:inline-block;padding:5px;}
+.s-b-msg-nav a.readed {color:gray;display:none;padding:5px 0;}
+.s-b-msg-nav a.l-icon-f5 {width:25px;cursor:pointer;margin-left:5px;}
+.s-b-msg-nav-wrap {padding:10px 0px 0px 5px;}
+.s-b-msg-error {font-size:14px;color:red;width:97%;text-align:center;margin:20px auto 0 auto;}
+.s-b-msg-title {width:100%;height:20px;position:relative;top:0px;left:0px;}
+.s-b-msg-title .title {position:absolute;top:0px;left:0px;padding:5px 0 0 10px;font-weight:bold;}
+.s-b-msg-title .close {position:absolute;top:5px;right:5px;width:16px;height:16px;background:url("../images/basic/close2.png") repeat-x top left;}
+.s-b-msg-title .close a {display:block;width:16px;height:16px;}
+.s-b-msg-title .close:hover {background-position:0px -16px;}
+.s-b-msg-title .close span {display:none;}
+.s-b-msg-main {}
+.s-b-msg-page-main {position:absolute;left:0px;top:0px;z-index:1;cursor:default;}
+.s-b-msg-page-wrap {}
+.s-b-msg-page-main.isshell {background:url("../images/basic/l-page-title3a.png") repeat-x top left;}
+.s-b-page-win {}
+.s-b-page-win .ui_border {border:1px solid #FF9933;}
+.s-b-page-win .ui_title_bar {right:5px;bottom:26px;left:10px;width:auto;}
+.s-b-page-win .ui_title {color:#000;height:auto;line-height:normal;font-size:12px;}
+.s-b-page-win .ui_title_buttons {top:0;right:15px;}
+.s-b-page-win .ui_t,.s-b-page-win .ui_b {background-image:none;}
+.s-b-page-win .ui_t {height:35px;background:url("../images/basic/l-page-title3a.png") repeat-x top left;}
+.s-b-page-win .ui_lt,.s-b-page-win .ui_rt,.s-b-page-win .ui_lb,.s-b-page-win .ui_rb,.s-b-page-win .ui_l,.s-b-page-win .ui_r
+{background-image:none;width:auto;height:auto;}

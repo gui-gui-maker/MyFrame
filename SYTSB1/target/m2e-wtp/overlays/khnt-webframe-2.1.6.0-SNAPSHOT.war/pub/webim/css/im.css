@@ -1,0 +1,259 @@
+
+body {
+    font-family:'lucida grande',tahoma,arial,sans-serif;
+    font-size:11px;
+    /*margin:2px;*/
+    /*padding:2px*/
+}
+a {
+    color:#15428B;
+}
+a:link, a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+
+.icon-msg {
+    background-image:url(../images/msg.gif) !important;
+}
+.icon-friend-msg {
+    background-image:url(../images/friendmsg.png) !important;
+}
+.icon-sys-msg {
+    background-image:url(../images/sysmsg.png) !important;
+}
+
+.x-tool-personlset {
+    background-image:url(../images/set.png) !important;
+}
+
+.x-tool-personlset-over {
+    background-image:url(../images/set.gif) !important;
+}
+.personlset {
+    background-image:url(../images/set.png) !important;
+}
+.hismsgtab {
+    background-image:url(../images/record.gif) !important;
+}
+.save {
+    background-image:url(../images/save.png) !important;
+}
+.cancel {
+    background-image:url(../images/cancel.png) !important;
+}
+
+.displaynone {
+    display: none;
+}
+
+.big-header-img{
+    border:1px solid #599CE0;
+    padding:1px;
+    overflow:hidden;
+	height: 40px;
+	width: 40px;
+    cursor:hand;
+}
+
+
+
+
+
+#imTaskbar .thumb{
+    background: #dddddd;
+    /*padding: 1px;*/
+}
+#imTaskbar .thumb img{
+    height: 40px;
+    width: 40px;
+}
+#imTaskbar .thumb-wrap{
+    float: left;
+    /*margin: 2px;*/
+    /*margin-right: 0;*/
+    /*background: #dddddd;*/
+    padding: 9px;
+}
+#imTaskbar .thumb-wrap-active{
+    /*float: left;*/
+    /*margin: 12px;*/
+    /*margin-right: 0;*/
+    /*background: #dddddd;*/
+    padding-top: 2px;
+    /*padding-left: 2px;*/
+    /*padding-right: 16px;*/
+}
+
+#imTaskbar .x-view-over{
+    /*border:1px solid #dddddd;*/
+    /*background: #dddddd;*/
+    background:url(../images/bg.gif) no-repeat left top;
+    /*padding: 4px;*/
+}
+#imTaskbar .x-view-selected{
+    background: #33ffcc;
+    border: 1px solid #0066ff;
+    margin: 4px;
+    padding: 4px;
+}
+#imTaskbar .x-view-selected .thumb{
+    background:transparent;
+}
+
+
+
+#headImgWin .thumb{
+    background: #dddddd;
+    padding: 1px;
+}
+#headImgWin .thumb img{
+    height: 40px;
+    width: 40px;
+}
+#headImgWin .thumb-wrap{
+    float: left;
+    /*margin: 2px;*/
+    /*margin-right: 0;*/
+    /*background: #dddddd;*/
+    padding: 5px;
+}
+
+#headImgWin .x-view-over{
+    /*border:1px solid #dddddd;*/
+    /*background: #dddddd;*/
+    background:url(../images/bg.gif) no-repeat left top;
+    /*padding: 4px;*/
+}
+#headImgWin .x-view-selected{
+    background: #33ffcc;
+    border: 1px solid #0066ff;
+    margin: 2px;
+    padding: 2px;
+}
+#headImgWin .x-view-selected .thumb{
+    background:transparent;
+}
+
+
+
+
+
+
+
+/*快捷键提示*/
+.shortcuts{
+	position:absolute;
+	width:500px;
+	height:45px;
+	left:10px;
+	top:5px;
+	bottom:0;
+	z-index:9;
+	background:#fff;
+	color:#6f6f6f;
+	padding-top:5px;
+}
+.shortcuts *{
+	float:left;
+}
+.shortcuts div{
+	width:80px;
+	padding-left:20px;
+	height:30px;
+	line-height:30px;
+	font-size:14px;
+    vertical-align:middle;
+	background:url(../images/shortcuts.gif) no-repeat left center;
+}
+.shortcuts ul{
+	width:400px;
+}
+.shortcuts li{
+	width:200px;
+	height:25px;
+	line-height:30px;
+}
+/*快捷键提示*/
+
+
+
+
+.msgBox{
+    overflow-x:hidden;
+}
+
+p.my-msg{
+	color: #009933;
+    padding:2px;
+    padding-top:12px;
+
+}
+p.friend-msg{
+	color:#00f;
+    padding:2px;
+    padding-top:12px;
+}
+.content, .system-content{
+	padding-left:6px;
+    padding-bottom:6px;
+	word-wrap:break-word;
+	word-break:break-all;
+}
+
+
+
+.editArea{
+	display:block;
+	border:none;
+	outline:none;
+	height:95%;
+	line-height:1.5;
+	overflow-x:hidden;
+	overflow-y:auto;
+	padding:2px 1%;
+	/*width:98%;*/
+	word-break : break-all;
+	word-wrap:break-word;
+    background:#fff url(../images/input_bg.gif) -2px -1px no-repeat;
+}
+ .editArea p{
+	color:inherit;
+	font:inherit;
+	text-decoration: inherit;
+}
+
+.face .faceBg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+ .faceImgPanel {
+    position:absolute;
+    z-index:10000;
+}
+ .faceImg {
+    background: url(../images/face/face.gif) no-repeat;
+    height: 204px;
+    width: 436px;
+    margin: 4px 0 0 4px;
+    -moz-background-clip: border;
+    -moz-background-inline-policy: continuous;
+    -moz-background-origin: padding;
+}
+ .faceImg a {
+    float: left;
+    width: 28px;
+    height: 28px;
+    zoom: 1;
+    margin: 1px 0 0 1px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.largePadding{
+    padding:25px;
+}

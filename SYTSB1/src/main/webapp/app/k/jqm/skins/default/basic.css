@@ -1,0 +1,51 @@
+/* 2014/11/14 21:16 lybide */
+
+html,body {padding:0;margin:0;}
+
+.a-index {padding:0;width:100%;height:100%;position:relative;}
+.a-index .bg {position:absolute;width:100%;height:300px;background-image:url("images/app-ytmz/a-index1.jpg");background-size:cover;}
+.a-index .logo {position:absolute;width:100%;height:60px;background-image:url("images/app-ytmz/logo1.png");background-size:contain;background-repeat:no-repeat;background-position:15px top;}
+.a-index .user {position:absolute;width:100%;z-index:1;}
+.a-index .user .image {position:absolute;top:70px;left:20px;}
+.a-index .user .image img {width:60px;height:60px;border-radius:10px;}
+.a-index .user .name {position:absolute;top:75px;left:100px;font-size:2em;}
+.a-index .user .name .a {}
+.a-index .user .name .b {margin-left:20px;}
+.a-index .user .time {position:absolute;top:105px;left:103px;font-size:1.1em;line-height:1.5em;}
+.a-index .user .time .a {}
+.a-index .user .time .b {}
+
+.a-index .opera,.a-index .opera-mask {position:absolute;width:100%;z-index:2;height:80px;top:140px;border:0px solid #FF0000;}
+.a-index .opera-mask {z-index:1;opacity:.5;background:#ffffff;}
+.a-index .opera .db {width:50%;position:absolute;top:0;left:0;}
+.a-index .opera .db .no {width:100%;text-align:center;font-size:2em;line-height:1.7em;color:#ff0000;}
+.a-index .opera .db .text {width:100%;text-align:center;font-size:2em;}
+.a-index .opera .line {position:absolute;top:10px;bottom:10px;width:1px;background:#777777;left:50%;}
+.a-index .opera .xx {width:50%;position:absolute;top:0;right:0;}
+.a-index .opera .xx .no {width:100%;text-align:center;font-size:2em;line-height:1.7em;color:#ff0000;}
+.a-index .opera .xx .text {width:100%;text-align:center;font-size:2em;}
+
+.a-index .bar {position:absolute;width:100%;z-index:2;height:50px;top:220px;border:1px solid #e4b15a;border-left:0px;border-right:0px;background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#f6e5ae),color-stop(1,#ed9218));}
+.a-index .bar .item {float:left;width:33%;text-align:center;font-size:1.5em;line-height:3em;}
+.a-index .bar .item.b1 {}
+
+.a-index .content {position:absolute;width:100%;z-index:2;top:272px;border:0px solid #e4b15a;background:#ededed;}
+.a-index .content .wrap {margin:10px;border:1px solid #b5b5b5;background:#ffffff;}
+.a-index .content .wrap .table {}
+.a-index .content .wrap .table .a {width:90px;font-size:1.2em;text-align:right;padding:5px;}
+.a-index .content .wrap .table .b {padding:5px;line-height:1.2em;}
+.a-index .content .wrap .table .n {padding:5px;color:#ff0000;}
+
+@media screen and (max-width:500px){body{}}/*宽度小于500px时 绿色*/
+@media screen and (min-width:500px){
+	.a-index .user .name {position:absolute;top:80px;left:100px;font-size:3em;}
+	.a-index .user .time {position:absolute;top:70px;left:auto;right:10px;font-size:1.5em;line-height:1.5em;}
+	.a-index .user .time .a {display:block;text-align:right;}
+	.a-index .user .time .b {}
+	.a-index .opera,.a-index .opera-mask {}
+	.a-index .bar {}
+	.a-index .content .wrap .table .a {padding:10px;font-size:1.6em;width:30%;}
+	.a-index .content .wrap .table .b {padding:10px;font-size:1.6em;line-height:1.6em;}
+}/*宽度大于800px时 红色*/
+/*@media screen and (max-height:100px){body{background:yellow;}}*//*高度小于100px时 黄色*/
+/*@media screen and (min-height:400px){body{background:pink;}}*//*高度大于400px时 粉色*/

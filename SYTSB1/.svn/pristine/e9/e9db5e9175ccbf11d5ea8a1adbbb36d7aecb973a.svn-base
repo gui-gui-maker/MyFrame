@@ -1,0 +1,712 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+</head>
+
+<body>
+	<input type="hidden" id="fk_report_id" name="fk_report_id"
+		value="${param.fk_report_id}">
+	<input type="hidden" id="fk_inspection_info_id"
+		name="fk_inspection_info_id" value="${param.fk_inspection_info_id}">
+
+	<input type="hidden" id="nextPage" name="nextPage" value="7">
+	<br />
+	<p class="a DocDefaults " style="">
+		<a name="RTPAGE_5__储气井宏观检查报告"></a>
+	</p>
+	<table
+		style="border-bottom: 1px solid rgb(0, 0, 0); table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 6.45in; position: relative;"
+		class="">
+		<colgroup>
+			<col border="1" style="width: 13.74%;" class="">
+			<col border="1" style="width: 36.26%;" class="">
+			<col border="1" style="width: 27.86%;" class="">
+			<col border="1" style="width: 22.14%;" class="">
+		</colgroup>
+		<tbody>
+			<tr>
+				<td colspan="2" class="">
+					<p class="a DocDefaults">
+						<span class="a0" style="position: relative;"><span class=""
+							style="font-family: SimSun; position: relative;">文件编号：CTJB-0213-BG05</span></span>
+					</p>
+				</td>
+				<td colspan="2" style="vertical-align: bottom;" class="">
+					<p class="a DocDefaults" style="text-align: right;">
+						<span class="a0" style="position: relative;"><span class=""
+							style="font-family: SimSun; position: relative;">实施日期：2018年11月1日</span></span>
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<p class="a DocDefaults "
+		style="text-align: center; margin-top: 0.11in; margin-bottom: 0.11in;">
+		<span class="a0 dtitle"
+			style="font-weight: bold; font-size: 16.0pt;; font-family: 'SimSun';">储气井宏观检查报告</span>
+	</p>
+	<table id="docx4j_tbl_11"
+		style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; position: relative; table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 6.55in;">
+		<colgroup>
+			<col style="width: 1.51%;" />
+			<col style="width: 6.02%;" />
+			<col style="width: 1.51%;" />
+			<col style="width: 4.51%;" />
+			<col style="width: 1.51%;" />
+			<col style="width: 10.52%;" />
+			<col style="width: 0.63%;" />
+			<col style="width: 8.4%;" />
+			<col style="width: 15.15%;" />
+			<col style="width: 1.01%;" />
+			<col style="width: 6.4%;" />
+			<col style="width: 1.51%;" />
+			<col style="width: 12.03%;" />
+			<col style="width: 3%;" />
+			<col style="width: 0.97%;" />
+			<col style="width: 3.55%;" />
+			<col style="width: 6.02%;" />
+			<col style="width: 1.5%;" />
+			<col style="width: 13.84%;" />
+			<col style="width: 0.43%;" />
+		</colgroup>
+		<tbody>
+			<tr style="height: 8mm; page-break-inside: avoid;">
+				<td colspan="5"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: center;">
+						<span class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'SimSun';">储气井编号:</span></span>
+					</p>
+				</td>
+				<td colspan="6"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00002" name="TBL00002" type="text" ltype="text"
+							value="" ligerui="{width:197}" />
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: center;">
+						<span class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'SimSun';">报告编号:</span></span>
+					</p>
+				</td>
+				<td colspan="6"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="base__report_sn" name="base__report_sn" type="text" ltype="text"
+							value="" ligerui="{width:152}" readonly />
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 8mm; page-break-inside: avoid;">
+				<td colspan="11"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: center;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">检 查 项 目</span>
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: center;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">检查结果</span>
+					</p>
+				</td>
+				<td colspan="6"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: center;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">备注</span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 8mm; page-break-inside: avoid;">
+				<td colspan="2" rowspan="7"
+					style="border-bottom-style: solid; text-align: center; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults "></p>
+					<p class="a DocDefaults "></p>
+					<p class="a DocDefaults ">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">外观</span>
+					</p>
+					<p class="a DocDefaults ">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">检查</span>
+					</p>
+					<p class="a DocDefaults "></p>
+					<p class="a DocDefaults "></p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: center;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">1</span>
+					</p>
+				</td>
+				<td colspan="7"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: left; margin-left: 1mm;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">内、外表面可见部位腐蚀</span>
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00120" name="TBL00120" type="text" ltype="text"
+							value="" ligerui="{width:75}" />
+					</p>
+				</td>
+				<td colspan="6"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00121" name="TBL00121" type="text" ltype="text"
+							value="" ligerui="{width:171}" />
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 8mm; page-break-inside: avoid;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: center;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">2</span>
+					</p>
+				</td>
+				<td colspan="7"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: left; margin-left: 1mm;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">内、外表面可见部位裂纹、机械损伤</span>
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00122" name="TBL00122" type="text" ltype="text"
+							value="" ligerui="{width:75}" />
+					</p>
+				</td>
+				<td colspan="6"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00123" name="TBL00123" type="text" ltype="text"
+							value="" ligerui="{width:171}" />
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 8mm; page-break-inside: avoid;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: center;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">3</span>
+					</p>
+				</td>
+				<td colspan="7"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: left; margin-left: 1mm;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">内、外表面可见部位热损伤</span>
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00124" name="TBL00124" type="text" ltype="text"
+							value="" ligerui="{width:75}" />
+					</p>
+				</td>
+				<td colspan="6"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00125" name="TBL00125" type="text" ltype="text"
+							value="" ligerui="{width:171}" />
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 8mm; page-break-inside: avoid;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: center;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">4</span>
+					</p>
+				</td>
+				<td colspan="7"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: left; margin-left: 1mm;">
+						<span class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'SimSun';">井筒最上螺纹机械（热）损伤</span></span>
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00126" name="TBL00126" type="text" ltype="text"
+							value="" ligerui="{width:75}" />
+					</p>
+				</td>
+				<td colspan="6"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00127" name="TBL00127" type="text" ltype="text"
+							value="" ligerui="{width:171}" />
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 8mm; page-break-inside: avoid;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: center;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">5</span>
+					</p>
+				</td>
+				<td colspan="7"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: left; margin-left: 1mm;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">排液管腐蚀、损坏、变形</span>
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00128" name="TBL00128" type="text" ltype="text"
+							value="" ligerui="{width:75}" />
+					</p>
+				</td>
+				<td colspan="6"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00129" name="TBL00129" type="text" ltype="text"
+							value="" ligerui="{width:171}" />
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 8mm; page-break-inside: avoid;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: center;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">6</span>
+					</p>
+				</td>
+				<td colspan="7"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: left; margin-left: 1mm;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">防腐漆破损、脱落</span>
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00130" name="TBL00130" type="text" ltype="text"
+							value="" ligerui="{width:75}" />
+					</p>
+				</td>
+				<td colspan="6"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00131" name="TBL00131" type="text" ltype="text"
+							value="" ligerui="{width:171}" />
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 8mm; page-break-inside: avoid;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: center;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">7</span>
+					</p>
+				</td>
+				<td colspan="7"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: left; margin-left: 1mm;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">紧固螺栓损伤、裂纹</span>
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00132" name="TBL00132" type="text" ltype="text"
+							value="" ligerui="{width:75}" />
+					</p>
+				</td>
+				<td colspan="6"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00133" name="TBL00133" type="text" ltype="text"
+							value="" ligerui="{width:171}" />
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 8mm; page-break-inside: avoid;">
+				<td colspan="2" rowspan="4"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: center;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">结构检查</span>
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: center;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">8</span>
+					</p>
+				</td>
+				<td colspan="7"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="margin-left: 1mm;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">井口装置型式</span>
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00134" name="TBL00134" type="text" ltype="text"
+							value="" ligerui="{width:75}" />
+					</p>
+				</td>
+				<td colspan="6"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00135" name="TBL00135" type="text" ltype="text"
+							value="" ligerui="{width:171}" />
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 8mm; page-break-inside: avoid;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: center;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">9</span>
+					</p>
+				</td>
+				<td colspan="7"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="margin-left: 1mm;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">井口装置与井筒的连接形式</span>
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00136" name="TBL00136" type="text" ltype="text"
+							value="" ligerui="{width:75}" />
+					</p>
+				</td>
+				<td colspan="6"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00137" name="TBL00137" type="text" ltype="text"
+							value="" ligerui="{width:171}" />
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 8mm; page-break-inside: avoid;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: center;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">10</span>
+					</p>
+				</td>
+				<td colspan="7"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="margin-left: 1mm;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">井口是否可重复拆卸及打开通径</span>
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00138" name="TBL00138" type="text" ltype="text"
+							value="" ligerui="{width:75}" />
+					</p>
+				</td>
+				<td colspan="6"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00139" name="TBL00139" type="text" ltype="text"
+							value="" ligerui="{width:171}" />
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 8mm; page-break-inside: avoid;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: center;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">11</span>
+					</p>
+				</td>
+				<td colspan="7"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="margin-left: 1mm;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">螺纹扣型</span>
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00140" name="TBL00140" type="text" ltype="text"
+							value="" ligerui="{width:75}" />
+					</p>
+				</td>
+				<td colspan="6"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00141" name="TBL00141" type="text" ltype="text"
+							value="" ligerui="{width:171}" />
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.41in; page-break-inside: avoid;">
+				<td colspan="2" rowspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: center;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">压力表检查</span>
+					</p>
+				</td>
+				<td colspan="2" rowspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: center;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">12</span>
+					</p>
+				</td>
+				<td colspan="7" rowspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="margin-left: 1mm;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">压力表检定</span>
+					</p>
+				</td>
+				<td colspan="2" rowspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00142" name="TBL00142" type="text" ltype="text"
+							value="" ligerui="{width:75}" />
+					</p>
+				</td>
+				<td colspan="5"
+					style="border-bottom-style: none; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: center;">
+						<span class="a0 " style=""><span class=""
+							style="font-family: 'SimSun';">压力表编号:</span></span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: none; border-left-style: none; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00143" name="TBL00143" type="text" ltype="text"
+							value="" ligerui="{width:77}" />
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.41in; page-break-inside: avoid;">
+				<td colspan="4"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: center;">
+						<span class="a0 " style=""><span class=""
+							style="font-family: 'SimSun';">有效期至:</span></span>
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00144" name="TBL00144" type="text" ltype="date"
+							value="" ligerui="{width:86}" />
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.72in; page-break-inside: avoid;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: center;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">冒井沉井检验</span>
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: center;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">13</span>
+					</p>
+				</td>
+				<td colspan="7"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="margin-left: 1mm;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">储气井本体上冒、下沉</span>
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00145" name="TBL00145" type="text" ltype="text"
+							value="" ligerui="{width:75}" />
+					</p>
+				</td>
+				<td colspan="6"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00146" name="TBL00146" type="text" ltype="text"
+							value="" ligerui="{width:171}" />
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 8mm; page-break-inside: avoid;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: center;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">其他</span>
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: center;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">14</span>
+					</p>
+				</td>
+				<td colspan="7"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00147" name="TBL00147" type="text" ltype="text"
+							value="" ligerui="{width:264}" />
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.26mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00148" name="TBL00148" type="text" ltype="text"
+							value="" ligerui="{width:75}" />
+					</p>
+				</td>
+				<td colspan="6"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.26mm; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00149" name="TBL00149" type="text" ltype="text"
+							value="" ligerui="{width:171}" />
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.29in; page-break-inside: avoid;">
+				<td colspan="19"
+					style="border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 133%;">
+						<span class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'SimSun'; margin-left: 1mm;">检查结果:</span></span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 30mm; page-break-inside: avoid;">
+				<td colspan="19"
+					style="border-bottom-style: solid; border-bottom-width: 0.26mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="width: 99%;">
+						<!-- <input id="TBL00150" name="TBL00150" type="text" ltype="text"
+							value="" ligerui="{width:615}" /> -->
+						<textarea rows="6" id="TBL00150" name="TBL00150" 
+							style="margin-left: 1mm; font-family: 'SimSun'; font-size: 12.0pt;" cols=""></textarea>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 14mm; page-break-inside: avoid;">
+				<td colspan="3"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults "
+						style="position: relative; margin-left: 0.33in; text-indent: -0.33in; line-height: 133%;">
+						<span class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'SimSun'; margin-left: 1mm;">检验:</span></span>
+					</p>
+				</td>
+				<td colspan="4"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-right-style: none; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="base__inspect_op6" name="base__inspect_op6" type="text" ltype="select"
+							value="" ligerui="{width:93,isMultiSelect:true}" />
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-right-style: none; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults "
+						style="position: relative; margin-left: 0.33in; text-indent: -0.33in; line-height: 133%;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">日期</span><span
+							class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'Times New Roman';">:</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="base__inspect_date6" name="base__inspect_date6" type="text" ltype="date"
+							value="" ligerui="{width:84}" />
+					</p>
+				</td>
+				<td colspan="3"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults "
+						style="position: relative; text-align: center; margin-left: 0.5in; text-indent: -0.5in; line-height: 133%;">
+						<span class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'SimSun';">审核:</span></span>
+					</p>
+				</td>
+				<td colspan="3"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-right-style: none; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="base__audit_op6" name="base__audit_op6" type="text" ltype="select"
+							value="" ligerui="{width:89}" />
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-right-style: none; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults "
+						style="position: relative; margin-left: 0.5in; text-indent: -0.5in; line-height: 133%;">
+						<span class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'SimSun';">日期:</span></span>
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="base__audit_time6" name="base__audit_time6" type="text" ltype="date"
+							value="" ligerui="{width:93}" />
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 14mm; page-break-inside: avoid; ">
+				<td colspan="19"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 133%; margin-left: 1mm;">
+						<span class="a0 " style=""><span class=""
+							style="font-family: 'SimSun';">注：没有或未进行的检查项目在检查结果栏打“—”；无问题或合格的检查项目在检查结果栏打“</span></span><span
+							class="a0 " style="color: #333333; background-color: #FFFFFF;">√</span><span
+							class="a0 " style=""><span class=""
+							style="font-family: 'SimSun';">”；有问题或不合格的检查项目在检查结果栏打“×”,并在备注中说明。</span></span>
+					</p>
+				</td>
+			</tr>
+</body>
+</html>

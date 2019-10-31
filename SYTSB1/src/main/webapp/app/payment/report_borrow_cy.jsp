@@ -1,0 +1,289 @@
+﻿<%@ page language="java" import="java.text.SimpleDateFormat" pageEncoding="utf-8" %>
+<%@ page import="java.util.Date" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head pageStatus="${param.status}">
+    <title>外借登记</title>
+    <!-- 每个页面引入，页面编码、引入js，页面标题 -->
+    <%@include file="/k/kui-base-form.jsp" %>
+    <script type="text/javascript">
+        var pageStatus = "${param.status}";
+        var toolbar = [];
+        debugger
+        var beforeFormData = api.data.formData;
+        $(function () {
+            toolbar.push(
+                {
+                    text: '保存',
+                    //id : 'save',
+                    icon: 'save',
+                    click: save
+                }
+            );
+            if ( pageStatus != 'modify' ) {
+                toolbar.push({
+                    text: '保存并继续',
+                    //id : 'save',
+                    icon: 'save',
+                    click: saveAndContinue
+                });
+            }
+            toolbar.push(
+                {
+                    text: '关闭',
+                    //id : 'close',
+                    icon: 'cancel',
+                    click: close
+                }
+            );
+            if ( beforeFormData != '' && typeof(beforeFormData) != 'undefined' ) {
+            	beforeFormData = $.parseJSON(beforeFormData);
+                delete beforeFormData["invoice_no"];
+                $("#form1").setValues(beforeFormData);
+            }
+            $("#form1").initForm({ //参数设置示例
+                toolbar: toolbar,
+                toolbarPosition: "bottom",
+                getSuccess: function (resp) {
+
+                },
+            });
+        })
+
+        function close() {
+            api.close();
+        }
+
+        function saveAndContinue() {
+            save(true);
+        }
+
+        function save(isContinue) {
+            //验证表单数据
+            if ( $('#form1').validate().form() ) {
+                var unpay_amount = $("#unpay_amount").val();	// 金额
+                if ( unpay_amount == 0 ) {
+                    $.ligerDialog.alert("亲，请输入金额！");
+                    return;
+                } else {
+                    var invoice_no = $("#invoice_no").val();		// 发票号
+                    if ( "" != invoice_no ) {
+                        invoice_no = invoice_no.trim();	// 去空格
+                        if ( invoice_no.length == 10 ) {
+                            invoice_no = invoice_no.substr(0, (invoice_no.length - 1));	// 截最后一位
+                            $("#invoice_no").val(invoice_no);
+                        }
+                        doSave(isContinue);
+                    } else {
+                        doSave(isContinue);
+                    }
+                }
+            }
+        }
+
+        function doSave(isContinue) {
+            var if_del_invoice = '0';
+            if ( '${param.status}' == 'modify' ) {
+                if_del_invoice = $('#if_del_invoice').ligerGetRadioGroupManager().getValue();
+            }
+            var url = "report/borrow/saveBorrowCY.do?if_del_invoice=" + if_del_invoice + "&status=${param.status}";
+            $.ligerDialog.confirm("确定保存？", function (yes) {
+                if ( yes ) {
+                    var formData = $("#form1").getValues();
+                    $("body").mask("正在保存数据，请稍后！");
+                    $.ajax({
+                        url: url,
+                        type: "POST",
+                        datatype: "json",
+                        contentType: "application/json; charset=utf-8",
+                        data: $.ligerui.toJSON(formData),
+                        success: function (resp) {
+                            $("body").unmask();
+                            if ( resp["success"] ) {
+                                if ( isContinue ) {
+                                    api.close();
+                                    api.data.window.refreshGrid();
+                                    //这里为了支持ie必须将formData转成字符串，否则ie传递对象引用，在iframe内置页面关闭时对象被销毁，引用失效。
+                                    api.data.window.doBorrowAgain($.ligerui.toJSON(formData));
+                                } else {
+                                    api.close();
+                                    api.data.window.refreshGrid();
+                                }
+                            } else {
+                                $.ligerDialog.error('提示：' + resp.msg);
+                            }
+                        },
+                        error: function (resp) {
+                            $("body").unmask();
+                            $.ligerDialog.error('提示：' + resp.msg);
+                        }
+                    });
+                }
+            });
+        }
+
+        // 选择开票单位
+        function selectPayCompany() {
+            top.$.dialog({
+                parent: api,
+                width: 800,
+                height: 550,
+                lock: true,
+                title: "选择开票单位",
+                content: 'url:app/payment/choose_company_list.jsp',
+                data: {"parentWindow": window}
+            });
+        }
+
+        function callBack(id, name) {
+            $('#fk_company_id').val(id);// 开票单位ID
+            $('#com_name').val(name);	// 开票单位名称
+        }
+
+        function selectUser() {
+            var org_id = $("#check_dep_id").ligerGetComboBoxManager().getValue();
+            if ( org_id == "" ) {
+                $.ligerDialog.alert("请先选择检验部门！");
+                return;
+            }
+            winOpen({
+                width: 200,
+                height: 420,
+                lock: true,
+                title: "选择借票人",
+                content: 'url:app/report/choose_user_list.jsp?org_id=' + org_id,
+                data: {
+                    "window": window,
+                }
+            });
+        }
+
+        function callUser(id, name) {
+            //$('#error_user_id').val(id);
+            $('#borrow_name').val(name);
+        }
+
+        // 选择合同号
+        function selectContract() {
+            top.$.dialog({
+                parent: api,
+                width: 800,
+                height: 550,
+                lock: true,
+                title: "选择合同号",
+                content: 'url:app/payment/choose_contract_list.jsp',
+                data: {"parentWindow": window}
+            });
+        }
+
+        function callBackContract(id, name) {
+            $('#pact_id').val(id);			// 合同ID
+            $('#pay_no').val(name);	// 合同号
+        }
+
+        String.prototype.trim = function () {
+            return this.replace(/(^\s*)|(\s*$)/g, '');
+        }
+    </script>
+</head>
+<body>
+<div class="navtab">
+    <div title="借票登记" tabId="borrowTab" style="height: 400px">
+        <form id="form1" getAction="report/borrow/getCYDetail.do?status=${param.status}&id=${param.id}">
+            <input type="hidden" name="id" id="id"/>
+            <input id="fk_inspection_info_id" name="fk_inspection_info_id" type="hidden" value=""/>
+            <input id="borrow_type" name="borrow_type" type="hidden" value="1"/>
+            <!-- 外借类型，数据字典：TZSB_BORROW_TYPE（0：外借报告，1：外借发票，2：外借报告和发票） -->
+            <input type="hidden" name="device_type" id="device_type" value="CY"/>
+            <fieldset class="l-fieldset">
+                <legend class="l-legend">
+                    <div>借条</div>
+                </legend>
+                <table border="1" cellpadding="3" cellspacing="0" width="" class="l-detail-table">
+                    <tr>
+                        <td class="l-t-td-left">票号：</td>
+                        <td class="l-t-td-right">
+                            <input name="invoice_no" id="invoice_no" type="text" ltype='text'
+                                   validate="{required:true,maxlength:10}"/>
+                        </td>
+                        <td class="l-t-td-left">借票日期：</td>
+                        <td class="l-t-td-right">
+                            <input name="borrow_date" id="borrow_date" type="text" ltype='date'
+                                   validate="{required:true}" ligerui="{format:'yyyy-MM-dd'}"
+                                   value="<%=new SimpleDateFormat("yyyy-MM-dd").format(new Date())%>"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="l-t-td-left">开票单位：</td>
+                        <td class="l-t-td-right">
+                            <input name="fk_company_id" id="fk_company_id" type="hidden"/>
+                            <input name="com_name" id="com_name" type="text" ltype='text'
+                                   validate="{required:true,maxlength:200}"
+                                   ligerui="{value:'',iconItems:[{icon:'add',click:function(){selectPayCompany()}}]}"/>
+                            <!--  onclick="selectPayCompany()" -->
+                        </td>
+                        <td class="l-t-td-left">报告书编号：</td>
+                        <td class="l-t-td-right">
+                            <input name="report_sn" id="report_sn" type="text" ltype='text'
+                                   validate="{required:false,maxlength:200}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="l-t-td-left">合同号/编号：</td>
+                        <td class="l-t-td-right">
+                            <input name="pact_id" id="pact_id" type="hidden"/>
+                            <input name="pay_no" id="pay_no" type="text" ltype='text'
+                                   validate="{required:false,maxlength:200}"
+                                   ligerui="{value:'',iconItems:[{icon:'add',click:function(){selectContract()}}]}"/>
+                            <!-- onclick="selectContract()" -->
+                        </td>
+                        <td class="l-t-td-left">金额：</td>
+                        <td class="l-t-td-right">
+                            <input name="unpay_amount" id="unpay_amount" type="text" ltype='float'
+                                   validate="{required:true}"  />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="l-t-td-left">借票部门：</td>
+                        <td class="l-t-td-right">
+                            <input type="text" name="check_dep_id" id="check_dep_id" ltype="select"
+                                   validate="{required:true}" ligerui="{
+							initValue:'',
+							treeLeafOnly:false,
+							tree:{checkbox:false,data: <u:dict sql="select id,parent_id pid,id code, ORG_NAME text from SYS_ORG where (ORG_CODE like 'jd%' or ORG_CODE like 'cy%' or org_code='caiwu' or ORG_CODE = 'human' or ORG_CODE = 'ywfz' or ORG_CODE = 'kyjsyjs' or ORG_CODE = 'shxmb') and ORG_CODE!='cy4_1' and ORG_CODE!='cy8' order by orders"/>}
+							}"/>
+                        </td>
+                        <td class="l-t-td-left">借票人：</td>
+                        <td class="l-t-td-right">
+                            <input name="borrow_name" id="borrow_name" type="text" validate="{required:true}"
+                                   ltype="text" onclick="selectUser()"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="l-t-td-left">备注:</td>
+                        <td class="l-t-td-right" colspan="3">
+                            <textarea name="remark" id="remark" cols="60" rows="2" class="l-textarea"></textarea>
+                        </td>
+                    </tr>
+                    <c:choose>
+                        <c:when test="${param.status eq 'modify'}">
+                            <tr>
+                                <td class="l-t-td-left">原票号是否作废：</td>
+                                <td class="l-t-td-right">
+                                    <input type="radio" name="if_del_invoice" id="if_del_invoice" ltype="radioGroup"
+                                           validate="{required:false}"
+                                           ligerui="{value:'0',data: [ { text:'是', id:'1' }, { text:'否', id:'0' } ] }"/>
+                                </td>
+                                <td class="l-t-td-left">&nbsp;</td>
+                                <td class="l-t-td-right">&nbsp;</td>
+                            </tr>
+                        </c:when>
+                    </c:choose>
+                </table>
+            </fieldset>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+#__qm_search table{
+    width: 100%;
+    margin-left: 0.5em;
+}#__qm_search table .search-tool{
+    width: 4.5em;
+}
+
+.qm-groupTable-td1 {padding:5px;}
+.qm-groupTable-td2 {widthh:40px;padding:5px;}
+.groupPanel {padding:5px;}
+.qm-conditionTable {}
+.qm-conditionTable .row {border-bottom:1px solid #d8d6db;overflow:hidden;margin-bottom:5px;}
+.qm-conditionTable .row .d1 {float:left;overflow:hidden;padding:4px;}
+.qm-conditionTable .row .a select {border:1px solid #d8d6db;background:#ffffff;width:100%;}
+.qm-conditionTable .row .b select {border:1px solid #d8d6db;background:#ffffff;width:100%;}
+.qm-conditionTable .row .c select {border:1px solid #d8d6db;background:#ffffff;width:100%;}
+.qm-conditionTable .row .c input {border:1px solid #d8d6db;background:#ffffff;width:100%;}
+.qm-conditionTable .row .a {width:100px;}
+.qm-conditionTable .row .b {width:100px;}
+.qm-conditionTable .row .c {width:130px;}
+.qm-conditionTable .row .d {text-align:center;}
+.qm-conditionTable .row .d input {}
+.qm-m-button {background-image:linear-gradient(#888,#575757);color:#e9e9e9;border:1px solid #555;}
+#advanceAdd {margin-right:0.2em;}
+
+@media screen and (max-width:400px){
+    /* 宽度小于500px时 */
+    body {}
+    .qm-conditionTable .row {padding:4px;}
+    .qm-conditionTable .row .d1 {padding:0;}
+    .qm-conditionTable .row .a {margin-right:5px;}
+    .qm-conditionTable .row .a,.qm-conditionTable .row .b {width:120px;}
+    .qm-conditionTable .row .c {width:245px;margin-right:5px;}
+    .qm-conditionTable .row .c select,.qm-conditionTable .row .c input {width:100%;}
+}

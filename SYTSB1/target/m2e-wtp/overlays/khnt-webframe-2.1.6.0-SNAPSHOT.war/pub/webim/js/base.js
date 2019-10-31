@@ -1,0 +1,10 @@
+//document.writeln('<link rel="stylesheet" type="text/css" href="../public/extjs/css/ext-all-notheme.css"/>');
+document.writeln('<link rel="stylesheet" type="text/css" href="k/qm/extjs/css/ext-all.css"/>');
+//document.writeln('<link rel="stylesheet" type="text/css" href="../public/extjs/css/ext-green.css"/>');
+//document.writeln('<link rel="stylesheet" type="text/css" href="../public/extjs/css/xtheme-red5.css"/>');
+document.writeln('<link rel="stylesheet" type="text/css" href="pub/webim/css/im.css"/>');
+document.writeln('<script type="text/javascript" src="k/qm/extjs/ext-base.js"></script>');
+document.writeln('<script type="text/javascript" src="k/qm/extjs/ext-all.js"></script>")');
+document.writeln('<script type="text/javascript" src="k/qm/extjs/ext-lang-zh_CN.js"></script>")');
+document.writeln('<script type="text/javascript" src="pub/webim/js/swfupload.js"></script>")');
+document.writeln('<script type="text/javascript" src="pub/webim/js/im.js"></script>")');

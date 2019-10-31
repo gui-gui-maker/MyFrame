@@ -1,0 +1,11 @@
+*{padding: 0;margin: 0; box-sizing: border-box;}
+a{text-decoration: none; transition: all .5s;}
+ul{list-style: none;}
+html{font-family: '微软雅黑';}
+.fl{float: left;}
+.fr{float: right;}
+.cl{clear: both;}
+.none{display: none;}
+.block{display: block!important;}
+table{border-collapse:collapse;}
+a,p,span,label,input,select{font-size: 14px;font-family: '微软雅黑';}

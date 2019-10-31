@@ -1,0 +1,57 @@
+
+/* --------------
+   *   login  2012年5月4日 修改的新版式  *
+* ------------ */
+/*------------------------------------global css----*/
+html, body {overflow:hidden; margin:0; padding:0; width:100%; height:100%;}
+body, input, button, select, textarea {}
+a, a:link, a:visited {text-decoration:none;	color:#0000FF;/*display:inline-block;*/}
+a:hover {text-decoration:underline;	color:#FF0000;}
+
+div, img, p, h1, h2, h3, h4, h5, h6, form, label, ul, ol, li, dl, dt, dd {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:none;
+}
+em {font-style:normal;}
+.fl {float:left;}
+.fr {float:right;}
+/**/
+.global {position:absolute; left:0px; top:0px; width:100%; height:100%; z-index:1; border:0px solid #96c2f1; overflow:hidden;}
+.top {background:url(../images/login/log_top_bj.png) repeat-x left top; height:32px; position:relative; width:100%; overflow:hidden;}
+.top_txt {margin:0 auto; width:958px; overflow:hidden; font:12px "宋体"; line-height:30px; color:#656565;}
+.wel {background:url(../images/login/log_wel_icon.png) no-repeat left center; padding-left:24px;}
+.zhu {background:url(../images/login/log_zhu_icon.png) no-repeat left center; padding-left:24px;}
+
+.foot{background:#f2f2f2; height:30px; line-height:30px; position:absolute; left:0px; border-top:1px solid #dddddd; width:100%;}
+.foot em.fr a {color:#656565; display:block; width:16px; height:30px; background:url(../images/login/khlogo.png) no-repeat left center;}
+/*------------------*/
+.main {border:0px solid #990000; overflow:auto; position:relative;}
+.main_bj {margin:0 auto; background:url(../images/login/log_bj.png) no-repeat center top; height:100%;}
+.log_user {margin:0 auto; width:998px; position:relative; height:100%;}
+.caption {position:absolute; left:60px; top:160px; z-index:200;}
+.logimage {position:absolute; left:0px; bottom:0px; z-index:100;}
+
+.login {position:absolute; float:right; width:370px; top:190px; right:0px;}
+.login h1 {font:18px "微软雅黑"; background:url(../images/login/log_log_icon.png) no-repeat left top; padding:5px 0px 3px 72px; height:32px; color:#fff; margin-bottom:18px;}
+.login h1 strong {font:24px "微软雅黑"; font-weight:bold; color:#0965b0;}
+.login ul li label {font:18px "微软雅黑"; color:#656565; line-height:33px;}
+.login ul li {height:33px; line-height:33px; padding:10px 0px;}
+.TxtUserNameCssClass , .TxtPasswordCssClass {width:176px; height:21px; padding:5px; border:none;line-height:21px; background:url(../images/login/log_textbox.png) no-repeat;}
+.login ul li input.submitbtn , .login ul li input.delete {width:114px; height:33px;	line-height:33px; border:none; text-align:center; font:16px "微软雅黑";	color:#fff;	margin-right:18px; outline:none;}
+.submitbtn {background:url(../images/login/log_btn.png) no-repeat left top;}
+.submitbtn-over {background:url(../images/login/log_btn.png) no-repeat left -66px;}
+.delete {background:url(../images/login/log_btn.png) no-repeat left -33px;}
+.delete-over {background:url(../images/login/log_btn.png) no-repeat left -99px;}
+
+/*=======================================
+	重新登录 页面样式 ====================================
+=======================================*/
+.timeout {background:url(../images/login/error2.gif) no-repeat center; width:100%; height:100%; position:relative;}
+.timeout .caption2 {width:500px; height:206px; left:50%; top:30%; position:absolute; margin:-113px 0 0 -250px; background:url(../images/kui/logo-caption.png) no-repeat center bottom;} /*2012-09-05添加+++++++++*/
+.tmot_center {width:284px; height:66px; left:50%; top:50%; position:absolute; margin:-33px 0 0 -142px; font:14px "宋体"; font-weight:bold; padding:147px 0px 0px 96px;}
+.tmot_center p {line-height:30px; color:#929397;}
+.tmot_center p a {color:#be0000; outline:0 none;}
+.tmot_center p a:hover {color:#06F; outline:0 none;}
+.tmot_center p a:focus {outline:0 none;}

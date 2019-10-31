@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>增加新记事</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5" />
+</head>
+<body>
+<!-- 增加新事件页面 -->
+<div data-role="page" id="add">
+	<header data-role="header">
+		<a data-rel="back" href="detail2.html" data-icon="back" data-theme="b">返回</a>
+		<h1>增加新记事</h1>
+	</header>
+	<div data-role="content">
+		<form id="add-note" data-theme="d">
+			<div data-role="fieldcontain">
+				<fieldset data-role="controlgroup" />
+					<legend>重要性:</legend>
+					<label for="normal">普通</label>
+					<input type="radio" name="importance" id="normal" value="normal" checked="checked" />
+					<label for="important">重要</label>
+					<input type="radio" name="importance" id="important" value="important" />
+				</fieldset>
+			</div>
+			<div data-role="fieldcontain">
+				<label for="note-content">内容</label>
+				<textarea name="note-content" id="note-content" maxlength="24" ></textarea>
+			</div>
+			<div id="submit-info">
+				<input type="submit" id="submit" value="发表" data-theme="e" />
+			</div>
+
+		</form>
+
+	</div>
+</div>
+</body> 
+</html>

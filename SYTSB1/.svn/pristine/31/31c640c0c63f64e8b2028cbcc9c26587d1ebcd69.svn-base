@@ -1,0 +1,166 @@
+/* 2014/11/14 21:16 lybide */
+
+html,body {padding:0;margin:0; background:#fff;}
+
+.bartxt {text-shadow:none !important;font-weight:normal;}
+
+.ui-header {position:absolute;height:90px;top:0;left:0;right:0;border:0px solid #221aff;}
+.ui-content {position:absolute;top:120px;bottom:0;left:0;right:0;overflow:auto;border:0px solid #FF0000;}
+.ui-loader {display:none;}
+
+.a-index {padding:0;width:100%;height:100px;position:fixed;top:0;z-index:1;}
+.a-index .bg {position:absolute;width:100%;height:100px;background-image:url("images/app-ytmz/a-index2.jpg");background-size:cover;}
+.a-index .logo {position:absolute;width:100%;height:100px;background-image:url("images/app-ytmz/logo.png");background-size:72px;background-repeat:no-repeat;background-position:15px 5px;}
+.a-index .user {position:absolute; z-index:1; left:105px; top:17px; color:#fff; line-height:250%;text-shadow:none !important;font-weight:normal;}
+.a-index .user h1 {margin:0; padding:0; font-size:2em; font-weight:normal;}
+.a-index .user h2 {margin:0; padding:0; font-size:1.7em; font-weight:normal;}
+.a-index .user p {margin:0; padding:0; font-size:1.5em;}
+
+.a-index .messages {/*position:absolute;*/width:100%;z-index:2;height:60px; line-height:60px;/*top:170px;*/ background:#ffe674; overflow:hidden;}
+.a-index .db {width:30%;position:absolute;top:0;left:0; margin:0 10%;}
+.a-index .xx {width:30%;position:absolute;top:0;right:0; margin:0 10%;}
+.a-index .text {float:left; text-align:center;font-size:2em; padding-right:5%;}
+.a-index .no {float:left; text-align:center;font-size:1.5em;color:#ff0000; padding-top:10px; position:relative;}
+.a-index .no img {width:36px;}
+.a-index .no span {position:absolute; right:-20px; top:0px; display:block; width:32px; height:26px; line-height:26px; color:#fff; background:url(images/app-ytmz/mes_tipbj.png) no-repeat; background-size:32px 26px;}
+
+.a-guide-menu {}
+.a-index .bar {/*position:absolute;width:100%;z-index:2;*/ padding:5px; background:#fff; /*overflow:hidden;*/clear:both;text-align:left;}
+.bar01 {border-bottom:1px solid #e5e5e5; height:120px;}
+.bar02 {}
+.a-index .bar02 item {margin-bottom:20px;}
+.a-index .bar .item {display:inline-block; margin:2px auto; width:32%; text-align:center;color:#858585; border:1px solid transparent;}
+/*.a-index .bar .item:hover {background:#f3faff; border:1px solid #01a0fe; border-radius:8px;}*/
+/*.a-index .bar .item:active {background:#fff7b1; border:1px solid #fead41;}*/
+.a-index .bar .item .a {color:#858585;padding:10px;}
+.a-index .bar .item .a:hover {text-decoration:none;}
+.a-index .bar .item .bartxt {line-height:40px;height:40px;overflow:hidden;border:0px solid #FF0000; white-space:nowrap;text-overflow:ellipsis;font-size:1.5em;}
+.a-index .bar .item .icon {width:72px; height:40px; text-align:center; padding:16px 0px; border-radius:50%; margin:0 auto;}
+.a-index .bar .item .icon img {width:40px;/*text-shadow:#000055;*/}
+
+.clr_1,.clr_peach {background-color:#ff6f92;}/*桃红色*/
+/*.clr_2 {background-color:#d2e1b4;}*/
+.clr_2,.clr_olivegreen {background-color:#a6c369;}/*橄榄绿*/
+.clr_3,.clr_purple {background-color:#ad8dd0;}/*紫色*/
+.clr_4,.clr_red {background-color:#ff6600;}/*红色*/
+.clr_5,.clr_blue {background-color:#47a8ef;}/*蓝色*/
+.clr_6,.clr_orange {background-color:#ffb400;}/*橙色*/
+.clr_7,.clr_cyan {background-color:#86d0eb;}/*青色*/
+.clr_8,.clr_lightorange {background-color:#ff9359;}/*浅橙色*/
+.clr_9,.clr_darkgreen {background-color:#75a216;}/*深绿色*/
+.clr_10,.clr_green {background-color:#2ec815;}/*绿色*/
+.clr_11,.clr_magenta {background-color:#ff6df6;}/*洋红色*/
+.clr_12 {background-color:#74a481;}
+.clr_13 {background-color:#dda9b6;}
+.clr_14 {background-color:#d2b73e;}
+.clr_15 {background-color:#675c33;}
+.clr_16 {background-color:#61be67;}
+.clr_17 {background-color:#8f20cc;}
+.clr_18 {background-color:#a23f5c;}
+.clr_19 {background-color:#175e93;}
+.clr_20 {background-color:#a85849;}
+.clr_21 {background-color:#4856b7;}
+.clr_22 {background-color:#e27a49;}
+.clr_23 {background-color:#43cbd1;}
+.clr_24 {background-color:#a11967;}
+.clr_25 {background-color:#1b5f4e;}
+.clr_26 {background-color:#caaa8b;}
+.clr_27 {background-color:#748e25;}
+.clr_28 {background-color:#8c1c66;}
+.clr_29 {background-color:#80111a;}
+.clr_30 {background-color:#8abdac;}
+.clr_31 {background-color:#8c695d;}
+.clr_32 {background-color:#4f92d6;}
+.clr_33 {background-color:#f497ac;}
+.clr_34 {background-color:#49de7b;}
+.clr_35 {background-color:#e5148a;}
+.clr_36 {background-color:#3e936a;}
+.clr_37 {background-color:#c4e306;}
+.clr_38 {background-color:#e050f7;}
+.clr_39 {background-color:#a67b19;}
+.clr_40 {background-color:#0a2d3d;}
+.clr_41 {background-color:#45b266;}
+.clr_42 {background-color:#5600cd;}
+.clr_43 {background-color:#fc460a;}
+.clr_44 {background-color:#a06fe6;}
+.clr_45 {background-color:#a85849;}
+.clr_46 {background-color:#432c77;}
+.clr_47 {background-color:#99c7f3;}
+.clr_48 {background-color:#414362;}
+.clr_49 {background-color:#c97adf;}
+.clr_50 {background-color:#2635c1;}
+.clr_51,.clr_skyblue {background-color:#008cd6;}/*天蓝色*/
+
+
+
+.a-index .content {/*position:absolute;z-index:2; top:370px;*/width:100%; padding-top:10px;}
+.a-index .content .wrap {margin:0 3%;}
+.a-index .content .wrap .table {margin:0 auto; border-collapse:collapse;}
+.a-index .content .wrap .table td {border-bottom:1px solid #c8c8c8;}
+.a-index .content .wrap .table .a {width:25%; font-size:2em; text-align:right; padding:10px 10px; color:#343434;}
+.a-index .content .wrap .table .b {width:55%;font-size:1.5em; line-height:150%; color:#666;}
+.a-index .content .wrap .table .n {padding:0px 5px;color:#ff0000;}
+.a-index .content .wrap .table .c {width:55%;font-size:1.5em; line-height:150%; color:#666; padding:10px 0px;}
+
+.ui-content .a-menu-loading {padding:15px;}
+.a-menu-nav {float:left;width:100%;line-height:1.5em;background:#d9e8f9;font-size:1.1em;border-bottom:1px solid #0097fe;}
+.a-menu-nav .d-big {float:left;}
+.a-menu-nav .d {float:left;}
+.a-menu-nav .a,.a-menu-nav .a:link,.a-menu-nav .a:visited {color:#325A99;text-decoration:none;display:block;border-right:1px solid #0097fe;padding:10px;}
+.a-menu-nav .a:hover {}
+.a-menu-nav .a:action {background:#f9f1d0;}
+
+
+@media handheld, only screen and (max-width:400px){
+	.a-index .bg {height:90px;}
+	.a-index .logo {height:100px; background-size:72px; background-position:15px 10px;}
+	.a-index .user {left:100px; top:17px; line-height:250%;}
+	.a-index .user h1 {font-size:2em;}
+	.a-index .user h2 {font-size:1.7em;}
+	.a-index .user p {font-size:1.5em;}
+
+	.a-index .messages {top:90px;}
+	.a-index .db {width:38%; margin:0 6%;}
+	.a-index .xx {width:38%; margin:0 6%;}
+	.a-index .text {font-size:1.5em;}
+	.a-index .no {font-size:1.2em;}
+	.a-index .no span {top:5px;}
+
+	.bar01 {}
+	.bar02 {}
+	.a-index .bar .item {/*width:32.5%;*/ /*font-size:1.5em;*/}
+	.a-index .bar .item .bartxt {line-height:220%;}
+
+	.a-index .content {}
+	.a-index .content .wrap {margin:0 2%;}
+	.a-index .content .wrap .table .a {width:27%; font-size:1.4em; padding:10px 10px 10px 0px;}
+	.a-index .content .wrap .table .b {width:55%;font-size:1.2em; line-height:150%;}
+	.a-index .content .wrap .table .n {padding:0px 2px;}
+
+	.ui-header {height:90px;}
+	.ui-content {top:90px;}
+}
+
+@media handheld, only screen and (min-width:400px) and (max-width:1024px){
+	.a-index .bg {height:100px;}
+	.a-index .logo {top: -10px;height:100px; background-size:96px; background-position:15px 10px;}
+	.a-index .user {left:130px; top:10px; line-height:300%;}
+	.a-index .user h1 {font-size:2.4em;}
+	.a-index .user h2 {font-size:2em;}
+	.a-index .user p {font-size:1.6em;}
+
+	.a-index .messages {/*position:absolute;*/width:100%;z-index:2;height:60px; line-height:60px;/*top:170px;*/ background:#ffe674; overflow:hidden;}
+	.a-index .bar {/*position:absolute;width:100%;z-index:2;*/ padding:20px 0px 10px; background:#fff; /*overflow:hidden;*/}
+	
+	.ui-header {height:120px;}
+	.ui-content {top:145px;}
+}
+
+@media handheld, only screen and (min-width:1024px){
+	.a-index .bg {height:180px;}
+	.a-index .logo {height:160px; background-size:128px; background-position:15px 20px;}
+	.a-index .user {left:170px; top:20px; line-height:370%;}
+	.a-index .user h1 {font-size:3em;}
+	.a-index .user h2 {font-size:2.5em;}
+	.a-index .user p {font-size:2em;}
+}

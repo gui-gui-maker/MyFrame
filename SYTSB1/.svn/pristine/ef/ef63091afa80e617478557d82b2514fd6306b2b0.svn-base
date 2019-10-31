@@ -1,0 +1,355 @@
+body {background: #fff;}
+#content {
+	width: 100%;
+	height: auto;
+	/*margin: 78px 0 60px 0;*/
+	position: absolute;
+	top: 68px;
+	bottom: 60px;
+	z-index: 99;
+	/*padding-bottom:50px;*/
+	overflow: auto;/*border:5px solid #0000FF;*/
+}
+.bianhao {
+	background: none!important;
+	border: none!important;
+	width: 20%!important;
+}
+.number {
+	width: 100%;
+	height: auto;
+	border-bottom: 15px solid #f0f0f0;
+}
+.numberCenter {
+	width: 94%;
+	height: 100%;
+	margin: 0 auto;
+}
+.numberCenter strong {
+	font-size: 1.5rem;
+	line-height: 60px;
+	color: #999;
+}
+.numberCenter span {
+	font-size: 1.5rem;
+	line-height: 60px;
+	color: #333;
+}
+.numberCenter strong:nth-child(3) {
+	padding-left: 7.8%;
+}
+.numberCenter img:nth-child(5) {
+	width: 3.58%;
+}
+.filter-title {
+	background: url('')!important;
+}
+.car {
+	width: 100%;
+	height: auto;
+	border-bottom: 15px solid #f0f0f0;
+}
+.numberCenter input {
+	width: 31.83%;
+	height: 44px;
+	/*background: url(../images/time.png) no-repeat 95% center;*/
+	background-size: 20% 50%;
+	border: 1px solid #ccc;
+}
+.department {
+	width: 100%;
+	height: auto;
+	border-bottom: 15px solid #f0f0f0;
+}
+.holiday .department {
+	border-bottom: 0px solid #f0f0f0;
+}
+.departmentCenter {
+	width: 89.33%;
+	height: 100%;
+	margin: 0 auto;
+}
+.top {
+	width: 100%;
+	height: auto;
+	border-bottom: 1px solid #ccc;
+	position: relative;
+}
+.top select {
+	width: 72%;
+	height: 40px;
+	border: 0;
+	position: relative;
+	white-space: nowrap;
+	overflow: hidden;
+	padding-right: .6rem;
+	background-color: #eee;
+	background: transparent;
+	appearance: none;
+	-moz-appearance: none; /* Firefox */
+	-webkit-appearance: none; /* Safari 和 Chrome */
+}
+.top strong {
+	font-size: 1.5rem;
+	line-height: 60px;
+	color: #999;
+}
+.holiday .top strong, .holiday .bottom strong {
+	text-align: right;
+	display: inline-block;
+	width: 26%;
+}
+.holiday .top span.arrow img {
+	position: absolute;
+	right: 8px;
+	top: 0;
+	z-index: 999;
+	display: block;
+	float: none;
+}
+.top span {
+	font-size: 1.4rem;
+	line-height: 60px;
+	color: #333;
+}
+.top img {
+	width: 3.58%;
+	float: right;
+	margin-top: 28px;
+}
+.bottom {
+	width: 100%;
+	height: auto;
+}
+.bottom input {
+	width: 48%;
+	height: 60px;
+	border: none;
+	font-size: 1.5rem;
+}
+.task {
+	width: 70%;
+	height: 60px;
+	border: none;
+}
+.bottom strong {
+	font-size: 1.5rem;
+	line-height: 60px;
+	color: #999;
+}
+.bottom .task {
+	width: 75%;
+	height: 60px;
+	border: none;
+}
+.holiday  textarea.task {
+	width: 68%;
+	height: 90px;
+	border: none;
+	vertical-align: text-top; margin-bottom: 20px;font-size: 1.5rem; font-family: "微软雅黑";
+}
+.holiday b {
+	color: #f00;
+}
+.departmentCenter .user {
+	width: 7.16%;
+	float: left;
+	height: auto;
+	margin-top: 5%;
+}
+.departmentCenter .user img {
+	width: 100%;
+}
+.dinput input {
+	width: 90%;
+	height: 60px;
+	float: right;
+	border: none;
+	border-bottom: 1px solid #ccc;
+	font-size: 1.5rem;
+}
+.yjnone {
+	border: none!important;
+}
+.departmentT {
+	border-bottom: 1px solid #ccc;
+}
+.LicensePlate {
+	width: 52%;
+	float: left;
+}
+.LicensePlate strong, .outTime strong, .Count strong {
+	font-size: 1.5rem;
+	line-height: 60px;
+	color: #999;
+}
+.LicensePlatek {
+	width: 45%;
+	float: right;
+}
+.LicensePlatek input {
+	width: 100%;
+	height: 35px;
+	border: none;
+	border-left: 1px solid #ccc;
+	padding-left: 5%;
+	margin-top: 8%;
+}
+.LicensePlate span {
+	font-size: 1.5rem;
+	line-height: 60px;
+	color: #333;
+}
+.outTime {
+	width: 55%;
+	float: left;
+}
+.outTime input {
+	width: 61%;
+	height: 44px;
+	/*background: url(../images/time.png) no-repeat 95% center;*/
+	background-size: 20% 50%;
+	border: 1px solid #ccc;
+}
+.Count {
+	width: 44%;
+	float: right;
+}
+.Count input {
+	width: 45%;
+	height: 44px;
+	border: 1px solid #ccc;
+}
+.departmentT input {
+	border: 1px solid #ccc;
+}
+.departmentTa {
+	border: 0;
+}
+.Button3 {
+	position: fixed;
+	left: 0;
+	bottom: 0px;
+	width: 100%;
+	z-index: 999;
+}
+.Button2 {
+	position: fixed;
+	left: 0;
+	bottom: 0px;
+	width: 100%;
+	z-index: 999;
+}
+.Button1 {
+	position: fixed;
+	left: 0;
+	bottom: 0px;
+	width: 100%;
+	z-index: 999;
+}
+/*三个按钮的时候开起*/
+.Button3 a:nth-child(1) {
+	width: 33.333%;
+	height: 60px;
+	background: #409abb;
+	color: #fff;
+	border: 0;
+	float: left;
+	font-size: 2rem;
+	line-height: 60px;
+	text-align: center;
+}
+.Button3 a:nth-child(2) {
+	width: 33.333%;
+	height: 60px;
+	background: #df4411;
+	color: #fff;
+	border: 0;
+	float: left;
+	font-size: 2rem;
+	line-height: 60px;
+	text-align: center;
+}
+.Button3 a:nth-child(3) {
+	width: 33.333%;
+	height: 60px;
+	background: #969696;
+	color: #fff;
+	border: 0;
+	float: left;
+	font-size: 2rem;
+	line-height: 60px;
+	text-align: center;
+}
+/*一个按钮的时候开起*/
+.Button1 a:nth-child(1) {
+	width: 100%;
+	height: 60px;
+	background: #969696;
+	color: #fff;
+	border: 0;
+	float: left;
+	font-size: 2rem;
+	line-height: 60px;
+	text-align: center;
+}
+/*两个按钮的时候开起*/
+.Button2 a:nth-child(1) {
+	width: 50%;
+	height: 60px;
+	background: #df4411;
+	color: #fff;
+	border: 0;
+	float: left;
+	font-size: 2rem;
+	line-height: 60px;
+	text-align: center;
+}
+.Button2 a:nth-child(2) {
+	width: 50%;
+	height: 60px;
+	background: #969696;
+	color: #fff;
+	border: 0;
+	float: left;
+	font-size: 2rem;
+	line-height: 60px;
+	text-align: center;
+}
+
+@media screen and (max-width: 374px) and (min-width: 324px) {
+.outTime input {
+	width: 58%;
+}
+.numberCenter input {
+	width: 30%;
+}
+}
+
+@media screen and (max-width: 323px) and (min-width: 240px) {
+	.outTime input {
+		width: 50%;
+	}
+	.numberCenter input {
+		width: 30%;
+	}
+	.Count input {
+		width: 45%;
+	}
+	.LicensePlate strong, .outTime strong, .Count strong {
+		font-size: 1.2rem;
+	}
+	.bottom .task, .task {
+		width: 65%;
+	}
+	.top select {
+		width: 68%;
+	}
+	.numberCenter strong {
+		font-size: 1.2rem;
+	}
+	.holiday .top strong , .holiday .bottom strong {width: 30%;}
+	.holiday .bottom .task {width: 68%;}
+	
+	.bianhao {width: 22%!important;}
+}

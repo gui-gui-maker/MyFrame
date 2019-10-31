@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+</head>
+
+<body>
+	<input type="hidden" id="fk_report_id" name="fk_report_id"
+		value="${param.fk_report_id}">
+	<input type="hidden" id="fk_inspection_info_id"
+		name="fk_inspection_info_id" value="${param.fk_inspection_info_id}">
+
+	<input type="hidden" id="nextPage" name="nextPage" value="3">
+	<br />
+	<p class="a DocDefaults " style="">
+		<a name="RTPAGE_1__注意事项"></a>
+	</p>
+	<table
+		style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 168mm;">
+		<colgroup>
+			<col style="width: 49.98%;" />
+			<col style="width: 50.02%;" />
+		</colgroup>
+		<tbody>
+			<tr>
+				<td>
+					<p class="a DocDefaults " style="">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">文件编号：</span>
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'Times New Roman';">CTJB-0926-BG10</span>
+					</p>
+				</td>
+				<td>
+					<p class="a DocDefaults " style="text-align: right;">
+						<span class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'SimSun';">实施日期：</span></span><span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">2015</span><span
+							class="a0 " style="font-size: 12.0pt;; font-family: 'SimSun';">年</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">2</span><span
+							class="a0 " style="font-size: 12.0pt;; font-family: 'SimSun';">月</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">1</span><span
+							class="a0 " style="font-size: 12.0pt;; font-family: 'SimSun';">日</span>
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<p class="a DocDefaults " style="text-align: center;">&nbsp;</p>
+	<p class="a DocDefaults " style="text-align: center;">&nbsp;</p>
+	<p class="a DocDefaults " style="text-align: center;">
+		<span class="a0 dtitle"
+			style="font-weight: bold; font-size: 16.0pt;; font-family: 'SimSun';">注&nbsp;意&nbsp;事&nbsp;项</span>
+	</p>
+	<p class="a DocDefaults " style="text-align: center;">&nbsp;</p>
+	<p class="a DocDefaults " style="text-align: center;">&nbsp;</p>
+	<table class="a8 a1 " id="docx4j_tbl_4"
+		style="border-bottom-style: none; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; position: relative; table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 6.22in;">
+		<colgroup>
+			<col style="width: 100%;" />
+		</colgroup>
+		<tbody>
+			<tr>
+				<td
+					style="border-bottom-style: none; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm;">
+					<p class="a-a8-BR DocDefaults " style="margin: 2mm 12mm;">
+						<span class="a0 " style="font-size: 14.0pt;"><span class=""
+							style="font-family: 'SimSun';">1、本报告未加盖检验检测专用章无效。</span></span>
+					</p>
+					<p class="a-a8-BR DocDefaults " style="margin: 2mm 12mm;">
+						<span class="a0 " style="font-size: 14.0pt;"><span class=""
+							style="font-family: 'SimSun';">2、本报告无检验检</span></span><span class="a0 "
+							style="color: #000000; font-size: 14.0pt;; font-family: 'SimSun';">测、审核、审批</span><span
+							class="a0 " style="font-size: 14.0pt;; font-family: 'SimSun';">签字无效。</span>
+					</p>
+					<p class="a-a8-BR DocDefaults " style="margin: 2mm 12mm;">
+						<span class="a0 " style="font-size: 14.0pt;"><span class=""
+							style="font-family: 'SimSun';">3、本报告是对储气井加固质量的评价。</span></span>
+					</p>
+					<p class="a-a8-BR DocDefaults " style="margin: 2mm 12mm;">
+						<span class="a0 " style="font-size: 14.0pt;"><span class=""
+							style="font-family: 'SimSun';">4、未经本院授权，不得复制（全部复制除外）本报告。</span></span>
+					</p>
+					<p class="a-a8-BR DocDefaults " style="margin: 2mm 12mm;">
+						<span class="a0 " style="font-size: 14.0pt;"><span class=""
+							style="font-family: 'SimSun';">5、客户如对本报告有异议，请于十五天内提出书面意见。</span></span>
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<p class="a DocDefaults ">&nbsp;</p>
+	<p class="a DocDefaults ">&nbsp;</p>
+	<p class="a DocDefaults ">&nbsp;</p>
+	<p class="a DocDefaults ">&nbsp;</p>
+	<p class="a DocDefaults ">&nbsp;</p>
+	<p class="a DocDefaults ">&nbsp;</p>
+	<table class="a8 a1 " id="docx4j_tbl_5"
+		style="border-bottom-style: none; margin-top: 130px; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; position: relative; table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 160mm;">
+		<colgroup>
+			<col style="width: 100%;" />
+		</colgroup>
+		<tbody>
+			<tr>
+				<td
+					style="border-bottom-style: none; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm;">
+					<p class="a-a8-BR DocDefaults " style="margin: 2mm 12mm;">
+						<span class="a0 " style="font-size: 14.0pt; font-family: 'SimSun';"><span class=""
+							style="font-family: 'SimSun';">地&nbsp;&nbsp;址：成都市东风路北二巷4号</span></span>
+					</p>
+					<p class="a-a8-BR DocDefaults " style="margin: 2mm 12mm;">
+						<span class="a0 "
+							style="font-size: 14.0pt;; font-family: 'SimSun';">邮&nbsp;&nbsp;编：610061</span></span>
+					</p>
+					<p class="a-a8-BR DocDefaults " style="margin: 2mm 12mm;">
+						<span class="a0 " style="font-size: 14.0pt;"><span class=""
+							style="font-family: 'SimSun';">联系电话：</span></span><span class="a0 "
+							style="font-size: 14.0pt;; font-family: 'SimSun';">+86-28-86607838</span>
+					</p>
+					<p class="a-a8-BR DocDefaults " style="margin: 2mm 12mm;">
+						<span class="a0 " style="font-size: 14.0pt;"><span class=""
+							style="font-family: 'SimSun';">传真号码：</span></span><span class="a0 "
+							style="font-size: 14.0pt;; font-family: 'SimSun';">+86-28-86607819</span>
+					</p>
+					<p class="a-a8-BR DocDefaults " style="margin: 2mm 12mm;">
+						<span class="a0 " style="font-size: 14.0pt;"><span class=""
+							style="font-family: 'SimSun';">电子邮件：</span></span><span class="a0 "
+							style="font-size: 14.0pt; color: blue; font-family: 'Times New Roman'; text-decoration: underline;"
+							>darwin88hw@163.com</span>
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<p class="a DocDefaults "
+		style="text-align: center; margin-top: 0.32in; margin-bottom: 0.11in; line-height: 150%;"></p>
+	<p class="a DocDefaults "
+		style="text-align: center; margin-top: 0.32in; margin-bottom: 0.11in; line-height: 150%;"></p>
+	<p class="a DocDefaults "
+		style="text-align: center; margin-top: 0.32in; margin-bottom: 0.11in; line-height: 150%;"></p>
+	<p class="a DocDefaults "
+		style="text-align: center; margin-top: 0.32in; margin-bottom: 0.11in; line-height: 150%;"></p>
+	<p class="a DocDefaults "
+		style="text-align: center; margin-top: 0.32in; margin-bottom: 0.11in; line-height: 150%;">
+</body>
+</html>

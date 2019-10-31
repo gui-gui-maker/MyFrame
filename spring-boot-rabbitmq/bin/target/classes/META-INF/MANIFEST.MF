@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: Administrator
+Build-Jdk: 12.0.2
+Implementation-Title: spring-boot-rabbitmq
+Implementation-Version: 1.0.0
+Implementation-Vendor-Id: com.neo
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/spring-boot-rabbitmq
+Created-By: Maven Integration for Eclipse
+

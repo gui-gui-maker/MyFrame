@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="robots" content="all" />
+<meta name="author" content="" />
+<meta name="Copyright" content="" />
+<title>广安市特种设备监督检验所</title>
+
+<link rel="icon" href="/rsc/public/skin/default/images/index/favicon.ico" type="image/x-icon" media="screen" />
+<link rel="shortcut icon" href="/rsc/public/skin/default/images/index/favicon.ico" type="image/x-icon" media="screen" />
+<link rel="stylesheet" href="/rsc/public/css/main.css" type="text/css" media="all" />
+<script type="text/javascript" src="/rsc/public/js/jquery.min.js"></script>
+<script type="text/javascript" src="/rsc/public/js/main.js"></script>
+<script type="text/javascript" src="/rsc/public/js/easytabs.js"></script>
+<script src="/app/webmanage/js/foucs.js" type="text/javascript"></script>
+<script src="/app/webmanage/js/WdatePicker.js" type="text/javascript"></script>
+<script src="/app/webmanage/js/jquery.js" type="text/javascript"></script>
+<script src="/app/webmanage/js/Guestbook.js" type="text/javascript"></script>
+<script src="/app/webmanage/js/SearchData.js" type="text/javascript"></script>
+<script src="/app/webmanage/js/InspectionSave.js" type="text/javascript"></script>
+
+</head>
+<body>
+<div id="pageMain" class="page-main"> 
+  <!--网页sate--> 
+  <!--网页头-->
+  <div class="head">
+    <div class="head_middle">
+      <div class="head_middle_left"></div>
+      <!--菜单导航-->
+      <div class="main_menu">
+        <ul>
+        
+             <li><a href="/rsc/index.html">网站首页</a></li>
+              <li><a href="/rsc/jysjj/index.html">检验所简介</a></li>
+             <li><a href="/rsc/bsdt/index.html">办事大厅</a></li>
+              <li><a href="/rsc/xzzx/index.html">下载中心</a></li>
+                    <li><a href="/rsc/lxfs/index.html">联系方式</a></li>
+          </ul>
+      </div>
+    </div>
+  </div>                                          <div id="pageMain" class="page-main"> 
+<div class="middle_ad_bg">
+    <div class="banner"> 
+      <script type="text/javascript" src="public/js/jquery.jslides.js"></script> 
+      <!-- 代码 开始 -->
+      <div class="i-main-content" id="iMainDatu">
+        <div class="i-main-content-wrap" id="loop1">
+          <div class="i-main-datu" style="background:url(/rsc/public/skin/default/images/index/bn01.jpg) no-repeat center; width:100%; height:352px;"> </div>
+          <div class="i-main-datu" style="background:url(/rsc/public/skin/default/images/index/bn02.jpg) no-repeat center; width:100%; height:352px;"> </div>
+          <div class="i-main-datu" style="background:url(/rsc/public/skin/default/images/index/bn03.jpg) no-repeat center; width:100%; height:352px;"> </div>
+        </div>
+      </div>
+      <!--四个切换点-->
+      <div class="switch-point">
+        <div class="switch-point-wrap" id="loop1b">
+          <ul>
+          
+          </ul>
+        </div>
+      </div>
+      <!-- 代码 结束 --> 
+    </div>
+  </div>
+<div class="middle_bj"> <a href="/rsc/bsdt/index.html" title="">
+    <div class="middle_bj_but_bt middle_bj_but_bt1">在线报检</div>
+    <div class="middle_bj_but_js">特种设备法定检验报检。（电梯、自动扶梯及自动人行道、起重机械、锅炉、压力容器、场（厂）内机动车）等6大类。</div>
+    </a> <a href="/rsc/jybgcx/report.jsp" title="">
+    <div class="middle_bj_but_bt middle_bj_but_bt2">报告书出具状态查询</div>
+    <div class="middle_bj_but_js">检验完成后，<br />
+      查询报告书出具情况。</div>
+    </a> <a href="" title="">
+    <div class="middle_bj_but_bt middle_bj_but_bt3">办事指南</div>
+    <div class="middle_bj_but_js"> 业务受理范围<br />
+      申请时所需资料<br />
+      检验受理工作流程<br />
+      检验费标准<br />
+    </div>
+    </a> <a href="" title="">
+    <div class="middle_bj_but_bt middle_bj_but_bt4">联系我们</div>
+    <div class="middle_bj_but_js"> 电话：0826-2349279<br />
+      报检电话：0826-2366032<br />
+      邮箱：gatejiansuo@sina.com<br />
+      地址： 广安市城南会展街9号四楼<br />
+    </div>
+    </a> </div>
+  <!--标语-->
+  <div class="middle_biaoyu"> <img src="/rsc/public/skin/default/images/index/biaoyu_01.jpg" width="980" height="90"  border="0" alt=""> </div>
+<div class="newslist"> 
+    <!--左侧新闻列表-->
+    <div class="newslist_left">
+      <div class="newslist_top">
+        <div class="newslist_top_bt"><a href="mb_newslist.html" title="">新闻公告</a></div>
+        <div class="newslist_top_more"><a href="="/rsc/xwzx/index.html" title="">更多...</a></div>
+      </div>
+      <div class="newslist_nr">
+        <ul>
+          <li><a href="mb_newscon.html" class="" title="">市特检所党支部组织全体党员干部观看廉政警示教育片片片片片片片片片片片片片片片片片片片</a><span>2014-05-13</span></li>
+          <li><a href="mb_newscon.html" class="" title="">市特检所党支部组织全体党员干部观看廉政警示教育片</a><span>2014-05-13</span></li>
+          <li><a href="mb_newscon.html" class="" title="">市特检所党支部组织全体党员干部观看廉政警示教育片</a><span>2014-05-13</span></li>
+          <li><a href="mb_newscon.html" class="" title="">市特检所党支部组织全体党员干部观看廉政警示教育片</a><span>2014-05-13</span></li>
+          <li><a href="mb_newscon.html" class="" title="">市特检所党支部组织全体党员干部观看廉政警示教育片</a><span>2014-05-13</span></li>
+          <li><a href="mb_newscon.html" class="" title="">市特检所党支部组织全体党员干部观看廉政警示教育片</a><span>2014-05-13</span></li>
+          <li><a href="mb_newscon.html" class="" title="">市特检所党支部组织全体党员干部观看廉政警示教育片</a><span>2014-05-13</span></li>
+          <li><a href="mb_newscon.html" class="" title="">市特检所党支部组织全体党员干部观看廉政警示教育片</a><span>2014-05-13</span></li>
+        </ul>
+      </div>
+    </div>
+    <!--左侧新闻列表结束--> 
+    <!--右边侧新闻列表-->
+    <div class="newslist_right">
+      <div class="newslist_top">
+        <div class="newslist_top_bt">下载中心</div>
+        <div class="newslist_top_more"><a href="/rsc/xzzx/index.html" title="">更多...</a></div>
+      </div>
+      <div class="newslist_nr">
+        <ul>
+                  </ul>
+      </div>
+    </div>
+    <!--右边侧新闻列表结束--> 
+  </div>
+  <!--新闻列表结束--> 
+  <!--友情链接开始-->
+  <div class="Links">
+    <div class="Links_bt">友情链接</div>
+    <div class="Links_text"> <a href="http://www.aqsiq.gov.cn" target="_blank" title="">国家质量监督检验局</a> <a href="http://www.sczj.gov.cn/" target="_blank" title="">四川省质量技术监督局</a> <a href="http://www.tejian.org/" target="_blank" title="">中国特检网</a> <a href="http://www.gazj.gov.cn" target="_blank" title="">广安市质量技术监督局</a><br />
+      <a href="http://www.guang-an.gov.cn/" target="_blank"; title="">广安市人民政府</a> <a href="http://www.gasafety.gov.cn/" target="_blank"; title="">广安市安全生产监督管理局</a> <a href="http://ga.scfda.gov.cn/CL0327/" target="_blank"; title="">广安市食品药品监督管理局</a> <a href="http://www.sichis.net/" target="_blank" title="">四川省标准化研究院网站</a> <a href="http://www.gaaic.gov.cn/" target="_blank" title="">广安市工商行政管理局</a> </div>
+  </div>
+<!--主要内容区域-->
+<div class="foot">
+    <p> @(C) 2004-2013 版权所有: 广安市特种设备监督检验所<br />
+      蜀ICP备12008332 地址：四川省广安市城南会展街9号四楼<br />
+      技术支持：成都川大科鸿新技术研究所<br />
+      业务系统：<a href="/app/index.jsp" target="_blank">广安特检综合管理系统</a><br />
+    </p>
+  </div>
+  <!--网页end--> 
+</div>                                                                     </body>
+</html>

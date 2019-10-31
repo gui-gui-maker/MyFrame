@@ -1,0 +1,50 @@
+package com.fwxm.supplies.dao;
+
+import com.fwxm.material.bean.Goods;
+import com.fwxm.material.bean.GoodsAndOrder;
+import com.fwxm.supplies.bean.GoodsReturn;
+import com.fwxm.supplies.bean.Warehousing;
+import com.khnt.core.crud.dao.impl.EntityDaoImpl;
+
+import java.util.List;
+import java.util.Map;
+
+import org.hibernate.Criteria;
+import org.hibernate.Query;
+import org.springframework.stereotype.Repository;
+
+@Repository("goodsReturnDao")
+public class GoodsReturnDao extends EntityDaoImpl<GoodsReturn>{
+
+	public Map<String, String>  getBeanByYear( String year){
+		String sql="SELECT * FROM ( SELECT substr(thbh,11) as thbh FROM TJY2_CH_GOODSRETURN WHERE thbh LIKE  '"+year+"%'   ) order by thbh desc";
+		List<Map<String, String>> list=this.createSQLQuery(sql).setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP).list();
+		if(list!=null && list.size()>0){
+			return list.get(0);
+		}else {
+			return null;
+		}
+	}
+	
+	/**
+	 * 根据入库单编号查询物资列表
+	 * @param rkBh
+	 * @return
+	 */
+	public List<Goods> getRkGoods(String[] rkBh){
+//		String hql=" from Goods where warehousing_num IN (:rkBh) and state='2' and warehousing_num not in (:oldBH)";
+		String hql=" from Goods where warehousing_num IN (:rkBh) and state='2'";
+		Query query = this.createQuery(hql);
+		query.setParameterList("rkBh", rkBh);
+//		query.setParameterList("oldBH", oldBH);
+		return query.list();
+	}
+	
+	public List<GoodsAndOrder> getDelete(String[] goodsId ,String orderId){
+		String hql=" from GoodsAndOrder where type='CK' and crk_type='TH' and fk_order_id=? and fk_goods_id in (:goodsId)";
+		Query query = this.createQuery(hql,orderId);
+		query.setParameterList("goodsId", goodsId);
+		return query.list();
+		
+	}
+}

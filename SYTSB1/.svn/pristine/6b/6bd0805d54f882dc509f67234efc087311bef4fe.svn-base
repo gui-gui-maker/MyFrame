@@ -1,0 +1,86 @@
+.color_picker{
+	padding: 0px 10px 10px;
+	z-index: 1;
+}
+.color_picker *{box-sizing: content-box;}
+
+.color_items{
+	border-color: #000;
+	border-width: 0 1px 1px 0;
+	border-style: solid;
+	width: 156px;
+	margin-top: 10px;
+	
+}
+.color_btn{
+	line-height:20px;
+	margin-top:5px;
+}
+.color_extend{
+	margin-top: 10px;
+	width: 156px;
+	position: relative;
+}
+.color_extend .toolbar_button{
+	display: inline-block;
+	padding: 0px 2px;
+}
+.color_transparent{
+	display:inline-block;
+	float:left;
+	margin-right:8px;
+}
+.color_hex{
+	display:inline-block;
+	width:76px;
+	height:18px;
+	line-height:18px;
+	color:#666;
+	float:left;
+	clear:right;
+	margin-left:0px;
+	position:relative;
+	margin-top:4px;
+}
+.color_hex input{
+	position:absolute;
+	width:54px;
+	height:16px;
+	line-height:16px;
+	color:#666;
+	margin:0px;
+	padding:0px 2px;
+	font-size:12px;
+	top:0px;
+	left:10px;
+	border:1px solid #ccc;
+	border-radius:3px;
+}
+
+.color_items div{
+	height: 12px;
+	width: 12px;
+	float: left;
+	border: #000 solid 1px;
+	border-width: 1px 0 0 1px;
+}
+.color_items div:hover{
+	position: relative;
+	border: #FFF solid 2px;
+	margin: -1px -2px -2px -1px;
+}
+.color_items .selected{
+	position: relative;
+	border: #f7ddaa solid 2px;
+	margin: -1px -2px -2px -1px;
+}
+.color_items .clear{
+	border: 0px;
+	float: none;
+	height: 0px;
+	width: 100%;
+	clear: both;
+}
+.options_menu{
+	display: none;
+}

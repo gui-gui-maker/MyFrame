@@ -1,0 +1,1303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>CTJB-0204-BG压力容器定期检验报告</title> 
+ 
+</head>
+
+<body>
+	<div id="layout2" style="width: 99.8%">
+		<input type="hidden" id="inputFocus" name="inputFocus" />
+		 <input type="hidden" id="code_ext" name="code_ext"  value="${param.code_ext}"/> 
+		<div position="center" style="overflow: auto;" align="center">
+			<form id="formObj" action="reportItemValueAction/saveMap.do?page=21"
+				getAction="reportItemValueAction/detailMap.do?page=21">
+				<input type="hidden" id="fk_report_id" name="fk_report_id"
+					value="${param.fk_report_id}"> <input type="hidden"
+					id="fk_inspection_info_id" name="fk_inspection_info_id"
+					value="${param.fk_inspection_info_id}"> <input
+					type="hidden" id="nextPage" name="nextPage" value="22"> <br />
+				<p class="a DocDefaults " style="text-align: center;">
+					<a name="RTPAGE_14__材料成分分析报告" ></a>
+				</p>
+				<table id="docx4j_tbl_40"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 6.45in;">
+					<colgroup>
+						<col style="width: 50%;" />
+						<col style="width: 50%;" />
+					</colgroup>
+					<tbody>
+						<tr>
+							<td
+								style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000;">
+								<p class="a DocDefaults ">
+									<span class="a0 " style="color: #000000; font-size: 12.0pt;"><span
+										class="" style="font-family: 'SimSun';">文件编号：</span></span><span
+										class="a0 "
+										style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">CTJB-0204-BG14</span>
+								</p>
+							</td>
+							<td
+								style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000;">
+								<p class="a DocDefaults "
+									style="text-align: right; page-break-before: always;">
+									<span class="a0 " style="color: #000000; font-size: 12.0pt;"><span
+										class="" style="font-family: 'SimSun';">实施日期：</span></span><span
+										class="a0 "
+										style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">2016年10月1日</span>
+								</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<br/>
+				<br/>
+				<p class="a DocDefaults " style="text-align: center;">
+					<span class="a0 "
+						style="font-weight: bold; color: #000000; font-size: 16.0pt;; font-family: 'SimSun';">材料成分分析报告</span>
+				</p>
+				<p class="a DocDefaults "
+					style="position: relative; margin-left: 7mm; text-indent: 110mm;"> </p>
+				<table id="docx4j_tbl_41"
+					style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 7.68in;">
+					<colgroup>
+						<col style="width: 6.4%;" />
+						<col style="width: 3.43%;" />
+						<col style="width: 4.27%;" />
+						<col style="width: 2.2%;" />
+						<col style="width: 0.37%;" />
+						<col style="width: 11.8%;" />
+						<col style="width: 0.46%;" />
+						<col style="width: 4.35%;" />
+						<col style="width: 2.62%;" />
+						<col style="width: 3.72%;" />
+						<col style="width: 7.83%;" />
+						<col style="width: 4.68%;" />
+						<col style="width: 2.45%;" />
+						<col style="width: 3.85%;" />
+						<col style="width: 3.85%;" />
+						<col style="width: 1.85%;" />
+						<col style="width: 0.6%;" />
+						<col style="width: 6.25%;" />
+						<col style="width: 2.13%;" />
+						<col style="width: 2%;" />
+						<col style="width: 2.26%;" />
+						<col style="width: 4.58%;" />
+						<col style="width: 18.01%;" />
+						<col style="width: 0.05%;" />
+					</colgroup>
+					<tbody>
+						<tr style="height: 0.24in;">
+							<td colspan="19"
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-right-style: none; border-top-style: none; padding-left: 0mm; padding-right: 0mm; vertical-align: middle;">
+								<p class="a DocDefaults " style="text-align: right;">
+									<span class="a0 "
+										style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">报告编号：</span>
+								</p>
+							</td>
+							<td colspan="4"
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-right-style: none; border-top-style: none; padding-left: 0mm; padding-right: 0mm; vertical-align: middle;">
+								<p class="a DocDefaults ">
+									<input id="base__report_sn" name="base__report_sn" type="text"
+										ltype="text" value="" ligerui="{width:102}"
+										readonly="readonly" />
+								</p>
+							</td>
+						</tr>
+						<tr style="height: 0.3in;">
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm; vertical-align: middle;">
+								<p class="a DocDefaults " style="text-align: center;">
+									<span class="a0 "
+										style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">取样方法</span>
+								</p>
+							</td>
+							<td colspan="8"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm; vertical-align: middle;">
+								<p class="a DocDefaults ">
+									<input id="TBL02160" name="TBL02160" type="text" ltype="text"
+										value="" ligerui="{width:148}" />
+								</p>
+							</td>
+							<td colspan="5"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm; vertical-align: middle;">
+								<p class="a DocDefaults " style="text-align: center;">
+									<span class="a0 "
+										style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">检测部位</span>
+								</p>
+							</td>
+							<td colspan="8"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02161" name="TBL02161" type="text" ltype="text"
+										value="" ligerui="{width:283}" />
+								</p>
+							</td>
+						</tr>
+						<tr style="height: 7mm;">
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm; vertical-align: middle;">
+								<p class="a DocDefaults " style="text-align: center;">
+									<span class="a0 "
+										style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">仪器型号</span>
+								</p>
+							</td>
+							<td colspan="8"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm; vertical-align: middle;">
+								<p class="a DocDefaults ">
+									<input id="TBL02162" name="TBL02162" type="text" ltype="text"
+										value="" ligerui="{width:148}" />
+								</p>
+							</td>
+							<td colspan="5"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm; vertical-align: middle;">
+								<p class="a DocDefaults " style="text-align: center;">
+									<span class="a0 "
+										style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">仪器编号</span>
+								</p>
+							</td>
+							<td colspan="8"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02163" name="TBL02163" type="text" ltype="text"
+										value="" ligerui="{width:283}" />
+								</p>
+							</td>
+						</tr>
+						<tr style="height: 7mm;">
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm; vertical-align: middle;">
+								<p class="a DocDefaults " style="text-align: center;">
+									<span class="a0 "
+										style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">分析方法</span>
+								</p>
+							</td>
+							<td colspan="8"
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm; vertical-align: middle;">
+								<p class="a DocDefaults ">
+									<input id="TBL02164" name="TBL02164" type="text" ltype="text"
+										value="" ligerui="{width:148}" />
+								</p>
+							</td>
+							<td colspan="5"
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm; vertical-align: middle;">
+								<p class="a DocDefaults " style="text-align: center;">
+									<span class="a0 "
+										style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">分析方法标准</span>
+								</p>
+							</td>
+							<td colspan="8"
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02165" name="TBL02165" type="text" ltype="text"
+										value="" ligerui="{width:283}" />
+								</p>
+							</td>
+						</tr>
+						<tr style="height: 7mm;">
+							<td colspan="5"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000;  border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<span class="a0 " style="color: #000000; font-size: 12.0pt;"><span
+										class="" style="font-family: 'SimSun';">取样位置图：</span></span>
+								</p>
+							</td>
+							<td colspan="19"
+								style="background-color: #FFFFFF; border-bottom-style: none;  border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02166" name="TBL02166" type="text" ltype="text"
+										value="" ligerui="{width:604}" />
+								</p>
+							</td>
+						</tr>
+						<tr style="height: 2.76in;">
+							<td colspan="24"
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm; vertical-align: middle;">
+								<p class="a DocDefaults " style="text-align: center;">
+								<div id='TBL02167' name='TBL02167' class='uploadPhoto'
+									style='width: 548.0pt; height: 190.0pt;'
+									align='center'></div>
+								</p>
+							</td>
+						</tr>
+						<tr style="height: 0.48in;">
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm; vertical-align: middle;">
+								<p class="a DocDefaults " style="text-align: center;">
+									<span class="a0 "
+										style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">序号</span>
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm; vertical-align: middle;">
+								<p class="a DocDefaults " style="text-align: center;">
+									<span class="a0 "
+										style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">取样</span>
+								</p>
+								<p class="a DocDefaults " style="text-align: center;">
+									<span class="a0 "
+										style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">位置</span>
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm; vertical-align: middle;">
+								<p class="a DocDefaults " style="text-align: center;">
+									<span class="a0 "
+										style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">标称材质</span>
+								</p>
+							</td>
+							<td colspan="15"
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm; vertical-align: middle;">
+								<p class="a DocDefaults " style="text-align: center;">
+									<span class="a0 " style="color: #000000; font-size: 12.0pt;"><span
+										class="" style="font-family: 'SimSun';">元素及含量（％</span></span><span
+										class="a0 "
+										style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">)</span>
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm; vertical-align: middle;">
+								<p class="a DocDefaults " style="text-align: center;">
+									<span class="a0 "
+										style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">备注</span>
+								</p>
+							</td>
+						</tr>
+						<tr style="height: 7mm;">
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02168" name="TBL02168" type="text" ltype="text"
+										value="" ligerui="{width:62}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02169" name="TBL02169" type="text" ltype="text"
+										value="" ligerui="{width:37}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02170" name="TBL02170" type="text" ltype="text"
+										value="" ligerui="{width:79}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02171" name="TBL02171" type="text" ltype="text"
+										value="" ligerui="{width:25}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02172" name="TBL02172" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02173" name="TBL02173" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02174" name="TBL02174" type="text" ltype="text"
+										value="" ligerui="{width:35}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02175" name="TBL02175" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02176" name="TBL02176" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02177" name="TBL02177" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02178" name="TBL02178" type="text" ltype="text"
+										value="" ligerui="{width:37}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02179" name="TBL02179" type="text" ltype="text"
+										value="" ligerui="{width:156}" />
+								</p>
+							</td>
+						</tr>
+						<tr style="height: 7mm;">
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02180" name="TBL02180" type="text" ltype="text"
+										value="" ligerui="{width:62}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02181" name="TBL02181" type="text" ltype="text"
+										value="" ligerui="{width:37}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02182" name="TBL02182" type="text" ltype="text"
+										value="" ligerui="{width:79}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02183" name="TBL02183" type="text" ltype="text"
+										value="" ligerui="{width:25}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02184" name="TBL02184" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02185" name="TBL02185" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02186" name="TBL02186" type="text" ltype="text"
+										value="" ligerui="{width:35}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02187" name="TBL02187" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02188" name="TBL02188" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02189" name="TBL02189" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02190" name="TBL02190" type="text" ltype="text"
+										value="" ligerui="{width:37}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02191" name="TBL02191" type="text" ltype="text"
+										value="" ligerui="{width:156}" />
+								</p>
+							</td>
+						</tr>
+						<tr style="height: 7mm;">
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02192" name="TBL02192" type="text" ltype="text"
+										value="" ligerui="{width:62}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02193" name="TBL02193" type="text" ltype="text"
+										value="" ligerui="{width:37}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02194" name="TBL02194" type="text" ltype="text"
+										value="" ligerui="{width:79}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02195" name="TBL02195" type="text" ltype="text"
+										value="" ligerui="{width:25}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02196" name="TBL02196" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02197" name="TBL02197" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02198" name="TBL02198" type="text" ltype="text"
+										value="" ligerui="{width:35}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02199" name="TBL02199" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02200" name="TBL02200" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02201" name="TBL02201" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02202" name="TBL02202" type="text" ltype="text"
+										value="" ligerui="{width:37}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02203" name="TBL02203" type="text" ltype="text"
+										value="" ligerui="{width:156}" />
+								</p>
+							</td>
+						</tr>
+						<tr style="height: 7mm;">
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02204" name="TBL02204" type="text" ltype="text"
+										value="" ligerui="{width:62}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02205" name="TBL02205" type="text" ltype="text"
+										value="" ligerui="{width:37}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02206" name="TBL02206" type="text" ltype="text"
+										value="" ligerui="{width:79}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02207" name="TBL02207" type="text" ltype="text"
+										value="" ligerui="{width:25}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02208" name="TBL02208" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02209" name="TBL02209" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02210" name="TBL02210" type="text" ltype="text"
+										value="" ligerui="{width:35}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02211" name="TBL02211" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02212" name="TBL02212" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02213" name="TBL02213" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02214" name="TBL02214" type="text" ltype="text"
+										value="" ligerui="{width:37}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02215" name="TBL02215" type="text" ltype="text"
+										value="" ligerui="{width:156}" />
+								</p>
+							</td>
+						</tr>
+						<tr style="height: 7mm;">
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02216" name="TBL02216" type="text" ltype="text"
+										value="" ligerui="{width:62}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02217" name="TBL02217" type="text" ltype="text"
+										value="" ligerui="{width:37}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02218" name="TBL02218" type="text" ltype="text"
+										value="" ligerui="{width:79}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02219" name="TBL02219" type="text" ltype="text"
+										value="" ligerui="{width:25}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02220" name="TBL02220" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02221" name="TBL02221" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02222" name="TBL02222" type="text" ltype="text"
+										value="" ligerui="{width:35}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02223" name="TBL02223" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02224" name="TBL02224" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02225" name="TBL02225" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02226" name="TBL02226" type="text" ltype="text"
+										value="" ligerui="{width:37}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02227" name="TBL02227" type="text" ltype="text"
+										value="" ligerui="{width:156}" />
+								</p>
+							</td>
+						</tr>
+						<tr style="height: 7mm;">
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02228" name="TBL02228" type="text" ltype="text"
+										value="" ligerui="{width:62}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02229" name="TBL02229" type="text" ltype="text"
+										value="" ligerui="{width:37}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02230" name="TBL02230" type="text" ltype="text"
+										value="" ligerui="{width:79}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02231" name="TBL02231" type="text" ltype="text"
+										value="" ligerui="{width:25}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02232" name="TBL02232" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02233" name="TBL02233" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02234" name="TBL02234" type="text" ltype="text"
+										value="" ligerui="{width:35}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02235" name="TBL02235" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02236" name="TBL02236" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02237" name="TBL02237" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02238" name="TBL02238" type="text" ltype="text"
+										value="" ligerui="{width:37}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02239" name="TBL02239" type="text" ltype="text"
+										value="" ligerui="{width:156}" />
+								</p>
+							</td>
+						</tr>
+						<tr style="height: 7mm;">
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02240" name="TBL02240" type="text" ltype="text"
+										value="" ligerui="{width:62}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02241" name="TBL02241" type="text" ltype="text"
+										value="" ligerui="{width:37}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02242" name="TBL02242" type="text" ltype="text"
+										value="" ligerui="{width:79}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02243" name="TBL02243" type="text" ltype="text"
+										value="" ligerui="{width:25}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02244" name="TBL02244" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02245" name="TBL02245" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02246" name="TBL02246" type="text" ltype="text"
+										value="" ligerui="{width:35}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02247" name="TBL02247" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02248" name="TBL02248" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02249" name="TBL02249" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02250" name="TBL02250" type="text" ltype="text"
+										value="" ligerui="{width:37}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02251" name="TBL02251" type="text" ltype="text"
+										value="" ligerui="{width:156}" />
+								</p>
+							</td>
+						</tr>
+						<tr style="height: 7mm;">
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02252" name="TBL02252" type="text" ltype="text"
+										value="" ligerui="{width:62}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02253" name="TBL02253" type="text" ltype="text"
+										value="" ligerui="{width:37}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02254" name="TBL02254" type="text" ltype="text"
+										value="" ligerui="{width:79}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02255" name="TBL02255" type="text" ltype="text"
+										value="" ligerui="{width:25}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02256" name="TBL02256" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02257" name="TBL02257" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02258" name="TBL02258" type="text" ltype="text"
+										value="" ligerui="{width:35}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02259" name="TBL02259" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02260" name="TBL02260" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02261" name="TBL02261" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02262" name="TBL02262" type="text" ltype="text"
+										value="" ligerui="{width:37}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02263" name="TBL02263" type="text" ltype="text"
+										value="" ligerui="{width:156}" />
+								</p>
+							</td>
+						</tr>
+						<tr style="height: 7mm;">
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02264" name="TBL02264" type="text" ltype="text"
+										value="" ligerui="{width:62}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02265" name="TBL02265" type="text" ltype="text"
+										value="" ligerui="{width:37}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02266" name="TBL02266" type="text" ltype="text"
+										value="" ligerui="{width:79}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02267" name="TBL02267" type="text" ltype="text"
+										value="" ligerui="{width:25}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02268" name="TBL02268" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02269" name="TBL02269" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02270" name="TBL02270" type="text" ltype="text"
+										value="" ligerui="{width:35}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02271" name="TBL02271" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02272" name="TBL02272" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02273" name="TBL02273" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02274" name="TBL02274" type="text" ltype="text"
+										value="" ligerui="{width:37}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02275" name="TBL02275" type="text" ltype="text"
+										value="" ligerui="{width:156}" />
+								</p>
+							</td>
+						</tr>
+						<tr style="height: 7mm;">
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02276" name="TBL02276" type="text" ltype="text"
+										value="" ligerui="{width:62}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02277" name="TBL02277" type="text" ltype="text"
+										value="" ligerui="{width:37}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02278" name="TBL02278" type="text" ltype="text"
+										value="" ligerui="{width:79}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02279" name="TBL02279" type="text" ltype="text"
+										value="" ligerui="{width:25}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02280" name="TBL02280" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02281" name="TBL02281" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02282" name="TBL02282" type="text" ltype="text"
+										value="" ligerui="{width:35}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02283" name="TBL02283" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02284" name="TBL02284" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02285" name="TBL02285" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02286" name="TBL02286" type="text" ltype="text"
+										value="" ligerui="{width:37}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02287" name="TBL02287" type="text" ltype="text"
+										value="" ligerui="{width:156}" />
+								</p>
+							</td>
+						</tr>
+						<tr style="height: 7mm;">
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02288" name="TBL02288" type="text" ltype="text"
+										value="" ligerui="{width:62}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02289" name="TBL02289" type="text" ltype="text"
+										value="" ligerui="{width:37}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02290" name="TBL02290" type="text" ltype="text"
+										value="" ligerui="{width:79}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02291" name="TBL02291" type="text" ltype="text"
+										value="" ligerui="{width:25}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02292" name="TBL02292" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02293" name="TBL02293" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02294" name="TBL02294" type="text" ltype="text"
+										value="" ligerui="{width:35}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02295" name="TBL02295" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02296" name="TBL02296" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02297" name="TBL02297" type="text" ltype="text"
+										value="" ligerui="{width:36}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02298" name="TBL02298" type="text" ltype="text"
+										value="" ligerui="{width:37}" />
+								</p>
+							</td>
+							<td colspan="3"
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<input id="TBL02299" name="TBL02299" type="text" ltype="text"
+										value="" ligerui="{width:156}" />
+								</p>
+							</td>
+						</tr>
+						<tr style="height: 0.16in;">
+							<td colspan="24"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<span class="a0 " style="color: #000000; font-size: 12.0pt;"><span
+										class="" style="font-family: 'SimSun';">分析结果：</span></span>
+								</p>
+							</td>
+						</tr>
+						<tr style="height: 0.55in;">
+							<td colspan="24"
+								style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000;  padding-left: 0mm; padding-right: 0mm;">
+								<p class="a DocDefaults ">
+									<textarea id="TBL02300" name="TBL02300" ligerui="{width:726}"
+										class="l-textarea" required> </textarea>
+								</p>
+							</td>
+						</tr>
+						<tr style="height: 8mm;">
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000;  border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm; vertical-align: middle;">
+								<p class="a DocDefaults ">
+									<span class="a0 " style="color: #000000; font-size: 12.0pt;"><span
+										class="" style="font-family: 'SimSun';">分析：</span></span>
+								</p>
+							</td>
+							<td colspan="5"
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000;  border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm; vertical-align: middle;">
+								<p class="a DocDefaults ">
+									<input id="base__inspection_op21" name="base__inspection_op21"  class="combotreeInput"
+										type="text" value="" 
+										ligerui="{data:<u:dict sql="select t.id, t.pid, t.code, t.text from (select o.id as id,o.id as code,o.ORG_NAME as text,o.PARENT_ID as pid from sys_org o union select e.id as id, e.id as code, e.NAME as text, e.ORG_ID as pid from employee e where e.ORG_ID != '100049') t where t.id!='100049' start with t.id in ('100029', '100034', '100035','100033', '100065', '100036','100037', '100066','100067','100045') connect by t.pid = prior t.id"/>
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000;  border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm; vertical-align: middle;">
+								<p class="a DocDefaults ">
+									<span class="a0 " style="color: #000000; font-size: 12.0pt;"><span
+										class="" style="font-family: 'SimSun';">日期：</span></span>
+								</p>
+							</td>
+							<td colspan="4"
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm; vertical-align: middle;">
+								<p class="a DocDefaults ">
+									<input id="base__inspection_date" name="base__inspection_date"
+										type="text" ltype="text" value=""
+										ligerui="{width:119,isMultiSelect:true}" readonly="readonly" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000;  border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm; vertical-align: middle;">
+								<p class="a DocDefaults ">
+									<span class="a0 " style="color: #000000; font-size: 12.0pt;"><span
+										class="" style="font-family: 'SimSun';">审核：</span></span>
+								</p>
+							</td>
+							<td colspan="5"
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000;  border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm; vertical-align: middle;">
+								<p class="a DocDefaults ">
+									<input id="base__audit_op" name="base__audit_op" type="text"
+										ltype="select" value=""
+										ligerui="{width:84,data:<u:dict sql= '<%=audit_op_bg%>'/>}" />
+								</p>
+							</td>
+							<td colspan="2"
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000;  border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm; vertical-align: middle;">
+								<p class="a DocDefaults ">
+									<span class="a0 "
+										style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">日期：</span>
+								</p>
+							</td>
+							<td
+								style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000;  border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm; vertical-align: middle;">
+								<p class="a DocDefaults ">
+									<input id="base__audit_date" name="base__audit_date"
+										type="text" ltype="text" value=""
+										ligerui="{width:119,isMultiSelect:true}" readonly="readonly" />
+								</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<p class="a DocDefaults "
+					style="text-align: left; page-break-before: always;"> </p>
+				<p class="a DocDefaults " style="text-align: center;">
+			</form>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<%@page import="com.khnt.security.util.SecurityUtil"%>
+<%@ page contentType="text/html;charset=UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>组织机构权限配置</title>
+<%@include file="/k/kui-base-list.jsp"%>
+<script type="text/javascript">
+	var qmUserConfig = {
+		sp_defaults : {
+			labelWidth : 60,
+			columnWidth : 0.45
+		},
+		sp_fields : [ {
+			name : "p_name",
+			compare : "like"
+		}, {
+			name : "p_code",
+			compare : "like"
+		} ],
+		listeners : {
+			tree : {
+						columnId : 'p_name',
+						idField : 'id',
+						parentIDField : 'parent_id'
+			},
+			onAfterShowData : function() {
+				initGridSelectRange();
+			},
+			onCheckRow : function(checked,rowdata, rowindex, rowDomElement){
+				parent.addOrRemoveRole(checked,rowdata);
+			},
+			onBeforeCheckAllRow : function(){
+				return false;
+			}
+		}
+	};
+	
+	//表格渲染时，将被选择的角色勾选
+	function initGridSelectRange(){
+		var idRange = parent.getRoleArr();
+		Qm.getQmgrid().selectRange("id", idRange);
+	}
+</script>
+</head>
+<body class="p0">
+	<sec:authorize ifAnyGranted="sys_administrate,super_administrate">
+		<qm:qm pageid="sys_permission" singleSelect="false" pagesize="1000000" usePager="false" />
+	</sec:authorize>
+	<sec:authorize ifNotGranted="sys_administrate,super_administrate">
+		<qm:qm pageid="sys_self_permission" singleSelect="false"  pagesize="1000000" usePager="false" />
+	</sec:authorize>
+</body>
+</html>

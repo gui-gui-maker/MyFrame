@@ -1,0 +1,412 @@
+var WD_DMMKEY=0;
+var CL_WIDTH=0;
+var CL_PSHOW=false;
+var WINDOW_WIDTH=null;
+var WINDOW_HEIGHT=null;
+var MC_LEFT=null,MC_RIGHT=null;
+var WL_BE_CSSNAME=null;
+try{
+	parent.mPanelDispay({panel:'left',display:false,close:true});//隐藏父层菜单
+}catch (e){}
+
+function skinSet() {
+	//top.kFrameConfig["welcomeMainBg"]="k/kui/images/sys-desktop/bg/bg010.jpg";
+	//alert(top.kFrameConfig["welcomeMainBg"]);
+	if (top.kFrameConfig["sysMainBg"] || top.kFrameConfig["welcomeMainBg"]) {
+		WL_BE_CSSNAME="bebg";
+	}
+	var welcomeMainBgUser=top.kFrameConfig["welcomeMainBg"];
+	if (welcomeMainBgUser) {//
+		var welcomeMainBgObj=top.kFrameConfig["skinObject"]["welcomeMainBg"];
+		var welcomeMainBgLen=welcomeMainBgObj.length;
+		for (var i = 0; i < welcomeMainBgLen; i++) {
+			var items=welcomeMainBgObj[i];
+			if (welcomeMainBgUser==items["imgUrl"]) {
+				WL_BE_CSSNAME=items["skinName"];
+			}
+		}
+		var str2='';
+		str2+='html {background:none!important;}';
+		str2+='';
+		str2+='';
+		document.write(unescape('%3Cstyle type="text/css"%3E'+str2+'%3C/style%3E'));
+		var str2='';
+		str2+='.dst-allbg {background-image:url("'+welcomeMainBgUser+'");background-size:100%;background-size:cover;background-position:center center;background-repeat:no-repeat;}';
+		//str2+='* {text-shadow:#000000 0 0 5px;filter:progid:DXImageTransform.Microsoft.Glow(color=#00469b,strength=2);color:#FFFFFF !important;}';
+		str2+='';
+		str2+='';
+		str2+='';
+		str2+='';
+		str2+='';//alert(str2);
+		document.write(unescape('%3Cstyle type="text/css"%3E'+str2+'%3C/style%3E'));
+	}
+}
+skinSet();
+
+$(function() {//jQuery页面载入事件
+
+	WINDOW_WIDTH=$(window).width();
+	WINDOW_HEIGHT=$(window).height();
+	MC_LEFT="0"||$("#page-switcher-start").width();
+	MC_RIGHT=$("#page-switcher-end").width();
+	//ie6 iframe 页面滚动条不正常解决方案。
+	if ($.browser.msie && parseFloat($.browser.version) <= 6) {
+		if ($("body").height() > $(window).height()) {
+			$("body").width($("body").width() - 18);
+		}
+	}
+
+	var chBG=$('<div class="wl-bg1"><a href="#chBG"></a></div>');
+	chBG.click(function(){
+		parent.$("#topMSet").trigger("click");
+		return;
+		top.$.dialog({
+			width:720,
+			height:500,
+			lock:true,
+			title:"系统界面设置",
+			content:"url:pub/rbac/user_skin.jsp?tabId=5"
+		});
+	});
+	//$("body").append(chBG);
+	if (WL_BE_CSSNAME) {
+		$("body").addClass(WL_BE_CSSNAME);
+	}
+
+	var doLi=$("#dot-list li");
+
+	//$("#index_numIco").hide();
+
+	//2013-11-8 下午3:56 lybide 新写法 sId=1 必须对应。
+	/*
+	 <div class="btn_arlt" style="display:none;" sId="2"></div>
+	 <div class="btn_arlt" style="display:none;" sId="3"></div>
+	 <ul id="dot-list">
+	 <li class="dot" role="button" title="" sId="2">
+	 <div>分析统计</div>
+	 </li>
+	 <li class="dot" role="button" title="" sId="3">
+	 <div>综合信息</div>
+	 </li>
+	 </ul>
+	 */
+	var doLiLen=doLi.length;
+	if (doLiLen>1) {
+		$("#page-switcher-start").click(function(){
+			var bb=$("#dot-list li[sId="+WD_DMMKEY+"]").prev();
+			bb.click();
+			if (bb.length==0) {
+				$("#dot-list li:last").click();
+			}
+		});
+		$("#page-switcher-end").click(function(){
+			var bb=$("#dot-list li[sId="+WD_DMMKEY+"]").next();
+			bb.click();
+			if (bb.length==0) {
+				$("#dot-list li:eq(0)").click();
+			}
+		});
+	} else {
+		$("#page-switcher-start,#page-switcher-end,#index_numIco").hide();
+	}
+
+	$("a").titleTip({
+		speed: 200
+	});
+
+	//$("#newwrap").css({"width":WINDOW_WIDTH,"height":WINDOW_HEIGHT});
+	var btnarlt=$(".btn_arlt");
+	if (btnarlt.length>1) {
+		$(".btn_arlt").css({"left":WINDOW_WIDTH,"width":getWorkContent().width});
+		//鼠标滚轮 2014年06月17日 14:28:51 星期二 lybide
+		$('.btn_arlt').bind('mousewheel', function(event, delta) {
+			var dir = delta > 0 ? 'Up' : 'Down',vel = Math.abs(delta);
+			//$(this).text(dir + ' at a velocity of ' + vel);
+			//console.log(dir); //调试信息
+			if (delta>0) {
+				$("#page-switcher-start").click();
+			} else {
+				$("#page-switcher-end").click();
+			}
+			return false;
+		});
+	}
+
+
+
+	var sIdOld=null;
+
+	//2013-8-29 下午4:07 lybide
+	if (doLi.length>0) {
+		doLi.click(function(){
+			var sId=$(this).attr("sId");
+			if (sId==sIdOld) {
+				return;
+			}
+			$(".btn_arlt").stop(null,true,true);
+			//doListC(sId);
+			doLi.removeClass("selected");
+			$("#dot-list li[sId="+sId+"]").addClass("selected");
+			if (sIdOld) {
+				$(".btn_arlt[sId="+(sIdOld)+"]").show().animate({left:-WINDOW_WIDTH},500,function(){
+					$(this).css("left",WINDOW_WIDTH).hide();
+				});
+				try{
+					eval("end_"+sIdOld+"_fun()");
+				}catch (e){
+					//alert(e);
+				}
+			}
+			$(".btn_arlt[sId="+(sId)+"]").show().animate({left:MC_LEFT},500,function(){
+				WD_DMMKEY=sId;
+				wSize();
+				//var oneExe1=setTimeout(function(){
+				try{
+					eval("init_"+sId+"_fun()");
+				}catch (e){
+					//alert(e);
+				}
+				//},1000);
+			});
+			sIdOld=sId;
+			return;
+			$(".btn_arlt:visible").hide("",function(){
+				//alert(123)
+			});
+			//$(".btn_arlt:eq("+(sId)+")").show().animate({right: "+="+$(window).width()+""}, "slow");return;
+			$(".btn_arlt[sId="+(sId)+"]").show("slow","swing",function(){
+				/*var w1=$(".btn_arlt:eq("+(sId)+")").width();
+				 var h1=$(".btn_arlt:eq("+(sId)+")").height()+$("#newwrap").offset().top;//alert($("#newwrap").offset().top);
+				 var h2=$(window).height();
+				 //2013-8-30 上午10:19 lybide
+				 if (h1>h2) {
+				 $("#newwrap").height(h1).attr("oldHeight",h2);
+				 $("#index_numIco").css({"top":(h1+18)+"px"});
+				 } else {
+				 //$("#newwrap").height($("#newwrap").attr("oldHeight"));
+				 $("#newwrap").height("auto");
+				 $("#index_numIco").css({"top":"auto"});
+				 }
+				 $("#layer1").html("滚屏:"+w1+"=="+h1+"=="+h2);*/
+				WD_DMMKEY=sId;
+				wSize();
+			});
+
+		});
+		var oneExe1=setTimeout(function(){//alert(doLi.parent().find("[selected='1']").size());
+			var ck=doLi.parent().find("[selected='true']");
+			if (ck.size()==0) {
+				doLi.eq(0).click();return;
+			}
+			doLi.parent().find("[selected='true']").click();
+		},400);
+	}
+
+	//天气
+	/*setTimeout(function(){
+	 $("#tqyb1").html('<iframe name="weather_inc" src="http://tianqi.xixik.com/cframe/2" width="290" height="70" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>');
+	 },100);*/
+	//待处理（逾期）任务 事件绑定
+	/*$(".task_lists li").click(function(){
+	 dbClick($(this).attr("id"));
+	 });*/
+	//$("body").append('<div id="layer1" style="position:absolute;right:10px;top:10px;height:30px;z-index:1;border:1px solid #96c2f1;background:#eff7ff;padding:5px;">dsfasdfasdf</div>');
+	//wSize();
+	$(window).resize(function() {
+		wSize("window");
+	});
+	$("#product").hover(
+		function () {
+			if (!CL_PSHOW) return;
+			$(this).addClass("hover");
+		},
+		function () {
+			if (!CL_PSHOW) return;
+			$(this).removeClass("hover");
+		}
+	);
+	$("#pNext").mousedown(function(){
+		$("#content_list").stop(null,true,true);
+		var w1=$("#content_list li:first").outerWidth(true);
+		var w2=$("#content_list").width();
+		var left=Math.abs(parseInt($("#content_list").css("left")))+w1;
+		if (left>w2) {
+			left=0;
+		}
+		$("#content_list").animate({left:-left},400);
+	});
+	$("#pPrev").mousedown(function(){
+		$("#content_list").stop(null,true,true);
+		var w1=$("#content_list li:first").outerWidth(true);
+		var w2=$("#content_list").width();
+		var left=-parseInt($("#content_list").css("left"))-w1;
+		if (left<0) {
+			left=0;
+		}
+		$("#content_list").animate({left:-left},400);
+	});
+});
+
+function getWorkContent() {
+	var w1=WINDOW_WIDTH-$("#page-switcher-start").width()-$("#page-switcher-end").width();
+	var w1=WINDOW_WIDTH;
+	return {width:w1}
+}
+
+function wSize(arg) {
+	var w1=$(window).width();
+	var h1=$(window).height();
+	WINDOW_WIDTH=w1;
+	WINDOW_HEIGHT=h1;
+
+	if (WD_DMMKEY==1) {
+		//2013-10-17 下午5:24 lybide 2014年05月26日 17:17:14 星期一 lybide
+		var cl=$("#content_list");
+		if (cl) {
+			var licl=$("li",cl);
+			var w1=0;
+			licl.each(function(i){
+				w1+=$(this).outerWidth();
+			});
+			CL_WIDTH=w1;
+			//alert(w1)
+			//var b=licl.length;
+			cl.width(w1);
+			var oneExe1=setTimeout(function(){
+				var panleWidth=$("#product").width()-$("#pPrev").width()-$("#pNext").width();
+				if (CL_WIDTH>panleWidth) {
+					//$("#pNext,#pPrev").show();
+					var w1=panleWidth;
+					var w2=($("#content_list li:eq(0)").outerWidth());//alert([w1,w2]);
+					//console.log(parseInt(w1/w2),Math.round(w1/w2),w2);
+					var w3=parseInt(w1/w2)*w2;
+					$("#content").width(w3);
+					CL_PSHOW=true;
+				} else {
+					//$("#pNext,#pPrev").hide();
+					$("#content").css({width:"auto"});
+					CL_PSHOW=false;
+					$("#content_list").css({"left":"auto"});
+				}
+			},1);
+		}
+
+	}
+
+
+
+	/*if (w1<998) {
+	 $("#newwrap").width(800).css({"margin-left":-(800/2)+"px"});
+	 }
+	 if (w1>=998 && w1<1240) {
+	 $("#newwrap").width(998).css({"margin-left":-(998/2)+"px"});
+	 }
+	 if (w1>=1240 && w1<1366) {
+	 $("#newwrap").width(1200).css({"margin-left":-(1200/2)+"px"});
+	 }
+	 if (w1>=1366 && w1<1450) {
+	 $("#newwrap").width(1300).css({"margin-left":-(1300/2)+"px"});
+	 }
+	 if (w1>=1450 && w1<2000) {
+	 $("#newwrap").width(1400).css({"margin-left":-(1400/2)+"px"});
+	 }
+	 if (w1>=2000) {
+	 $("#newwrap").width(1500).css({"margin-left":-(1500/2)+"px"});
+	 };//$("#newwrap").width("90%");*/
+
+	/*if (h1<=475) {
+	 $("#newwrap").height(420).css({"margin-top":"0px","top":"0px"});
+	 }
+	 if (h1>475 && h1<540) {
+	 $("#newwrap").height(460).css({"margin-top":"0px","top":"0px"});
+	 }
+	 if (h1>520 && h1<540) {
+	 $("#newwrap").height(460).css({"margin-top":"0px","top":"0px"});
+	 }
+	 if (h1>550) {
+	 //h1=h1-120;
+	 //$("#newwrap").height(h1).css({"margin-top":-(parseInt(h1/2))+"px","top":"50%"});
+	 }*/
+
+
+	//2013-8-30 下午2:41 lybide
+	var obj=$(".btn_arlt[sId="+(WD_DMMKEY)+"]");
+
+	if (arg=="window") {
+		var btnarlt=$(".btn_arlt");
+		$(".btn_arlt").css({"width":getWorkContent().width});
+		if (btnarlt.length>1) {
+			$(".btn_arlt").css({"left":WINDOW_WIDTH});
+		}
+
+		obj.css({"left":MC_LEFT});
+	}
+
+	var w2=obj.width();
+	var h2=obj.height();
+	//$("#layer1").html("window Size:"+w1+"=="+h1+",btn_arlt Size:"+w2+"=="+h2+""+" , #newwrap "+$("#newwrap").width()+"=="+$("#newwrap").height());
+	var top1={"margin-top":((h2/2)-100)+"px"};//alert(h1/2-h2/2)
+	//alert(h2+"=="+h1);//调试信息
+	if (h2>h1) {
+		top1={"margin-top":"0px","top":"0px"};
+		$("#index_numIco").css({"top":(h2+18)+"px"});
+	} else {
+		//top1={"margin-top":-(h2/2+200)+"px"};
+		$("#index_numIco").css({"top":"auto"});
+	}
+	//$("#newwrap").animate(top1);
+	if ($("#newwrap").offset().top<60) {
+		$("#newwrap").css({"margin-top":"auto","top":"auto"})
+	}
+	//$("#newwrap").css({"margin-top":0,"top":0});
+	return;
+}
+
+
+(function($) {
+	//2014年06月17日 23:13:34 星期二 lybide
+	$.fn.pageTab = function(options) {
+		var defaults = {
+			foreground:"red",
+			background:"yellow",
+			tabEvent:null,
+			tabInit:null,
+			type:"top",
+			event:"mouseover"
+		};
+		var options=$.extend(defaults,options);
+		var that=$(this);
+		var div1=$('<div class="wl-tab-'+options.type+'-title"></div>');
+		var div2=$('<div class="wl-tab-'+options.type+'-item"></div>');
+		that.append(div1);
+		that.append(div2);
+		//2014年06月11日 18:23:01 星期三 lybide
+		var bbb=that.find(">h3").on(options.event,function(){
+			var that=$(this);
+			var tabId=that.attr("tabId");
+			that.siblings().removeClass("selected");
+			that.addClass("selected");
+			var tabItem=that.parent().next().find(".tab-item").hide();
+			tabItem.eq(tabId).show();
+			if (!that.data("init")) {
+				if (options.tabInit) {//2014年06月16日 15:12:54 星期一 lybide
+					options.tabInit.call(this,that,tabId);//tabObj,tabId
+				}
+			}
+			that.data("init",true);
+			if (options.tabEvent) {
+				options.tabEvent.call(this,that,tabId);//tabObj,tabId
+			}
+		}).each(function(i){var that=$(this);that.attr("tabId",i);that.wrapInner('<div></div>')});
+		div1.append(bbb);
+		div2.append(that.find(".tab-item").hide().each(function(i){$(this).attr("tabId",i)}));
+		bbb.eq(0).trigger(options.event);//2014年06月18日 13:27:49 星期三 lybide
+		that.data("init",true);
+		that.show();
+		if (options.type=="left") {
+			var len=bbb.length;
+			var h1=that.parent().height()/len-2;
+			bbb.css({height:h1+"px","line-height":h1+"px"});
+		}
+	};
+})(jQuery);

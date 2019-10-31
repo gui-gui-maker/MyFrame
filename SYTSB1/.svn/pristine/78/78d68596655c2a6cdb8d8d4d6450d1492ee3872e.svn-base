@@ -1,0 +1,58 @@
+package com.lsts.mobileapp.confirm.web;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.khnt.core.crud.web.SpringSupportAction;
+import com.khnt.rbac.impl.bean.User;
+import com.khnt.security.util.SecurityUtil;
+import com.lsts.inspection.bean.InspectionInfo;
+import com.lsts.mobileapp.confirm.service.ConfirmService;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+@Controller
+@RequestMapping("confirmAction")
+public class ConfirmAction extends SpringSupportAction<InspectionInfo, ConfirmService>{
+
+	@Autowired
+	ConfirmService confirmService;
+	
+	// 保存报告审核
+	@RequestMapping(value = "confirm")
+	@ResponseBody
+	public Map<String, Object> confirm(HttpServletRequest request,String formObject,String businessArray) throws Exception {
+		Map<String, Object> map = new HashMap<String, Object>();
+		JSONObject formData = JSONObject.fromString(formObject);
+		JSONArray businesses = JSONArray.fromString(businessArray);
+			
+		String conclusion = formData.getString("conclusion");
+		List<InspectionInfo> list = new ArrayList<InspectionInfo>();
+		if ("1".equals(conclusion)) {
+			try {
+				//通过
+				list = confirmService.confirm(request,businesses,formData);
+			} catch (Exception e) {
+				e.printStackTrace();
+				
+				throw new Exception(e.getMessage());
+			}
+			
+		} else if("2".equals(conclusion)){
+			throw new Exception("校核不通过！");
+		}
+		map.put("data",list);
+		map.put("success",true);
+		return map;
+	}
+	
+}

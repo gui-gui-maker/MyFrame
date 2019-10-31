@@ -1,0 +1,48 @@
+@charset "utf-8";
+/* CSS Document */
+/*中间高度浮动，两头固定*/
+* { margin:0; padding:0; }
+body, html { margin:0; padding:0!important; padding:80px 0 40px 0; width:100%; height:100%; overflow:hidden;font-family:"Microsoft YaHei","宋体", "New York", serif; background:#3892d2;*margin:0; *padding:0; *width:100%;* height:100%;*overflow: hidden;*padding:80px 0 40px 0;_padding:0;}
+body.no-support-wpf { font-family: SimSun; }
+.k-login-layer{width:100%; height:100%; position:relative;}
+.k-login-top { background:#015493; width:100%; height:80px; overflow:hidden; position:absolute; top:0; z-index:10; }
+.k-login-middle { position:absolute!important; position:relative;top:0; top:80px;  left:-1px; bottom:40px; width:100%; height:100%;height:auto; overflow:hidden;*height:100%;*position:absolute;*top:20px; z-index:1;}
+.k-login-layout { height:100%; overflow-y:auto; text-align:center; vertical-align:middle; }
+.k-login-foot { background:#015493; width:100%; height:40px; padding-top:10px; color:#e1efff; letter-spacing:1px; text-align:center; clear:both; position:absolute; bottom:0; left:0;font-size:12px; line-height:18px;z-index:10; }
+
+.k-login-top-logo{ background:url(logo.png) no-repeat left bottom; width:900px; height:72px; margin:auto;}
+.k-login-top-logo-btnbox div{ width:54px; height:60px; line-height:60px;margin-top:20px; float:left;background:url(help.png) no-repeat top center;cursor:pointer;}
+.k-login-top-logo-btnbox div a{display:block; width:54px; height:40px; padding-top:15px; color:#FFF; text-align:center; text-decoration:none;}
+.k-login-top-logo-btnbox div a:hover{ color:#CCC;}
+.k-login-layout-content{margin:auto; width:99%; height:99%;position:relative;}
+.k-login-custom_img{margin:auto; width:100%; height:100%; background:url(mask.png) no-repeat center center;}
+.k-login-custom_mask{width:100%; height:100%; background:url(bg.png) no-repeat center center;}
+
+.k-login-box{ width:410px; height:336px; margin:-168px 0 0 -98px; background:url(dlgb.png) repeat;box-shadow: #666 2px 0px 4px; position:absolute; top:50%; left:50%;z-index:1;border-radius:0px 5px 5px 0px;}
+.k-login-box-title{width:380px; height:151px; line-height:151px; vertical-align:middle; text-align:left; padding-left:30px;  font-size:30px; background:url(title_img_mz.png) no-repeat right top;}
+.k-login-box-title span{ font-family:"Microsoft YaHei","黑体";}
+.k-login-inputbox{width:380px; height:39px; line-height:39px; vertical-align:middle; text-align:left; padding-left:30px;font-size:14px; margin-bottom:18px;}
+.k-login-inputname{width:60px; height:39px; line-height:39px; vertical-align:middle; text-align:left;font-size:14px; float:left;}
+.k-login-inputleft{width:180px; height:37px; line-height:37px; background-color:#FFF; border:2px solid #D9D9D9; border-right:none; vertical-align:middle; text-align:left;font-size:14px; float:left;border-radius:5px 0px 0px 5px;}
+.k-login-inputleft input{width:170px; height:34px; line-height:34px;border:0px; margin-left:5px;}
+.k-login-inputright{width:100px; height:37px; line-height:37px; background-color:#fbfbfb;border:2px solid #D9D9D9; border-left:none; vertical-align:middle; text-align:left; padding-left:4px;font-size:12px; float:left; color:#999;border-radius:0px 5px 5px 0px;}
+.k-login-inputyz{width:100px; height:37px; line-height:37px; background-color:#FFF; float:left; border:2px solid #D9D9D9; border-right:0px;border-radius:5px 0px 0px 5px;}
+.k-login-inputyz input{width:90px; height:34px; line-height:34px; border:0px; margin-left:5px;}
+.k-login-inputyzimg{width:80px; height:37px; line-height:37px;float:left;border:2px solid #D9D9D9; border-left:none;border-radius:0px 5px 5px 0px;background-color:#fbfbfb;}
+.k-login-inputbtn{width:100px; height:41px; line-height:41px;vertical-align:middle; text-align:center; padding-left:4px;float:left; background:url(login.png) no-repeat center right; cursor:pointer; }
+.k-login-inputbtn:hover{background:url(login_on.png) no-repeat center right;}
+.k-login-style{ width:auto; height:30px; position:absolute; right:30px; bottom:30px;*bottom:80px;}
+.k-login-style_btn{ width:38px; height:27px; background:url(style1.png) no-repeat;box-shadow: #666 0px 0px 10px; margin-right:7px; border:1px solid #CCC; cursor:pointer;float:left;}
+.k-login-style_btn:hover{ border:1px solid #fff;box-shadow: #666 0px 0px 0px;}
+
+.k-login-btnbox{ height:336px; width:213px; position:absolute;margin:-168px 0 0 -311px;top:50%; left:50%; z-index:2;}
+.k-login-btnbox li{list-style-type:none; height:42px; width:213px; background:url(login_btn_off.png); cursor:pointer;}
+.k-login-btnbox li:hover{background:url(login_btn_hover.png);}
+.k-login-btnon{background:url(login_btn_on.png)!important;}
+.k-login-btnimg{ width:50px; height:42px; float:left; background:url(login_btn1.png) no-repeat center center;}
+.k-login-btnname{ width:163px; height:42px; text-align:left; vertical-align:middle; line-height:41px; float:left; font-size:16px;}
+
+
+
+
+

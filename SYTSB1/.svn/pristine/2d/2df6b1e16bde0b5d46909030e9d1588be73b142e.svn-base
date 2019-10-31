@@ -1,0 +1,18 @@
+<%@ page contentType="text/html;charset=UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+</head>
+
+<body>
+	<div id="layout2" style="width: 99.8%">
+		<input type="hidden" id="inputFocus" name="inputFocus" />
+		 <input type="hidden" id="thisPage" name="thisPage" value="[$RtThisPage]"> 
+		<div position="center"  class="wrapper"  style="overflow: auto;width: 100%" align="center">
+			[$RtPageHidden] 
+			<br /> [$RtPageBody]
+		</div>
+	</div>
+</body>
+</html>

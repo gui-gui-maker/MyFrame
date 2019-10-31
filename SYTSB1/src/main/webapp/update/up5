@@ -1,0 +1,43 @@
+权限参考模型 > 安全管理V1.0.18
+安全模块添加系统登录扩展验证支持，可以通过扩展方法实现不一样的登录验证机制。
+
+使用方法：
+
+#now 1.0.18 已更新
+1.更新khnt-framework-security版本到1.0.18。
+#已更新
+2.修改配置文件 applicationContext-security.xml，
+	搜索“org.springframework.security.authentication.dao.DaoAuthenticationProvider”，
+	找到bean（id=khAuthenticationProvider）的配置行，
+	将class修改为com.khnt.security.KHThirdAuthenticationProvider。
+#已更新
+3.新建一个class，
+	实现接口：Open Declaration com.khnt.security.KHThirdUserAuthenticator，
+	在接口方法authenticate(String userName, String password)中实现扩展验证逻辑。
+	如果验证不通过，请抛出异常，验证通过则正常结束。
+#已更新
+4.回到配置文件applicationContext-security.xml，
+	在刚刚修改的bean下面添加属性 thirdUserAuthenticator，
+	该属性是一个bean，其值为上面新建的class（接口com.khnt.security.KHThirdUserAuthenticator的实现者）。
+#已更新
+配置示例：
+
+ <!-- DAO认证提供者 -->
+ <b:bean id="khAuthenticationProvider"
+  class="com.khnt.security.KHThirdAuthenticationProvider">
+  <!-- 用户信息提供器 -->
+  <b:property name="userDetailsService" ref="userDetailsService" />
+
+  <!-- 准确地报告异常 -->
+  <b:property name="hideUserNotFoundExceptions" value="false" />
+  <b:property name="passwordEncoder" ref="passwordEncoder" />
+  <b:property name="saltSource">
+   <b:bean class="com.khnt.security.util.KHSecuritySaltSource" />
+  </b:property>
+  <b:property name="thirdUserAuthenticator">
+   <b:bean class="com.khnt.security.ext.RtxAuthenticator" />
+  </b:property> 
+ </b:bean>
+
+红色部分为修改，原来的值为：org.springframework.security.authentication.dao.DaoAuthenticationProvider，蓝色部分为增加。
+

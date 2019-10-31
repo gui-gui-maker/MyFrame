@@ -1,0 +1,102 @@
+<%@ page contentType="text/html;charset=UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>系统用户</title>
+<%@include file="/k/kui-base-form.jsp"%>
+<script type="text/javascript" src="pub/selectUser/selectUnitOrUser.js"></script>
+<%
+%>
+<script type="text/javascript">
+var unitId="100000";
+var unitName="四川省特种设备检验研究院";
+$(function() {
+	$("#formObj").initForm({ //参数设置示例
+		toolbar : [ {
+			text : '确定',
+			//id : 'save',
+			icon : 'save',
+			click : save
+		}
+
+		, {
+			text : '关闭',
+			icon : 'cancel',
+			click : close
+		} ]
+	});
+	//页面布局
+	$("#layout").ligerLayout({
+		leftWidth : 200,
+		space : 5,
+		allowLeftCollapse : false,
+		allowRightCollapse : false
+	});
+	//组织机构树
+	orgTreeManager = $("#tree1").ligerTree({
+		checkbox : false,
+        iconFieldName : "level",
+        iconParse : function(data){
+        	if(data["level"]==0)
+				return "k/kui/images/icons/16/home.png";
+			else if (data["level"] == 1)
+				return "k/kui/images/icons/16/org-2.png";
+        	else
+            	return "k/kui/images/icons/16/user.png";
+        },
+		data : [],
+		attribute : [ "url" ],
+		onSelect : function(node) {
+			showFormData(node.data.id,node.data.text);
+		},
+        onBeforeExpand: function(node){
+        	if (unitId != node.data.id && !node.data.expandChild){
+				this.loadData(node.data, "rbac/org/getSubordinate.do?orgid=" + node.data.id);
+				node.data.expandChild = true;
+			}
+        }
+	});
+	$.getJSON("rbac/org/getSubordinate.do?orgid=" + unitId,function(dataList){
+		orgTreeManager.append(unitId,[{
+			id : unitId,
+			text : unitName,
+			level : "0",
+			children : dataList
+		}]);
+		orgTreeManager.selectNode(unitId);
+	});
+});
+var treeNodeName;
+ function showFormData(id,name){
+	 unitId=id;
+	 unitName=name;
+ }
+/* function selectValue(){
+	 alert(treeNode.name)
+	api.data.parentWindow.typeCodeName(treeNode.name) 
+}  */
+ function close(url) {
+		api.close();
+	}
+	function save() {
+       if(unitId=="100000"||unitId=="100043"||unitId=="100036"||unitId=="100047"||unitId=="100048"||unitId=="100042"){
+    	   $.ligerDialog.warn("不能选择单位！");
+       }else{
+    	   api.data.window.clickNodeId(unitId,unitName);
+    	   api.close();
+       }
+	}
+</script>
+
+</head>
+<body>
+      <form id="formObj" name="formObj" method="post" >
+                 <div position="left" title="部门选择" class="overflow-auto">
+			      <ul id="tree1" class="ztree"></ul>
+		        </div>
+		<table cellpadding="3" cellspacing="0" class="l-detail-table">
+		</table>     
+		</form>     
+</body>
+	
+</html>

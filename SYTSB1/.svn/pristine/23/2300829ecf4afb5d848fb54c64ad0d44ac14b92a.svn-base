@@ -1,0 +1,149 @@
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib uri="http://khnt.com/tags/ui" prefix="u" %>
+<%@ taglib uri="http://khnt.com/tags/chart" prefix="chart" %>
+<%
+  String startDate = new SimpleDateFormat("yyyy").format(new Date())+"-01-01";
+  String endDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title></title>
+  <%@include file="/k/kui-base-list.jsp" %>
+  <%@ include file="/k/kui-base-form.jsp"%>
+  <%@ include file="/k/kui-base-chart.jsp"%>
+    <%@ taglib uri="http://khnt.com/tags/ui" prefix="u" %>
+<script type="text/javascript" src="app/common/lodop/LodopFuncs.js"></script>
+  
+  <script test="text/javascript">
+    $(function () {//jQuery页面载入事件
+    	$("#btn1").css({"height":"20px","line-height":"20px"});
+    	$("#btn1").ligerButton({
+        	icon:"count",
+            click: function (){
+            	query();
+            },text:"统计"
+        });
+		initGrid();
+    });
+    function initGrid(){
+       var column=null;
+    	   column =[
+		 			{ display: '月份', name: 'yf',align: 'center', width: 78,totalSummary:{ render: function (e){return "" }}},
+		 			{ display: '合计', name: 'hj',align: 'center', width: 180,totalSummary:{ render: function (e){return "" }}},
+		 			{ display:'非常满意',columns:[
+		 			                          {display:'个数',name:'fcmygs',width:100,align:'center'},
+		 			                          {display:'百分比',name:'fcmybfb',width:100,align:'center'}]},
+		 			{display:'满意',columns:[
+		 			                       {display:'个数',name:'mygs',width:100,align:'center'},
+		 			                      {display:'百分比',name:'mybfb',width:100,align:'center'}]},
+		 			{display:'不满意',columns:[
+		 					 			                       {display:'个数',name:'ybgs',width:100,align:'center'},
+		 					 			                      {display:'百分比',name:'ybbfb',width:100,align:'center'}]}
+				]
+    	   
+    
+		
+   		grid = $("#checkGrid").ligerGrid({
+            columns:column, 
+            enabledEdit: true,
+            data:{Rows:[]},
+            rownumbers:true,
+            frozenRownumbers: false,
+            usePager: false,
+            height:'90%'
+	  	});
+	}
+    function query(){
+      	$("body").mask("正在统计数据,请等待...");
+      	var name=$("#name").val();
+      	var startTime=$("#startTime").val();
+      	var endTime=$("#endTime").val();
+      	
+        $.getJSON(encodeURI("report/transfer/selectTj.do?name="+name+"&startTime="+startTime+"&endTime="+endTime),function(res){
+
+    		console.log(res);
+        	var gridDataArr=new Array();
+        	for(var i=0; i<res.data.length;i++){
+        		console.log(res.data[i]);
+        		var hj=parseInt(res.data[i].FCMY)+parseInt(res.data[i].MY)+parseInt(res.data[i].BMY);
+        		var rowData=new Object();
+        		rowData.yf=res.data[i].SJ;
+        		rowData.hj=hj;
+        		rowData.fcmygs=res.data[i].FCMY;
+        		rowData.fcmybfb=decimal(parseInt(res.data[i].FCMY)/hj*100,2);
+        		rowData.mygs=res.data[i].MY;
+        		rowData.mybfb=decimal(parseInt(res.data[i].MY)/hj*100,2);
+        		rowData.ybgs=res.data[i].BMY;
+        		rowData.ybbfb=decimal(parseInt(res.data[i].BMY)/hj*100,2);
+        		gridDataArr.push(rowData);
+        	}
+
+		    if(gridDataArr!=null){
+			   grid.loadData({Rows:gridDataArr});
+		    }
+		   $("body").unmask();
+        	
+        });
+        
+        
+    }
+    //四舍五入num数字，V保留个数
+    function decimal(num,v){
+    	var vv = Math.pow(10,v);
+    	return Math.round(num*vv)/vv;
+    	}
+	
+	
+
+  </script>
+</head>
+<body onload="query()">
+
+	
+	
+	<div class="item-tm">
+    <div class="l-page-title2 has-icon has-note" style="height: 80px">
+        <div class="l-page-title2-div"></div>
+        <div class="l-page-title2-text"><h1>工作服务统计</h1></div>
+        <div class="l-page-title2-note" style="height:20px;"></div>
+        <div class="l-page-title2-icon">
+        	<img src="k/kui/images/menu-icon/32/statistics.png" border="0"/>
+        </div>
+        <div class="l-page-title-content" style="top:25px;left:300px;height:80px;"> 
+            <form action="">
+            <table border="0" cellpadding="0" cellspacing="0" width="">
+                <tr>
+					<td width="60" style="text-align:center">姓名：</td>
+					<td width="150">
+						<input type="text" name="name" id="name" ltype="text" />
+					</td>
+					<td width="80" style="text-align:center;">时间：</td>
+					<td width="110">
+							<input id="startTime" name="startTime" type="text" ltype="date" value="<%=startDate%>"/>
+					</td>
+					<td width="" align="center">到</td>
+					<td  width="110">
+						<input id="endTime" name="endTime" type="text" ltype="date" value="<%=endDate%>"/>
+					</td>
+					<td width="" style="text-align: right;float: left;padding-left: 5px;padding-top: 5px">
+						<div id="btn1"></div>
+					</td>
+				</tr>
+            </table>
+            </form>
+            
+        </div>
+    </div>
+</div>
+	
+
+
+
+
+
+<div id="checkGrid" style="overflow: auto;"></div>
+</body>
+</html>

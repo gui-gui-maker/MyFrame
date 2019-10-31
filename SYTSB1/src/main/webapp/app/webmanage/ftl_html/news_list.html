@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>成都医学院人事管理系统</title>
+<link type="text/css" rel="stylesheet" href="/app/webmanage/CSS/style.css" />
+<script src="/app/webmanage/js/foucs.js" type="text/javascript"></script>
+<script src="/app/webmanage/js/jquery.js" type="text/javascript"></script>
+<script>
+$(document).ready(function(){
+	$(".page-news li:last").css("border-bottom","0px");
+});
+</script>
+</head>
+<body>
+<#include "top.ftl" parse=true encoding="UTF-8">
+<script type="text/javascript">
+	focusMenu("${classType.name}");
+</script> 
+<!--主要内容区域-->
+<div class="main">
+	<div class="subbanner"><img src="/app/webmanage/images/subnewsimg.jpg" alt="" /></div>
+	<div class="content">
+		<div class="leftwrap"> 
+			<!--内页-->
+			<div class="pagebox">
+				<div class="position"><strong>当前位置：</strong> <a href="/${siteConfig.siteHtmlDir}/index.html">首页</a> &gt; <span>${classType.name}</span></div>
+				<div class="boxwrap">
+					<div class="page-news">
+						<ul>
+						    <@kh_cms_article_tag tagName='list_lable' classId='${classType.id}' count='0' pageNo='${pageNo}' pagesize='${classType.listPageCount}' isAudit='${isAudit}' datatype='all' recommendOff='uder'>
+							     <#list list_lable as list_test>
+									<li>
+									<div class="num">${list_test_index?if_exists+1}</div>
+									<a href="${list_test.id}.html">${list_test.title}</a>
+									<div class="pgtm">[${list_test.eidtDate?string("yyyy-MM-dd")}]</div>
+									</li>
+								</#list>							 
+							</@kh_cms_article_tag>
+						</ul>
+					</div>
+					<#include "page.ftl" parse=true encoding="UTF-8">
+				</div>
+			</div>
+		</div>
+		<!--右边栏-->
+		<div class="sidewrap">
+			<div class="special">
+				<div class="caption"><strong>专题栏目</strong><span></span></div>
+				<div class="special-list">
+					<ul>
+						<li><a href="#" target="_black"><img src="/app/webmanage/images/ztimg01.jpg" alt="" /></a></li>
+						<li><a href="http://qzlxw.cmc.edu.cn/" target="_black"><img src="/app/webmanage/images/ztimg02.jpg" alt="" /></a></li>
+						<li><a href="#" target="_black"><img src="/app/webmanage/images/ztimg03.jpg" alt="" /></a></li>
+						<li><a href="http://www.sichuan.newslake.cn/cmsAction!hostRequest.do?rand=1389835172880" target="_black"><img src="/app/webmanage/images/ztimg04.jpg" alt="" /></a></li>
+						<li><a href="#" target="_black"><img src="/app/webmanage/images/ztimg05.jpg" alt="" /></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="search">
+				<div class="caption"><strong>文件搜索</strong><span><a href="/${siteConfig.siteHtmlDir}/search.html">MORE &gt;</a></span></div>
+				<div class="search-opt">
+					<div class="schtit">请选择关键字：</div>
+					<form action="" method="get">
+						<div class="icn">
+							<label>
+								<input type="radio" name="search" value="file" id="search_0" checked="checked" />
+								文章</label>
+							<span class="s1"></span> </div>
+						<div class="icn">
+							<label>
+								<input type="radio" name="search" value="downld" id="search_1" />
+								下载</label>
+							<span class="s2"></span> </div>
+						<div class="icn">
+							<label>
+								<input type="radio" name="search" value="pict" id="search_2" />
+								图片</label>
+							<span class="s3"></span> </div>
+						<div>
+							<button type="button">点击搜索</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--主要内容区域-->
+<#include "bottom.ftl" parse=true encoding="UTF-8">
+</body>
+</html>

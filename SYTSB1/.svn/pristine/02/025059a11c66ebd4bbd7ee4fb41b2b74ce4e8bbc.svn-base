@@ -1,0 +1,336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<body>
+	<div id="layout2" style="width: 99.8%">
+		<input type="hidden" id="inputFocus" name="inputFocus" values=""
+			value="" title="" style="height: 5mm;"> <input type="hidden"
+			id="thisPage" name="thisPage" value="?page=7" values="?page=7"
+			title="" style="height: 5mm;">
+		<div position="center" class="wrapper"
+			style="overflow: auto; width: 100%" align="center">
+			<br>
+			<p class="a DocDefaults" style="line-height: 150%;">
+				<a name="RTPAGE_6__检验项目及其内容3"></a>
+			</p>
+			<table class="ad a1  two" id="docx4j_tbl_6"
+				style="  position: relative; margin-left: 0.08in; table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 6.69in;">
+				<colgroup>
+					<col border="1" style="width: 5.88%;" class="">
+					<col border="1" style="width: 7.36%;" class="">
+					<col border="1" style="width: 7.36%;" class="">
+					<col border="1" style="width: 10.29%;" class="">
+					<col border="1" style="width: 42.69%;" class="">
+					<col border="1" style="width: 13.2%;" class="">
+					<col border="1" style="width: 13.23%;" class="">
+				</colgroup>
+				<tbody>
+					<tr>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm; vertical-align: middle;"
+							class=""><span class="a0"
+							style="font-weight: bold; font-size: 12pt; font-family: SimSun; position: relative;">序号</span></td>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm; vertical-align: middle;"
+							class=""><span class="a0"
+							style="font-weight: bold; font-size: 12pt; font-family: SimSun; position: relative;">检验类别</span></td>
+						<td colspan="3"
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm; vertical-align: middle;"
+							class=""><span class="a0"
+							style="font-weight: bold; font-size: 12pt; font-family: SimSun; position: relative;">检验项目及其内容</span></td>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="text-align: center;">
+								<span class="a0"
+									style="font-weight: bold; font-size: 12pt; font-family: SimSun; position: relative;">检验结果</span>
+							</p>
+						</td>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="text-align: center;">
+								<span class="a0"
+									style="font-weight: bold; font-size: 12pt; font-family: SimSun; position: relative;">检验结论</span>
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td rowspan="10"
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: center;"
+							class=""><span class="a0"
+							style="font-weight: bold; font-size: 12pt; font-family: SimSun; position: relative; text-align: center;">12</span></td>
+						<td rowspan="10"
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: center;"
+							class=""><span class="a0"
+							style="font-weight: bold; font-size: 12pt; font-family: SimSun; position: relative; text-align: center;">B</span></td>
+						<td rowspan="13"
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm; vertical-align: middle;"
+							class=""><span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">2机房及相关设备</span></td>
+						<td rowspan="10"
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm; vertical-align: middle;"
+							class=""><span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">2.8控制柜、紧急操作和动态测试装置</span></td>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm; vertical-align: middle;"
+							class=""><span class=""
+							style="font-family: SimSun; position: relative;">(1)控制柜上设有铭牌</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__B_2_8_1" name="record__B_2_8_1" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:74,initValue:'符合'}"
+									class="cB_2_8  " onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+						<td rowspan="10"
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="conclusion__B_2_8_1" name="conclusion__B_2_8_1"
+									type="text" ltype="select" value=""
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:false,width:75,initValue:'合格'}"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm; vertical-align: middle;"
+							class=""><span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">(2)断错相保护</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__B_2_8_2" name="record__B_2_8_2" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:74,initValue:'符合'}"
+									class="cB_2_8  " onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm; vertical-align: middle;"
+							class=""><span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">(3)电梯正常运行时，切断制动器电流至少应当用两个独立的电气装置来实现，当电梯停止时，如果其中一个接触器的主触点未打开，最迟到下一次运行方向改变时，应当防止电梯再运行;</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__B_2_8_3" name="record__B_2_8_3" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:74,initValue:'符合'}"
+									class="cB_2_8  " onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm; vertical-align: middle;"
+							class=""><span class="a0"
+							style="font-size: 9pt; font-family: SimSun; position: relative;">(4)紧急电动运行装置应当符合以下要求�依靠持续揿压按钮来控制轿厢运行，按钮上或其近旁标出相应的运行方向；�一旦进入检修运行，紧急电动运行装置控制轿厢运行的功能由检修控制装置所取代；�进行紧急电动运行操作时，易于观察到轿厢是否在开锁区</span><span
+							class="" style="position: relative;">：</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__B_2_8_4" name="record__B_2_8_4" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:74,initValue:'符合'}"
+									class="cB_2_8  " onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm; vertical-align: middle;"
+							class=""><span class="" style="position: relative;">(5)层门和轿门旁路装置应当符合以下要求轿门旁路装置上或者其附近标明“旁路”字样，并且标明旁路装置的“旁路”状态或者“关”状态；②旁路时取消正常运行(包括动力操作的自动门的任何运行)；只有在检修运行或者紧急电动运行状态下，轿厢才能够运行；运行期间，轿厢上的听觉信号和的闪烁灯起作用；③能够触点、轿门关闭触点、轿门门锁触点；不能同时轿门的触点；对于手动层门，不能同时门锁触点；④提供独立的监控信号证实轿门处于关闭位置</span><span
+							class="" style="position: relative;">：</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__B_2_8_5" name="record__B_2_8_5" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:74,initValue:'符合'}"
+									class="cB_2_8" onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm; vertical-align: middle;"
+							class=""><span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">(6)应当具有门回路检测功能</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__B_2_8_6" name="record__B_2_8_6" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:74,initValue:'符合'}"
+									class="cB_2_8" onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm; vertical-align: middle;"
+							class=""><span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">(7)应当具有制动器故障保护功能</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__B_2_8_7" name="record__B_2_8_7" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:74,initValue:'符合'}"
+									class="cB_2_8" onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm; vertical-align: middle;"
+							class=""><span class=""
+							style="font-family: SimSun; position: relative;">(8)自动救援操作装置</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__B_2_8_8" name="record__B_2_8_8" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:74,initValue:'符合'}"
+									class="cB_2_8" onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm; vertical-align: middle;"
+							class=""><span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">(9)加装的分体式能量回馈节能装置应当设有铭牌</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__B_2_8_9" name="record__B_2_8_9" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:74,initValue:'符合'}"
+									class="cB_2_8" onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm; vertical-align: middle;"
+							class=""><span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">(10)加装的IC卡系统应当设有铭牌</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__B_2_8_10" name="record__B_2_8_10" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:74,initValue:'符合'}"
+									class="cB_2_8" onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td rowspan="3"
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: center;"
+							class=""><span class="a0"
+							style="font-weight: bold; font-size: 12pt; font-family: SimSun; position: relative; text-align: center;">13</span></td>
+						<td rowspan="3"
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: center;"
+							class=""><span class="a0"
+							style="font-weight: bold; font-size: 12pt; font-family: SimSun; position: relative; text-align: center;">B</span></td>
+						<td rowspan="3"
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm; vertical-align: middle;"
+							class=""><span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">2.9限速器</span></td>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm; vertical-align: middle;"
+							class=""><span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">(1)限速器上设有铭牌</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__B_2_9_1" name="record__B_2_9_1" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:74,initValue:'符合'}"
+									class="cB_2_9" onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+						<td rowspan="3"
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="conclusion__B_2_9_1" name="conclusion__B_2_9_1"
+									type="text" ltype="select" value=""
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:false,width:75,initValue:'合格'}"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm; vertical-align: middle;"
+							class=""><span class=""
+							style="font-family: SimSun; position: relative;">(2)限速器或者其他装置上设有在轿厢上行或者下
+								行速度达到限速器动作速度之前动作的电气安全 装置，以及验证限速器复位状态的电气安全装置</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__B_2_9_2" name="record__B_2_9_2" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:74,initValue:'符合'}"
+									class="cB_2_9" onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm; vertical-align: middle;"
+							class=""><span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">(3)限速器各调节部位封记完好，运转时不得出现碰擦、卡阻、转动不灵活等现象，动作正常</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__B_2_9_3" name="record__B_2_9_3" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:74,initValue:'符合'}"
+									class="cB_2_9" onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="a DocDefaults"></p>
+			<p class="a DocDefaults"></p>
+		</div>
+	</div>
+	</div>
+</body>
+</html>

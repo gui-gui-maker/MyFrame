@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>全国“残疾军人证”电子标签 读写测试</title>
+    <link rel="stylesheet" href="images/css.css" type="text/css" media="all" id="cssMain"/>
+    <script type="text/javascript" src="/k/kui/frame/jquery.min.js"></script>
+    <script>
+        var trObj = {};
+        var tdObj = {};
+        var aryData = new Array();
+
+        function Rfid_Connect() {
+            var rd = document.getElementById("rdcard");
+            if (ret != 1) {
+                var ret = rd.ReaderConnect();
+                //alert("读卡器链接失败！请关闭所有 IE 浏览器，再次进入！");
+            }
+        }
+
+        function getIdName() {
+            return {idcard: document.getElementById("idcard").value, name: document.getElementById("name").value}
+        }
+
+        function cardRead() {
+            var str = "";
+            var rd = document.getElementById("rdcard");
+            var iResult = rd.FunVerify();
+            var result = iResult.split("|");
+            if (result[0] == "0") {
+//            msgbox("/web/rept/General/cardtips.jsp", "请按照示意图调整证件放置位置", 600, 600);
+            } else {
+                if (result[2] == "" || result[3] == "") {
+                    str = ("伤残证里无人员信息！");
+                } else {
+                    str = (result[3] + "，" + result[2]);
+                }
+            }
+
+            return str;
+        }
+        function cardWrite() {
+            var str = "";
+            var obj = getIdName();
+            var rd = document.getElementById("rdcard");
+            var iResult = rd.FunWriteEpcWithCipher(obj.idcard, obj.name);
+            var result = iResult.split("|");
+            if (result[0] == "0") {
+                str = ("写入信息失败!");
+            } else {
+                var keyPwd = "00000000";
+                iResult = rd.ReadDataFromSingleTag(keyPwd, 2, 0, 6);
+                result = iResult.split("|");
+                if (result[0] == "0") {
+//                msgbox("/web/rept/General/cardtips.jsp", "请按照示意图调整证件放置位置", 600, 600);
+                } else {
+//                var certId = result[1];
+//                var reqUrl = webPath + "/ScpCertcardAction.do?method=writeCertId&certId=" + certId + "&fileGuid=" + trObj.scpGuid + "&apptypeCode=" + trObj.scpCode;
+//                sendRequest(reqUrl, "doDealCardWrite()");
+                }
+                str = "写入成功!";
+            }
+            return str;
+        }
+
+        var connectKstag = 0;
+        function stationCardWrite(obj) {
+            var str = "";
+            var com = 100;
+            var baud = 115200;
+            var kstag = document.getElementById("KsTag");
+            var ret = "";
+            if (connectKstag == 0) {
+                ret = kstag.KH_TsConnect(com, baud);
+                if (ret != "1") {
+                    str = ("联机失败(" + ret + ")！");
+                    return str;
+                }
+                connectKstag = 1;
+            }
+            ret = kstag.KH_WriteData(com, baud, obj.name, obj.idcard);
+            var ret1 = substr1(ret, 0, 1);
+            if (ret1 != "1") {
+                if (ret1 == '0') {
+                    str = ("联机失败！");
+                } else if (ret1 == '2') {
+                    str = ("寻卡失败！");
+                } else if (ret1 == '3') {
+                    str = ("该卡不属于伤残军人证！");
+                } else if (ret1 == '8') {
+                    str = ("写入的身份证号及姓名效验失败！");
+                } else {
+                    str = ("写卡失败(" + ret1 + ")！(可能由于卡没有放好或者卡已经被损坏)");
+                }
+                return str;
+            }
+            str = ("写入成功!");
+            return str;
+        }
+        function stationCardRead() {
+            var str = "";
+            var kstag = document.getElementById("KsTag");
+            var com = 100;
+            var baud = 115200;
+            var ret = "";
+            if (connectKstag == 0) {
+                ret = kstag.KH_TsConnect(com, baud);
+                if (ret != '1') {
+                    str = ("联机失败(" + ret + ")！");
+                    return str;
+                }
+                connectKstag = 1;
+            }
+            ret = kstag.KH_ReadData(com, baud);
+            var ret1 = substr1(ret, 0, 1);
+            if (ret1 != '1') {
+                if (ret1 == '0') {
+                    str = ("联机失败！");
+                } else if (ret1 == '2') {
+                    str = ("寻卡失败！");
+                } else if (ret1 == '3') {
+                    str = ("该卡不属于伤残军人证！");
+                } else {
+                    str = ("读卡失败(" + ret1 + ")！(可能由于卡没有放好或者卡已经被损坏)");
+                }
+                return str;
+            }
+            str = (substr1(ret, 35, 22) + "，" + substr1(ret, 17, 18));
+            return str;
+        }
+
+        //(串,长度,增加...)
+        function substr1(str, len, hasDot) {
+            var newLength = 0;
+            var newStr = "";
+            var chineseRegex = /[^\x00-\xff]/g;
+            var singleChar = "";
+            var strLength = str.replace(chineseRegex, "**").length;
+            for (var i = len; i < ( hasDot + len); i++) {
+                singleChar = str.charAt(i).toString();
+                if (singleChar.match(chineseRegex) != null) {
+                    newLength += 2;
+                } else {
+                    newLength++;
+                }
+                if (newLength > hasDot) {
+                    break;
+                }
+                newStr += singleChar;
+            }
+
+            chineseRegex = /(^\s*)|(\s*$)/g;
+            newStr = newStr.replace(chineseRegex, "");
+            return newStr;
+        }
+        var index = 1;
+        function auto() {
+            for (var i = 0; i < 1; i++) {
+                var page = i + 1;
+                var start = 2 * 1000;
+                $.ajax(
+                        {
+                            url: "/qm?pageid=qm_11&pagesize=200&page=" + page + "&start=" + start,
+                            dataType: "json",
+                            async:true,
+                            success: function (data) {
+                                if (data.rows.length > 0) {
+                                    for (var j in data.rows) {
+                                        var obj = {idcard: data.rows[j].idn, name: data.rows[j].name};
+                                        var str = "写入：" + obj.name + "，" + obj.idcard;
+                                        str += " <font color=blue>优惠卡</font>：";
+                                        str += " 写卡：" + stationCardWrite(obj);
+                                        //str += " 读卡：" + stationCardRead();
+                                        $("#log").append("<br>" + (index++) +(new Date()) + "--" + str);
+                                        if(str.indexOf("失败")>0)return;
+                                    }
+                                }
+                            }
+                        }
+                );
+            }
+
+        }
+    </script>
+</head>
+<body>
+
+<div class="title">
+    <h1>
+        <div>全国“残疾军人证”电子标签 读写测试</div>
+    </h1>
+</div>
+
+<div class="content">
+    <input type="button" value="begin" onclick="auto()">
+    <object id="KsTag" classid="clsid:A33DE0DA-2094-402F-8C20-B5229E57E831" codebase="kstag/KsTag.inf"
+            width=1 height=1 align=center hspace=0 vspace=0></object>
+    <button onclick="alert(stationCardWrite(getIdName()))">优惠卡写卡</button>
+    <button onclick="alert(stationCardRead())">优惠卡读卡</button>
+    <div class="name">
+        <table border="0">
+            <tr>
+                <td align="right">姓名</td>
+                <td><input id="name" type="text" value="陶猛"></td>
+                <td align="right">身份证号</td>
+                <td><input id="idcard" type="text" value="510723198103254716"></td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+<div id="log" style="font-size:12px">日志：</div>
+</body>
+</html>

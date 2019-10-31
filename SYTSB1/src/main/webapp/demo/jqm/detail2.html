@@ -1,0 +1,66 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>这是一个测试页面</title>
+	<link rel="stylesheet" href="jquery.mobile-1.4.4/demos/css/themes/default/jquery.mobile-1.4.4.min.css">
+	<script src="jquery.mobile-1.4.4/demos/js/jquery.js"></script>
+	<script src="jquery.mobile-1.4.4/demos/js/jquery.mobile-1.4.4.min.js"></script>
+	<style>
+		.ui-page, .ui-overlay-c {background: url(images/main.png); }
+
+		#notes-list .item {overflow: hidden; font-size: 15px; color: #565656; }
+		#notes-list .item span {display: block; float: right; }
+		#note-content {min-height: 140px; }
+		#modify-username {display: none; }
+	</style>
+	<script>
+		$(document).on("pageinit",function() {
+		    
+		    $("#notes-list .item").swiperight(function(){
+		    	alert("我想用滑动了噢");
+		    })
+		     $("#notes-list .item").swipeleft(function(){
+		    	alert("11")
+		    })
+		    $("#add-note").submit(function(){
+		    	alert($("#add-note").serialize())
+		    	return false;
+		    })
+		    
+		});
+	</script>
+</head>
+
+<body>
+
+<!-- 首页 -->
+<div data-role="page" id="home">
+	<header data-role="header" data-position="fixed">
+		<a href="#setting" data-transition="slideup" data-icon="gear" data-theme="b">设置</a>		
+		<h1 id="welcome">欢迎</h1>
+		<a href="detail3.html" data-transition="slide" data-icon="plus" data-theme="b">增加记事</a>
+	</header>
+	<div data-role="content">
+		<ul id="notes-list" data-role="listview" data-inset="true" data-theme="d">
+			<li id="item-1007" class="item">法规和急急急 <span>10-29 16:56</span></li><li id="item-1006" class="item">骨灰盒斤斤计较 <span>10-29 16:56</span></li>	
+		</ul>
+	</div>
+</div>
+<!-- 设置 -->
+<div data-role="dialog" id="setting" data-overlay-theme="c">
+	<header data-role="header">
+		<h1>设置</h1>
+	</header>
+	<div data-role="content">
+		<div id="modify-username">
+			<input type="text" name="username" />
+		</div>
+		<p id="username" data-role="button" data-theme="b">点击设置你的昵称</p>
+	</div>
+</div>
+</body>
+</html>

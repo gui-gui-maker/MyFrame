@@ -1,0 +1,75 @@
+@charset "utf-8";
+/* CSS Document */
+/*中间高度浮动，两头固定单独样式*/
+* { margin:0; padding:0; }
+body, html { margin:0; padding:0!important; padding:80px 0 40px 0; width:100%; height:100%; overflow:hidden; background:#3892d2;*margin:0; *padding:0; *width:100%;* height:100%;*overflow: hidden;*padding:80px 0 40px 0;_padding:0;}
+body.no-support-wpf { font-family: SimSun; }
+body,input,button,select,textarea {font-family:"Microsoft YaHei","verdana","宋体"; font-size:12px;}
+button {overflow:visible;font-family:"Microsoft YaHei","verdana","宋体";}
+.show {display:;}
+.hide {display:none;}
+
+
+.k-login-layer{width:100%; height:100%; position:relative;}
+.k-login-top { background:#015493; width:100%; height:80px; overflow:hidden; position:absolute; top:0; z-index:10;}
+.k-login-middle { position:absolute!important; position:relative;top:0; top:80px;  left:-1px; bottom:40px; width:100%; height:100%;height:auto; overflow:hidden;*height:100%;*position:absolute;*top:20px; z-index:1;}
+.k-login-layout { height:100%; overflow-y:auto; text-align:center; vertical-align:middle; }
+.k-login-foot { background:#015493; width:100%; height:40px; padding-top:10px; color:#e1efff; letter-spacing:1px; text-align:center; clear:both; position:absolute; bottom:0; left:0;font-size:12px; line-height:18px;z-index:10; }
+
+.k-login-top-logo{ /*background:url(logo.png) no-repeat left center;*/ width:900px; height:60px; margin:15px auto 0px auto;_margin:-6px auto 0px auto;}
+.k-login-top-logo-btnbox{ width:auto; height:60px; float:right;z-index:100000; }
+.k-login-top-logo-btnbox div{ width:64px; height:64px; line-height:64px;margin-top:-10px; float:left;background:url(button.png) no-repeat top center;cursor:pointer;_margin-top:15px;}
+.k-login-top-logo-btnbox div a{display:block; width:64px; height:40px; padding-top:28px; color:#fff; text-align:center; text-decoration:none;}
+.k-login-top-logo-btnbox div a:hover{ color:#CCC;}
+.k-login-layout-content{margin:auto; width:100%; height:100%;position:relative;}
+.k-login-custom_img{margin:auto; width:100%; height:100%; /*background-image:url(style2d.png);*/ background-repeat:no-repeat; background-position:center center;}
+.k-login-custom_mask {width:100%; height:100%; background:url(mask.png) no-repeat center center;}
+.k-login-box{_border:1px solid #8a8a8a; width:410px; height:290px; margin:-145px 0 0 -205px; background:url(dlgb.png) repeat;box-shadow: #666 0px 0px 10px; position:absolute; top:50%; left:50%;border-radius:5px 5px 5px 5px;}
+.k-login-box-title{width:380px; height:105px; line-height:105px; vertical-align:middle; text-align:left; padding-left:30px;  font-size:30px; background:url(title_img_mz.png) no-repeat right top;}
+.k-login-box-title span{ font-family:"Microsoft YaHei","黑体";}
+.k-login-inputbox{width:380px; height:39px; line-height:39px; vertical-align:middle; text-align:left; padding-left:30px;font-size:14px; margin-bottom:18px;}
+.k-login-inputbox-only{width:280px; height:39px; line-height:39px; vertical-align:middle; text-align: center;margin-top:30px; margin-left:100px;}
+.k-login-inputname{width:60px; height:39px; line-height:39px; vertical-align:middle; text-align:left;font-size:14px; float:left;}
+.k-login-inputleft{width:180px; height:37px; line-height:37px; background-color:#FFF; border:2px solid #D9D9D9; border-right:none; vertical-align:middle; text-align:left;font-size:14px; float:left;border-radius:5px 0px 0px 5px;}
+.k-login-inputleft input{width:170px; height:34px; line-height:34px;border:0px; margin-left:5px;}
+.k-login-inputright{width:100px; height:37px; line-height:37px; background-color:#fbfbfb;border:2px solid #D9D9D9; border-left:none; vertical-align:middle; text-align:left; padding-left:4px;font-size:12px; float:left; color:#999;border-radius:0px 5px 5px 0px;}
+.k-login-inputyz{width:100px; height:37px; background-color:#FFF; line-height:37px; float:left; border:2px solid #D9D9D9; border-right:0px;border-radius:5px 0px 0px 5px;}
+.k-login-inputyz input{width:90px; height:34px; line-height:34px; border:0px; margin-left:5px;}
+.k-login-inputyzimg{width:80px; height:37px; line-height:37px;float:left;border:2px solid #D9D9D9; border-left:none;border-radius:0px 5px 5px 0px;background-color:#fbfbfb;}
+.k-login-inputbtn{width:100px; height:41px; line-height:41px;vertical-align:middle; text-align:center; padding-left:4px;float:left; background:url(login.png) no-repeat center right;}
+.k-login-inputbtn button{width:100px; height:41px; text-align:center; background-color:transparent; border:none; font-size:18px; color:#fff;cursor:pointer;_padding-top:6px;}
+.k-login-inputbtn-button-hover,.k-login-inputbtn button:hover{background:url(login_on.png) no-repeat center right!important;}
+.k-login-style{ width:auto; height:30px; position:absolute; right:30px; bottom:80px;*bottom:120px;}
+.k-login-style_btn{ width:38px; height:27px; background:url(style1.png) no-repeat;box-shadow: #666 0px 0px 10px; margin:5px 5px 0px 0px; border:1px solid #CCC; cursor:pointer;float:left;}
+.k-login-style_btn-hover,.k-login-style_btn:hover{ border:1px solid #fff;box-shadow: #666 0px 0px 0px;}
+.k-login-style-select{ width:80; height:28px;position:absolute; right:30px; bottom:30px;*bottom:80px;}
+.k-login-style-select-confirm { width:80px; height:28px;background:url(style-save.png) no-repeat;margin-right:7px;float:left;}
+.k-login-style-select-confirm:hover {filter:alpha(Opacity=60);-moz-opacity:0.6;opacity: 0.6;}
+.k-login-style-select-confirm a{ display:block; width:80px; height:28px;}
+.k-login-style-select-confirm span{ display:none;}
+.k-login-style-select-prev{ width:28px; height:28px; background:url(style-left.png) no-repeat; margin-right:7px;float:left;}
+.k-login-style-select-prev:hover{filter:alpha(Opacity=60);-moz-opacity:0.6;opacity: 0.6;}
+.k-login-style-select-prev a{ display:block; width:28px; height:28px;}
+.k-login-style-select-prev span{ display:none;}
+.k-login-style-select-next{ width:28px; height:28px; background:url(style-right.png) no-repeat; margin-right:7px;cursor:pointer;float:left;}
+.k-login-style-select-next:hover{filter:alpha(Opacity=60);-moz-opacity:0.6;opacity: 0.6;}
+.k-login-style-select-next a{ display:block; width:28px; height:28px;}
+.k-login-style-select-next span{ display:none;}
+.k-login-msg-panel {display:none;}
+
+.k-login-btnbox {display:none;}
+
+#userCodePanel,#userButtonPanel {display:none;}
+
+.k-login-top-logo-text{font-family:"Microsoft YaHei","黑体";font-size:34px; color:#D0EEFF;text-shadow:1px 1px 5px #000; font-weight:bold;width:900px; height:60px; margin:15px auto 0px auto;_margin:-6px auto 0px auto;letter-spacing:5px;}
+
+/*=======================================
+	重新登录 页面样式 ====================================
+=======================================*/
+.timeout {background:url("error2.gif") no-repeat center; width:100%; height:100%; position:relative;}
+.timeout .caption2 {width:700px; height:300px; left:50%; top:30%; position:absolute; margin:-150px 0 0 -350px;background-position:center center;background-repeat:no-repeat;} /*2012-09-05添加+++++++++*/
+.tmot_center {width:284px; height:66px; left:50%; top:50%; position:absolute; margin:-33px 0 0 -142px; font-size:14px; font-weight:bold; padding:147px 0px 0px 96px;}
+.tmot_center p {line-height:30px; color:#929397;}
+.tmot_center p a {color:#be0000; outline:0 none;}
+.tmot_center p a:hover {color:#06F; outline:0 none;}
+.tmot_center p a:focus {outline:0 none;}

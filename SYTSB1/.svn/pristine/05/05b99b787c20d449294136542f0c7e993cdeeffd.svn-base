@@ -1,0 +1,72 @@
+﻿
+/*=========================
+  2012年5月23日 每个栏目进去后的欢迎主页--我的主页 样式 ===============================
+============================*/
+
+/*------------------------------------global css----*/
+html, body {overflow:hidden; margin:0; padding:0;/* width:100%;*/ height:100%;}
+select {margin:0; padding:0;}
+a, a:link, a:visited {text-decoration:none;/*	color:#0000FF;*/}
+a:hover {text-decoration:underline;	color:#FF0000;}
+div, img, form, label, input, table, td, th {margin:0; padding:0; border:0; outline:none;}
+em {font-style:normal;}
+ul , li {margin:0; padding:0;}
+
+/*=========================
+  网站管理系统--我的主页 ===========================================================================
+============================*/
+.layww_tbl {margin:10px auto 0 auto;} /*============整个大表格*/
+.layww_tbl fieldset {padding:0px 0px 0px 20px; margin:0 0 20px 0; border:#deeaf9 solid 5px;}
+.layww_tbl fieldset legend {font-size:14px; font-weight:bold; color:#1386d9; padding:0px 5px 0px 5px; height:20px\0;}
+.layww_tbl table {margin:20px 0;}
+.layww_tbl table td {line-height:30px;/* background:#f2f7fd;*/border:1px solid #f4f4f4;}
+.lay_load {text-align:center;} /*=========包含进度条的单元格*/
+.lay_load table {float:left;/* height:30px;*/}
+.lay_load table td {/*height:30px;*/ line-height:15px; border:0 none;}
+.layww_tbl table td .lay_bd_none {border:0 none; color:#f00;}/*=======进度条文字说明*/
+.padding td {padding:0px 20px;}/*单元格间距*/
+/*进度条--重新编写----------------------------------------------------------------*/
+.td_loading {width:460px;position:relative;}
+.loading_all {position:relative; height:58px; line-height:58px; margin:0px 10px;}
+.loading_all table td {height:19px; border:0 none;}
+.loading_txt {position:absolute; top:0px; right:0px; z-index:3; color:#f00; font-weight:bold;}
+/*最先正常显示的下面的条儿*/
+.loading_normal {position:absolute; left:0; top:0; width:100%; z-index:1;}
+.load_n_l {background:url(../images/kui/loading_n_radius.png) no-repeat left top; width:15px;}
+.load_n_m {background:url(../images/kui/loading_n_middle.png) repeat-x left top;}
+.load_n_r {background:url(../images/kui/loading_n_radius.png) no-repeat right top; width:15px;}
+/*然后上面需要跑动百分比的条儿*/
+.loading_load {position:absolute; left:0px; top:0px; z-index:2;}
+.load_load_l {background:url(../images/kui/loading_load_radius.png) no-repeat left top; width:15px; _background:url(../images/kui/loading_load_radius.gif) no-repeat left top;}
+.load_load_m {background:url(../images/kui/loading_load_middle.png) repeat-x left top;}
+.load_load_r {background:url(../images/kui/loading_load_radius.png) no-repeat right top; width:15px; _background:url(../images/kui/loading_load_radius.gif) no-repeat right top;}
+
+/*=========================
+  办公自动化系统--我的主页 =========================================================================
+============================*/
+.oa_global {overflow-y:auto;}
+.oa_wel_ge {margin:0 auto;}
+.oa_wel_ge td {width:48%;}
+.oa_wel_ge td.blank {width:3%;}
+.oa_wel_ge td table fieldset {height:140px;}
+/*常用功能*/
+.oa_wel_normal {overflow:hidden;}
+.oa_wel_normal ul {list-style:none;}
+.oa_wel_normal li {float:left; text-align:center; width:12%; padding:15px 0px 0px 0px; overflow:hidden; line-height:30px; border:#fff solid 1px;}
+.oa_wel_normal li a {color:#888; display:block; outline:0 none;}
+.oa_wel_normal li:hover {border:#f00 solid 1px;}
+/*消息列表*/
+.oa_wel_box {float:left; width:96%; overflow:hidden; zoom:1;/* border:#f00 solid 1px;*/ clear:both;}
+.oa_wel_box ul {float:left; width:100%; overflow:hidden; zoom:1; list-style:none;}
+.oa_wel_box ul li {float:left; width:95%; height:14px; line-height:14px; padding:5px 0px 5px 16px; background:url(../../../../kui/skins/Aqua/images/icon/icon-drop.gif) no-repeat left center; overflow:hidden;}
+.oa_wel_box .title {float:left; width:88%; overflow:hidden; height:14px;}
+.oa_wel_box a {color:#343434; overflow:hidden;/* display:inline-block; height:14px;*/}
+.oa_wel_box a:hover {color:#f00; text-decoration:underline;}
+.oa_wel_box ul li span.time {float:right; text-align:right; color:#ccc; font:11px Verdana, Geneva, sans-serif; /*line-height:22px;*/ padding-top:1px;}
+/*起草公文流程*/
+.draft_c_f {margin:2em auto; width:88%; clear:both; overflow:hidden; text-align:center;}
+.draft_c_f fieldset {padding:3em; border:#deeaf9 solid 5px;}
+.draft_c_f fieldset legend {font-size:14px; font-weight:bold; color:#1386d9; padding:0px 5px 0px 5px; height:20px\0;}
+.draft_c_f fieldset select {width:100%; height:90%; _width:800px; height:200px; font-size:15px; font-weight:bold; padding:10px; border:#f00 solid 1px; margin-top:3em\0; _margin-top:3em; overflow:hidden; background:#fffafa;}
+.draft_c_f fieldset select option {padding:2px;}
+.draft_c_f fieldset input {margin-top:2em;}

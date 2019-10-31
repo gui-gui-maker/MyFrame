@@ -1,0 +1,335 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.s-skin-container img {height:100%;}
+
+/* logo标志样式=========================== */
+.m-top-logo-img {font-size:108px!important; text-align:center; margin:0 auto; width:108px;/* IE 8 2016-07-25 */}
+.m-top-logo-txt { margin-top:0px; font-size:45px;/* IE 8 2016-07-25 */ letter-spacing:7px;}
+
+
+/*天气*/
+.sp-weather {position: absolute; left:20px; top:10px; font-size:14px;/* IE 8 2016-07-25 */ *font-size:14px; color: #fff;}
+
+
+
+/*顶部 搜索效果=======================================*/
+.searchMeme-button-icon {background:url(../images/searchicobie8.png) no-repeat center;/* IE 8 2016-07-25 */}
+
+
+
+/*顶部 右边功能=======================================*/
+.m-top-upfun {font-size:14px;/* IE 8 2016-07-25 */}
+
+.m-user-xdnaw {background:url(../images/xdnawie8.png) no-repeat;/* IE 8 2016-07-25 */}
+
+.m-top-set {/*background:url(../images/setie8.png) no-repeat center; IE 8 2016-07-25 */}
+
+
+
+/*中间主要内容区================================================================*/
+.icon-bg {display:none;/* IE 8 2016-07-25 */}
+
+.icobig .iconfont {font-size:94px; line-height:104px;/* IE 8 2016-07-25 */}
+.icosml .iconfont {font-size:60px;/* IE 8 2016-07-25 */}
+.icoorg .iconfont {font-size:60px;/* IE 8 2016-07-25 */}
+.icobig:hover .iconfont {font-size:104px;/* IE 8 2016-07-25 */}
+.icosml:hover .iconfont {font-size:64px;/* IE 8 2016-07-25 */}
+.icoorg:hover .iconfont {font-size:64px;/* IE 8 2016-07-25 */}
+
+.icobig .icon-txt {margin:0px 0 0;/* IE 8 2016-07-25 */}
+.icosml .icon-txt , .icoorg .icon-txt {margin:0px 0 0;/* IE 8 2016-07-25 */}
+
+.iconboxes:hover {cursor:pointer;}
+.iconboxes:hover .icon-bg {background:#f38605; opacity:1; box-shadow:0 0 15px #fff;}
+.iconboxes:hover .icon-pic {/*opacity:0.2; transition:opacity .5s;*/}
+.iconboxes:hover .icon-txt {color:#f38605; transition:f38605 .5s;}
+
+.icodisabled {pointer-events:none; cursor:default!important; opacity:0.4!important;}
+.icodisabled .icon-bg {background:#fff; opacity:0.4; filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=40);}
+.icodisabled:hover .icon-bg {filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=40);}
+
+
+
+/*  数据统计页面样式  ==================================================================================================================================*/
+.systongji .m-top-logo-img {font-size:48px!important;/* IE 8 2016-07-25 */}
+.systongji .m-top-logo-txt { margin-top:0; font-size:30px;/* IE 8 2016-07-25 */ color: #fff; letter-spacing:5px;}
+
+.tj-logo-bg {position:absolute; /*left:0px; top:0; z-index:5;*/margin:0 0 0 10px; width:0; height:0; border-left:100px solid transparent; border-right:100px solid transparent; border-top:100px solid #fff; filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=20);/* IE 8 2016-07-25 */}
+
+
+/*顶部线*/
+.m-top-line-rt {right:0; width:86%;/* IE 8 2016-07-25 */}
+
+
+/* 总的统计数据几块 */
+.m-c-tit {font-size:18px;/* IE 8 2016-07-25 */}
+
+.m-c-data {font-size:34px;/* IE 8 2016-07-25 */}
+.m-c-unit {right:15%; font-size:18px;/* IE 8 2016-07-25 */}
+
+
+/* 统计区块样式 */
+.m-a-boxes-tit {font-size:16px;/* IE 8 2016-07-25 */}
+
+
+/*----------------------- 弹出框效果  start  ---------------------*/
+.black_overlay {position:fixed; z-index:1000; width:100%; height:100%; top:0; left:0; /*filter:blur(add=ture,direction=135,strength=200);*/ filter:alpha(opacity=70); opacity:.7; overflow:hidden; background-color:#000;}
+*html { background:url(*) fixed; }
+*html body { margin:0; height:100%; }
+*html .black_overlay {position:absolute; left:expression(documentElement.scrollLeft + documentElement.clientWidth - this.offsetWidth); top: expression(documentElement.scrollTop + documentElement.clientHeight - this.offsetHeight);}
+.white_content {display:none; position:absolute; top:50%; left:50%; width:1240px; /*width:1203px;*/ height:644px; margin:-322px 0 0 -620px;/* background-color:#000;*/ box-shadow:0 0 30px #333; border-radius:10px; z-index:9999; overflow:hidden;}
+
+#tccontent {margin:auto; zoom:1;}
+.tankuang {position:relative; padding:70px 0 10px 18px;}
+.close {position:absolute; right:5px; top:5px; z-index:9999;}
+.close a {display:block; width:24px; height:24px; font-size:24px; line-height:24px; color:#fff;}
+.close a:hover {color:#f00;}
+
+.white_content {-webkit-transform:scale(2); -moz-transform:scale(2); -ms-transform:scale(2);	transform:scale(2); opacity:0; -webkit-transition:all 0.3s; -moz-transition:all 0.3s; transition:all 0.3s;}
+.wtctbg {position:absolute; left:0; top:0; width:100%; height:100%; background:#000; filter:alpha(opacity=40); opacity:.4;}
+
+.md-show {-webkit-animation:slit .7s forwards ease-out;	-moz-animation:slit .7s forwards ease-out;	animation:slit .7s forwards ease-out;}
+
+@-webkit-keyframes slit {
+	50% {-webkit-transform: translateZ(-250px) rotateY(89deg); opacity: .5;}
+	100% {-webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); transform: scale(1); opacity: 1;}
+}
+@-moz-keyframes slit {
+	50% { -moz-transform: translateZ(-250px) rotateY(89deg); opacity: .5;}
+	100% { -webkit-transform: scale(1);	-moz-transform: scale(1); -ms-transform: scale(1); transform: scale(1); opacity: 1;}
+}
+
+@keyframes slit {
+	50% { transform: translateZ(-250px) rotateY(89deg); opacity: .5;}
+	100% {-webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); transform: scale(1); opacity: 1;}
+}
+/*----------------------- 弹出框效果  end  ---------------------*/
+
+
+
+
+
+/*============================  适应屏幕大小的样式  start  ==================================*/
+
+/*-----------  1024x768  ------------*/
+.window-w-1024 .m-top-logo {width:770px; height:226px; margin:0 0 0 -385px; padding-top:35px;}
+.window-w-1024 .m-top-logo-img {font-size:96px!important; width:96px;}
+.window-w-1024 .m-top-logo-txt {font-size:32px;}
+
+.window-w-1024 .m-center {top:29%; margin:0px 0 0 -450px;}
+.window-w-1024 .m-center-wrap {width:900px; height:422px; background:url(../images/sysgxlt2-ie81024.png) no-repeat;}
+
+.window-w-1024 .ico_01 {left:18px; top:8px;}
+.window-w-1024 .ico_02 {left:160px; top:235px;}
+.window-w-1024 .ico_03 {left:230px; top:102px;}
+.window-w-1024 .ico_08 {left:535px; top:300px;}
+.window-w-1024 .ico_05 {left:530px; top:0px;}
+.window-w-1024 .ico_06 {left:620px; top:110px;}
+.window-w-1024 .ico_07 {left:745px; top:220px;}
+.window-w-1024 .ico_09 {right:-10px; top:35px;}
+.window-w-1024 .ico_04 {left:415px; top:130px;}
+.window-w-1024 .ico_10 {left:329px; top:280px;}
+
+.window-w-1024 .icobig .icon-pic {width:66px; height:66px; line-height:66px; margin:10px;}
+.window-w-1024 .icobig .icon-pic img {width:66px;}
+.window-w-1024 .icosml .icon-pic , .window-w-1024 .icoorg .icon-pic {width:46px; height:46px; line-height:46px; margin:15px;}
+.window-w-1024 .icosml .icon-pic img , .window-w-1024 .icoorg .icon-pic img {width:46px;}
+	
+.window-w-1024 .icobig .iconfont {font-size:70px;}
+.window-w-1024 .icosml .iconfont {font-size:50px;}
+.window-w-1024 .icoorg .iconfont {font-size:50px;}
+.window-w-1024 .icobig:hover .iconfont {font-size:76px;}
+.window-w-1024 .icosml:hover .iconfont {font-size:54px;}
+.window-w-1024 .icoorg:hover .iconfont {font-size:54px;}
+
+.window-w-1024 .icon-txt {font-size:20px;}
+.window-w-1024 .icobig .icon-txt {width:90px; margin:0;}
+.window-w-1024 .icosml .icon-txt , .window-w-1024 .icoorg .icon-txt {width:82px; margin:10px 0px 0;}
+
+.window-w-1024 .iconboxes:hover .tooltip {margin:-170px 0 0 0px;}
+/*---*/
+.window-w-1024 .systongji .m-top-logo {margin:0; padding-top:0px;}
+.window-w-1024 .systongji .m-top-logo-img {font-size:48px!important;}
+.window-w-1024 .systongji .m-top-logo-txt {margin-top:0; font-size:30px; color:#fff; letter-spacing:5px;}
+/*---*/
+.window-w-1024 .m-top-line-rt {width:81%;}
+/* 总的统计数据几块 */
+.window-w-1024 .m-counts {top:18%;}
+.window-w-1024 .m-c-clumn {height:50px; padding:0 0px 0 55px;}
+.window-w-1024 .m-c-icon {padding:12px 12px; background:url(../images/mciconbj-ie81024.png) no-repeat;}
+.window-w-1024 .m-c-icon img {width:24px; height:24px;}
+.window-w-1024 .m-c-tit {font-size:12px; padding-top:0px;}
+.window-w-1024 .m-c-data {padding:2px 0; font-size:23px; letter-spacing:0px;}
+.window-w-1024 .m-c-unit {right:10px; top:25px; font-size:12px;}
+
+
+/*-----------  1280x768  ------------*/
+.window-w-1280 .m-top-logo {width:770px; height:226px; margin:0 0 0 -385px; padding-top:35px;}
+.window-w-1280 .m-top-logo-img {font-size:96px!important; width:96px;}
+.window-w-1280 .m-top-logo-txt {font-size:32px;}
+
+.window-w-1280 .m-center {top:29%; margin:0px 0 0 -450px;}
+.window-w-1280 .m-center-wrap {width:900px; height:422px; background:url(../images/sysgxlt2-ie81024.png) no-repeat;}
+
+.window-w-1280 .ico_01 {left:18px; top:8px;}
+.window-w-1280 .ico_02 {left:160px; top:235px;}
+.window-w-1280 .ico_03 {left:230px; top:102px;}
+.window-w-1280 .ico_08 {left:535px; top:300px;}
+.window-w-1280 .ico_05 {left:530px; top:0px;}
+.window-w-1280 .ico_06 {left:620px; top:110px;}
+.window-w-1280 .ico_07 {left:745px; top:220px;}
+.window-w-1280 .ico_09 {right:-10px; top:35px;}
+.window-w-1280 .ico_04 {left:415px; top:130px;}
+.window-w-1280 .ico_10 {left:329px; top:280px;}
+
+.window-w-1280 .icobig .icon-pic {width:66px; height:66px; line-height:66px; margin:10px;}
+.window-w-1280 .icobig .icon-pic img {width:66px;}
+.window-w-1280 .icosml .icon-pic , .window-w-1280 .icoorg .icon-pic {width:46px; height:46px; line-height:46px; margin:15px;}
+.window-w-1280 .icosml .icon-pic img , .window-w-1280 .icoorg .icon-pic img {width:46px;}
+	
+.window-w-1280 .icobig .iconfont {font-size:70px;}
+.window-w-1280 .icosml .iconfont {font-size:50px;}
+.window-w-1280 .icoorg .iconfont {font-size:50px;}
+.window-w-1280 .icobig:hover .iconfont {font-size:76px;}
+.window-w-1280 .icosml:hover .iconfont {font-size:54px;}
+.window-w-1280 .icoorg:hover .iconfont {font-size:54px;}
+
+.window-w-1280 .icon-txt {font-size:20px;}
+.window-w-1280 .icobig .icon-txt {width:90px; margin:0;}
+.window-w-1280 .icosml .icon-txt , .window-w-1280 .icoorg .icon-txt {width:82px; margin:10px 0px 0;}
+
+.window-w-1280 .iconboxes:hover .tooltip {margin:-170px 0 0 0px;}
+/*---*/
+.window-w-1280 .systongji .m-top-logo {margin:0; padding-top:0px;}
+.window-w-1280 .systongji .m-top-logo-img {font-size:48px!important;}
+.window-w-1280 .systongji .m-top-logo-txt {margin-top:0; font-size:30px; color:#fff; letter-spacing:5px;}
+/*---*/
+.window-w-1280 .m-top-line-rt {width:83%;}
+/* 总的统计数据几块 */
+.window-w-1280 .m-counts {top:18%;}
+.window-w-1280 .m-c-clumn {height:70px; padding:0 0px 0 75px;}
+.window-w-1280 .m-c-icon {padding:15px; background:url(../images/mciconbj-ie81280.png) no-repeat;}
+.window-w-1280 .m-c-icon img {width:32px; height:32px;}
+.window-w-1280 .m-c-tit {font-size:14px; padding-top:3px;}
+.window-w-1280 .m-c-data {padding:2px 0; font-size:28px; letter-spacing:0px;}
+.window-w-1280 .m-c-unit {right:10px; top:35px; font-size:14px;}
+
+
+/*-----------  1366x768  ------------*/
+.window-w-1366 .m-top-logo {width:770px; height:226px; margin:0 0 0 -385px; padding-top:35px;}
+.window-w-1366 .m-top-logo-img {font-size:96px!important; width:96px;}
+.window-w-1366 .m-top-logo-txt {font-size:32px;}
+
+.window-w-1366 .m-center {top:29%; margin:0px 0 0 -450px;}
+.window-w-1366 .m-center-wrap {width:900px; height:422px; background:url(../images/sysgxlt2-ie81024.png) no-repeat;}
+
+.window-w-1366 .ico_01 {left:18px; top:8px;}
+.window-w-1366 .ico_02 {left:160px; top:235px;}
+.window-w-1366 .ico_03 {left:230px; top:102px;}
+.window-w-1366 .ico_08 {left:535px; top:300px;}
+.window-w-1366 .ico_05 {left:530px; top:0px;}
+.window-w-1366 .ico_06 {left:620px; top:110px;}
+.window-w-1366 .ico_07 {left:745px; top:220px;}
+.window-w-1366 .ico_09 {right:-10px; top:35px;}
+.window-w-1366 .ico_04 {left:415px; top:130px;}
+.window-w-1366 .ico_10 {left:329px; top:280px;}
+
+.window-w-1366 .icobig .icon-pic {width:66px; height:66px; line-height:66px; margin:10px;}
+.window-w-1366 .icobig .icon-pic img {width:66px;}
+.window-w-1366 .icosml .icon-pic , .window-w-1366 .icoorg .icon-pic {width:46px; height:46px; line-height:46px; margin:15px;}
+.window-w-1366 .icosml .icon-pic img , .window-w-1366 .icoorg .icon-pic img {width:46px;}
+	
+.window-w-1366 .icobig .iconfont {font-size:70px;}
+.window-w-1366 .icosml .iconfont {font-size:50px;}
+.window-w-1366 .icoorg .iconfont {font-size:50px;}
+.window-w-1366 .icobig:hover .iconfont {font-size:76px;}
+.window-w-1366 .icosml:hover .iconfont {font-size:54px;}
+.window-w-1366 .icoorg:hover .iconfont {font-size:54px;}
+
+.window-w-1366 .icon-txt {font-size:20px;}
+.window-w-1366 .icobig .icon-txt {width:90px; margin:0;}
+.window-w-1366 .icosml .icon-txt , .window-w-1366 .icoorg .icon-txt {width:82px; margin:10px 0px 0;}
+
+.window-w-1366 .iconboxes:hover .tooltip {margin:-170px 0 0 0px;}
+/*---*/
+.window-w-1366 .systongji .m-top-logo {margin:0; padding-top:0px;}
+.window-w-1366 .systongji .m-top-logo-img {font-size:48px!important;}
+.window-w-1366 .systongji .m-top-logo-txt {margin-top:0; font-size:30px; color:#fff; letter-spacing:5px;}
+/*---*/
+.window-w-1366 .m-top-line-rt {width:84%;}
+/* 总的统计数据几块 */
+.window-w-1366 .m-counts {top:18%;}
+.window-w-1366 .m-c-clumn {height:70px; padding:0 0px 0 75px;}
+.window-w-1366 .m-c-icon {padding:15px; background:url(../images/mciconbj-ie81280.png) no-repeat;}
+.window-w-1366 .m-c-icon img {width:32px; height:32px;}
+.window-w-1366 .m-c-tit {font-size:16px; padding-top:3px;}
+.window-w-1366 .m-c-data {padding:2px 0; font-size:30px; letter-spacing:0px;}
+.window-w-1366 .m-c-unit {right:10px; top:35px; font-size:16px;}
+
+
+/*-----------  1440x900  ------------*/
+.window-w-1440 .m-top-logo {width:770px; height:226px; margin:0 0 0 -385px; padding-top:35px;}
+.window-w-1440 .m-top-logo-img {font-size:100px!important; width:100px;}
+.window-w-1440 .m-top-logo-txt {font-size:36px;}
+
+.window-w-1440 .m-center {top:27%; margin:0px 0 0 -601px;}
+
+.window-w-1440 .m-center {top:29%; margin:0px 0 0 -450px;}
+.window-w-1440 .m-center-wrap {width:900px; height:422px; background:url(../images/sysgxlt2-ie81024.png) no-repeat;}
+
+.window-w-1440 .ico_01 {left:18px; top:8px;}
+.window-w-1440 .ico_02 {left:160px; top:235px;}
+.window-w-1440 .ico_03 {left:230px; top:102px;}
+.window-w-1440 .ico_08 {left:535px; top:300px;}
+.window-w-1440 .ico_05 {left:530px; top:0px;}
+.window-w-1440 .ico_06 {left:620px; top:110px;}
+.window-w-1440 .ico_07 {left:745px; top:220px;}
+.window-w-1440 .ico_09 {right:-10px; top:35px;}
+.window-w-1440 .ico_04 {left:415px; top:130px;}
+.window-w-1440 .ico_10 {left:329px; top:280px;}
+
+.window-w-1440 .icobig .icon-pic {width:66px; height:66px; line-height:66px; margin:10px;}
+.window-w-1440 .icobig .icon-pic img {width:66px;}
+.window-w-1440 .icosml .icon-pic , .window-w-1440 .icoorg .icon-pic {width:46px; height:46px; line-height:46px; margin:15px;}
+.window-w-1440 .icosml .icon-pic img , .window-w-1440 .icoorg .icon-pic img {width:46px;}
+	
+.window-w-1440 .icobig .iconfont {font-size:70px;}
+.window-w-1440 .icosml .iconfont {font-size:50px;}
+.window-w-1440 .icoorg .iconfont {font-size:50px;}
+.window-w-1440 .icobig:hover .iconfont {font-size:76px;}
+.window-w-1440 .icosml:hover .iconfont {font-size:54px;}
+.window-w-1440 .icoorg:hover .iconfont {font-size:54px;}
+
+.window-w-1440 .icon-txt {font-size:20px;}
+.window-w-1440 .icobig .icon-txt {width:90px; margin:0;}
+.window-w-1440 .icosml .icon-txt , .window-w-1440 .icoorg .icon-txt {width:82px; margin:10px 0px 0;}
+
+.window-w-1440 .iconboxes:hover .tooltip {margin:-170px 0 0 0px;}
+/*---*/
+.window-w-1440 .systongji .m-top-logo {margin:0; padding-top:0px;}
+.window-w-1440 .systongji .m-top-logo-img {font-size:48px!important;}
+.window-w-1440 .systongji .m-top-logo-txt {margin-top:0; font-size:30px; color:#fff; letter-spacing:5px;}
+/*---*/
+.window-w-1440 .m-top-line-rt {width:84%;}
+/* 总的统计数据几块 */
+.window-w-1440 .m-counts {top:18%;}
+.window-w-1440 .m-c-clumn {height:70px; padding:0 0px 0 75px;}
+.window-w-1440 .m-c-icon {padding:15px; background:url(../images/mciconbj-ie81280.png) no-repeat;}
+.window-w-1440 .m-c-icon img {width:32px; height:32px;}
+.window-w-1440 .m-c-tit {font-size:16px; padding-top:0px;}
+.window-w-1440 .m-c-data {padding:2px 0; font-size:34px; letter-spacing:1px;}
+.window-w-1440 .m-c-unit {right:10px; top:35px; font-size:16px;}
+
+/*---*/
+.window-w-1440 .white_content {width:940px; height:560px; margin:-280px 0 0 -470px;}
+.window-w-1440 .tankuang {padding:110px 0 10px 18px;}
+
+
+/*-----------  1920x1080  ------------*/
+.window-w-1920 .icobig .icon-pic {margin:10px 25px;}
+.window-w-1920 .icosml .icon-pic , .window-w-1920 .icoorg .icon-pic {margin:16px 24px;}
+
+
+/*============================  适应屏幕大小的样式  end  ==================================*/

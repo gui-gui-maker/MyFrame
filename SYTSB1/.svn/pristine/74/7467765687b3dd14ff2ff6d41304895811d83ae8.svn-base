@@ -1,0 +1,6 @@
+@import url("../skin/default/global.css");
+@import url("../skin/default/link.css");
+@import url("../skin/default/nfcms.css");
+@import url("../skin/default/basic.css");
+@import url("../skin/default/basic_2.css");
+@import url("../skin/default/other.css");

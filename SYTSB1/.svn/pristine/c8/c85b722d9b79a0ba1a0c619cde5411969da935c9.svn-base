@@ -1,0 +1,43 @@
+﻿<%@ page contentType="text/html;charset=UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<%@include file="/k/kui-base-form.jsp"%>
+<script type="text/javascript">
+	$(function() {
+		if(!api.data)return;
+	    $.each(api.data,function(){
+	        $("#c_ul").append("<li style='list-style:none;padding:5px;margin:5px 0;text-align:left;width:100%;' onclick='selectInput(this)'><input type='radio' id='" 
+	        		   + this.id + "' name='nextActivity' value='" + this.id + "' /><label for='" 
+	        		   + this.id + "'>" + this.name + "</label></li>");
+	    });
+	    if($("#c_ul").height() < $("body").height())
+	    	$("#c_ul").css("margin-top",($("body").height()/2-$("#c_ul").height()/2) + "px")
+	});
+	
+	function selectInput(obj){
+		$("#c_ul .li-select").removeClass("li-select");
+		$(obj).addClass("li-select").children().first().attr("checked",true);
+	}
+	
+	function getSelected(){
+		var rc = $(":radio:checked");
+		if(rc.size()==0){
+			$.ligerDialog.warn("请选择目标环节！");
+			return null;
+		}else return rc.val();
+	}
+</script>
+<style type="text/css">
+html,body{overflow-y: auto;height:100%;padding:0;margin:0;}
+ul {margin:0;padding:0;border-top:1px solid #dddddd}
+ul li {list-style:none;text-align:left;font-size:14px;padding:8px 5px 8px 2em !important;margin:0!important;border-left:5px solid #ffffff;border-bottom:1px solid #dddddd}
+ul li:HOVER {background-color:#eeeeee;border-left:5px solid #666}
+ul li.li-select {background-color:#cccccc;border-left:5px solid #333}
+ul li input {margin-right:8px;height:14px;}
+</style>
+</head>
+<body>
+   <ul id="c_ul"></ul>
+</body>
+</html>

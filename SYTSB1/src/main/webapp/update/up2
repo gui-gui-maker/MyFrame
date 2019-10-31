@@ -1,0 +1,26 @@
+
+组件库 > 工作流引擎 > 工作流组件更新，支持消息类别指定，修复退回流程nextAcitivityId仍存在的bug，自动推送流程进度消息等V1.1.6
+	1、实现流程状态变化时自动给所有已参与的人推送消息
+    2、支持流程实例和环节定时设置使用动态自定义时限设置的方式，从数据总线获取时限描述
+    3、修复流程引擎分支情况下，由于处理不当未及时清理临时数据总线值（下一步环节ID）导致分支选择失败而出现无法正常提交流程的问题。
+    4、流程环节提交退回的情况下，可以明确指定发送系统内消息或者短信给下一步人员（从人事数据获取手机号码）
+
+更新依赖版本到1.1.6
+
+<dependency>
+   <groupId>khnt</groupId>
+   <artifactId>khnt-component-bpm</artifactId>
+   <version>1.1.6</version>
+</dependency>
+目前：无需更新
+<dependency>
+    <groupId>khnt</groupId>
+    <artifactId>khnt-component-bpm</artifactId>
+    <version>1.2.4</version>
+</dependency>
+
+添加一项公共流程功能：短信提醒（pub_send_sms）。
+
+如果原先系统中存在使用指定环节提交或者退回的情况下，更新到1.1.6版本之后，需要修改表flow_process中data_bus字段。删掉nextActivityId这个值。
+
+建议：目前使用流程定义发送消息还是开发是在action结束后手动添加的，不知道有自动发送功能，况且，取全院有权限的人有bug

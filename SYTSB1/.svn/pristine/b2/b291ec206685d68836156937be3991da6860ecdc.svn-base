@@ -1,0 +1,161 @@
+var reportErrorGrid;
+function createInfoGrid() {
+    var columns=[
+        { display: 'id', name: 'id', hide:true},
+        { display: 'info_id', name: 'info_id', hide:true},
+        { display: 'report_id', name: 'report_id', hide:true},
+        { display: '项目', width: '7%', name: 'error_category', editor: { type: 'text'},required:true,
+        	 editor: { type: 'select', data:errorCategoryList ,ext:{emptyOption:false}},
+        	 	render: function (item) {
+        	    	return render(item["error_category"],errorCategoryList);
+        		}
+        }, 
+        { display: '不合格种类', width: '20%', name: 'error_status', editor: { type: 'text'},required:true},
+        { display: '不符合事实陈述', width: '45%', name: 'error_desc', type: 'text', editor: { type: 'text'},required:false,maxlength:1000},
+        { display: '报告编号', width: '18%', name: 'report_sn', type: 'text', editor: { type: 'text'},required:false,maxlength:24},
+        { display: '不符合类型', width: '9%', name: 'error_type', editor: { type: 'text'},required:true,
+        	 editor: { type: 'select', data:errorTypeList ,ext:{emptyOption:false}},
+        	 	render: function (item) {
+        	    	return render(item["error_type"],errorTypeList);
+        		}
+        }        
+    ];
+	
+    if(pageStatus!="detail" && op_type==""){
+        columns.unshift({ display: "<a class='l-a l-icon-add' href='javascript:void(0);' onclick='addNewRow(\"infos\")' title='增加'><span>增加</span></a>", isSort: false, width: '4%',height:'5%', render: function (rowdata, rowindex, value) {
+            var h = "";
+            if (!rowdata._editing) {
+                h += "<a class='l-a l-icon-del' href='javascript:deleteRow(\"infos\")' title='删除'><span>删除</span></a> ";
+            }
+            return h;
+        }
+        });
+    }
+    
+    var enabledEdit = false;
+	if(op_type==""){
+		enabledEdit = true;
+	}
+	reportErrorGrid = $("#infos").ligerGrid({
+		columns: columns,
+		enabledEdit: enabledEdit,
+		rownumbers: true,    
+		height:"55%",
+		width:"100%",
+		//是否显示行序号
+		frozenRownumbers: false,
+		usePager: false,
+		//onAfterEdit: f_onAfterEdit,
+		 onBeforeEdit:f_onBeforeEdit, 
+		data: {Rows: [
+		]}
+	});
+    gridConfig["infos"].manager=reportErrorGrid;
+    
+}
+var selector;
+function f_onBeforeEdit(e)
+{ 
+	   var column_name = e.column.name;
+	   if (column_name == "error_status")
+    {
+		   selector = $.ligerDialog.open({ 
+				 title: '选择', 
+				 width: 500, 
+				 height: 300,
+				 parent:api, 
+				 url: 'app/report/error_select.jsp',
+				 data: {"window" : window},
+				 buttons: [
+				    { text: '确定', onclick: f_importOK },
+					{ text: '取消', onclick: f_importCancel }
+				 ]
+		   });
+    }
+}
+//选择回调函数
+var f_rows='';
+function f_importOK(item, selector){
+		f_rows = selector.frame.getSelectResult();
+		var selected = reportErrorGrid.getSelected();
+	    if (!f_rows){
+	    	top.$.notice("请选择不合格种类！");
+	        return;
+	    }
+	    var rows = reportErrorGrid.getData();
+	  
+	    selector.close();
+	    reportErrorGrid.updateRow(selected,{ 
+	    	error_status: ""
+	 	});
+	    var selected1 = reportErrorGrid.getSelected();
+	   reportErrorGrid.updateRow(selected1,{ 
+	    	error_status: f_rows.text
+	 	});
+	
+	}
+	
+	function f_importCancel(item, selector){
+		selector.close();
+	}
+//编辑后事件 
+function f_onAfterEdit(e){
+	var grid=gridConfig["infos"].manager; 
+	var data = grid.getSelectedRow();   
+	alert(data.device_type_code);
+	alert(e.column.name);
+	grid.updateCell('device_name', data.device_type_code, e.record);
+}
+
+function addNewRow(name) {
+	var grid=gridConfig[name].manager; 
+	grid.addEditRow({}); //添加一行
+}
+
+function deleteRow(name) {
+    var grid=gridConfig[name].manager;   //删除一行   
+    var data = grid.getSelectedRow();   
+    if(data.id==null||data.id==undefined||data.id==""){
+    	grid.deleteSelectedRow();
+    }else{
+    	 $.ligerDialog.confirm(kui.DEL_MSG, function (yes) {
+             if (yes) {
+                 $.getJSON(gridConfig[name]["delUrl"], {ids: data.id}, function (json) {
+                     if (json.success) {
+                         grid.deleteSelectedRow();
+                     }
+                 });
+             }
+         });
+    }
+}
+
+var gridConfig={	
+    infos:{manager:reportErrorGrid,delUrl:"report/error/info/del.do"}
+};
+
+function render(value,data){
+    for (var i in data) {
+    	if (data[i]["id"] == value)
+        {
+        	return data[i]['text'];
+        }
+		if(data[i].children)
+		{
+			for(var j in data[i].children)
+			{
+				if(data[i].children[j]["id"] ==value)
+					return data[i].children[j]['text'];
+				if(data[i].children[j].children)
+				{
+					for(var k in data[i].children[j].children)
+						if(data[i].children[j].children[k]["id"]==value)
+						{
+							return data[i].children[j].children[k]["text"];
+						}
+				}
+			}
+		}
+    }
+    return value;
+}

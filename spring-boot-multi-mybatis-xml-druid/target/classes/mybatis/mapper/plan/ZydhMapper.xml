@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.neo.mapper.plan.ZydhMapper" >
+    <resultMap id="BaseResultMap" type="com.neo.model.Zydh" >
+        <id column="id" property="id" jdbcType="VARCHAR" />
+      
+		<id column="yxdm" property="yxdm" jdbcType="VARCHAR" />
+		<id column="yxmc" property="yxmc" jdbcType="VARCHAR" />
+		<id column="yxdh" property="yxdh" jdbcType="VARCHAR" />
+		<id column="yxdhmc" property="yxdhmc" jdbcType="VARCHAR" />
+		<id column="sbzydh" property="sbzydh" jdbcType="VARCHAR" />
+		<id column="zydm" property="zydm" jdbcType="VARCHAR" />
+		<id column="zszymc" property="zszymc" jdbcType="VARCHAR" />
+		<id column="zkfx" property="zkfx" jdbcType="VARCHAR" />
+		<id column="bhzygs" property="bhzygs" jdbcType="VARCHAR" />
+		<id column="zylbdm" property="zylbdm" jdbcType="VARCHAR" />
+		<id column="ccdm" property="ccdm" jdbcType="VARCHAR" />
+		<id column="xzdm" property="xzdm" jdbcType="VARCHAR" />
+		<id column="sfbz" property="sfbz" jdbcType="VARCHAR" />
+	
+		<id column="bxdd" property="bxdd" jdbcType="VARCHAR" />
+		<id column="sfks" property="sfks" jdbcType="VARCHAR" />
+		<id column="wyyz" property="wyyz" jdbcType="VARCHAR" />
+		<id column="kldm" property="kldm" jdbcType="VARCHAR" />
+		<id column="jhxzdm" property="jhxzdm" jdbcType="VARCHAR" />
+	
+		<id column="pcdm" property="pcdm" jdbcType="VARCHAR" />
+		<id column="jhlbdm" property="jhlbdm" jdbcType="VARCHAR" />
+		<id column="zklxdm" property="zklxdm" jdbcType="VARCHAR" />
+		<id column="zklxmc" property="zklxmc" jdbcType="VARCHAR" />
+	
+		<id column="kskmyq" property="kskmyq" jdbcType="VARCHAR" />
+		<id column="kskmyqzw" property="kskmyqzw" jdbcType="VARCHAR" />
+		<id column="xkkmbhzy" property="xkkmbhzy" jdbcType="VARCHAR" />
+		<id column="xbyq" property="xbyq" jdbcType="VARCHAR" />
+		<id column="zsjhs" property="zsjhs" jdbcType="INTEGER" />
+		<id column="zjhs" property="zjhs" jdbcType="INTEGER" />
+		<id column="zybz" property="zybz" jdbcType="VARCHAR" />
+		<id column="ytlb" property="ytlb" jdbcType="VARCHAR" />
+		<id column="yxbz" property="yxbz" jdbcType="VARCHAR" />
+		<id column="dz1" property="dz1" jdbcType="VARCHAR" />
+		<id column="dz2" property="dz2" jdbcType="VARCHAR" />
+		<id column="dz3" property="dz3" jdbcType="VARCHAR" />
+		<id column="dz4" property="dz4" jdbcType="VARCHAR" />
+		<id column="dz5" property="dz5" jdbcType="VARCHAR" />
+		<id column="dz6" property="dz6" jdbcType="VARCHAR" />
+		<id column="bbjhid" property="bbjhid" jdbcType="VARCHAR" />
+		<id column="sfdy" property="sfdy" jdbcType="VARCHAR" />
+		<id column="dybz" property="dybz" jdbcType="INTEGER" />
+		<id column="dyml" property="dyml" jdbcType="VARCHAR" />
+		<id column="cc" property="cc" jdbcType="VARCHAR" />
+		<id column="pc" property="pc" jdbcType="VARCHAR" />
+		<id column="yxdz" property="yxdz" jdbcType="VARCHAR" />
+		<id column="xbzydh" property="xbzydh" jdbcType="VARCHAR" />
+		<id column="bhzy" property="bhzy" jdbcType="VARCHAR" />
+		<id column="bxddssmc" property="bxddssmc" jdbcType="VARCHAR" />
+		<id column="bxdddjsmc" property="bxdddjsmc" jdbcType="VARCHAR" />
+		<id column="bxddqxmc" property="bxddqxmc" jdbcType="VARCHAR" />
+		<id column="bxddxxdz" property="bxddxxdz" jdbcType="VARCHAR" />
+		<id column="bxddbb" property="bxddbb" jdbcType="VARCHAR" />
+		<id column="xgbj" property="xgbj" jdbcType="INTEGER" />
+		<id column="dz9" property="dz9" jdbcType="VARCHAR" />
+		<id column="dz8" property="dz8" jdbcType="VARCHAR" />
+		<id column="sddm" property="sddm" jdbcType="VARCHAR" />
+    </resultMap>
+    
+    <sql id="Base_Column_List" >
+        id,yxdm,yxmc,yxdh,yxdhmc,sbzydh,zydm,zszymc,zkfx,bhzygs,zylbdm,ccdm,xzdm,sfbz,bxdd,sfks,wyyz,kldm,
+	jhxzdm,pcdm,jhlbdm,zklxdm,zklxmc,kskmyq,kskmyqzw,xkkmbhzy,xbyq,zsjhs,zjhs,zybz,ytlb,yxbz,dz1,dz2,
+	dz3,dz4,dz5,dz6,bbjhid,sfdy,dybz,dyml,cc,pc,yxdz,xbzydh,bhzy,bxddssmc,bxdddjsmc,bxddqxmc,bxddxxdz,
+	bxddbb,xgbj,dz9,dz8,sddm
+    </sql>
+
+    <select id="getAll" resultMap="BaseResultMap"  >
+       SELECT 
+       <include refid="Base_Column_List" />
+	   FROM t_zydh
+    </select>
+    
+    <select id="getOne" parameterType="java.lang.String" resultMap="BaseResultMap" >
+        SELECT 
+       <include refid="Base_Column_List" />
+	   FROM t_zydh
+	   WHERE id = #{id}
+    </select>
+
+    <insert id="insert" parameterType="com.neo.model.Zydh" >
+       INSERT INTO 
+       		t_zydh
+       		(id,yxdm,yxmc,yxdh,yxdhmc,sbzydh,zydm,zszymc,zkfx,bhzygs,zylbdm,ccdm,xzdm,sfbz,bxdd,sfks,wyyz,kldm,
+			jhxzdm,pcdm,jhlbdm,zklxdm,zklxmc,kskmyq,kskmyqzw,xkkmbhzy,xbyq,zsjhs,zjhs,zybz,ytlb,yxbz,dz1,dz2,
+			dz3,dz4,dz5,dz6,bbjhid,sfdy,dybz,dyml,cc,pc,yxdz,xbzydh,bhzy,bxddssmc,bxdddjsmc,bxddqxmc,bxddxxdz,
+			bxddbb,xgbj,dz9,dz8,sddm) 
+       	VALUES
+       		(#{id},
+       		#{yxdm},
+       		#{yxmc},
+       		#{yxdh},#{yxdhmc},#{sbzydh},#{zydm},#{zszymc},#{zkfx},#{bhzygs},
+       		#{zylbdm},#{ccdm},#{xzdm},#{sfbz},#{bxdd},#{sfks},#{wyyz},#{kldm},
+			#{jhxzdm},#{pcdm},#{jhlbdm},#{zklxdm},#{zklxmc},#{kskmyq},#{kskmyqzw},
+			#{xkkmbhzy},#{xbyq},#{zsjhs},#{zjhs},#{zybz},#{ytlb},#{yxbz},#{dz1},#{dz2},
+			#{dz3},#{dz4},#{dz5},#{dz6},#{bbjhid},#{sfdy},#{dybz},#{dyml},#{cc},
+			#{pc},#{yxdz},#{xbzydh},#{bhzy},#{bxddssmc},#{bxdddjsmc},#{bxddqxmc},
+			#{bxddxxdz},#{bxddbb},#{xgbj},#{dz9},#{dz8},#{sddm})
+    </insert>
+    
+    <update id="update" parameterType="com.neo.model.Zydh" >
+       UPDATE 
+       		t_zydh 
+       SET 
+       	<if test="yxmc != null">yxmc = #{yxmc},</if>
+       	<if test="yxdhmc != null">yxdhmc = #{yxdhmc},</if>
+       	zkfx = #{zkfx}
+       WHERE 
+       		id = #{id}
+    </update>
+    
+    <delete id="delete" parameterType="java.lang.Long" >
+       DELETE FROM
+       		 t_zydh 
+       WHERE 
+       		 id =#{id}
+    </delete>
+
+</mapper>

@@ -1,0 +1,268 @@
+﻿<%@ page contentType="text/html;charset=UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head pageStatus="detail">
+<title>组织机构管理</title>
+<%@include file="/k/kui-base-form.jsp"%>
+<script type="text/javascript" src="pub/selectUser/selectUnitOrUser.js"></script>
+<script type="text/javascript">
+	function refresh(data, status) {
+		if (status == "add") {
+			var node = orgTreeManager.getSelected();
+			if(node.data.expandChild){
+				orgTreeManager.append(node.target, data);
+			}else{
+				$.getJSON("rbac/org/getSubordinate.do?orgid=" + node.data.id,function(resp){
+					orgTreeManager.append(node.target,resp);
+					orgTreeManager.selectNode(data.id);
+				});
+				node.data.expandChild = true;
+				$(node.target).find(".l-expandable-close", orgTreeManager.tree).click();
+			}
+		} else {
+			var node = orgTreeManager.getSelected();
+			if (node) orgTreeManager.update(node.target, data);
+			orgTreeManager.selectNode(data.id);
+		}
+		$("#form1").setValues(data);
+	}
+	
+	var orgTreeManager = null;
+	var unitId = "<sec:authentication property="principal.unit.id" />";
+	var unitName = "<sec:authentication property="principal.unit.orgName" />";
+	
+	$(function() {
+		//页面布局
+		$("#layout1").ligerLayout({
+			leftWidth : 300,
+			topHeight: 30,
+			space: 5,
+			allowTopResize : false,
+			allowLeftCollapse : false,
+			allowRightCollapse : false
+		});
+		//组织机构树
+		orgTreeManager = $("#tree1").ligerTree({
+			checkbox: false,
+			selectCancel : false,
+            iconFieldName: "level",
+            textFieldName: "orgName",
+            iconParse: function(data){
+            	if(data["level"]==0)
+					return "k/kui/images/icons/16/home.png";
+				else if (data["level"] == 1)
+					return "k/kui/images/icons/16/org.png";
+            	else
+                	return "k/kui/images/icons/16/group.png";
+            },
+			data : [],
+			onSelect : function(node) {
+				$("#form1").setValues(node.data);
+			},
+            onBeforeExpand: appendChildren
+		});
+		$.getJSON("rbac/org/getSubordinate.do?orgid=" + unitId,function(dataList){
+			orgTreeManager.append(unitId,[{
+				id: unitId,
+				text: unitName,
+				orgName: unitName,
+				orgCode: "<sec:authentication property="principal.unit.orgCode" />",
+				sort: "<sec:authentication property="principal.unit.sort" />",
+				tellphone: "<sec:authentication property="principal.unit.tellphone" />",
+				property: "<sec:authentication property="principal.unit.property" />",
+				describle: "",
+				areaName: "<sec:authentication property="principal.unit.areaName" />",
+				level: "0",
+				children: dataList,
+				expandChild: true
+			}]);
+			orgTreeManager.selectNode(unitId);
+		});
+		
+		//工具按钮栏
+		$("#toptoolbar").ligerToolBar({
+			items : [ {
+				text : '新增',
+				click : newOrg,
+				icon : 'add'
+			}, "-", {
+				text : '修改',
+				click : modify,
+				icon : "modify"
+			}, "-", {
+				text : '删除',
+				click : remove,
+				icon : "del"
+			}, "-", {
+				text : '调整',
+				click : config,
+				icon : "config"
+			} ]
+		});
+	});
+	
+	function appendChildren(node){
+		if (!node.data.expandChild){
+			orgTreeManager.loadData(node.data, "rbac/org/getSubordinate.do?orgid=" + node.data.id);
+			node.data.expandChild = true;
+		}
+	}
+	
+	function config(){
+		var actionNode = orgTreeManager.getSelected();
+		if(!actionNode){
+			$.ligerDialog.error("请选择要调整的机构！");
+			return;
+		}
+		if(actionNode.data.id==unitId){
+			$.ligerDialog.alert("不能调整该机构！");
+			return;
+		}
+		selectUnitOrUser(0, 0, null, null, function(data){
+			if(data.code){
+				if(data.code==actionNode.data.id){
+					$.ligerDialog.alert("不能选择要调整的机构！");
+					return;
+				}
+				$.getJSON("rbac/org/changeParent.do",{orgId:actionNode.data.id,parentId:data.code},function(resp){
+					if(resp.success){
+						var pnode = orgTreeManager.getDataByID(data.code);
+						orgTreeManager.remove(actionNode.data);
+						if(pnode.expandChild)
+							orgTreeManager.append(pnode,[actionNode.data]);
+						top.$.notice("调整成功！",2);
+					}
+				});
+			}
+		});
+	}
+	function newOrg(){
+		var actionNode = orgTreeManager.getSelected();
+		if(!actionNode){
+			$.ligerDialog.error("请选择一个机构！");
+			return;
+		}
+		var pid = actionNode.data.id;//父id
+		top.$.dialog({
+			width : 550,
+			height : 300,
+			lock : true,
+			title : "新增",
+			data : { "window" : window },
+			content : 'url:pub/rbac/org_division_detail.jsp?status=add&orgid=' + pid
+		});
+	}
+	
+	function modify(){
+		var actionNode = orgTreeManager.getSelected();
+		if (actionNode == null) {
+			$.ligerDialog.error('请选择需要修改的机构！')
+			return false;
+		}
+		top.$.dialog({
+			width : 550,
+			height : 300,
+			lock : true,
+			title : "修改",
+			data : { "window" : window },
+			content : 'url:pub/rbac/org_division_detail.jsp?status=modify&orgid=' + actionNode.data.id
+		});
+	}
+	
+	function remove() {
+		var actionNode = orgTreeManager.getSelected();
+		if (actionNode == null) {
+			$.ligerDialog.error('请选择您要删除的机构！', "提示")
+			return false;
+		} else {
+			if (orgTreeManager.hasChildren(actionNode.data)) {
+				$.ligerDialog.error('该节点下含有子节点，请先删除子节点！', "提示")
+				return false;
+			}
+			if (actionNode.data.id==unitId) {
+				$.ligerDialog.error("不能删除根节点！");
+				return false;
+			}
+			var tips = "你确定要删除机构【" + actionNode.data.text + "】吗？\n删除后不能恢复！";
+			$.ligerDialog.confirm(tips, function(yes) {
+				if (yes) {
+					deleteOrgTreeNode(actionNode);
+				}
+			});
+		}
+	}
+	
+	//删除树节点
+	function deleteOrgTreeNode(node) {
+		$.post("rbac/org/deletenode.do", {"ids" : node.data.id}, function(data) {
+			if (data.success) {
+				var parentTree = orgTreeManager.getParent(node);
+				orgTreeManager.remove(node.target);
+				$(this).removeClass("l-note").addClass(
+						"l-expandable-open");
+			} else {
+				$.ligerDialog.alert('删除失败！', "error");
+			}
+		});
+	}
+</script>
+<style type="text/css">
+    .l-tree .l-tree-icon-none img {
+        height: 16px;
+        margin: 3px;
+        width: 16px;
+    }
+
+</style>
+</head>
+<body class="p5">
+	<div id="layout1">
+		<div position="top" id="toptoolbar"></div>
+		<div position="left" title="组织机构" style="overflow:auto;">
+			<ul id="tree1"></ul>
+		</div>
+		<div position="center">
+			<form name="form1" id="form1" method="post">
+				<table class="l-detail-table">
+					<tr>
+						<td class="l-t-td-left">编号：</td>
+						<td class="l-t-td-right"><input name="orgCode" type="text"
+							ltype='text' /></td>
+					</tr>
+					<tr>
+						<td class="l-t-td-left">名称：</td>
+						<td class="l-t-td-right"><input name="orgName" type="text"
+							ltype='text' /></td>
+					</tr>
+					<tr>
+						<td class="l-t-td-left">联系电话：</td>
+						<td class="l-t-td-right"><input name="tellphone" type="text"
+							ltype='text' /></td>
+					</tr>
+					<tr>
+						<td class="l-t-td-left">机构性质：</td>
+						<td class="l-t-td-right"><u:combo name="property" code="sys_org_property" /></td>
+					</tr>
+					<tr>
+						<td class="l-t-td-left">单位类型：</td>
+						<td class="l-t-td-right"><u:combo name="type" code="pub_org_type" /></td>
+					</tr>
+					<tr>
+						<td class="l-t-td-left">行政区划：</td>
+						<td class="l-t-td-right"><input name="areaName" type="text" ltype='text' /></td>
+					
+					<tr>
+						<td class="l-t-td-left">排序：</td>
+						<td class="l-t-td-right"><input name="sort" type="text"
+							ltype='text' validate="{required:false,maxlength:8}" /></td>
+					</tr>
+					<tr>
+						<td class="l-t-td-left">备注：</td>
+						<td class="l-t-td-right"><textarea name="discrible" class="l-textarea"></textarea></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

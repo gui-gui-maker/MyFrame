@@ -1,0 +1,290 @@
+<!doctype html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<html>
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<link href="css/default.css" rel="stylesheet" />
+<script type='text/javascript' src='../../../js.aq.qq.com/js/aq_common.js'></script>
+<script type="text/javascript" src="k/kui/frame/core.js"></script>
+
+<script type="text/javascript" src="k/kui/frame/main.js"></script>
+</head>
+<script src="desk\js\jquery.KinSlideshow-1.2.1.min.js" type="text/javascript"></script>
+	
+	
+		
+	<script type="text/javascript">
+		
+		
+		$(function(){
+			
+			showInfo();
+			
+			
+		})
+		
+		
+		
+		function  showInfo()
+		{
+			alert(111);
+			
+			
+			$.getJSON("department/basic/getShowInfo.do", function(resp){
+				if(resp.success){
+						
+						
+						var item;  
+	                    $.each(resp.flowData,function(i,result){  
+	                    	
+	                        item = "<tr><td align='center' width='30%'>"+result[0]+"</td><td align='center' width='22%'>"+result[1]+"</td><td align='center' width='10%'>"+result[2]+"</td><td align='center' width='14%'>"+result[3]+"</td><td align='center' width='10%'>报告领取</tr>";  
+	                       
+	                        $('#showinfo').append(item);  
+	                    }); 
+						
+					
+						
+						
+					
+			  	}else{
+			  		$.ligerDialog.error(resp.msg);
+			 	}
+			})
+			
+				
+		
+		}
+		
+		
+		
+	</script>
+<body>
+<div class="wrapper remodal-bg" id="wrapper">
+	<div class="container background_img" id="background_img" style="background-image:url(images/default/wxc_bg.jpg)"> </div>
+	<div class="container browser_tips hide" id="browser_tips">
+		<div class="row clearfix">
+			<div class="browser_logo fl"> <img src="images/default/logo_black.png"> </div>
+			<div class="browser_download">
+				<p>您的浏览器对大屏幕上墙效果支持不佳，或者使用的浏览器版本过低，建议更换新版chrome浏览器获得更好的上墙体验</p>
+				<a href="http://xiazai.sogou.com/detail/34/8/6262355089742005676.html">点击去下载chrome浏览器 <img src="images/default/chrome.png"></a> </div>
+		</div>
+	</div>
+	<div class="container stage">
+		<div class="row header clearfix" id="header" style="justify-content: center;">
+			<div class="title fl">
+				<h1>检验报告微信查询实时统计</h1>
+			</div>
+		</div>
+		<div class="row main clearfix">
+			<div class="viewport" style="zoom: 1;">
+				<div id="message" class="view clearfix">
+					<div class="sidebar fl" id="sidebar">
+						<div class="sb-wrapper">
+							<div class="c-wrapper" id="mask_btn"> <img src="images/default/wxc_erm.jpg"> </div>
+							<p class="comment account"><span>四川特检</span></p>
+							<p class="comment"> 关注微信号 </p>
+							<p class="comment">参与互动上墙</p>
+						</div>
+					</div>
+					<div id="mask" class="mask hide">
+						<div class="mask-wrapper"> <img src="images/default/wxc_erm.jpg" width="460" height="460"> </div>
+					</div>
+					<div id="message_wrapper" class="fl">
+						<div class="message-loading-con hide">
+							<p>正在加载上墙消息...</p>
+							<div class="message-loading-progress">
+								<div class="message-loading-progress-bar" style="width: 100%;">100%</div>
+							</div>
+						</div>
+						<div class="message-con swiper-container" id="container_list" style="height: 682px;">
+							<div class="swiper-wrapper" style="transform: translate3d(0px, -145px, 0px); transition-duration: 0.5s;">
+							
+								<div class="swiper-slide swiper-slide-visible swiper-slide-active" style="width:100%; height: 227.333px;">
+									<div class="item clearfix" data-index="57" style="height:207.33333333333334px">
+										<div class="left fl">
+											<div class="avatar"> <img id="userhead_57" src="images/default/a01.jpg" alt=""> </div>
+										</div>
+										<div class="right">
+											<div class="name">神风影</div>
+											<div class="message" style="font-size:60px; line-height:70px"> 止 </div>
+										</div>
+										<div class="corner"></div>
+										<div class="index">58</div>
+									</div>
+								</div>
+								<div class="swiper-slide " style="width:100%; height: 227.333px;">
+									<div class="item clearfix" data-index="58" style="height:207.33333333333334px">
+										<div class="left fl">
+											<div class="avatar"> <img id="userhead_58" src="images/default/a02.jpg" alt=""> </div>
+										</div>
+										<div class="right">
+											<div class="name">wei</div>
+											<div class="message" style="font-size:60px; line-height:70px"> baidu百度 </div>
+										</div>
+										<div class="corner"></div>
+										<div class="index">59</div>
+									</div>
+									
+									
+									
+								</div>
+								
+								<div class="swiper-slide " style="width:100%; height: 227.333px;">
+
+									<div class="item clearfix" data-index="58" style="height:207.33333333333334px; border-radius:150px;width:80%; float:right; ">
+									
+									    
+									    <div class="left fl" > <div class="avatar"><img id="userhead_58" src="images/default/logo.png" alt=""></div></div>
+											
+										<div class="right">
+											<div class="name">特检院回复 </div>
+											<div class="message" style="font-size:60px; line-height:70px"> 四川特检院新春联欢会，牛牛牛！ </div>
+										</div>
+										<div class="corner"></div>
+
+									</div>
+								
+								
+								</div>
+								
+								
+								<div class="swiper-slide " style="width:100%; height: 227.333px;">
+									<div class="item clearfix" data-index="59" style="height:207.33333333333334px">
+										<div class="left fl">
+											<div class="avatar"> <img id="userhead_59" src="images/default/a04.jpg" alt=""> </div>
+										</div>
+										<div class="right">
+											<div class="name">wei</div>
+											<div class="message" style="font-size:60px; line-height:70px"> 双击666 </div>
+										</div>
+										<div class="corner"></div>
+										<div class="index">60</div>
+									</div>
+								</div>
+								<div class="swiper-slide " style="width:100%; height: 227.333px;">
+									<div class="item clearfix" data-index="0" style="height:207.33333333333334px">
+										<div class="left fl">
+											<div class="avatar"> <img id="userhead_0" src="images/default/a03.jpg" alt=""> </div>
+										</div>
+										<div class="right">
+											<div class="name">南城以南青衫薄</div>
+											<div class="message" style="font-size:60px; line-height:70px"> 哈哈哈哈 </div>
+										</div>
+										<div class="corner"></div>
+										<div class="index">1</div>
+									</div>
+								</div>
+								<div class="swiper-slide swiper-slide-visible swiper-slide-active" style="width:100%; height: 227.333px;">
+									<div class="item clearfix" data-index="57" style="height:207.33333333333334px">
+										<div class="left fl">
+											<div class="avatar"> <img id="userhead_57" src="images/default/a01.jpg" alt=""> </div>
+										</div>
+										<div class="right">
+											<div class="name">神风影</div>
+											<div class="message" style="font-size:60px; line-height:70px"> 止 </div>
+										</div>
+										<div class="corner"></div>
+										<div class="index">58</div>
+									</div>
+								</div>
+								<div class="swiper-slide " style="width:100%; height: 227.333px;">
+									<div class="item clearfix" data-index="58" style="height:207.33333333333334px">
+										<div class="left fl">
+											<div class="avatar"> <img id="userhead_58" src="images/default/a02.jpg" alt=""> </div>
+										</div>
+										<div class="right">
+											<div class="name">wei</div>
+											<div class="message" style="font-size:60px; line-height:70px"> baidu百度 </div>
+										</div>
+										<div class="corner"></div>
+										<div class="index">59</div>
+									</div>
+								</div>
+								<div class="swiper-slide " style="width:100%; height: 227.333px;">
+									<div class="item clearfix" data-index="59" style="height:207.33333333333334px">
+										<div class="left fl">
+											<div class="avatar"> <img id="userhead_59" src="images/default/a04.jpg" alt=""> </div>
+										</div>
+										<div class="right">
+											<div class="name">wei</div>
+											<div class="message" style="font-size:60px; line-height:70px"> 双击666 </div>
+										</div>
+										<div class="corner"></div>
+										<div class="index">60</div>
+									</div>
+								</div>
+								<div class="swiper-slide " style="width:100%; height: 227.333px;">
+									<div class="item clearfix" data-index="0" style="height:207.33333333333334px">
+										<div class="left fl">
+											<div class="avatar"> <img id="userhead_0" src="images/default/a03.jpg" alt=""> </div>
+										</div>
+										<div class="right">
+											<div class="name">南城以南青衫薄</div>
+											<div class="message" style="font-size:60px; line-height:70px"> 哈哈哈哈 </div>
+										</div>
+										<div class="corner"></div>
+										<div class="index">1</div>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+						<div class="message-con swiper-container hide" id="container_detail" style="height: 682px;">
+							<div class="swiper-wrapper"> </div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="blur"> </div>
+		</div>
+	</div>
+	<div class="container" id="ctrlbar"> </div>
+	<div class="gallery-con invisible">
+		<div id="comment" class="abp">
+			<div id="comment-stage" class="container" style="perspective: 805.536px;"></div>
+		</div>
+	</div>
+</div>
+<script src="js/jquery.js"></script> 
+<!--<script src="js/app.js"></script> --> 
+<script src="js/swiper.min.js"></script> 
+<script src="js/swiper.animate1.0.2.min.js"></script> 
+<script>  
+
+	  
+  var mySwiper = new Swiper ('.swiper-container', {
+     direction : 'vertical',
+ //  pagination: '.swiper-pagination',
+  // paginationClickable : false,
+   mousewheelControl : true,
+   slidesPerView : 'auto',
+	loopedSlides :3,
+	autoHeight: true,
+   speed: 2000,
+            loop: true,
+            observer:true,
+            observeParents:true,
+            autoplayDisableOnInteraction : false,
+            autoplay:1500,
+   loop: true,
+   onInit: function(swiper){
+   swiperAnimateCache(swiper);
+   swiperAnimate(swiper);
+	  },
+   onSlideChangeEnd: function(swiper){
+	swiperAnimate(swiper);
+    },
+
+	
+	  
+})        
+
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,638 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<body>
+	<div id="layout2" style="width: 99.8%">
+		<input type="hidden" id="inputFocus" name="inputFocus" values=""
+			value="" title="" style="height: 5mm;"> <input type="hidden"
+			id="thisPage" name="thisPage" value="?page=3" values="?page=3"
+			title="" style="height: 5mm;">
+		<div position="center" class="wrapper"
+			style="overflow: auto; width: 100%" align="center">
+			<input type="hidden" id="fk_report_id" name="fk_report_id" value=""
+				values="" title="" style="height: 5mm;"> <input
+				type="hidden" id="fk_inspection_info_id"
+				name="fk_inspection_info_id" value="" values="" title=""
+				style="height: 5mm;"> <br>
+			<table class=""
+				style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; table-layout: fixed; vertical-align: top; border-collapse: collapse;">
+				<colgroup>
+					<col style="width: 50.03%;" />
+					<col style="width: 49.97%;" />
+				</colgroup>
+				<tbody>
+					<tr>
+						<td>
+							<p class="a DocDefaults " style="text-align: left; width: 100%;">
+								<span class="a0 " style=""><span class=""
+									style="font-family: 'SimSun';">文件编号：CTJB-</span></span><span
+									class="a0 " style="font-family: 'SimSun';">0412-B01</span>
+							</p>
+						</td>
+						<td>
+							<p class="a DocDefaults " style="text-align: right; width: 100%;">
+								<span class="a0 " style=""><span class=""
+									style="font-family: 'SimSun';">实施日期：2017年10月1日</span></span>
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="" style="width: 100%; margin-bottom: 0.11in; margin-top: 0.11in;">
+				<span class="dtitle" style="">曳引式防爆电梯定期检验记录</span>
+			</p>
+			<table id="docx4j_tbl_4" class="two">
+				<colgroup>
+					<col border="1" style="width: 7.91%;" class="">
+					<col border="1" style="width: 14.41%;" class="">
+					<col border="1" style="width: 6.58%;" class="">
+					<col border="1" style="width: 4.94%;" class="">
+					<col border="1" style="width: 6.38%;" class="">
+					<col border="1" style="width: 5.14%;" class="">
+					<col border="1" style="width: 4.77%;" class="">
+					<col border="1" style="width: 1.41%;" class="">
+					<col border="1" style="width: 5.35%;" class="">
+					<col border="1" style="width: 1.45%;" class="">
+					<col border="1" style="width: 12.11%;" class="">
+					<col border="1" style="width: 6.48%;" class="">
+					<col border="1" style="width: 16.65%;" class="">
+					<col border="1" style="width: 6.41%;" class="">
+				</colgroup>
+				<tbody>
+					<tr style="height: 9mm; border-left: hidden; border-right: hidden; border-top: hidden;">
+						<td colspan="2" class="">
+							<!-- <p>
+								<span class="" style=""> </span>
+							</p> -->
+						</td>
+						<td colspan="7" class="" style="padding: 1px; border-left-style: hidden; border-right-style: hidden; ">
+							<!-- <p style="padding: 1px;">
+								<input id="TBL00002" name="TBL00002" type="text" ltype="text"
+									value="" ligerui="{width:220}" values="" title=""
+									style="height: 5mm;">
+							</p> -->
+						</td>
+						<td colspan="3" class="" style="vertical-align: middle; border-right-style: hidden;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;"><span
+									class="" style=" text-align: center;">报告编号:</span></span>
+							</p>
+						</td>
+						<td colspan="2" class="" style="padding: 1px;">
+							<p style="padding: 1px; width: 100%;">
+								<input id="base__report_sn" name="base__report_sn" type="text"
+									ltype="text" value="" ligerui="{width:110}" readonly="readonly"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.45in;">
+						<td colspan="2" class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">设备品种</span>
+							</p>
+						</td>
+						<td colspan="7" class="" style="padding: 1px;">
+							<p style="padding: 1px; width: 100%;">
+								<input id="base__device_sort" name="base__device_sort"
+									type="text" ltype="text" value="" ligerui="{width:220}"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+						<td colspan="3" class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">使用登记证编号</span>
+							</p>
+						</td>
+						<td colspan="2" class="" style="padding: 1px;">
+							<p style="padding: 1px; width: 100%;">
+								<input id="base__registration_num" name="base__registration_num"
+									type="text" ltype="text" value="" ligerui="{width:110}"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 10mm;">
+						<td colspan="2" class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">安全管理人员</span>
+							</p>
+						</td>
+						<td colspan="7" class="" style="padding: 1px;">
+							<p style="padding: 1px; width: 100%;">
+								<input id="base__security_op" name="base__security_op"
+									type="text" ltype="text" value="" ligerui="{width:220}"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+						<td colspan="3" class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">制造日期</span>
+							</p>
+						</td>
+						<td colspan="2" class="" style="padding: 1px;">
+							<p style="padding: 1px; width: 100%;">
+								<input id="base__make_date" name="base__make_date" type="text"
+									ltype="date" value="" ligerui="{width:110}" values="" title=""
+									style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.38in; page-break-inside: avoid;">
+						<td colspan="2" class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">使用单位名称</span>
+							</p>
+						</td>
+						<td colspan="12" class="" style="padding: 1px;">
+							<p style="padding: 1px; width: 100%;">
+								<input id="base__com_name" name="base__com_name" type="text"
+									ltype="text" value="" ligerui="{width:502}" values="" title=""
+									style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.38in; page-break-inside: avoid;">
+						<td colspan="2" class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">设备使用地点</span>
+							</p>
+						</td>
+						<td colspan="12" class="" style="padding: 1px;">
+							<p style="padding: 1px; width: 100%;">
+								<input id="base__device_use_place" name="base__device_use_place"
+									type="text" ltype="text" value="" ligerui="{width:502}"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 10mm;">
+						<td colspan="2" class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">使用单位代码</span>
+							</p>
+						</td>
+						<td colspan="7" class="" style="padding: 1px;">
+							<p style="padding: 1px; width: 100%;">
+								<input id="base__com_code" name="base__com_code" type="text"
+									ltype="text" value="" ligerui="{width:220}" values="" title=""
+									style="height: 5mm;">
+							</p>
+						</td>
+						<td colspan="3" class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">使用单位内编号</span>
+							</p>
+						</td>
+						<td colspan="2" class="" style="padding: 1px;">
+							<p style="padding: 1px; width: 100%;">
+								<input id="base__internal_num" name="base__internal_num" type="text" ltype="text"
+									value="" ligerui="{width:110}" values="" title=""
+									style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 10mm;">
+						<td colspan="2" class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">制造单位名称</span>
+							</p>
+						</td>
+						<td colspan="12" class="" style="padding: 1px;">
+							<p style="padding: 1px; width: 100%;">
+								<input id="base__make_units_name" name="base__make_units_name"
+									type="text" ltype="text" value="" ligerui="{width:502}"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 10mm;">
+						<td colspan="2" class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">改造单位名称</span>
+							</p>
+						</td>
+						<td colspan="7" class="" style="padding: 1px;">
+							<p style="padding: 1px; width: 100%;">
+								<input id="base__transform_unit_name" name="base__transform_unit_name" type="text" ltype="text"
+									value="" ligerui="{width:220}" values="" title=""
+									style="height: 5mm;">
+							</p>
+						</td>
+						<td colspan="3" class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">改造日期</span>
+							</p>
+						</td>
+						<td colspan="2" class="" style="padding: 1px;">
+							<p style="padding: 1px; width: 100%;">
+								<input id="base__transform_date" name="base__transform_date"
+									type="text" ltype="date" value=""
+									ligerui="{isTextBoxMode:true,width:110}" required="" values=""
+									title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.37in;">
+						<td colspan="2" class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">型号</span>
+							</p>
+						</td>
+						<td colspan="7" class="" style="padding: 1px;">
+							<p style="padding: 1px; width: 100%;">
+								<input id="base__device_model" name="base__device_model" type="text" ltype="text"
+									value="" ligerui="{width:220}" values="" title=""
+									style="height: 5mm;">
+							</p>
+						</td>
+						<td colspan="3" class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">产品编号</span>
+							</p>
+						</td>
+						<td colspan="2" class="" style="padding: 1px;">
+							<p style="padding: 1px; width: 100%;">
+								<input id="base__factory_code" name="base__factory_code"
+									type="text" ltype="text" value="" ligerui="{width:110}"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.38in;">
+						<td colspan="2" class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">维保单位名称</span>
+							</p>
+						</td>
+						<td colspan="12" class="" style="padding: 1px;">
+							<p style="padding: 1px; width: 100%;">
+								<input id="base__maintain_unit_name" name="base__maintain_unit_name" type="text" ltype="text"
+									value="" ligerui="{width:502}" values="" title=""
+									style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 10mm;">
+						<td colspan="2" class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">整机防爆标志</span>
+							</p>
+						</td>
+						<td colspan="7" class="" style="padding: 1px;">
+							<p style="padding: 1px; width: 100%;">
+								<input id="base__cp_by3" name="base__cp_by3" type="text"
+									ltype="text" value="" ligerui="{width:220}" values="" title=""
+									style="height: 5mm;">
+							</p>
+						</td>
+						<td colspan="3" class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">燃爆物质</span>
+							</p>
+						</td>
+						<td colspan="2" class="" style="padding: 1px;">
+							<p style="padding: 1px; width: 100%;">
+								<input id="base__cp_by4" name="base__cp_by4" type="text"
+									ltype="text" value="" ligerui="{width:110}" values="" title=""
+									style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.38in;">
+						<td colspan="2" class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;"><span
+									class="" style=" text-align: center;">限速器型号/编号</span></span>
+							</p>
+						</td>
+						<td colspan="7" class="" style="padding: 1px;">
+							<p style="padding: 1px; width: 100%;">
+								<input id="base__p30003007" name="base__p30003007" type="text"
+									ltype="text" value="" ligerui="{width:220}" values="" title=""
+									style="height: 5mm;">
+							</p>
+						</td>
+						<td colspan="3" class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">区域防爆等级</span>
+							</p>
+						</td>
+						<td colspan="2" class="" style="padding: 1px;">
+							<p style="padding: 1px; width: 100%;">
+								<input id="base__cp_by6" name="base__cp_by6" type="text"
+									ltype="text" value="" ligerui="{width:110}" values="" title=""
+									style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 10mm; page-break-inside: avoid;">
+						<td rowspan="2" class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">设备</span>
+							</p>
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">技术</span>
+							</p>
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">参数</span>
+							</p>
+						</td>
+						<td class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">额定载重量</span>
+							</p>
+						</td>
+						<td colspan="5" class="" style="padding: 1px; border-right-style: hidden;">
+							<p style="padding: 1px; width: 100%;">
+								<input id="base__p_edzzl" name="base__p_edzzl" type="text"
+									ltype="text" value="" ligerui="{width:175}" values="" title=""
+									style="height: 5mm;">
+							</p>
+						</td>
+						<td colspan="2" class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">kg</span>
+							</p>
+						</td>
+						<td colspan="3" class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">额定速度</span>
+							</p>
+						</td>
+						<td class="" style="padding: 1px; border-right-style: hidden;">
+							<p style="padding: 1px; width: 100%;">
+								<input id="base__p30002003" name="base__p30002003" type="text"
+									ltype="text" value="" ligerui="{width:67}" values="" title=""
+									style="height: 5mm;">
+							</p>
+						</td>
+						<td class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">m/s</span>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 10mm; page-break-inside: avoid;">
+						<td class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">层站门数</span>
+							</p>
+						</td>
+						<td class="" style="padding: 1px; border-right-style: hidden;">
+							<p style="padding: 1px; width: 100%;">
+								<input id="base__p30002005" name="base__p30002005" type="text" ltype="text"
+									value="" ligerui="{width:33}" values="" title=""
+									style="height: 5mm;">
+							</p>
+						</td>
+						<td class="" style="vertical-align: middle; border-right-style: hidden;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">层</span>
+							</p>
+						</td>
+						<td class="" style="padding: 1px; border-right-style: hidden;">
+							<p style="padding: 1px; width: 100%;">
+								<input id="base__p_dtzs" name="base__p_dtzs" type="text" ltype="text"
+									value="" ligerui="{width:32}" values="" title=""
+									style="height: 5mm;">
+							</p>
+						</td>
+						<td class="" style="vertical-align: middle; border-right-style: hidden;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">站</span>
+							</p>
+						</td>
+						<td colspan="2" class="" style="padding: 1px; border-right-style: hidden;">
+							<p style="padding: 1px; width: 100%;">
+								<input id="base__p_dtms" name="base__p_dtms" type="text" ltype="text"
+									value="" ligerui="{width:31}" values="" title=""
+									style="height: 5mm;">
+							</p>
+						</td>
+						<td class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">门</span>
+							</p>
+						</td>
+						<td colspan="3" class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">控制方式</span>
+							</p>
+						</td>
+						<td colspan="2" class="" style="padding: 1px;">
+							<p style="padding: 1px; width: 100%;">
+								<input id="base__p30001001" name="base__p30001001" type="text"
+									ltype="select" value=""
+									ligerui="{isTextBoxMode:true,width:110,
+										data:[{'id':'手柄操纵控制(手动门)','text':'手柄操纵控制(手动门)'},{'id':'手柄操纵控制(自动门)','text':'手柄操纵控制(自动门)'},
+											{'id':'按扭控制(手动门)','text':'按扭控制(手动门)'},{'id':'按扭控制(自动门)','text':'按扭控制(自动门)'},
+											{'id':'信号控制','text':'信号控制'},{'id':'集选控制','text':'集选控制'},
+											{'id':'下集选控制','text':'下集选控制'},{'id':'并联控制','text':'并联控制'},
+											{'id':'梯群控制','text':'梯群控制'},{'id':'梯群智能控制','text':'梯群智能控制'}]}"
+									values="" title="" style="height: 5mm; font-size: 8pt;">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.45in;">
+						<td class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">检验</span>
+							</p>
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">依据</span>
+							</p>
+						</td>
+						<td colspan="13" class="">
+							<p style="width: 100%; margin-left: 1mm; text-align: left;">
+								<span class="" style=""
+									>《电梯监督检验和定期检验规则---防爆电梯》(TSGT7003--2011)(及2号修改单)</span>
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table id="docx4j_tbl_4_1" class="two">
+				<colgroup>
+					<col border="1" style="width: 7.91%;" class="">
+					<col border="1" style="width: 14.41%;" class="">
+					<col border="1" style="width: 6.58%;" class="">
+					<col border="1" style="width: 4.94%;" class="">
+					<col border="1" style="width: 6.38%;" class="">
+					<col border="1" style="width: 5.14%;" class="">
+					<col border="1" style="width: 4.77%;" class="">
+					<col border="1" style="width: 1.41%;" class="">
+					<col border="1" style="width: 5.35%;" class="">
+					<col border="1" style="width: 1.45%;" class="">
+					<col border="1" style="width: 9.11%;" class="">
+					<col border="1" style="width: 9.48%;" class="">
+					<col border="1" style="width: 16.65%;" class="">
+					<col border="1" style="width: 6.41%;" class="">
+				</colgroup>
+				<tbody>
+					<tr style="height: 17mm; border-top-style: hidden; border-bottom-style: hidden;">
+						<td class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">主要</span>
+							</p>
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">检验</span>
+							</p>
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">仪器</span>
+							</p>
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">设备</span>
+							</p>
+						</td>
+						<td colspan="4" style="">
+							<p style="width: 100%; text-align: left; margin-left: 1mm;">
+								<span class=""
+									style="">主要检验仪器设备名称及编号见</span>
+							</p>
+						</td>
+						<td colspan="5" class="" style="border-left-style: hidden; border-right-style: hidden;">
+							<p style="width: 100%; text-align: center;">
+								<input id="TBL00002" name="TBL00002" type="text" ltype="text"
+									value="SCTJ-DT-" ligerui="{width:31}" values="" title=""
+									style="height: 5mm; text-align: left; margin-left: -1mm;">
+							</p>
+						</td>
+						<td colspan="4" class="">
+							<p style="width: 100%; text-align: left;">
+								<span class="" style=""><span class=""
+									style="">号检测箱内清单</span></span>
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table id="docx4j_tbl_4_2" class="two">
+				<colgroup>
+					<col border="1" style="width: 7.91%;" class="">
+					<col border="1" style="width: 14.41%;" class="">
+					<col border="1" style="width: 6.58%;" class="">
+					<col border="1" style="width: 4.94%;" class="">
+					<col border="1" style="width: 6.38%;" class="">
+					<col border="1" style="width: 5.14%;" class="">
+					<col border="1" style="width: 4.77%;" class="">
+					<col border="1" style="width: 1.41%;" class="">
+					<col border="1" style="width: 5.35%;" class="">
+					<col border="1" style="width: 1.45%;" class="">
+					<col border="1" style="width: 12.11%;" class="">
+					<col border="1" style="width: 6.48%;" class="">
+					<col border="1" style="width: 16.65%;" class="">
+					<col border="1" style="width: 6.41%;" class="">
+				</colgroup>
+				<tbody>
+					<tr style="height: 0.45in;">
+						<td class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">检验</span>
+							</p>
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">结论</span>
+							</p>
+						</td>
+						<td colspan="13" class="" style="padding: 1px;">
+							<p style="padding: 1px; width: 100%; ">
+								<input id="base__inspection_conclusion" name="base__inspection_conclusion" type="text" ltype="select"
+									value="" ligerui="{width:604,data:[{id:'合格',text:'合格'},{id:'不合格',text:'不合格'},
+									{id:'复检合格',text:'复检合格'},{id:'复检不合格',text:'复检不合格'}],initValue:'合格'}" values="" title=""
+									style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 14mm;">
+						<td class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">备注</span>
+							</p>
+						</td>
+						<td colspan="13" class="" style="padding: 1px;">
+							<p style="width: 99%;">
+								<!-- <input id="base__remarks" name="base__remarks" type="text"
+									ltype="text" value="" ligerui="{width:604}" values="" title=""
+									style="height: 5mm;"> -->
+								<textarea rows="2" cols="" id="base__remarks" name="base__remarks"
+									style="margin-left: 1mm;"></textarea>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.38in;">
+						<td class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">检验</span>
+							</p>
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">时间</span>
+							</p>
+						</td>
+						<td colspan="9" class="" style="padding: 1px;">
+							<p style="padding: 1px; width: 100%;">
+								<input id="base__inspect_date" name="base__inspect_date" type="text"
+									ltype="date" value=""
+									ligerui="{width:333}" values="" title=""
+									style="height: 5mm;">
+							</p>
+						</td>
+						<td class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">检验完</span>
+							</p>
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">成日期</span>
+							</p>
+						</td>
+						<td colspan="3" class="" style="padding: 1px;">
+							<p style="padding: 1px; width: 100%;">
+								<input id="base__inspect_date_end" name="base__inspect_date_end" type="text"
+									ltype="date" value=""
+									ligerui="{width:180}" values="" title=""
+									style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.41in;">
+						<td class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">检验</span>
+							</p>
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">人员</span>
+							</p>
+						</td>
+						<td colspan="9" class="" style="padding: 1px;">
+							<p style="padding: 1px; width: 100%;">
+								<input id="base__inspect_op" name="base__inspect_op" type="text"
+									ltype="select" value=""
+									ligerui="{isMultiSelect:true,width:333}" values="" title=""
+									style="height: 5mm;">
+							</p>
+						</td>
+						<td class="" style="vertical-align: middle;">
+							<p class="" style="text-align: center; width: 100%;">
+								<span class="" style=" text-align: center;">校核人员</span>
+							</p>
+						</td>
+						<td colspan="3" class="" style="padding: 1px;">
+							<p style="padding: 1px; width: 100%;">
+								<input id="base__confirm_op" name="base__confirm_op" type="text"
+									ltype="text" value="" ligerui="{width:180}" values="" title=""
+									style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p></p>
+			<p></p>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+$(function(){
+	/* alert('test'); */
+	$("#docx4j_tbl_4_1").removeAttr("style");
+})
+</script>
+</html>

@@ -1,0 +1,100 @@
+<%@ page contentType="text/html;charset=UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head pageStatus="${param.pageStatus}">
+<title>详情页面</title>
+<%@include file="/k/kui-base-form.jsp"%>
+<script type="text/javascript">
+	$(function() {
+		$("#formObj").initForm({ //参数设置示例
+			
+			success : function(response) {
+				if (response.success) {
+					top.$.notice("保存成功！", 3);
+					api.data.window.Qm.refreshGrid();
+					api.close();
+				} else {
+					$.ligerDialog.error("操作失败！<br/>" + response.msg);
+				}
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<form id="formObj" action="com/rt/page/save.do" getAction="com/rt/page/detail.do?id=${param.id}">
+		<input type="hidden" id="id" name="id" /> <input type="hidden" id="status" name="status" value="0" /> <input type="hidden" id="createTime" name="createTime" />
+		<input name="pagePath" id="pagePath" type="hidden" />
+		<br/>
+		<table cellpadding="3" class="l-detail-table">
+			<tr>
+				<td class="l-t-td-left">报表类型：</td>
+				<td class="l-t-td-right">
+				<input name="modelType" id="modelType" type="text" ltype="select" validate="{required:true,maxlength:50}" 
+						ligerui="{initValue:'0',data:[{'id':'0','text':'检验报告'},{'id':'1','text':'检验原始记录'}]}"/>
+				</td>
+				
+			</tr>
+			<tr>
+				<td class="l-t-td-left">报表代码：</td>
+				<td class="l-t-td-right"><input name="rtCode" id="rtCode" type="text" ltype="text" validate="{required:true,maxlength:50}" placeholder="用来做调用的，请用非中文字符填写，如:106_zdxl" /></td>
+				<td class="l-t-td-left">报表名称：</td>
+				<td class="l-t-td-right"><input name="rtName" id="rtName" type="text" ltype="text" validate="{required:true,maxlength:200}" /></td>
+			</tr>
+			<tr>
+				<td class="l-t-td-left">设备类型：</td>
+				<td class="l-t-td-right"><input name="deviceType" id="deviceType" type="text" ltype="select" validate="{required:true}" ligerUi="{data:<u:dict code='device_big'/>}" /></td>
+				<td class="l-t-td-left">报表类型：</td>
+				<td class="l-t-td-right"><input name="reportType" id="reportType" type="text" ltype="select" validate="{required:true}" ligerUi="{data:<u:dict code='tzsb_report_type'/>}"/></td>
+			</tr>
+			
+			<tr>
+				<td class="l-t-td-left">是否分页：</td>
+				<td class="l-t-td-right"><u:combo name="isPage" code="sys_sf" attribute="initValue:'1'" validate="required:true"></u:combo></td>
+				<td class="l-t-td-left">分页代码：</td>
+				<td class="l-t-td-right"><input name="rtPageCode" id="rtPageCode" type="text" ltype="text" validate="{required:false,maxlength:50}" placeholder="区别全报表，其中一个分页编号，功能待定" /></td>
+
+			</tr>
+			<tr>
+				<td class="l-t-td-left">关联表代码：</td>
+				<td class="l-t-td-right"><input name="relTableCode" id="relTableCode" type="text" ltype="text" validate="{required:false,maxlength:100}" placeholder="关联了哪些表，以逗号分隔，仅作存储" />
+				</td>
+			</tr>
+			<tr>
+
+				<td class="l-t-td-left">关联字段：</td>
+				<td class="l-t-td-right" colspan="3"><input name="relColCode" id="relColCode" type="text" ltype="text" validate="{required:true,maxlength:100}"
+					value="FK_REPORT_ID,FK_INSPECTION_INFO_ID" placeholder="关联ID为哪些，系统建表使用，以逗号分隔，默认:FK_REPORT_ID,FK_INSPECTION_INFO_ID" /></td>
+			</tr>
+			<tr>
+				<td class="l-t-td-left">引入CSS：</td>
+				<td class="l-t-td-right" colspan="3"><input name="linkCss" id="linkCss" type="text" ltype="text" validate="{required:false,maxlength:500}" placeholder="全路径以逗号隔开" /></td>
+			</tr>
+			<tr>
+				<td class="l-t-td-left">引入JS：</td>
+				<td class="l-t-td-right" colspan="3"><input name="linkJs" id="linkJs" type="text" ltype="text" validate="{required:false,maxlength:500}" placeholder="全路径以逗号隔开" /></td>
+			</tr>
+			<tr>
+				<td class="l-t-td-left">保存路径：</td>
+				<td class="l-t-td-right"><input name="savePath" id="savePath" type="text" ltype="text" validate="{required:false,maxlength:100}" placeholder="包括类名方法名,saveAction" /></td>
+
+				<td class="l-t-td-left">详情路径：</td>
+				<td class="l-t-td-right"><input name="detailPath" id="detailPath" type="text" ltype="text" validate="{required:false,maxlength:100}" placeholder="包括类名方法名,getAction" /></td>
+			</tr>
+		<!-- 	<tr>
+				<td class="l-t-td-left">页面存放路径：</td>
+				<td class="l-t-td-right" colspan="3"><input name="pagePath" id="pagePath" type="text" ltype="text" validate="{required:false,maxlength:100}" /></td>
+			</tr> -->
+			<tr>
+				<td class="l-t-td-left">自定义起始序号：</td>
+				<td class="l-t-td-right"><input name="firstNum" id="firstNum" type="text" ltype="text" validate="{number:true,min:0}" placeholder="应用于生成特殊附页" /></td>
+				
+			</tr>
+			<tr>
+				<td class="l-t-td-left">备注：</td>
+				<td class="l-t-td-right" colspan="3"><input name="remark" id="remark" type="text" ltype="text" validate="{required:false,maxlength:500}" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

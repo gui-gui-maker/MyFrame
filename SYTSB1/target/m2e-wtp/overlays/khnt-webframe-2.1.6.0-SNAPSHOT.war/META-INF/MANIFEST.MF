@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Built-By: WIN-V17U12TMPL2$
+Created-By: Apache Maven 3.2.2
+Build-Jdk: 1.8.0_152
+

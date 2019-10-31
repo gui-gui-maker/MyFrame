@@ -1,0 +1,549 @@
+<%@ page contentType="text/html;charset=UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+</head>
+
+<body>
+	<div id="layout2" style="width: 99.8%">
+		<input type="hidden" id="inputFocus" name="inputFocus" /> <input
+			type="hidden" id="thisPage" name="thisPage" value="?page=5">
+		<div position="center" class="wrapper"
+			style="overflow: auto; width: 100%" align="center">
+			<input type="hidden" id="fk_report_id" name="fk_report_id" >
+			<input type="hidden" id="fk_inspection_info_id"
+				name="fk_inspection_info_id" > <br />
+			<p>
+				<a name="RTPAGE_4__检验项目及其内容1"></a>
+			</p>
+			<table id="docx4j_tbl_5">
+				<colgroup>
+					<col style="width: 5.76%;" />
+					<col style="width: 7.51%;" />
+					<col style="width: 7.85%;" />
+					<col style="width: 11.25%;" />
+					<col style="width: 46.01%;" />
+					<col style="width: 13.36%;" />
+					<col style="width: 8.26%;" />
+				</colgroup>
+				<thead>
+					<tr style="height: 7mm; page-break-inside: avoid;">
+						<td>
+							<p  style="text-align:center;">
+								<span>序号</span>
+							</p>
+						</td>
+						<td>
+							<p  style="text-align:center;">
+								<span>检验类别</span>
+							</p>
+						</td>
+						<td colspan="3">
+							<p  style="text-align:center;">
+								<span>检验项目及其内容</span>
+							</p>
+						</td>
+						<td>
+							<p  style="text-align:center;">
+								<span>检验结果</span>
+							</p>
+						</td>
+						<td>
+							<p  style="text-align:center;">
+								<span>结论</span>
+							</p>
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr style="height: 9mm; page-break-inside: avoid;">
+						<td rowspan="5">
+							<p  style="text-align:center;">
+								<span>1</span>
+							</p>
+						</td>
+						<td rowspan="5">
+							<p  style="text-align:center;">
+								<span>B</span>
+							</p>
+						</td>
+						<td rowspan="5">
+							<p  style="text-align:center;">
+								<span>1</span>
+							</p>
+							<p  style="text-align:center;">
+								<span>技术</span>
+							</p>
+							<p  style="text-align:center;">
+								<span>资料</span>
+							</p>
+						</td>
+						<td rowspan="5">
+							<p  style="text-align:center;"> 
+								<span>1.4</span>
+							</p>
+							<p  style="text-align:center;">
+								<span>使用资料</span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<span>(1)使用登记资料</span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="record__B_1_4_1" name="record__B_1_4_1" 
+								type="text" ltype="select" 
+									ligerui="{isMultiSelect:false,'code':'dt_jl_record',width:75,initValue:'√'}"
+									class="cB_1_4_1" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+						<td rowspan="5">
+							<p>
+								<input id="conclusion__B_1_4_1" name="conclusion__B_1_4_1"
+									type="text" ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',initValue:'√'}"
+									/>
+									</p>
+						</td>
+					</tr>
+					<tr style="height: 9mm; page-break-inside: avoid;">
+						<td>
+							<p>
+								<span>(2)安全技术档案</span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="record__B_1_4_2" name="record__B_1_4_2" type="text"
+									ltype="select" 
+									ligerui="{isMultiSelect:false,'code':'dt_jl_record',width:75,initValue:'√'}"
+									class="cB_1_4_1" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 9mm; page-break-inside: avoid;">
+						<td>
+							<p>
+								<span>(3)管理规章制度</span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="record__B_1_4_3" name="record__B_1_4_3" type="text"
+									ltype="select" 
+									ligerui="{isMultiSelect:false,'code':'dt_jl_record',width:75,initValue:'√'}"
+									class="cB_1_4_1" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 9mm; page-break-inside: avoid;">
+						<td>
+							<p>
+								<span>(4)日常维护保养合同</span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="record__B_1_4_4" name="record__B_1_4_4" type="text"
+									ltype="select" 
+									ligerui="{isMultiSelect:false,'code':'dt_jl_record',width:75,initValue:'√'}"
+									class="cB_1_4_1" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 9mm; page-break-inside: avoid;">
+						<td>
+							<p>
+								<span>(5)特种设备作业人员证</span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="record__B_1_4_5" name="record__B_1_4_5" type="text"
+									ltype="select" 
+									ligerui="{isMultiSelect:false,'code':'dt_jl_record',width:75,initValue:'√'}"
+									class="cB_1_4_1" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.28in; page-break-inside: avoid;">
+						<td rowspan="3">
+							<p  style="text-align:center;">
+								<span>2</span>
+							</p>
+						</td>
+						<td rowspan="3">
+							<p  style="text-align:center;">
+								<span>C</span>
+							</p>
+						</td>
+						<td rowspan="11">
+							<p  style="text-align:center;">
+								<span>2</span>
+							</p>
+							<p  style="text-align:center;">
+								<span>机房</span>
+							</p>
+							<p  style="text-align:center;">
+								<span>及相</span>
+							</p>
+							<p  style="text-align:center;">
+								<span>关设</span>
+							</p>
+							<p  style="text-align:center;">
+								<span>备</span>
+							</p>
+						</td>
+						<td rowspan="3">
+							<p  style="text-align:center;">
+								<span>2.1</span>
+							</p>
+							<p  style="text-align:center;">
+								<span>通道及检</span>
+							</p>
+							<p  style="text-align:center;">
+								<span>修门、检</span>
+							</p>
+							<p  style="text-align:center;">
+								<span>修活板门</span>
+							</p>
+							<p  style="text-align:center;">
+								<span>（目测或</span>
+							</p>
+							<p  style="text-align:center;">
+								<span>者测量相</span>
+							</p>
+							<p  style="text-align:center;">
+								<span>关数据）</span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<span>(1)通道</span>
+							</p>
+							<p>
+								<span>通往机房或者驱动主机/</span><span><span>液压泵站及其附件的检修门和检修活板门的通道应当安全、无阻碍，并且设有固定照明装置；</span></span>
+							</p>
+						</td>
+						<td>
+							<p>
+							<input id="record__C_2_1_1" name="record__C_2_1_1" type="text"
+								ltype="select"  class="cC_2_1_1"
+								ligerui="{data:[{'id':'资料确认符合','text':'资料确认符合'},{'id':'资料确认不符合','text':'资料确认不符合'},
+												{'id':'目测符合','text':'目测符合'},{'id':'目测不符合','text':'目测不符合'}],initValue:'资料确认符合'}"
+												onchange="changeRecord(this,this.value)"/>
+							</p>
+						</td>
+						<td rowspan="3">
+							<p>
+								<input id="conclusion__C_2_1_1" name="conclusion__C_2_1_1"
+									type="text" ltype="select" 
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',width:75,initValue:'√'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.28in; page-break-inside: avoid;">
+						<td>
+							<p>
+								<span>(2)门锁</span>
+							</p>
+							<p>
+								<span><span>对于人员可进入的机房，检修门和检修活板门应当设置用钥匙开启的锁，当门打开后，不用钥匙也能够将其关闭和锁住；门锁住后，不用钥匙也能够从机房内部将门打开；</span></span>
+							</p>
+						</td>
+						<td>
+							<p>
+							<input id="record__C_2_1_2" name="record__C_2_1_2" type="text"
+								ltype="select"  class="cC_2_1_1"
+								ligerui="{data:[{'id':'资料确认符合','text':'资料确认符合'},{'id':'资料确认不符合','text':'资料确认不符合'},
+												{'id':'目测符合','text':'目测符合'},{'id':'目测不符合','text':'目测不符合'}],initValue:'资料确认符合'}"
+												onchange="changeRecord(this,this.value)"/>
+							
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.28in; page-break-inside: avoid;">
+						<td>
+							<p>
+								<span>(3)警示标志</span>
+							</p>
+							<p>
+								<span><span>门外侧有下述或者类似的警示标志：</span></span>
+							</p>
+							<p>
+								<span><span>“电梯机器</span></span><span>——</span><span><span>危险未经允许禁止入内”；</span></span>
+							</p>
+						</td>
+						<td>
+							<p>
+									<input id="record__C_2_1_3" name="record__C_2_1_3" type="text"
+								ltype="select"  class="cC_2_1_1"
+								ligerui="{isMultiSelect:false,'code':'dt_jl_record',width:75,initValue:'√'}"
+								onchange="changeRecord(this,this.value)"/>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 7mm; page-break-inside: avoid;">
+						<td>
+							<p  style="text-align:center;">
+								<span>3</span>
+							</p>
+						</td>
+						<td  style="text-align:center;">
+							<p>
+								<span>B</span>
+							</p>
+						</td>
+						<td  style="text-align:center;">
+							<p>
+								<span>2.3</span>
+							</p>
+							<p>
+								<span>主开关</span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<span>(2)与照明等电路的控制关系</span><span><span>（断开主开关，观察、检查照明、插座的供电电路是否被切断）</span></span>
+							</p>
+							<p>
+								<span>主开关不得切断轿厢照明(如果有)、驱动主机</span><span>/ </span><span>液压泵站照明(如果有)</span><span><span>和机房内、底坑中电源插座的供电电路；</span></span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="record__B_2_3_2" name="record__B_2_3_2" type="text"
+								ltype="select"  class="cB_2_3_2"
+								ligerui="{isMultiSelect:false,'code':'dt_jl_record',width:75,initValue:'√'}"
+								onchange="changeRecord(this,this.value)"/>
+								
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="conclusion__B_2_3_2" name="conclusion__B_2_3_2"
+									type="text" ltype="select" 
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',width:75,initValue:'√'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 7mm; page-break-inside: avoid;">
+						<td rowspan="3"  style="text-align:center;">
+							<p>
+								<span>4</span>
+							</p>
+						</td>
+						<td rowspan="3"  style="text-align:center;">
+							<p>
+								<span>B</span>
+							</p>
+						</td>
+						<td rowspan="3"  style="text-align:center;">
+							<p>
+								<span>2.5</span>
+							</p>
+							<p>
+								<span>电力驱动</span>
+							</p>
+							<p>
+								<span>杂物电梯</span>
+							</p>
+							<p>
+								<span>驱动主机</span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<span>(2)主机、制动器工作状况</span><span><span>（目测驱动主机工作情况、制动器工作情况）驱动主机工作时应当无异常噪声和振动，油量适当，无明显漏油；制动器动作灵活、工作可靠；</span></span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="record__B_2_5_2" name="record__B_2_5_2" type="text"
+									ltype="select" 
+									ligerui="{isMultiSelect:false,'code':'dt_jl_record',width:75,initValue:'√'}"
+									class="cB_2_5_2" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+						<td rowspan="3">
+							<p>	
+								<input id="conclusion__B_2_5_2" name="conclusion__B_2_5_2"
+									type="text" ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',width:75,initValue:'√'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 1.24in; page-break-inside: avoid;">
+						<td>
+							<p>
+								<span>(3)轮槽、绳槽、链轮齿磨损</span><span><span>（目测曳引轮槽等的磨损情况；认为轮槽的磨损可能影响曳引杂物电梯的曳引能力时，结合</span><span>
+										7.5 </span><span>要求的试验结果验证轮槽磨损是否影响曳引能力；）</span></span>
+							</p>
+							<p>
+								<span>曳引轮槽、卷筒绳槽、链轮齿等不得有过度磨损</span>
+							</p>
+							<p>
+								<span>(适用于改造、重大修理监督检验和定期检验)</span><span><span>，如果曳引式杂物电梯曳引轮槽的磨损可能影响曳引能力时，应当进行曳引能力验证试验；</span></span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="record__B_2_5_3" name="record__B_2_5_3" type="text"
+									ltype="select" 
+									ligerui="{isMultiSelect:false,'code':'dt_jl_record',width:75,initValue:'√'}"
+									class="cB_2_5_2" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 7mm; page-break-inside: avoid;">
+						<td>
+							<p>
+								<span>★(4)手动紧急操作装置</span><span><span>（通过模拟操作检查电气安全装置和</span></span><span>手动松闸功能）</span>
+							</p>
+							<p>
+								<span><span>手动紧急操作装置应当符合以下要求：</span></span>
+							</p>
+							<p>
+								<span><span>①对于可拆卸盘车手轮，设有一个电气安全装置，</span></span><span>
+								</span><span><span>最迟在盘车手轮装上杂物电梯驱动主机时动作；②</span></span><span>松闸扳手</span><span><span>涂成红色，盘车手轮是无辐条的并且涂成黄色，可拆卸盘车手轮放置在机房内容易接近的明显部位；③在驱动主机上接近盘车手轮处，明显标出轿厢运行方向，如果手轮是不可拆卸的，可以在手轮上标出；④能够通过操纵</span></span><span>手动松闸装置</span><span><span>松开制动器，并且需要以一个持续力保持其松开状态</span></span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="record__B_2_5_4S" name="record__B_2_5_4S"
+									type="text" ltype="select"  class="cB_2_5_2"
+									ligerui="{isMultiSelect:false,'code':'dt_jl_record',width:75,initValue:'√'}"
+									onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 7mm; page-break-inside: avoid;">
+						<td rowspan="2"  style="text-align:center;">
+							<p>
+								<span>5</span>
+							</p>
+						</td>
+						<td rowspan="2"  style="text-align:center;">
+							<p>
+								<span>B</span>
+							</p>
+						</td>
+						<td rowspan="2"  style="text-align:center;">
+							<p>
+								<span>2.8</span>
+							</p>
+							<p>
+								<span>限速器</span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<span>(2)封记及运转情况</span><span><span>（目测调节</span></span><span>部位封记和</span><span><span>限速器运转情况，结合</span><span>
+										7.1</span></span><span>、</span><span>7.2 </span><span><span>的试验结果，判断限速器动作是否正常）</span></span>
+							</p>
+							<p>
+								<span>限速器各调节部位封记完好</span><span><span>，运转时不得出现碰擦、卡阻、转动不灵活等现象，动作正常</span></span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="record__B_2_8_2" name="record__B_2_8_2" type="text"
+									ltype="select" 
+									ligerui="{isMultiSelect:false,'code':'dt_jl_record',width:75,initValue:'√'}"
+									class="cB_2_8_2" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+						<td rowspan="2">
+							<p>
+								<input id="conclusion__B_2_8_2" name="conclusion__B_2_8_2"
+									type="text" ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',initValue:'√'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 7mm; page-break-inside: avoid;">
+						<td>
+							<p>
+								<span>(3)动作速度校验</span>
+							</p>
+							<p>
+								<span>受检电梯的维护保养单位应当每</span><span><span>
+										5 </span><span>年进行一次限速器动作速度校验，校验结果应当符合要求</span></span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="record__B_2_8_3" name="record__B_2_8_3" type="text"
+									ltype="select" 
+									ligerui="{isMultiSelect:false,'code':'dt_jl_record',width:75,initValue:'√'}"
+									class="cB_2_8_2" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.25in; page-break-inside: avoid;">
+						<td rowspan="2"  style="text-align:center;">
+							<p>
+								<span>6</span>
+							</p>
+						</td>
+						<td rowspan="2"  style="text-align:center;">
+							<p>
+								<span>C</span>
+							</p>
+						</td>
+						<td rowspan="2"  style="text-align:center;">
+							<p>
+								<span>2.9</span>
+							</p>
+							<p>
+								<span>接地</span>
+							</p>
+						</td>
+						<td rowspan="2">
+							<p>
+								<span>(2)接地连接(目测必要时测量)</span>
+							</p>
+							<p>
+								<span>所有电气设备及线管、线槽的外露可以导电部分应当与保护导体(PE</span><span><span>，地线</span></span><span>)可靠连接</span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input
+									id="record__C_2_9_2"
+									name="record__C_2_9_2"
+									type="text"
+									ltype="select"
+									class="cC_2_9_2"
+									ligerui="{data:[{'id':'资料确认符合','text':'资料确认符合'},{'id':'资料确认不符合','text':'资料确认不符合'},
+												{'id':'目测符合','text':'目测符合'},{'id':'目测不符合','text':'目测不符合'},
+												{'id':'相关数据符合','text':'相关数据符合'},{'id':'相关数据不符合','text':'相关数据不符合'}],initValue:'资料确认符合'}"
+									onchange="changeRecord(this,this.value)"
+								/>
+							</p>
+						</td>
+						<td rowspan="2">
+							<p>
+								<input id="conclusion__C_2_9_2" name="conclusion__C_2_9_2"
+									type="text" ltype="select" 
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',width:75,initValue:'√'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.25in; page-break-inside: avoid;">
+						<td>
+							<p>
+								<input id="record__C_2_9_2_1" name="record__C_2_9_2_1"
+									type="text" ltype="text"  ligerui="{width:75}" />
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+﻿var dataSC = [
+{name:'成都市',selected:true,itemStyle:{normal:{areaColor:{type:'radial',x:0.5,y:0.5,r:0.8,colorStops:[{offset:0,color:'#ffffff'},{offset:1,color:'#84bf1c'}],globalCoord:false},opacity:0.6}}},
+{name:'攀枝花市',itemStyle:{normal:{areaColor:{type:'radial',x:0.5,y:0.5,r:0.8,colorStops:[{offset:0,color:'#ffffff'},{offset:1,color:'#c3989f'}],globalCoord:false},opacity:0.6}}},
+{name:'自贡市',itemStyle:{normal:{areaColor:{type:'radial',x:0.5,y:0.5,r:0.8,colorStops:[{offset:0,color:'#ffffff'},{offset:1,color:'#ffe903'}],globalCoord:false},opacity:0.6}}},
+{name:'泸州市',itemStyle:{normal:{areaColor:{type:'radial',x:0.5,y:0.5,r:0.8,colorStops:[{offset:0,color:'#ffffff'},{offset:1,color:'#84bf1c'}],globalCoord:false},opacity:0.6}}},
+{name:'德阳市',itemStyle:{normal:{areaColor:{type:'radial',x:0.5,y:0.5,r:0.8,colorStops:[{offset:0,color:'#ffffff'},{offset:1,color:'#84bf1c'}],globalCoord:false},opacity:0.6}}},
+{name:'绵阳市',itemStyle:{normal:{areaColor:{type:'radial',x:0.5,y:0.5,r:0.8,colorStops:[{offset:0,color:'#ffffff'},{offset:1,color:'#ffe903'}],globalCoord:false},opacity:0.6}}},
+{name:'遂宁市',itemStyle:{normal:{areaColor:{type:'radial',x:0.5,y:0.5,r:0.8,colorStops:[{offset:0,color:'#ffffff'},{offset:1,color:'#c3989f'}],globalCoord:false},opacity:0.6}}},
+{name:'广元市',itemStyle:{normal:{areaColor:{type:'radial',x:0.5,y:0.5,r:0.8,colorStops:[{offset:0,color:'#ffffff'},{offset:1,color:'#c3989f'}],globalCoord:false},opacity:0.6}}},
+{name:'乐山市',itemStyle:{normal:{areaColor:{type:'radial',x:0.5,y:0.5,r:0.8,colorStops:[{offset:0,color:'#ffffff'},{offset:1,color:'#8d9efc'}],globalCoord:false},opacity:0.6}}},
+{name:'内江市',itemStyle:{normal:{areaColor:{type:'radial',x:0.5,y:0.5,r:0.8,colorStops:[{offset:0,color:'#ffffff'},{offset:1,color:'#c3989f'}],globalCoord:false},opacity:0.6}}},
+{name:'眉山市',itemStyle:{normal:{areaColor:{type:'radial',x:0.5,y:0.5,r:0.8,colorStops:[{offset:0,color:'#ffffff'},{offset:1,color:'#84bf1c'}],globalCoord:false},opacity:0.6}}},
+{name:'南充市',itemStyle:{normal:{areaColor:{type:'radial',x:0.5,y:0.5,r:0.8,colorStops:[{offset:0,color:'#ffffff'},{offset:1,color:'#84bf1c'}],globalCoord:false},opacity:0.6}}},
+{name:'雅安市',itemStyle:{normal:{areaColor:{type:'radial',x:0.5,y:0.5,r:0.8,colorStops:[{offset:0,color:'#ffffff'},{offset:1,color:'#c3989f'}],globalCoord:false},opacity:0.6}}},
+{name:'巴中市',itemStyle:{normal:{areaColor:{type:'radial',x:0.5,y:0.5,r:0.8,colorStops:[{offset:0,color:'#ffffff'},{offset:1,color:'#8d9efc'}],globalCoord:false},opacity:0.6}}},
+{name:'宜宾市',itemStyle:{normal:{areaColor:{type:'radial',x:0.5,y:0.5,r:0.8,colorStops:[{offset:0,color:'#ffffff'},{offset:1,color:'#c3989f'}],globalCoord:false},opacity:0.6}}},
+{name:'广安市',itemStyle:{normal:{areaColor:{type:'radial',x:0.5,y:0.5,r:0.8,colorStops:[{offset:0,color:'#ffffff'},{offset:1,color:'#c8c502'}],globalCoord:false},opacity:0.6}}},
+{name:'资阳市',itemStyle:{normal:{areaColor:{type:'radial',x:0.5,y:0.5,r:0.8,colorStops:[{offset:0,color:'#ffffff'},{offset:1,color:'#8d9efc'}],globalCoord:false},opacity:0.6}}},
+{name:'达州市',itemStyle:{normal:{areaColor:{type:'radial',x:0.5,y:0.5,r:0.8,colorStops:[{offset:0,color:'#ffffff'},{offset:1,color:'#c3989f'}],globalCoord:false},opacity:0.6}}},
+{name:'阿坝藏族羌族自治州',itemStyle:{normal:{areaColor:{type:'radial',x:0.5,y:0.5,r:0.8,colorStops:[{offset:0,color:'#ffffff'},{offset:1,color:'#8d9efc'}],globalCoord:false},opacity:0.6}}},
+{name:'凉山彝族自治州',itemStyle:{normal:{areaColor:{type:'radial',x:0.5,y:0.5,r:0.8,colorStops:[{offset:0,color:'#ffffff'},{offset:1,color:'#84bf1c'}],globalCoord:false},opacity:0.6}}},
+{name:'甘孜藏族自治州',itemStyle:{normal:{areaColor:{type:'radial',x:0.5,y:0.5,r:0.9,colorStops:[{offset:0,color:'#ffffff'},{offset:1,color:'#ffe903'}],globalCoord:false},opacity:0.6}}}
+];

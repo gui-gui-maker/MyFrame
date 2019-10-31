@@ -1,0 +1,248 @@
+body {
+    font-family: verdana, tahoma, helvetica, serif;
+    padding: 10px;
+    padding-top: 10px;
+    font-size: 13px;
+    background-color: #fff !important;
+    overflow: hidden;
+}
+
+#filterTable input {
+    width: 100%;height:18px;
+}
+
+#filterTable select {
+    width: 100%;
+}
+.x-grid-empty {
+    padding:10px;
+    color:gray;
+    font:bold 13px tahoma, arial, helvetica, sans-serif;
+    text-align:center;
+}
+
+.list-tf-div-1 {float:left;padding:5px;}
+.list-ft-td-1 {padding:3px;background:#51871B;color:#DFEFCF;height:25px;}
+.list-ft-td-2 {padding:3px;background:#FFFFFF;text-align:center;}
+
+.list-ft-td-2-button1 {background:#51871B;border:1px solid #27420D;color:#DFEFCF;padding:1px 0px 0px 0px;}
+
+#sorterTable select {
+    width: 100%;
+}
+
+#configPanelDiv input {
+    width: 50px;
+}
+
+#configPanelDiv select {
+    width: 100%;
+}
+
+#seachPanelTable  input {
+    width: 100%;
+}
+
+#seachPanelTable  select {
+    width: 100%;
+}
+
+#seachPanelTable  td {
+    text-align: right;
+}
+
+#editor-grid .x-grid-col-2 {
+    text-align: right;
+}
+
+.x-grid3-td-topic b {
+    font-family: tahoma, verdana, serif;
+    display: block;
+}
+
+.x-grid3-td-topic b i {
+    font-weight: normal;
+    font-style: normal;
+    color: #000;
+}
+
+.x-grid3-td-topic .x-grid3-cell-inner {
+    white-space: normal;
+}
+
+.x-grid3-td-topic a {
+    color: #385F95;
+    text-decoration: none;
+}
+
+.x-grid3-td-topic a:hover {
+    text-decoration: underline;
+}
+
+.x-resizable-pinned .x-resizable-handle-south {
+    background: url(../images/default/sizer/s-handle-dark.gif);
+    background-position: top;
+}
+
+/************************************************************************/
+.icon-grid {
+    background-image: url(../images/icons/grid.png) !important;
+}
+
+#button-grid .x-panel-body {
+    border: 1px solid #99bbe8;
+    border-top: 0 none;
+}
+
+#qmtoolbar {
+    height: 5px;
+    overflow:hidden;
+}
+
+.search {
+    background-image: url(../images/icons/qm_search.png) !important;
+}
+
+.rowAdd {
+    background-image: url(../images/icons/row_add.gif) !important;
+}
+
+.rowDel {
+    background-image: url(../images/icons/row_del.gif) !important;
+}
+
+.add {
+    background-image: url(../images/icons/page_add.gif) !important;
+}
+
+.addmobile {
+    background-image: url(../images/icons/phone_add.png) !important;
+}
+
+
+.config {
+    background-image: url(../images/icons/smartphone_disk.png) !important;
+}
+
+.edit {
+    background-image: url(../images/icons/page_edit.gif) !important;
+}
+
+.delete {
+    background-image: url(../images/icons/page_delete.gif) !important;
+}
+
+.copy {
+    background-image: url(../images/icons/page_copy.gif) !important;
+}
+
+.view {
+    background-image: url(../images/icons/page_view.gif) !important;
+}
+
+.pageset {
+    background-image: url(../images/icons/page_set.gif) !important;
+}
+
+.advanced {
+    background-image: url(../images/icons/advanced.gif) !important;
+}
+.searchtab {
+    background-image: url(../images/icons/qm_search.png) !important;
+}
+.sorttab {
+    background-image: url(../images/icons/qm_order.gif) !important;
+}
+
+.run {
+    background-image: url(../images/icons/run.gif) !important;
+}
+.default {
+    background-image: url(../images/icons/set_default.gif) !important;
+}
+
+.set {
+    background-image: url(../images/icons/qm_set.gif) !important;
+}
+
+.order {
+    background-image: url(../images/icons/qm_order.gif) !important;;
+}
+
+.exp {
+    background-image: url(../images/icons/qm_exp.gif) !important;
+}
+
+.save {
+    background-image: url(../images/icons/save.gif) !important;
+}
+.close {
+    background-image: url(../images/icons/close.gif) !important;
+}
+
+.orderno {
+    background-image: url(../images/icons/page_orderno.gif) !important;
+}
+
+.export {
+    background-image: url(../images/icons/page_export.gif) !important;
+}
+
+.import {
+    background-image: url(../images/icons/page_import.gif) !important;
+}
+
+.tool {
+    background-image: url(../images/icons/tool.gif) !important;
+}
+
+.demo_add {
+    background-image: url(../images/icons/demo_add.gif) !important;
+}
+
+.demo_delete {
+    background-image: url(../images/icons/demo_delete.gif) !important;
+}
+
+.help {
+    background-image: url(../images/icons/help.gif) !important;
+}
+
+.x-grid-row-bgred table {
+    background-color: red;
+}
+.x-grid-row-red table {
+    color: red;
+}
+.x-grid-row-bggreen table {
+    background-color: green;
+}
+.x-grid-row-green table {
+    color: green;
+}
+.x-grid-row-bgblue table {
+    background-color: blue;
+}
+.x-grid-row-blue table {
+    color: blue;
+}
+.x-grid-row-bgyellow table {
+    background-color: #ff6600;
+}
+.x-grid-row-yellow table {
+    color: #ff6600;
+}
+
+.ux-lovcombo-icon {
+    width:16px;
+    height:16px;
+    float:left;
+    background-position: -1px -1px ! important;
+    background-repeat:no-repeat ! important;
+}
+.ux-lovcombo-icon-checked {
+    background: transparent url(../images/default/menu/checked.gif);
+}
+.ux-lovcombo-icon-unchecked {
+    background: transparent url(../images/default/menu/unchecked.gif);
+}

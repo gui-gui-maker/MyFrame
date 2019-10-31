@@ -1,0 +1,41 @@
+﻿/* 大登录框 2016年07月15日 16:08:44 星期五 lybide */
+
+.logo-plane {top:20px;}
+.login-foot-bg {background:#ffffff;opacity:0.2;width:100%;height:100%;}
+.login-head {display:none;}
+.login-box .ipt {float:none;}
+.login-box {top:50%;border:0px solid #0000FF;height:152px;margin-top:-76px;}
+.login-box.box2 {border:1px solid #555555;width:360px;height:300px;display:block;margin:-100px 0 0 -150px;border-radius:10px;}
+.no-yzm {width:260px;margin-left:-102px;}
+.userButtonPanel {margin-left:5px;}
+.login-box-close {top:-15px;right:-40px;}
+.breset-plane {margin-left:6px;}
+.login-box .input {width:200px;}
+.login-box .ipt {width:270px;background:url("images/input-bj-all2.png") no-repeat left top;}
+.userButtonPanel .a-button {width:120px}
+.login-box .input {}
+
+
+.k-login-box-title { display:none;  }
+.k-login-box { /*background-color:rgba(255,255,255,.2); box-shadow: 0px 2px 5px rgba(0,0,0,.1); border-radius: 5px ;top: 60px; height: 320px; */ }
+.k-tabeffect { position: relative;top: -15px;left: -40px; width: 100%; height:50px; }
+.k-tabeffect ul {display:block;width:100%; height: 100%;position:relative; /*overflow: hidden;*/}
+.k-tabeffect ul , .k-tabeffect li {margin:0; padding:0; list-style:none;}
+.k-tabeffect li {display:inline-block;text-align:center; }
+.k-tabeffect li a { position:absolute;/*width: 100%;*/height: 100%; display: block; }
+.k-tabeffect li.k-smdl a em{ display:block; width: 46px; height: 46px;position: absolute; left: 0; top:0;background: url("images/erweima_46x46.png") no-repeat 0 0;cursor: pointer; }
+.k-tabeffect li.k-zhdl a em{  display:block; width: 53px;height: 53px; position: absolute; left: 0; top:0;cursor: pointer;background: url("images/tubiao_52x53.png") no-repeat; }
+.k-tabeffect li a  span { font-size: 18px; font-weight: bold; color: #fff; line-height: 24px; width: 100px; position: absolute; top: 30px; left: 20px; display: none; }
+.k-tabeffect li a.k-tabactive { display: none !important; }
+
+.k-qrcode-img{width: 140px;height: 140px;margin: 0 auto;padding: 0;box-shadow: 0 0 8px #DDD; background: url("images/ereima_140x140.png") no-repeat;}
+.k-qrcode-img img{width: 105px;height: 105px;}
+.k-qrcode-desc { font-size:14px;color:#333;line-height:30px;text-align:center;padding:5px 0;margin:0;overflow:hidden; font-weight:bold;}
+.k-qrlogin-other { /*margin-top: 20px;*/}
+.k-qrlogin-other { text-align:center; padding-right: 20px;}
+.k-qrlogin-other a { color: #333;  font-size: 14px; text-decoration: none;  }
+.k-qrlogin-other a:hover{ color: #f00;  }
+
+.k-login-check-mobile { display: none; }
+.k-lcm-img { background:url("images/shouji_01.png") no-repeat center center; width: 100%;height: 141px;text-align: center;   }
+.k-lcm-txt { text-align: center; color: #333; font-size: 14px;  line-height: 40px;}

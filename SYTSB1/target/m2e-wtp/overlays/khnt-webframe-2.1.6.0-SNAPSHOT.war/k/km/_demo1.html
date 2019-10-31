@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>demo1</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+<link rel="stylesheet" href="lib/kh-mobile.css"/>
+<script src="lib/jquery.min.js"></script>
+<script src="lib/kh-mobile.js"></script>
+
+<script type="text/javascript">
+$(function(){
+	$("#pre1").click(function() {
+		pageShow("#reg1");
+	});
+	
+	//初始化form表单
+	$("#formObj1a").initForm();
+	//提交表单`
+	$("#next1").click(function() {
+		if (!ckForm($("#formObj1a"))) {
+			return;
+		}
+		/*if (!idCardNoUtil.checkIdCardNo($("#idn").val())) {
+			dialogShow("身份证号不正确，请重新输入！", 300, 100);
+			return;
+		}*/
+		//pageShow("#reg2");	
+		var getData=$("#formObj1a").getValues();console.log(getData);//调试信息
+		$.getJSON("_demo1.getAction.txt", getData, function(res) {
+			if (res.success) {
+				dAlert("成功了！将进入下一步。");
+				pageShow("#reg2");
+			} else {
+				dialogShow(res.msg, 300, 100);
+			}
+		});
+	});
+});
+</script>
+
+</head>
+<body>
+
+<div id="wrapper" class="wrapper">
+	<section id="reg1" class="">
+		<div class="container">
+			<div class="page-header">
+				<h1>欢迎您，进入登录页面</h1>
+			</div>
+
+			<div class="page-note">
+				<div class="page-note-wrap">
+					系统提示：在这里进行注册，并上传数据，反回真实的用户信息
+				</div>
+			</div>
+			
+			<div class="page-panel" id="m-page-panel">
+				<form id="formObj1a" name="formObj1a" method="post" action="" onsubmit="return false;" getAction="_demo1.getAction.txt" pageStatus="detailss">
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" height="" align="">
+						<tr class="tr1">
+							<td width="80" class="tdtext1">姓　　名：</td>
+							<td><input type="text" class="form-control" id="name" name="name" placeholder="请输入姓名" ext_name="姓名" ext_isNull="1" maxLength="10"></td>
+						</tr>
+						<tr class="tr1">
+							<td class="tdtext1">身份证号：</td>
+							<td><input type="text" class="form-control" id="idn" name="idn" placeholder="请输入身份证号" ext_name="身份证号" ext_isNull="1" maxLength="18"></td>
+						</tr>
+						<tr class="tr1">
+							<td class="tdtext1">学　　校：</td>
+							<td>
+								<table border="0" cellpadding="0" cellspacing="0" width="100%" height="" align="">
+									<tr>
+										<td><input type="text" class="form-control" id="scName" name="scName" placeholder="请输入学校" ext_name="学校" ext_isNull="1" maxLength="25"></td>
+										<td class="detail-hide" width="25"><a href="#scNameSearchPanel" id="scNameS1" class="x-icon"><span class="l-icon-1 mm2"></span></a></td>
+										<td class="detail-hide" width="25"><a href="#read-fwtk" id="scNameS1" class="x-icon" data-openhtml="html/read-fwtk.html"><span class="icon-attention mm2"></span></a></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr class="tr1">
+							<td class="tdtext1">学　　院：</td>
+							<td><input type="text" class="form-control" id="college" name="college" placeholder="请输入学院" ext_name="学院" maxLength="25"></td>
+						</tr>
+						<tr class="tr1">
+							<td class="tdtext1">专　　业：</td>
+							<td><input type="text" class="form-control" id="major" name="major" placeholder="请输入专业" ext_name="专业" maxLength="25"></td>
+						</tr>
+						<tr class="tr1">
+							<td class="tdtext1">学　　号：</td>
+							<td><input type="text" class="form-control" id="sno" name="sno" placeholder="请输入学号" ext_name="学号" maxLength="20"></td>
+						</tr>
+						<tr class="tr1">
+							<td class="tdtext1">学　　制：</td>
+							<td>
+								<select class="form-control" id="schoolSystem" name="schoolSystem" ext_isNull="1" ext_name="学制">
+									<option value="3">三年制</option>
+									<option value="" selected>四年制</option>
+									<option value="5">五年制</option>
+									<option value="6">六年制</option>
+									<option value="7">七年制</option>
+								</select>
+							</td>
+						</tr>
+						<tr class="tr1">
+							<td class="tdtext1">入学日期：</td>
+							<td>
+								<table border="0" cellpadding="0" cellspacing="0" width="100%" height="" align="center">
+									<tr>
+										<td><input type="date" class="form-control" id="startDate" name="startDate" placeholder="请输入入学日期" ext_name="入学日期" ext_isNull="1" maxLength="25"></td>
+										<td width="10"></td>
+										<td width="80"><input type="time" class="form-control" id="startTime" name="startTime" placeholder="请输入开课时间" ext_name="开课时间" ext_isNull="1" maxLength="25"></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr class="tr1">
+							<td class="tdtext1">二&nbsp;&nbsp;维&nbsp;&nbsp;码：</td>
+							<td>
+								<table border="0" cellpadding="0" cellspacing="0" width="100%" height="" align="">
+									<tr>
+										<td><input type="text" class="form-control" id="qrcode" name="qrcode" placeholder="请输入或扫描二维码" ext_name="二维码" maxLength="11"></td>
+										<td class="detail-hide" width="25"><div id="qrcodeBtn" class="x-icon"><span class="l-icon-2 mm2"></span></div></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr class="tr1">
+							<td class="tdtext1">详情说明：</td>
+							<td><textarea type="text" class="form-control" id="xqsm" name="xqsm" placeholder="详情说明" ext_name="学号" maxLength="20" ext_isNull="1"></textarea></td>
+						</tr>
+					</table>
+				</form>
+				
+			</div>
+			<div class="bt1">
+				<div class="text-center row">
+					<div class=""><a id="next1" class="button button-block button-rounded button-primary">下一步</a></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="reg2" class="">
+		<div class="container">
+			<div class="page-header">
+				<h1>第二步，数据录入</h1>
+			</div>
+
+			<div class="page-note">
+				<div class="page-note-wrap">
+					系统提示：在这里进行注册，并上传数据，反回真实的用户信息
+				</div>
+			</div>
+			
+			<div class="page-panel">
+				这里放内容 或 form 表单
+			</div>
+			
+			<div class="bt1">
+				<div class="text-center row">
+					<div class="col-xs-6 col-md-6"><a id="pre2" href="#reg1" class="button button-block button-rounded button-primary">上一步</a></div>
+					<div class="col-xs-6 col-md-6"><a id="next2" class="button button-block button-rounded button-primary">下一步</a></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="scNameSearchPanel">
+		<div class="s-panel">
+			<div class="s-title">
+				<div class="s-title-back"><a href="#reg1"><span class="icon-chevron-left mm2"></span></a></div>
+				<div class="s-title-text"><div>学校查询</div></div>
+			</div>
+			<div class="s-content">
+				<div class="s-search">
+					<div class="wrap1 w8"><input type="text" class="form-control" id="L-s-search-input" name="scName1" placeholder="中文/拼音首字母" ext_name="学校" maxLength="100"></div>
+					<div class="fzxx w2">
+						<a id="cjfjxx" type="button" class="button button-block button-rounded button-primary button-se button1">查找附近学校</a>
+					</div>
+				</div>
+				<div class="s-list">
+					<div class="wrap">
+						<div class="list">
+							<div id="L-s-list" class="list-ul list-group">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+
+
+</body>
+</html>
+
+<script type="text/javascript" src="lib/app-end.js"></script>

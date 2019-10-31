@@ -1,0 +1,197 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
+	overflow: hidden;
+}
+#wrap{
+	width:98%;
+	overflow: hidden;
+	padding:5px;
+}
+
+::-webkit-scrollbar{width:8px;}
+::-webkit-scrollbar-track{-webkit-border-radius:10px;border-radius:10px;}
+::-webkit-scrollbar-thumb{-webkit-border-radius:10px;border-radius:10px;background:rgba(200,200,200,0.5);-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.5);}
+::-webkit-scrollbar-thumb:window-inactive{background:rgba(180,180,180,0.4);}
+
+#external-events {
+	float: left;
+	width: 380px;
+	height: 100%;
+	overflow: auto;
+	padding: 0;
+	border: 1px solid #ccc;
+	background: #eee;
+	text-align: left;
+}
+
+#external-events .external-events-title {
+	font-weight: bold;
+	font-size: 13px;
+	padding-left: 5px;
+	background: #dddddd;
+	line-height: 26px;
+	margin-bottom: 5px;
+}
+
+#external-events .accordion-btn, #external-events .view-swicth, #create-weekend-btn{
+	float: right;
+	width: 14px;
+	padding: 2px 4px 0 4px;
+	border: 1px solid #cccccc;
+	font-size: 16px;
+	font-weight: normal;
+	font-family: "Courier New";
+	line-height: 14px;
+	height: 14px;
+	margin: 5px 5px 0 0;
+	display: inline-block;
+	cursor: pointer;
+	font-family:Webdings;
+	border-radius: 2px;
+	text-align: center;
+}
+#external-events a:hover{
+	background: #cccccc;
+}
+
+#create-weekend-btn{font-size:10px;width:26px;display:none;}
+
+.view-swicth{color:black;font-size:14px;}
+
+.view-swicth.not-view{color:#999999;}
+
+.fc-event {
+	padding: 5px;
+}
+
+#external-events .fc-event {
+	margin: 10px 0;
+	cursor: pointer;
+}
+
+#external-events p {
+	margin: 1.5em 0;
+	font-size: 11px;
+	color: #666;
+}
+
+#external-events p input {
+	margin: 0;
+	vertical-align: middle;
+}
+
+
+.fc-end .fc-title, .fc-not-end .fc-title {
+	padding-left: 5px
+}
+
+#external-events .fc-event {
+	display: inline-block;
+	padding: 5px;
+	margin: 3px 5px !important;
+}
+
+#external-events .fc-event.legal.fc-event-exist{
+	background-color: #FF9966;
+}
+
+#external-events .fc-event.weekend{
+	background-color: #999999;
+}
+
+#external-events .fc-event.diy{
+	background-color: #990033;
+}
+
+#external-events .fc-event-exist {
+	background-color: #ff8040;
+}
+
+#external-events .fc-event-adding{
+	background-color: red;
+}
+
+#external-events button{
+	padding: 1px 5px;
+	float: right;
+	display: none;
+}
+
+#calendar {
+	float: right;
+	width: 800px;
+}
+
+.calendar-popup {
+	position: absolute;
+	z-index: 999;
+	width: 150px;
+	background: #eeeeee;
+	border: #dddddd 1px solid;
+	padding: 0;
+	margin: 0;
+	display: none;
+}
+
+.calendar-select-menu li, .calendar-event-menu li {
+	list-style: none;
+	height: 30px;
+	line-height: 30px;
+	padding: 5px 10px;
+	cursor: default;
+}
+
+.calendar-select-menu li:hover, .calendar-event-menu li:hover {
+	background: #dddddd;
+}
+
+.calendar-event-detail {
+	padding: 5px;
+	width: 250px;
+	text-align: left;
+	background: #333333;
+	border-radius: 5px;
+	border: 1px #333333 slid;
+	color: #dddddd;
+}
+
+.calendar-event-detail p {
+	margin: 0;
+	font-size: 3mm;
+}
+
+.calendar-event-detail .title {
+	font-size: 1.5em;
+	font-weight: bold;
+	line-height: 1.5em;
+}
+
+.calendar-event-detail .detail {
+	padding: 5px 0;
+}
+
+.calendar-event-detail .remark {
+	border-top: 1px #dddddd outset;
+	padding: 5px 0;
+}
+
+
+/* ---------------------- 重写部分日历样式 -----------------------------*/
+.fc-toolbar{
+	margin-bottom: 5px;
+}
+.fc-toolbar .fc-left{
+	font-family: "Times New Roman",微软雅黑;
+}
+.fc-toolbar .fc-left h2{
+	height: 100%;
+	padding-top: 0.3em;
+}
+
+.fc-head-container .fc-row .fc-day-header{
+	height: 2em;
+	line-height: 2em;
+}

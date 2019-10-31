@@ -1,0 +1,114 @@
+<%@ page contentType="text/html;charset=UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+</head>
+
+<body>
+	<div id="layout2" style="width: 99.8%">
+		<input type="hidden" id="inputFocus" name="inputFocus" /> <input
+			type="hidden" id="thisPage" name="thisPage" value="?page=2">
+		<div position="center" class="wrapper"
+			style="overflow: auto; width: 100%" align="center">
+			<input type="hidden" id="fk_report_id" name="fk_report_id" value="">
+			<input type="hidden" id="fk_inspection_info_id"
+				name="fk_inspection_info_id" value=""> <br />
+			<div
+				position="center"
+				class="wrapper"
+				style="overflow: auto; width: 80%"
+				align="left"
+			>
+				<p class="dtitle" style="line-height: 220%;">
+					<a name="RTPAGE_1__填写规则"></a>
+					<span>填</span>
+					<span> </span>
+					<span>写</span>
+					<span> </span>
+					<span>规</span>
+					<span> </span>
+					<span>则</span>
+				</p>
+				<br />
+				<p>
+					<span>1. </span>
+					<span>本原始记录依据《电梯监督检验和定期检验规则</span>
+					<span>——</span>
+					<span>杂物电梯》（TSG T7006-2012</span>
+					<span>
+						<span>）制定</span>
+						<span>，适用于曳引驱动杂物电梯定期检验。</span>
+					</span>
+				</p>
+				<p>
+					<span>2. </span>
+					<span>
+						<span>本原始记录由检验人员在执行检验时用黑色钢笔或签字笔填写，字迹应当清晰工整。如有修改，应按有关规定作好更改标记。</span>
+					</span>
+				</p>
+				<p>
+					<span>3. </span>
+					<span>检验人员在填写本记录时应严格遵照《电梯监督检验和定期检验规则</span>
+					<span>——</span>
+					<span>杂物电梯》的要求,</span>
+					<span> </span>
+					<span>
+						<span>将检验情况如实记录在原始记录上（包括已审查文件、资料的名称及编号），不得漏检、漏记。可使用</span>
+						<span>统一的简单标记，“符合”用“√”、“不符合”用“×”、“合格”用“√”、“不合格”用“×”、“无此项”用“∕”“资料确认符合”用“△”等符号表示；要求测试数据的</span>
+					</span>
+					<span>B</span>
+					<span>
+						<span>类项目（即《检规》附件</span>
+					</span>
+					<span>A</span>
+					<span>
+						<span>所述检验方法中要求测试数据的项目）必须按要求填写实测数据；未要求测试数据但有需要说明情况的项目，应当用严谨准确简单的文字予以说明，例如“</span>
+						<span>×楼层门锁失效”；遇特殊情况，可以填写“因……（原因）未检”、“待检”、“见附页”；资料确认符合或不符合等。</span>
+					</span>
+				</p>
+				<p>
+					<span>4. </span>
+					<span>
+						<span>原始记录应当注明现场检验日期，有执行本次检验的检验人员签字，并且有其中一名检验人员的校核签字。</span>
+					</span>
+				</p>
+				<p>
+					<span>
+						<span> 5. </span>
+						<span>检验人员在做检验报告时，应将对应的检验报告编号填写在本原始记录封面上。</span>
+					</span>
+				</p>
+				<p> </p>
+				<p>
+					<span>----------------------------------------------------------------------------------</span>
+				</p>
+				<p> </p>
+				<p> </p>
+				<p>
+					<span>
+						<span>检验机构地址：巴中市江北望王路西段</span>
+					</span>
+					<span>287号</span>
+				</p>
+				<p>
+					<span>
+						<span>邮政编码：</span>
+					</span>
+					<span>636000</span>
+				</p>
+				<p>
+					<span>
+						<span>联系电话：</span>
+					</span>
+					<span>0827-5269582</span>
+				</p>
+				<p> </p>
+				<p> </p>
+				<p> </p>
+				<p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

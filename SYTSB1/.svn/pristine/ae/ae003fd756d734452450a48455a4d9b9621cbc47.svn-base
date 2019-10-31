@@ -1,0 +1,76 @@
+﻿<%@ page contentType="text/html;charset=UTF-8" language="java" trimDirectiveWhitespaces="true"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<%@include file="/k/kui-base-form.jsp"%>
+<title>login</title>
+<script type="text/javascript">
+	api.title("");
+	api.max = false;
+	api.min = false;
+	$(function() {
+		pageTitle({
+			to : "#title",
+			text : "<span style='font-size:18px'>您已离线，请重新登陆！</span>",
+			icon : "k/kui/images/icons/32/places.png"
+		});
+		$("#loginForm").initForm({
+			toolbar: [{
+				icon: "key",
+				text: "登录",
+				click: function(){
+					$("#loginForm").submit();
+				}
+			},{
+                icon: "logout",
+                text: "退出",
+                click: function(){top.location.reload();}
+            }]
+		});
+		if(!kui["loginYZM"]){
+			$("#yzmtr").remove();
+			$("#loginForm").css("marginTop","2em");
+		}
+		$("#loginForm").validate({submitHandler:doReLogin});
+	});
+
+	function doReLogin(){
+		$("body").mask("正在登录...");
+        $.post($("#loginForm").attr("action"),{
+            j_username: top._current_user_account,
+            j_password: $("#j_password").val(),
+            j_validate_code: kui["loginYZM"]?$("#j_validate_code").val():"",
+            _spring_security_remember_me: false
+        }, function(resp) {
+            if (resp.success) {
+                top.$.notice("登录成功！", 3);
+                api.close();
+            } else {
+            	top.$.notice(resp.msg || "登录失败！", 3,"k/kui/images/icons/dialog/32X32/hits.png");
+            }
+            $("body").unmask();
+        }, "json");
+	}
+</script>
+</head>
+<body>
+	<div class="title-tm">
+		<div id="title"></div>
+	</div>
+	<form name="loginForm" id="loginForm" action="j_spring_security_check" method="post" style="padding:8px">
+		<table class="l-detail-table">
+			<tr>
+				<td class="l-t-td-left" style="width: 80px;">您的密码：</td>
+				<td class="l-t-td-right" colspan="2"><input id="j_password" type="password" value="" name="j_password"
+				     validate="{required:true,maxLength:16}"/></td>
+			</tr>
+			<tr id="yzmtr">
+                <td class="l-t-td-left" style="width: 80px;">验证码：</td>
+                <td class="l-t-td-right"><input name="j_validate_code" type="text" id="j_validate_code"
+                    validate="{required:true,maxLength:4}" /></td>
+                <td class="l-t-td-right" style="width: 80px;"><img src="security/web/validateCodeImg.do?isNew=true" width="70" height="26" /></td>
+            </tr>
+		</table>
+	</form>
+</body>
+</html>

@@ -1,0 +1,70 @@
+﻿package com.scts.payment.order.config;
+
+/**
+ * 支付宝业务基本信息配置
+ * 
+ * @ClassName AlipayConfig
+ * @JDK 1.7
+ * @author GaoYa
+ * @date 2018-07-04 下午17:00:00
+ */
+public class AlipayConfig {
+	
+	/**
+	 * 测试
+	 */
+	//PID（合作身份者ID，签约账号）
+	/*public static final  String P_ID = "2088131485788775";
+	//沙箱APPID
+	public static final  String APP_ID = "2016091400507529";
+	//沙箱私钥
+	public static final  String MERCHANT_PRIVATE_KEY = "MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCMHXL+5QlTofsVkYsbNL0bpayct8Idp7RnAfEagdE0YKr8aknMR4hVzMlAN+lSHxrM5f8lycuy80/vEEXWqclUEmcXJgly4qOojcAHzojE1vzxKQYi5M2jibzfd4hQwT7CfNMHRo0tWiAFoAVG9IaurPoplTHnFfD5hgoydCSAiJb/DWfbKmt0r2QUGRMIdF8b2BozTd9GiJe/WLtmmk2L66AiZoQGWb3AjGCCakzH1K+2U3qhy0nqxTOeVmpL67f/ZZJeVwnCGL3i4D++Om5CwNMcQ3kcS87geURAU71kxmlc1cfnHmFRL8JYkepLWsS2BYY6Ud0EiwNEwMV/fpj3AgMBAAECggEAAT1xexgD0R2p3zL+jCsXUVtR/8EQkrqdOhwmShnEBDamzL0UEh6/8iJx1YOpKPTlg9K1Q1xZ1SeaGX+HXrL5+SiAiQ/pHX8r+53liSwmwbc1Xd0DFOP5fe0GIuQn7K8JIyd/ppzVOwWFKweThGE9n+YgAKY1Xtou28Z36KJmgEyxzU5h3cGg/WvBfTRQ3BE3l+Xyf98OxKCqJfK3zRm7yE7ts3MH7WMU6xFyJfH9D7uPTcbC40I5eFbEberDzq0A8bC1l6bwPD0upXoV0cOoIXZ8Lz4HwYvzt9igxbWgCIkzH4nvCti8G0/eyvwkyJQ5vPCRqJfTwg1aQip+puPyAQKBgQDKeqTI1JXf2eB7/28a9Mw7y6UavCu5HNz6NG4QThI2vJRzSMh/yDtWIonjaR2Un8ZD2B1VpYIeJhCN7YVEvartKuYj10PbmSdL8j7BBueCB9c5b7dIKK47GbTGUUtmBHuo3dXSk6bgM+hgokva7WthwJHhpx4kdo5tJlUszaBhtwKBgQCxJsFDKFkSNBQ+KtGqOZTd9z5MWG6qtymB6BtUqmRjl2m1gsiqBEtKa4ghj4dresLt7TCOBmNVAmTcHqJ7bh2mVKaW+ZloyPrDvt+ZQ+nrvGf9i8ptKnm1aQrW8YFki+K8o5vzN1Ef/YJ67z1VqywoLrIN/j4ot95vfW0AP7qCwQKBgQCYvmJW+j/BqZv2DqCjJi53oU2A2JjnQUXWHf01oZ+N2T7npO1TsBpLBS0d96sP9mPbxEmE1aFN2ws79gVF8QrjdSw9t2OCYovJeAotFWdJqV6L/qG19rJQ9ThxLtyBLjqXDhoCi84kbiQL2gL9OYN7L4kdQDO18BXLc1JnxQsLCwKBgEpCRKEyOKQ40IN+z4TbvluNWMAIEdveC7g447wJ8SsOPXGo8RTT1/vKN7ZZxBp5y1yRINloNBtedYkQDmxPLH6c3XhMCNKz7OpBCNnmbhgzUiQmhSRducch0Tlo4ySSvuj0bFr3xTnzus5tmvheWJQ/fsP+32+SI9v4Z8jC7hwBAoGAP+XLTp+FgGgpWrkO1CswiqLxq6UOpRmaYZdpUBFTpd7DZYP9VG5Voa2C523TuzfKER+yMmtbMCCPYzwfAxYNOq6indx7Wz0J82gFdtRkaZvJPfOhJU+VUEBr/usvU3F6bA38uc0ShGay3LXtfVQioRgVec4w8BRc2Hej1BWmCxE=";
+	//支付宝公钥
+	public static final  String ALIPAY_PUBLIC_KEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1x0/vUuqc74dSzLSp07M6C/7fBs33kmTqw3brNAFR9csG/TCrPXR3pZJNNGjsrrLuxlAW1gHnJEWvT4Oyi8xnEQsbwsFU9G0CPU0yU3wOcp2wJEgk5Wg41qUTX0DP2oBUqXQHtd3yVLGCp6Bl7+FFFOIgOtMhVDZLY+K+LSJDssDh+W305Zt7E662plEAxudoTK/wItXcTiX5IHjpP+uP+2/oLBWqfOON+FYvwgBG2Laty5zhsFym6WinBanO2gP0OaXJWFCogznVbSFdLOcOWiVfKnHWCW4+qkew0ebOzLjeZYDO98S46ju6XRsFPUBZ3OKSN4ulhbrzCBDQnAdCQIDAQAB";
+	//沙箱网关地址
+	public static final  String GATEWAY_URL = "https://openapi.alipaydev.com/gateway.do";*/
+	
+	
+	
+	/**
+	 * 正式
+	 */
+	//PID（合作身份者ID，签约账号）		
+	public static final  String P_ID = "2088131485788775";
+	//APPID
+	public static final  String APP_ID = "2018062860475320";
+	//私钥
+	public static final  String MERCHANT_PRIVATE_KEY = "MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDHdfCaxBBscGi2K+ku4719d3C7HMVDqwcQpBJtJrNvJgbjee6RwWGWQOoIEND6gqPy4rpiVujV14HO0UR9wvxOI6XDuxLha1wo3jSn2pJlsQQ2yjhYtlO8ZCgKcYPCOFnel8K+ics+DqrMxYZMqrtsXd+tYpHokaMQcVIs6u9yoeR4dYdpxDrMVfdVL0LSsB0e2T9GhcWKw9m4Y/lN62dWFPqAHe6x8kf5cllK7c/mvovEubD/FlQNMr4Ff1hsdxT1M3OyfhbBq/MAxiEVMH2csHQTGcEH0ya6zFjaWx2on97of40wDjRV0PSRk1wSfnYGtN1cm4/zTvep065bTdv1AgMBAAECggEAc0QL7FRbrV70lDoiAk/n5IbOpcMFmIpQheRbJarUzOmr129SV/bqHzuaQ1j8e5hdiHJQBZ515YYp5Mv4ibjRt5JQLCGC0rQJSTDIOyxLp+q5JbSNBW8wStGSdh6NZwLLpKANEbFtu4ocWEPZzZpov0IsjfVFnqHzGwBx3bVS9OnmgatCBLi2jlZUW0/zr2iy2sngn1cv254r97q3z2QyKc88zXSWRL9WADLtMOJtdoPjHpoadtuCqwpndLpKmnbGUejkdQ0prYS/aa5FlrH+g8B/cvLp4zriSWzcNvvQhgL5R7ixCCwWjHdSGA3Vh+Pkv6XFSY3H5NpxNY1yB74mrQKBgQDja/LdNGGTzzGXIk48wNfcnTtLNFCVzON4B0xZwUp68NaDvTHLiUURE1JhskSbiTxU9S11T7sJn5/J6LK6ib/+kKAIgSobtDEyhRQa0ScL1q28+sXz/QsUIBJ1yiqSdfTsxfJyzHPur5KYcD+JFtEmysrZzzZtXUBhZBueF0L/3wKBgQDghn/eW5I65f3nNRLf4htl/aeHW5G1UPD3HdAoq6JTXKSuw/DBgoaSjZ/FmtcO5escBRFFmDZk6h24q02oqWtv9tk6SCTJw9ibaVv0bYdzzZMHGnlyAU5tKknpomxJdPRDcIIGqnzsq9WjkyndSU5jpNSdK/iMbYZwJjBGr0lOqwKBgQDf5H6M1+zYn7qql9N+bDwXrZOaTj6nu7aVjFnWYzz4G/KUb8Z+Iv4j+Wm5VM/GcC09VsMSIxR4PPYKyVRr4QFrlOZ4ePEDpTpqCino3NAcD5Wr3xbTReOKRKjn3chbuFUQZTBzZGUeLyubd6aVSClQj4V1OVLUCGJBf1TRJwWG8QKBgQDJB8Q/nG/eqoTe2kdvC+0KMcYpTNS2qqVGLXxundZ2m1GcZTYQnUTOvV2buVrrLPOIoATp8jJpwrEf4slixWa71iKDq4q82Mz9waUiwlrwVdVaG9s3N3I4DhAlz1bzonL+WyMgws+dvPFJR3/JcVRtpWz02STu3zXq/lZlQ5b4hwKBgC/41WXKuTuSnAdohsTyhH2UlRxcvfGlQpi7mXVolWnQK8JlTfEASBBgqIXLPpHNs50rJDyz+d29s+ZtJ1LRBWmcLnheYHNgwGHiV6s8RZVYqi56tXoTLyL1ath2C7paZ+QEy37AdBvC1WMKsyF/6fVK19GrT2Do2HS5chCrlRqv";
+//	public static final  String MERCHANT_PRIVATE_KEY ="MIICdQIBADANBgkqhkiG9w0BAQEFAASCAl8wggJbAgEAAoGBAO1Rl8Nit0N/ifu6/M29mJqzxzGc7qkC6kW9QyaOBfhH+ISXe+4vlCK3aZDdAHo3exwqpXO3EQi7WJpMAu0/fzUE4oFy09UntwOLQprIZnummqwKl4Jl8iWh+2P19XfHqp7tZFxHD12JPMERuvkySh5fJHwqyNE5G2jz7vyQHLb7AgMBAAECgYBMyF1l5gaNXDJ0s+cfWfyJ8Si9sJy3Ki5KKhYT31enIQITRD/grJwtL1KEgDyrTlASqOmnKs/kF1lvcrBvul+ZVFyBRUTWmczkgdZPXnYuDfuCtHZkOmpi8lkBNF5W93ZRKExZOwD8H7thq1WJfdpTh2I8kW1qm/cIuY7/R6AIoQJBAPmv5DUli9bXkG7DLrheYUuY7x2fnjbEOwrWJd4a2y+MTVmdkSH/9kWaJGf+hJNYLquJLDx+Dlx/tjb1F2rTZG0CQQDzUaWS/RoNwIOw6myiAIPG015eZRKuNMHrRacETQZ6f9zScT+if4BeJ2ZyHMonnaYVL2DiueHltzd85R58XdgHAkB+7ulgD19g8COP+4/z0J871FqzP6MqCmZNowKLQDHvoS7tgQn4M+zaA3vAloaFdY38THb9pcPdSFu04rJt71udAkBxpFORyFavz5dyPLsKGvVxGm175vcHmCpuCTUNZDA/bJKlUzFmYuiAkSRe7aVZRV85i8xTeH/SO3VWBujrKyVnAkAqC6xLFRX1VKdnbKzenZalFFPIuuyV4mqhASuo0qfJ3j50mKDPsNwK3apGCJDjONh1LHtNacYre9BbZA1Z5MuG";
+	//支付宝公钥
+//	public static final  String ALIPAY_PUBLIC_KEY = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC9l9euW/7PPW44RmNgyDp0XkpuB5S3FimgBD8YUOQsCr+36DvgRrDEEjBWnhw9zuOEF+4YHQ+qH9Ia9kue/CSxR60l9wMzAPMTyW0POQqdN4W1/nsSWLADfc07s/pb4c6WdeoefThuZXzGp5s4iGUJ3TPYN5360PZUS8QjU3fmKwIDAQAB";
+	public static final  String ALIPAY_PUBLIC_KEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhZtPXtzFNR+ICrGGt9uVh+8w4Z27W/qOftih491mT3Ra4vvAVuXJoqb5X0w6VhTJ8Ag8arpRTWoswW+Mffe5sTUOkCpgrEe4qKNugAw4n2e8xSQFzaeZ2MR9/N+XCSVWXPaR68RWT9eOqwrLlbUnn8Mqrvex/7Ov96k45UIQUlXcml+zMvY7+ViwyVBgS0yEqoSynxDlyZTcDZcXh7rBmfo3epB7xDC7ARXlyVQIsokhtAZWVz4aJdnJWYRNQjqdRXc2smKrraUy53sWXQiXFuP9KbiPrz0/drQC2QWjalI4tmjpB8y+Jk36FXGt3kRqgF/GWWPFEPIGbwobW+dvzQIDAQAB";
+	//网关地址
+	public static final  String GATEWAY_URL = "https://openapi.alipay.com/gateway.do";
+	
+	
+	
+	
+	
+	
+   // 服务器异步通知页面路径  需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
+	public static String NOTIFY_URL = "http://工程公网访问地址/alipay.trade.page.pay-JAVA-UTF-8/notify_url.jsp";
+
+	// 页面跳转同步通知页面路径 需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
+	public static String RETURN_URL = "http://工程公网访问地址/alipay.trade.page.pay-JAVA-UTF-8/return_url.jsp";
+
+	// 签名方式
+	public static String SIGN_TYPE = "RSA2";
+	
+	// 字符编码格式
+	public static String CHARSET = "utf-8";
+
+	// 数据交换格式
+	public static String FORMAT = "json";
+
+	// 订单名称/支付类目
+	public static String SUBJECT = "检验费";
+	// 支付超时时长
+	public static String ALIPAY_OVERTIME_30M = "30m";						
+}
+

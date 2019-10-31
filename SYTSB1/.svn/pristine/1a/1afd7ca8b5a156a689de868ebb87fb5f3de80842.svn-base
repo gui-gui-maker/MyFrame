@@ -1,0 +1,7 @@
+
+.m-top {background:url("../images/custombg/bg1.jpg") top center;}
+.m-top-div {background:none;border-bottom:0px;}
+.m-menu1 {background:none;}
+
+.m-menu1-div ul li {border:0px;}
+.m-menu1-click,.m-menu1-hover {background:none;}

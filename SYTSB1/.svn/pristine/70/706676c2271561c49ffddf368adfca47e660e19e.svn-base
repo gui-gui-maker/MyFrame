@@ -1,0 +1,86 @@
+/*
+* Create time: 2013-03-04 17:13:12
+* Create user: lybide
+* kui系统主框架样式表
+*
+*/
+
+html,body {margin:0px;padding:0px;}
+body {background:#FFFFFF;font-size:12px;font-family:"微软雅黑","宋体";margin:0px;padding:0px;}
+td {font-size:12px;cursor:default;}
+input,textarea,button {font-size:12px;}
+button {overflow:visible;}
+select {font-size:12px;}
+p {}
+form {margin:0px;}
+img {border:0;}
+table,tr,td,ul,li{padding:0; margin:0;}
+a {text-decoration:none;}
+a:hover {text-decoration:underline;}
+
+.show {display:block;}
+.hide {display:none;}
+
+html,body {/* *overflow-y:auto; _overflow-y:auto;*/}
+.dst-allbg {background:#daf0fd; overflow:auto; overflow-y:auto;}
+.desktopwrap {padding:5px;}
+.normalicon {border:#60c2e9 solid 1px; margin:5px 5px 10px;}
+.nm_title {height:30px; line-height:30px; background:url(public/skins/default/images/desktop/title_bj.png) repeat-x left top; color:#0976b1; padding:0px 10px 0px 13px; border-bottom:#60c2e9 solid 1px;}
+.nm_title strong {font-weight:bold; background:url(public/skins/default/images/desktop/title_bjicn.png) no-repeat left 6px; padding-left:18px; float:left;}
+
+/*================================2013-05-31添加*/
+
+.nm_title strong a {color:#0976b1;float:left!important;font-weight:bold!important; padding:0px 11px;margin:0px!important;}
+.nm_title strong a.tabactive {background:#fff;color:#0976b1!important;padding:0px 10px; border:#60c2e9 solid 1px; border-top:none; border-bottom:#fff solid 1px; color:#f00; text-decoration:none;}
+.nm-item {}
+
+
+/*常用功能*/
+.nm_icons { overflow:hidden; background:#fff; height:100px; _width:98%;}
+.nm_icons ul {list-style:none; padding-left:10px;}
+.nm_icons li {float:left; text-align:center; width:12%; padding:9px 0px 0px 0px;/* line-height:30px;*/ _padding-left:0px;}
+.nm_icons li a {color:#363636; outline:0 none;}
+.nm_icons-div-over{border:#b8d6fb solid 1px; border-radius:3px; background-image:-moz-linear-gradient(top,#fafbfd,#ebf3fd);/* Firefox */
+background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#fafbfd),color-stop(1,#ebf3fd));/* Saf4+, Chrome */
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafbfd',endColorstr='#ebf3fd',GradientType='0');/* IE*/}
+.nm_icons-div-click {border:#7da2ce solid 1px; border-radius:3px; background-image:-moz-linear-gradient(top,#dcebfc,#c1dbfc);/* Firefox */
+background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#dcebfc),color-stop(1,#c1dbfc));/* Saf4+, Chrome */
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dcebfc',endColorstr='#c1dbfc',GradientType='0');/* IE*/}
+.nm_icons-div {width:88px; padding:5px; cursor:pointer;}
+.nm_icons-div-pic {}
+.nm_icons-div-txt {padding-top:6px;}
+/*消息列表*/
+.otherinfor {overflow:auto; _zoom:1; *overflow-x:hidden;}
+.oa_wel_box {overflow:hidden; border:#60c2e9 solid 1px; margin:0 5px 10px 5px; _margin:0 5px 10px 5px; background:#fff; min-height:165px!important; height:165px;}
+.oa_wel_box h1 {padding:0 0px 0 13px; margin:0; font-size:12px; font-family:"微软雅黑","宋体";}
+.oa_wel_box h1 a {font-weight:normal; float:right; margin-right:10px;}
+/*.oa_wel_box h1 {padding:0 0px 0 13px; margin:0; font-size:12px; font-family:"微软雅黑","宋体"; position:relative!important;}
+.oa_wel_box h1 a {position:absolute; top:0px; right:10px; font-weight:normal;}*/
+.oa_wel_box ul {list-style:none; _padding-top:4px; margin-top:5px;}
+.oa_wel_box ul li {height:25px; line-height:25px; overflow:hidden; *height:21px; *line-height:21px; _height:23px; _line-height:23px;}
+.oa_wel_box .text {float:left; padding:0px 0px 0px 18px; background:url(public/skins/default/images/desktop/arrow.png) no-repeat left 10px; _background:url(public/skins/default/images/desktop/arrow.png) no-repeat 5px 7px; margin:0 50px 0 10px; _margin:0 50px 0 0px;}
+.oa_wel_box a {color:#363636;}
+.oa_wel_box a:hover {color:#f00; text-decoration:underline;}
+.oa_wel_box .time {float:right; width:50px; padding-top:5px; color:#9a9a9a; font:11px Verdana, Geneva, sans-serif; margin:0 0 0 -50px;}
+
+.oa_wel_box1 {overflow:hidden; border:#60c2e9 solid 1px; margin:0 5px 10px 5px; _margin:0 5px 10px 5px; background:#fff; min-height:495px!important; height:495px;}
+.oa_wel_box1 h1 {padding:0 0px 0 13px; margin:0; font-size:12px; font-family:"微软雅黑","宋体";}
+.oa_wel_box1 h1 a {font-weight:normal; float:right; margin-right:10px;}
+/*.oa_wel_box1 h1 {padding:0 0px 0 13px; margin:0; font-size:12px; font-family:"微软雅黑","宋体"; position:relative!important;}
+.oa_wel_box1 h1 a {position:absolute; top:0px; right:10px; font-weight:normal;}*/
+.oa_wel_box1 ul {list-style:none; _padding-top:4px; margin-top:5px;}
+.oa_wel_box1 ul li {height:25px; line-height:25px; overflow:hidden; *height:21px; *line-height:21px; _height:23px; _line-height:23px;}
+.oa_wel_box1 .text {float:left; padding:0px 0px 0px 18px; background:url(public/skins/default/images/desktop/arrow.png) no-repeat left 10px; _background:url(public/skins/default/images/desktop/arrow.png) no-repeat 5px 7px; margin:0 50px 0 10px; _margin:0 50px 0 0px;}
+.oa_wel_box1 a {color:#363636;}
+.oa_wel_box1 a:hover {color:#f00; text-decoration:underline;}
+.oa_wel_box1 .time {float:right; width:50px; padding-top:5px; color:#9a9a9a; font:11px Verdana, Geneva, sans-serif; margin:0 0 0 -50px;}
+
+/*==================================================2013-06-14 统计分析*/
+.mdtpcount {overflow:hidden; border:#60c2e9 solid 1px; margin:0 5px 10px 5px; _margin:0 5px 10px 5px; background:#fff;/* min-height:150px!important; height:150px;*/ _zoom:1;}
+.mdtpcount li {overflow:hidden; display:inline-block; *float:left; width:175px; *height:110px; margin:8px 0px 6px 10px; vertical-align:text-top;}
+.mdtptit {background:url(public/skins/default/images/desktop/mdtpicon1.png) no-repeat left center; padding-left:23px; color:#0976b1;}
+.mdtpshu {border-left:#ddd solid 1px; margin-left:5px; padding:8px 0px 2px 17px; color:#363636; position:relative;}
+.mdtpshu span {color:#f00; padding:0px 6px;}
+.mdtpshu .icn {position:absolute; left:-12px; _left:-22px; _top:7px; top:12px; width:16px; height:9px;}
+.mdtpcount h1 {padding:0 0px 0 13px; margin:0; font-size:12px; font-family:"微软雅黑","宋体";}
+.mdtpcount h1 a {font-weight:normal; float:right; margin-right:10px;}

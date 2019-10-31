@@ -1,0 +1,167 @@
+/* 机构、用户选择界面，分组功能样式 */
+#filters,.toolbar{
+	background: #ebebeb;
+	border-bottom: 1px #9CBAE7 solid;
+}
+#filters{
+	padding: 3px 5px;
+}
+#filters label{
+	display: inline-block;
+	line-height: 12px;
+	padding: 5px;
+}
+#filters label input {
+	float: left;
+}
+.toolbar{
+	padding: 10px 0;
+}
+.toolbar.left{
+	text-align: left;
+}
+.toolbar.center{
+	text-align: center;
+}
+.toolbar .org-type{
+	margin-left: 10px;
+	width: 100px;
+	height: 26px;
+	border: 1px solid #6699FF;
+}
+.toolbar .search-name{
+	height: 16px;
+	width: 180px;
+	border: 1px solid #6699FF;
+	padding: 4px;
+}
+.toolbar .seaech-button{
+	padding-right: 8px;
+	line-height: 24px;
+}
+.toolbar .choose-all{
+	float: right;
+	right: 10px;
+	display: none;
+}
+.choose-item-div{
+	padding: 5px;
+	overflow: auto;
+}
+.choose-item-div a.search-result-item{
+	font-size: 3.6mm;
+	min-width: 20mm;
+	text-align: center;
+	margin: 5px;
+	display: inline-block;
+	line-height: 4mm;
+	padding: 1.5mm;
+	border: 1px solid #BED5F3;
+	color: black;
+	cursor: pointer;
+	text-decoration: none;
+	color:#003974;
+}
+.choose-item-div a.checked{
+	border: 1px solid #cc0000;
+	background: url("../images/a-1.png") no-repeat right bottom;
+}
+.choose-item-div a:hover{
+	border: 1px solid #cc0000;
+}
+.choosed-list-header{
+	/*height: 33px;*/
+	line-height: 33px;
+	/*background: url('../../../k/kui/skins/default/images/layout/tabs-bg.gif') repeat-x left bottom;*/
+}
+.choosed-list-header .title{font-weight:bold;color:#003974;margin-left:1em;}
+.choosed-list-header .l-button{float:right;margin:6px;}
+#choosed-list{/*padding-top:1em;*/overflow:auto;}
+#choosed-list a.choosed-list-item{
+	display: block;
+	padding: 3px 5px 3px 5mm;
+	text-align: left;
+	font-size: 3.6mm;
+	text-decoration: none;
+	color: black;
+	cursor: default;
+	border-bottom: 1px solid white;
+}
+#choosed-list a.checked{
+	color: white;
+	background-color: #336699;
+}
+#choosed-list a.hover{
+	background-color: #BED5F3;
+}
+
+#org-groups-ctr{
+	padding: 0;
+}
+
+.org-group-head{
+	background: #E0ECFF;
+	/*height: 28px;*/
+	padding: 5px 0;
+	margin-top:5px;
+	overflow:hidden;
+}
+.org-group-head span.group-name{
+	cursor: pointer;
+	display: inline-block;
+	font-weight: bold;
+	height: 16px;
+	margin: 6px 0;
+	float: left;
+	line-height: 16px;
+}
+.org-group-head input{
+	float: right;
+	margin-top: 5px;
+	margin-right: 10px;
+	height: 14px;
+	width: 14px;
+	background: white;
+}
+.org-group-head .edit-btn{
+	float: right;
+	margin-right: 8px;
+}
+.org-group-head input{
+	float: right;
+	margin-top: 6px;
+	margin-right: 10px;
+	height: 14px;
+	width: 14px;
+	background: white;
+}
+.org-group span.group-name i{
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	margin: 1px 2px 0 0;
+	float: left;
+}
+.org-group.expand .search-result-item{
+	display: none;
+}
+.org-group.expand span i{
+	background: url("../images/a-2.png") no-repeat 0 0;
+}
+
+.org-group.closed span i{
+	background: url("../images/a-2.png") no-repeat 0 -15px;
+}
+
+.new-group-wrap{
+	margin: 2mm 0;
+	text-align: center;
+	/*height: 28px;*/
+	padding: 5px;
+	background: #E0ECFF;
+}
+
+#orgTree .ztree_add_btn{
+	width: 6.5em;
+	height: 5mm;
+}

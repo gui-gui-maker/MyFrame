@@ -1,0 +1,262 @@
+<%@page import="com.khnt.base.Factory"%>
+<%@ page contentType="text/html;charset=UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<head pageStatus="${param.status}">
+<%@ include file="/k/kui-base-form.jsp"%>
+<%
+	String flowbutton = request.getParameter("flowbutton");
+	Boolean isCheckError = false;
+	String flowButtonName = "";
+	if(Factory.getSysPara().getProperty("FLOW_CONFIRM").equals(flowbutton)){
+		flowButtonName = "校核" ;
+	} else if(Factory.getSysPara().getProperty("FLOW_AUDIT").equals(flowbutton)){
+		flowButtonName = "审核" ;
+	} else if(Factory.getSysPara().getProperty("FLOW_SIGN").equals(flowbutton)){
+		flowButtonName = "签发" ;
+	}
+
+	if("true".equals(Factory.getSysPara().getProperty("REPORT_ERROR_CHECK")))
+		isCheckError = true;
+%>
+<script type="text/javascript" src="rtbox/app/templates/rtbox.js"></script>
+<script type="text/javascript">
+var onekey = false ;	//是否允许一键操作
+var autoSub = false ;	//是否自动提交
+var infon = 0;
+var pageStatus="${param.status}"; 
+var bigClassify="${param.bigClassify}";
+var little_type = "${param.device_sort}";
+var checkOk = {};
+	var navtab;
+	$(function () {
+		if("<%=Factory.getSysPara().getProperty("FLOW_CONFIRM")%>"=="${param.flowbutton}"){
+			onekey = kui["ONEKEY_CONFIRM"];
+			autoSub = <%=Factory.getSysPara().getProperty("AUTO_SUBMIT_CONFIRM")%>;
+		} else if ("<%=Factory.getSysPara().getProperty("FLOW_AUDIT")%>"=="${param.flowbutton}"){
+			onekey = kui["ONEKEY_AUDIT"];
+			autoSub = <%=Factory.getSysPara().getProperty("AUTO_SUBMIT_AUDIT")%>;
+		} else if ("<%=Factory.getSysPara().getProperty("FLOW_SIGN")%>"=="${param.flowbutton}"){
+			onekey = kui["ONEKEY_SIGN"];
+			autoSub = <%=Factory.getSysPara().getProperty("AUTO_SUBMIT_SIGN")%>;
+		} 
+		var height = $(window).height();
+		$('#contain').css({height:height-45});
+		var bar =[];
+		
+			bar = [ { text : '<%=flowButtonName%>结论', icon : 'save', id:'save', click : save } ,
+			        { text : '关闭', icon : 'cancel', click : close }  ];
+		
+		
+	  $("#formObj").initForm({    //参数设置示例
+	       toolbar:bar,
+	        getSuccess:function(res){
+	        	
+	        }
+	        
+	    });
+	})
+	//关闭
+	function close(url)
+	{	
+		api.close();
+	}
+	//保存
+	function save(url)
+	{
+		
+		share.data("isBatch",true);
+		//打开提交页面
+		doSub();
+	}
+	
+	//一键操作
+	function allSave(){
+		disableallBtn();
+		var infoIds = "" ;
+		var flowNodeIds = "" ;
+		var activityIds = "" ;
+		var firstInfoId = "";
+		//获取业务ID/环节ID
+		
+		infoIds = "${param.id}";
+		firstInfoId = infoIds.split(",")[0]
+		flowNodeIds = api.data.flowNodeId;
+		activityIds = api.data.activityId;
+		//判断是否自动提交
+		if(autoSub){
+			//自动提交
+			var url = api.data.popURL+'?oneKey=1&infoId='+firstInfoId+"&rt=true";
+			top.$.dialog({
+				width : 600, 
+				height : 300, 
+				lock : true, 
+				title: "报告批量"+"<%=flowButtonName%>",
+				parent:api,
+				content: 'url:'+url,
+				data : {"window" : window ,infoIds:infoIds,flowNodeIds:flowNodeIds,activityIds:activityIds},
+				close:function(){
+					api.close();
+				}
+			});	
+		} else {
+			//不自动提交
+			$.ajax({
+	            url: api.data.popURL,
+	            type: "POST",
+	            datatype: "json",
+	            data: {infoIds:infoIds},
+	            success: function (data, stats) {
+	            	$("body").unmask();
+	                if (data["success"]) {
+	                	top.$.dialog.notice({content:"一键"+"<%=flowButtonName%>"+"成功"});
+	                	//api.left.allOk();
+	            		//api.disableallBtn();
+	            		api.data.window.Qm.refreshGrid();
+                    	//api.data.window.api.close();
+                    	api.close();
+	                }else {
+	                	$("body").unmask();
+	                	$.ligerDialog.error('提示：' + data.msg);
+	                }
+	            },
+	            error: function (data,stats) {
+	            	$("body").unmask();
+	                $.ligerDialog.error('提示：' + data.msg);
+	            }
+	        });
+		}
+	}
+	//禁用一键操作按钮
+	function disableallBtn(){
+		$("#save").attr("disabled",true);
+		$("#all").attr("disabled",true);
+		
+	}
+	function enableallBtn(){
+		$("#save").attr("disabled",false);
+		$("#all").attr("disabled",false);
+		
+	}
+	
+	//禁用操作按钮
+	function disableBtn(){
+		$("#save").attr("disabled",true);
+	}
+	//启用操作按钮
+	function ableBtn(){
+		$("#save").attr("disabled",false);
+	}
+	function showBB(){
+		enableallBtn();
+	}
+	
+	//报告校核页面
+	function doSub(){
+		disableBtn();
+		var id="${param.id}";
+		var infoId = "${param.id}";
+		var flowNodeId = "${param.flowNodeId}";
+		var activityId = "${param.activityId}";
+
+		if(1==1){
+
+			$.post("report/query/getTime.do",{id:id},function(data){
+				//取时间
+				var enter_time = data["data"].enter_time;
+				var inspect_date = data["data"].inspect_date;
+				var confirm_time = data["data"].confirm_time;
+				var audit_time = data["data"].audit_date;
+
+				
+				top.$.dialog({
+					width : 600, 
+					height : 400, 
+					lock : true, 
+					title: "报告"+"<%=flowButtonName%>",
+					parent:api,
+					content: 'url:app/flow/report/item_take_revise.jsp?enter_time='+enter_time
+							+"&inspect_date="+inspect_date
+							+"&confirm_time="+confirm_time
+							+"&audit_time="+audit_time
+							+"&infoId="+infoId
+							+"&flowNodeId="+flowNodeId
+							+"&activityId="+activityId+"&rt=true",
+					data : {"window" : window, "infoId":infoId},
+					close: function(data){
+						/* if(checkOk[infon]==undefined){
+							showBB();
+						} */
+						
+					}
+				});
+			});	
+		} else {
+			//alert(api.data.popURL+"--"+infoId)
+			//不自动提交
+			$.ajax({
+	            url: api.data.popURL,
+	            type: "POST",
+	            datatype: "json",
+	            data: {infoIds:infoId},
+	            success: function (data, stats) {
+	            	$("body").unmask();
+	                if (data["success"]) {
+	                	top.$.dialog.notice({content:"<%=flowButtonName%>"+"成功"});
+	                	api.data.window.Qm.refreshGrid();
+	                	api.close();
+	                    	/* auditOk(infoId);
+	                    	//禁用操作按钮
+	                    	if(checkOk[infon]==undefined){
+								showBB();
+							} */
+	                    	//api.data.window.Qm.refreshGrid();
+	                   		//showBB();
+	                }else {
+	                	$("body").unmask();
+	                	$.ligerDialog.error('提示：' + data.msg);
+	                	if(checkOk[infon]==undefined){
+							showBB();
+						}
+	                }
+	            },
+	            error: function (data,stats) {
+	            	$("body").unmask();
+	                $.ligerDialog.error('提示：' + data.msg);
+	                if(checkOk[infon]==undefined){
+						showBB();
+					}
+	            }
+	        });
+		}
+	}
+
+	
+	function auditOk(){
+		var img = "<img alt=' ' src='k/kui/images/icons/16/accept.png' border='0'>";
+		$("#title"+infon).prepend(img);
+		checkOk[infon]= true;
+	}
+	
+</script>
+<style type="text/css">
+.scroll-tm {overflow:hidden !important;}
+</style>
+
+</head>
+<body>
+	<form id="formObj" action="" getAction="">
+		
+	<%-- <%@include file="rtbox/app/templates/${param.code }/index.jsp?code=${param.code}&pageStatus=modify&status=detail&fk_report_id=${param.fk_report_id }&id=${param.id }" %>
+	 --%>
+	
+	<%-- <iframe id="contain" src="rtbox/app/templates/${param.code }/index.jsp?code=${param.code}
+	&pageStatus=detail&status=modify&fk_report_id=${param.fk_report_id }&id=${param.id }" style="border: 0px;width: 100%;"></iframe> --%>
+	<iframe id="contain" src="rtbox/app/templates/index.jsp?code=${param.code}
+	&pageStatus=detail&status=modify&fk_report_id=${param.fk_report_id }&id=${param.id }" style="border: 0px;width: 100%;"></iframe>
+	
+	</form>
+</body>
+	
+</html>

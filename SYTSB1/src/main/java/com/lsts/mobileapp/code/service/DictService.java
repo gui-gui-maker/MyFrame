@@ -1,0 +1,51 @@
+package com.lsts.mobileapp.code.service;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.khnt.core.crud.manager.impl.EntityManageImpl;
+import com.lsts.mobileapp.code.bean.Dict;
+import com.lsts.mobileapp.code.dao.DictDao;
+
+@Service("dictService")
+public class DictService extends EntityManageImpl<Dict, DictDao>{
+	@Autowired
+    DictDao dictDao;
+
+	public List<HashMap<String, Object>> getDictByCode(String code) {
+		List<HashMap<String, Object>> list = new ArrayList<HashMap<String, Object>>();
+		String sql = "select v.value,v.name from pub_code_table c, pub_code_table_values v "
+				+ "where v.code_table_id = c.id and c.code = ?";
+		@SuppressWarnings("unchecked")
+		List<Object[]> kvs = dictDao.createSQLQuery(sql,code).list();
+		for (Object[] obj : kvs) {
+			HashMap<String, Object> map = new HashMap<String, Object>();
+			map.put("id", obj[0]);
+			map.put("text", obj[1]);
+			list.add(map);
+		}
+		return list;
+	}
+
+	public List<HashMap<String, Object>> getDictBySql(String sql) {
+		List<HashMap<String, Object>> list = new ArrayList<HashMap<String, Object>>();
+		@SuppressWarnings("unchecked")
+		List<Object[]> kvs = dictDao.createSQLQuery(sql).list();
+		for (Object[] obj : kvs) {
+			HashMap<String, Object> map = new HashMap<String, Object>();
+			map.put("id", obj[0]);
+			map.put("text", obj[1]);
+			list.add(map);
+		}
+		return list;
+	}
+
+	public List<Object[]> getDeptTree(String sql) throws Exception{
+		return dictDao.createSQLQuery(sql).list();
+	}
+
+}

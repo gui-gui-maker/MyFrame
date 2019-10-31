@@ -1,0 +1,7 @@
+#mToolBar_webimicon em{
+    background-image: url("../images/msg.png") !important;
+}
+
+#mToolBar_webimicon em.flash {
+	background-image: url("../images/msg.gif") !important;
+}

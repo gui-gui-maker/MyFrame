@@ -1,0 +1,522 @@
+<%@ page contentType="text/html;charset=UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+</head>
+
+<body>
+	<div id="layout2" style="width: 99.8%">
+		<input type="hidden" id="inputFocus" name="inputFocus" /> <input
+			type="hidden" id="thisPage" name="thisPage" value="?page=8">
+		<div position="center" class="wrapper"
+			style="overflow: auto; width: 100%" align="center">
+			<input type="hidden" id="fk_report_id" name="fk_report_id" value="">
+			<input type="hidden" id="fk_inspection_info_id"
+				name="fk_inspection_info_id" value=""> <br />
+			<p>
+				<a name="RTPAGE_7__检验项目及其内容4"></a>
+			</p>
+			<table id="docx4j_tbl_9">
+				<colgroup>
+					<col style="width: 5.76%;" />
+					<col style="width: 7.51%;" />
+					<col style="width: 7.85%;" />
+					<col style="width: 6.98%;" />
+					<col style="width: 4.26%;" />
+					<col style="width: 46.01%;" />
+					<col style="width: 13.36%;" />
+					<col style="width: 8.26%;" />
+				</colgroup>
+				<thead>
+					<tr style="height: 7mm; page-break-inside: avoid;">
+						<td style="text-align:center;">
+							<p>
+								<span>序号</span>
+							</p>
+						</td>
+						<td style="text-align:center;">
+							<p>
+								<span>检验类别</span>
+							</p>
+						</td>
+						<td colspan="4" style="text-align:center;">
+							<p>
+								<span>检验项目及其内容</span>
+							</p>
+						</td>
+						<td style="text-align:center;">
+							<p>
+								<span>检验结果</span>
+							</p>
+						</td>
+						<td style="text-align:center;">
+							<p>
+								<span>结论</span>
+							</p>
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr style="height: 8mm; page-break-inside: avoid;">
+						<td style="text-align:center;">
+							<p>
+								<span>22</span>
+							</p>
+						</td>
+						<td style="text-align:center;">
+							<p>
+								<span>B</span>
+							</p>
+						</td>
+						<td rowspan="9" style="text-align:center;">
+							<p>
+								<span>6</span>
+							</p>
+							<p>
+								<span>层门</span>
+							</p>
+							<p>
+								<span>与层</span>
+							</p>
+							<p>
+								<span>站</span>
+							</p>
+						</td>
+						<td colspan="3">
+							<p>
+								<span>6.4</span><span> </span><span>门的运行和导向</span><span><span>（目测）</span></span>
+							</p>
+							<p>
+								<span>层门运行时不得出现脱轨、机械卡阻或者在行程终端时错位</span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="record__B_6_4" name="record__B_6_4" type="text"
+									ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_record',isTextBoxMode:false,width:75,initValue:'√'}"
+									class="cB_6_4" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="conclusion__B_6_4" name="conclusion__B_6_4"
+									type="text" ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',initValue:'√'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 8mm; page-break-inside: avoid;">
+						<td style="text-align:center;">
+							<p>
+								<span>23</span>
+							</p>
+						</td>
+						<td style="text-align:center;">
+							<p>
+								<span>B</span>
+							</p>
+						</td>
+						<td colspan="3">
+							<p>
+								<span>6.5</span><span> </span><span>自动关闭层门装置(</span><span><span>将轿厢运行至开锁区域外，打开层门，</span></span><span>
+								</span><span>观察层门关闭情况及防止重块坠落措施的有效性)</span>
+							</p>
+							<p>
+								<span>在轿门驱动层门的</span><span><span>情况下，当轿厢在开锁区域之外时，</span></span><span>如果层门开启(无论何种原因)</span><span><span>，应当有一种装置能够确保该层门自动关闭。该装置采用重块时，</span></span><span>
+								</span><span>应当有防止重块坠落的措施</span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="record__B_6_5" name="record__B_6_5" type="text"
+									ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_record',isTextBoxMode:false,width:75,initValue:'√'}"
+									class="cB_6_5" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="conclusion__B_6_5" name="conclusion__B_6_5"
+									type="text" ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',initValue:'√'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 8mm; page-break-inside: avoid;">
+						<td style="text-align:center;">
+							<p>
+								<span>24</span>
+							</p>
+						</td>
+						<td style="text-align:center;">
+							<p>
+								<span>B</span>
+							</p>
+						</td>
+						<td colspan="3">
+							<p>
+								<span>★</span><span>6.6</span><span> </span><span>紧急开锁装置(</span><span><span>用钥匙操作紧急开锁装置，验证其功能</span></span><span>)</span>
+							</p>
+							<p>
+								<span>每个层门均应当能够被一把符合要求的钥匙从外面</span>
+							</p>
+							<p>
+								<span><span>开启；紧急开锁后，</span></span><span>在层门闭合时门锁装置不应当</span>
+							</p>
+							<p>
+								<span>保持开锁位置</span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="record__B_6_6S" name="record__B_6_6S" type="text"
+									ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_record',isTextBoxMode:false,width:75,initValue:'√'}"
+									class="cB_6_6S" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="conclusion__B_6_6S" name="conclusion__B_6_6S"
+									type="text" ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',initValue:'√'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 8mm; page-break-inside: avoid;">
+						<td rowspan="3">
+							<p style="text-align:center;">
+								<span>25</span>
+							</p>
+						</td>
+						<td rowspan="3">
+							<p style="text-align:center;">
+								<span>B</span>
+							</p>
+						</td>
+						<td colspan="2" rowspan="3" style="text-align:center;">
+							<p>
+								<span>6.7</span>
+							</p>
+							<p>
+								<span>门的锁紧</span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<span>(1)锁紧型式(目测门锁的设置)</span>
+							</p>
+							<p>
+								<span>每个层门都</span><span><span>应当设置门锁装置，其锁紧动作应当由重力、永久磁铁或者弹簧来产生和保持，即使永久磁铁或者弹簧失效，重力也不能导致开锁</span></span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="record__B_6_7_1" name="record__B_6_7_1" type="text"
+									ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_record',isTextBoxMode:false,width:75,initValue:'√'}"
+									class="cB_6_7_1" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+						<td rowspan="3">
+							<p>
+								<input id="conclusion__B_6_7_1" name="conclusion__B_6_7_1"
+									type="text" ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',initValue:'√'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 8mm; page-break-inside: avoid;">
+						<td>
+							<p>
+								<span>(2)锁紧有效性(在门锁紧的情况下以人力开门试验锁紧有效性)</span>
+							</p>
+							<p>
+								<span>锁紧元件的啮合应当满足在沿开门方向施加</span><span>300N </span><span><span>力的情况下，不会降低锁紧有效性</span></span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="record__B_6_7_2" name="record__B_6_7_2" type="text"
+									ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_record',isTextBoxMode:false,width:75,initValue:'√'}"
+									class="cB_6_7_1" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 8mm; page-break-inside: avoid;">
+						<td>
+							<p>
+								<span>★</span><span>(3)电气安全装置或者第二锁紧位置(</span><span><span>目测；用钥匙操作紧急开锁装置，使门锁脱离锁紧位置，启动杂物电梯，观察其能否运行</span></span><span>)</span>
+							</p>
+							<p>
+								<span><span>门的锁紧应当由电气安全装置电气证实，只有在层门锁紧后杂物电梯才能运行。</span></span>
+							</p>
+							<p>
+								<span><span>对于同时满足下列条件的杂物电梯：</span></span>
+							</p>
+							<p>
+								<span><span>①额定速度不大于</span><span>
+										0.63m/s</span></span><span>；</span>
+							</p>
+							<p>
+								<span><span>②开门高度不大于</span><span>
+										1.20m</span></span><span>；</span>
+							</p>
+							<p>
+								<span><span>③层站</span></span><span>地坎距地面高度不小于</span><span><span>
+										0.70m</span></span><span>。</span>
+							</p>
+							<p>
+								<span><span>门的锁紧可以不由电气装置电气证实。但当轿厢驶离开锁区域时，锁紧元件应当自动关闭，而且除了正常锁紧位置外，无论</span></span><span>证实层门关闭</span><span><span>的电气装置是否起作用，都应当至少有第二个锁紧位置</span></span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="record__B_6_7_3S" name="record__B_6_7_3S" type="text"
+									ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_record',isTextBoxMode:false,width:75,initValue:'√'}"
+									class="cB_6_7_1" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 8mm; page-break-inside: avoid;">
+						<td rowspan="3">
+							<p style="text-align:center;">
+								<span>26</span>
+							</p>
+						</td>
+						<td rowspan="3">
+							<p style="text-align:center;">
+								<span>B</span>
+							</p>
+						</td>
+						<td colspan="2" rowspan="3" style="text-align:center;">
+							<p>
+								<span>6.8</span>
+							</p>
+							<p>
+								<span>门的闭合</span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<span>(1)机电联锁（层门打开</span><span><span>，杂物电梯置于正常操作状态，启动杂物电梯，观察其能否运行）</span></span>
+							</p>
+							<p>
+								<span>如果一个层门或者</span><span><span>多扇门中的任何一扇门开着，</span></span><span>
+								</span><span><span>在正常操作情况下，应当不能启动杂物电梯或者不能保持继续运行</span></span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="record__B_6_8_1" name="record__B_6_8_1" type="text"
+									ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_record',isTextBoxMode:false,width:75,initValue:'√'}"
+									class="cB_6_8_1" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+						<td rowspan="3">
+							<p>
+								<input id="conclusion__B_6_8_1" name="conclusion__B_6_8_1"
+									type="text" ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',initValue:'√'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.53in; page-break-inside: avoid;">
+						<td rowspan="2">
+							<p>
+								<span>★</span><span>(2)电气安全装置</span><span><span>（对于由数个间接机械连接的门扇组成的滑动门，</span></span><span>
+								</span><span>抽取轿门和基站、端</span><span> </span><span>站</span><span>
+								</span><span>以</span><span> </span><span>及</span><span>
+								</span><span>至</span><span> </span><span>少20%</span><span><span>其他层站的层门，短接被锁住门扇上的电气安全装置，使各</span></span><span>门扇均</span><span><span>打开，观察杂物电梯能否运行）</span></span>
+							</p>
+							<p>
+								<span>每个层门的</span><span><span>闭合都应当由电气安全装置来验证，</span></span><span>
+								</span><span><span>如果滑动门是由数个间接机械连接的门扇组成，则未被锁住的门扇上也应当设置电气安全装置以验证其闭合状态</span></span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="record__B_6_8_2S" name="record__B_6_8_2S" type="text"
+									ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_record',isTextBoxMode:false,width:75,initValue:'√'}"
+									class="cB_6_8_1" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.53in; page-break-inside: avoid;">
+						<td style="text-align: center;">
+							<p>
+								<span>（见附表1）</span>
+							</p>
+							<p>
+								<span>不合格数据见附表2</span>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 8mm; page-break-inside: avoid;">
+						<td style="text-align:center;">
+							<p>
+								<span>27</span>
+							</p>
+						</td>
+						<td style="text-align:center;">
+							<p>
+								<span>B</span>
+							</p>
+						</td>
+						<td rowspan="4" style="text-align:center;">
+							<p>
+								<span>7</span>
+							</p>
+							<p>
+								<span>试验</span>
+							</p>
+						</td>
+						<td colspan="3">
+							<p>
+								<span>7.1</span><span> <span>(</span></span><span>2)轿厢安全钳动作试验</span><span><span>（由施工单位或者维护保养单位进行试验，检验人员现场观察、确认）</span></span>
+							</p>
+							<p>
+								<span><span>定期检验：轿厢空载，以额定速度或者检修速度下行，进行限速器</span></span><span>—</span><span>安全钳</span><span><span>联动试验；对于采用悬挂装置断裂或者安全绳触发的轿厢安全钳，轿厢空载，模拟悬挂装置断裂或者安全绳被触发的状态进行试验。限速器、安全</span></span><span>钳动作应当可靠</span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="record__B_7_1_2" name="record__B_7_1_2" type="text"
+									ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_record',isTextBoxMode:false,width:75,initValue:'√'}"
+									class="cB_7_1_2" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="conclusion__B_7_1_2" name="conclusion__B_7_1_2"
+									type="text" ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',initValue:'√'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 8mm; page-break-inside: avoid;">
+						<td style="text-align:center;">
+							<p>
+								<span>28</span>
+							</p>
+						</td>
+						<td style="text-align:center;">
+							<p>
+								<span>B</span>
+							</p>
+						</td>
+						<td colspan="3">
+							<p>
+								<span>7.2</span><span> </span><span>对重(平衡重)安全钳动作试验</span><span><span>（由施工单位或者维护保养单位进行试验，检验人员现场观察、确认）</span></span>
+							</p>
+							<p>
+								<span><span>轿厢空载，以额定速度或者检修速度上行，进行限速器－安全</span></span><span>钳</span><span><span>联动试验；对于采用悬挂装置断裂或者安全绳触发的安全钳，轿厢空载，模拟悬挂装置断裂或者安全绳被触发的状态进行试验。限速器、安全</span></span><span>钳动作应当可靠</span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="record__B_7_2" name="record__B_7_2" type="text"
+									ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_record',isTextBoxMode:false,width:75,initValue:'√'}"
+									class="cB_7_2" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="conclusion__B_7_2" name="conclusion__B_7_2"
+									type="text" ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',initValue:'√'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 8mm; page-break-inside: avoid;">
+						<td style="text-align:center;">
+							<p>
+								<span>29</span>
+							</p>
+						</td>
+						<td style="text-align:center;">
+							<p>
+								<span>C</span>
+							</p>
+						</td>
+						<td colspan="3">
+							<p>
+								<span>7.4</span><span> </span><span>运行试验</span>
+							</p>
+							<p>
+								<span><span>轿厢分别空载、满载，以正常运行速度上、下运行，呼梯、楼层显示等信号系统功能有效、指示正确、动作无误，轿厢平层良好，无异常现象发生</span></span>
+							</p>
+						</td>
+						<td>
+							<p>
+							<input id="record__C_7_4" name="record__C_7_4" type="text"
+								ltype="select" value="" class="cC_7_4"
+								ligerui="{data:[{'id':'资料确认符合','text':'资料确认符合'},{'id':'资料确认不符合','text':'资料确认不符合'},
+												{'id':'目测符合','text':'目测符合'},{'id':'目测不符合','text':'目测不符合'}] ,initValue:'资料确认符合'}"  onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="conclusion__C_7_4" name="conclusion__C_7_4"
+									type="text" ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',initValue:'√'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 8mm; page-break-inside: avoid;">
+						<td style="text-align:center;">
+							<p>
+								<span>30</span>
+							</p>
+						</td>
+						<td style="text-align:center;">
+							<p>
+								<span>B</span>
+							</p>
+						</td>
+						<td style="text-align:center;">
+							<p>
+								<span>7.5</span>
+							</p>
+							<p>
+								<span>制动试验</span>
+							</p>
+						</td>
+						<td colspan="2">
+							<p>
+								<span>(2)上行制动试验</span><span><span>（由施工单位或者维护保养单位进行试验，检验人员现场观察、确认）对于曳引式杂物电梯，轿厢空载以正常运行速度上行至行程上部，切断电动机与制动器供电，轿厢应当完全停止</span></span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="record__B_7_5_2" name="record__B_7_5_2" type="text"
+									ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_record',isTextBoxMode:false,width:75,initValue:'√'}"
+									class="cB_7_5" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="conclusion__B_7_5_2" name="conclusion__B_7_5_2"
+									type="text" ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',initValue:'√'}" />
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p> </p>
+			<p> </p>
+			<p>
+		</div>
+	</div>
+</body>
+</html>

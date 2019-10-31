@@ -1,0 +1,25 @@
+/*
+* Create time: 2014-3-14 下午2:13 lybide
+* Create user: lybide
+* kui系统主框架样式表
+* 修改于 2014-3-14 下午2:13 lybide
+*/
+
+@import url("../../zTreeStyle/zTreeStyle.css");
+
+/* 重写框架主类 =========================================================================*/
+
+.m-top-logo {/*background-position:20px center !important;height:81px;*/}
+
+/* 重写框架主类 =========================================================================*/
+
+/* 菜单类 ===========================================================================*/
+.m-menu1 {border:0px solid #0000FF;top:18px;height:69px;left:350px;right:100px;position:absolute;z-index:6;padding:0px 0px 0px 0px;}
+
+.m-menu2 {border:0px solid #FF0000;bottom:29px;top:81px;left:0px;height:auto;width:180px;overflow:hidden;position:absolute;/*background-image:-moz-linear-gradient(top,#d7ecff,#ffffff);background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#d7ecff),color-stop(1,#ffffff));filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d7ecff',endColorstr='#ffffff',GradientType='0');*/background:#f2f4f4;z-index:3;}
+.m-menu-tree {border-right:#3f7ea9 solid 1px; height:100%;/*width:105px!important;*/overflow:auto; /*background:#fff!important;*/}
+/* 菜单类 ===========================================================================*/
+
+.ztree li {line-height:20px;}
+.ztree li a {vertical-align:baseline;}
+.ztree li a.curSelectedNode {height:auto;}

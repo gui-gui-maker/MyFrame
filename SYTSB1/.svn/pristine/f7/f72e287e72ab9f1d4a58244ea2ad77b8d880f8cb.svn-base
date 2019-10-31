@@ -1,0 +1,63 @@
+package com.scts.payment.service;
+
+import java.util.HashMap;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.khnt.core.crud.manager.impl.EntityManageImpl;
+import com.lsts.log.bean.SysLog;
+import com.scts.payment.bean.ReportBorrow;
+import com.scts.payment.bean.ReportBorrowDTO;
+import com.scts.payment.dao.ReportBorrowDao;
+
+/**
+ * 外借记录业务逻辑对象
+ * @ClassName ReportBorrowService
+ * @JDK 1.7
+ * @author GaoYa
+ * @date 2014-05-12 下午05:26:00
+ */
+@Service("reportBorrowService")
+public class ReportBorrowService extends
+		EntityManageImpl<ReportBorrow, ReportBorrowDao> {
+	@Autowired
+	private ReportBorrowDao reportBorrowDao;
+	
+	// 根据业务ID查询业务外借记录
+	public ReportBorrow queryByInspectionInfoID(String info_id) {
+		return reportBorrowDao.queryByInspectionInfoID(info_id);
+	}
+	
+	// 导出借发票
+	public List<ReportBorrowDTO> exportBorrowCY(String check_unit_id, String borrow_start_date, String borrow_end_date) {
+		return reportBorrowDao.exportBorrowCY(check_unit_id, borrow_start_date, borrow_end_date);
+	}
+	
+	// 获取借票日志
+	@SuppressWarnings("unchecked")
+	public HashMap<String, Object>  getFlowStep(String id) throws Exception{	
+		HashMap<String, Object> map = new HashMap<String, Object>();		
+		List<SysLog> list = reportBorrowDao.createQuery("  from SysLog where business_id ='"+id+"' order by op_time,id asc").list();
+		map.put("flowStep", list);
+		map.put("size", list.size());
+		map.put("invoice_no", reportBorrowDao.get(id).getInvoice_no());
+		map.put("success", true);
+		return map;
+    }
+	
+	// 根据借票业务id获取借票时使用的发票号
+	public String queryInvoice_no(String id){
+		return reportBorrowDao.queryInvoice_no(id);
+	}
+	
+	// 根据收费业务id获取收费时开票的金额
+	public double queryMoney(String id) {
+		return reportBorrowDao.queryMoney(id);
+	}
+	
+	public ReportBorrow getReportBorrowByInvoice_no(String invoice_no){
+		return reportBorrowDao.getReportBorrowByInvoice_no(invoice_no);
+	}
+}

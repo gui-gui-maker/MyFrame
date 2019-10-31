@@ -1,0 +1,59 @@
+/* 无边框弹窗 ========================================== 2017年02月27日 16:34:00 星期一 lybide */
+.win-flat .ui_border {border-radius:0;}
+.win-flat .ui_inner {border-radius:0;border:0px;/*background:none;*/}
+.win-flat .ui_dialog {box-shadow:0;border-radius:0;background:none;border:1px solid #5f5f5f;box-shadow:0 0 15px rgba(0, 0, 0, 0.5);}
+.win-flat .ui_title_bar { width:100%;position:relative;height:100%;bottom:auto;border:0;}
+.win-flat .ui_title_bar .ui_title {display:block;position:absolute;top:0;left:0;right:0;border:0px;background:none!important;}
+.win-flat .ui_title_bar .ui_title_buttons {top:0px;right:0px;width:auto!important;height:auto!important;}
+.win-flat .ui_min,.win-flat .ui_max,.win-flat .ui_close,.win-flat .ui_res {border:0px;}
+.win-flat .ui_state_focus .ui_title{ color:#505050; }
+.win-flat .ui_lt,.win-flat .ui_rt,.win-flat .ui_lb,.win-flat .ui_rb,.win-flat .ui_t,.win-flat .ui_b,.win-flat .ui_close {  }
+.win-flat .ui_lt{width:0px;height:0px;}
+.win-flat .ui_rt{width:0px;height:0px;}
+.win-flat .ui_lb{width:0px;height:0px;}
+.win-flat .ui_rb{width:0px;height:0px;}
+.win-flat .ui_t,.win-flat .ui_b{background-repeat:repeat-x;}
+.win-flat .ui_t{}
+.win-flat .ui_b{}
+.win-flat .ui_l,.win-flat .ui_r{}
+.win-flat .ui_l{}
+.win-flat .ui_r{}
+
+/*标题纯CSS按钮开始*/
+.win-flat .ui_min,.win-flat .ui_max,.win-flat .ui_close,.win-flat .ui_res{}
+.win-flat .ui_min,.win-flat .ui_max,.win-flat .ui_res { position:relative;border-radius:0;background:none;border:0px solid #FF0000;margin:5px 3px 0 0;width:20px;height:20px;}
+.win-flat .ui_min b,.win-flat .ui_max b,.win-flat .ui_res_t,.win-flat .ui_res_b  { display:block; position:absolute; overflow:hidden; cursor:pointer; }
+.win-flat .ui_min b { top:9px;  left:5px; width:10px; height:2px; border-bottom:2px solid #818181; }
+.win-flat .ui_max b { top:6px; left:5px; width:10px; height:8px; border:1px solid #818181; border-top-width:2px; }
+.win-flat .ui_res_t,.win-flat .ui_res_b { top:8px; left:4px; width:8px; height:5px; border:1px solid #818181; border-top-width:2px; }
+.win-flat .ui_res_b { top:5px; left:6px; }
+.win-flat .ui_res_t { background:none; }
+.win-flat .ui_res,.win-flat .ui_rese { display:none; } /*默认隐藏 回复和 还原按钮*/
+
+
+.win-flat .ui_close { width:36px;height:36px;border-radius:0;line-height:0.86 !important;font-size:36px !important;font-weight:normal !important;background:none;position:static;right:5px;top:5px;font-family:"Verdana";color:#ffffff!important;margin:5px 5px 0 0;border-radius:36px;background:#393a3c;}/*关闭在内部*/
+.win-flat .ui_close b {display:block;}
+.win-flat.close1 .ui_close {margin:-15px -15px 0 0;}/*关闭在外部*/
+.win-flat.close1 .ui_close b {display:block;}
+.win-flat.close2 .ui_close { width:32px;height:32px;border-radius:0;line-height:0.86 !important;font-size:32px !important;font-weight:normal !important;background:none;position:static;right:-20px;top:-20px;font-family:"Verdana";color:#818181;background:#393a3c;}
+.win-flat.close2 .ui_close b {display:block;}
+.win-flat.close3 .ui_close { width:20px;height:20px;border-radius:0;line-height:0.86 !important;font-size:20px !important;font-weight:normal !important;background:none;position:static;font-family:"Verdana";color:#818181;margin:5px 5px 0 0;background:#393a3c;}
+.win-flat.close3 .ui_close b {display:block;}
+.win-flat.close4 .ui_close { width:40px;height:40px;margin:0 0 0 0;border-radius:0 0 0 100%;background:url("khext/close4.png") no-repeat 0 0;}
+.win-flat.close4 .ui_close:hover {background:url("khext/close4.png") no-repeat -40px 0;}
+.win-flat.close4 .ui_close b {display:none;}
+.win-flat.close-hide .ui_close {display:none!important;}
+.win-flat.close-hide .ui_title {margin-right:50px;border:0px solid #FF0000;}
+.win-flat.min-hide .ui_min {display:none!important;}
+.win-flat.max-hide .ui_max {display:none!important;}
+.win-flat.max-hide .ui_res {display:none!important;}
+
+.win-flat .ui_close:hover {background:#d43f27;color:#ffffff;}
+.win-flat .ui_min:hover,.win-flat .ui_max:hover,.win-flat .ui_res:hover {background:#bababa;}
+.win-flat .ui_min:hover b,.win-flat .ui_max:hover b,.win-flat .ui_res:hover b {border-color:#ffffff;}
+/*标题按钮结束*/
+
+.win-flat.noborder .ui_dialog {border:0px;}
+.win-flat.title-is-show .ui_title {position:static;}
+
+/* 无边框弹窗 ========================================== */

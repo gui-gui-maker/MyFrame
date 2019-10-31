@@ -1,0 +1,51 @@
+package com.lsts.mobileapp.input.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.khnt.core.crud.manager.impl.EntityManageImpl;
+import com.khnt.utils.StringUtil;
+import com.lsts.mobileapp.input.bean.ReportItemRecordExt;
+import com.lsts.mobileapp.input.bean.ReportItemRecordHis;
+import com.lsts.mobileapp.input.dao.ReportItemRecordExtDao;
+import com.lsts.mobileapp.input.dao.ReportItemRecordHisDao;
+
+@Service("reportItemRecordHisService")
+public class ReportItemRecordHisService extends EntityManageImpl<ReportItemRecordHis, ReportItemRecordHisDao> {
+
+	@Autowired
+	ReportItemRecordHisDao itemRecordHisDao;
+	@Autowired
+	ReportItemRecordExtDao itemRecordDao;
+	
+	public void copyHisRecord(String infoId,String reportId) {
+		List<ReportItemRecordExt> oldList =  itemRecordDao.getItemRecordListByInfoId(infoId,reportId);
+		String max = itemRecordHisDao.getMaxStatus(infoId);
+		int newStatus = 0;
+		if(max==null||StringUtil.isEmpty(max)) {
+			newStatus = 1;
+		}else {
+			newStatus = Integer.parseInt(max)+1;
+		}
+		for (int i = 0; i < oldList.size(); i++) {
+			ReportItemRecordExt old = oldList.get(i);
+			ReportItemRecordHis his = new ReportItemRecordHis();
+			his.setDataStatus(newStatus+"");
+			his.setFkInspectionInfoId(old.getFkInspectionInfoId());
+			his.setFkReportId(old.getFkReportId());
+			his.setImage(old.getImage());
+			his.setItemName(old.getItemName());
+			his.setItemType(old.getItemType());
+			his.setItemValue(old.getItemValue());
+			his.setLastMdyTime(old.getLastMdyTime());
+			his.setLastMdyUid(old.getLastMdyUid());
+			his.setLastMdyUname(old.getLastMdyUname());
+			his.setPageNo(old.getPageNo());
+			itemRecordHisDao.save(his);
+		}
+		
+	}
+	
+}

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+	default-autowire="byName" default-lazy-init="true">
+
+	<!-- 工作流引擎需要的机构用户接口实现 -->
+	<bean id="bpmUserOrgManager" class="com.khnt.rbac.bpm.impl.BpmUserOrgManagerImpl" />
+
+	<!-- 工作流引擎引擎扩展默认实现,此处为流程工作任务扩展 -->
+	<bean id="flowExtManager" class="com.khnt.bpm.ext.service.FlowWorktaskManager" />
+
+	<!-- 系统短信发送接口实现 -->
+	<bean id="systemSmsMessageSender" class="com.khnt.pub.sms.LingKaiSmsSender" />
+
+	<!-- 系统邮件发送接口实现 -->
+	<!-- <bean id="systemEmailMessageSender" class="" /> -->
+	
+	<!-- 短信发送接口-基于订阅方式 -->
+	<bean class="com.khnt.pub.sms.LingKaiSmsNewSender" />
+	<!-- 附件管理实现 -->
+	<bean id="iAttachmentManager" class="com.khnt.pub.fileupload.service.DiskAttachmentManagerImpl" />
+	<!-- APP推送接口-基于订阅方式 -->
+	<bean class="com.khnt.pub.apppush.AppPushMessageSenderImpl" />
+	<!-- 系统参数持久化实例 -->
+	<bean class="com.khnt.pub.param.service.SysParamPersistImpl" />
+</beans>

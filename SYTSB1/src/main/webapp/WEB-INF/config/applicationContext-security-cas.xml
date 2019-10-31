@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans xmlns="http://www.springframework.org/schema/security" xmlns:b="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd"
+	default-autowire="byName" default-lazy-init="false">
+	<!-- 安全验证忽略的资源 -->
+	<http pattern="/" security="none" />
+	<http pattern="/**/*.js" security="none" />
+	<http pattern="/**/*.gif" security="none" />
+	<http pattern="/**/*.jpg" security="none" />
+	<http pattern="/**/*.png" security="none" />
+	<http pattern="/**/*.css" security="none" />
+	<http pattern="/**/*.ico" security="none" />
+
+	<http pattern="/k/kui/**" security="none" />
+	<http pattern="/k/index.jsp" security="none" />
+	<http pattern="/k/go_index.jsp" security="none" />
+	<http pattern="/k/login_dialog.jsp" security="none" />
+	<http pattern="/k/system-config.jsp" security="none" />
+	<http pattern="/app/system-config.jsp" security="none" />
+	<http pattern="/k/errorpage/access_denied.jsp" security="none" />
+	<http pattern="/k/errorpage/session_time_out.jsp" security="none" />
+
+	<http pattern="/demo/explorer/**" security="none" />
+	<http pattern="/pub/explorer/**" security="none" />
+	<http pattern="/pub/tools/soft.jsp" security="none" />
+	<http pattern="/pub/tools/qrcode_img.jsp" security="none" />
+	<http pattern="/pub/tools/dowload_soft.jsp" security="none" />
+
+	<http pattern="/security/web/validateCodeImg.do" security="none" />
+	<http pattern="/cxfws/**" security="none" />
+	<http pattern="/rbac/userDevice/checkDevice.do" security="none" />
+	<http pattern="/rbac/userDevice/bindDevice.do" security="none" />
+	<http pattern="/rbac/appclient/getLogo/login.do" security="none" />
+	<http pattern="/qmNoSecurity" security="none" />
+	<http pattern="/k/km/**" security="none" />
+	<http pattern="/service/upload/client/do_third_upload.do" security="none" />
+
+	<http pattern="/bgn" security="none" />
+	<http pattern="/app/pub/bgn/transform.jsp" security="none" />
+	<http pattern="/app/pub/bgn/login.jsp" security="none" />
+
+	<http pattern="/service/upload/client/ready_third_upload.do" security="none" />
+	<http pattern="/third_device_upload/**" security="none" />
+
+	<http access-denied-page="/k/errorpage/access_denied.jsp" use-expressions="true" entry-point-ref="casAuthenticationEntryPoint">
+
+		<!-- 在SSL环境下需要将下列文件上传地址配置为http通道 -->
+		<intercept-url pattern="/fileupload/upload.do" access="permitAll" />
+		<intercept-url pattern="/fileupload/fileUp.do" access="permitAll" />
+
+		<intercept-url pattern="/**" access="isAuthenticated()" requires-channel="http" />
+		<!-- 所有其他资源需要权限验证 -->
+		<intercept-url pattern="/**" access="isAuthenticated()" />
+
+		<!-- <port-mappings> <port-mapping http="80" https="8443" /> </port-mappings> -->
+
+		<!-- logout-success-url:成功注销后跳转到的页面; -->
+		<logout logout-success-url="http://192.168.0.39:8080/cas/logout" />
+
+		<!-- session-fixation-protection="none" 防止伪造sessionid攻击. 用户登录成功后会销毁用户当前的session. 创建新的session,并把用户信息复制到新session中 -->
+		<session-management invalid-session-url="http://192.168.0.39:8080/cas/login" session-fixation-protection="newSession">
+			<!-- error-if-maximum-exceeded="true" true:禁止2次登陆; false:后登陆的账号会挤掉第一次登陆的账号 -->
+			<concurrency-control max-sessions="100" expired-url="http://192.168.0.39:8080/cas/logout" error-if-maximum-exceeded="false"
+				session-registry-ref="sessionRegistry" />
+		</session-management>
+		
+		<!-- 自定义filter 实现用户、角色、权限、资源的数据库管理。 -->
+		<!-- FILTER_SECURITY_INTERCEPTOR是Spring Security默认的Filter，自定义的Filter必须在它之前 -->
+		<!-- <custom-filter ref="khValidateCodeAuthenticationFilter" position="FORM_LOGIN_FILTER" /> -->
+		<custom-filter ref="kHFilter" before="FILTER_SECURITY_INTERCEPTOR" />
+		<custom-filter ref="casAuthenticationFilter" position="CAS_FILTER" />
+		<http-basic />
+	</http>
+
+	<!-- 使用验证码和用户密码进行验证 -->
+	<b:bean id="khValidateCodeAuthenticationFilter" class="com.khnt.security.ValidateCodeUsernamePasswordAuthenticationFilter">
+		<b:property name="authenticationSuccessHandler" ref="simpleUrlAuthenticationSuccessHandler" />
+		<b:property name="authenticationFailureHandler" ref="simpleUrlAuthenticationFailureHandler" />
+		<b:property name="authenticationManager" ref="authenticationManager" />
+		<!-- <b:property name="rememberMeServices" ref="khntRememberMeServices" /> -->
+	</b:bean>
+	
+	<!-- 表单认证成功处理 -->
+	<b:bean id="simpleUrlAuthenticationSuccessHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler">
+		<b:property name="defaultTargetUrl" value="/security/authentication/loginSuccess.do" />
+		<b:property name="alwaysUseDefaultTargetUrl" value="true" />
+	</b:bean>
+	<!-- 认证失败处理 -->
+	<b:bean id="simpleUrlAuthenticationFailureHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler">
+		<b:property name="defaultFailureUrl" value="/security/authentication/loginFail.do" />
+		<b:property name="useForward" value="true" />
+	</b:bean>
+
+	<!-- 认证管理器，实现用户认证 -->
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider ref="casAuthenticationProvider" />
+	</authentication-manager>
+	<!-- 安全用户白名单 -->
+	<b:bean id="securityUserTrustListHolder" class="com.khnt.security.SecurityUserTrustListHolder">
+		<b:property name="trustList">
+			<b:list>
+				<b:value>administrator</b:value>
+			</b:list>
+		</b:property>
+	</b:bean>
+
+	<!-- 用户信息提供者：工作流用户信息提供器 -->
+	<b:bean id="userDetailsService" class="com.khnt.security.support.KHBpmUserDetailsService" />
+
+	<!-- 加载错误信息资源文件 -->
+	<b:bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<b:property name="basename" value="classpath:com/khnt/security/messages_zh_CN" />
+	</b:bean>
+
+	<!-- 自定义filterr，必须包含authenticationManager,accessDecisionManager,securityMetadataSource三个属性。 -->
+	<b:bean id="kHFilter" class="com.khnt.security.KHFilterSecurityInterceptor">
+		<!-- 登陆的认证 -->
+		<b:property name="authenticationManager" ref="authenticationManager" />
+		<!-- 资源访问决策 -->
+		<b:property name="accessDecisionManager" ref="kHAccessDecisionManager" />
+		<!-- 资源和权限列表 -->
+		<b:property name="securityMetadataSource" ref="kHFilterInvocationSecurityMetadataSource" />
+	</b:bean>
+
+	<!-- *********************************************************** -->
+	<!-- CAS 认证配置 -->
+	<!-- *********************************************************** -->
+	<!-- This section is used to configure CAS. The service is the actual redirect that will be triggered after the CAS login sequence. -->
+	<!-- CAS 配置信息 -->
+	<b:bean id="serviceProperties" class="org.springframework.security.cas.ServiceProperties">
+		<b:property name="service" value="http://192.168.0.39:8081/j_spring_cas_security_check" />
+		<b:property name="sendRenew" value="false" />
+	</b:bean>
+
+	<!-- The CAS filter handles the redirect from the CAS server and starts the ticket validation. -->
+	<!-- CAS filter过滤器 -->
+	<b:bean id="casAuthenticationFilter" class="org.springframework.security.cas.web.CasAuthenticationFilter">
+		<b:property name="authenticationManager" ref="authenticationManager" />
+		<b:property name="authenticationSuccessHandler">
+			<b:bean class="org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler">
+				<b:property name="defaultTargetUrl" value="/security/authentication/cas_login_success.do" />
+				<b:property name="alwaysUseDefaultTargetUrl" value="false" />
+			</b:bean>
+		</b:property>
+		<b:property name="authenticationFailureHandler" ref="simpleUrlAuthenticationFailureHandler" />
+	</b:bean>
+
+	<!-- The entryPoint intercepts all the CAS authentication requests. It redirects to the CAS loginUrl for the CAS login page. -->
+	<!-- CAS登陆入口 -->
+	<b:bean id="casAuthenticationEntryPoint" class="org.springframework.security.cas.web.CasAuthenticationEntryPoint">
+		<b:property name="loginUrl" value="http://192.168.0.39:8080/cas/login" />
+		<b:property name="serviceProperties" ref="serviceProperties" />
+	</b:bean>
+
+	<!-- cas登陆成功回调处理. -->
+	<b:bean id="casAuthenticationProvider" class="org.springframework.security.cas.authentication.CasAuthenticationProvider">
+		<b:property name="authenticationUserDetailsService">
+			<b:bean class="org.springframework.security.core.userdetails.UserDetailsByNameServiceWrapper">
+				<b:constructor-arg ref="userDetailsService" />
+			</b:bean>
+		</b:property>
+		<b:property name="serviceProperties" ref="serviceProperties" />
+		<b:property name="ticketValidator">
+			<b:bean class="org.jasig.cas.client.validation.Cas20ServiceTicketValidator">
+				<b:constructor-arg index="0" value="http://192.168.0.39:8080/cas" />
+			</b:bean>
+		</b:property>
+		<b:property name="key" value="casAuthProviderKey" />
+	</b:bean>
+
+	<!-- CSRF Configuration -->
+	<!-- <b:bean id="csrfTokenFilter" class="com.test.cloud.security.CsrfTokenFilter" /> -->
+	<!-- CAS Logout Configuration -->
+	<!-- This filter handles a Single Logout Request from the CAS Server -->
+	<!-- This filter redirects to the CAS Server to signal Single Logout should be performed -->
+
+	<!-- *********************************************************** -->
+	<!-- CAS EDN -->
+	<!-- *********************************************************** -->
+
+	<!-- 用户的密码加密或解密 -->
+	<!-- <b:bean id="passwordEncoder" class="org.springframework.security.authentication.encoding.Md5PasswordEncoder" /> -->
+	<b:bean id="passwordEncoder" class="com.khnt.security.KHPasswordEncoder" />
+	<b:bean id="sessionRegistry" class="org.springframework.security.core.session.SessionRegistryImpl" />
+</b:beans>

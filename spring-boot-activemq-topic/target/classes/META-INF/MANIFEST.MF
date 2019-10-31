@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: spring-boot-activemq-topic
+Implementation-Version: 1.0.0
+Built-By: Guido
+Implementation-Vendor-Id: com.neo
+Build-Jdk: 1.8.0_221
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/spring-boot-activemq-topic
+Created-By: Maven Integration for Eclipse
+

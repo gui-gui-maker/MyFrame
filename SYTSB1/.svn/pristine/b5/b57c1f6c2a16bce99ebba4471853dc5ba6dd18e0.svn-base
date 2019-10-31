@@ -1,0 +1,74 @@
+package com.lsts.relation.web;
+
+import java.util.HashMap;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.khnt.core.crud.web.SpringSupportAction;
+import com.khnt.core.crud.web.support.JsonWrapper;
+import com.lsts.mobileapp.rcparse.bean.ReportRecordParseExt;
+import com.lsts.mobileapp.rcparse.service.ReportRecordParseExtManager;
+import com.lsts.relation.bean.RelationInfoDTO;
+
+/**
+ * 报告与原始记录对应关系管理控制器
+ * 
+ * @ClassName RelationInfoAction
+ * @JDK 1.8
+ * @author GaoYa
+ * @date 2018-06-20 下午05:08:00
+ */
+@Controller
+@RequestMapping("relation/info")
+public class RelationInfoAction extends
+		SpringSupportAction<ReportRecordParseExt, ReportRecordParseExtManager> {
+	@Autowired
+	private ReportRecordParseExtManager reportRecordParseManager;
+	
+
+	// 保存对应关系信息
+	@RequestMapping(value = "saveBasic")
+	@ResponseBody
+	public HashMap<String, Object> saveBasic(HttpServletRequest request,
+			@RequestBody RelationInfoDTO relationInfoDTO) throws Exception {
+		HashMap<String, Object> wrapper = new HashMap<String, Object>();
+		try {
+			reportRecordParseManager.saveBasic(
+					relationInfoDTO, request);
+			wrapper.put("success", true);
+		} catch (Exception e) {
+			log.debug(e.toString());
+			wrapper.put("success", false);
+			wrapper.put("msg", "保存失败！");
+			e.printStackTrace();
+		}
+		return wrapper;
+	}
+
+	// 根据报告id获取报告和原始记录对应关系信息
+	@RequestMapping(value = "getRelations")
+	@ResponseBody
+	public HashMap<String, Object> getRelations(HttpServletRequest request) throws Exception {
+		String report_id = request.getParameter("report_id");
+		try {
+			return reportRecordParseManager.getRelations(report_id);
+		} catch (Exception e) {
+			log.debug(e.toString());
+			return JsonWrapper.failureWrapperMsg("读取对应关系信息失败！");
+		}
+	}
+	
+	// 删除对应关系信息
+	@RequestMapping(value = "del")
+	@ResponseBody
+	public HashMap<String, Object> del(HttpServletRequest request, String id) throws Exception {
+		reportRecordParseManager.del(request, id);
+		return JsonWrapper.successWrapper(id);
+	}
+}

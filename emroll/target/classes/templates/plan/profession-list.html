@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="keywords" content="jquery,ui,easy,easyui,web"/>
+	<meta name="description" content="profession"/>
+	<title>plan modify</title>
+	<link rel="stylesheet" type="text/css" href="../easyui/themes/default/easyui.css"/>
+	<link rel="stylesheet" type="text/css" href="../easyui/themes/icon.css"/>
+	<link rel="stylesheet" type="text/css" href="../easyui/themes/color.css"/>
+	<link rel="stylesheet" type="text/css" href="../easyui/css/demo.css"/> 
+	<style type="text/css">
+		#fm{margin:0;padding:10px 30px;}
+		.ftitle{font-size:14px;font-weight:bold;padding:5px 0;margin-bottom:10px;border-bottom:1px solid #ccc;}
+		.fitem{margin-bottom:5px;}
+		.line-two{display:inline-block;width:48%;}
+		.fitem label{display:inline-block;width:80px;}
+		.fitem input{width:160px;}
+		
+		.catalog{height:30px;margin:10px 5px;}
+		.catalog-left{display:inline-block;width:25%;height:30px;line-height:30px;}
+		.catalog-right{display:inline-block;width:75%;height:30px;line-height:30px;}
+	</style>
+	<script type="text/javascript" src="../easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script> 
+	<script type="text/javascript" src="../plan/professionList.js"></script>
+	<script type="text/javascript" src="../dict/dict.js"></script>
+</head>
+<body>
+	<div class="easyui-layout" style="width:100%;height:100%;">
+		<div region="north" split="false" title="" style="width:100%;height:60px;padding:10px 5px;">
+			<div class="fitem" style="display:inline-block;width:30%;">
+				<label>院校代码:</label>
+				<input id="s-yxdh" name="s-yxdh" class="easyui-textbox" />
+			</div>
+			<div id="college-name" class="fitem" style="display:inline-block;width:30%;line-height:100%;font-weight:bold;"></div>
+		</div>
+		<div id="catalog" region="west" split="false" title="院校目录" style="width:20%;">
+			
+		</div>
+		<div id="content" region="center" title="专业列表" style="padding:0px;">
+			<table id="dg" class="easyui-datagrid" style="width:100%;height:100%;"></table>
+		</div>
+	</div>
+		
+	<div id="toolbar">
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="addPlan()">拆分专业</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editPlan()">修改信息</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyPlan()">删除计划</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-print" plain="true" onclick="destroyPaper()">输出报纸</a>
+	</div>
+	
+	<div id="dlg" class="easyui-dialog" style="width:900px;height:540px;padding:10px 20px" closed="true" buttons="#dlg-buttons">
+		<div id="profession-name" class="ftitle"></div>
+		<form id="fm" method="post" novalidate>
+		    <input type="hidden" id="bbjhid" name="bbjhid"/>
+		    <input type="hidden" id="nf" name="nf"/>
+		    <input type="hidden" id="yxdm" name="yxdm"/>
+		    <input type="hidden" id="yxmc" name="yxmc"/>
+		    <input type="hidden" id="yxdhmc" name="yxdhmc"/>
+		    <input type="hidden" id="zszydm" name="zszydm"/>
+		    <input type="hidden" id="zszymc" name="zszymc"/>
+		    <input type="hidden" id="zylbmc" name="zylbmc"/>
+		    <input type="hidden" id="ccmc" name="ccmc"/>
+		    <input type="hidden" id="xbzydh" name="xbzydh"/>
+		    <input type="hidden" id="xzmc" name="xzmc"/>
+		    <input type="hidden" id="bxddssmc" name="bxddssmc"/>
+		    <input type="hidden" id="bxdddjsmc" name="bxdddjsmc"/>
+		    <input type="hidden" id="bxddqxmc" name="bxddqxmc"/>
+		    <input type="hidden" id="bxddxxdz" name="bxddxxdz"/>
+		    <input type="hidden" id="bxddbb" name="bxddbb"/>
+		    <input type="hidden" id="yxbmdm" name="yxbmdm"/>
+		    <input type="hidden" id="yxbmmc" name="yxbmmc"/>
+		    <input type="hidden" id="klmc" name="klmc"/>
+		    <input type="hidden" id="jhxzmc" name="jhxzmc"/>
+		    <input type="hidden" id="jhlbmc" name="jhlbmc"/>
+		    <input type="hidden" id="syssdm"  name="syssdm"/>
+		    <input type="hidden" id="syssmc" name="syssmc"/>
+		    <input type="hidden" id="pcmc" name="pcmc"/>
+		    <input type="hidden" id="zklxmc" name="zklxmc"/>
+		    <input type="hidden" id="kskmyq" name="kskmyq"/>
+		    <input type="hidden" id="kskmyqzw" name="kskmyqzw"/>
+		    <input type="hidden" id="xkkmbhzy" name="xkkmbhzy"/>
+		    <input type="hidden" id="skyq" name="skyq"/>
+		    <input type="hidden" id="dz1" name="dz1"/>
+		    <input type="hidden" id="dz2" name="dz2"/>
+		    <input type="hidden" id="dz3" name="dz3"/>
+		    <input type="hidden" id="dz4" name="dz4"/>
+		    <input type="hidden" id="dz5" name="dz5"/>
+		    <input type="hidden" id="dz6" name="dz6"/>
+		    <input type="hidden" id="dz7" name="dz7"/>
+		    <input type="hidden" id="dz8" name="dz8"/>
+		    <input type="hidden" id="dz9" name="dz9"/>
+		    <input type="hidden" id="dz10" name="dz10"/>
+		    <input type="hidden" id="xfzy" name="xfzy"/>
+		    <input type="hidden" id="zyxztj" name="zyxztj"/>
+		    <input type="hidden" id="sfdy" name="sfdy"/>
+		    <input type="hidden" id="dybz" name="dybz"/>
+		    <input type="hidden" id="dyml" name="dyml"/>
+		    <input type="hidden" id="zjhs" name="zjhs"/>
+		    <input type="hidden" id="sddm" name="sddm"/>
+		    <input type="hidden" id="zgdm" name="zgdm"/>
+		    <input type="hidden" id="zgmc" name="zgmc"/>
+		    <input type="hidden" id="yxjblxmc" name="yxjblxmc"/>
+		    <input type="hidden" id="ytlb" name="ytlb"/>
+		    <input type="hidden" id="ytlbmc" name="ytlbmc"/>
+		    <input type="hidden" id="hxlb" name="hxlb"/>
+		    <input type="hidden" id="err" name="err"/>
+		    <input type="hidden" id="isDel" name="isDel"/>
+			<div class="fitem line-two">
+				<label>计划ID:</label>
+				<input id="id" name="id" class="easyui-textbox" data-options="readonly:true"/>
+			</div>
+			<div class="fitem line-two">
+				<label>院校地址:</label>
+				<input name="yxdz" class="easyui-textbox"/>
+			</div>
+			<div class="fitem line-two">
+				<label>批次:</label>
+				<input id="pcdm" name="pcdm"/>
+			</div>
+			<div class="fitem line-two">
+				<label>科类:</label>
+				<input id="kldm" name="kldm" />
+			</div>
+			<div class="fitem line-two">
+				<label>层次:</label>
+				<input id="ccdm" name="ccdm" />
+			</div>
+			<div class="fitem line-two">
+				<label>计划性质:</label>
+				<input id="jhxzdm" name="jhxzdm"/>
+			</div>
+			<div class="fitem line-two">
+				<label>计划类别:</label>
+				<input id="jhlbdm" name="jhlbdm"/>
+			</div>
+			<div class="fitem line-two">
+				<label>专业类别:</label>
+				<input id="zylbdm" name="zylbdm" />
+			</div>
+			<div class="fitem line-two">
+				<label>招考类型:</label>
+				<input id="zklxdm" name="zklxdm"/>
+			</div>
+			<div class="fitem line-two">
+				<label>计划:</label>
+				<input id="zsjhs" name="zsjhs" class="easyui-textbox"/>
+			</div>
+			<div class="fitem line-two">
+				<label>专业代号:</label>
+				<input id="sbzydh" name="sbzydh" class="easyui-textbox"/>
+			</div>
+			<div class="fitem line-two">
+				<label>办学地点:</label>
+				<input name="bxdd" class="easyui-textbox"/>
+			</div>
+			<div class="fitem line-two">
+				<label>收费标准:</label>
+				<input name="sfbz" class="easyui-textbox"/>
+			</div>
+			<div class="fitem line-two">
+				<label>招考方向:</label>
+				<input name="zkfx" class="easyui-textbox"/>
+			</div>
+			<div class="fitem line-two">
+				<label>外语口试:</label>
+				<input name="sfks" class="easyui-textbox"/>
+			</div>
+			<div class="fitem line-two">
+				<label>学制:</label>
+				<input id="xzdm" name="xzdm"/>
+			</div>
+			<div class="fitem line-two">
+				<label>性别要求:</label>
+				<input name="xbyq" class="easyui-textbox"/>
+			</div>
+			<div class="fitem line-two">
+				<label>院校代号:</label>
+				<input name="yxdh" class="easyui-textbox"/>
+			</div>
+			<div class="fitem line-two">
+				<label>外语语种:</label>
+				<input name="wyyz" class="easyui-textbox"/>
+			</div>
+			<div class="fitem">
+				<label>包含专业:</label>
+				<input name="bhzy" class="easyui-textbox" style="width:70%;"/>
+			</div>
+			<div class="fitem" >
+				<label>包含专业:</label>
+				<input name="bhzygs" class="easyui-textbox"  style="width:70%;"/>
+			</div>
+			<div class="fitem" >
+				<label>专业备注:</label>
+				<input id="zybz" name="zybz" class="easyui-textbox"  style="width:70%;"/>
+			</div>
+			<div class="fitem" >
+				<label>院校备注:</label>
+				<input name="yxbz" class="easyui-textbox"  style="width:70%;"/>
+			</div>
+		</form>
+	</div>
+	<div id="dlg-buttons">
+		<a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="savePlan()" style="width:90px">Save</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')" style="width:90px">Cancel</a>
+	</div>
+</body>
+</html>

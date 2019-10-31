@@ -1,0 +1,7 @@
+
+/* 桌面框架主类 */
+
+#sysDesktop {background:url("../../../images/sys-desktop/bg/bg001.jpg") center center;}
+.qo{bottom:15px;left:15px;position:absolute;z-index:200;}
+.mI{bottom:-9px;cursor:pointer;height:52px;left:-9px;outline:0 none;position:absolute;width:52px;}
+.ps{background-color:#000055;border-radius:32px;bottom:9px;box-shadow:0 0 10px rgba(0,0,0,0.5);height:32px;left:9px;position:absolute;width:32px;z-index:20;}

@@ -1,0 +1,12 @@
+/*
+
+Create time : 2008年11月12日 星期三 15:58:15
+Last Edit Time : 2013年12月11日 09:04:01 星期三 lybide
+Create And Edit user : lybide
+
+说明: 伪类:link :visited :hover分别代表超链接的通常、被访问后、和鼠标接触链接是的样式
+
+*/
+
+a,a:link,a:visited {text-decoration:none;color:#000000;/*display:inline-block;*/ outline:0 none;}
+a:hover {text-decoration:underline;color:#2067a6;}

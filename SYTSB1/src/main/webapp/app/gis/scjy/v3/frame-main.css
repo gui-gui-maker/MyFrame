@@ -1,0 +1,12 @@
+/* 框架主样式 2016年10月25日 14:54:48 星期二 lybide */
+
+.m-big-data-menu {position:absolute;left:10px;bottom:4px;z-index:5;}
+.m-big-data-menu a {color:#fff; text-decoration:none;}
+.m-big-data-menu a:hover {color:#ff0;}
+.m-big-data-menu .iconfont {font-size:24px!important;}
+.m-big-data-panel {position:absolute;left:0px;/*bottom:0px;*/top:5000px;/*right:0px;*/z-index:168;display:nones;border:0px solid #FF0000;background:#000000;}
+.m-big-data-panel-close {position:absolute;top:5px;right:5px;border:0px solid #FF0000;}
+.m-big-data-panel-close a,.m-big-data-panel-close a:link,.m-big-data-panel-close a:visited {font-size:24px;color:#fff;text-decoration:none;display:block;}
+.m-big-data-panel-close a {display:block; width:36px; height:36px; text-align:center; line-height:36px; background:#393a3c; border-radius:50%;}
+.m-big-data-panel-close a:hover {color:#ffef17;text-decoration:none; background:#d43f27;}
+.m-big-data-panel-close a span {display:none;}

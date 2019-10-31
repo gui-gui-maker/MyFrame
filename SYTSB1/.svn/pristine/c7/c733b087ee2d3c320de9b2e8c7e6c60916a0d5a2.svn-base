@@ -1,0 +1,190 @@
+﻿/**
+* jQuery ligerUI 1.1.9 ligerToolBar
+*
+* http://ligerui.com
+*
+* Author daomi 2012 [ gd_star@163.com ]
+*
+*/
+(function ($) {
+
+    $.fn.ligerToolBar = function (options)
+    {
+        return $.ligerui.run.call(this, "ligerToolBar", arguments);
+    };
+
+    $.fn.ligerGetToolBarManager = function ()
+    {
+        return $.ligerui.run.call(this, "ligerGetToolBarManager", arguments);
+    };
+
+    $.ligerDefaults.ToolBar = {};
+
+    $.ligerMethos.ToolBar = {};
+
+    $.ligerui.controls.ToolBar = function (element, options)
+    {
+        $.ligerui.controls.ToolBar.base.constructor.call(this, element, options);
+    };
+    $.ligerui.controls.ToolBar.ligerExtend($.ligerui.core.UIComponent, {
+        __getType: function ()
+        {
+            return 'ToolBar';
+        },
+        __idPrev: function ()
+        {
+            return 'ToolBar';
+        },
+        _extendMethods: function ()
+        {
+            return $.ligerMethos.ToolBar;
+        },
+        _render: function ()
+        {
+            var g = this, p = this.options;
+            g.toolBar = $(this.element);
+            g.toolBar.addClass("l-toolbar");
+            g.set(p);
+        },
+		//13-5-7 下午3:50 lybide
+		//工具条支持以组的的形式，如左右都可以
+		_setItems:function(groups){
+			var g = this;
+			var tb=$('<table border="0" cellpadding="0" cellspacing="0" width="100%" height="" align="center"><tr></tr></table>');
+			$(this.element).append(tb);
+			var td=$('<td><div></div></td>');
+			var items=[];
+			var index=0;
+            $(groups).each(function (i, group)
+            {
+				if(group!="->"){
+					items.push(group);
+				}else{
+					tb.find("tr").append(td);
+					g.toolBar=td.find("div");
+					g.loopCreateItems(items);
+					g.toolBar.css("float",index==0?"left":"right");
+					td=$('<td><div></div></td>');
+					items=[];
+					index++;
+				}
+
+            });
+			tb.find("tr").append(td);
+			g.toolBar=td.find("div");
+			g.loopCreateItems(items);
+			g.toolBar.css("float",index==0?"left":"right");
+			g.toolBar=$(this.element);//生成好后，返回，13-5-7 下午4:25 lybide
+		},
+        _setItems____: function (items)
+        {
+            var g = this;
+            $(items).each(function (i, item)
+            {
+                g.addItem(i,item);
+            });
+        },
+		loopCreateItems: function (items)
+        {
+            var g = this;
+            $(items).each(function (i, item)
+            {
+                g.addItem(i,item);
+            });
+        },
+        addItem: function (i,item)
+        {
+            var g = this, p = this.options;
+            if (item.line || item=="-")
+            {
+                g.toolBar.append('<div class="l-bar-separator"></div>');
+                return;
+            }
+            var ditem = $('<div class="l-toolbar-item l-panel-btn"><div class="l-panel-btn-l"></div><div class="l-panel-btn-r"></div></div>');
+            g.toolBar.append(ditem);
+            item.id && ditem.attr("toolbarid", item.id);
+            if (item.img)
+            {
+                //ditem.append("<div class='l-icon' style='background:url("+$.ligerMethos.getImgSrc(item.img)+") no-repeat center center;'></div>");
+                ditem.append("<div class='l-icon' style='background:url("+item.img+") no-repeat center center;'></div>");
+                ditem.addClass("l-toolbar-item-hasicon");
+            }
+            else if (item.icon)
+            {
+                ditem.append("<div class='l-icon l-icon-" + item.icon + "'></div>");
+                ditem.addClass("l-toolbar-item-hasicon");
+            }
+			if (item.title) {//13-4-7 下午2:06 lybide 添加title效果
+				ditem.attr("title",item.title);
+			}
+            //item.text && $("span:first", ditem).html(item.text);
+            item.text && ditem.prepend('<span>'+item.text+'</span>');
+			!item.text && ditem.addClass("l-toolbar-item-notext");
+            ditem.hover(function () {
+                $(this).addClass("l-panel-btn-over");
+            },function () {
+                $(this).removeClass("l-panel-btn-over");
+            });
+			if(item.disabled || item.disable) {//todo 移到所有元素初始化完成后。13-1-29 上午10:13 lybide
+                //ditem.addClass("l-toolbar-item-disable");
+				g._setEnabled(item.id,false);
+            }
+			item.click && ditem.click(function(){
+				if (!$(this).attr("disabled")) {//禁用按钮就不执行 13-5-7 下午5:24 lybide
+					item.click(item);
+				}
+
+			});
+        },
+        //todo add by ttaomeng
+        _setEnabled:function(itemId,enable) {
+            var g = this, p = this.options;
+			//alert(itemId+"=="+enable+"\n\n"+g.toolBar.html());
+
+            //13-5-7 下午4:28 lybide 删除迭代，提高效率。
+            //var items=p.items;
+            //$.each(items,function (i, item)
+            //{
+            //    if(itemId==item["id"]){
+					//todo 13-4-7 下午1:47 lybide 添加 g.toolBar 范围，解决初始化时不显示禁用 也提高执行效率。
+                    var ditem=$("div[toolbarid="+itemId+"]",g.toolBar);
+                    if(enable===true){//启用
+                        //ditem.removeClass("l-toolbar-item-disable");
+                        //ditem.unbind('click');
+                        //ditem.click(function () { item.click(item); });
+						//todo 给工具条添加禁用样式1 13-1-25 下午2:39 lybide
+						ditem.attr("disabled",false);
+						ditem.removeClass("l-panel-btn-disable");
+						ditem.addClass("l-panel-btn");
+						ditem.hover(
+							function () {
+								$(this).addClass("l-panel-btn-over");
+							},
+							function () {
+								$(this).removeClass("l-panel-btn-over");
+							}
+						);
+						//g.options.disabled = false;
+                    } else {//禁用
+                        //ditem.addClass("l-toolbar-item-disable");
+                        //ditem.unbind('click');
+						//todo 给工具条添加禁用样式2 13-1-25 下午2:39 lybide
+						ditem.attr("disabled",true);
+						ditem.addClass("l-panel-btn-disable");
+						ditem.removeClass("l-panel-btn");
+						ditem.unbind("mouseenter mouseleave");
+						//g.options.disabled = true;
+                    }
+                    return false;
+            //    }
+            //});
+        },
+        setEnabled:function(items) {
+            var g = this;
+            $.each(items,function (i, item)
+            {
+                g._setEnabled(i, item);
+            });
+        }
+    });
+})(jQuery);

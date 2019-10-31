@@ -1,0 +1,172 @@
+form {
+	padding: 0;
+	margin: 10px;
+	border-top: 1px solid #d2e0f1;
+}
+
+.l-detail-table td, .l-detail-table, .l-table td, .l-table {
+	border-collapse: collapse;
+	border: 1px solid #d2e0f1;
+}
+
+.l-table {
+	width: 100%;
+	min-height: 60px;
+}
+
+.l-text {
+    background-color: rgb(255, 255, 255);
+    box-shadow: none;
+}
+
+.l-trigger {
+	height: 22px;
+	background: #ffffff;
+    border: none;
+    padding: inherit;
+}
+
+.l-trigger-hover, .l-trigger-pressed {
+	height: 22px;
+	background: #f0f0f0;
+    border: none;
+    padding: inherit;
+}
+
+.l-panel {
+	border: 1px solid #d2e0f1;
+}
+.l-table .l-td-left{
+	padding: 0 5px;
+}
+.l-t-td-title {
+	font-weight: bold;
+	text-align: center;
+	height: 28px;
+}
+
+.l-t-td-title, .l-td-title {
+	text-align: center;
+	background: #f6f6f6;
+}
+
+.l-t-td-left, .l-td-left {
+	text-align: center;
+	height:20px;
+	background: #f6f6f6;
+}
+
+.l-t-td-right {
+	padding: 0;
+	margin: 0;
+}
+
+.l-t-td-right .l-text {
+	background-image: none;
+}
+
+.l-t-td-right .l-text-wrapper {
+	width: 100%;
+	height: 29px;
+}
+
+.l-textarea .l-text-wrapper {
+	width: 100%;
+	height: 100%;
+}
+
+.l-textarea-onerow {
+	height: 30px;
+}
+
+.l-textarea-onerow div {
+	padding: 0;
+}
+
+.l-t-td-right .l-text {
+	border: none;
+}
+
+.l-t-td-right .l-text.change, .l-t-td-right .l-radio-group-wrapper.change
+	{
+	background: url("../images/x-input.png") repeat-x;
+}
+
+.l-t-td-right .l-text input {
+	height: 24px;
+	padding-top: 0;
+	line-height: 24px;
+}
+
+.l-t-td-right .l-radio-group-wrapper {
+	height: 24px;
+	padding-left: 5px;
+}
+
+.l-t-td-right textarea {
+	height: 100%;
+}
+
+.l-textarea-onerow textarea {
+	height: 12px;
+	padding: 6px 5px;
+	width: 98%
+}
+
+.l-t-td-right label {
+	height: 24px;
+	line-height: 24px;
+	display: inline-block;
+}
+
+.l-t-td-right div.input, .l-td-right div.input {
+	border: none;
+	padding-left: 5px;
+}
+
+.l-td-left-align div.input {
+	text-align: left;
+}
+
+.l-t-td-right .input-warp div {
+	height: 28px;
+	line-height: 28px;
+}
+
+.decimal-table .l-text-field, .decimal-table div.input {
+	text-align: center !important;
+}
+
+.fieldset-caption {
+	border-left: 1px solid #d2e0f1;
+	border-right: 1px solid #d2e0f1;
+	height: 30px;
+	line-height: 30px;
+	background: url("../images/detail-caption.png");
+	color: #14418B;
+}
+
+.fieldset-caption span {
+	font-weight: bold;
+	line-height: 26px;
+	padding-left: 10px;
+}
+
+.l-label {text-align: center; color:black;}
+.l-content {text-align: center; color:black;}
+.l-td-opinion {padding: 1mm 0!important;}
+.l-td-opinion .l-label {height:8mm;line-height:8mm;text-align:left;padding:0 2mm;}
+.l-td-opinion .opinion {height:22mm;line-height:7mm;text-align:left;padding:0 2mm;text-align:left;}
+.l-td-opinion .opinion span {margin-left:2em;}
+.l-td-opinion .opinion textarea {height:100%;border:1px solid #dddddd;padding:1mm;font-size: 16px;width:98%;}
+.l-td-opinion {position:relative;}
+.l-td-opinion .signer-date {height:8mm; text-align:right;margin:2mm;}
+.l-td-opinion .signer-date span {display:inline-block;height:8mm;line-height:8mm;text-align:left;float:right;}
+.l-td-opinion .signer-date span.print-text{height:100%;float:none;}
+.l-td-opinion .signer-date span.l-content {display: inline-block;border-bottom: 1px solid #dddddd;width:95px;}
+.l-td-opinion .signer-date span.signer{display: inline-block;border-bottom:0px solid #dddddd;}
+.l-td-opinion .signer-date span input {border:none;width:98%;height:100%;}
+.l-td-opinion .seal {width:140px;height:140px;position:absolute;right:35mm;top:0;}
+.l-td-opinion .opinion textarea.remark-opinion{border:1px solid blue;}
+.inner_table {margin:-1px -1px -1px -1px;width:100%}
+.inner_table1 {margin:-1px -2px -1px -1px;width:100%}

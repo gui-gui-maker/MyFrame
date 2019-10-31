@@ -1,0 +1,281 @@
+<html>
+<head><title>程序扩展接口调用</title></head>
+
+<script type="text/javascript">
+
+
+
+function BtnClick()
+{
+	window.external.ButtonClick(0);
+}
+
+function BtnEnable()
+{
+	window.external.ButtonEnable(0,1);
+}
+
+function BtnDisable()
+{
+	window.external.ButtonEnable(0,0);
+}
+
+function BtnHide()
+{
+	window.external.ButtonVisible(0,0);
+}
+
+function BtnShow()
+{
+	window.external.ButtonVisible(0,1);
+}
+
+function SetStatusText()
+{
+	window.external.SetStatusText(0,"状态栏测试文本","http://www.baidu.com");
+	
+}
+function BtnPopupMenu()
+{
+	window.external.PopupMenu("SubMenu1");
+	
+}
+function BtnDelTemp()
+{
+	window.external.DelTempFiles();
+}
+
+function BtnLockScreenState()
+{
+	var state = window.external.GetLockScreenState();
+	alert(state);
+}
+
+function BtnLockScreen()
+{
+	window.external.LockScreen(1);
+}
+
+function BtnUnlockScreen()
+{
+	window.external.LockScreen(0);
+}
+
+function BtnReadIni()
+{
+	var value = window.external.ReadIni("main","title","test.ini");
+	alert(value);
+}
+
+function BtnWriteIni()
+{
+	window.external.WriteIni("main","title","WriteIni 测试","test.ini");
+}
+
+function BtnStartTrayFlicker()
+{
+	window.external.StartTrayFlicker("Skin/t1.ico;Skin/t2.ico;Skin/t3.ico;Skin/t4.ico",300,"托盘动画测试");
+}
+
+function BtnStopTrayFlicker()
+{
+	window.external.StopTrayFlicker();
+}
+
+function BtnPopupMessage()
+{
+	window.external.PopupMessage("POPUP 消息内容","消息标题！");
+}
+
+function BtnPopupMessageEx()
+{
+	window.external.PopupMessageEx("Popup message","http://www.baidu.com");
+}
+
+function BtnQuit()
+{
+	window.external.Quit();
+}
+
+function BtnIsShell()
+{
+	var v = window.external.IsShell();
+	alert(v);
+}
+
+function BtnShellVersion()
+{
+	var v = window.external.ShellVersion();
+	alert(v);
+}
+
+function BtnGetApplicationPath()
+{
+	var path = window.external.GetApplicationPath();
+	alert(path);
+}
+
+function BtnCreateNoShowPopup()
+{
+	window.external.PopupMessageEx("Popup message","http://www.baidu.com",7,500,300);
+}
+function BtnShowPopup()
+{
+	window.external.ShowPopup();
+}
+function BtnHidePopup()
+{
+	window.external.HidePopup();
+}
+function BtnClosePopup()
+{
+	window.external.ClosePopup();
+}
+function BtnCallInternetOption()
+{
+	window.external.CallInternetOption();
+}
+
+function hideFrameWin()
+{
+	window.external.HideFrameWindow();
+	window.setTimeout("window.external.ShowFrameWindow()",3000);
+}
+var win;
+function winOpen()
+{
+	//var path = window.external.GetApplicationPath();
+	var path="";
+	win=window.open(path+"t.html");
+	win.run_test;
+	
+}
+function opJs(){
+	win.run_test();
+}
+
+function BtnGetAutoStartup()
+{
+	var ret = window.external.IsAutoStartup();
+	alert(ret);
+}
+
+function BtnAutoStart()
+{
+	var ret = window.external.SetAutoStartup(true);
+	if (!ret) {
+		var error = window.external.GetLastError();
+		alert(error);
+	}
+}
+
+function BtnUndoAutoStart()
+{
+	var ret = window.external.SetAutoStartup(false);
+	if (!ret) {
+		var error = window.external.GetLastError();
+		alert(error);
+	}
+}
+
+function BtnGetTrayTooltips()
+{
+	var ret = window.external.GetTrayTooltips();
+	alert(ret);
+}
+function BtnSetTrayTooltips()
+{
+	window.external.SetTrayTooltips("托盘提示测试");;
+}
+
+function CloseFrameTest()
+{
+	window.external.HideFrameWindow();
+	window.setTimeout("window.external.ShowFrameWindow()",3000);
+}
+
+function BtnSetTitle()
+{
+	window.external.SetWindowText("JS 设置window标题测试！");
+}
+function BtnGetTitle()
+{
+	var vText = window.external.GetWindowText();
+	alert(vText);
+}
+function BtnSetWindowState()
+{
+	// 0 - 正常 1- 最小化 2- 最大化
+	// 设置框架窗口最大化示例
+	window.external.SetWindowState(2);
+}
+function BtnGetWindowState()
+{
+	var nState = window.external.GetWindowState();
+	alert(nState);
+}
+
+function BtnResizeWindow()
+{
+	window.external.SetWindowPos(0,0,600,200);
+}
+
+function BtnCenterWindow()
+{
+	window.external.CenterWindow();
+}
+</script>
+
+<body>
+<input type="button" value="点击测试按钮" onclick = "BtnClick()" >
+<input type="button" value="隐藏系统按钮" onclick = "BtnHide()" >
+<input type="button" value="显示系统按钮" onclick = "BtnShow()" >
+<input type="button" value="设置状态栏文本" onclick = "SetStatusText()" >
+<input type="button" value="右键菜单定制" onclick = "BtnPopupMenu()" >
+<input type="button" value="退出程序" onclick = "BtnQuit()" >
+<br><br>
+<input type="button" value="设置窗体大小" onclick = "BtnResizeWindow()" >
+<input type="button" value="窗体居中" onclick = "BtnCenterWindow()" >
+<input type="button" value="设置标题" onclick = "BtnSetTitle()" >
+<input type="button" value="获取标题" onclick = "BtnGetTitle()" >
+<input type="button" value="设置窗体状态" onclick = "BtnSetWindowState()" >
+<input type="button" value="获取窗体状态" onclick = "BtnGetWindowState()" >
+<br><br>
+<input type="button" value="禁用系统按钮" onclick = "BtnDisable()" >
+<input type="button" value="启用系统按钮" onclick = "BtnEnable()" >
+<input type="button" value="删除临时文件" onclick = "BtnDelTemp()" >
+<input type="button" value="调用Internet选项" onclick = "BtnCallInternetOption()" >
+<br><br>
+<input type="button" value="INI读取" onclick = "BtnReadIni()" >
+<input type="button" value="INI写入" onclick = "BtnWriteIni()" >
+<input type="button" value="是否为壳程序" onclick = "BtnIsShell()" >
+<input type="button" value="外壳版本号" onclick = "BtnShellVersion()" >
+<input type="button" value="获取安装路径" onclick = "BtnGetApplicationPath()" >
+
+<br><br>
+<input type="button" value="获取屏幕锁定状态" onclick = "BtnLockScreenState()" >
+<input type="button" value="锁定屏幕" onclick = "BtnLockScreen()" >
+<input type="button" value="解除屏幕锁定" onclick = "BtnUnlockScreen()" >
+<br><br>
+<input type="button" value="任务栏图标闪烁" onclick = "BtnStartTrayFlicker()" >
+<input type="button" value="停止任务栏图标闪烁" onclick = "BtnStopTrayFlicker()" >
+<input type="button" value="获取任务栏提示" onclick = "BtnGetTrayTooltips()" >
+<input type="button" value="设置任务栏提示" onclick = "BtnSetTrayTooltips()" >
+<br><br>
+<input type="button" value="消息弹窗" onclick = "BtnPopupMessage()" >
+<input type="button" value="消息弹窗扩展" onclick = "BtnPopupMessageEx()" >
+<br><br>
+<input type="button" value="创建非显示弹窗" onclick = "BtnCreateNoShowPopup()" >
+<input type="button" value="显示弹窗" onclick = "BtnShowPopup()" >
+<input type="button" value="隐藏弹窗" onclick = "BtnHidePopup()" >
+<input type="button" value="销毁弹窗" onclick = "BtnClosePopup()" >
+<br><br>
+<input type="button" value="是否自启动" onclick = "BtnGetAutoStartup()" >
+<input type="button" value="设定自启动" onclick = "BtnAutoStart()" >
+<input type="button" value="取消自启动" onclick = "BtnUndoAutoStart()" >
+<br><br>
+<input type="button" value="显示隐藏的主框架窗口（3秒后显示）" onclick = "hideFrameWin()" >
+<input type="button" value="弹窗" onclick = "winOpen()" >
+<input type="button" value="操作弹窗js" onclick = "opJs()" >
+</body>
+</html>

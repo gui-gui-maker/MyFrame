@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+</head>
+
+<body>
+	<div id="layout2" style="width: 99.8%">
+		<input type="hidden" id="inputFocus" name="inputFocus" /> <input
+			type="hidden" id="thisPage" name="thisPage" value="?page=2">
+		<div position="center" class="wrapper"
+			style="overflow: auto; width: 100%" align="center">
+			<input type="hidden" id="fk_report_id" name="fk_report_id" value="">
+			<input type="hidden" id="fk_inspection_info_id"
+				name="fk_inspection_info_id" value=""> <br />
+			<p>
+				<a name="RTPAGE_1__注意事项"></a>
+			</p>
+			<table class=""
+				style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; table-layout: fixed; vertical-align: top; border-collapse: collapse;">
+				<colgroup>
+					<col style="width: 50.03%;" />
+					<col style="width: 49.97%;" />
+				</colgroup>
+				<tbody>
+					<tr>
+						<td>
+							<p class="a DocDefaults " style="text-align: left; width: 100%;">
+								<span class="a0 " style=""><span class=""
+									style="font-family: 'SimSun';">文件编号：CTJB-</span></span><span
+									class="a0 " style="font-family: 'SimSun';">0412-B01</span>
+							</p>
+						</td>
+						<td>
+							<p class="a DocDefaults " style="text-align: right; width: 100%;">
+								<span class="a0 " style=""><span class=""
+									style="font-family: 'SimSun';">实施日期：2017年10月1日</span></span>
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="" style="width: 100%; margin-top: 5mm;">
+					<span class="dtitle">注意事项</span>
+				</p>
+			<p style="height: 10mm;"></p>
+			<table id="docx4j_tbl_2">
+				<colgroup>
+					<col style="width: 100%;" />
+				</colgroup>
+				<tbody>
+					<tr>
+						<td style="padding: 2mm 5mm;">
+							<p style="width: 100%; text-align: left; height: 0.3in;">
+								<span><span>1、本记录依据特种设备安全技术规范TSG
+										T7003-2011《电梯监督检验和定期检验</span></span>
+							</p>
+							<p style="width: 100%; text-align: left; height: 0.3in; text-indent: 6mm;">
+								<span><span>检验规则-防爆电梯》（及2号修改单）编制。</span></span>
+							</p>
+							<p style="width: 100%; text-align: left; height: 0.3in;">
+								<span><span>2、本记录仅适用于防爆电梯的定期检验。</span></span>
+							</p>
+							<p style="width: 100%; text-align: left; height: 0.3in;">
+								<span><span>3、本记录需用钢笔或签字笔填写，字迹应当工整，涂改无效。</span></span>
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p style="height: 2in;"></p>
+			<table id="docx4j_tbl_3" style="border-style: hidden;">
+				<colgroup>
+					<col style="width: 100%;" />
+				</colgroup>
+				<tbody>
+					<tr>
+						<td style="padding: 2mm 5mm;">
+							<p style="width: 100%; text-align: left; height: 0.3in;">
+								<span><span>检验机构地址：四川省成都市东风路二段北二巷4号</span></span>
+							</p>
+							<p style="width: 100%; text-align: left; height: 0.3in;">
+								<span><span>邮政编码：610061</span></span>
+							</p>
+							<p style="width: 100%; text-align: left; height: 0.3in;">
+								<span><span>联系电话：028-86607888</span></span>
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p style="height: 15mm;"></p>
+			<p>
+				<span> </span>
+			</p>
+			<p style="width: 100%; margin-top: 25%;">
+				<span>四川省特种设备检验研究院</span>
+			</p>
+			<p></p>
+			<p>
+		</div>
+	</div>
+</body>
+</html>

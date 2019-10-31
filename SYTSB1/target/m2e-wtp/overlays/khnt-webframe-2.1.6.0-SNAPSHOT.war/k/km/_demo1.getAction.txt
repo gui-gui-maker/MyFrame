@@ -1,0 +1,16 @@
+﻿{
+	"data": {
+		"name": "李明军",
+		"idn": "510113198108086232",
+		"scName":"中国人民大学",
+		"college": "技术学院",
+		"major": "计算机",
+		"sno": "8888",
+		"schoolSystem": "6",
+		"startDate": "2015-7-17 15:23:25",
+		"startTime": "2015-7-17 15:23:58",
+		"qrcode": "Bbahv897634fgiofjk",
+		"xqsm": "运维管理员"
+	},
+	"success":true
+}

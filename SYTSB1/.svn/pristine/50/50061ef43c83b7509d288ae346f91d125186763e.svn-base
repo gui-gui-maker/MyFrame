@@ -1,0 +1,100 @@
+package com.lsts.inspection.bean;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import org.hibernate.annotations.GenericGenerator;
+
+import com.khnt.core.crud.bean.BaseEntity;
+
+/**
+ * 移动端原始记录检验项目参数表
+ * ReportItemRecord entity. 
+ * @author GaoYa
+ * @date 2015-11-12 18:50:00
+ */
+@Entity
+@JsonIgnoreProperties(ignoreUnknown = true)
+@Table(name = "tzsb_report_item_record")
+public class ReportItemRecord implements BaseEntity{
+	
+	private static final long serialVersionUID = 1L;
+	
+	private String id ;
+	private String fk_report_id;	// 报告类型ID
+	private String item_name;		// 项目指标名称
+	private String item_value;		// 项目指标值
+	private String item_type;		// 项目指标类型
+	private String fk_inspection_info_id;	// 检验业务信息ID
+	private String last_mdy_uid;	// 最后修改用户ID
+	private String last_mdy_uname;  // 最后修改用户姓名
+	private String last_mdy_time;   // 最后修改时间 
+	private String data_status;		// 数据状态，默认0（0：未生成报告 1：已生成报告 99：已删除）
+	
+	@Id
+	@GeneratedValue(generator = "system-uuid")
+	@GenericGenerator(name = "system-uuid", strategy = "uuid")
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getFk_report_id() {
+		return fk_report_id;
+	}
+	public void setFk_report_id(String fk_report_id) {
+		this.fk_report_id = fk_report_id;
+	}
+	public String getItem_name() {
+		return item_name;
+	}
+	public void setItem_name(String item_name) {
+		this.item_name = item_name;
+	}
+	public String getItem_value() {
+		return item_value;
+	}
+	public void setItem_value(String item_value) {
+		this.item_value = item_value;
+	}
+	public String getItem_type() {
+		return item_type;
+	}
+	public void setItem_type(String item_type) {
+		this.item_type = item_type;
+	}
+	public String getFk_inspection_info_id() {
+		return fk_inspection_info_id;
+	}
+	public void setFk_inspection_info_id(String fk_inspection_info_id) {
+		this.fk_inspection_info_id = fk_inspection_info_id;
+	}
+	public String getLast_mdy_uid() {
+		return last_mdy_uid;
+	}
+	public void setLast_mdy_uid(String last_mdy_uid) {
+		this.last_mdy_uid = last_mdy_uid;
+	}
+	public String getLast_mdy_uname() {
+		return last_mdy_uname;
+	}
+	public void setLast_mdy_uname(String last_mdy_uname) {
+		this.last_mdy_uname = last_mdy_uname;
+	}
+	public String getLast_mdy_time() {
+		return last_mdy_time;
+	}
+	public void setLast_mdy_time(String last_mdy_time) {
+		this.last_mdy_time = last_mdy_time;
+	}
+	public String getData_status() {
+		return data_status;
+	}
+	public void setData_status(String data_status) {
+		this.data_status = data_status;
+	}
+}

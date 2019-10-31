@@ -1,0 +1,535 @@
+<%@ page contentType="text/html;charset=UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+</head>
+
+<body>
+	<div id="layout2" style="width: 99.8%">
+		<input type="hidden" id="inputFocus" name="inputFocus" /> <input
+			type="hidden" id="thisPage" name="thisPage" value="?page=6">
+		<div position="center" class="wrapper"
+			style="overflow: auto; width: 100%" align="center">
+			<input type="hidden" id="fk_report_id" name="fk_report_id" value="">
+			<input type="hidden" id="fk_inspection_info_id"
+				name="fk_inspection_info_id" value=""> <br />
+			<p>
+				<a name="RTPAGE_5__检验项目及其内容2"></a>
+			</p>
+			<table id="docx4j_tbl_6">
+				<colgroup>
+					<col style="width: 5.76%;" />
+					<col style="width: 7.51%;" />
+					<col style="width: 7.85%;" />
+					<col style="width: 11.25%;" />
+					<col style="width: 46.01%;" />
+					<col style="width: 13.36%;" />
+					<col style="width: 8.26%;" />
+				</colgroup>
+				<thead>
+					<tr style="height: 7mm; page-break-inside: avoid;">
+						<td style="text-align:center;">
+							<p>
+								<span>序号</span>
+							</p>
+						</td>
+						<td style="text-align:center;">
+							<p>
+								<span>检验类别</span>
+							</p>
+						</td>
+						<td colspan="3" style="text-align:center;">
+							<p>
+								<span>检验项目及其内容</span>
+							</p>
+						</td>
+						<td style="text-align:center;">
+							<p>
+								<span>检验结果</span>
+							</p>
+						</td>
+						<td style="text-align:center;">
+							<p>
+								<span>结论</span>
+							</p>
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td rowspan="2">
+							<p style="text-align:center;">
+								<span>7</span>
+							</p>
+						</td>
+						<td rowspan="2" style="text-align:center;">
+							<p>
+								<span>C</span>
+							</p>
+						</td>
+						<td rowspan="8" style="text-align:center;">
+							<p>
+								<span>3</span>
+							</p>
+							<p>
+								<span>井道</span>
+							</p>
+							<p>
+								<span>及相</span>
+							</p>
+							<p>
+								<span>关设</span>
+							</p>
+							<p>
+								<span>备</span>
+							</p>
+						</td>
+						<td rowspan="2" style="text-align:center;">
+							<p>
+								<span>3.3</span>
+							</p>
+							<p>
+								<span>检修门和</span>
+							</p>
+							<p>
+								<span>检修活板</span>
+							</p>
+							<p>
+								<span>门</span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<span>(2)门锁</span><span><span>（打开、关闭门，</span></span><span>
+								</span><span><span>检查门的启闭和杂物电梯启动情况）</span></span>
+							</p>
+							<p>
+								<span><span>门上应当装设用钥匙开启的锁，当门开启后，不用钥匙也能够将其关闭和锁住；门锁住后，不用钥匙也能够从井道内将门打开</span></span>
+							</p>
+						</td>
+						<td>
+							<p>
+							<input id="record__C_3_3_2" name="record__C_3_3_2" type="text"
+								ltype="select" value="" class="cC_3_3_2"
+								ligerui="{data:[{'id':'资料确认符合','text':'资料确认符合'},{'id':'资料确认不符合','text':'资料确认不符合'},
+												{'id':'操作验证符合','text':'操作验证符合'},{'id':'操作验证不符合','text':'操作验证不符合'}],initValue:'资料确认符合'}"
+												onchange="changeRecord(this,this.value)"/>
+							</p>
+						</td>
+						<td rowspan="2">
+							<p>
+								<input id="conclusion__C_3_3_2" name="conclusion__C_3_3_2"
+									type="text" ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',initValue:'√'}" />
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>
+								<span>(3)电气安全装置</span><span><span>（打开、关闭门，</span></span><span>
+								</span><span><span>检查门的启闭和杂物电梯启动情况）</span></span>
+							</p>
+							<p>
+								<span>应当设置用以验证门关闭的电气安全装置</span>
+							</p>
+						</td>
+						<td>
+							<p>
+							<input id="record__C_3_3_3" name="record__C_3_3_3" type="text"
+								ltype="select" value="" class="cC_3_3_2"
+									ligerui="{data:[{'id':'资料确认符合','text':'资料确认符合'},{'id':'资料确认不符合','text':'资料确认不符合'},
+												{'id':'操作验证符合','text':'操作验证符合'},{'id':'操作验证不符合','text':'操作验证不符合'}],initValue:'资料确认符合'}"
+												onchange="changeRecord(this,this.value)"/>
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align:center;">
+							<p>
+								<span>8</span>
+							</p>
+						</td>
+						<td style="text-align:center;">
+							<p>
+								<span>B</span>
+							</p>
+						</td>
+						<td colspan="2">
+							<p>
+								<span>3.5</span><span> </span><span>极限开关</span><span><span>（模拟动作试验）</span></span>
+							</p>
+							<p>
+								<span><span>对于电力驱动的杂物电梯，极限开关应当设置在尽可能接近端站时起作用而无误动作危险的位置上。该开关应当在轿厢或者对重</span></span><span>(如果有)接触缓冲器或者限位挡块之前</span><span><span>起作用，并且在缓冲器被压缩期间或者轿厢与</span></span><span>限位挡块接触期间始终保持动作状态。</span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="record__B_3_5" name="record__B_3_5" type="text"
+									ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_record',initValue:'√'}"
+									class="cB_3_5" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="conclusion__B_3_5" name="conclusion__B_3_5"
+									type="text" ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',initValue:'√'}" />
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td rowspan="2" style="text-align:center;">
+							<p>
+								<span>9</span>
+							</p>
+						</td>
+						<td rowspan="2" style="text-align:center;">
+							<p>
+								<span>C</span>
+							</p>
+						</td>
+						<td rowspan="2" style="text-align:center;">
+							<p>
+								<span>3.7</span>
+							</p>
+							<p>
+								<span>底坑设施</span>
+							</p>
+							<p>
+								<span>与装置</span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<span>(1)底坑地面</span><span><span>（目测）</span></span>
+							</p>
+							<p>
+								<span><span>底坑底部应当平整、清洁，无渗水、漏水</span></span>
+							</p>
+						</td>
+						<td>
+							<p>
+							<input id="record__C_3_7_1" name="record__C_3_7_1" type="text"
+								ltype="select" value="" class="cC_3_7_1"
+								ligerui="{data:[{'id':'资料确认符合','text':'资料确认符合'},{'id':'资料确认不符合','text':'资料确认不符合'},
+												{'id':'目测符合','text':'目测符合'},{'id':'目测不符合','text':'目测不符合'}] ,initValue:'资料确认符合'}"
+												onchange="changeRecord(this,this.value)"/>
+							
+							</p>
+						</td>
+						<td rowspan="2">
+							<p>
+								<input id="conclusion__C_3_7_1" name="conclusion__C_3_7_1"
+									type="text" ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',initValue:'√'}" />
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>
+								<span>(3)底坑停止装置和电源插座</span><span><span>（目测）</span></span>
+							</p>
+							<p>
+								<span><span>对于人员可以进入的井道，底坑内应当设置停止装置和</span><span>
+										2P+PE </span></span><span>型或者以安全特低电压供电(当确定无须使用</span><span><span>
+										220V </span></span><span>的电动工具时)的电源插座</span>
+							</p>
+						</td>
+						<td>
+							<p>
+							<input id="record__C_3_7_3" name="record__C_3_7_3" type="text"
+								ltype="select" value="" class="cC_3_7_1"
+								ligerui="{data:[{'id':'资料确认符合','text':'资料确认符合'},{'id':'资料确认不符合','text':'资料确认不符合'},
+												{'id':'目测符合','text':'目测符合'},{'id':'目测不符合','text':'目测不符合'}] ,initValue:'资料确认符合'}"
+												onchange="changeRecord(this,this.value)"/>
+							
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td rowspan="2" style="text-align:center;">
+							<p>
+								<span>10</span>
+							</p>
+						</td>
+						<td rowspan="2" style="text-align:center;">
+							<p>
+								<span>C</span>
+							</p>
+						</td>
+						<td rowspan="2" style="text-align:center;">
+							<p>
+								<span>3.8</span>
+							</p>
+							<p>
+								<span>缓冲器或</span>
+							</p>
+							<p>
+								<span>者限位挡</span>
+							</p>
+							<p>
+								<span>块</span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<span>(1)缓冲器或者限位挡块的设置(目测)</span>
+							</p>
+							<p>
+								<span>应当采用缓冲器或者限位挡块来限制轿厢和对重的下部行程。如果在杂物电梯的轿厢、对重(平衡重</span><span>)
+								</span><span><span>之下确有人能够到达的空间，应当在轿厢和对重的行程底部极限位置设置缓冲器</span></span><span>。</span>
+							</p>
+						</td>
+						<td>
+							<p>
+							<input id="record__C_3_8_1" name="record__C_3_8_1" type="text"
+								ltype="select" value="" class="cC_3_8_1"
+								ligerui="{data:[{'id':'资料确认符合','text':'资料确认符合'},{'id':'资料确认不符合','text':'资料确认不符合'},
+												{'id':'目测符合','text':'目测符合'},{'id':'目测不符合','text':'目测不符合'}] ,initValue:'资料确认符合'}"
+												onchange="changeRecord(this,this.value)"/>
+							
+							</p>
+						</td>
+						<td rowspan="2">
+							<p>
+								<input id="conclusion__C_3_8_1" name="conclusion__C_3_8_1"
+									type="text" ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',initValue:'√'}" />
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>
+								<span>(2)缓冲器液位和电气安全装置(模拟动作试验)</span>
+							</p>
+							<p>
+								<span>耗能型缓冲器液位应当</span><span><span>正确，有验证柱塞复位的电气安全装置</span></span>
+							</p>
+						</td>
+						<td>
+							<p>
+							<input id="record__C_3_8_2" name="record__C_3_8_2" type="text"
+								ltype="select" value="" class="cC_3_8_1"
+								ligerui="{data:[{'id':'资料确认符合','text':'资料确认符合'},{'id':'资料确认不符合','text':'资料确认不符合'},
+												{'id':'试验验证','text':'试验验证'},
+												{'id':'对照检查','text':'对照检查'}] ,initValue:'资料确认符合'}"
+												onchange="changeRecord(this,this.value)"/>
+							
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align:center;">
+							<p>
+								<span>11</span>
+							</p>
+						</td>
+						<td style="text-align:center;">
+							<p>
+								<span>B</span>
+							</p>
+						</td>
+						<td style="text-align:center;">
+							<p>
+								<span>3.9</span>
+							</p>
+							<p>
+								<span>限速器绳</span>
+							</p>
+							<p>
+								<span>、安全绳</span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<span>★(2)电气安全装置</span><span><span>（动作电气安全装置，观察杂物电梯运行状况）</span></span>
+							</p>
+							<p>
+								<span>当限速器绳或者<span>安全绳断裂或者过分伸长时，应当通过电气安全装置的作用，使驱动主机</span></span><span>/</span><span>液压泵站停止运转</span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="record__B_3_9_2S" name="record__B_3_9_2S" type="text"
+									ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_record',initValue:'√'}"
+									class="cB_3_9" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="conclusion__B_3_9_2S" name="conclusion__B_3_9_2S"
+									type="text" ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',initValue:'√'}" />
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align:center;">
+							<p>
+								<span>12</span>
+							</p>
+						</td>
+						<td style="text-align:center;">
+							<p>
+								<span>B</span>
+							</p>
+						</td>
+						<td rowspan="5" style="text-align:center;">
+							<p>
+								<span>4</span>
+							</p>
+							<p>
+								<span><span>轿厢</span></span>
+							</p>
+							<p>
+								<span><span>与对</span></span>
+							</p>
+							<p>
+								<span><span>重（</span></span>
+							</p>
+							<p>
+								<span><span>平衡</span></span>
+							</p>
+							<p>
+								<span><span>重）</span></span>
+							</p>
+						</td>
+						<td colspan="2">
+							<p>
+								<span>4.3</span><span> </span><span>防止轿厢移动装置</span><span><span>（目测；通过模拟操作以及使停止装置动作，检查机械停止装置和停止装置的功能）</span></span>
+							</p>
+							<p>
+								<span><span>如果允许人员进入轿顶，则轿厢应当设置机械停止装置以使其停在指定位置上，并且在轿顶上或者井道内每一层门旁设置停止装置</span></span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="record__B_4_3" name="record__B_4_3" type="text"
+									ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_record',initValue:'√'}"
+									class="cB_4_3" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="conclusion__B_4_3" name="conclusion__B_4_3"
+									type="text" ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',initValue:'√'}" />
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td rowspan="4">
+							<p style="text-align:center;">
+								<span>13</span>
+							</p>
+						</td>
+						<td rowspan="4" style="text-align:center;">
+							<p>
+								<span>C</span>
+							</p>
+						</td>
+						<td rowspan="4" style="text-align:center;">
+							<p>
+								<span>4.4</span>
+							</p>
+							<p>
+								<span>护脚板和</span>
+							</p>
+							<p>
+								<span>自动搭接</span>
+							</p>
+							<p>
+								<span>地坎</span>
+							</p>
+						</td>
+						<td rowspan="2">
+							<p>
+								<span>(1)轿厢地坎护脚板</span><span><span>（目测或者测量相关数据）</span></span>
+							</p>
+							<p>
+								<span><span>轿厢地坎下应当装设护脚板，其垂直部分的高度不小于有效</span></span><span>开锁区</span><span><span>域的高度，宽度不小于层站入口宽度</span></span>
+							</p>
+						</td>
+						<td>
+							<p>
+							<input id="record__C_4_4_1" name="record__C_4_4_1" type="text"
+								ltype="select" value="" class="cC_4_4_1"
+								ligerui="{data:[{'id':'资料确认符合','text':'资料确认符合'},{'id':'资料确认不符合','text':'资料确认不符合'},
+												{'id':'目测符合','text':'目测符合'},{'id':'目测不符合','text':'目测不符合'},
+												{'id':'相关数据符合','text':'相关数据符合'},{'id':'相关数据不符合','text':'相关数据不符合'}],initValue:'资料确认符合'}"
+												onchange="changeRecord(this,this.value)"/>
+							</p>
+						</td>
+						<td rowspan="4">
+							<p>
+								<input id="conclusion__C_4_4_1" name="conclusion__C_4_4_1"
+									type="text" ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',initValue:'√'}" />
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>
+								<input id="record__C_4_4_1_1" name="record__C_4_4_1_1"
+									type="text" ltype="text" value="" ligerui="{width:75}" />
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td rowspan="2">
+							<p>
+								<span>(2)自动搭接地坎</span><span><span>（目测或者测量相关数据）</span></span>
+							</p>
+							<p>
+								<span><span>如果杂物电梯采用垂直滑动门并且其服务位置与层站等高，可以用固定在层站上的自动搭接地坎取代护脚板，自动搭接地</span></span><span>坎应当</span><span><span>满足下述要求：</span></span>
+							</p>
+							<p>
+								<span>①层门开启</span><span><span>时，自动移动到服务位置；</span></span><span>在层门关闭</span><span><span>作用下收起；</span></span>
+							</p>
+							<p>
+								<span><span>②宽度不小于轿厢入口宽度；</span></span>
+							</p>
+							<p>
+								<span><span>③长度不小于开锁区域的一半加</span><span>
+										50mm </span></span><span>或者轿底至层门地坎的距离加</span><span><span>
+										20mm</span></span><span>；</span>
+							</p>
+							<p>
+								<span><span>④无论轿厢在何位置，都</span></span><span>与轿底有不小于</span><span><span>
+										20mm </span></span><span>的重叠</span>
+							</p>
+						</td>
+						<td>
+							<p>
+							<input id="record__C_4_4_2" name="record__C_4_4_2" type="text"
+								ltype="select" value="" class="cC_4_4_1"
+								ligerui="{data:[{'id':'资料确认符合','text':'资料确认符合'},{'id':'资料确认不符合','text':'资料确认不符合'},
+												{'id':'目测符合','text':'目测符合'},{'id':'目测不符合','text':'目测不符合'},
+												{'id':'相关数据符合','text':'相关数据符合'},{'id':'相关数据不符合','text':'相关数据不符合'}],initValue:'资料确认符合'}"
+												onchange="changeRecord(this,this.value)"/>
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>
+								<input id="record__C_4_4_2_1" name="record__C_4_4_2_1"
+									type="text" ltype="text" value="" ligerui="{width:75}" />
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>
+		</div>
+	</div>
+</body>
+</html>

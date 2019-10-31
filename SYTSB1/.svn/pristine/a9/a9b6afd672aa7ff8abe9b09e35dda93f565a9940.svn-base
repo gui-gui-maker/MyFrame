@@ -1,0 +1,358 @@
+<%@page import="java.util.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="com.khnt.utils.StringUtil"%>
+<%@ page contentType="text/html;charset=UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+<head>
+<%
+String type=request.getParameter("type");
+System.out.println(type);
+String realPath1 = request.getSession().getServletContext().getRealPath("upload");
+
+System.out.print(">>>>>>>"+realPath1+"<<<<<<");
+String[] id = realPath1.split("\\\\");
+String realPath="";
+for(int i=0;i<id.length;i++){
+	if(StringUtil.isNotEmpty(realPath)){
+	realPath = realPath +"/"+id[i];
+	}else{
+		realPath = id[0];
+	}
+}
+String today = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+%>
+<!--  -->
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+<base href="${pageContext.request.scheme}://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}/" />
+<%@include file="/k/kui-base-form.jsp"%>
+<style type="text/css">
+    .l-icon-exportDoc{background:url('k/kui/skins/icons/word.gif') no-repeat center;}
+    .l-icon-printPreview{background:url('k/kui/skins/icons/search2.gif') no-repeat center;}
+    .l-icon-fullScreen{background:url('k/kui/skins/icons/div-drag.gif') no-repeat center;}
+</style>
+<script src="app/pub/office/ntkoofficecontrol.js" type="text/javascript"></script>
+<script src="app/pub/office/editor.js" type="text/javascript"></script>
+<script type="text/javascript">
+	var basepath = "${pageContext.request.contextPath}/";
+	var toolBar;//工具条
+	var beanData = api.data.id;//父窗口的数据
+	var identifier = api.data.identifier;//父窗口的数据
+	var com_name = api.data.com_name;//父窗口的数据
+	var item1 = api.data.item1;//父窗口的数据
+	var item2 = api.data.item2;//父窗口的数据
+	var item3 = api.data.item3;//父窗口的数据
+	var content = api.data.content;//父窗口的数据
+	var inspector = api.data.inspector;//父窗口的数据
+	var inspector_date = api.data.inspector_date;//父窗口的数据
+	var type = api.data.type;//父窗口的数据
+	/* 意见通知书中的额外数据 */
+	var inspector_people = api.data.inspector_people;//父窗口的数据
+	var inspector_people_date = api.data.inspector_people_date;//父窗口的数据
+	$(function(){
+		var height = $(window).height()-$('.toolbar-tm').height();
+		$("#scroll-tm").css({height:height});
+		
+		$(".layout").ligerLayout({
+			bottomHeight:30,
+			space : 0
+		});
+	});
+	
+	//文档标签赋值
+	function setBookMarkValue1(bookMarkName,inputValue){
+		var bkmkObj = TANGER_OCX_OBJ.ActiveDocument.BookMarks(bookMarkName);
+		if(!bkmkObj){
+			return;
+		}
+		var saverange = bkmkObj.Range;
+		saverange.Text = inputValue;
+		TANGER_OCX_OBJ.ActiveDocument.Bookmarks.Add(bookMarkName,saverange);
+	}
+	
+	function initPage(initLoad){
+		//alert(initLoad);
+		initToolBar(initLoad);
+		createNtkoEditor("editor_container");
+		//加载pdf插件
+		addPdfPlugin();
+		//远程加载文档
+		loadBumfDoc(initLoad);
+		initDocView();
+	}
+	//加载正文
+ 	function loadBumfDoc(initLoad){
+		if("${param.op_type}"=="print" && 'note'=='<%=type%>'){
+			TANGER_OCX_OBJ.OpenFromURL($("base").attr("href") + "/upload/pdf/quality/jdjy_file/"+beanData+".pdf");
+			//TANGER_OCX_OBJ.OpenFromURL("${pageContext.request.scheme}://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}/app/qualitymanage/templete.pdf");
+		}else{
+			if(initLoad=="print"){
+				TANGER_OCX_OBJ.OpenFromURL($("base").attr("href") + "/upload/pdf/quality/jdjy_file/"+beanData+".pdf");
+				//TANGER_OCX_OBJ.OpenFromURL("${pageContext.request.scheme}://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}/app/qualitymanage/templete.pdf");
+			}else{
+				TANGER_OCX_OBJ.ToolBars=true;
+				if(beanData != null){
+					if(type=="特种设备监督检验联络单"){
+						TANGER_OCX_OBJ.OpenFromURL("${pageContext.request.scheme}://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}/app/qualitymanage/01liaison.doc");
+						setBookMarkValue1("identifier",api.data.identifier);
+						setBookMarkValue1("com_name",api.data.com_name);
+						setBookMarkValue1("item1",api.data.item1);
+						setBookMarkValue1("item2",api.data.item2);
+						setBookMarkValue1("item3",api.data.item3);
+						setBookMarkValue1("content",api.data.content);
+						setBookMarkValue1("inspector",changeLength(api.data.inspector));
+						setBookMarkValue1("inspector_date",api.data.inspector_date);
+					}else if(type=="特种设备监督检验意见通知书"){
+						TANGER_OCX_OBJ.OpenFromURL("${pageContext.request.scheme}://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}/app/qualitymanage/02opinionNote.doc");
+						setBookMarkValue1("identifier",api.data.identifier);
+						setBookMarkValue1("com_name",api.data.com_name);
+						setBookMarkValue1("item1",api.data.item1);
+						setBookMarkValue1("item2",api.data.item2);
+						setBookMarkValue1("item3",api.data.item3);
+						setBookMarkValue1("content",api.data.content);
+						setBookMarkValue1("inspector",changeLength(api.data.inspector));
+						setBookMarkValue1("inspector_date",api.data.inspector_date);
+						setBookMarkValue1("inspector_people",changeLength(api.data.inspector_people));
+						setBookMarkValue1("inspector_people_date",api.data.inspector_people_date);
+					}else{
+						TANGER_OCX_OBJ.OpenFromURL("${pageContext.request.scheme}://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}/app/qualitymanage/templete.doc");
+					}
+				}else{
+					TANGER_OCX_OBJ.OpenFromURL("${pageContext.request.scheme}://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}/app/qualitymanage/templete.doc");
+				}
+			}
+		}
+	}
+ 	function initDocView(){
+		if("${param.pageStatus}"=="detail"){
+			TANGER_OCX_OBJ.SetReadOnly(true);
+			TANGER_OCX_OBJ.Menubar = false;
+			TANGER_OCX_OBJ.Statusbar = false;
+			TANGER_OCX_OBJ.Toolbars = false;
+		}
+	}
+ 	function initToolBar(initLoad){
+    	var closeBtn;
+    	var sealBtn;
+    	var checkBtn;
+    	var printBtn;
+		 closeBtn={
+				id: "close",
+				text: "关闭",
+				icon:"close",
+				click: function(){
+				    api.close();
+				    api.data.window.Qm.refreshGrid();
+					return true;
+				}
+		 };
+		 sealBtn={
+					id: "seal",
+					text: "加盖印章",
+					icon:"seal",
+					click: function(){
+						_saveAsPdf();
+					}
+			 };
+		 checkBtn = {
+ 					id : "check",
+ 					text : "审核",
+ 					icon:"check",
+ 					click : function() {
+ 						check(beanData);
+ 						return false;
+ 					}
+ 				};
+ 		printBtn={
+				id: "print",
+				text: "打印",
+				icon:"print",
+				click: function(){	
+					doPrint();
+					if('liaison'=='<%=type%>'){
+						top.$.ajax({
+				             url: "QualityLiaisonAction/doPrint.do?id=" + beanData,
+				             type: "GET",
+				             dataType:'json',
+				             async: false,
+				             success:function(resp) {
+									if (resp.success) {
+									} else {
+										$.ligerDialog.error(resp.msg);
+									}
+								}
+				         });
+					}else if('note'=='<%=type%>' || 'seal'=='<%=type%>'){
+						top.$.ajax({
+				             url: "QualityNoteAction/doPrint.do?id=" + beanData,
+				             type: "GET",
+				             dataType:'json',
+				             async: false,
+				             success:function(resp) {
+									if (resp.success) {
+									} else {
+										$.ligerDialog.error(resp.msg);
+									}
+								}
+				         });
+					}
+				}
+		 };
+		var itemArr=new Array();
+		if("${param.op_type}"=="print"){
+			itemArr.push(printBtn);
+		}else if("${param.op_type}"=="check"){
+			itemArr.push(checkBtn);
+		}else if("${param.op_type}"=="seal"){
+			if(initLoad=="print"){
+				itemArr.push(printBtn);
+	 		}else{
+	 			if(type=="特种设备监督检验意见通知书"){
+					itemArr.push(sealBtn);
+				}
+	 		}
+		}
+		itemArr.push(closeBtn);
+		toolBar=$("#toolbar").ligerButton({
+			items:itemArr
+		});
+    }
+  	
+ 	function showBB(){
+		$("#sssss").show();
+	}
+ 	function check(id){
+		$('#sssss').hide();
+		top.$.dialog({
+			width : 500, 
+			height : 200, 
+			lock : true, 
+			title:"通知书审核",
+			parent:api,
+			content: 'url:app/qualitymanage/inspection_note_check.jsp?id='+id+'&type='+"<%=type%>",
+			data : {"window" : window}
+		});
+	}
+	function gz(pdfPath,report_sn,signPage,sealPstX,sealPstY,certPwd,certPath,sealXmlPath){
+		//初始化、指定处理函数、发送请求的函数
+		if (window.XMLHttpRequest) //Mozila
+		{
+			http_request = new XMLHttpRequest();
+		} else if (window.ActiveXobject) //IE
+		{
+		   try
+		   {
+				 http_request = new ActiveXObject("Msxml2.XMLHTTP");
+		   }
+		   catch (e)
+		   {
+			   try{
+					 http_request = new ActiveXObject("Microsoft.XMLHTTP");
+				   }
+				catch (e) { }
+		   }
+		}
+		 
+		if (!http_request)  // 异常，创建对象实例失败
+		{
+		   alert("不能创建XMLHttpRequest实例！！");
+		   return false;
+		}
+	
+		// 指定当服务器返回信息时客户端的处理方式
+		http_request.onreadystatechange = processRequest;
+		var url ="${pageContext.request.scheme}://${pageContext.request.serverName}:8081/gxBatchSealing/services/sign.jsp"; 
+		//var url ="http://localhost:8081/gxBatchSealing/services/sign.jsp"; 
+		//var url ="http://jx.scsei.org.cn:8081/gxBatchSealing/services/sign.jsp"; 
+		var sendContent = "<root><certPwd>"+certPwd+"</certPwd>"+
+								"<certPath>"+certPath+"</certPath>"+
+								"<sealXmlPath>"+sealXmlPath+"</sealXmlPath>"+
+								"<pdfPath>"+pdfPath+"</pdfPath>"+
+								"<signPage>"+signPage+"</signPage>"+
+								"<sealPstX>"+sealPstX+"</sealPstX>"+
+								"<sealPstY>"+sealPstY+"</sealPstY>"+
+								"</root>";
+								pdf_path = pdfPath;
+		http_request.open("POST",url,false);
+		http_request.send(sendContent);
+	}
+	//******************************************************************
+    function processRequest()
+    {
+		//alert("判断对象状态-----------"+http_request.readyState);
+        if (http_request.readyState == 4) // 判断对象状态
+        {
+           if (http_request.status == 200)  // 请求结果已经成功返回
+           {
+        	   
+        	
+        	   
+        	   /* alert(1);
+        	   $.post("inspectionInfo/basic/expPdfFlag.do",{"date":day,"id":api.data.id},function(res){
+        		   if(res.success){
+        			   alert("盖章并上传成功！");  
+        		   }
+        	   }) */
+        	   
+             //alert(http_request.responseText);
+			  //document.getElementById("getTxt").value=http_request.responseText;
+           }
+           else  //页面不正常
+           {
+              alert("你请求的页面不正常");
+           }
+        }
+    }
+    function _saveAsPdf(){
+		//客户端利用控件转PDF
+ 		var folder = "quality/jdjy_file";
+ 		TANGER_OCX_OBJ.PublishAsPDFToURL($("base").attr("href") + "fileupload/upload.do?businessId="+beanData+"&folder=pdf/"+folder+"&fname="+beanData, "pdfFile", "fileName="+beanData+".pdf",
+                beanData+".pdf", null, null, true, false, false, "kh,123$%^&*8848", true, false);
+	}
+    //保存盖章信息
+    function saveSealInfo(){
+    	$.ajax({
+				url: "QualityNoteAction/saveSealInfo.do?id="+beanData,
+	            type: "POST",
+	            success: function (resp) {
+	            	if(resp.success){
+	            		<%System.out.println("意见通知书盖章成功！");%>
+					}
+	            }
+			});
+    }
+    //调整长度
+    function changeLength(sign){
+    	var len=sign.length*2;
+    	for(var i=0;i<8-len;i++){
+    		sign=sign+" ";
+    	}
+    	return sign;
+    }
+</script>
+<script language="JScript" for="TANGER_OCX" event="AfterPublishAsPDFToURL(ret,code)">
+	//alert($("base").attr("href") + "/upload/pdf/quality/jdjy_file/"+beanData+".pdf");
+	/* gz($("base").attr("href") + "/upload/pdf/quality/jdjy_file/"+beanData+".pdf",beanData,"1",
+		"300","50","1234","D:/biceng/certs/JYZY.pfx","D:/biceng/seals/JYZY.xml"); */
+	gz("D:/Servers/SCSEI_WEB/webapps/ROOT/upload/pdf/quality/jdjy_file/"+beanData+".pdf",beanData,"1",
+				"391","70","1234","D:/biceng/certs/JYZY.pfx","D:/biceng/seals/JYZY.xml");
+	saveSealInfo();
+	initPage("print");
+</script>
+
+</head>
+<body onload="initPage();">
+<div class="scroll-tm" style="overflow: hidden" id="sssss"> 
+<div class="layout">
+	<div position="center" id="editor_container" style="width:100%;height:100%"></div>
+	<div position="bottom" style="height: 50px;">
+		<div class="div1" id="toolbar" style="padding:1px;text-align:right;"></div>
+	</div>
+</div>
+<iframe id="export_doc_iframe" style="display:none;">
+</iframe>
+</div>
+</body>
+</html>

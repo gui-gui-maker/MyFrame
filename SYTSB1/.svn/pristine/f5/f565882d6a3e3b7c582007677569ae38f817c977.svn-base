@@ -1,0 +1,60 @@
+/* CSS Document */
+
+.wrap { border: #60c2e9 solid 1px; border-collapse: collapse; width:98%; margin-bottom:5px;}
+.cnwp { background: url(img/cbj.jpg) repeat-x left top; width: 100%; border-collapse: collapse;}
+.caption { height: 30px; font: 12px "宋体"; color: #0976b1; font-weight: bold; background: url(img/cnwpbj.jpg) no-repeat left top; padding-left: 31px; }
+.caption_div { height: 30px; font: 12px "宋体"; color: #0976b1; font-weight: bold; background: url(img/cnwpbj.jpg) no-repeat left top; padding-left: 31px; line-height:30px;}
+.content { border: #60c2e9 solid 1px; padding: 20px; }
+.naviBtn {
+	border:1px solid #60c2e9; 
+	border-right:0px; 
+	border-top:0px;
+	border-left:0px;
+	text-align:center;
+}
+.chart_global {overflow-y:auto;}
+.chart_wel_ge {margin:0 auto;}
+.chart_wel_ge td {width:48%;}
+.chart_wel_ge td.blank {width:3%;}
+.chart_wel_ge td table fieldset {height:140px;}
+.chart_wel_box {float:left; width:96%; overflow:hidden; zoom:1;/* border:#f00 solid 1px;*/}
+.chart_wel_box .panel {float:left; width:100%; overflow:hidden; zoom:1;}
+.chart_wel_box .panel li {list-style:none; float:left; width:95%; height:24px; line-height:24px; padding-left:16px; background:url(../images/icon/icon-drop.gif) no-repeat left center; overflow:hidden;}
+.chart_wel_box .panel li a {color:#343434;}
+.chart_wel_box .panel li a:hover {color:#f00;}
+.chart_wel_box .panel li .title {cursor:pointer; float:left; width:88%; overflow:hidden;}
+.chart_wel_box .panel li .title:hover {color:#f00; text-decoration:underline;}
+.chart_wel_box .panel li .time {float:right; text-align:right; color:#888; font:11px Verdana, Geneva, sans-serif; line-height:22px; padding-top:1px;}
+.chart_wel_normal {overflow:hidden;}
+.chart_wel_normal ul {list-style:none; padding-top:10px;}
+.chart_wel_normal li {float:left; text-align:center; width:16%; padding:15px 0px 0px 0px; overflow:hidden; line-height:30px; border:#fff solid 1px;}
+.chart_wel_normal li a {color:#888; display:block;}
+.chart_wel_normal li:hover {border:#f00 solid 1px;}
+
+.menu {vertical-align:middle;cursor:default;text-align:left;font-size:13px;left:20px;border:solid 1px #CCCCCC;background-color:#EAEAEA;}
+.menu span {padding-left:20px}
+.sli {background-color:#FAFAFA;border:solid 1px #EAEAEA;padding-right:5px;overflow:hidden;}
+.sli_span {float:left;text-align:right;color: #00F;padding-left:5px;padding-right:5px;width:40%;white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis;overflow:hidden;}
+.sli_div {float:right;width:56%;white-space:nowrap;}
+.show {background-color:#FAFAFA;border:solid 1px #EAEAEA; padding-left:5px; padding-right:5px;overflow:hidden;}
+.show_json {float:left;width:80%;text-align:left;white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis;overflow:hidden;}
+.show_edit {width:20%;white-space:nowrap;float:right;text-align:right;}
+.save {background-color:#FAFAFA;border:solid 1px #EAEAEA;text-align:right;padding-right:10px;overflow:hidden;}
+.chart_type_switch{z-index:188;position:absolute;cursor:pointer;width:19px;height:19px;right:40px;top:5px;display:none}
+.switch_div {position:absolute;border:1px #c8c8c8 outset;text-align:left;z-index:199;display:none;background:white;padding:0 1px;min-width:120px;}
+.switch_div ul li{
+	margin: 1px 0;
+	padding: 6px;
+	cursor: default;
+	list-style: none outside none;
+	background-color: #efefef;
+}
+.switch_div ul li:HOVER{
+	background-color: #d0d0d0;
+}
+.zoom-opr{z-index:188;position:absolute;cursor:pointer;width:19px;height:18px;}
+.zoom-in{display:none;right:6px;top:5px;}
+.zoom-out{right:4px;top:5px;}
+.zoom-opr .zoom-btn{width:19px;height:18px;}
+.chart_container{display:inline-block;width:48%;margin:5px;padding:1px;border: #60c2e9 solid 1px;position:relative;height:300px;text-align:right;}
+.chart{width:100%;height:100%}

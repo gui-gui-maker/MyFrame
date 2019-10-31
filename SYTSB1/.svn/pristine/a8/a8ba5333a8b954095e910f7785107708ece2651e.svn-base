@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>乐山市特种设备监督检验所</title>
+<link rel="stylesheet" type="text/css" href="/app/webmanage/CSS/style.css" />
+<script src="/app/webmanage/js/foucs.js" type="text/javascript"></script>
+<script src="/app/webmanage/js/iepng.js" type="text/javascript"></script>
+<script src="/app/webmanage/js/jquery.js" type="text/javascript"></script>
+<script src="/app/webmanage/js/Guestbook.js" type="text/javascript"></script>
+<script src="/app/webmanage/js/SearchData.js" type="text/javascript"></script>
+<script type="text/javascript">
+   EvPNG.fix('div, ul, img, li, input');  //EvPNG.fix('包含透明PNG图片的标签'); 多个标签之间用英文逗号隔开。
+</script>
+</head>
+<body>
+<div class="top">
+	<div class="logo" title="乐山市特种设备监督检验所"></div>
+	<div class="flash">
+		<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="998" height="240" id="noname1">
+			<param name="movie" value="/app/webmanage/images/top.swf" />
+			<!-- <param name="wmode" value="opaque" /> -->
+			<param name="wmode" value="transparent" />
+			<!-- JS弹窗和菜单被FLASH遮住解决方法 --> 
+			<!-- <param name="allowScriptAccess" value="sameDomain" /> --><!-- 始终在中间，页面上最关键的属性 -->
+			<param name="quality" value="High" />
+			<param name="menu" value="True" />
+			<param name="flashvars" value="bbb=1" />
+			<embed src="/app/webmanage/images/top.swf" width="998" height="240" name="noname1" wmode="transparent" quality="high" allowScriptAccess="sameDomain" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer_cn" />
+			<!-- 非IE调用方式 -->
+		</object>
+	</div>
+</div>
+<!--导航菜单-->
+<div class="menu">
+	<ul>
+		<li><a href="/rsc/index.html">网站首页</a></li>
+		<li><a href="/rsc/jysjj/index.html">检验所简介</a></li>
+		<li><a href="/rsc/ywzl/index.html">业务指南</a></li>
+		<li><a href="/rsc/zxbs/index.html">在线办事</a></li>
+		<li><a href="/rsc/xwzx/index.html">新闻中心</a></li>
+		<li><a href="/rsc/xzzx/index.html">下载中心</a></li>
+		<li><a href="/rsc/tsjy/index.html">投诉建议</a></li>
+		<li><a href="/rsc/lxfs/index.html">联系方式</a></li>
+	</ul>
+</div><div class="wrap"> 
+	<!--内页开始-->
+	<div class="pages"> 
+		<!--二级页面右边内容区-->
+		<div class="pg_wrap">
+			<div class="position">
+				<div class="pg_caption">业务指南</div>
+				<div class="yourpos">您的位置： <a href="/rsc/index.html">首页</a> >> <a href="/rsc/ywzl/index.html">业务指南</a></div>
+			</div>
+			<div class="pg_content">
+				<div class="list">
+					<h1>办理《特种设备使用登记证》服务指南</h1>
+					<div class="pgtime">信息来源：乐山市质检局  时间：2014年03月07日 </div>
+						<p><p>一、事项名称<br/>办理锅炉、压力容器使用登记证<br/>二、颁发的证件及有效期<br/>《特种设备使用登记证》，检验合格期内有效。<br/>三、审批类型及法律效力<br/>登记，锅炉压力容器使用登记后可投入运行。<br/>四、设定依据<br/>《特种设备安全监察条例》<br/>《锅炉压力容器使用登记管理办法》<br/>五、审批条件<br/>1、特种设备的使用者具有合法的身份（自然人出示身份证，法人和其他组织出示登记证件）；<br/>2、特种设备由取得许可单位设计、制造、安装，并经监督检验安全性能符合安全技术规范的要求；<br/>3、使用者有与设备使用相适应的管理人员、技术人员、持证的特种设备作业人员；<br/>4、有维护保养能力，或者与专业维护保养单位建立了合同关系，能够及时对设备进行维护保养；<br/>5、使用者建立了健全的质量管理体系、各项管理制度、应急处理措施，并能有效运转；<br/>6、使用者建立了设备安全技术档案；<br/>7、使用者能够保证特种设备使用符合特种设备安全技术规范的基本要求。具体条件见相关的使用管理等安全技术规范。<br/>六、审批程序<br/>1、申请：使用单位应在锅炉、压力容器投入使用前或投入使用后30天内，持“申请资料”所列资料，报送到受理机构。<br/>2、受理 ：受理机构接到申请后，按以下情况进行处理：<br/>（1）申请资料不齐全或者不符合法定形式的，发出“不予受理通知书”告知申请人需要补充的全部内容。<br/>（2）申请资料齐全，符合法定形式，或申请人按照受理机构的要求提交全部申请资料的，受理使用登记申请，发出“业务受理回执”。<br/>3、审查与发证：受理机关依据法律、法规的规定，对申报资料进行审查，符合条件的，颁发《特种设备使用登记证》。<br/>七、申请资料<br/>1、使用单位组织机构代码证及办理人员身份证；<br/>2、《锅炉登记卡》或《压力容器登记卡》（采用国家质检总局统一制定的格式并逐台填写相关内容和加盖使用单位公章，一式两份）；<br/>3、安全技术规范要求的锅炉压力容器设计文件、产品质量合格证明、安装及使用维修说明、特种设备检验检测机构出具的制造过程监督检验证明；<br/>4、山东省特检院枣庄分院出具的安装过程监督检验证明和锅炉压力容器安装单位出具的安装质量证明书（采用国家质检总局统一制定的格式并加盖使用单位公章）；<br/>5、山东省特检院枣庄分院出具的安全附件（安全阀、爆破片、紧急切断阀、压力表等）检验检测报告；<br/>6、质量技术监督部门核发的特种设备作业人员（锅炉安全管理人员、压力容器安全管理人员、锅炉操作人员、水处理作业人员、压力容器操作人员）证；<br/>7、进口锅炉压力容器安全性能监督检验报告（仅限进口设备）；<br/>8、乐山市质检锅炉水处理方法、水质指标或锅炉制造单位出具的有机热载体指标；<br/>9、锅炉压力容器异地移装证明（仅限移装设备）；<br/>10、锅炉压力容器使用安全管理的有关规章制度（安全管理制度、岗位安全责任制度、操作规程、定期维修保养制度、事故应急措施和救援预案等）<br/>八、审批时限<br/>自受理之日起：一次申请10台设备以下，5个工作日办结；一次申请10－50台设备，15个工作日办结；一次申请50台设备以上，30个工作日办结（依法需要检验、检测所需的时间不计算在本时限）。<br/>九、审批受理机构及地点、联系电话和监督电话<br/>受理机构：乐山市质量技术监督局</p><p><img title="b03.png" src="http://localhost:9005/ueditor/jsp/upload/20140313/74751394676560251.png"/></p></p>
+					</div>
+			</div>
+		</div>
+	</div>
+<div class="foot">
+		<div class="footer">
+			<p>&copy; (C) 2004-2013 版权所有: 乐山市特种设备监督检验所</p>
+			<p>蜀ICP备12008332  地址：四川省乐山市中区龙游路北段269号</p>
+			<p>技术支持：<a href="http://www.khnt.com" target="_blank">成都川大科鸿新技术研究所</a></p>
+		</div>
+	</div>
+</div></body>
+</html>

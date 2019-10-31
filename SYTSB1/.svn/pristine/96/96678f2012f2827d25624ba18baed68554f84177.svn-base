@@ -1,0 +1,579 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<body>
+	<div id="layout2" style="width: 99.8%">
+		<input type="hidden" id="inputFocus" name="inputFocus" values=""
+			value="" title="" style="height: 5mm;"> <input type="hidden"
+			id="thisPage" name="thisPage" value="?page=6" values="?page=6"
+			title="" style="height: 5mm;">
+		<div position="center" class="wrapper"
+			style="overflow: auto; width: 100%" align="center">
+			<br>
+			<p class="a DocDefaults" style="line-height: 150%;">
+				<a name="RTPAGE_5__检验项目及其内容2"></a>
+			</p>
+			<table class="ad a1  two two" id="docx4j_tbl_5"
+				style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); position: relative; margin-left: 0.08in; table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 6.69in; left: -15.32px; top: -8px;">
+				<colgroup>
+					<col border="1" style="width: 5.88%;" class="">
+					<col border="1" style="width: 7.36%;" class="">
+					<col border="1" style="width: 7.36%;" class="">
+					<col border="1" style="width: 10.29%;" class="">
+					<col border="1" style="width: 42.69%;" class="">
+					<col border="1" style="width: 13.2%;" class="">
+					<col border="1" style="width: 13.23%;" class="">
+				</colgroup>
+				<tbody>
+					<tr style="height: 7mm;">
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: center;"
+							class=""><span class="a0"
+							style="font-weight: bold; font-size: 12pt; font-family: SimSun; position: relative; text-align: center;">序号</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; width: 21.5622px; height: 74px; text-align: center;"
+							class=""><span class="a0"
+							style="font-weight: bold; font-size: 12pt; font-family: SimSun; position: relative; text-align: center;">检验类别</span></td>
+						<td colspan="3"
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: left;"
+							class=""><span class="a0"
+							style="font-weight: bold; font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">检验项目及其内容</span></td>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="text-align: center;">
+								<span class="a0"
+									style="font-weight: bold; font-size: 12pt; font-family: SimSun; position: relative;">检验结果</span>
+							</p>
+						</td>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="text-align: center;">
+								<span class="a0"
+									style="font-weight: bold; font-size: 12pt; font-family: SimSun; position: relative;">检验结论</span>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 7mm;">
+						<td rowspan="3"
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: center;"
+							class=""><span class="a0"
+							style="font-weight: bold; font-size: 12pt; font-family: SimSun; position: relative; text-align: center;">5</span></td>
+						<td rowspan="3"
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: center;"
+							class=""><span class="a0"
+							style="font-weight: bold; font-size: 12pt; font-family: SimSun; position: relative; text-align: center;">C</span></td>
+						<td rowspan="20"
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: left;"
+							class=""><span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">2机房及相关设备</span></td>
+						<td rowspan="3"
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: left;"
+							class=""><span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">2.1通道和通道门</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: left;"
+							class=""><span class=""
+							style="font-family: SimSun; position: relative; text-align: left;">(1)通道设置①通往机房（机器设备间）的通道不应当高出楼梯所到平面4m；②梯子必须固定；③梯子高度超过1.50m时，其与水平方向的夹角应当在65°～75°之间，并不易滑动或者翻转；④靠近梯子顶端应当设置把手。</span><span
+							class="" style="position: relative; text-align: left;">：</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__C_2_1_1" name="record__C_2_1_1" type="text"
+									ltype="select" value=""
+									ligerui="{'code':'dt_jl_record','isMultiSelect':false,'isTextBoxMode':true,'width':74,'initValue':'符合'}"
+									class="cC_2_1    " onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="conclusion__C_2_1_1" name="conclusion__C_2_1_1"
+									type="text" ltype="select" value=""
+									ligerui="{'code':'dt_jl_conclusion','isMultiSelect':false,'isTextBoxMode':false,'width':75,'initValue':'合格'}"
+									values="" title="" style="height: 5mm;" class="      ">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 7mm;">
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: left;"
+							class=""><span class=""
+							style="font-family: SimSun; position: relative; text-align: left;">(2)通道永久照明</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__C_2_1_2" name="record__C_2_1_2" type="text"
+									ltype="select" value=""
+									ligerui="{'code':'dt_jl_record','isMultiSelect':false,'isTextBoxMode':true,'width':74,'initValue':'符合'}"
+									class="cC_2_1    " onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="conclusion__C_2_1_2" name="conclusion__C_2_1_2"
+									type="text" ltype="select" value=""
+									ligerui="{'code':'dt_jl_conclusion','isMultiSelect':false,'isTextBoxMode':false,'width':75,'initValue':'合格'}"
+									values="" title="" style="height: 5mm;" class="  ">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 7mm;">
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: left;"
+							class=""><span class=""
+							style="font-family: SimSun; position: relative; text-align: left;">(3)机房通道门的宽度应当不小于0.60m，高度不小于1.80m;标识“电梯机房——危险，未经允许禁止入内”；</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__C_2_1_3" name="record__C_2_1_3" type="text"
+									ltype="select" value=""
+									ligerui="{'code':'dt_jl_record','isMultiSelect':false,'isTextBoxMode':true,'width':74,'initValue':'符合'}"
+									class="cC_2_1    " onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="conclusion__C_2_1_3" name="conclusion__C_2_1_3"
+									type="text" ltype="select" value=""
+									ligerui="{'code':'dt_jl_conclusion','isMultiSelect':false,'isTextBoxMode':false,'width':75,'initValue':'合格'}"
+									values="" title="" style="height: 5mm;" class="    ">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 7mm;">
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: center;"
+							class=""><span class="a0"
+							style="font-weight: bold; font-size: 12pt; font-family: SimSun; position: relative; text-align: center;">6</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: center;"
+							class=""><span class="a0"
+							style="font-weight: bold; font-size: 12pt; font-family: SimSun; position: relative; text-align: center;">C</span></td>
+						<td colspan="2"
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: left;"
+							class=""><span class=""
+							style="font-family: SimSun; position: relative; text-align: left;">2.2机房（机器设备间）应当专用</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__C_2_2" name="record__C_2_2" type="text"
+									ltype="select" value=""
+									ligerui="{'code':'dt_jl_record','isMultiSelect':false,'isTextBoxMode':true,'width':74,'initValue':'符合'}"
+									class="cC_2_2    " onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="conclusion__C_2_2" name="conclusion__C_2_2"
+									type="text" ltype="select" value=""
+									ligerui="{'code':'dt_jl_conclusion','isMultiSelect':false,'isTextBoxMode':false,'width':75,'initValue':'合格'}"
+									values="" title="" style="height: 5mm;" class="  ">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 7mm;">
+						<td rowspan="3"
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: center;"
+							class=""><span class="a0"
+							style="font-weight: bold; font-size: 12pt; font-family: SimSun; position: relative; text-align: center;">7</span></td>
+						<td rowspan="3"
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: center;"
+							class=""><span class="a0"
+							style="font-weight: bold; font-size: 12pt; font-family: SimSun; position: relative; text-align: center;">C</span></td>
+						<td rowspan="3"
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: left;"
+							class=""><span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">2.3安全空间</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: left;"
+							class=""><span class=""
+							style="font-family: SimSun; position: relative; text-align: left;">(1)控制屏（柜）前的净空面积;不小于0.7m×0.5m;空间高度不小于2m</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__C_2_3_1" name="record__C_2_3_1" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:74,initValue:'符合'}"
+									class="cC_2_3          "
+									onchange="changeRecord(this,this.value)" values="" title=""
+									style="height: 5mm;">
+							</p>
+						</td>
+						<td rowspan="3"
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="conclusion__C_2_3_1" name="conclusion__C_2_3_1"
+									type="text" ltype="select" value=""
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:false,width:75,initValue:'合格'}"
+									values="" title="" style="height: 5mm;" class="      ">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 7mm;">
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: left;"
+							class=""><span class=""
+							style="font-family: SimSun; position: relative; text-align: left;">(2)维修、操作处的净空面积;0.5m×0.6m;空间高度不小于2m</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__C_2_3_2" name="record__C_2_3_2" type="text"
+									ltype="select" value=""
+									ligerui="{'code':'dt_jl_record','isMultiSelect':false,'isTextBoxMode':true,'width':74,'initValue':'符合'}"
+									class="cC_0_7        " onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 7mm;">
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: left;"
+							class=""><span class=""
+							style="font-family: SimSun; position: relative; text-align: left;">(3)机房内楼梯（台阶）、护栏</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__C_2_3_3" name="record__C_2_3_3" type="text"
+									ltype="select" value=""
+									ligerui="{'code':'dt_jl_record','isMultiSelect':false,'isTextBoxMode':true,'width':74,'initValue':'符合'}"
+									class="cC_0_7        " onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 7mm;">
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: center;"
+							class=""><span class="a0"
+							style="font-weight: bold; font-size: 12pt; font-family: SimSun; position: relative; text-align: center;">8</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: center;"
+							class=""><span class="a0"
+							style="font-weight: bold; font-size: 12pt; font-family: SimSun; position: relative; text-align: center;">C</span></td>
+						<td colspan="2"
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: left;"
+							class=""><span class=""
+							style="font-family: SimSun; position: relative; text-align: left;">2.4地面开口圈框应凸出地面至少50mm</span><span
+							class="" style="position: relative; text-align: left;">：</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__C_2_4" name="record__C_2_4" type="text"
+									ltype="select" value=""
+									ligerui="{'code':'dt_jl_record','isMultiSelect':false,'isTextBoxMode':true,'width':74,'initValue':'符合'}"
+									class="cC_2_4    " onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="conclusion__C_2_4" name="conclusion__C_2_4"
+									type="text" ltype="select" value=""
+									ligerui="{'code':'dt_jl_conclusion','isMultiSelect':false,'isTextBoxMode':false,'width':75,'initValue':'合格'}"
+									values="" title="" style="height: 5mm;" class="    ">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 7mm;">
+						<td rowspan="3"
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: center;"
+							class=""><span class="a0"
+							style="font-weight: bold; font-size: 12pt; font-family: SimSun; position: relative; text-align: center;">9</span></td>
+						<td rowspan="3"
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: center;"
+							class=""><span class="a0"
+							style="font-weight: bold; font-size: 12pt; font-family: SimSun; position: relative; text-align: center;">C</span></td>
+						<td rowspan="3"
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: left;"
+							class=""><span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">2.5照明与插座</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: left;"
+							class=""><span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">(1)
+								机房照明、照明开关</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__C_2_5_1" name="record__C_2_5_1" type="text"
+									ltype="select" value=""
+									ligerui="{'code':'dt_jl_record','isMultiSelect':false,'isTextBoxMode':true,'width':74,'initValue':'符合'}"
+									class="cC_2_5    " onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+						<td rowspan="3"
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="conclusion__C_2_5_1" name="conclusion__C_2_5_1"
+									type="text" ltype="select" value=""
+									ligerui="{'code':'dt_jl_conclusion','isMultiSelect':false,'isTextBoxMode':false,'width':75,'initValue':'合格'}"
+									values="" title="" style="height: 5mm;" class="  ">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 7mm;">
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: left;"
+							class=""><span class=""
+							style="font-family: SimSun; position: relative; text-align: left;">(2)至少有一个2P+PE型电源插座</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__C_2_5_2" name="record__C_2_5_2" type="text"
+									ltype="select" value=""
+									ligerui="{'code':'dt_jl_record','isMultiSelect':false,'isTextBoxMode':true,'width':74,'initValue':'符合'}"
+									class="cC_2_5    " onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 7mm;">
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: left;"
+							class=""><span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">(3)井道、轿厢照明和插座电源开关</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__C_2_5_3" name="record__C_2_5_3" type="text"
+									ltype="select" value=""
+									ligerui="{'code':'dt_jl_record','isMultiSelect':false,'isTextBoxMode':true,'width':74,'initValue':'符合'}"
+									class="cC_2_5  " onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 7mm;">
+						<td rowspan="4"
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: center;"
+							class=""><span class="a0"
+							style="font-weight: bold; font-size: 12pt; font-family: SimSun; position: relative; text-align: center;">10</span></td>
+						<td rowspan="4"
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: center;"
+							class=""><span class="a0"
+							style="font-weight: bold; font-size: 12pt; font-family: SimSun; position: relative; text-align: center;">B</span></td>
+						<td rowspan="4"
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: left;"
+							class=""><span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">2.6主开关</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: left;"
+							class=""><span class=""
+							style="font-family: SimSun; position: relative; text-align: left;">(1)主开关应易于接近和操作</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__B_2_6_1" name="record__B_2_6_1" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:74,initValue:'符合'}"
+									class="cB_2_6" onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+						<td rowspan="4"
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="conclusion__B_2_6_1" name="conclusion__B_2_6_1"
+									type="text" ltype="select" value=""
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:false,width:75,initValue:'合格'}"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 7mm;">
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: left;"
+							class=""><span class=""
+							style="font-family: SimSun; position: relative; text-align: left;">(2)主开关关闭时不得切断轿厢照明和通风、机房照明和电源插座、轿顶与底坑的电源插座、电梯井道照明、报警装置的供电电路</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__B_2_6_2" name="record__B_2_6_2" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:74,initValue:'符合'}"
+									class="cB_2_6" onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 7mm;">
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: left;"
+							class=""><span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">(3)断开、闭合位置稳定，能够防止误操作</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__B_2_6_3" name="record__B_2_6_3" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:74,initValue:'符合'}"
+									class="cB_2_6" onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 7mm;">
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: left;"
+							class=""><span class=""
+							style="font-family: SimSun; position: relative; text-align: left;">(4)如果不同电梯的部件共用一个机房，则每台电梯的主开关应当与驱动主机、控制柜、限速器等采用相同的标志</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__B_2_6_4" name="record__B_2_6_4" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:74,initValue:'符合'}"
+									class="cB_2_6" onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 7mm;">
+						<td rowspan="5"
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: center;"
+							class=""><span class="a0"
+							style="font-weight: bold; font-size: 12pt; font-family: SimSun; position: relative; text-align: center;">11</span></td>
+						<td rowspan="5"
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: center;"
+							class=""><span class="a0"
+							style="font-weight: bold; font-size: 12pt; font-family: SimSun; position: relative; text-align: center;">B</span></td>
+						<td rowspan="5"
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: left;"
+							class=""><span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">2.7驱动主机</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: left;"
+							class=""><span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">(1)驱动主机上设有名牌</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__B_2_7_1" name="record__B_2_7_1" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:74,initValue:'符合'}"
+									class="cB_2_7" onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+						<td rowspan="5"
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="conclusion__B_2_7_1" name="conclusion__B_2_7_1"
+									type="text" ltype="select" value=""
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:false,width:75,initValue:'合格'}"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 7mm;">
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: left;"
+							class=""><span class=""
+							style="font-family: SimSun; position: relative; text-align: left;">(2)工作时应无异常噪声,震动</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__B_2_7_2" name="record__B_2_7_2" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:74,initValue:'符合'}"
+									class="cB_2_7" onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 7mm;">
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: left;"
+							class=""><span class=""
+							style="font-family: SimSun; position: relative; text-align: left;">(3)曳引轮轮槽不得有严重磨损,如果轮槽的磨损可能影响曳引能力时，应当进行曳引能力验证试验</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__B_2_7_3" name="record__B_2_7_3" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:74,initValue:'符合'}"
+									class="cB_2_7" onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 7mm;">
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: left;"
+							class=""><span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">(4)制动器动作灵活，工作面上没
+								有油污</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__B_2_7_4" name="record__B_2_7_4" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:74,initValue:'符合'}"
+									class="cB_2_7" onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 7mm;">
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: middle; text-align: left;"
+							class=""><span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">(5)手动紧急操作装置</span></td>
+						<td
+							style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding: 1px; vertical-align: middle;"
+							class="">
+							<p class="a-ad-BR DocDefaults" style="padding: 1px;">
+								<input id="record__B_2_7_5" name="record__B_2_7_5" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:74,initValue:'符合'}"
+									class="cB_2_7" onchange="changeRecord(this,this.value)"
+									values="" title="" style="height: 5mm;">
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="a DocDefaults" style="line-height: 150%;"></p>
+		</div>
+	</div>
+	</div>
+</body>
+</html>

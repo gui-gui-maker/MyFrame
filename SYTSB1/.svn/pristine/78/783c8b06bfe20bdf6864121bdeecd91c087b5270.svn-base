@@ -1,0 +1,32 @@
+package com.khnt.rtbox.config.dao;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.khnt.core.crud.dao.impl.EntityDaoImpl;
+import com.khnt.rtbox.config.bean.RtPage;
+
+/**
+ * <p>
+ * 
+ * </p>
+ * 
+ * @ClassName RtPageDao
+ * @JDK 1.5
+ * @author CODER_V3.0
+ * @date 2016-03-22 09:51:04
+ */
+@Repository("rtPageDao")
+public class RtPageDao extends EntityDaoImpl<RtPage> {
+	
+	public RtPage getByCode(String rtCode) {
+		@SuppressWarnings("unchecked")
+		List<RtPage> list = this.createQuery("from RtPage where rtCode=?", rtCode).list();
+		if (list != null && !list.isEmpty()) {
+			return list.get(0);
+		}
+		return null;
+	}
+	
+}

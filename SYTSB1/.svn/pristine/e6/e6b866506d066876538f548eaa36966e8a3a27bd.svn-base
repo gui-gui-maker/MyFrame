@@ -1,0 +1,13 @@
+/*
+
+Create time : 2008年11月12日 星期三 15:58:15
+Last Edit Time : 2008年11月12日 星期三 15:58:17
+Create And Edit user : LiuYueBo | www.nfsgo.com
+
+说明: 伪类:link :visited :hover分别代表超链接的通常、被访问后、和鼠标接触链接是的样式
+
+*/
+
+a,a:link,a:visited {text-decoration:none;color:#000000;/*display:inline-block;*/}
+a:hover {text-decoration:underline;color:#E60000;}
+a:focus {outline:none;}

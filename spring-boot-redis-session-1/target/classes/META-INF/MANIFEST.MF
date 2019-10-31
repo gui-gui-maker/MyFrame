@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: Administrator
+Build-Jdk: 12.0.2
+Implementation-Title: spring-boot-redis-session-1
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.neo
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/spring-boot-redis-session-1
+Created-By: Maven Integration for Eclipse
+

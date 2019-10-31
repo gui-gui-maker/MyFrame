@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+body,html{ margin:0; padding:0; width:100%; height:100%; background:url(../images/index/t-bg.jpg) repeat center center;background-attachment:fixed;}
+.light{width:100%; height:100%; background:url(../images/index/light.png) no-repeat  center top;background-attachment:fixed;}
+.layer{ width:960px; height:473px; background:url(../images/index/l-bg.png) no-repeat center center;}
+.layer-top{ width:960px; height:173px; background:url(../images/index/l-bg.png) no-repeat center top; margin-top:100px;}
+.login-btn{ width:245px; height:73px; background:url(../images/index/login.png) no-repeat center center; cursor:pointer;}
+.login-btn:hover{ opacity:0.9;}
+.text{ width:auto; height:auto; font-family:"微软雅黑","黑体"; font-size:18px;}
+.text a{ padding:0 10px;color:#fff; text-decoration:none;}
+.text a:hover{ color:#D7EEFF;}
+.yz{width:745px; height:73px;}
+.yz a{ font-family:"微软雅黑","黑体"; font-size:16px;color:#fff; padding:0 5px;text-decoration:none;}
+.yz a:hover{color:#D7EEFF;}
+.yz input{ border:1px solid #CCC; height:20px; width:120px;}
+.WordSection1{ width:554px; text-align:left;font-family:"微软雅黑","黑体"; font-size:16px;color:#006;}

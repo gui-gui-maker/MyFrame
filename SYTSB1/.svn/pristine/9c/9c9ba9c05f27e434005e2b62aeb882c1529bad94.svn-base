@@ -1,0 +1,417 @@
+package com.scts.car.bean;
+
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import org.hibernate.annotations.GenericGenerator;
+import com.khnt.core.crud.bean.BaseEntity;
+
+@Entity
+@Table(name = "TJY2_CAR_INS_DETAIL")
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class CarInsDetail implements BaseEntity{
+
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private String id;//主键id
+
+    private String fkCarId;//车辆id
+
+    private String carNum;//车牌号
+
+    private String insComName;//承保单位
+
+    private String coverInsComName;//投保单位
+
+    private String insContacts;//经纪联系人
+
+    private String insContactsTel;//经纪联系人电话
+
+    private String collectComeName;//收款单位户名
+
+    private String bankOfDiposit;//开户行
+
+    private String account;//账号
+
+    private java.util.Date insStartDate;//保险起期
+    
+    private java.util.Date insEndDate;//保险年限
+
+    private String insClss;//车辆损失
+
+    private String insDszrBe;//第三者责任保额
+
+    private String insDszrJe;//第三者责任金额
+
+    private String insQcdqx;//全车盗抢险
+
+    private String insSjzwzrBe;//司机座位责任保额
+
+    private String insSjzwzrJe;//司机座位责任金额
+
+    private String insCkzwzrBe;//乘客座位责任保额
+
+    private String insCkzwzrJe;//乘客座位责任金额
+
+    private String insBlx;//玻璃险
+
+    private String insZrx;//自然险
+
+    private String insSsx;//涉水险
+    
+    private String insHhx;//划痕险
+
+    private String insWfzddsftyx;//无法找到第三方特约险
+
+    private String insZxctyx;//专修厂特约险
+
+    private String insCsxbjmp;//车损险不计免赔
+
+    private String insSzxbjmp;//三者险不计免赔
+
+    private String insDqxbjmp;//盗抢险不计免赔
+
+    private String insZwxnjmp;//座位险不计免赔
+
+    private String insZrxbjmp;//自然险不计免赔
+
+    private String insSsxbjmp;//涉水险不计免赔
+
+    private String insSyxzj;//商业险总计
+
+    private String insJqx;//交强险
+
+    private String insCcx;//车船险
+
+    private String insDcbxzj;//单车保费总计
+    
+    private String createUserId;//创建人id
+
+    private String createUserName;//创建人
+
+    private java.util.Date createDate;//创建时间
+
+    private String lastModifyUserId;//最后修改人id
+
+    private String lastModifyUserName;//最后修改人
+
+    private java.util.Date lastModifyDate;//最后修改时间
+
+    private String dataStatus;//数据状态
+
+    public void setId(String value){
+        this.id = value;
+    }
+    public void setFkCarId(String value){
+        this.fkCarId = value;
+    }
+	public void setInsHhx(String insHhx) {
+		this.insHhx = insHhx;
+	}
+	public void setCarNum(String value){
+        this.carNum = value;
+    }
+    public void setInsComName(String value){
+        this.insComName = value;
+    }
+    public void setCoverInsComName(String value){
+        this.coverInsComName = value;
+    }
+    public void setInsContacts(String value){
+        this.insContacts = value;
+    }
+    public void setInsContactsTel(String value){
+        this.insContactsTel = value;
+    }
+    public void setCollectComeName(String value){
+        this.collectComeName = value;
+    }
+    public void setBankOfDiposit(String value){
+        this.bankOfDiposit = value;
+    }
+    public void setAccount(String value){
+        this.account = value;
+    }
+    public void setInsStartDate(java.util.Date value){
+        this.insStartDate = value;
+    }
+    public void setInsEndDate(java.util.Date value){
+        this.insEndDate = value;
+    }
+    public void setInsClss(String value){
+        this.insClss = value;
+    }
+    public void setInsDszrBe(String value){
+        this.insDszrBe = value;
+    }
+    public void setInsDszrJe(String value){
+        this.insDszrJe = value;
+    }
+    public void setInsQcdqx(String value){
+        this.insQcdqx = value;
+    }
+    public void setInsSjzwzrBe(String value){
+        this.insSjzwzrBe = value;
+    }
+    public void setInsSjzwzrJe(String value){
+        this.insSjzwzrJe = value;
+    }
+    public void setInsCkzwzrBe(String value){
+        this.insCkzwzrBe = value;
+    }
+    public void setInsCkzwzrJe(String value){
+        this.insCkzwzrJe = value;
+    }
+    public void setInsBlx(String value){
+        this.insBlx = value;
+    }
+    public void setInsZrx(String value){
+        this.insZrx = value;
+    }
+    public void setInsSsx(String value){
+        this.insSsx = value;
+    }
+    public void setInsWfzddsftyx(String value){
+        this.insWfzddsftyx = value;
+    }
+    public void setInsZxctyx(String value){
+        this.insZxctyx = value;
+    }
+    public void setInsCsxbjmp(String value){
+        this.insCsxbjmp = value;
+    }
+    public void setInsSzxbjmp(String value){
+        this.insSzxbjmp = value;
+    }
+    public void setInsDqxbjmp(String value){
+        this.insDqxbjmp = value;
+    }
+    public void setInsZwxnjmp(String value){
+        this.insZwxnjmp = value;
+    }
+    public void setInsZrxbjmp(String value){
+        this.insZrxbjmp = value;
+    }
+    public void setInsSsxbjmp(String value){
+        this.insSsxbjmp = value;
+    }
+    public void setInsSyxzj(String value){
+        this.insSyxzj = value;
+    }
+    public void setInsJqx(String value){
+        this.insJqx = value;
+    }
+    public void setInsCcx(String value){
+        this.insCcx = value;
+    }
+    public void setInsDcbxzj(String value){
+        this.insDcbxzj = value;
+    }
+    public void setCreateUserId(String value){
+        this.createUserId = value;
+    }
+    public void setCreateUserName(String value){
+        this.createUserName = value;
+    }
+    public void setCreateDate(java.util.Date value){
+        this.createDate = value;
+    }
+    public void setLastModifyUserId(String value){
+        this.lastModifyUserId = value;
+    }
+    public void setLastModifyUserName(String value){
+        this.lastModifyUserName = value;
+    }
+    public void setLastModifyDate(java.util.Date value){
+        this.lastModifyDate = value;
+    }
+    public void setDataStatus(String value){
+        this.dataStatus = value;
+    }
+    @Id
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid")
+    @Column(name ="ID",unique=true,nullable=false,insertable=true,updatable=true,length=32)
+    public String getId(){
+        return this.id;
+    }
+    @Column(name ="FK_CAR_ID",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getFkCarId(){
+        return this.fkCarId;
+    }
+    @Column(name ="CAR_NUM",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getCarNum(){
+        return this.carNum;
+    }
+    @Column(name ="INS_COM_NAME",unique=false,nullable=true,insertable=true,updatable=true,length=100)
+    public String getInsComName(){
+        return this.insComName;
+    }
+    @Column(name ="COVER_INS_COM_NAME",unique=false,nullable=true,insertable=true,updatable=true,length=100)
+    public String getCoverInsComName(){
+        return this.coverInsComName;
+    }
+    @Column(name ="INS_CONTACTS",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getInsContacts(){
+        return this.insContacts;
+    }
+    @Column(name ="INS_CONTACTS_TEL",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getInsContactsTel(){
+        return this.insContactsTel;
+    }
+    @Column(name ="COLLECT_COME_NAME",unique=false,nullable=true,insertable=true,updatable=true,length=100)
+    public String getCollectComeName(){
+        return this.collectComeName;
+    }
+    @Column(name ="BANK_OF_DIPOSIT",unique=false,nullable=true,insertable=true,updatable=true,length=100)
+    public String getBankOfDiposit(){
+        return this.bankOfDiposit;
+    }
+    @Column(name ="ACCOUNT",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getAccount(){
+        return this.account;
+    }
+    @Column(name ="INS_START_DATE",unique=false,nullable=true,insertable=true,updatable=true,length=7)
+    public java.util.Date getInsStartDate(){
+        return this.insStartDate;
+    }
+    @Column(name ="INS_END_DATE",unique=false,nullable=true,insertable=true,updatable=true,length=7)
+    public java.util.Date getInsEndDate(){
+        return this.insEndDate;
+    }
+    @Column(name ="INS_CLSS",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getInsClss(){
+        return this.insClss;
+    }
+    @Column(name ="INS_DSZR_BE",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getInsDszrBe(){
+        return this.insDszrBe;
+    }
+    @Column(name ="INS_DSZR_JE",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getInsDszrJe(){
+        return this.insDszrJe;
+    }
+    @Column(name ="INS_QCDQX",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getInsQcdqx(){
+        return this.insQcdqx;
+    }
+    @Column(name ="INS_SJZWZR_BE",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getInsSjzwzrBe(){
+        return this.insSjzwzrBe;
+    }
+    @Column(name ="INS_SJZWZR_JE",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getInsSjzwzrJe(){
+        return this.insSjzwzrJe;
+    }
+    @Column(name ="INS_CKZWZR_BE",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getInsCkzwzrBe(){
+        return this.insCkzwzrBe;
+    }
+    @Column(name ="INS_CKZWZR_JE",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getInsCkzwzrJe(){
+        return this.insCkzwzrJe;
+    }
+    @Column(name ="INS_BLX",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getInsBlx(){
+        return this.insBlx;
+    }
+    @Column(name ="INS_ZRX",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getInsZrx(){
+        return this.insZrx;
+    }
+    @Column(name ="INS_SSX",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getInsSsx(){
+        return this.insSsx;
+    }
+    @Column(name ="INS_HHX",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getInsHhx() {
+		return insHhx;
+	}
+    @Column(name ="INS_WFZDDSFTYX",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getInsWfzddsftyx(){
+        return this.insWfzddsftyx;
+    }
+    @Column(name ="INS_ZXCTYX",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getInsZxctyx(){
+        return this.insZxctyx;
+    }
+    @Column(name ="INS_CSXBJMP",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getInsCsxbjmp(){
+        return this.insCsxbjmp;
+    }
+    @Column(name ="INS_SZXBJMP",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getInsSzxbjmp(){
+        return this.insSzxbjmp;
+    }
+    @Column(name ="INS_DQXBJMP",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getInsDqxbjmp(){
+        return this.insDqxbjmp;
+    }
+    @Column(name ="INS_ZWXNJMP",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getInsZwxnjmp(){
+        return this.insZwxnjmp;
+    }
+    @Column(name ="INS_ZRXBJMP",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getInsZrxbjmp(){
+        return this.insZrxbjmp;
+    }
+    @Column(name ="INS_SSXBJMP",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getInsSsxbjmp(){
+        return this.insSsxbjmp;
+    }
+    @Column(name ="INS_SYXZJ",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getInsSyxzj(){
+        return this.insSyxzj;
+    }
+    @Column(name ="INS_JQX",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getInsJqx(){
+        return this.insJqx;
+    }
+    @Column(name ="INS_CCX",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getInsCcx(){
+        return this.insCcx;
+    }
+    @Column(name ="INS_DCBXZJ",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getInsDcbxzj(){
+        return this.insDcbxzj;
+    }
+    @Column(name ="CREATE_USER_ID",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getCreateUserId(){
+        return this.createUserId;
+    }
+    @Column(name ="CREATE_USER_NAME",unique=false,nullable=true,insertable=true,updatable=true,length=100)
+    public String getCreateUserName(){
+        return this.createUserName;
+    }
+    @Column(name ="CREATE_DATE",unique=false,nullable=true,insertable=true,updatable=true,length=7)
+    public java.util.Date getCreateDate(){
+        return this.createDate;
+    }
+    @Column(name ="LAST_MODIFY_USER_ID",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getLastModifyUserId(){
+        return this.lastModifyUserId;
+    }
+    @Column(name ="LAST_MODIFY_USER_NAME",unique=false,nullable=true,insertable=true,updatable=true,length=100)
+    public String getLastModifyUserName(){
+        return this.lastModifyUserName;
+    }
+    @Column(name ="LAST_MODIFY_DATE",unique=false,nullable=true,insertable=true,updatable=true,length=7)
+    public java.util.Date getLastModifyDate(){
+        return this.lastModifyDate;
+    }
+    @Column(name ="DATA_STATUS",unique=false,nullable=true,insertable=true,updatable=true,length=32)
+    public String getDataStatus(){
+        return this.dataStatus;
+    }
+
+
+} 

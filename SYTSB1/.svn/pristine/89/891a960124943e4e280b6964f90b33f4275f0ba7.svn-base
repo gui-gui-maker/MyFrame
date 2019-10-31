@@ -1,0 +1,292 @@
+package com.lsts.mobileapp.audit.service;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.khnt.bpm.ext.service.FlowExtManager;
+import com.khnt.core.crud.manager.impl.EntityManageImpl;
+import com.khnt.rbac.impl.bean.Employee;
+import com.khnt.rbac.impl.bean.User;
+import com.khnt.rtbox.config.bean.RtPage;
+import com.khnt.rtbox.config.bean.RtPersonDir;
+import com.khnt.rtbox.config.dao.RtPageDao;
+import com.khnt.rtbox.config.dao.RtPersonDirDao;
+import com.khnt.security.CurrentSessionUser;
+import com.khnt.security.util.SecurityUtil;
+import com.khnt.utils.DateUtil;
+import com.khnt.utils.StringUtil;
+import com.lsts.common.service.InspectionCommonService;
+import com.lsts.constant.Constant;
+import com.lsts.device.bean.DeviceDocument;
+import com.lsts.device.dao.DeviceDao;
+import com.lsts.inspection.bean.InspectionInfo;
+import com.lsts.inspection.bean.ReportPageCheckInfo;
+import com.lsts.inspection.bean.SysAutoIssueLog;
+import com.lsts.inspection.dao.InspectionInfoDao;
+import com.lsts.inspection.dao.ReportItemValueDao;
+import com.lsts.inspection.dao.ReportPerDao;
+import com.lsts.inspection.service.InspectionService;
+import com.lsts.inspection.service.InspectionZZJDInfoService;
+import com.lsts.inspection.service.ReportPageCheckInfoService;
+import com.lsts.inspection.service.SysAutoIssueLogService;
+import com.lsts.log.service.SysLogService;
+import com.lsts.mobileapp.audit.dao.AuditDao;
+import com.lsts.report.bean.Report;
+import com.lsts.report.bean.ReportItem;
+import com.lsts.report.dao.ReportDao;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+@Service
+public class AuditService extends EntityManageImpl<InspectionInfo, AuditDao>{
+
+	@Autowired
+	AuditDao auditDao;
+	@Autowired
+	InspectionInfoDao infoDao;
+	@Autowired
+	private RtPageDao rtPageDao;
+	@Autowired
+	private RtPersonDirDao rtPersonDirDao;
+	@Autowired
+	private ReportDao reportsDao;
+	@Autowired
+	private ReportPerDao reportPerDao;
+	@Autowired
+	DeviceDao deviceDao;
+	@Autowired
+	ReportItemValueDao reportItemValueDao;
+	
+	@Autowired
+	InspectionCommonService inspectionCommonService;
+	@Autowired
+	ReportPageCheckInfoService reportPageCheckInfoService;
+	@Autowired
+	SysAutoIssueLogService sysAutoIssueLogService;
+	@Autowired
+	FlowExtManager flowExtManager;
+	@Autowired
+	SysLogService logService;
+	@Autowired
+	InspectionZZJDInfoService inspectionZZJDInfoService;
+	
+	@Autowired
+	InspectionService inspectionService;
+	
+	
+	public List<Object[]> getAuditMission() throws Exception
+    {	
+		
+		CurrentSessionUser user = SecurityUtil.getSecurityUser();
+		@SuppressWarnings("unchecked")
+		List<Object[]> list = auditDao.createSQLQuery("select v.definition_id FLOWID,v.FLOWNAME, "
+						+" v.ACTIVITY_ID,v.NAME,v.FUNCTION,v.NUM "
+						+" from V_WORK_INFO_PLATFORM v "
+						+" where v.HANDLER_ID='"+ user.getUserId()+"' and state='300' and v.function like '%audit%'").list();
+		
+		return list;
+    }
+
+
+	@SuppressWarnings("unchecked")
+	public String loadReportDir(String id,String code) throws Exception {
+		
+		if (StringUtil.isNotEmpty(id)) {
+			List<RtPersonDir> rpd = this.rtPersonDirDao.createQuery("from RtPersonDir where fkBusinessId=? and rtCode=?", id, code).list();
+			if (rpd != null && !rpd.isEmpty()) {
+				return rpd.get(0).getRtDirJson();
+			}
+		}
+		List<RtPage> rtPage = this.rtPageDao.createQuery("from RtPage where rtCode=?", code).list();
+		if (rtPage != null && !rtPage.isEmpty()) {
+			return rtPage.get(0).getRtDirJson();
+		}
+		throw new Exception("没有找到目录,code:" + code);
+
+	}
+	
+	public String getRtcode(String id) {
+			InspectionInfo info = infoDao.get(id);
+			Report reports = reportsDao.get(info.getReport_type());
+			String code = reports.getRtboxCode();
+			return code;
+	}
+
+
+	public List<InspectionInfo> audit(HttpServletRequest request, JSONArray businessArray, JSONObject formData) throws Exception {
+		List<InspectionInfo> infos = new ArrayList<InspectionInfo>();
+		CurrentSessionUser user = SecurityUtil.getSecurityUser();
+		Employee emp = ((User)user.getSysUser()).getEmployee();
+		//审核日期验证
+		Date op_date = null;
+		try {
+			op_date = DateUtil.convertStringToDate("yyyy-MM-dd", formData.getString("op_time"));
+			Date cur_date = DateUtil.convertStringToDate("yyyy-MM-dd", DateUtil.getCurrentDateTime()) ;
+			if(op_date.after(cur_date)){
+				throw new Exception("日期逻辑错误，审核日期不能晚于当前日期，请重新选择！");
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+			throw new Exception("审核日期必填！");
+		}
+			
+		//批量验证加提交流程
+		for(int i = 0,len = businessArray.length(); i < len; i++) 
+		{
+			JSONObject obj = businessArray.getJSONObject(i);
+			String id = obj.getString("id");
+			
+			InspectionInfo info = infoDao.get(id);
+			infos.add(info);
+			//设备大类获取
+			DeviceDocument ddoc = deviceDao.get(info.getFk_tsjc_device_document_id());
+			String deviceBigClass = inspectionService.getBigClass(info,ddoc);
+			if(StringUtil.isEmpty(deviceBigClass)) 
+			{
+				throw new Exception("为获取到设备大类！");
+			}
+			// 验证审核日期是否早于编制日期
+			inspectionService.validateEnterTime(info,deviceBigClass,op_date);
+			
+			//
+			// 报告模板配置信息
+			Report report = reportsDao.get(info.getReport_type());
+			String check_flow = report.getCheck_flow();
+			String next_op_id = "";		// 签发人ID（employee表主键）
+			String next_op_name = "";	// 签发人姓名
+			String rule = "";			// 实际分配规则（1、相同单位优先分配；2、量少优先分配；）
+			boolean is_auto_issue = false;	// 是否是自动分配
+			if ("0".equals(check_flow)) 
+			{
+				// 获取报告自动分配签发人start......
+				// 2017-07-03修改，包括压力容器，所有设备均由系统进行自动分配签发人
+				// 2017-10-13修改，增加西藏报告，不进行自动分配，由审核人手动选择签发人
+				// 2017-12-12修改，增加新疆报告，不进行自动分配，由审核人手动选择签发人
+				// 2018-03-29修改，增加九寨报告，不进行自动分配，由审核人手动选择签发人
+				if("100069".equals(info.getCheck_unit_id()) 
+						|| "100090".equals(info.getCheck_unit_id()) 
+						|| "100091".equals(info.getCheck_unit_id()))
+				{
+					next_op_id = formData.getString("next_op_id");
+					next_op_name = formData.getString("next_op_name");
+					if(StringUtil.isNotEmpty(next_op_name))
+					{
+						if(next_op_name.equals(info.getEnter_op_name()) 
+								|| next_op_name.equals(user.getName()))
+						{
+							throw new Exception("您选择的签发人员（"+next_op_name+"）是已参与检验的人员，报告编号：" + info.getReport_sn() + "，请重新选择！");
+						}
+					}else{
+						throw new Exception("请选择签发人再提交！");
+					}
+					is_auto_issue = false;
+				}else{
+					// 除压力容器之外其他设备均由系统进行自动随机分配签发人
+					Map<String, Object> infoMaps = inspectionCommonService.autoIssue(info, deviceBigClass);
+					if(Boolean.valueOf(String.valueOf(infoMaps.get("success"))))
+					{
+						next_op_id = String.valueOf(infoMaps.get("next_op_id"));
+						next_op_name = String.valueOf(infoMaps.get("next_op_name"));
+						rule = infoMaps.get("rule")!=null?String.valueOf(infoMaps.get("rule")):"";
+					}else{
+						throw new Exception(String.valueOf(infoMaps.get("msg")));
+					}
+					is_auto_issue = true;
+				}
+				// 获取报告自动分配签发人end......
+				obj.put("flag", "参数判断是否获取下一步指定人");
+			}
+			else if ("1".equals(check_flow)) 
+			{
+				obj.put("flag", "0"); // 如果是0就不用指定下一步操作人
+			} 
+			obj.put("next_op_id",next_op_id);
+			obj.put("next_op_name",next_op_name);
+			obj.put("rule",rule);
+			// 获取报告页单独审核信息，如果存在报告页待审核或者审核不通过的情况，本次审核不能保存并不能提交至下一环节
+			// 报告页单独审核信息
+			List<ReportPageCheckInfo> list = reportPageCheckInfoService.queryPageInfos(info.getId(),info.getReport_type());
+			String returnMsg = "";
+			for (ReportPageCheckInfo reportPageCheckInfo : list) {
+				if (StringUtil.isNotEmpty(reportPageCheckInfo.getAudit_user_id())) {
+					if (!"1".equals(reportPageCheckInfo.getData_status())) {
+						String page_name = reportPageCheckInfo.getPage_name();
+						String data_status = "0".equals(reportPageCheckInfo.getData_status()) ? "待审核" : "审核不通过";
+						if (returnMsg.length() > 0) {
+							returnMsg += ";\r\n";
+						}
+						returnMsg += "报告书编号：" + info.getReport_sn() + "，报告页【" + page_name + "】" + data_status;
+					}
+				}
+			}
+			if (StringUtil.isNotEmpty(returnMsg)) {
+				returnMsg += "。\r\n请等待所有报告页审核通过后，再操作！";
+				throw new Exception(returnMsg);
+			}else{
+				//验证单独审核页通过
+				if ("0".equals(check_flow)) {
+					if(StringUtil.isEmpty(next_op_id)){
+						throw new Exception("当前无在岗签字人员，详询质量部028-86607892！");
+					} else {
+						if (is_auto_issue) {
+							// 记录系统自动分配报告签发日志
+							SysAutoIssueLog issueLog = new SysAutoIssueLog();
+							issueLog.setBusiness_id(info.getId());
+							issueLog.setReport_sn(info.getReport_sn());
+							issueLog.setReport_com_name(info.getReport_com_name().trim());
+							issueLog.setCheck_unit_id(info.getCheck_unit_id());
+							issueLog.setDevice_type(deviceBigClass);
+							issueLog.setOp_user_id(user.getId());
+							issueLog.setOp_user_name(user.getName());
+							issueLog.setOp_action(Constant.SYS_OP_ACTION_AUTO_ISSUE);
+							issueLog.setOp_remark(Constant.SYS_OP_ACTION_AUTO_ISSUE + "至【" + next_op_name + "】");
+							issueLog.setOp_time(DateUtil.convertStringToDate(Constant.ymdhmsDatePattern, DateUtil.getCurrentDateTime()));
+							issueLog.setTo_user_id(next_op_id);
+							issueLog.setTo_user_name(next_op_name);
+							issueLog.setIssue_type(rule);
+							sysAutoIssueLogService.save(issueLog);
+							// 标记报告为系统自动随机分配签发报告
+							info.setIs_auto_issue("1");
+						}
+					}
+				}
+				//更新审核人、审核时间
+				info.setExamine_id(emp.getId());
+				info.setExamine_name(emp.getName());
+				info.setExamine_Date(op_date);
+				
+				reportItemValueDao.createSQLQuery("update tzsb_report_item_value set item_value='"+info.getExamine_name()+"' where fk_inspection_info_id='"+info.getId()+"' and item_name like 'INSPECTION_AUDIT_STR%' and (item_value ='' or item_value is null)").executeUpdate();
+				reportPerDao.createSQLQuery("update  base_reports_per_audit set item_value='"+info.getExamine_name()+"',item_value_id='"+info.getExamine_id()+"' where  fk_inspection_info_id='"+id+"' and item_name like 'INSPECTION_AUDIT_STR%' and (item_value ='' or item_value is null)").executeUpdate();
+				// 提交到下一步步骤
+				inspectionService.flowProcess(request,obj,formData,info);
+			}
+		}
+		return infos;
+	}
+
+
+	public List<InspectionInfo> auditBack(HttpServletRequest request,JSONArray businessArray, JSONObject formData) throws Exception {
+		List<InspectionInfo> infos = new ArrayList<InspectionInfo>();
+		for (int i = 0, len = businessArray.length();i<len; i++) {
+			JSONObject obj = businessArray.getJSONObject(i);
+			String id = obj.getString("id");
+			
+			InspectionInfo info = infoDao.get(id);
+			infos.add(info);
+			// 如果审核状态是不通过，则返回上一环节(录入)
+			obj.put("revise_remark", "结论：不通过\n" + formData.getString("revise_remark"));
+			// 回退到上一步
+			inspectionService.backProcess(request,obj, info);
+		}
+		return infos;
+	}
+}

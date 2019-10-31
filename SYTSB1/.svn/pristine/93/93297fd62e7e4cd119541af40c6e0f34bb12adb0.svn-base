@@ -1,0 +1,65 @@
+package com.lsts.inspection.service;
+
+import java.util.Date;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.khnt.core.crud.manager.impl.EntityManageImpl;
+import com.khnt.security.CurrentSessionUser;
+import com.khnt.security.util.SecurityUtil;
+import com.lsts.inspection.bean.ReportRecordParse;
+import com.lsts.inspection.dao.ReportRecordParseDao;
+import com.lsts.log.service.SysLogService;
+/**
+ * 移动端原始记录检验项目解析表业务逻辑对象
+ * @ClassName ReportRecordParseService
+ * @JDK 1.7
+ * @author GaoYa
+ * @date 2016-06-27 上午11:17:00
+ */
+@Service("reportRecordParseService")
+public class ReportRecordParseService extends EntityManageImpl<ReportRecordParse, ReportRecordParseDao> {
+	
+	@Autowired
+	private ReportRecordParseDao reportRecordParseDao;
+	@Autowired
+	private SysLogService logService;
+	
+	/**
+	 * 删除
+	 * @param ids 
+	 * @param request 
+	 * @return 
+	 * @throws Exception
+	 */
+	public void del(HttpServletRequest request, String ids) throws Exception {
+		CurrentSessionUser user = SecurityUtil.getSecurityUser();	
+		String info_ids[] = ids.split(",");
+		for (int i = 0; i < info_ids.length; i++) {
+			// 1、删除与原始记录对应的检验业务信息
+			reportRecordParseDao
+			.createSQLQuery(
+					"update tzsb_report_record_parse set data_status='99' where id = ?",
+					info_ids[i]).executeUpdate();
+			
+			// 2、写入日志
+			logService.setLogs(info_ids[i], "删除移动端原始记录检验项目解析数据", "移动端原始记录检验项目解析数据作废", user.getId(), user
+					.getName(), new Date(), request.getRemoteAddr());
+		}
+	}
+	
+	/**
+	 * 根据report_id获取原始记录检验项目解析信息
+	 * @param report_id -- 报告ID
+	 * @return 
+	 * @author GaoYa
+	 * @date 2016-06-27 上午11:15:00
+	 */
+	public List<ReportRecordParse> getByReport_Id(String report_id) {
+		return reportRecordParseDao.getByReport_Id(report_id);
+	}
+}

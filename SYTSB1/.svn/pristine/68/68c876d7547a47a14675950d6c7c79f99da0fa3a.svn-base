@@ -1,0 +1,171 @@
+/* The line */
+.cbp_tmtimeline:before {
+	content: '';
+	position: absolute;
+	top: 5px;
+	bottom: 0;
+	width: 6px;
+	background: #afdcf8;
+	left: 165px;
+	margin-left: -10px;
+}
+.cbp_tmtimeline_menu {
+	position: fixed;
+	padding: 5px;
+	width: 96%;
+	height: 30px;
+	background-color: white;
+	z-index: 9999;
+	text-align: center;
+}
+.cbp_tmtimeline_menu li {
+	cursor: pointer;
+	padding: 5px 10px;
+	display: inline-block;
+	vertical-align: middle;
+	border-radius: 5px;
+}
+.cbp_tmtimeline_menu span {
+	margin-left: 5px;
+	display: inline-block;
+	font-size: 14px;
+	color: black;
+	font-weight: bold;
+	font-family: 微软雅黑,宋体;
+}
+
+.cbp_tmtimeline {
+	margin: 50px 20px 20px 0;
+	padding: 0;
+	list-style: none;
+	position: relative;
+} 
+
+.cbp_tmtimeline > li {
+	position: relative;
+}
+
+/* The date/time */
+.cbp_tmtimeline > li .cbp_tmtime {
+	display: block;
+	width: 220px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.cbp_tmtimeline > li .cbp_tmtime_no_oper {
+	top: 1em;
+}
+
+.cbp_tmtimeline > li .cbp_tmtime p {
+	display: block;
+	text-align: right;
+	margin: 0 100px 2px 0;
+	padding: 0;
+}
+
+.cbp_tmtime .cbp_date {
+	font-size: 1.4em;
+	color:  #3594cb;
+}
+.cbp_tmtime .cbp_date_blank{min-height:10px;}
+.cbp_tmtimeline > li .cbp_tmtime .cbp_time {
+	font-size: 1.1em;
+	color: #bbb;
+}
+
+.cbp_tmtimeline > li .cbp_tmtime .cbp_oper {
+	font-size: 1.2em;
+	color: black;
+}
+
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmtime span:last-child {
+	color: #6cbfee;
+}
+
+/* Right content */
+.cbp_tmtimeline > li .cbp_tmlabel {
+	margin: 0 0 15px 210px;
+	/* background: #3594cb;
+	color: #fff;*/
+	padding: 12px;
+	font-weight: 300;
+	line-height: 1.4;
+	position: relative;
+	border-radius: 5px;
+}
+
+.cbp_tmtimeline > li .cbp_tmlabel p{
+	font-size: 12px;
+	padding: 10px 0 0 5px;
+	margin: 5px;
+}
+.cbp_tmtimeline > li .cbp_tmlabel h3 { 
+	margin: 5px 0;
+	padding: 0 0 5px 0;
+	border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+
+.cbp_tmtimeline > li .cbp_tmlabel ol {
+	padding: 10px 0 0 2em;
+}
+
+.cbp_tmtimeline > li .cbp_tmlabel ol li{
+	list-style: decimal;
+	font-size: 12px;
+}
+/* The triangle */
+.cbp_tmtimeline > li .cbp_tmlabel:after {
+	right: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-width: 10px;
+	top: 25px;
+}
+
+.color_alllogs {background-color: #f2dede}
+.color_modify {background-color: #dff0d8}
+.color_feedback {background-color: #d9edf7}
+.color_discuss {background-color: #EEEEEE}
+
+.cbp_tmtimeline > li .color_modify:after {
+	border-right-color: #dff0d8;
+} 
+.cbp_tmtimeline > li .color_feedback:after {
+	border-right-color: #d9edf7;
+} 
+.cbp_tmtimeline > li .color_discuss:after {
+	border-right-color: #EEEEEE;
+} 
+
+/* The icons */
+.cbp_tmtimeline > li .cbp_tmicon {
+	width: 46px;
+	height: 46px;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 60px;
+	-webkit-font-smoothing: antialiased;
+	position: absolute;
+	color: #fff;
+	background: white;
+	border-radius: 50%;
+	box-shadow: 0 0 0 8px #afdcf8;
+	text-align: center;
+	left: 170px;
+	top: 10px;
+	margin: 0 0 0 -35px;
+	text-align:center;
+}
+.cbp_tmtimeline > li .cbp_tmicon img {
+	display:inline-block;
+	border-radius: 50%;
+    width:46px;
+    height:46px;

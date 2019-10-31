@@ -1,0 +1,59 @@
+  <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>佳能扫描仪</title>
+<script>
+function myFunction(a)
+{
+alert(a);
+alert("上传已经完成啦......!!");
+}
+function BeginScan()
+{
+alert("开始扫描");
+}
+function EndScan()
+{
+alert("结束扫描");
+}
+function ErrorEnd()
+{
+alert("错误结束扫描");
+}
+</script>
+</head>
+<body onload={SCANOCX.SetScanParam('F:\\test12\\test22\\',1);SCANOCX.SetSavePath('F:\\test999\\88\\',1);}>
+<div style="text-align:center;" >
+		<center>
+		<object classid="clsid:BEB4D964-617E-4067-BF8D-4A49C046FC74" codeBase = "SCANOCX.cab#version=1,2013,1025,1839" id="SCANOCX" width="1200" height="615">
+		</object>
+		</center>
+</div>
+<br>
+<input type="button" value="隐藏列表框" onclick="SCANOCX.DisplayWindow(0);" /> 
+<input type="button" value="显示列表框" onclick="SCANOCX.DisplayWindow(1);" /> 
+<input type="button" value="设置参数(bmp)"   onclick="SCANOCX.SetScanParam('F:\\test\\',0)" /> 
+<input type="button" value="设置参数(jpg)"   onclick="SCANOCX.SetScanParam('F:\\test\\',1)" /> 
+<input type="button" value="设置参数(tif)"   onclick="SCANOCX.SetScanParam('F:\\test\\',2)" /> 
+<input type="button" value="打开本地图片" onclick="SCANOCX.OpenFileFromLocal('c:\\test.tif');" /> 
+<input type="button" value="开始扫描" onclick="SCANOCX.BeginScan();" /> 
+<input type="button" value="灰掉10" onclick="SCANOCX.ButtonEnable(10,0);" /> 
+<input type="button" value="灰掉11" onclick="SCANOCX.ButtonEnable(11,0);" /> 
+<input type="button" value="亮开10" onclick="SCANOCX.ButtonEnable(10,1);" /> 
+<input type="button" value="亮开11" onclick="SCANOCX.ButtonEnable(11,1);" /> 
+<input type="button" value="隐藏工具栏" onclick="SCANOCX.DisplayToolbar(0);" /> 
+<input type="button" value="显示工具栏" onclick="SCANOCX.DisplayToolbar(1);" />
+<input type="button" value="删除所有" onclick="SCANOCX.DelAllImage();" />
+<input type="button" value="删除路径" onclick="SCANOCX.DeleteFromLocalDisk('G:\\test3\\');" />
+<input type="button" value="清理缓存" onclick="SCANOCX.CleanCache();" />
+<input type="button" value="设置上传服务器路径" onclick="SCANOCX.UploadFileToNet('http://localhost:8080/test2/file_update.jsp','c:\\test_upload\\test_pic');" />
+<input type="button" value="注册JS函数" onclick="SCANOCX.RegisterFunction('Complete',myFunction);" />
+<input type="button" value="注册开始扫描JS函数" onclick="SCANOCX.SetBeinScanJs(BeginScan);" />
+<input type="button" value="注册结束扫描JS函数" onclick="SCANOCX.SetEndScanJs(EndScan);" />
+<input type="button" value="注册错误结束扫描JS函数" onclick="SCANOCX.SetErrEndScanJs(ErrorEnd);" />
+<input type="button" value="全屏" onclick="SCANOCX.FullScreen();" />
+<input type="button" value="完成" onclick="SCANOCX.ScanFinish();" />
+</body>
+</html>

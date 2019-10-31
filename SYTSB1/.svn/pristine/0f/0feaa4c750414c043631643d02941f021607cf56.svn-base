@@ -1,0 +1,9 @@
+package com.fwxm.ret.dao;
+
+import com.fwxm.ret.bean.Tjy2ChReturn;
+import com.khnt.core.crud.dao.impl.EntityDaoImpl;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class Tjy2ChReturnDao extends EntityDaoImpl<Tjy2ChReturn> {
+}

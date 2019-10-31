@@ -1,0 +1,248 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%
+	String basePath = "http://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath()+request.getServletPath().substring(0,request.getServletPath().lastIndexOf("/")+1);   
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>压力管道安装、改造和重大修理监督检验报告20170411</title>
+<%@include file="/rtbox/public/base.jsp" %>
+<meta name="keywords" content="报表工具" />
+<meta name="description" content="报表工具">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Theme CSS -->
+<link rel="stylesheet" type="text/css" href="rtbox/app/templates/default/assets/skin/default_skin/css/theme.css">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="rtbox/app/templates/default/assets/js/html5shiv.js"></script>
+  <script src="rtbox/app/templates/default/assets/js/respond.min.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+
+	var fk_report_id="${param.fk_report_id}";
+	var input="${param.input}";
+	var info_id="${param.id}";
+	var pageStatus="${param.status}";
+	var rt_code="${param.code}";
+
+	var basePath="<%=basePath%>";
+	function saveRight(){
+		rightFrame.submitForm();
+	}
+	function fontSizes(){
+		var objS = document.getElementById("fontSizes");
+		var index = objS.selectedIndex;
+		var grade = objS.options[index].value;
+		rightFrame.fontSizes(grade);
+	}
+	function markColor(){
+		rightFrame.markColor();
+	}
+	function fontFamilys(){
+		var objS = document.getElementById("fontFamilys");
+		var index = objS.selectedIndex
+		var grade = objS.options[index].value;
+		rightFrame.fontFamilys(grade);
+	}
+	function sup(){
+		rightFrame.sup();
+	}
+	function sub(){
+		rightFrame.sub();
+	}
+	function fontBold(){
+		rightFrame.fontBold();
+	}
+	function fontItalic(){
+		rightFrame.fontItalic();
+	}
+	$(function() {
+		if(document.getElementById('tsColor')!=undefined){
+			document.getElementById('tsColor').onchange = function(){
+				rightFrame.tsColor(this.value);
+			};
+		}
+		if(pageStatus=="detail"){
+			//$("#toolBar").css("visibility","hidden")
+			//$("#toolBar").hide();
+			$("#treeH").css("padding-top","0px");
+		}
+		 
+	});
+	
+	
+	
+</script>
+<script type="text/javascript" src="rtbox/app/templates/default/tpl01.js"></script>
+<!-- <script type="text/javascript" src="rtbox/app/templates/default/tpl02.js"></script>  -->
+<script type="text/javascript" src="/k/kui/frame/main.js"></script> 
+</head>
+
+<body class="dashboard-page">
+
+<!-- Start: Theme Preview Pane --> 
+
+<!-- End: Theme Preview Pane --> 
+
+<!-- Start: Main -->
+<div id="main"> 
+	<c:if test="${param.status!='detail'}">
+	<!-- Start: Header -->
+	<div class="navbar navbar-fixed-top navbar-shadow " id="toolBar">
+		<div class="navbar-branding dark bg-hui">
+       <span class="caret caret-tp"></span>
+      </div>
+        <ul class="nav navbar-nav navbar-left">
+			<li>
+				<div class="navbar-btn btn-group"> <a href="javascript:saveRight();"> <span class="edui-save btn btn-sm" title="提交"></span> </a> </div>
+			</li>
+			 <li>
+				<div class="navbar-btn btn-group"> <a href="javascript:void(0);" > <select  id="fontSizes" onchange="fontSizes();">
+                    <option value="6">5</option><option value="7">5.5</option><option value="8">6.5</option><option value="10">7.5</option>
+                    <option value="12">9</option><option value="14">10.5</option><option value="16">12</option><option value="18">14</option>
+                    <option value="20">15</option><option value="21">16</option><option value="24">18</option><option value="29">22</option>
+                    <option value="32">24</option><option value="34">26</option><option value="48">36</option><option value="56">42</option>
+    </select> </a> </div>
+			</li>
+			<li>
+				<div class="navbar-btn btn-group"> <a href="javascript:void(0);" > <select  id="fontFamilys" onchange="fontFamilys();">
+                    <option value="宋体">宋体</option><option value="黑体">黑体</option><option value="微软雅黑">微软雅黑</option><option value="微软正黑体">微软正黑体</option>
+                    <option value="新宋体">新宋体</option><option value="新细明体">新细明体</option><option value="细明体">细明体</option><option value="标楷体">标楷体</option>
+                    <option value="仿宋">仿宋</option><option value="楷体">楷体</option>
+                    
+                    
+    </select> </a> </div>
+			</li>
+			<li>
+				<div class="navbar-btn btn-group"> <a href="javascript:void(0);" onclick="markColor();"> <span class="edui_fontcolor btn btn-sm" title="上色"></span> </a> </div>
+			</li>
+			<li>
+				<div class="navbar-btn btn-group"> <input type="color" id="tsColor" > </div>
+			</li>
+
+			<li>
+				<div class="navbar-btn btn-group"> <a href="javascript:void(0);" onclick="window.rightFrame.sup();"> <span class="edui-for-superscript btn btn-sm" title="上标"></span> </a> </div>
+			</li>
+
+			<li>
+				<div class="navbar-btn btn-group"> <a href="javascript:void(0);" onclick="window.rightFrame.sub();"> <span class="edui-for-subscript btn btn-sm" title="下标"></span> </a> </div>
+			</li>
+
+			<li>
+				<div class="navbar-btn btn-group"> <a href="javascript:void(0);"  onclick="fontBold();"  > <span class=" btn btn-sm" title="加粗"></span> </a> </div>
+			</li>
+
+			<li>
+				<div class="navbar-btn btn-group"> <a href="javascript:void(0);" onclick="fontItalic();"> <span class="edui-for-italic btn btn-sm" title="倾斜"></span> </a> </div>
+			</li>
+
+			<li>
+				<div class="navbar-btn btn-group"> <a href="#" > <span class="edui-for-print btn btn-sm" title="打印"></span> </a> </div>
+			</li>
+
+			<li>
+				<div class="navbar-btn btn-group"> <a href="JavaScript:sf();" > <span class="edui-for-spechars btn btn-sm" title="特殊字符"></span> </a> </div>
+			</li>
+
+						<li>
+				<div class="navbar-btn btn-group"> <a href="#" > <span class="edui-for-picture btn btn-sm" ></span> </a> </div>
+			</li>
+
+									<li>
+				<div class="navbar-btn btn-group"> <a href="#" > <span class="edui-for-export btn btn-sm"></span> </a> </div>
+			</li>
+
+									<li>
+				<div class="navbar-btn btn-group"> <a href="JavaScript:dir();" > <span class="edui-for-Catalog btn btn-sm" title="目录"></span> </a> </div>
+			</li>
+
+
+
+			<li class="menu-divider hidden-xs"> <i class="fa fa-circle"></i> </li>
+		</ul>
+	</div>
+	</c:if>
+	<!-- End: Header --> 
+	
+
+	
+	<!-- Start: Sidebar -->
+	<div id="sidebar_left" class="nano nano-light affix sidebar-light"> 
+		
+		<!-- Start: Sidebar Left Content -->
+		<div class="sidebar-left-content nano-content" id="treeH"> 
+			
+			<!-- Start: Sidebar Header -->
+			<div class="sidebar-header"> 
+				
+				<div class="sidebar-widget author-widget">
+					 <ul id="tree1" ></ul>
+				</div>
+
+				
+				
+				
+				
+			</div>
+			<!-- End: Sidebar Header --> 
+			
+		</div>
+		<!-- End: Sidebar Left Content --> 
+		
+	</div>
+	<!-- End: Sidebar Left --> 
+	
+	<!-- Start: Content-Wrapper -->
+	<div id="content_wrapper">
+		<div  class="cont_center">
+<!-- 		<iframe id="rightFrame" frameborder="0" name="rightFrame" width="100%" height="100%" scrolling="no" src="test.html" /></iframe> -->
+		<iframe marginwidth="0" id="rightFrame" name="rightFrame" marginheight="0" frameborder="0" valign=top src="" name="rtree"
+	                width=100% height=900 scrolling="no" allowTransparency></iframe>
+		</div>
+
+
+	</div>
+	<!-- End: Content-Wrapper --> 
+	
+</div>
+<!-- End: Main --> 
+
+<!-- BEGIN: PAGE SCRIPTS --> 
+
+<!-- jQuery --> 
+<!-- <script src="vendor/jquery/jquery-1.11.1.min.js"></script>  -->
+<!-- <script src="vendor/jquery/jquery_ui/jquery-ui.min.js"></script>  -->
+
+<!-- Theme Javascript --> 
+<script src="rtbox/app/templates/default/assets/js/demo/demo.js"></script> 
+<script src="rtbox/app/templates/default/assets/js/main.js"></script> 
+
+<!-- END: PAGE SCRIPTS -->
+
+</body>
+<script type="text/javascript">
+
+	function sf(){
+		try{
+			var fsEl = window.rightFrame.focus_element;
+			share.data("focus_element",fsEl);
+			top.$.dialog({
+	    		width:500,
+	    		height:420,
+	    		lock:false,
+	    		title:"特殊字符",
+	    		content:"url:rtbox/app/templates/default/font/fonts.jsp",
+	    		data : {
+					"window" : window
+				}
+	    	});
+		}catch(err){
+			console.log(err.description);
+		}
+		
+	}
+</script> 
+</html>

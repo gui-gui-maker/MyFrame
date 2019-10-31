@@ -1,0 +1,10 @@
+//屏蔽所有JS错误，使得出错的情况下不会弹出调试信息，建议在生产环境使用
+//window.onerror = function(e) {return true;};
+
+//载入系统配置文件，通常为动态的文件 13-4-1 下午4:57 lybide k app
+//=======================================================================================
+//systrem-config.js 在tomcat启动时，已自动生成。所以每个项目的配置项，都在k下。
+document.write(unescape('%3Cscript type="text/javascript" src="k/system-config.js"%3E%3C/script%3E'));
+//动态配置项，如 base 等。
+document.write(unescape('%3Cscript type="text/javascript" src="k/system-config.jsp"%3E%3C/script%3E'));
+//=======================================================================================

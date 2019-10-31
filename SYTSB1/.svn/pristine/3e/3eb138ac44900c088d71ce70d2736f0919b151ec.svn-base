@@ -1,0 +1,927 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="util.DateToChinese"%>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@page import="com.khnt.utils.DateUtil"%>
+<%@page import="java.util.Date"%>
+<%
+	Date lastMonday = DateToChinese.getLastWeekMonday(new Date());
+	Date lastSunday = DateToChinese.getLastWeekSunday(new Date());
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+    String firstDate = sdf.format(lastMonday);
+    String curDate  = sdf.format(lastSunday);
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <%@ include file="/k/kui-base-list.jsp" %>
+    <%@ taglib uri="http://khnt.com/tags/ui" prefix="u" %>
+    <link rel="stylesheet" type="text/css" href="app/finance/css/stylegx.css" media="all" />
+    <style type="text/css">
+	    div {
+	    	margin: 0.5px;
+	    }
+	    .l-button {
+	    	padding:0 8px 2px 9px;
+	    }
+    </style>
+    <script type="text/javascript" src="app/finance/js/echarts.min.js"></script>
+    <script test="text/javascript">
+    var selected = null;
+    var grid = null;
+    var rows = []; 
+    var clsses = [];
+    var depts = [];
+    $(function () {
+        $("#btn1").css({"height":"20px","width":"50px","line-height":"18px"});
+        $("#btn2").css({"height":"20px","width":"50px","line-height":"18px"});
+        $("#btn3").css({"height":"20px","width":"50px","line-height":"18px"});
+        $("#btn4").css({"height":"20px","width":"50px","line-height":"18px"});
+        $("#btn1").ligerButton({
+            icon:"count",
+            click: function (){
+            	getRows();
+            },
+            text:"统计"
+        });
+        $("#btn2").ligerButton({
+            icon:"excel-export",
+            click: function (){
+                out();
+            },
+            text:"导出"
+        });
+        $("#btn3").ligerButton({
+            img:"app/finance/image/qian.png",
+            click: function (){
+            	if($("#btn3").find('span.l-button-text').html()=='万元'){
+            		$("#btn3").find('span.l-button-text').html('元');
+            		$("div.l-page-title2-note span").html('万元');
+            		loadGrid(rows,clsses,4);
+            		drawChart(clsses,rows,4);
+            	}else{
+            		$("#btn3").find('span.l-button-text').html('万元');
+            		$("div.l-page-title2-note span").html('元');
+            		loadGrid(rows,clsses,2);
+            		drawChart(clsses,rows,2);
+            	}
+            },
+            text:"万元"
+        });
+        $("#btn4").ligerButton({
+        	icon:"piechart",
+    		click:function(){
+    			var button = $('#btn4');
+    			var sp1 = button.find("span.l-button-text");
+    			var sp2 = button.find("span.l-button-icon");
+    			if(sp1.html()=="表格"){
+    				sp2.css('background','url(k/kui/images/16/icons/piechart.png) no-repeat center center');
+    				sp1.html("图表");
+           		 
+    				$("#main").css("display","none");
+    				$("#container").css("display","block");
+	           		if($("#btn3").find('span.l-button-text').html()=='万元'){
+	           			loadGrid(rows,clsses,2);
+	            	}else{
+	            		loadGrid(rows,clsses,4);
+	            	}
+    			}else{
+    				sp2.css('background','url(k/kui/images/16/icons/table.png) no-repeat center center');
+    				sp1.html("表格");
+    				$("#main").css("display","block");
+    				$("#container").css("display","none");
+    				if($("#btn3").find('span.l-button-text').html()=='万元'){
+                		drawChart(clsses,rows,2);
+                	}else{
+                		drawChart(clsses,rows,4);
+                	}
+    			}
+    			
+    		},
+    		text:"图表"
+    	});
+        $("#form1").ligerForm();    
+        getRows(true); 
+        
+        grid = $("#grid").ligerGrid({
+	        columns: {}, 
+	        data:{Rows:[]},
+	        height:'100%',
+	        usePager:false,
+	        width:'100%',
+	        allowUnSelectRow:true,
+	        onSelectRow: function (data, rowindex, rowobj)
+            {
+                   var dept=data.dept;
+                   var startDate = $("#startDate").val();
+                   var endDate = $("#endDate").val();
+                   //--------------------------------------------------------
+                   top.$.dialog({
+          				width : 1100,
+          				height : 600,
+          				lock : true,
+          				title : "部门各经济类型报销费用列表",
+          				data : {
+          					"window" : window
+          				}, 
+          				content : 'url:'+encodeURI("app/finance/statistics/statistics_fee_detail.jsp?dept="+dept+"&startDate="+startDate+"&endDate="+endDate)
+          			});
+                
+            }
+	        
+	     });
+        
+    });
+  //初始化下拉框
+  /*   function initSelect(depts){
+    	var items = [];
+    	for(var i=0;i<depts.length;i++){
+    		var item = {};
+    		item.id = depts[i]; 
+    		item.text = depts[i]; 
+    		items.push(item);
+    	}
+    	$("#dept").ligerGetComboBoxManager().setData(items);
+    	$("#dept").ligerGetComboBoxManager().setValue('');
+    } */
+  //将数据转成“万元”
+    function tenThousand(rows){
+    	var data = [];
+		for(var i=0;i<rows.length;i++){
+			var row = rows[i];
+			var item = {};
+			item.dept=row.dept;
+			item.total = parseFloat(row.total/10000).toFixed(4);
+			$.each(row,function(k,v){
+				if(typeof v == 'number'){
+					item[k]=parseFloat(v/10000).toFixed(4);
+				}
+			});
+			data.push(item);
+		}
+		return data;
+    }
+  //获取数据
+    function getRows(isInitSelect){
+        var startDate = $("#startDate").val();
+        var endDate = $("#endDate").val();
+        var unit = "特检院";//$("#unit").ligerGetComboBoxManager().getValue();
+        var dept = $("#dept").val();
+        $.post("feeStatisticsAction/statisticsFee.do",
+        		{"start":startDate,"end":endDate,"unit":unit,'dept':dept}, 
+        		function(res){
+        			rows = []; 
+		            clsses = [];
+		            depts = [];
+        			//接收数据
+		            var data = res.rows;
+		            clsses = res.clsses;
+		            depts = res.depts;
+		            //alert(depts)
+		           /*  if(isInitSelect){
+			            initSelect(depts);
+		            } */
+		            //组装数据
+		            for(var i=0;i<depts.length;i++){
+		            	var row = {};
+		            	row['dept'] = depts[i];
+		            	row['total'] = 0;
+		            	for(var j=0;j<clsses.length;j++){
+		            		row[clsses[j]] = 0;
+		            		for(var k=0;k<data.length;k++){
+		            			if(data[k].DEPT == depts[i] && data[k].CLSS==clsses[j]){
+	                      			row[clsses[j]] = data[k].MONEY;
+		                      		row['total'] += data[k].MONEY;
+		                      	}	
+		            		}
+		                }
+		            	if(typeof row.total == 'number'){
+		            		row.total = row.total.toFixed(2);
+		            	}
+		            	rows.push(row);
+		            }
+		            
+		            if($("#btn3").find('span.l-button-text').html()=='万元'){
+		            	 loadGrid(rows,clsses,2);
+                		drawChart(clsses,rows,2);
+                	}else{
+                		 loadGrid(rows,clsses,4);
+                		drawChart(clsses,rows,4);
+                	}
+		            //loadGrid(rows,clsses,2);
+		           // drawChart(clsses,rows);
+        });
+    }
+  //生成报表
+	function loadGrid(rows,clsses,fix){
+		if(fix == 4){
+			rows = tenThousand(rows);
+		}
+		gird = null;
+		//定义头部
+	    var columns = [];
+	    columns.push({
+	    	display : '部门', 
+	    	name : 'dept',
+	    	align : 'center', 
+	    	width : 200,
+	    	totalSummary:{
+					render : function (e){  
+	    			return "<div>合计</div>"; 
+	    		} 
+	        		}
+	    });
+	    for(var i = 0;i<clsses.length;i++){
+	    	if((selected!=null&&selected[clsses[i]]==true)||selected==null){
+	    	columns.push({display: clsses[i], 
+	    		name: clsses[i],
+	    		align: 'center', 
+	    		width: 120, 
+	    		totalSummary:{
+	                type : 'sum',
+	       			render : function (e){  
+	       				var tt = e.sum;
+	       				tt = parseFloat(tt).toFixed(fix);
+	            		return "<div>" + tt +"</div>"; 
+	            	} 
+		        }
+	    	});	
+	    	}
+	    }
+	    columns.push({display: '小计', 
+	    	name : 'total',
+	    	align : 'center',
+	    	width : 120,
+	    	totalSummary:{
+	        	type : 'sum',
+	        	render : function (e) {  
+	        		var tt = e.sum;
+	        		tt = parseFloat(tt).toFixed(fix);
+	        		return "<div>" + tt +"</div>";  
+	        	} 
+	        }
+	    });	
+	    //创建表格
+	    
+    grid.set('columns', columns); 
+     grid.loadData({Rows:rows});
+// 		grid = $("#grid").ligerGrid({
+// 								        columns: columns, 
+// 								        data:{Rows:rows},
+// 								        height:'100%',
+// 								        usePager:false,
+// 								        width:'100%',
+// 								        onSelectRow: function (data, rowindex, rowobj)
+// 						                {
+// 							                   var dept=data.dept;
+// 							                   var startDate = $("#startDate").val();
+// 							                   var endDate = $("#endDate").val();
+// 							                   //--------------------------------------------------------
+// 							                   top.$.dialog({
+// 						              				width : 1100,
+// 						              				height : 600,
+// 						              				lock : true,
+// 						              				title : "部门各经济类型报销费用列表",
+// 						              				data : {
+// 						              					"window" : window
+// 						              				}, 
+// 						              				content : 'url:'+encodeURI("app/finance/statistics/statistics_fee_detail.jsp?dept="+dept+"&startDate="+startDate+"&endDate="+endDate)
+// 						              			});
+							                
+// 						                }
+								        
+// 								     });
+	    
+	}
+  //导出报表excel
+    function out()
+    {
+        $("body").mask("正在导出数据,请等待...");
+        $("#form1").attr("action","feeStatisticsAction/exportDeptFee.do"); 
+        if(selected!=null){
+            var item='';
+            for (var key in selected) {
+    			if(selected[key]==true){
+    					if(item==""){
+    						item = key;
+    					}else{
+    						item = item+","+key;
+    					}
+    			}
+    		}
+            $("#form1").append('<input type="hidden" name="items" id="items" value="'+item+'"/>');
+           }
+         $("#form1").submit();
+        $("body").unmask();
+    };
+    </script>
+
+</head>
+<body>
+<div id="tccontent">
+	<div id="light" class="white_content md-show">
+		<div class="close">
+			<a id="t-close-btn" class="iconfont icon-esc"
+				href="javascript:void(0)" title="关闭">x</a>
+		</div>
+		<div class="tankuang"></div>
+		<div class="wtctbg"></div>
+	</div>
+	<div id="fade" class="black_overlay" style="display: none;"></div>
+</div>
+<form name="form1" id="form1" action="" getAction="" target="_blank" method="post">
+<input type="hidden" name="org_id1" id="org_id1"/>
+<input type="hidden" name="org_id2" id="org_id2"/>
+<div class="item-tm">
+    <div class="l-page-title2 has-icon has-note" style="height: 80px">
+        <div class="l-page-title2-div"></div>
+        <div class="l-page-title2-text"><h1>财务报账费用统计</h1></div>
+        <div class="l-page-title2-note" style="height:20px;">按各经济类型，各部门报销费用统计（单位：<span>元</span>）</div>
+        <div class="l-page-title2-icon">
+        	<img src="k/kui/images/icons/32/statistics.png" border="0"/>
+        </div>
+        <div class="l-page-title-content" style="top:25px;left:300px;height:80px;"> 
+            <table border="0" cellpadding="0" cellspacing="0" width="">
+                <tr>
+                   <!--  <td width="100" style="text-align: right;width:50px;">单位：</td>
+                    <td width="120px">
+                       <input id="unit" name="unit"
+							type="text" ltype="select" value=""
+							ligerui="{isTextBoxMode:true,width:325,
+							initValue:'检验院',
+							data:[{'id':'检验院','text':'四川省特种设备检验研究院'},{'id':'协会','text':'四川省特种设备检验检测协会'}],
+							isMultiSelect:false}" />
+
+                    </td> -->
+                    <td width="100" style="text-align: right;width:50px;">部门：</td>
+                    <td width="120px">
+                       <input id="dept" name="dept"
+							type="text" ltype="select" value=""
+							ligerui="{width:325,
+							initValue:'检验院',
+							tree:{checkbox:true,data:<u:dict sql="select o.id, o.parent_id pid, o.id code, o.org_name text
+									  from sys_org o
+									 where o.id not in ('100042', '100047')
+									   and o.parent_id not in ('100042', '100047')
+									   and o.status= 'used' and o.property='dep'
+									 order by o.orders"/>,
+							isMultiSelect:false}}" />
+
+                    </td>
+                    <td style="text-align: right;width:120px;">报销时间从：</td>
+                    <td width="100">
+                            <input id="startDate" name="startDate" type="text" ltype="date" value="<%=firstDate %>"/>
+                    </td>
+                    <td align="center">&nbsp;至&nbsp;</td>
+                    <td width="100">
+                        <input id="endDate" name="endDate" type="text" ltype="date" value="<%=curDate %>"/>
+                    </td>
+                    <td colspan="1" align="right">
+                        <div id="btn1"></div>
+                        <div id="btn2"></div>
+                        <div id="btn3"></div>
+                        <div id="btn4"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</form>
+<div id="container" position="center" style="width:99%;height:89%;">
+    <div id="grid"></div>   
+</div>
+<div id="main" style="width:100%;height:100%;display:none;"></div>
+<script type="text/javascript">
+ 	var barChart = null;
+ 	
+ 	function drawChart(clsses,rows,fix){
+ 		$("#main").find("div").remove();
+ 		var div = document.createElement('div');
+ 		$("#main").append(div);
+ 		$(div).css({width:'100%',height:'90%'});
+ 		if(fix == 4){
+ 			rows = tenThousand(rows);
+ 		}
+ 		barChart = echarts.init(div);
+ 		var depts = [];
+ 		var ss = [];
+ 		/* var colors = ['#808A87','#B03060','#9932CC','#4B0082','#03A89E','#4682B4','#7B68EE','#6A5ACD','#483D8B','#E6E6FA','#F8F8FF','#0000FF',
+				'#0000CD','#191970','#00008B','#000080','#4169E1','#6495ED','#B0C4DE',
+ 			'#FF00FF','#00C78C','#33A1C9','#191970','#FF4500','#872657','#0B1746','#0000FF','#9C661F','#191970',
+ 				'#8A2BE2','#308014','#F0E68C','#00C957','#802A2A','#FFFF00'
+ 				]; */
+ 				
+ 		var colors = [
+ 			'#0000FF','#3D59AB','#1E90FF','#0B1746','#03A89E',
+ 			'#191970','#33A1C9','#8A2BE2','#DA70D6','#F0E68C',
+ 			'#BC8F8F','#C76114','#734A12','#5E2612','#2E8B57',
+ 			'#00FF7F','#40E0D0','#6A5ACD','#4682B4','#1E90FF',
+ 			'#483D8B','#CD5555','#FF1493','#8B8989','#CD6889',
+ 			'#CDB5CD'
+
+ 		]
+ 		for(var i=0;i<clsses.length;i++){
+ 			var s = {};
+ 			s.name = clsses[i];
+			s.type = 'bar';
+ 			s.stack = 'fee';
+ 			s.yAxisIndex = 0;
+            s.barMaxWidth = 50; 
+            s.barGap = '10%';
+            
+           if(clsses[i]=="差旅费"){
+            	s.color="#FF0000";
+            } else{
+            	s.color=colors[i]
+            }
+            s.itemStyle = {
+                 "normal": {
+                     "barBorderRadius": 0, 
+                    /*  "color": "rgba(60,169,196,0.5)",  */
+                    /* 是否显示数值 */
+                     "label": {
+                         "show": false, 
+                         "textStyle": {
+                             "color": "rgba(0,0,0,1)"
+                         }, 
+                         "position": "insideTop",
+                         formatter : function(p) {
+ 	                                                return p.value > 0 ? (p.value ): '';
+ 	                                            }
+                     }
+                 }
+             }, 
+ 			s.data = [];
+ 			for(var j=0;j<rows.length;j++){
+ 				if(depts.length<rows.length){
+	 				depts.push(rows[j]['dept']);
+ 				}
+ 				s.data.push(rows[j][clsses[i]]?rows[j][clsses[i]]:0);
+ 			}
+ 			ss.push(s);
+ 		}
+ 		//合计
+ 		/* var tt = [];
+ 		for(var i=0;i<rows.length;i++){
+ 			tt.push(rows[i]['total']);
+		}
+ 		ss.push({
+ 			name : '合计',
+ 			type : 'bar',
+ 			stack : 'fee',
+	 		//type :'line',
+			//yAxisIndex : 1,
+			data : tt
+ 		}); */
+ 		/* var option = {
+ 				tooltip : {
+ 			        trigger: 'axis',
+ 			        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+ 			            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+ 			        },
+ 			       formatter: function (params,ticket,callback) {  
+ 		                 var res = params[0].axisValue + '<br>';
+ 		                 for(var i=0;i<params.length;i++){
+ 		                	if(params[i].value == 0){
+ 		                		continue;
+ 		                	}else{
+ 		                		res += params[i].marker + params[i].seriesName + ':' + params[i].value +'<br>';
+ 		                	}
+ 		                 }
+ 	 		             return res;  
+ 		             }  
+ 			    },
+ 			   toolbox: {
+ 			        show : true,
+ 			        feature : {
+ 			            mark : {show: true},
+ 			            dataView : {show: true, readOnly: false},
+ 			            magicType : {
+ 			                show: true,
+ 			                type: ['pie', 'funnel']
+ 			            },
+ 			            restore : {show: true},
+ 			            saveAsImage : {show: true}
+ 			        }
+ 			    },
+ 			    legend: {
+			        type: 'scroll',
+			        orient: 'vertical',
+			        left: 20,
+			        top: 100,
+			        bottom: 20,
+			        data: clsses
+			    },
+ 			    grid: {
+ 			        left: '10%',
+ 			        right: '11%',
+ 			        bottom: '6%',
+ 			        containLabel: true
+ 			    },
+ 			    xAxis : [
+ 			        {
+ 			            type : 'category',
+ 			            data : depts
+ 			        }
+ 			    ],
+ 			    yAxis : [
+		 			        {
+		 			            type : 'value',
+		 			            name: '类别',
+		 			            position: 'left'
+		 			        },
+		 			        {
+		 			            type: 'value',
+		 			            name: '合计',
+		 			            position: 'right',
+		 			            offset: 80
+		 			        }
+		 			    ],
+ 			   dataZoom: [
+ 			             {
+ 			                 show: true,
+ 			                 start: 0,
+ 			                 end: rows.length>12?60:100,
+ 			                 top: '95%'
+ 			             },
+ 			             {
+ 			                 type: 'inside',
+ 			                 start: 0,
+ 			                 end: rows.length>12?60:100,
+ 			             }
+ 			         ],
+ 			    series : ss
+ 		    }; */
+ 		   option = {
+ 		    		 backgroundColor: '#eee',
+ 		    	   "tooltip" : {
+ 	 			        trigger: 'axis',
+ 	 			        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+ 	 			            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+ 	 			        } ,
+ 	 			       formatter: function (params,ticket,callback) {  
+ 	 		                 var res = params[0].axisValue + '<br>';
+ 	 		                 var tvalue = 0;
+ 	 		                 for(var i=0;i<params.length;i++){
+ 	 		                	if(params[i].value == 0){
+ 	 		                		continue;
+ 	 		                	}else{
+ 	 		                		res += params[i].marker + params[i].seriesName + ':' + params[i].value +'<br>';
+ 	 		                		tvalue += parseFloat(params[i].value);
+ 	 		                	}
+ 	 		                 }
+ 	 		               	 res += "合计" + ':' + tvalue +'<br>';
+ 	 	 		             return res;  
+ 	 		             }   
+ 	 			    },
+ 		    	    /* "grid": {
+ 		    	        "borderWidth": 0, 
+ 		    	        "y2": 120
+ 		    	    },  */
+ 		    	    grid: {
+
+ 	 			        left: '18%',
+ 	 			        right: '3%',
+ 	 			        bottom: '1%',
+ 	 			        containLabel: true
+ 	 			    },
+ 		    	   /*  "legend": {
+ 		    	        "x": "right", 
+ 		    	        "data": clsses
+ 		    	    },  */
+ 		    	    legend: {
+ 				        //type: 'scroll',
+ 				        orient: 'vertical',
+ 				        left: 10,
+ 				        top: 50,
+ 				        bottom: 20,
+ 				        data: clsses
+ 				    }, 
+ 		    	    "toolbox": {
+ 		    	        "show": true, 
+ 		    	        "feature": {
+ 		    	            "restore": { }, 
+ 		    	            "saveAsImage": { }
+ 		    	        },
+ 		    	        "top":"50px"
+ 		    	    },  
+ 		    	    /* toolbox: {
+ 	 			        show : true,
+ 	 			        feature : {
+ 	 			            mark : {show: true},
+ 	 			            dataView : {show: true, readOnly: false},
+ 	 			            magicType : {
+ 	 			                show: true,
+ 	 			                type: ['pie', 'funnel']
+ 	 			            },
+ 	 			            restore : {show: true},
+ 	 			            saveAsImage : {show: true}
+ 	 			        }
+ 	 			    }, */
+ 		    	    "calculable": true, 
+ 		    	    "xAxis": [
+ 		    	        {
+ 		    	            "type": "category", 
+ 		    	            "splitLine": {
+ 		    	                "show": false
+ 		    	            }, 
+ 		    	            "axisTick": {
+ 		    	                "show": false
+ 		    	            }, 
+ 		    	            "splitArea": {
+ 		    	                "show": false
+ 		    	            }, 
+ 		    	            "axisLabel": {
+ 		    	                "interval": 0, 
+ 		    	                "rotate": 45, 
+ 		    	                "show": true, 
+ 		    	                "splitNumber": 15, 
+ 		    	                "textStyle": {
+ 		    	                    "fontFamily": "微软雅黑", 
+ 		    	                    "fontSize": 12
+ 		    	                }
+ 		    	            }, 
+ 		    	            "data": depts,
+ 		    	        }
+ 		    	    ], 
+ 		    	    "yAxis": [
+ 		    	        {
+ 		    	            "type": "value", 
+ 		    	            "splitLine": {
+ 		    	                "show": false
+ 		    	            }, 
+ 		    	            "axisLine": {
+ 		    	                "show": true
+ 		    	            }, 
+ 		    	            "axisTick": {
+ 		    	                "show": false
+ 		    	            }, 
+ 		    	            "splitArea": {
+ 		    	                "show": false
+ 		    	            }
+ 		    	        }
+ 		    	    ], 
+ 		    	   /*  "dataZoom": [
+ 		    	        {
+ 		    	            "show": true, 
+ 		    	            "height": 30, 
+ 		    	            "xAxisIndex": [
+ 		    	                0
+ 		    	            ], 
+ 		    	            bottom:40,
+ 		    	            "start": 0, 
+ 		    	            "end": 80
+ 		    	        }, 
+ 		    	        {
+ 		    	            "type": "inside", 
+ 		    	            "show": true, 
+ 		    	            "height": 15, 
+ 		    	            "xAxisIndex": [
+ 		    	                0
+ 		    	            ], 
+ 		    	            "start": 1, 
+ 		    	            "end": 35
+ 		    	        }
+ 		    	    ],  */
+ 		    	    "series": ss/* [
+ 		    	        {
+ 		    	            "name": "昨日", 
+ 		    	            "type": "bar", 
+ 		    	            "stack": "总量", 
+ 		    	            "barMaxWidth": 50, 
+ 		    	            "barGap": "10%", 
+ 		    	            "itemStyle": {
+ 		    	                "normal": {
+ 		    	                    "barBorderRadius": 0, 
+ 		    	                    "color": "rgba(60,169,196,0.5)", 
+ 		    	                    "label": {
+ 		    	                        "show": true, 
+ 		    	                        "textStyle": {
+ 		    	                            "color": "rgba(0,0,0,1)"
+ 		    	                        }, 
+ 		    	                        "position": "insideTop",
+ 		    	                        formatter : function(p) {
+ 		    		                                                return p.value > 0 ? (p.value ): '';
+ 		    		                                            }
+ 		    	                    }
+ 		    	                }
+ 		    	            }, 
+ 		    	            "data": [
+ 		    	                3709, 
+ 		    	                2417, 
+ 		    	                755, 
+ 		    	                2610, 
+ 		    	                1719, 
+ 		    	                433, 
+ 		    	                2544, 
+ 		    	                4285, 
+ 		    	                3372, 
+ 		    	                2484, 
+ 		    	                4078, 
+ 		    	                1355, 
+ 		    	                5208, 
+ 		    	                1723
+ 		    	            ], 
+ 		    	        }, 
+ 		    	        {
+ 		    	            "name": "人流减少", 
+ 		    	            "type": "bar", 
+ 		    	            "stack": "总量", 
+ 		    	            "itemStyle": {
+ 		    	                "normal": {
+ 		    	                    "color": "rgba(51,204,112,1)", 
+ 		    	                    "barBorderRadius": 0, 
+ 		    	                    "label": {
+ 		    	                        "show": true, 
+ 		    	                        "position": "top",
+ 		    	                        formatter : function(p) {
+ 		    		                                                return p.value > 0 ? ('▼'
+ 		    		                                                        + p.value + '')
+ 		    		                                                        : '';
+ 		    		                                            }
+ 		    	                    }
+ 		    	                }
+ 		    	            }, 
+ 		    	            "data": [
+ 		    	                386, 
+ 		    	                0, 
+ 		    	                0, 
+ 		    	                122, 
+ 		    	                261, 
+ 		    	                171, 
+ 		    	                0, 
+ 		    	                40, 
+ 		    	                246, 
+ 		    	                0, 
+ 		    	                815, 
+ 		    	                275, 
+ 		    	                570, 
+ 		    	                159,
+ 		    	            ]
+ 		    	        }, 
+ 		    	        {
+ 		    	            "name": "人流增长", 
+ 		    	            "type": "bar", 
+ 		    	            "stack": "总量", 
+ 		    	            "itemStyle": {
+ 		    	                "normal": {
+ 		    	                    "color": "rgba(193,35,43,1)", 
+ 		    	                    "barBorderRadius": 0, 
+ 		    	                    "label": {
+ 		    	                        "show": true, 
+ 		    	                        "position": "top",
+ 		    	                        formatter : function(p) {
+ 		    		                                                return p.value > 0 ? ('▲'
+ 		    		                                                        + p.value + '')
+ 		    		                                                        : '';
+ 		    		                                            }
+ 		    	                    }
+ 		    	                }
+ 		    	            }, 
+ 		    	            "data": [
+ 		    	                0, 
+ 		    	                376, 
+ 		    	                1727, 
+ 		    	                0, 
+ 		    	                0, 
+ 		    	                0, 
+ 		    	                220, 
+ 		    	                0, 
+ 		    	                0, 
+ 		    	                1951, 
+ 		    	                0, 
+ 		    	                0, 
+ 		    	                0, 
+ 		    	                0
+ 		    	            ]
+ 		    	        }
+ 		    	    ] */
+ 		    	}
+
+ 		barChart.setOption(option);
+ 		barChart.on('click', function (param) {
+ 		 	
+ 			//弹框加事件
+ 			$(".white_content").addClass("md-show");
+    		$("#light,#tccontent").show();
+    		var ligh=$(window).height()*0.8;
+    		$(".tankuang").css({"height":ligh+"px"}); 
+    		$("#fade").show();
+    		//画出饼图
+    		for(var i=0;i<rows.length;i++){
+ 				if(rows[i].dept == param.name){
+ 					drawPie(rows[i]);
+ 					break;
+ 				}
+ 			} 
+
+ 		});
+ 	    //legend点击选中事件
+        barChart.on('legendselectchanged', function (param){
+	        selected = param["selected"];
+        });  
+    	$("#fade,#t-close-btn").click(function(){
+    		$("#light,#tccontent,#fade").hide();
+    	});
+ 	}
+ 	var pie = null;
+ 	function drawPie(row){
+ 		var data = {};
+ 		data.legendData = [];
+ 		data.seriesData = [];
+ 		data.selected = {};
+ 		$.each(row,function(k,v){
+ 			for(var i=0;i<clsses.length;i++){
+ 				if(v == 0 || k == 'total'){
+ 					break;
+ 				}else if(k == 'other'){
+ 					var obj = {};
+ 	 				obj.name='其他';
+ 	 				obj.value=v;
+ 	 				data.seriesData.push(obj);
+ 	 				data.legendData.push('其他');
+ 					data.selected['其他']=true;
+ 	 				break;
+ 				}else if(k == clsses[i]){
+ 	 				var obj = {};
+ 	 				obj.name=k;
+ 	 				obj.value=v;
+ 	 				data.seriesData.push(obj);
+ 	 				data.legendData.push(clsses[i]);
+ 					data.selected[clsses[i]]=true;
+ 	 				break;
+ 	 			}
+ 			}
+ 		});
+ 		$(".tankuang").find("div").remove();
+ 		var div = document.createElement('div');
+ 		$(".tankuang").append(div);
+ 		$(div).css({
+ 			width : '100%',
+ 			height : '100%'
+ 		});
+ 		pie = echarts.init(div);
+ 		var option = {
+ 			    title : {
+ 			        text: row.dept,
+ 			        subtext: '部门各经济类型报销费用',
+ 			        x:'center',
+ 			        textStyle: {
+ 			            color: '#ccc'
+ 			        }
+ 			    },
+ 			    tooltip : {
+ 			        trigger: 'item',
+ 			        formatter: "{a} <br/>{b} : {c} ({d}%)"
+ 			    },
+ 			    legend: {
+ 			        type: 'scroll',
+ 			        orient: 'vertical',
+ 			        right: 20,
+ 			        top: 100,
+ 			        bottom: 20,
+ 			        data: data.legendData,
+ 			        selected: data.selected
+ 			    },
+ 			    
+ 			    series : [
+ 			        {
+ 			            name: '经济类型',
+ 			            type: 'pie',
+ 			            radius : '55%',
+ 			            center: ['40%', '50%'],
+ 			            data: data.seriesData.sort(function (a, b) { return a.value - b.value; }),
+ 			            itemStyle: {
+ 			                emphasis: {
+ 			                    shadowBlur: 10,
+ 			                    shadowOffsetX: 0,
+ 			                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+ 			                }
+ 			            }
+ 			        }
+ 			    ]
+ 			};
+ 		pie.setOption(option);
+ 		 var startDate = $("#startDate").val();
+         var endDate = $("#endDate").val();
+
+  		<!-- 财务支出详细列表 ------------------------------------>
+  		pie.on('click', function (param) {
+  			alert(param);
+  			top.$.dialog({
+  				width : 900,
+ 				height : 600,
+ 				lock : true,
+ 				title : "财务报账费用统计",
+ 				data : {
+ 					"window" : window
+ 				}, 
+ 				content : 'url:'+encodeURI("app/finance/statistics/statistics_fee_detailed.jsp?dept="+row.dept+"&clss="+param.name
+ 				 						+"&startDate="+startDate+"&endDate="+endDate)
+  			});
+  		});
+ 	}
+</script>
+</body>
+</html>

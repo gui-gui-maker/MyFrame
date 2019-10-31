@@ -1,0 +1,8 @@
+﻿
+/* ie6 hack 主 2017年07月03日 15:46:50 星期一 lybide
+ ie6 7 兼容
+ */
+
+html { overflow:hidden;  /*这个可以去掉IE6,7的滚动*/ _overflow-x:hidden; /*去掉IE6横向滚动*/ height:100%;}
+body { overflow:hidden; /*这个可去掉IE5.5的滚动*/ _margin:0px;  /*去掉IE6的左边框空白*/ height:100%; }
+body {padding:0px; margin:0px;}

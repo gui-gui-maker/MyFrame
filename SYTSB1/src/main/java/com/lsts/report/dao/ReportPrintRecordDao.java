@@ -1,0 +1,224 @@
+package com.lsts.report.dao;
+
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.khnt.core.crud.dao.impl.EntityDaoImpl;
+import com.khnt.security.CurrentSessionUser;
+import com.khnt.security.util.SecurityUtil;
+import com.khnt.utils.StringUtil;
+import com.lsts.IdFormat;
+import com.lsts.inspection.bean.InspectionInfo;
+import com.lsts.inspection.bean.InspectionZZJDInfo;
+import com.lsts.inspection.dao.InspectionInfoDao;
+import com.lsts.inspection.dao.InspectionZZJDInfoDao;
+import com.lsts.report.bean.ReportPrintRecord;
+import com.lsts.report.bean.ReportPrintRecordDTO;
+
+/**
+ * 检验资料报送打印签收表数据处理对象
+ * @ClassName ReportPrintRecordDao
+ * @JDK 1.7
+ * @author GaoYa
+ * @date 2015-09-06 13:23:00
+ */
+@Repository("reportPrintRecordDao")
+public class ReportPrintRecordDao extends EntityDaoImpl<ReportPrintRecord> {
+	@Autowired
+	private InspectionZZJDInfoDao inspectoinZZJDInfoDao;
+	@Autowired
+	private InspectionInfoDao inspectoinInfoDao;
+
+	@SuppressWarnings("unchecked")
+	public List<ReportPrintRecord> getReportPrintRecords(
+			String report_print_id) {
+		List<ReportPrintRecord> list = new ArrayList<ReportPrintRecord>();
+		String hql = "from ReportPrintRecord i where i.reportPrint.id=? and i.data_status != '99'";
+		list = this.createQuery(hql, report_print_id).list();
+		return list;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<ReportPrintRecord> getPrintRecords(
+			String report_print_id) {
+		List<ReportPrintRecord> list = new ArrayList<ReportPrintRecord>();
+		String hql = "from ReportPrintRecord i where i.reportPrint.id=? and i.data_status = '1'";
+		list = this.createQuery(hql, report_print_id).list();
+		return list;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<ReportPrintRecord> getRecords(
+			String report_sn) {
+		List<ReportPrintRecord> list = new ArrayList<ReportPrintRecord>();
+		String hql = "from ReportPrintRecord i where i.report_sn like '%"+report_sn+"%' and i.data_status != '99'";
+		list = this.createQuery(hql).list();
+		return list;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<ReportPrintRecord> getInfos(
+			String ids) {
+		List<ReportPrintRecord> list = new ArrayList<ReportPrintRecord>();
+		ids = IdFormat.formatIdStr(ids);
+		String hql = "from ReportPrintRecord i where i.id in ("+ids+") and i.data_status != '99'";
+		list = this.createQuery(hql).list();
+		return list;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<ReportPrintRecord> queryInfos(
+			String report_print_record_id) {
+		List<ReportPrintRecord> list = new ArrayList<ReportPrintRecord>();
+		String hql = "from ReportPrintRecord i where i.id=? and i.data_status != '99'";
+		list = this.createQuery(hql, report_print_record_id).list();
+		return list;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<ReportPrintRecord> querys(
+			String report_print_id) {
+		List<ReportPrintRecord> list = new ArrayList<ReportPrintRecord>();
+		String hql = "from ReportPrintRecord i where i.reportPrint.id=? and i.data_status != '99'";
+		list = this.createQuery(hql, report_print_id).list();
+		return list;
+	}
+	
+	/**
+	 * 根据明细ID查询明细列表
+	 * 
+	 * @param ids
+	 * @return
+	 * @author GaoYa
+	 * @date 2015-01-23 下午05:26:00
+	 */
+	@SuppressWarnings("unchecked")
+	public List<ReportPrintRecordDTO> queryReportInfos(String ids) throws Exception{
+		CurrentSessionUser user = SecurityUtil.getSecurityUser();// 获取当前用户登录信息
+		List<ReportPrintRecordDTO> infoList = new ArrayList<ReportPrintRecordDTO>();
+		ids = IdFormat.formatIdStr(ids);
+		String sql = "select t.report_sn,t.report_com_name,t.id"
+				+ " from tzsb_inspection_info t where t.id in ("
+				+ ids
+				+ ")";
+		List list = this.createSQLQuery(sql).list();
+		if (!list.isEmpty()) {
+			for (int i = 0; i < list.size(); i++) {
+				Object[] objArr = list.toArray();
+				Object[] obj = (Object[]) objArr[i];
+				ReportPrintRecordDTO reportPrintRecordDTO = new ReportPrintRecordDTO();
+				reportPrintRecordDTO.setReport_sn(String.valueOf(obj[0]));
+				String com_name = String.valueOf(obj[1]);
+				if(StringUtil.isEmpty(com_name)){
+					String info_id = String.valueOf(obj[2]);
+					if(StringUtil.isNotEmpty(info_id)){
+						InspectionZZJDInfo zzjd_info = inspectoinZZJDInfoDao.getByInfoId(info_id);
+						if(zzjd_info!=null){
+							if(StringUtil.isNotEmpty(zzjd_info.getMade_unit_name())){
+								com_name = zzjd_info.getMade_unit_name(); 
+							}						
+							if(StringUtil.isEmpty(com_name)){
+								if(StringUtil.isNotEmpty(zzjd_info.getInstall_unit_name())){
+									com_name = zzjd_info.getInstall_unit_name(); 
+								}
+							}
+							if(StringUtil.isEmpty(com_name)){
+								if(StringUtil.isNotEmpty(zzjd_info.getDesign_unit_name())){
+									com_name = zzjd_info.getDesign_unit_name(); 
+								}
+							}
+						}
+					}
+				}
+				
+				reportPrintRecordDTO.setCom_name(com_name);
+				reportPrintRecordDTO.setReport_count(1);
+				reportPrintRecordDTO.setEnter_op_id(user.getId());
+				reportPrintRecordDTO.setEnter_op_name(user.getName());
+				reportPrintRecordDTO.setEnter_date(new Date());
+				reportPrintRecordDTO.setInfo_id(String.valueOf(obj[2]));
+				infoList.add(reportPrintRecordDTO);
+			}
+		}
+		return infoList;
+	}
+	
+	/**
+	 * 验证报告是否报送且已签收状态
+	 * 
+	 * @param ids
+	 * @return
+	 * @author GaoYa
+	 * @date 2017-12-28 下午05:26:00
+	 */
+	@SuppressWarnings("unchecked")
+	public HashMap<String, Object> validateInfos(String ids) throws Exception{
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		boolean result = true;
+		String msg = "";
+		
+		String[] idList = ids.split(",");	
+		for (int i = 0; i < idList.length; i++) {
+			List<ReportPrintRecord> list = new ArrayList<ReportPrintRecord>();
+			InspectionInfo info = inspectoinInfoDao.get(idList[i]);
+			String hql = "from ReportPrintRecord i where i.info_id = ? and i.data_status != '99' and i.data_status != '0'";
+			list = this.createQuery(hql, idList[i]).list();
+			if(list.isEmpty() && StringUtil.isNotEmpty(info.getReport_sn())) {
+				hql = "from ReportPrintRecord i where i.report_sn = ? and i.data_status != '99' and i.data_status != '0'";
+				list = this.createQuery(hql, info.getReport_sn()).list();
+				if(list.isEmpty()) {
+					hql = "from ReportPrintRecord i where i.report_sn like '"+info.getReport_sn().substring(0, info.getReport_sn().length()-2)+"%' and i.data_status != '99' and i.data_status != '0' and length(regexp_replace(replace(i.report_sn,'-','|'),'[^|]+',''))>1";
+					list = this.createQuery(hql).list();
+				}
+			}
+			if(list.isEmpty()){
+				result = false;
+				msg = info.getReport_sn()+"暂未报送不能打印！";
+				break;
+			}else{
+				for(ReportPrintRecord record : list){
+					if(!"2".equals(record.getData_status())){
+						result = false;
+						msg = record.getReport_sn()+"暂未签收不能打印！";
+						break;
+					}
+				}
+			}
+		}
+		
+		if(!result){
+			// 未报送或未签收的情况，检查是否有无原始资料打印申请流程，如有，则允许打印
+			String[] idList2 = ids.split(",");	
+			for (int j = 0; j < idList2.length; j++) {
+				String hql = " select t.id from TJY2_QUALITY_ZSSQ t, TJY2_QUALITY_ZSSQ_SUB t2, tzsb_inspection_info info ";
+				hql += " where t2.quality_zssq_fk = t.id and t2.report_fk = info.id and info.id = ? and t.status = 'PASS'";
+				List list = this.createSQLQuery(hql, idList2[j]).list();
+				if (!list.isEmpty()) {
+					for (int k = 0; k < list.size(); k++) {
+						Object[] objArr = list.toArray();
+						Object obj = objArr[0];
+						if(obj==null){
+							break;
+						}else{
+							if(StringUtil.isEmpty(String.valueOf(obj))){
+								break;
+							}else{
+								result = true;
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		map.put("success", result);
+		map.put("msg", msg);
+		return map;
+	}
+}

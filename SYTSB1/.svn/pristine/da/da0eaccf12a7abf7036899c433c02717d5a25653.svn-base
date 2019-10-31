@@ -1,0 +1,643 @@
+<%@ page contentType="text/html;charset=UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+</head>
+
+<body>
+	<div id="layout2" style="width: 99.8%">
+		<input type="hidden" id="inputFocus" name="inputFocus" /> <input
+			type="hidden" id="thisPage" name="thisPage" value="?page=7">
+		<div position="center" class="wrapper"
+			style="overflow: auto; width: 100%" align="center">
+			<input type="hidden" id="fk_report_id" name="fk_report_id" value="">
+			<input type="hidden" id="fk_inspection_info_id"
+				name="fk_inspection_info_id" value=""> <br />
+			<p>
+				<a name="RTPAGE_6__检验项目及其内容3"></a>
+			</p>
+			<table id="docx4j_tbl_8" class="two">
+				<colgroup>
+					<col style="width: 5.76%;" />
+					<col style="width: 7.51%;" />
+					<col style="width: 7.85%;" />
+					<col style="width: 6.98%;" />
+					<col style="width: 4.26%;" />
+					<col style="width: 46.01%;" />
+					<col style="width: 13.36%;" />
+					<col style="width: 8.26%;" />
+				</colgroup>
+				<thead>
+					<tr style="height: 7mm; page-break-inside: avoid;">
+						<td style="text-align:center;">
+							<p>
+								<span>序号</span>
+							</p>
+						</td>
+						<td style="text-align:center;">
+							<p>
+								<span>检验类别</span>
+							</p>
+						</td>
+						<td colspan="4" style="text-align:center;">
+							<p>
+								<span>检验项目及其内容</span>
+							</p>
+						</td>
+						<td style="text-align:center;">
+							<p>
+								<span>检验结果</span>
+							</p>
+						</td>
+						<td style="text-align:center;">
+							<p>
+								<span>结论</span>
+							</p>
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr style="height: 0.43in; page-break-inside: avoid;">
+						<td rowspan="4" style="text-align:center;">
+							<p>
+								<span>14</span>
+							</p>
+						</td>
+						<td rowspan="4" style="text-align:center;">
+							<p>
+								<span>C</span>
+							</p>
+						</td>
+						<td rowspan="6" style="text-align:center;">
+							<p>
+								<span>4</span>
+							</p>
+							<p>
+								<span><span>轿厢</span></span>
+							</p>
+							<p>
+								<span><span>与对</span></span>
+							</p>
+							<p>
+								<span><span>重（</span></span>
+							</p>
+							<p>
+								<span><span>平衡</span></span>
+							</p>
+							<p>
+								<span><span>重）</span></span>
+							</p>
+						</td>
+						<td colspan="2" rowspan="4" style="text-align:center;">
+							<p>
+								<span>4.5</span>
+							</p>
+							<p>
+								<span>轿厢入口</span>
+							</p>
+						</td>
+						<td rowspan="2">
+							<p>
+								<span>(1)电气安全装置</span><span><span>（目测；使电气安全装置动作，观察杂物电梯运行状况）</span></span>
+							</p>
+							<p>
+								<span><span>轿厢入口处设置的挡板、栅栏、卷帘以及轿门等，应当配有用来验证其关闭的电气安全装置</span></span>
+							</p>
+						</td>
+						<td>
+							<p>
+							<input id="record__C_4_5_1" name="record__C_4_5_1" type="text"
+								ltype="select" value="" class="cC_4_5_1"
+								ligerui="{data:[{'id':'资料确认符合','text':'资料确认符合'},{'id':'资料确认不符合','text':'资料确认不符合'},
+												{'id':'操作验证符合','text':'操作验证符合'},{'id':'操作验证不符合','text':'操作验证不符合'},
+												{'id':'目测符合','text':'目测符合'},{'id':'目测不符合','text':'目测不符合'}] ,initValue:'资料确认符合'}" onchange="changeRecord(this,this.value)"/>
+							
+							</p>
+						</td>
+						<td rowspan="2">
+							<p>
+								<input id="conclusion__C_4_5_1" name="conclusion__C_4_5_1"
+									type="text" ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',initValue:'√'}"  />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.43in; page-break-inside: avoid;">
+						<td>
+							<p>
+								<input id="record__C_4_5_1_1" name="record__C_4_5_1_1"
+									type="text" ltype="text" value="" ligerui="{width:75}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.43in; page-break-inside: avoid;">
+						<td rowspan="2">
+							<p>
+								<span>(2)门的运行和导向</span><span><span>（目测；使电气安全装置动作，观察杂物电梯运行状况）</span></span>
+							</p>
+							<p>
+								<span>轿门、栅栏、卷帘等运行时不得出现脱轨、机械卡阻或者在行程终端时错位</span>
+							</p>
+						</td>
+						<td>
+							<p>
+							<input id="record__C_4_5_2" name="record__C_4_5_2" type="text"
+								ltype="select" value="" class="cC_4_5_2"
+								ligerui="{data:[{'id':'资料确认符合','text':'资料确认符合'},{'id':'资料确认不符合','text':'资料确认不符合'},
+												{'id':'操作验证符合','text':'操作验证符合'},{'id':'操作验证不符合','text':'操作验证不符合'},
+												{'id':'目测符合','text':'目测符合'},{'id':'目测不符合','text':'目测不符合'}] ,initValue:'资料确认符合'}" onchange="changeRecord(this,this.value)"/>
+							
+							</p>
+						</td>
+						<td rowspan="2">
+							<p>
+								<input id="conclusion__C_4_5_2" name="conclusion__C_4_5_2"
+									type="text" ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',initValue:'√'}"  />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.43in; page-break-inside: avoid;">
+						<td>
+							<p>
+								<input id="record__C_4_5_2_1" name="record__C_4_5_2_1"
+									type="text" ltype="text" value="" ligerui="{width:75}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 8mm; page-break-inside: avoid;">
+						<td style="text-align:center;">
+							<p>
+								<span>15</span>
+							</p>
+						</td>
+						<td style="text-align:center;">
+							<p>
+								<span>C</span>
+							</p>
+						</td>
+						<td colspan="3">
+							<p>
+								<span>4.6</span><span> </span><span>对重(平衡重)的固定</span><span><span>（目测）</span></span>
+							</p>
+							<p>
+								<span>如果对重(平衡重)</span><span><span>由重块组成，应当可靠固定</span></span>
+							</p>
+						</td>
+						<td>
+							<p>
+							<input id="record__C_4_6" name="record__C_4_6" type="text"
+								ltype="select" value="" class="cC_4_6"
+								ligerui="{data:[{'id':'资料确认符合','text':'资料确认符合'},{'id':'资料确认不符合','text':'资料确认不符合'},
+												{'id':'目测符合','text':'目测符合'},{'id':'目测不符合','text':'目测不符合'}],initValue:'资料确认符合'}" onchange="changeRecord(this,this.value)"/>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="conclusion__C_4_6" name="conclusion__C_4_6"
+									type="text" ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',initValue:'√'}"  />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 8mm; page-break-inside: avoid;">
+						<td style="text-align:center;">
+							<p>
+								<span>16</span>
+							</p>
+						</td>
+						<td style="text-align:center;">
+							<p>
+								<span>B</span>
+							</p>
+						</td>
+						<td style="text-align:center;"> 
+							<p>
+								<span>4.7</span>
+							</p>
+							<p>
+								<span>安全钳</span>
+							</p>
+						</td>
+						<td colspan="2">
+							<p>
+								<span>★(2)电气安全装置</span><span><span>（目测电气安全装置的设置）</span></span>
+							</p>
+							<p>
+								<span>轿厢上应当装设一个在轿厢安全钳动作以前或者同时动作的电气安全装置</span>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="record__B_4_7_2S" name="record__B_4_7_2S" type="text" 
+									ltype="select" value="" ligerui="{isMultiSelect:false,'code':'dt_jl_record',initValue:'√'}"
+									class="cB_4_7_2S" onchange="changeRecord(this,this.value)"/>
+									 
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="conclusion__B_4_7_2S" name="conclusion__B_4_7_2S"
+									type="text" ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',initValue:'√'}"  />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 1.48in; page-break-inside: avoid;">
+						<td rowspan="2" style="text-align:center;">
+							<p>
+								<span>17</span>
+							</p>
+						</td>
+						<td rowspan="2" style="text-align:center;">
+							<p>
+								<span>C</span>
+							</p>
+						</td>
+						<td rowspan="4" style="text-align:center;">
+							<p>
+								<span>5</span>
+							</p>
+							<p>
+								<span>悬挂</span>
+							</p>
+							<p>
+								<span>装置</span>
+							</p>
+							<p>
+								<span>及旋</span>
+							</p>
+							<p>
+								<span>转部</span>
+							</p>
+							<p>
+								<span>件防</span>
+							</p>
+							<p>
+								<span>护</span>
+							</p>
+						</td>
+						<td colspan="3" rowspan="2">
+							<p>
+								<span>5.1</span><span> </span><span>悬挂装置的磨损、断丝、变形等情况</span>
+							</p>
+							<p>
+								<span><span>出现下列情况之一时，悬挂钢丝绳应当报废：</span></span>
+							</p>
+							<p>
+								<span><span>①出现笼状畸变、</span></span><span>绳股挤出</span><span><span>、扭结、部分压扁、弯折；</span></span>
+							</p>
+							<p>
+								<span>②一个捻距内</span><span><span>出现的断丝数大于下表列出的数值时：</span></span>
+							</p>
+							<table id="docx4j_tbl_7">
+								<colgroup>
+									<col style="width: 52.83%;" />
+									<col style="width: 15.62%;" />
+									<col style="width: 16.63%;" />
+									<col style="width: 14.91%;" />
+								</colgroup>
+								<tbody>
+									<tr style="height: 6mm;">
+										<td rowspan="2">
+											<p> </p>
+											<p>
+												<span>断丝的形式</span>
+											</p>
+										</td>
+										<td colspan="3">
+											<p>
+												<span>钢丝绳类型</span>
+											</p>
+										</td>
+									</tr>
+									<tr style="height: 6mm;">
+										<td>
+											<p>
+												<span>6×19</span>
+											</p>
+										</td>
+										<td>
+											<p>
+												<span>8×19</span>
+											</p>
+										</td>
+										<td>
+											<p>
+												<span>9×19</span>
+											</p>
+										</td>
+									</tr>
+									<tr style="height: 6mm;">
+										<td>
+											<p>
+												<span>均布在外层绳股上</span>
+											</p>
+										</td>
+										<td>
+											<p>
+												<span>24</span>
+											</p>
+										</td>
+										<td>
+											<p>
+												<span>30</span>
+											</p>
+										</td>
+										<td>
+											<p>
+												<span>34</span>
+											</p>
+										</td>
+									</tr>
+									<tr style="height: 6mm;">
+										<td>
+											<p>
+												<span>集中在一或者两根外层绳股上</span>
+											</p>
+										</td>
+										<td>
+											<p>
+												<span>8</span>
+											</p>
+										</td>
+										<td>
+											<p>
+												<span>10</span>
+											</p>
+										</td>
+										<td>
+											<p>
+												<span>11</span>
+											</p>
+										</td>
+									</tr>
+									<tr style="height: 6mm;">
+										<td>
+											<p>
+												<span>一根外层绳股上相邻的断丝</span>
+											</p>
+										</td>
+										<td>
+											<p>
+												<span>4</span>
+											</p>
+										</td>
+										<td>
+											<p>
+												<span>4</span>
+											</p>
+										</td>
+										<td>
+											<p>
+												<span>4</span>
+											</p>
+										</td>
+									</tr>
+									<tr style="height: 6mm;">
+										<td>
+											<p>
+												<span>股谷(缝)断丝</span>
+											</p>
+										</td>
+										<td>
+											<p>
+												<span>1</span>
+											</p>
+										</td>
+										<td>
+											<p>
+												<span>1</span>
+											</p>
+										</td>
+										<td>
+											<p>
+												<span>1</span>
+											</p>
+										</td>
+									</tr>
+									<tr style="height: 0.2in;">
+										<td colspan="4">
+											<p>
+												<span><span>注：上述断丝数的参考长度为一个捻距，约为</span><span>
+														6d(d </span><span>表示钢丝绳的公称直径，</span></span><span>mm)</span>
+											</p>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<p>
+								<span><span>③钢丝绳直径小于其公称直径的</span><span>
+										90%</span></span><span>；</span>
+							</p>
+							<p>
+								<span><span>④钢丝绳严重锈蚀，铁锈填满</span></span><span>绳股间隙。</span>
+							</p>
+							<p>
+								<span><span>采用其他类型悬挂装置的，悬挂装置的磨损、变形等不得超过制造单位设定的报废指标</span></span>
+							</p>
+						</td>
+						<td>
+							<p>
+							<input id="record__C_5_1" name="record__C_5_1" type="text"
+								ltype="select" value="" class="c"
+									ligerui="{isMultiSelect:false,'code':'dt_jl_record',initValue:'√'}"
+									class="cC_5_1" onchange="changeRecord(this,this.value)"/>
+							</p>
+						</td>
+						<td rowspan="2">
+							<p>
+								<input id="conclusion__C_5_1" name="conclusion__C_5_1"
+									type="text" ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',initValue:'√'}"  />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 1.48in; page-break-inside: avoid;">
+						<td>
+							<p>
+								<input id="record__C_5_1_1" name="record__C_5_1_1" type="text"
+									ltype="text" value="" ligerui="{width:75}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 22mm; page-break-inside: avoid;">
+						<td style="text-align:center;">
+							<p>
+								<span>18</span>
+							</p>
+						</td>
+						<td style="text-align:center;">
+							<p>
+								<span>C</span>
+							</p>
+						</td>
+						<td colspan="3">
+							<p>
+								<span>5.2</span><span> </span><span>端部固定</span>
+							</p>
+							<p>
+								<span><span>悬挂钢丝绳绳端固定应当可靠，连接部件无缺损。</span></span>
+							</p>
+							<p>
+								<span><span>钢丝绳在卷筒上的固定应当采用带楔块的压紧装置，或者至少用</span><span>
+										2 </span></span><span>个绳夹或者具有同等安全的其他装置。</span>
+							</p>
+							<p>
+								<span><span>采用其他类型悬挂装置的，其端部固定应当符合制造单位的规定</span></span>
+							</p>
+						</td>
+						<td>
+							<p>
+							<input id="record__C_5_2" name="record__C_5_2" type="text"
+								ltype="select" value="" class="cC_5_2"
+								ligerui="{data:[{'id':'资料确认符合','text':'资料确认符合'},{'id':'资料确认不符合','text':'资料确认不符合'},
+												{'id':'目测符合','text':'目测符合'},{'id':'目测不符合','text':'目测不符合'},
+												{'id':'检验符合','text':'检验符合'},{'id':'检验不符合','text':'检验不符合'}] ,initValue:'资料确认符合'}" onchange="changeRecord(this,this.value)"/>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="conclusion__C_5_2" name="conclusion__C_5_2"
+									type="text" ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',initValue:'√'}"  />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 8mm; page-break-inside: avoid;">
+						<td>
+							<p style="text-align:center;">
+								<span>19</span>
+							</p>
+						</td>
+						<td style="text-align:center;">
+							<p>
+								<span>C</span>
+							</p>
+						</td>
+						<td colspan="3">
+							<p>
+								<span>★</span><span>5.5</span><span> </span><span>旋转部件防护</span><span><span>（目测）</span></span>
+							</p>
+							<p>
+								<span>在机房内、轿厢和对重(平衡重)</span><span><span>上、井道内、液压缸上的曳引轮、滑轮、链轮，以及限速器及张紧轮等与钢丝绳、链条形成传动的旋转部件，均应当设置防护装置，以避免人身伤害、钢丝绳或者链条因松弛而脱离绳槽或者链轮、异物进入绳与绳槽或者链与链轮之间</span></span>
+							</p>
+						</td>
+						<td>
+							<p>
+							<input id="record__C_5_5S" name="record__C_5_5S" type="text"
+								ltype="select" value="" class="cC_5_5S"
+								ligerui="{data:[{'id':'资料确认符合','text':'资料确认符合'},{'id':'资料确认不符合','text':'资料确认不符合'},
+												{'id':'目测符合','text':'目测符合'},{'id':'目测不符合','text':'目测不符合'}],initValue:'资料确认符合'}" onchange="changeRecord(this,this.value)"/>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="conclusion__C_5_5S" name="conclusion__C_5_5S"
+									type="text" ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',initValue:'√'}"  />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.25in; page-break-inside: avoid;">
+						<td rowspan="2" style="text-align:center;">
+							<p>
+								<span>20</span>
+							</p>
+						</td>
+						<td rowspan="2" style="text-align:center;">
+							<p>
+								<span>C</span>
+							</p>
+						</td>
+						<td rowspan="3" style="text-align:center;">
+							<p>
+								<span>6</span>
+							</p>
+							<p>
+								<span>层门</span>
+							</p>
+							<p>
+								<span>与层</span>
+							</p>
+							<p>
+								<span>站</span>
+							</p>
+						</td>
+						<td colspan="3" rowspan="2">
+							<p>
+								<span>6.2</span><span> </span><span>门间隙</span><span><span>（测量相关尺寸）</span></span>
+							</p>
+							<p>
+								<span><span>门关闭后，门扇之间及门扇与立柱、门楣和地</span></span><span>坎之间</span><span><span>的间隙，不应大于</span><span>
+										6mm</span><span>；使用过程中由于磨损，</span></span><span> </span><span>允许达到</span><span><span>
+										10mm</span></span>
+							</p>
+						</td>
+						<td>
+							<p>
+							<input id="record__C_6_2" name="record__C_6_2" type="text"
+								ltype="select" value="" class="cC_6_2"
+								ligerui="{data:[{'id':'资料确认符合','text':'资料确认符合'},{'id':'资料确认不符合','text':'资料确认不符合'},
+												{'id':'相关数据符合','text':'相关数据符合'},{'id':'相关数据不符合','text':'相关数据不符合'}] ,initValue:'资料确认符合'}" onchange="changeRecord(this,this.value)"/>
+							</p>
+						</td>
+						<td rowspan="2">
+							<p>
+								<input id="conclusion__C_6_2" name="conclusion__C_6_2"
+									type="text" ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',initValue:'√'}"  />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.25in; page-break-inside: avoid;">
+						<td>
+							<p>
+								<input id="record__C_6_2_1" name="record__C_6_2_1" type="text"
+									ltype="text" value="" ligerui="{width:75}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 8mm; page-break-inside: avoid;">
+						<td style="text-align:center;">
+							<p>
+								<span>21</span>
+							</p>
+						</td>
+						<td style="text-align:center;">
+							<p>
+								<span>B</span>
+							</p>
+						</td>
+						<td colspan="3">
+							<p>
+								<span>6.3</span><span> </span><span>门重开装置(模拟动作试验)</span>
+							</p>
+							<p>
+								<span>动力驱动的层门在</span><span><span>关闭过程中，</span></span><span>当人员</span><span><span>或者货物被撞击或者将被撞击时，一个装置应当自动使门重新开启</span></span>
+							</p>
+						</td>
+						<td>
+							<p>
+							<input id="record__B_6_3" name="record__B_6_3" type="text" ltype="select"
+								value="" class="cB_6_3"
+								ligerui="{data:[{'id':'资料确认符合','text':'资料确认符合'},{'id':'资料确认不符合','text':'资料确认不符合'},
+												{'id':'操作验证符合','text':'操作验证符合'},{'id':'操作验证不符合','text':'操作验证不符合'}],initValue:'资料确认符合'}" onchange="changeRecord(this,this.value)"/>
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="conclusion__B_6_3" name="conclusion__B_6_3"
+									type="text" ltype="select" value=""
+									ligerui="{isMultiSelect:false,'code':'dt_jl_conclusion',initValue:'√'}"  />
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>
+		</div>
+	</div>
+</body>
+</html>

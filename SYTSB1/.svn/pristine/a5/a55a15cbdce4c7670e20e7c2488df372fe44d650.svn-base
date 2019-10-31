@@ -1,0 +1,375 @@
+﻿<%@ page contentType="text/html;charset=UTF-8" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head pageStatus="${param.pageStatus}">
+<title></title>
+<!-- 每个页面引入，页面编码、引入js，页面标题 -->
+<%@include file="/k/kui-base-form.jsp" %>
+<script type="text/javascript" src="pub/rbac/js/area.js"></script>
+<script type="text/javascript">
+	var pageStatus = "";
+	$(function () {
+		$("#form1").initForm({    //参数设置示例
+			toolbar: [
+				{ text: '保存', id: 'save', icon: 'save', click: save },
+				{text: "点击这里进行新增按钮操作", id: "gesefwefwef", click: function () {
+					$.ligerui.get("gwrhb").addButtonItem({text: "来，新加的按钮", icon: "copy", id: "wefwef", click: function () {
+						alert("新增xxxxxxxxxxxxxxx")
+					}});
+					//alert($.ligerui.get("gwrhb").getValue());
+				}},
+				{text: "打开软件详情", id: "gwrhb"},
+				{text: "删除不用的数据", icon: "del", id: "bwef", click: function () {
+					alert("我被点了吗")
+				}},
+				{text: "删除按钮", icon: "del", id: "del", click: function () {
+					var g = $.ligerui.get('bwef').destroy();
+					$.ligerui.get('del').destroy()
+				}},
+				{ text: '关闭', id: 'close', icon: 'cancel', click: close }
+			],
+			getSuccess: function (res) {
+				manager.loadData({Rows: res.data.baChildbears});
+			}
+		});
+		function save() {
+			if ($("#form1").validate().form()) {
+				var data = $("#form1").getValues();
+				data["baChildbears"] = manager.getData();
+				$.ajax({
+					url: "base/citizen/saveCitizen.do",
+					type: "POST",
+					datatype: "json",
+					contentType: "application/json; charset=utf-8",
+					data: $.ligerui.toJSON(data),
+					success: function (data, stats) {
+						if (data["success"]) {
+							api.data.window.saveCitizenRow($("head").attr("pageStatus"), data.data);
+							api.close();
+						}
+					},
+					error: function (data) {
+						$.ligerDialog.error('保存失败！' + data.msg);
+					}
+				});
+			}
+		}
+
+		function close() {
+			api.close();
+		}
+
+		bearProp();
+		$("#idn").focusout(function () {
+			var value = $(this).val();
+			var parser = new ClsIDCard();
+
+			if (parser.IsValid(value)) {
+				alert(parser.GetBirthDay())
+				var json = {birthday: parser.GetBirthDay(), sex: parser.GetSex()};
+				alert(json.birthday)
+				$("#form1").setValues({birthday: parser.GetBirthDay(), sex: parser.GetSex()})
+			}
+		});
+		manager111 = $("#btn1").ligerButton({
+			click: function () {
+				var g = $("#save").ligerGetTextBoxManager();
+				g.setValue("上一步");
+				var g = $.ligerui.get('save');
+				g.setValue("真的要进行保存吗？");
+				var g = $.ligerui.get('bwef');
+				g.setDisabled();
+			}, text: "点击我吧"
+		});
+		manager112 = $("#btn2").ligerButton({
+			click: function () {
+				var g = $("#save").ligerGetTextBoxManager();
+				g.setValue("下一步");
+				var g = $.ligerui.get('save');
+				g.setValue("真的要进行保存吗？");
+				var g = $.ligerui.get('bwef');
+				g.setDisabled();
+			}, text: "点击我吧"
+		});
+		manager111.setValue("我的值变换了");
+		manager111.setDisabled();
+		manager111.setEnabled();
+		var g = $("#btn1").ligerGetTextBoxManager();
+		g.setValue("动态直接改变值");
+		$("#btn").toggle(function () {
+			var g = $.ligerui.get('bwef');
+			g.setDisabled();
+		}, function () {
+			var g = $.ligerui.get('bwef');
+			g.setEnabled();
+		});
+	});
+	var propTypes = [
+		{'id': '1', 'text': '一孩次'},
+		{'id': '2', 'text': '二孩次'},
+		{'id': '3', 'text': '三孩次'},
+		{'id': '4', 'text': '四孩次'}
+	];
+	var manager;
+	function bearProp() {
+		var columns = [
+			{ display: '孩次', width: '10%', name: 'orders', type: 'text',
+				editor: { type: 'select', data: propTypes },
+				render: function (item) {
+					for (var i in propTypes) {
+						if (propTypes[i]["id"] == item["orders"])
+							return propTypes[i]['text'];
+					}
+					return item["orders"];
+				}
+			},
+			{ display: '生育服务证号', name: 'certNo', width: '10%', editor: { type: 'text' }},
+			{ display: '独生子女光荣证号', name: 'honourNo1', width: '10%', type: 'int', editor: { type: 'date'} },
+			{ display: '独生子女光荣证号11', name: 'honourNo2', width: '10%', type: 'int', editor: { type: 'spinner'} },
+			{ display: '独生子女光荣证号222', name: 'honourNo3', width: '10%', type: 'int', editor: { type: 'radio'} },
+			{ display: '政策外生育', name: 'pol', width: '', align: 'center', type: 'int', editor: { type: 'checkbox'},
+				render: function (item) {
+					return '<a class="l-checkbox' + (item["pol"] == "1" ? " l-checkbox-checked" : "") + '" style="margin-top:3px;"></a>';
+				}
+			}
+		]
+		if (pageStatus != "detail") {
+			columns.push({ display: "<a class='l-a iconfont l-icon-add' href='javascript:void(0);' onclick='addNewRow()'><span>增加</span></a>", isSort: false, width: '10%', render: function (rowdata, rowindex, value) {
+				var h = "";
+				if (!rowdata._editing) {
+					h += "<a class='l-a iconfont l-icon-add' href='javascript:void(0);' onclick='addNewRow()'><span>增加</span></a> ";
+					h += "<a class='l-a l-icon-edit' href='javascript:void(0);' onclick='beginEdit(" + rowindex + ")'><span>修改</span></a> ";
+					h += "<a class='l-a l-icon-del' href='javascript:void(0);' onclick='deleteRow(" + rowindex + ")'><span>删除</span></a> ";
+				}
+				else {
+					h += "<a class='l-a l-icon-save' href='javascript:void(0);' onclick='endEdit(" + rowindex + ")'><span>保存</span></a> ";
+					h += "<a class='l-a l-icon-cancel' href='javascript:void(0);' onclick='cancelEdit(" + rowindex + ")'><span>取消</span></a> ";
+				}
+				return h;
+			}
+			});
+		}
+		manager = $("#prop").ligerGrid({
+			columns: columns,
+			onSelectRow: function (rowdata, rowindex) {
+				$("#txtrowindex").val(rowindex);
+			},
+			title: '生育状况',
+			enabledEdit: pageStatus != "detail",
+			clickToEdit: true,
+			rownumbers: true,
+			frozenRownumbers: false,
+			isScroll: true,
+			usePager: false,
+			data: {Rows: []}
+		});
+
+	}
+
+	function beginEdit(g) {
+		alert(g);
+		var row = manager.getSelectedRow();
+		if (!row) {
+			alert('请选择行');
+			return;
+		}
+		manager.beginEdit(row);
+	}
+	function cancelEdit() {
+		var row = manager.getSelectedRow();
+		if (!row) {
+			alert('请选择行');
+			return;
+		}
+		manager.cancelEdit(row);
+	}
+	function cancelAllEdit() {
+		manager.cancelEdit();
+	}
+	function endEdit() {
+		var row = manager.getSelectedRow();
+		if (!row) {
+			alert('请选择行');
+			return;
+		}
+		manager.endEdit(row);
+	}
+	function endAllEdit() {
+		manager.endEdit();
+	}
+	function deleteRow() {
+		manager.deleteSelectedRow();
+	}
+	var newrowid = 100;
+	function addNewRow() {
+		manager.addEditRow();
+	}
+
+	function getSelected() {
+		var row = manager.getSelectedRow();
+		if (!row) {
+			alert('请选择行');
+			return;
+		}
+		alert(JSON.stringify(row));
+	}
+	function getData() {
+		var data = manager.getData();
+		alert(JSON.stringify(data));
+	}
+</script>
+<style type="text/css">
+a, strong, ul, li {
+	margin:0;
+	padding:0;
+}
+
+li {
+	list-style:none;
+}
+
+em {
+	font-style:normal;
+}
+
+.process {
+	height:55px; /* border:#f00 solid 1px;*/
+	overflow:hidden;
+	zoom:1;
+	text-align:center;
+	position:relative;
+}
+
+.process_lt {
+	width:20px;
+	height:55px;
+	background:url(demo/img/p_lt.png) no-repeat;
+	position:absolute;
+	left:0;
+	top:0;
+}
+
+.process_rt {
+	width:20px;
+	height:55px;
+	background:url(demo/img/p_rt.png) no-repeat;
+	position:absolute;
+	right:0px;
+	top:0;
+	z-index:99;
+}
+
+.process_main {
+	position:relative;
+	left:20px;
+	top:0;
+	font:14px "微软雅黑", "宋体";
+	z-index:1;
+	background:#fef9e7;
+}
+
+.process_main li {
+	background:#fef9e7;
+	height:55px;
+	float:left;
+}
+
+.process_main li a {
+	color:#000;
+	text-decoration:none;
+	position:relative;
+	margin:9px 18px 10px;
+	padding-left:28px;
+	line-height:36px;
+	display:inline-block;
+}
+
+.process_main li a strong {
+	font:36px Arial, Helvetica, sans-serif;
+	color:#e6660f;
+	padding-right:5px;
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+
+.process_main li:hover, .process_main li.hover {
+	background:#fed3a4;
+}
+
+.process_main em {
+	display:inline-block;
+	background:url(demo/img/p_md.png) no-repeat;
+	float:left;
+	width:34px;
+	height:36px;
+	padding:9px 0px 10px;
+}
+
+	/**/
+.process2 {
+	font-size:14px;
+	font-weight:bold;
+	text-align:center;
+	overflow:hidden; /* background:url(demo/img/arrow0.png) no-repeat center top;*/
+	margin:20px 0px 50px;
+	*padding-left:150px;
+	_padding-bottom:50px;
+}
+
+.process2 li {
+	display:inline-block;
+	*float:left;
+	width:180px;
+	background:url(demo/img/arrow1.png) no-repeat left top;
+	padding-top:26px;
+}
+
+.process2 li a {
+	margin-top:15px;
+	display:inline-block;
+	color:#000;
+}
+
+.process2 li.active {
+	background:url(demo/img/arrow2.png) no-repeat left top;
+	padding-top:26px;
+	font-weight:bold;
+}
+
+.process2 li:hover {
+	background:url(demo/img/arrow2.png) no-repeat left top;
+	padding-top:26px;
+	font-weight:bold;
+	color:#951d22;
+}
+
+.process2 li.active a {
+	color:#951d22;
+}
+</style>
+</head>
+<body>
+<div class="process">
+	<div class="process_lt"></div>
+	<div class="process_main">
+		<ul>
+			<li><a href=""><strong>1</strong>注册登录</a></li>
+			<li><em></em><a href=""><strong>2</strong>打开新的软件</a></li>
+			<li class="hover"><em></em><a href=""><strong>3</strong>马上操作</a></li>
+			<li><em></em><a href=""><strong>4</strong>操作过程中</a></li>
+			<li><em></em><a href=""><strong>5</strong>完成任务</a></li>
+		</ul>
+	</div>
+	<div class="process_rt"></div>
+</div>
+<!--第二种-->
+<div class="process2">
+	<ul>
+		<li class="active"><a href="hd_jgdm_02.html">办事指南</a></li>
+		<li><a href="hd_jgdm_03.html">表格下载</a></li>
+		<li><a href="hd_jgdm_04.html">在线申报</a></li>
+	</ul>
+</div>
+</body>
+</html>

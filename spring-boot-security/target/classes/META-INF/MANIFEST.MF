@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Built-By: Administrator
+Build-Jdk: 12.0.2
+Implementation-Title: Spring Boot Web Spring Security
+Implementation-Version: 1.0
+Implementation-Vendor-Id: org.springframework.boot
+Implementation-URL: https://www.mkyong.com
+Created-By: Maven Integration for Eclipse
+

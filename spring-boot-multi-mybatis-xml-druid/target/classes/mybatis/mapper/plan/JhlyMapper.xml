@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.neo.mapper.plan.JhlyMapper" >
+    <resultMap id="BaseResultMap" type="com.neo.model.Jhly" >
+    <id column="zymlid" property="zymlid" jdbcType="VARCHAR" />
+<id column="nf" property="nf" jdbcType="VARCHAR" />
+<id column="yxdm" property="yxdm" jdbcType="VARCHAR" />
+<id column="yxmc" property="yxmc" jdbcType="VARCHAR" />
+<id column="yxdh" property="yxdh" jdbcType="VARCHAR" />
+<id column="yxdhmc" property="yxdhmc" jdbcType="VARCHAR" />
+<id column="zszydm" property="zszydm" jdbcType="VARCHAR" />
+<id column="zszymc" property="zszymc" jdbcType="VARCHAR" />
+<id column="bhzy" property="bhzy" jdbcType="VARCHAR" />
+<id column="bhzygs" property="bhzygs" jdbcType="VARCHAR" />
+<id column="zylbdm" property="zylbdm" jdbcType="VARCHAR" />
+<id column="zylbmc" property="zylbmc" jdbcType="VARCHAR" />
+<id column="xbzydh" property="xbzydh" jdbcType="VARCHAR" />
+<id column="ccdm" property="ccdm" jdbcType="VARCHAR" />
+<id column="ccmc" property="ccmc" jdbcType="VARCHAR" />
+<id column="zkfx" property="zkfx" jdbcType="VARCHAR" />
+<id column="xzdm" property="xzdm" jdbcType="VARCHAR" />
+<id column="xzmc" property="xzmc" jdbcType="VARCHAR" />
+<id column="sfbz" property="sfbz" jdbcType="VARCHAR" />
+<id column="bxdd" property="bxdd" jdbcType="VARCHAR" />
+<id column="bxddssmc" property="bxddssmc" jdbcType="VARCHAR" />
+<id column="bxdddjsmc" property="bxdddjsmc" jdbcType="VARCHAR" />
+<id column="bxddqxmc" property="bxddqxmc" jdbcType="VARCHAR" />
+<id column="bxddxxdz" property="bxddxxdz" jdbcType="VARCHAR" />
+<id column="bxddbb" property="bxddbb" jdbcType="VARCHAR" />
+<id column="sfks" property="sfks" jdbcType="VARCHAR" />
+<id column="wyyz" property="wyyz" jdbcType="VARCHAR" />
+<id column="yxbmdm" property="yxbmdm" jdbcType="VARCHAR" />
+<id column="yxbmmc" property="yxbmmc" jdbcType="VARCHAR" />
+<id column="kldm" property="kldm" jdbcType="VARCHAR" />
+<id column="klmc" property="klmc" jdbcType="VARCHAR" />
+<id column="jhxzdm" property="jhxzdm" jdbcType="VARCHAR" />
+<id column="jhxzmc" property="jhxzmc" jdbcType="VARCHAR" />
+<id column="jhlbdm" property="jhlbdm" jdbcType="VARCHAR" />
+<id column="jhlbmc" property="jhlbmc" jdbcType="VARCHAR" />
+<id column="syssdm" property="syssdm" jdbcType="VARCHAR" />
+<id column="syssmc" property="syssmc" jdbcType="VARCHAR" />
+<id column="pcdm" property="pcdm" jdbcType="VARCHAR" />
+<id column="pcmc" property="pcmc" jdbcType="VARCHAR" />
+<id column="zklxdm" property="zklxdm" jdbcType="VARCHAR" />
+<id column="zklxmc" property="zklxmc" jdbcType="VARCHAR" />
+<id column="kskmyq" property="kskmyq" jdbcType="VARCHAR" />
+<id column="kskmyqzw" property="kskmyqzw" jdbcType="VARCHAR" />
+<id column="skyq" property="skyq" jdbcType="VARCHAR" />
+<id column="skyqzw" property="skyqzw" jdbcType="VARCHAR" />
+<id column="zybz" property="zybz" jdbcType="VARCHAR" />
+<id column="dz1" property="dz1" jdbcType="VARCHAR" />
+<id column="dz2" property="dz2" jdbcType="VARCHAR" />
+<id column="dz3" property="dz3" jdbcType="VARCHAR" />
+<id column="dz4" property="dz4" jdbcType="VARCHAR" />
+<id column="dz5" property="dz5" jdbcType="VARCHAR" />
+<id column="dz6" property="dz6" jdbcType="VARCHAR" />
+<id column="dz7" property="dz7" jdbcType="VARCHAR" />
+<id column="dz8" property="dz8" jdbcType="VARCHAR" />
+<id column="dz9" property="dz9" jdbcType="VARCHAR" />
+<id column="dz10" property="dz10" jdbcType="VARCHAR" />
+<id column="zyxztj" property="zyxztj" jdbcType="VARCHAR" />
+<id column="dqhdzt" property="dqhdzt" jdbcType="VARCHAR" />
+<id column="qwqrsj" property="qwqrsj" jdbcType="VARCHAR" />
+<id column="hdsj" property="hdsj" jdbcType="VARCHAR" />
+<id column="hdyj" property="hdyj" jdbcType="VARCHAR" />
+<id column="hdyjmx" property="hdyjmx" jdbcType="VARCHAR" />
+<id column="key" property="key" jdbcType="VARCHAR" />
+<id column="jhid" property="jhid" jdbcType="VARCHAR" />
+<id column="sbzydh" property="sbzydh" jdbcType="VARCHAR" />
+<id column="xkkmbhzy" property="xkkmbhzy" jdbcType="VARCHAR" />
+<id column="zsjhs" property="zsjhs" jdbcType="INTEGER" />
+<id column="xfzy" property="xfzy" jdbcType="VARCHAR" />
+    </resultMap>
+    
+    <sql id="Base_Column_List" >
+      jhid,
+		nf,
+		yxdm,
+		yxmc,
+		yxdh,
+		yxdhmc,
+		zszydm,
+		zszymc,
+		zylbdm,
+		zylbmc,
+		bhzy,
+		bhzygs,
+		ccdm,
+		ccmc,
+		sbzydh,
+		xbzydh,
+		zkfx,
+		xzdm,
+		xzmc,
+		sfbz,
+		bxdd,
+		bxddssmc,
+		bxdddjsmc,
+		bxddqxmc,
+		bxddxxdz,
+		bxddbb,
+		sfks,
+		wyyz,
+		yxbmdm,
+		yxbmmc,
+		kldm,
+		klmc,
+		jhxzdm,
+		jhxzmc,
+		jhlbdm,
+		jhlbmc,
+		syssdm,
+		syssmc,
+		pcdm,
+		pcmc,
+		zklxdm,
+		zklxmc,
+		kskmyq,
+		kskmyqzw,
+		xkkmbhzy,
+		skyq,
+		zybz,
+		dz1,
+		dz2,
+		dz3,
+		dz4,
+		dz5,
+		dz6,
+		dz7,
+		dz8,
+		dz9,
+		dz10,
+		zsjhs,
+		xfzy,
+		zyxztj
+
+    </sql>
+    <sql id="Base_Param_List" >
+      #{jhid},
+		#{nf},
+		#{yxdm},
+		#{yxmc},
+		#{yxdh},
+		#{yxdhmc},
+		#{zszydm},
+		#{zszymc},
+		#{zylbdm},
+		#{zylbmc},
+		#{bhzy},
+		#{bhzygs},
+		#{ccdm},
+		#{ccmc},
+		#{sbzydh},
+		#{xbzydh},
+		#{zkfx},
+		#{xzdm},
+		#{xzmc},
+		#{sfbz},
+		#{bxdd},
+		#{bxddssmc},
+		#{bxdddjsmc},
+		#{bxddqxmc},
+		#{bxddxxdz},
+		#{bxddbb},
+		#{sfks},
+		#{wyyz},
+		#{yxbmdm},
+		#{yxbmmc},
+		#{kldm},
+		#{klmc},
+		#{jhxzdm},
+		#{jhxzmc},
+		#{jhlbdm},
+		#{jhlbmc},
+		#{syssdm},
+		#{syssmc},
+		#{pcdm},
+		#{pcmc},
+		#{zklxdm},
+		#{zklxmc},
+		#{kskmyq},
+		#{kskmyqzw},
+		#{xkkmbhzy},
+		#{skyq},
+		#{zybz},
+		#{dz1},
+		#{dz2},
+		#{dz3},
+		#{dz4},
+		#{dz5},
+		#{dz6},
+		#{dz7},
+		#{dz8},
+		#{dz9},
+		#{dz10},
+		#{zsjhs},
+		#{xfzy},
+		#{zyxztj}
+    </sql>
+
+    <select id="getAll" resultMap="BaseResultMap"  >
+       SELECT 
+       <include refid="Base_Column_List" />
+   		FROM jhly
+    </select>
+    
+ <!--    <select id="getOne" parameterType="java.lang.String" resultMap="BaseResultMap" >
+        SELECT 
+       <include refid="Base_Column_List" />
+   FROM jhly
+   WHERE id = #{id}
+    </select> -->
+
+    <insert id="addJhly" parameterType="com.neo.model.Jhly" >
+       INSERT INTO jhly
+       (
+        <include refid="Base_Column_List" />
+		) VALUES (
+       	<include refid="Base_Param_List" />
+		)
+    </insert>
+    
+    <!-- <update id="update" parameterType="com.neo.model.Zydh" >
+       UPDATE 
+       t_zydh 
+       SET 
+       <if test="yxmc != null">yxmc = #{yxmc},</if>
+       <if test="yxdhmc != null">yxdhmc = #{yxdhmc},</if>
+       zkfx = #{zkfx}
+       WHERE 
+       id = #{id}
+    </update> -->
+    
+    <delete id="delete" parameterType="java.lang.String" >
+       DELETE FROM
+        jhly 
+       WHERE 
+        jhid =#{id}
+    </delete>
+    <delete id="deleteAll">
+       DELETE FROM jhly 
+    </delete>
+    <delete id="deleteByYxdm" parameterType="java.lang.String">
+       DELETE FROM jhly where yxdm = #{yxdm}
+    </delete>
+    <delete id="updateYxdh">
+      update jhly set yxdh='0000',yxdhmc='新增院校'  where yxdm not in (select yxdm from yxdh)
+    </delete>
+
+</mapper>

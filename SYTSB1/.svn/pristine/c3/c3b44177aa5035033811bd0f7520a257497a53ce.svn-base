@@ -1,0 +1,1081 @@
+package com.lsts.mobileapp.input.service;
+
+import java.io.File;
+import java.io.InputStream;
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
+
+import com.khnt.base.Factory;
+import com.khnt.bpm.core.bean.Activity;
+import com.khnt.bpm.core.engine.FlowEngine;
+import com.khnt.bpm.ext.service.FlowDefinitionManager;
+import com.khnt.bpm.ext.service.FlowExtManager;
+import com.khnt.bpm.ext.support.FlowExtWorktaskParam;
+import com.khnt.core.crud.manager.impl.EntityManageImpl;
+import com.khnt.core.exception.KhntException;
+import com.khnt.pub.fileupload.bean.Attachment;
+import com.khnt.pub.fileupload.dao.AttachmentDao;
+import com.khnt.rbac.impl.bean.Employee;
+import com.khnt.rbac.impl.bean.User;
+import com.khnt.rbac.impl.dao.EmployeeDao;
+import com.khnt.rbac.impl.dao.UserDao;
+import com.khnt.rtbox.config.bean.RtExportData;
+import com.khnt.rtbox.config.dao.RtPageDao;
+import com.khnt.rtbox.config.service.RtPageManager;
+import com.khnt.rtbox.template.constant.RtExportDataType;
+import com.khnt.rtbox.template.constant.RtPageType;
+import com.khnt.rtbox.template.constant.RtPath;
+import com.khnt.rtbox.template.handle.export.RtSaveAsst;
+import com.khnt.security.CurrentSessionUser;
+import com.khnt.security.util.SecurityUtil;
+import com.khnt.utils.DateUtil;
+import com.khnt.utils.FileUtil;
+import com.khnt.utils.StringUtil;
+import com.lsts.common.service.InspectionCommonService;
+import com.lsts.device.bean.DeviceDocument;
+import com.lsts.device.dao.DeviceDao;
+import com.lsts.device.service.DeviceService;
+import com.lsts.flow.service.BaseFlowConfigService;
+import com.lsts.inspection.bean.Inspection;
+import com.lsts.inspection.bean.InspectionInfo;
+import com.lsts.inspection.bean.ReportItemRecord;
+import com.lsts.inspection.dao.InspectionDao;
+import com.lsts.inspection.dao.InspectionInfoDao;
+import com.lsts.inspection.dao.ReportItemRecordDao;
+import com.lsts.inspection.service.ReportItemRecordService;
+import com.lsts.inspection.service.ReportItemValueService;
+import com.lsts.log.service.SysLogService;
+import com.lsts.mobileapp.input.bean.InspectRecordDir;
+import com.lsts.mobileapp.input.caculate.Caculator;
+import com.lsts.mobileapp.input.dao.InspectRecordDirDao;
+import com.lsts.mobileapp.input.dao.RecordDao;
+import com.lsts.mobileapp.input.dao.TzsbRecordLogDao;
+import com.lsts.mobileapp.rcparse.service.R3Manager;
+import com.lsts.org.bean.EnterInfo;
+import com.lsts.org.dao.EnterDao;
+import com.lsts.org.service.EnterService;
+import com.lsts.report.bean.Report;
+import com.lsts.report.bean.ReportErrorRecordInfo;
+import com.lsts.report.dao.ReportDao;
+import com.lsts.report.dao.ReportErrorRecordInfoDao;
+import com.lsts.report.service.ReportService;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+import util.TS_Util;
+@Service
+public class RecordService extends EntityManageImpl<ReportItemRecord, RecordDao>{
+	//private DateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd");
+	private DateFormat timeformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	@Autowired
+	RecordDao recordDao;
+	@Autowired
+	InspectionInfoDao infoDao;
+	@Autowired
+	DeviceDao deviceDao;
+	@Autowired
+	ReportDao reportDao;
+	@Autowired
+	EmployeeDao employeeDao;
+	@Autowired
+	SysLogService logService;
+	@Autowired
+	FlowExtManager flowExtManager;
+	@Autowired
+	BaseFlowConfigService baseFlowConfigService;
+	@Autowired
+	InspectionCommonService inspectionCommonService;
+	@Autowired
+	ReportItemValueService reportItemValueService;
+	@Autowired
+	ReportItemRecordService reportItemRecordService;
+	@Autowired
+	TzsbRecordLogDao recordLogDao;
+	@Autowired
+	private FlowDefinitionManager flowDefManager;
+	@Autowired
+	private ReportItemRecordDao reportItemRecordDao;
+	@Autowired
+	private InspectionDao inspectionDao;
+	@Autowired
+	private EnterService enterService;
+	@Autowired
+	private ReportService reportService;
+	@Autowired
+	private ReportErrorRecordInfoDao reportErrorRecordInfoDao;
+	@Autowired
+	private DeviceService deviceService;
+	@Autowired
+	UserDao userDao;
+	@Autowired
+	EnterDao enterDao;
+	@Autowired
+	Caculator caculator;
+	
+	
+	@Autowired
+	RtPageManager rtPageManager;
+	@Autowired
+	RtPageDao rtPageDao;
+	@Autowired
+	InspectRecordDirService recordDirService;
+	@Autowired
+	InspectRecordDirDao recordDirDao;
+	@Autowired
+	AttachmentDao attachmentDao;
+	@Autowired
+	TzsbRecordLogService recordLogService;
+	@Autowired
+	ReportDao reportsDao;
+	@Autowired
+	R3Manager r3Manager;
+	@Autowired
+	ReportService reportsManager;
+	/**
+	 * 保存的页码
+	 * author pingZhou
+	 * @param map
+	 * @param pages
+	 * @param infoId 业务id
+	 * @throws Exception
+	 */
+	public InspectionInfo saveRecord(HttpServletRequest request,JSONObject object) throws Exception {
+		CurrentSessionUser user = SecurityUtil.getSecurityUser();
+		Employee emp = ((User)user.getSysUser()).getEmployee();
+		Map<String, String> imgIdMap = new HashMap<String, String>();
+		//页码信息
+		String pages = object.getString("page");
+		if(StringUtil.isEmpty(pages)) {
+			throw new Exception("为获取提交的页码！");
+		}
+		//业务id
+		String infoId = object.getString("infoId");
+		//原始记录业务信息，新增info信息时需要取record的信息
+		JSONObject record = object.getJSONObject("record");
+		if(StringUtil.isEmpty(infoId)||"null".equals(infoId)) {
+			infoId = record.getString("fkInspectInfoId");
+		}
+		InspectionInfo info = null;
+		//业务info
+		if(StringUtil.isNotEmpty(infoId) && !"null".equals(infoId)) {
+			//查询业务数据
+			info = infoDao.get(infoId);
+		}else {
+			//infoId 为空则新建一条业务数据
+			info = new InspectionInfo();
+		}
+		
+		//原始记录模板
+		JSONObject recordM = object.getJSONObject("recordM");
+		//判断模板是否存在
+		String fk_report_id = StringUtil.isEmpty(info.getReport_type())?recordM.getString("id"):info.getReport_type();
+		if(StringUtil.isEmpty(fk_report_id)) {
+			throw new Exception("找不到关联的报表ID...");
+		}
+		//原始记录目录信息
+		JSONArray recordDir = object.getJSONArray("recordDir");
+		if(recordDir==null) {
+			throw new KhntException("没有提交目录信息！");
+		}
+		//原始记录录入数据信息
+		JSONArray list = object.getJSONArray("list");
+		//将录入信息转成map
+		Map<String, RtExportData> map = RtSaveAsst.transToMap(list, RtPageType.TABLE);
+		
+		//保存附件图片
+		try {
+			MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+			Map<String, MultipartFile> files = multipartRequest.getFileMap();
+			if (files.size() > 0) {
+				
+				for (String pic_name : files.keySet()) {  
+				    Attachment attachment = new Attachment();
+				    CommonsMultipartFile file = (CommonsMultipartFile) files.get(pic_name);
+					attachment.setFileSize(file.getSize());
+					attachment.setFileType("image/jpeg");
+					attachment.setFileName(pic_name);
+					System.out.println("--key----"+pic_name+"--filename----"+file.getOriginalFilename());
+					saveAttachment(file.getInputStream(),attachment,"desk",false);
+					int l = pic_name.lastIndexOf(".");
+					imgIdMap.put(pic_name.substring(0, l), attachment.getId());
+				}  
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			//throw new KhntException("图片信息保存出错！");
+		}
+		//删除数据
+		if(StringUtil.isNotEmpty(info.getId())) {
+			//取出所有需要保存内容
+			List<String> nameList = new ArrayList<String>();
+			
+			for (String name : map.keySet()) {
+				if(name.lastIndexOf("__")!=-1) {
+					name = name.substring(0,name.lastIndexOf("__"));
+				}
+				nameList.add(name);
+			}
+			String names = String.join("','", nameList.toArray(new String[nameList.size()]));
+	
+			String pagess = pages.replace(",", "','");
+			
+			String hql = "update ReportItemRecord set data_status='99' where  item_name in ('"+names+"') and fk_inspection_info_id='" + info.getId() + "' and page_no in ('"+pagess+"')";
+			
+			this.reportItemRecordDao.createQuery(hql).executeUpdate();
+			
+			this.rtPageManager.delFuncDataBacth(info.getId(),names,pages);
+		}else {
+			//直接缓存设备检验
+			String baseDeviceDocumentId = record.getString("fkDeviceId");
+			if(StringUtil.isEmpty(baseDeviceDocumentId)||"null".equals(baseDeviceDocumentId)) {
+				throw new Exception("未提交原始记录关联设备！");
+			}
+			DeviceDocument ddoc = deviceDao.get(baseDeviceDocumentId);
+			EnterInfo company =  ddoc.getEnterInfo();
+			if (company == null) {
+				company = enterService.get(ddoc.getFk_company_info_use_id());
+			}
+			
+			Inspection inspection = new Inspection();
+			inspection.setCheck_type(record.getString("checkType"));	// 检验类别（3：定检 2：监检）
+			inspection.setFk_unit_id(record.getString("fkComId"));	// 报检单位ID
+			inspection.setCom_name(record.getString("comName"));		// 报检单位名称
+			inspection.setEnter_op_id(emp.getId());
+			inspection.setEnter_op(emp.getName());	// 录入人员
+			inspection.setInspection_time(Timestamp.valueOf(timeformat.format(new Date())));
+			inspection.setData_status("0");			// 0：新建 1:使用 2：删除
+			inspectionDao.save(inspection);
+			
+			info.setInspection(inspection);
+			//设备id
+			info.setFk_tsjc_device_document_id(ddoc.getId());
+			//验证设备使用登记证号是否重复
+			if(StringUtil.isNotEmpty(ddoc.getRegistration_num()))
+			{
+				//validateRegistrationNumDuplicate(ddoc);
+				info.setRegistration_num(ddoc.getRegistration_num());
+			}
+			//验证设备二维码重复
+			if(StringUtil.isNotEmpty(ddoc.getDevice_qr_code()))
+			{
+				//validateDeviceQrCodeDuplicate(ddoc);
+				info.setDevice_qr_code(ddoc.getDevice_qr_code());
+			}
+			//设备注册代码
+			info.setDevice_registration_code(record.getString("deviceRegistrationCode"));
+			// 检验类别（3：定检 2：监检）
+			info.setCheck_category_code(record.getString("checkType"));
+			info.setCheck_category_name(record.getString("checkTypeName"));
+			//report.id
+			info.setReport_type(record.getString("fkModelId"));
+			
+			//参检人员
+			info.setCheck_op_id(record.getString("checkOpId"));
+			info.setCheck_op_name(record.getString("checkOp"));
+			//项目负责人
+			info.setItem_op_id(record.getString("itemOpId"));
+			info.setItem_op_name(record.getString("itemOp"));
+			// 检验部门ID
+			info.setCheck_unit_id(user.getSysUser().getOrg().getId());	
+			// 录入部门ID
+			info.setEnter_unit_id(user.getSysUser().getOrg().getId());	
+			//提交校核时已经赋值为校核人员
+			if(StringUtil.isEmpty(info.getRecordHandleId())) {
+				info.setRecordHandleId(record.getString("handleId"));
+			}
+			if(StringUtil.isEmpty(info.getRecordHandleOp())) {
+				info.setRecordHandleOp(record.getString("handleOp"));
+			}
+			//报检单位名称
+			info.setReport_com_name(record.getString("comName"));
+			if(company!=null) {
+				info.setCheck_op(company.getCom_contact_man()); // 检验联系人
+				info.setCheck_tel(company.getCom_tel()); // 检验联系电话
+				info.setReport_com_address(company.getCom_address()); // 使用单位地址
+			}
+			// 原始记录是否已经校核，默认为0（0：未校核 1：校核通过 2：校核未通过）	
+			info.setIs_report_confirm("0");	
+			info.setIs_back("1");		// 默认的状态为1，提交后变成0，退回也变成1
+			info.setIs_copy("0");		// 是否是复制报告（0：非复制报告 1：复制报告）
+			info.setIs_mobile("1");		// 是否移动检验（0：否 1：是）
+			info.setIs_flow("0");//是否启动流程		
+			// 未启动流程前，业务数据状态都为初始状态不进入正常使用流程
+			info.setData_status("0");		// 报告数据状态（0：初始（未生成报告） 1：正常 99：删除）
+			info.setFee_status("0");		// 收费状态（0：初始）未启动流程前，收费状态都为初始状态不进入待收费流程
+			info.setYsjl_data_status("0");	// 原始记录数据状态（0：未生成报告 1：已生成报告 2：原始记录已修改未生成报告）
+			info.setLast_mdy_time(new Date());
+			info.setIs_print_ysjl("0");//原始记录打印状态（0：未打印 1：已打印）
+			//创建日期
+			info.setCreate_time(new Date());
+			//检验日期inspectDate
+			Date date = null;
+			try {
+				date = new SimpleDateFormat("yyyy-MM-dd hh:mm").parse(record.getString("inspectDate"));
+			}catch(ParseException e) {
+				e.printStackTrace();
+				date = new Date();
+			}
+			info.setAdvance_time(date);
+			// 自动计算
+			Calendar calendar = Calendar.getInstance();
+			calendar.setTime(new Date());
+			calendar.add(Calendar.YEAR, 1);	
+			//下次检验日期，下次检验日期=（检验日期 + 1年）- 1天
+			if(StringUtil.isNotEmpty(ddoc.getDevice_sort())){
+				if (!ddoc.getDevice_sort().startsWith("9")) {
+					//	客运索道（device_sort_code为9开头的4位数字）报告只显示到年月，不需要精确到年月日，故此处不用减去一天
+					calendar.set(Calendar.DATE, calendar.get(Calendar.DATE) - 1);	
+				}
+			}else{
+				// 暂无设备的情况，默认下次检验日期=（检验日期 + 1年）- 1天
+				calendar.set(Calendar.DATE, calendar.get(Calendar.DATE) - 1);	
+			}
+			info.setLast_check_time(calendar.getTime());
+			//编辑日期
+			// 自动计算录入/编制日期（编制日期=检验日期+1天）
+			Date cur_date = DateUtil.convertStringToDate("yyyy-MM-dd", DateUtil.getCurrentDateTime());
+			if(ddoc.getDevice_sort().startsWith("3") || ddoc.getDevice_sort().startsWith("4") || ddoc.getDevice_sort().startsWith("6") || ddoc.getDevice_sort().startsWith("9")){
+				Calendar calendar2 = Calendar.getInstance();
+				calendar2.setTime(info.getAdvance_time());
+				calendar2.add(Calendar.DATE, 1);	
+				// 检验日期为当天的，编制日期不再+1，默认为当天
+				Date draft_date = null;
+				if(calendar2.getTime().after(cur_date)){
+					draft_date = cur_date;
+				}else{
+					draft_date = calendar.getTime();
+				}
+				info.setEnter_time(draft_date);
+			}else{
+				info.setEnter_time(new Date());		// 录入日期
+			}
+			//验证60天内是否重复生成报告
+			validateInfoDuplicate(ddoc,info);  
+			//生成业务流水号
+			info.setSn(reportService.getSn(1));
+			
+			infoDao.save(info);
+			
+		}
+	
+		//保存录入信息
+		RtSaveAsst asst = new RtSaveAsst();
+		
+		for (String key : map.keySet()) {
+			RtExportData rtExportData = map.get(key);
+			String itemName = rtExportData.getName();
+			
+			String markContent = rtExportData.getMarkContent();
+			boolean flagm = !StringUtil.isEmpty(markContent)&&!"null".equals(markContent)&&markContent!=null ;
+			if ((rtExportData.getValue() != null && StringUtil.isNotEmpty(rtExportData.getValue()))
+					||flagm) {
+				ReportItemRecord item = new ReportItemRecord();
+				
+				String value = rtExportData.getValue();
+				if(imgIdMap.containsKey("base__"+itemName)||imgIdMap.containsKey(itemName)) {
+					if(imgIdMap.containsKey("base__"+itemName)) {
+						value = imgIdMap.get("base__"+itemName);
+					}else if(imgIdMap.containsKey(itemName)) {
+						value = imgIdMap.get(itemName);
+					}
+				}
+				
+				item.setItem_name(rtExportData.getName());
+				item.setItem_value(value);
+				if(rtExportData.getImage()!=null&&!"null".equals(rtExportData.getImage())&&StringUtil.isNotEmpty(rtExportData.getImage())) {
+					item.setImage(rtExportData.getImage());
+				}
+				
+				item.setFk_report_id(fk_report_id);
+				item.setFk_inspection_info_id(info.getId());
+				item.setLast_mdy_uid(user.getId());
+				item.setLast_mdy_uname(user.getName());//MdyUname();
+				item.setLast_mdy_time(timeformat.format(new Date()));//MdyTime();
+				item.setData_status("0");//Status("0");
+				item.setPage_no(rtExportData.getPageNo());
+				
+			
+				this.save(item);
+			}
+			
+			asst.setFkBusinessId(infoId);
+			asst.setRtPageDao(this.rtPageDao);
+			asst.execute(rtExportData, null, null,null);
+		}
+		
+		info.setEnter_op_id(emp.getId());
+		info.setEnter_op_name(emp.getName());
+		//实际编辑日期
+		info.setEnter_time2(new Date());
+		info.setIs_input("1");
+		
+		if(info.getRecordPageCode()==null||StringUtil.isEmpty(info.getRecordPageCode())){
+			
+			info.setRecordPageCode(pages);
+			
+			info.setRecordEnterId(emp.getId());
+			info.setRecordEnterOp(emp.getName());
+			info.setRecordEnterTime(new Date());
+	
+		}else{
+			String pageN = infoDao.createHasSavePage(info.getRecordPageCode(), pages);
+			
+			info.setRecordPageCode(pageN);
+			if(!info.getRecordEnterId().contains(emp.getId())) {
+				//多人录入
+				info.setRecordEnterId(info.getRecordEnterId()+","+emp.getId());
+				info.setRecordEnterOp(info.getRecordEnterOp()+","+emp.getName());
+			}
+		}
+		
+		infoDao.save(info);
+		
+		//处理目录信息
+		recordDirService.changeDir(info.getId(), recordDir);
+		//记录提交日志
+		recordLogService.setLogs(info.getId(), user.getName(), "保存原始记录到服务器",
+				user.getId(), user.getName(), new Date(), TS_Util.getIpAddress(request), "保存",null,null);
+		
+		// 原始记录转换成报告
+		r3Manager.dealRecordToReport(request, info);
+		
+		// 更新原始记录转换报告状态（0：未转换 1：已转换）
+		info.setRecordConvertStatus("1");
+		info.setData_status("1");
+	
+		// 处理报告书编号
+		if (StringUtil.isEmpty(info.getReport_sn())) {
+			createReportSn(info);
+		}
+		//计算费用
+		caculator.caculate(info);
+		
+		return info;
+	}
+	/**
+	 * 录入启动流程或提交到校核
+	 * @param request
+	 * @param businesses
+	 * @param formData
+	 * @return 
+	 * @throws Exception
+	 */
+	public List<InspectionInfo> flowToConfirm(HttpServletRequest request, JSONArray businesses,JSONObject formObject) throws Exception {
+		List<InspectionInfo> infos = new ArrayList<InspectionInfo>();
+		User user = (User) SecurityUtil.getSecurityUser().getSysUser();
+		
+		for (int i = 0,len = businesses.length(); i < len; i++) {
+			JSONObject obj = businesses.getJSONObject(i);
+			// 获取报告业务信息
+			InspectionInfo info = infoDao.get(obj.getString("id"));
+			//修改持有人
+			info.setRecordHandleId(formObject.getString("confirmOp"));
+			info.setRecordHandleOp(formObject.getString("confirmOpName"));
+			//校核
+			info.setRecordFlow("1");
+			infos.add(info);
+			
+			String process_id = recordDao.getProcess(info);
+			// 业务流程表有数据就说明已经启动了流程，不再重新启动流程。
+			if(StringUtil.isEmpty(process_id)){
+				//未启动流程则启动流程
+				start(request,info,formObject,user);
+			}else {
+				//退回的数据直接提交到校核
+				flowProcess(request,info,formObject,user);
+			}
+		}
+		return infos;
+	}
+	public synchronized void start(HttpServletRequest request,InspectionInfo info,JSONObject formObject,User user) throws Exception{
+		// 查找流程
+			String flowId = recordDao.getFlowId(info);
+			if(StringUtil.isEmpty(flowId)) {
+				throw new Exception("没有获取到流程配置信息！");
+			}
+			//声明流程参数对象
+			Map<String, Object> paramMap= new HashMap<String, Object>();
+			
+			//获取流程名称
+			String flow_name = flowDefManager.get(flowId).getFlowname();
+			//获取流程编码
+			String flow_type =  flowDefManager.get(flowId).getFlowtype();
+			//组装流程参数
+	   		//流程业务ID
+			paramMap.put(FlowExtWorktaskParam.SERVICE_ID, info.getId());
+	   		//流程编码
+			paramMap.put(FlowExtWorktaskParam.SERVICE_TYPE, flow_type);
+	   		//流程标题
+			paramMap.put(FlowExtWorktaskParam.SERVICE_TITLE,flow_name);
+	   		//流程ID
+			paramMap.put(FlowExtWorktaskParam.FLOW_DEFINITION_ID, flowId);
+	   		
+			paramMap.put(FlowExtWorktaskParam.IS_CURRENT_USER_TASK, true);
+			
+			//将校核人员放入数据总线，校核人员从数据总线获取
+			JSONObject databus = new JSONObject();
+			JSONArray personArray = new JSONArray(); 
+			JSONObject person = new JSONObject();
+			person.put("id",formObject.getString("confirmOp")); 
+			person.put("name",formObject.getString("confirmOpName"));
+			personArray.put(person);
+		    databus.put(FlowEngine.DATA_BUS_PARTICIPANT_KEY_DEFAULT, personArray);
+		    paramMap.put(FlowExtWorktaskParam.DATA_BUS, databus); 
+		 
+			//启动流程
+			Map<String, Object>  resultMap = flowExtManager.startFlowProcess(paramMap);
+			//获取下一步流程步骤
+			@SuppressWarnings("unchecked")
+			List<Activity> list = (List<Activity>) resultMap.get(FlowExtWorktaskParam.RESULT_ACTIVITY_LIST);
+			
+			info.setActivity_id(list.get(0).getId());//改变业务表当前环节的ActivityId(activity业务表的id)
+			info.setFlow_note_id(list.get(0).getActivityId());//activity业务表的activityId 流程环节
+			info.setFlow_note_name(list.get(0).getName());//改变业务表当前环节的名称
+			info.setIs_flow("1");//改变业务表状态 1 已启动流程
+			info.setFlow_note_end("0");//设置业务表流程是否结束 0 - 未结束  1 - 已结束
+			
+			logService.setLogs(info.getId(), "检验任务生成","从【报告录入】环节进入【校核】环节。",user.getId(), user.getName(),new Date(), request.getRemoteAddr(), "1");
+	}
+	public synchronized void flowProcess(HttpServletRequest request,InspectionInfo info,JSONObject formObject,User user) throws Exception{
+		//取得当前环节名称
+		String nodeName = info.getFlow_note_name();
+		Map<String,Object> paramMap = new HashMap<String,Object>();
+		paramMap.put(FlowExtWorktaskParam.ACTIVITY_ID, info.getActivity_id());
+		paramMap.put(FlowExtWorktaskParam.SERVICE_ID,info.getId());
+		//将校核人员放入数据总线，校核人员从数据总线获取
+		JSONObject databus = new JSONObject();
+		JSONArray personArray = new JSONArray(); 
+		JSONObject person = new JSONObject();
+		person.put("id",formObject.getString("confirmOp")); 
+		person.put("name",formObject.getString("confirmOpName"));
+		personArray.put(person);
+	    databus.put(FlowEngine.DATA_BUS_PARTICIPANT_KEY_DEFAULT, personArray);
+	    paramMap.put(FlowExtWorktaskParam.DATA_BUS, databus); 
+		//提交流程	
+		Map<String, Object> resultMap = flowExtManager.submitActivity(paramMap);
+		
+		//获取下一步流程步骤
+		@SuppressWarnings("unchecked")
+		List<Activity> list = (List<Activity>) resultMap.get(FlowExtWorktaskParam.RESULT_ACTIVITY_LIST);
+		
+		//修改业务表业务流程环节
+		info.setActivity_id(list.get(0).getId());
+		info.setFlow_note_id(list.get(0).getActivityId());
+		info.setFlow_note_name(list.get(0).getName());
+		
+		//准备操作说明
+		String opRemark = "从【"+nodeName+"】环节进入【"+list.get(0).getName()+"】环节。";
+		//记录日志
+		logService.setLogs(info.getId(), nodeName, opRemark,user.getId(), user.getName(),new Date(), request.getRemoteAddr(), "1");
+	}
+	/**
+	 * 保存附件
+	 * 
+	 * @param inputStream
+	 *            文件流
+	 * @param attachment
+	 *            附件信息BEAN
+	 * @param saveType
+	 *            存储类别，数据库/文件系统，参考AttachmentManager.SAVE_TYPE_DISK,
+	 *            AttachmentManager.SAVE_TYPE_DB
+	 * @param saveDB
+	 *            是否往数据库写入附件信息，此项只在存储类型为文件系统时有效
+	 * @throws Exception
+	 */
+	public synchronized HashMap<String, Object> saveAttachment(InputStream inputStream, Attachment attachment, String saveType, boolean saveDB)
+			throws Exception {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		try {
+			String attType;
+				attType = "0";
+			
+			attachment.setSaveType(attType);// 设置存储类别
+			attachment.setUploadTime(Calendar.getInstance().getTime());// 上传时间设置
+			boolean isExist = StringUtil.isNotEmpty(attachment.getId());
+			String realPath = null;// 文件路径
+			String existPath = null;
+			String dates = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+			String newName = dates+"_"+attachment.getFileName();
+			// 将文件存储到磁盘
+			if ("desk".equals(saveType)) {
+				
+				if ("relative".equals(Factory.getSysPara().getProperty("attachmentPathType", "relative"))) // 相对路径
+					realPath = Factory.getWebRoot() + "upload/record";
+				/*else
+					realPath = attachmentPath;// 绝对路径
+*/
+				
+				attachment.setFilePath("/record/"+newName);
+				if (isExist) {
+					Attachment currentAttach = this.attachmentDao.get(attachment.getId());
+					existPath = currentAttach.getFilePath();
+					BeanUtils.copyProperties(attachment, currentAttach);
+				}
+				
+					// 将附件信息持久化
+					this.attachmentDao.save(attachment);
+					
+					File file = new File(realPath);
+					if(!file.exists()) {
+						file.mkdirs();
+					}
+							
+				byte[] data = new byte[inputStream.available()];
+				inputStream.read(data);
+				FileUtil.writeFile(realPath + File.separator + newName, data);// 写入文件系统
+
+				// 删除之前的文件
+				if (StringUtil.isNotEmpty(existPath))
+					FileUtil.delAllFile(realPath + File.separator + existPath);
+			}
+			// 将文件存储到DB
+			else if (saveDB) {
+				if (isExist)// 如果已经存在，先删除
+					this.deleteAttach(attachment);
+				this.attachmentDao.saveAttachToDB(attachment, inputStream);// 写入数据库
+			}
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			map.put("success", false);
+			map.put("msg", "图片上传失败！错误代码："+e.toString());
+			return map;
+		}
+		
+		map.put("success", true);
+		return map;
+	}
+	/**
+	 * 根据ID、文件相对路径删除文件。支持多文件删除(ids,path使用分号;分隔)
+	 */
+	public void deleteAttach(String ids, String path) throws Exception {
+		// 按照指定ID删除文件
+		if (StringUtil.isNotEmpty(ids)) {
+			for (String id : ids.split(";")) {
+				Attachment attachment = attachmentDao.get(id);
+				this.deleteAttach(attachment);
+			}
+		}
+
+		// 删除指定路径的文件
+		if (StringUtil.isNotEmpty(path)) {
+			String realPath="";// 文件路径
+			if ("relative".equals(Factory.getSysPara().getProperty("attachmentPathType", "relative"))) // 相对路径
+				realPath = Factory.getWebRoot() + "upload/record";
+
+			for (String pstr : path.split(";")) {
+				realPath += File.separator + pstr;
+				FileUtil.delAllFile(realPath);
+			}
+		}
+	}
+	/**
+	 * 删除附件对象，如果有文件也同时删除
+	 * 
+	 * @param attachment
+	 * @param realPath
+	 * @throws Exception
+	 */
+	public void deleteAttach(Attachment attachment) throws Exception {
+		if (attachment == null)
+			return;
+		if (attachment.getSaveType().equals("desk")) {// 存储于磁盘，需要删除磁盘文件
+			String realPath = null;// 文件路径
+			if ("relative".equals(Factory.getSysPara().getProperty("attachmentPathType", "relative"))) // 相对路径
+				realPath = Factory.getWebRoot() + "upload/record";
+
+			realPath += File.separator + attachment.getFilePath();
+			FileUtil.delAllFile(realPath);
+		}
+
+		this.attachmentDao.removeById(attachment.getId());// 从数据删除附件记录
+	}
+	
+	private HashMap<String, Object> validateRepeat(InspectionInfo old_info, String device_registration_code){
+		HashMap<String, Object> returnMap = new HashMap<String, Object>();
+		Date enter_time = old_info.getEnter_time();
+		if(enter_time == null){
+			enter_time = old_info.getAdvance_time();
+		}
+		Calendar c1 = Calendar.getInstance();
+		Calendar c2 = Calendar.getInstance();
+		c1.setTime(enter_time); // 录入/检验日期
+		c2.setTime(new Date()); // 当前日期
+		// 设置时间为0时   
+		c1.set(java.util.Calendar.HOUR_OF_DAY, 0);   
+		c1.set(java.util.Calendar.MINUTE, 0);   
+		c1.set(java.util.Calendar.SECOND, 0);   
+		c2.set(java.util.Calendar.HOUR_OF_DAY, 0);   
+		c2.set(java.util.Calendar.MINUTE, 0);   
+		c2.set(java.util.Calendar.SECOND, 0);   
+		
+		// 计算两个日期相差的天数   
+        int days = ((int) (c2.getTime().getTime() / 1000) - (int) (c1   
+               .getTime().getTime() / 1000)) / 3600 / 24; 
+		
+		// 计算月份差（只能计算同一年的日期，翻年的日期不适应该方法）
+		// int result = c2.get(Calendar.MONTH) - c1.get(Calendar.MONTH);
+		if (days <= 60) {
+			List<ReportErrorRecordInfo> record_infos = reportErrorRecordInfoDao
+					.queryInfoByInfoIds(old_info.getId());
+			if (record_infos.isEmpty()) {
+				returnMap.put("success", false);
+				if(StringUtil.isNotEmpty(old_info.getFlow_note_name())){
+					if ("打印报告".equals(old_info.getFlow_note_name())
+							|| "报告领取".equals(old_info.getFlow_note_name())
+							|| "报告归档".equals(old_info.getFlow_note_name())) {
+						returnMap.put("msg",
+								"设备" + (device_registration_code != null
+										? device_registration_code : "")
+										+ "在短期内已出过报告（已签发），如若需要重新出报告，请先提交纠错申请！");
+					} else {
+						returnMap.put("msg",
+								"设备" + (device_registration_code != null
+										? device_registration_code : "")
+										+ "在短期内已出过报告（未签发），不能重复，请检查！");
+					}
+				} else {
+					returnMap.put("msg", old_info.getEnter_op_name() + "同志已报检该设备（"
+								+ (device_registration_code != null ? device_registration_code : "") + "），不能重复，请核实！");
+				}
+			}else{
+				returnMap.put("success", true);
+			}
+		}else{
+			returnMap.put("success", true);
+		}
+		return returnMap;
+	}
+	
+	private void validateInfoDuplicate(DeviceDocument ddoc,InspectionInfo info) throws Exception{
+		if(StringUtil.isNotEmpty(ddoc.getDevice_registration_code())){
+			// 定检报告，验证同一个设备2个月内是否已录入报告，有纠错程序除外（质量部要求）
+			// 检验类别（3：定检 2：监检）
+			// 2017-08-22 质量部谢方提出修改，增加不同的报告模板出具时，则不受此限制
+			// 2017-08-22 张展彬提出修改
+			// 配合2017年联合国世界旅游组织第22届全体大会保障性检验，暂时放开电梯定检报告出具周期限制
+			// 2017-09-11 张展彬提出修改，重启开启电梯定检报告出具周期限制
+			// 2017-09-12 张展彬提出修改，暂时放开电梯定检报告出具周期限制
+			// 2017-09-12 增加电梯定检报告出具周期（2个月）限制开关可控功能
+			String vali = Factory.getSysPara().getProperty("DT_VALIDATE_REPEAT_2M");
+			boolean validate_repeat = true;
+			if(StringUtil.isNotEmpty(vali)){
+				if("true".equals(vali.trim()) || "false".equals(vali.trim())){
+					validate_repeat = Boolean.parseBoolean(vali.trim());
+				}
+			}
+			if(validate_repeat){
+				if ("3".equals(info.getCheck_category_code())) {
+					String inspectionId = info.getInspection() != null ? info.getInspection().getId() : "";
+					List<InspectionInfo> infoList = infoDao.getNewInfoByDeviceId(ddoc.getId(), inspectionId);
+					if (infoList != null && infoList.size() > 0) {
+						for (InspectionInfo oInfo : infoList) {
+							if (StringUtil.isNotEmpty(oInfo.getInspection_conclusion())
+									&&!"不合格".equals(oInfo.getInspection_conclusion().trim())) {
+								// 质量部谢方2017-08-22提出修改，增加不同的报告模板出具时，则不受此限制
+								if(oInfo.getReport_type().equals(info.getReport_type())){
+									HashMap<String, Object> returnMap = validateRepeat(oInfo,ddoc.getDevice_registration_code());
+									if (!Boolean.valueOf(String.valueOf(returnMap.get("success")))) {
+										throw new Exception(returnMap.get("msg").toString());
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	private void createReportSn(InspectionInfo info) throws Exception {
+		// 生成报告书编号
+		String report_type = info.getReport_type();
+		String report_sn = "";
+		if (StringUtil.isEmpty(info.getReport_sn())) {
+			String check_type = info.getInspection().getCheck_type();
+			String device_id = info.getFk_tsjc_device_document_id();
+			// 获取设备类型
+			String device_type = "";
+			if (StringUtil.isNotEmpty(device_id)) {
+				// 根据设备ID获取设备基础信息bean
+				DeviceDocument devicedoc = deviceService.get(device_id);
+				if (devicedoc != null) {
+					if (StringUtil.isNotEmpty(devicedoc.getDevice_sort_code())) {
+						device_type = devicedoc.getDevice_sort_code();
+					}
+				}
+
+			}
+			synchronized (this) {
+				Map<String, Object> reportSnMap = inspectionCommonService.createReportSn("moCreateReport", info.getId(),
+						report_type, check_type, device_type);
+				report_sn = String.valueOf(reportSnMap.get("report_sn"));
+				// 报告输编号插入业务主表
+				info.setReport_sn(report_sn);
+			}
+		} else {
+			report_sn = info.getReport_sn();
+		}
+		// 将报告书编号更新到报告检验项目参数表
+		reportItemValueService.updateItemValue(info.getId(), report_type, "REPORT_SN", report_sn);
+		// 将报告书编号更新到原始记录检验项目参数表
+		reportItemRecordService.updateItemValue(info.getId(), report_type, "REPORT_SN", report_sn);
+	}
+	
+	public InspectionInfo saveInspToOther(HttpServletRequest request, JSONObject object) throws Exception {
+		if(object==null){
+			throw new KhntException("请传入参数！");
+		}
+
+		CurrentSessionUser user = SecurityUtil.getSecurityUser();
+		
+		String nextOpId = object.getString("nextOpId");
+		String nextOp = object.getString("nextOp");
+		
+		if(!object.has("nextOpId")||object.get("nextOpId")==null){
+			throw new KhntException( "请选择下一个录入人员！");
+		}
+		//保存数据信息
+		InspectionInfo info = saveRecord(request, object);
+		
+		info.setRecordHandleId(nextOpId);
+		info.setRecordHandleOp(nextOp);
+		info.setRecordFlow("10");
+		info.setReceiveStatus("0");
+		infoDao.save(info);
+		
+		//记录提交日志
+		recordLogService.setLogs(info.getId(), user.getName(), "转移原始记录"+nextOp+"录入",
+				user.getId(), user.getName(), new Date(), TS_Util.getIpAddress(request), "转移录入",nextOpId,nextOp);
+		
+		return info;
+		
+	}
+	/**
+	 * 待处理任务数量
+	 * author pingZhou
+	 * @param request
+	 * @return
+	 */
+	public List<HashMap<String, Object>> toBeProcessed(HttpServletRequest request) {
+			CurrentSessionUser user = SecurityUtil.getSecurityUser();
+			List<HashMap<String, Object>> list = new ArrayList<HashMap<String, Object>>();
+			
+			String userId = ((User)user.getSysUser()).getEmployee()==null?user.getId():((User)user.getSysUser()).getEmployee().getId();
+			HashMap<String, Object> map11 = new HashMap<String, Object>(); 
+			//科室报检
+			int moKsrw = reportItemRecordDao.getUnitReceiveCount(userId);
+			map11.put("code", "app-inspect-build-depart-task");
+			map11.put("value", moKsrw);
+			list.add(map11);
+			//转移录入
+			HashMap<String, Object> map12 = new HashMap<String, Object>(); 
+			int moYsjllr = reportItemRecordDao.getOtherReceiveCount(userId);
+			map12.put("code", "app-inspect-mo-ysjllr");
+			map12.put("value", moYsjllr);
+			list.add(map12);
+			
+			//退回录入
+			HashMap<String, Object> map13 = new HashMap<String, Object>(); 
+			int backRecord = reportItemRecordDao.getBackReceiveCount(userId);
+			map13.put("code", "app-inspect-back-record");
+			map13.put("value", backRecord);
+			list.add(map13);
+			
+			//任务接收 = 科室报检+转移录入+退回录入
+			HashMap<String, Object> map1 = new HashMap<String, Object>(); 
+			//int needReceive = reportItemRecordDao.getNeedReceiveCount(user.getId());
+			map1.put("code", "app-inspect-task-receive");
+			map1.put("value", moKsrw+moYsjllr+backRecord);
+			list.add(map1);
+			
+			//原始记录校核
+			HashMap<String, Object> map2 = new HashMap<String, Object>(); 
+			int recordConfirm = reportItemRecordDao.getRecordConfirmCount(userId);
+			map2.put("code", "app-inspect-record-confirm");
+			map2.put("value", recordConfirm);
+			list.add(map2);
+			//报告审核
+			HashMap<String, Object> map3 = new HashMap<String, Object>(); 
+			int reportAudit = reportItemRecordDao.getReportAuditCount(user.getId());
+			map3.put("code", "app-inspect-report-audit");
+			map3.put("value", reportAudit);
+			list.add(map3);
+					
+			//报告签发
+			HashMap<String, Object> map4 = new HashMap<String, Object>(); 
+			int reportSign = reportItemRecordDao.getReportSignCount(user.getId());
+			map4.put("code", "app-inspect-report-sign");
+			map4.put("value", reportSign);
+			list.add(map4);
+			
+			//大厅任务数量
+			HashMap<String, Object> map5 = new HashMap<String, Object>(); 
+			int hallMession = reportItemRecordDao.getHallMessionCount(user.getSysUser().getOrg().getId());
+			map5.put("code", "app-inspect-hall-tasking");
+			map5.put("value", hallMession);
+			list.add(map5);
+							
+			return list;
+	}
+	
+	public HashMap<String, Object> backReceive(HttpServletRequest request, String id) throws Exception {
+		if(StringUtil.isEmpty(id)) {
+			throw new Exception("infoId 为空！");
+		}
+		
+		InspectionInfo info = infoDao.get(id);
+		
+		//0录入 9退回录入 10转移录入
+		if(info.getRecordFlow()!=null&&!("0".equals(info.getRecordFlow())||"9".equals(info.getRecordFlow())||"10".equals(info.getRecordFlow()))) {
+			throw new KhntException("此检验流程已经提交走，不能重复操作！");
+		}
+		info.setReceiveStatus("1");
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		//业务记录信息
+		map.put("info", info);
+		
+		//设备信息
+		DeviceDocument device = deviceDao.get(info.getFk_tsjc_device_document_id());
+		if(device.getEnterInfo()==null) {
+			EnterInfo company = enterDao.get(device.getFk_company_info_use_id());
+			device.setEnterInfo(company);
+		}
+		map.put("device", device);
+		
+		//报告配置信息
+		Report reports = reportsDao.get(info.getReport_type());
+		map.put("report", reports);
+		
+		//模板信息
+		if(null != reports && null!= reports.getRecordModelCode()) {
+			HashMap<String, Object> modelMap = new  HashMap<String, Object>();
+			recordDirService.getRecordModel(modelMap, reports.getRecordModelCode());
+			map.put("recordModel", modelMap);
+		}
+		//目录信息
+		List<InspectRecordDir> dirList =  recordDirDao.getDirByBid(info.getId());
+		map.put("dirList", dirList);
+		
+		//录入数据信息
+		List<Map<String, String>> dataList = detailMap(request,info.getId(),null);
+		map.put("dataList", dataList);
+		
+		//记录日志
+		CurrentSessionUser user = SecurityUtil.getSecurityUser();
+		recordLogService.setLogs(info.getId(), user.getName(), "接收原始记录转移录入数据信息",
+							user.getId(), user.getName(), new Date(), TS_Util.getIpAddress(request), "接收录入",null,null);
+				
+		return map;
+	}
+	
+	/**
+	  *  查询原始记录录入数据信息
+	 * author pingZhou
+	 * @param request 
+	 * @param id
+	 * @param input 是否录入环节
+	 * @return
+	 * @throws Exception
+	 */
+	@SuppressWarnings("unchecked")
+	public List<Map<String, String>> detailMap(HttpServletRequest request, String id, String input) throws Exception {
+		String sql = "from ReportItemRecord where fk_inspection_info_id =? and data_status <> '99'";
+		
+		String pageCode = request.getParameter("pageCode");
+		if(pageCode!=null&&StringUtil.isNotEmpty(pageCode)) {
+			sql = sql + " and page_no = '"+pageCode+"'";
+		}
+		
+		List<ReportItemRecord> list = this.reportItemRecordDao.listQuery(sql,id);
+		
+		List<Map<String, String>> returnList = new ArrayList<Map<String, String>>();
+		Map<String, Object> dataMap = this.rtPageManager.loadFuncData(id,input,pageCode);
+		Map<String, Object> colorMap = (Map<String, Object>) dataMap.get(RtExportDataType.EXPORT_DATA_COLOR);
+		Map<String, Object> boldMap = (Map<String, Object>) dataMap.get(RtExportDataType.EXPORT_DATA_BOLD);
+		Map<String, Object> italicMap = (Map<String, Object>) dataMap.get(RtExportDataType.EXPORT_DATA_ITALIC);
+		Map<String, Object> sizeMap = (Map<String, Object>) dataMap.get(RtExportDataType.EXPORT_DATA_SIZE);
+		Map<String, Object> familyMap = (Map<String, Object>) dataMap.get(RtExportDataType.EXPORT_DATA_FAMILY);
+		Map<String, Object> imageMap = (Map<String, Object>) dataMap.get(RtExportDataType.EXPORT_DATA_IMAGE);
+		Map<String, Object> markMap = (Map<String, Object>) dataMap.get(RtExportDataType.EXPORT_DATA_MARK);
+
+
+		InspectionInfo info = infoDao.get(id);
+		Map<String, String> infoMap= info.bean_to_Map();
+		for (String key : infoMap.keySet()) {
+			String value = infoMap.get(key);
+			if(value!=null&&StringUtil.isNotEmpty(infoMap.get(key))) {
+				Map<String, String> mapi = new HashMap<String, String>();
+				
+				mapi.put("fkRecordId", id);
+				mapi.put("itemValue", value);
+				mapi.put("itemName", "base__"+key.toLowerCase());
+				returnList.add(mapi);
+			}
+			
+		}
+
+		for (ReportItemRecord item : list) {
+			// if (StringUtil.isNotEmpty(item.getItemValue())) {
+			Map<String, String> map = new HashMap<String, String>();
+			String name = item.getItem_name();
+			if (!(name.contains(RtPageType.TABLE) || name.contains("FK") || name.contains("fk")
+					|| name.contains("picture")||name.startsWith(RtPath.getPropetyValue("inspect_record", "record")+"__")
+					||name.startsWith(RtPath.getPropetyValue("inspect_conclusion", "conclusion")+"__"))) {
+				name = "base__" + name;
+			}
+			map.put("fkReportId", item.getFk_report_id());
+			map.put("pageNo", item.getPage_no());
+			map.put("fkRecordId", id);
+			map.put("itemValue", item.getItem_value());
+			map.put("itemName", name);
+			map.put("itemValue", item.getItem_value());
+			
+			String key = item.getItem_name();
+			
+			if (colorMap != null && colorMap.containsKey(key)&&colorMap.get(key)!=null) {
+				map.put("color", colorMap.get(key).toString());
+			}
+			if (boldMap != null && boldMap.containsKey(key)&&boldMap.get(key)!=null) {
+				map.put("bold", boldMap.get(item.getItem_value()).toString());
+			}
+			if (italicMap != null && italicMap.containsKey(key)&&italicMap.get(key)!=null) {
+				map.put("italic", italicMap.get(key).toString());
+			}
+			if (sizeMap != null && sizeMap.containsKey(key)&&sizeMap.get(key)!=null) {
+				map.put("size", sizeMap.get(key).toString());
+			}
+			if (familyMap != null && familyMap.containsKey(key)&&familyMap.get(key)!=null) {
+				map.put("family", familyMap.get(key).toString());
+			}
+			if (imageMap != null && imageMap.containsKey(key)&&imageMap.get(key)!=null) {
+				map.put("image", imageMap.get(key).toString());
+			}
+			if (markMap != null && markMap.containsKey(key)&&markMap.get(key)!=null) {
+				map.put("markContent", markMap.get(key).toString());
+			}
+			returnList.add(map);
+		}
+
+		return returnList;
+	}
+}

@@ -1,0 +1,26 @@
+package com.fwxm.scientific.service;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.khnt.core.crud.manager.impl.EntityManageImpl;
+import com.fwxm.scientific.bean.InstructionProject;
+import com.fwxm.scientific.dao.InstructionProjectDao;
+
+/*******************************************************************************
+ * <p>
+ * 
+ * </p>
+ * 
+ * @ClassName InstructionProjectManager
+ * @JDK 1.5
+ * @author CODER_V3.0
+ * @date 2018-01-24 10:48:10
+ */
+@Service("instructionProjectManager")
+public class InstructionProjectManager extends EntityManageImpl<InstructionProject, InstructionProjectDao> {
+	@Autowired
+	InstructionProjectDao instructionProjectDao;
+
+}

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: spring-boot-web
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Guido
+Implementation-Vendor-Id: com.neo
+Build-Jdk: 1.8.0_221
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/spring-boot-web
+Created-By: Maven Integration for Eclipse
+

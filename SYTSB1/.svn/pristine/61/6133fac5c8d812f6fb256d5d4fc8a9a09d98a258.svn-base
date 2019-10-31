@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>乐山市特种设备监督检验所</title>
+<link rel="stylesheet" type="text/css" href="/app/webmanage/CSS/style.css" />
+<script src="/app/webmanage/js/foucs.js" type="text/javascript"></script>
+<script src="/app/webmanage/js/iepng.js" type="text/javascript"></script>
+<script src="/app/webmanage/js/jquery.js" type="text/javascript"></script>
+<script src="/app/webmanage/js/Guestbook.js" type="text/javascript"></script>
+<script src="/app/webmanage/js/SearchData.js" type="text/javascript"></script>
+<script type="text/javascript">
+   EvPNG.fix('div, ul, img, li, input');  //EvPNG.fix('包含透明PNG图片的标签'); 多个标签之间用英文逗号隔开。
+</script>
+</head>
+<body>
+<div class="top">
+	<div class="logo" title="乐山市特种设备监督检验所"></div>
+	<div class="flash">
+		<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="998" height="240" id="noname1">
+			<param name="movie" value="/app/webmanage/images/top.swf" />
+			<!-- <param name="wmode" value="opaque" /> -->
+			<param name="wmode" value="transparent" />
+			<!-- JS弹窗和菜单被FLASH遮住解决方法 --> 
+			<!-- <param name="allowScriptAccess" value="sameDomain" /> --><!-- 始终在中间，页面上最关键的属性 -->
+			<param name="quality" value="High" />
+			<param name="menu" value="True" />
+			<param name="flashvars" value="bbb=1" />
+			<embed src="/app/webmanage/images/top.swf" width="998" height="240" name="noname1" wmode="transparent" quality="high" allowScriptAccess="sameDomain" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer_cn" />
+			<!-- 非IE调用方式 -->
+		</object>
+	</div>
+</div>
+<!--导航菜单-->
+<div class="menu">
+	<ul>
+		<li><a href="/rsc/index.html">网站首页</a></li>
+		<li><a href="/rsc/jysjj/index.html">检验所简介</a></li>
+		<li><a href="/rsc/ywzl/index.html">业务指南</a></li>
+		<li><a href="/rsc/zxbs/index.html">在线办事</a></li>
+		<li><a href="/rsc/xwzx/index.html">新闻中心</a></li>
+		<li><a href="/rsc/xzzx/index.html">下载中心</a></li>
+		<li><a href="/rsc/tsjy/index.html">投诉建议</a></li>
+		<li><a href="/rsc/lxfs/index.html">联系方式</a></li>
+	</ul>
+</div><div class="wrap"> 
+	<!--内页开始-->
+	<div class="pages"> 
+		<!--二级页面右边内容区-->
+		<div class="pg_wrap">
+			<div class="position">
+				<div class="pg_caption">新闻中心</div>
+				<div class="yourpos">您的位置： <a href="/rsc/index.html">首页</a> >> <a href="/rsc/xwzx/index.html">新闻中心</a></div>
+			</div>
+			<div class="pg_content">
+				<div class="list">
+					<h1>全液压驱动负载敏感控制徐工全液压岩心钻机顺利下线</h1>
+					<div class="pgtime">信息来源：特种设备网  时间：2014年03月12日 </div>
+						<p><p><a style="color: rgb(0, 50, 120); font-family: Verdana, Arial; text-decoration: none; -ms-word-break: break-all;" href="http://product.d1cm.com/brand/xcmg/index.shtml" target="_blank">徐工</a>XDY1500全液压岩心钻机于近日顺利下线，该钻机广泛应用于地质、有色、化工、煤田、核工业等地表固体矿产勘查和开发施工，同时也可用于工程地质勘察、水文地质勘察和水井钻探等施工。</p><p>XDY1500全液压岩心钻机适应于金刚石绳索取心钻进等多种高效钻探施工工艺，采用全液压驱动、负载敏感控制、折叠式钻桅、四档变速动力头、单排绳卷扬设计、模块化设计等先进技术，具有取芯效率高、控制精准便捷、运输方便等优点，整机技术性能达到国际先进水平。</p><p>目前，世界范围内绝大部分发达国家岩心钻机已经进入全液压时代，而我国由于各种因素的影响使得立轴式岩心钻机依然占据大部分市场份额。预计未来随着我国人力资源成本的快速攀升、探矿深度的不断增加和精度要求的不断提高，全液压岩心钻机将逐步成为市场的主角。徐工凭借XDY1500全液压岩心钻机的成功试制，将快速打开市场壁垒，跻身资源勘探领域，增添新的经济增长点。</p><p><br/></p></p>
+					</div>
+			</div>
+		</div>
+	</div>
+<div class="foot">
+		<div class="footer">
+			<p>&copy; (C) 2004-2013 版权所有: 乐山市特种设备监督检验所</p>
+			<p>蜀ICP备12008332  地址：四川省乐山市中区龙游路北段269号</p>
+			<p>技术支持：<a href="http://www.khnt.com" target="_blank">成都川大科鸿新技术研究所</a></p>
+		</div>
+	</div>
+</div></body>
+</html>

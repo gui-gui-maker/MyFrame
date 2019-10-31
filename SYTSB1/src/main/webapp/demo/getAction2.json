@@ -1,0 +1,22 @@
+{
+	"success": true,
+	"Rows": [
+		{
+			"handicapped.id": "402880d83662b3a8013662c6c6fc0002",
+			"handicapped.craft": "",
+			"workers.id": "402880d83662b3a8013662c6c6fc0002",
+			"workers.bornDate": "1988-10-05 00:00:00.0",
+			"workers.name": "nnihasdasd",
+			"handicapped.deformityType": "",
+			"handicapped.handicappedCard": ""
+		},
+		{
+			"handicapped.id": "402880d83662a688013662a9124e0001",
+			"handicapped.craft": "",
+			"workers.id": "402880d83662a688013662a9124e0001",
+			"workers.bornDate": "1988-10-05 00:00:00.0",
+			"workers.name": "yiwenfu",
+			"handicapped.deformityType": "",
+			"handicapped.handicappedCard": ""
+		}
+	]}

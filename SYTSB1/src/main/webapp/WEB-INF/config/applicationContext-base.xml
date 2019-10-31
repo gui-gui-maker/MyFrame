@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"
+	default-autowire="byName" default-lazy-init="true">
+	<!-- 支持元注释 -->
+	<context:annotation-config />
+	<!-- <task:annotation-driven /> -->
+	<!--指定spring容器自动扫描的包目录：@Repository... -->
+	<context:component-scan base-package="com.lsts;com.fwxm;com.scts;com.khnt;demo;tzsb;cms.webmanage;" />
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>/WEB-INF/config/application.properties</value>
+			</list>
+		</property>
+	</bean>
+	<!-- 配置hibernate DataSource Proxool的连接池 -->
+	<bean id="dataSource" class="org.logicalcobwebs.proxool.ProxoolDataSource">
+		<property name="driver" value="${database.driver}" />
+		<property name="driverUrl" value="${database.url}" />
+		<property name="user" value="${database.user}" />
+		<property name="password" value="${database.password}" />
+		<property name="testBeforeUse" value="false" />
+		<property name="houseKeepingTestSql">
+			<value>select 1 from dual</value>
+		</property>
+		<property name="maximumActiveTime" value="300000" />
+		<property name="maximumConnectionCount" value="60" />
+		<property name="minimumConnectionCount" value="10" />
+		<property name="trace" value="false" />
+		<property name="verbose" value="false" />
+		<property name="alias" value="proxool.default" />
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.OracleDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>
+				<prop key="hibernate.default_batch_fetch_size">50</prop>
+				<prop key="hibernate.default_batch_batch_size">25</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>
+				<prop key="hibernate.connection.release_mode">after_transaction</prop>
+			</props>
+		</property>
+		<property name="packagesToScan">
+			<list>
+				<value>com.**.bean</value>
+				<value>demo.**.bean</value>
+				<value>tzsb.**.bean</value>
+				 <value>cms.**.bean</value>
+			</list>
+		</property>
+		<property name="lobHandler">
+			<bean class="org.springframework.jdbc.support.lob.OracleLobHandler"
+				lazy-init="true" />
+		</property>
+	</bean>
+
+	<!-- 定义事务管理器（声明式的事务） -->
+	<bean id="txManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+		<property name="nestedTransactionAllowed" value="true" />
+	</bean>
+
+	<!-- 定义系统审计组件BEAN -->
+	<bean id="serviceAuditingAspect" class="com.khnt.auditing.aop.ServiceAuditingAspect" />
+
+	<!-- 使用 annotation定义事务 -->
+	<tx:annotation-driven transaction-manager="txManager"
+		proxy-target-class="true" />
+
+	<!-- 统一的默认事务配置 -->
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+			<tx:method name="get*" read-only="true" />
+			<tx:method name="find*" read-only="true" />
+			<tx:method name="query*" read-only="true" />
+			<tx:method name="*" />
+		</tx:attributes>
+	</tx:advice>
+
+	<aop:config>
+		<!-- 统一事务配置 -->
+		<aop:pointcut id="comServiceMethods" expression="execution(* com..service.*.*(..))" />
+		<aop:pointcut id="comManagerMethods" expression="execution(* com..manager.*.*(..))" />
+		<aop:pointcut id="tzsbServiceMethods" expression="execution(* tzsb..service.*.*(..))" />
+		<aop:pointcut id="tzsbManagerMethods" expression="execution(* tzsb..manager.*.*(..))" />
+		
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="comServiceMethods" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="comManagerMethods" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="tzsbServiceMethods" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="tzsbManagerMethods" />
+		
+		<!-- 系统审计配置 -->
+		<aop:aspect id="serviceAuditingAspectEntry" ref="serviceAuditingAspect">
+			<!-- <aop:after-returning pointcut-ref="comServiceMethods" returning="retVal" 
+				method="doAudit" /> <aop:after-returning pointcut-ref="comManagerMethods" 
+				returning="retVal" method="doAudit" /> -->
+			<aop:around method="doAround" pointcut-ref="comServiceMethods" />
+			<aop:around method="doAround" pointcut-ref="comManagerMethods" />
+			<aop:around method="doAround" pointcut-ref="tzsbServiceMethods" />
+			<aop:around method="doAround" pointcut-ref="tzsbManagerMethods" />
+		</aop:aspect>
+	</aop:config>
+
+	<aop:aspectj-autoproxy />
+</beans>

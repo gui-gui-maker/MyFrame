@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/mvc
+http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<mvc:default-servlet-handler />
+
+	<!-- 注解配置请求处理映射 -->
+	<mvc:annotation-driven>
+		<mvc:message-converters>
+			<!-- 纯文本输出UTF-8格式,解决中文支持 -->
+			<bean class="com.khnt.core.http.converter.KHStringHttpMessageConverter" />
+			<!-- 日期格式化转换 -->
+			<bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+				<property name="objectMapper">
+					<bean class="org.codehaus.jackson.map.ObjectMapper">
+						<property name="dateFormat">
+							<bean class="com.khnt.core.http.converter.KHDateFormat">
+								<!-- 日期转换模式配置 -->
+								<property name="datePatterns">
+									<array>
+										<value type="java.lang.String">yyyy-MM-dd HH:mm:ss</value>
+										<value type="java.lang.String">yyyy-MM-dd HH:mm</value>
+										<value type="java.lang.String">yyyy-MM-dd HH</value>
+										<value type="java.lang.String">yyyy-MM-dd</value>
+									</array>
+								</property>
+							</bean>
+						</property>
+					</bean>
+				</property>
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+
+	<!-- jsp页面解析器，当Controller返回XXX字符串时，先通过拦截器，然后该类就会在/目录下，查找XXX.jsp文件 -->
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<!-- 设置全局异常处理方式。注意，如果使用XML配置了异常处理方式， 那么使用Annotation处理异常的方式将不再被使用。 -->
+	<bean name="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<!-- 这里的errorPage同样应用viewResolver的前缀、后缀匹配 -->
+				<!-- 
+				<prop key="java.lang.Exception">app/errorpage/handler</prop>
+				<prop key="com.khnt.core.exception.KhntException">app/errorpage/handler</prop>
+				-->
+				<prop key="java.lang.Exception">k/errorpage/handler</prop>
+				<prop key="com.khnt.core.exception.KhntException">k/errorpage/handler</prop>
+				 
+			</props>
+		</property>
+	</bean>
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+		p:defaultEncoding="utf-8" />
+
+	<!-- 支持元注释 -->
+	<context:annotation-config />
+	<!-- 把标记了@Controller注解的类转换为bean -->
+	<context:component-scan base-package="com.lsts;com.fwxm;com.scts;com.khnt;demo;tzsb;" use-default-filters="false">
+		<context:include-filter expression="org.springframework.stereotype.Controller" type="annotation" />
+	</context:component-scan>
+</beans>

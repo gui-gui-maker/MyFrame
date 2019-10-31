@@ -1,0 +1,432 @@
+package com.lsts.finance.service;
+
+
+import java.io.File;
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import net.sf.json.JSONArray;
+
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFDateUtil;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.alipay.api.domain.Data;
+import com.khnt.base.Factory;
+import com.khnt.base.SysParaInf;
+import com.khnt.core.crud.manager.impl.EntityManageImpl;
+import com.khnt.pub.fileupload.service.AttachmentManager;
+import com.khnt.security.CurrentSessionUser;
+import com.khnt.utils.StringUtil;
+import com.lsts.finance.bean.CwInvoiceF;
+import com.lsts.finance.dao.CwInvoiceFDao;
+import com.lsts.log.service.SysLogService;
+
+@Service("CwInvoiceFManager")
+public class CwInvoiceFManager extends EntityManageImpl<CwInvoiceF, CwInvoiceFDao> {
+	
+	@Autowired
+	CwInvoiceFDao cwInvoiceFDao;
+	@Autowired
+	private SysLogService logService;
+	@Autowired
+    AttachmentManager attachmentManager;
+	
+	public final static String CW_FPGL_WSY= "WSY";
+	public final static String CW_FPGL_SY= "SY";
+	public final static String CW_FPGL_ZF= "ZF";
+	public final static String CW_FPGL_LY= "LY";
+
+	/**
+	 * 发票使用
+	 * @param ids
+	 * @throws Exception
+	 */
+	public void Use(String ids)throws Exception{
+      	for(String id:ids.split(",")){
+      		CwInvoiceF rp = cwInvoiceFDao.get(id);
+      		cwInvoiceFDao.getHibernateTemplate().update(rp);
+      	}
+      }
+	
+	/**
+	 * 发票作废
+	 * @param ids
+	 * @return 
+	 * @throws Exception
+	 */
+	public void Cancel(String ids,HttpServletRequest request,CurrentSessionUser user)throws Exception{
+      	for(String id:ids.split(",")){
+      		CwInvoiceF cwInvoiceF = cwInvoiceFDao.get(id);
+      		cwInvoiceF.setStatus(CW_FPGL_ZF);
+      		cwInvoiceFDao.getHibernateTemplate().update(cwInvoiceF);
+      		// 写入系统日志
+			try {
+				logService.setLogs(cwInvoiceF.getId(), "发票作废", "发票作废（发票号："+cwInvoiceF.getInvoiceCode()+")", user.getId(), user.getName(),
+						new Date(),request.getRemoteAddr());
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+      	}
+      }
+	
+	/**
+	 * 根据发票状态获取发票信息
+	 * @param status -- 发票状态（WSY：未使用 SY：使用 ZF：作废 LY：领用）
+	 * 
+	 * @return
+	 * @author GaoYa
+	 * @date 2015-11-16 上午09:24:00
+	 */
+	public List<CwInvoiceF> queryCwInvoiceFs(String status) {
+		return cwInvoiceFDao.queryCwInvoiceFs(status);
+	}
+	
+	/**
+	 * 查询收费取消、外借取消的发票信息
+	 * 发票状态（WSY：未使用 SY：使用 ZF：作废 LY：领用 SFQX：收费取消 WJQX：外借取消）
+	 * 
+	 * @return
+	 * @author GaoYa
+	 * @date 2016-09-02 下午03:55:00
+	 */
+	public List<CwInvoiceF> queryCwInvoiceQx() {
+		return cwInvoiceFDao.queryCwInvoiceQx();
+	}
+	
+	/**
+	 * 根据发票号查询发票信息
+	 * @param invoice_no -- 发票号
+	 * @return 
+	 * @author GaoYa
+	 * @date 2015-11-16 下午01:54:00
+	 */
+    public CwInvoiceF queryByInvoice_no(String invoice_no) {
+		return cwInvoiceFDao.queryByInvoice_no(invoice_no);
+	}
+	
+    public List<CwInvoiceF> querysByInvoice_no(String invoice_no) {
+    	return cwInvoiceFDao.querysByInvoice_no(invoice_no);
+    }
+    
+    public Object querysByInvoiceNoForPay(String invoice_no) {
+    	Object object = cwInvoiceFDao.querysByInvoiceNoForPay(invoice_no);
+    	if(object!=null) {
+    		return object;
+    	}
+    	return null;
+    }
+    
+    
+    /**
+   	 * 保存导入
+   	 * 
+   	 * @param file
+   	 * @return
+        * @throws ParseException 
+   	 */
+   	public String[] saveTaskData(HttpServletRequest request,String files, CurrentSessionUser user) throws ParseException {
+   		JSONArray array = JSONArray.fromObject(files);
+		String[] contents = new String[2];
+		contents[0]="0";
+		contents[1]="";
+		String[] fileName = new String[array.length()];// 文件名
+		String[] filePath = new String[array.length()];// 文件路径
+//		String[] result= new String[array.length()];
+		for (int i = 0; i < array.length(); i++) {
+			String[] content = new String[2];
+			fileName[i] = array.getJSONObject(i).getString("name");
+			filePath[i] = attachmentManager.download(array.getJSONObject(i).getString("id")).getFilePath();
+			content = saveDate(request,fileName[i], filePath[i], user);
+			contents[0] = Integer.toString(Integer.parseInt(contents[0])+Integer.parseInt(content[0]));
+			contents[1] = contents[1]+content[1];
+		}
+		return contents;
+   	}
+
+   	/**
+   	 * 根据导入的文件名获取并解析数据
+   	 * 
+   	 * @param file
+   	 * @throws ParseException 
+   	 * @throws IOException
+   	 */
+   	@SuppressWarnings("unused")
+	public String[] saveDate(HttpServletRequest request,String fileName, String filePath, CurrentSessionUser user) throws ParseException {
+   		String repData="";
+   		int total=0;//导入成功的数量
+   		String[] content = new String[2];
+   		File taskfile = new File(filePath); // 创建文件对象  
+   		Workbook taskWb=null;
+   		try {
+   			taskWb = WorkbookFactory.create(taskfile);
+   		} catch (InvalidFormatException e) {
+   			e.printStackTrace();
+   		} catch (IOException e) {
+   			e.printStackTrace();
+   		}
+   	    Sheet taskSheet = taskWb.getSheetAt(0);//获得sheet
+   	   
+   	    for (int i=1;i<=taskSheet.getLastRowNum();i++) {
+   	    	Row row = taskSheet.getRow(i);//行
+   	    	if(row!=null && !"null".equals(row)) {
+   	    		if(row.getCell(0)!=null && !"null".equals(row.getCell(0))) {
+   	    			CwInvoiceF cwInvoiceF = new CwInvoiceF();
+   	    			String status = "";
+   	    			if(row.getCell(1)!=null && !"".equals(row.getCell(0))){
+   	    				System.out.println("状态："+row.getCell(1).getStringCellValue());
+	   	    			if(row.getCell(1).getStringCellValue().equals("未使用")){
+	   	    				status = "WSY";
+	   	    			}
+	   	    			if(row.getCell(1).getStringCellValue().equals("已使用")){
+	   	    				status = "SY";
+	   	    			}
+	   	    			if(row.getCell(1).getStringCellValue().equals("已领用")){
+	   	    				status = "LY";
+	   	    			}
+	   	    			if(row.getCell(1).getStringCellValue().equals("已作废")){
+	   	    				status = "ZF";
+	   	    			}
+	   	    			if(row.getCell(1).getStringCellValue().equals("收费取消")){
+	   	    				status = "SFQX";
+	   	    			}
+	   	    			cwInvoiceF.setStatus(status);//状态
+   	    			}else{
+   	    				cwInvoiceF.setStatus("SY");
+   	    			}
+   	    			System.out.println("发票号："+row.getCell(2).toString());
+   	    			String code = row.getCell(2).toString();
+   	    			cwInvoiceF.setInvoiceCode(code);//发票编号
+   	    			String type ="";
+   	    			if(row.getCell(3)!=null && !"".equals(row.getCell(3))){
+	   	    			if(row.getCell(3).getStringCellValue().equals("一般缴款书(手开)")){
+	   	    				type = "hand";
+	   	    			}
+	   	    			if(row.getCell(3).getStringCellValue().equals("一般缴款书(机打)")){
+	   	    				type = "machine";
+	   	    			}
+	   	    			if(row.getCell(3).getStringCellValue().equals("税票(专用)")){
+	   	    				type = "tax";
+	   	    			}
+	   	    			if(row.getCell(3).getStringCellValue().equals("税票(普通)")){
+	   	    				type = "ordinary";
+	   	    			}
+	   	    			if(row.getCell(3).getStringCellValue().equals("往来结算票(手开)")){
+	   	    				type = "knot";
+	   	    			}
+	   	    			cwInvoiceF.setInvoiceType(type);//发票类型
+   	    			}else{
+	   	    			cwInvoiceF.setInvoiceType("");//发票类型
+   	    			}
+   	    			//发票金额
+   	    			int money=0;
+   	    			if(row.getCell(4)==null){
+   	    				cwInvoiceF.setInvoiceMoney(new BigDecimal(money));
+   	    			}else{
+   	    				BigDecimal big = new BigDecimal(0);
+   	    				if(row.getCell(4).getCellType()==HSSFCell.CELL_TYPE_NUMERIC){
+   	   	    				big = new BigDecimal(row.getCell(4).getNumericCellValue());
+	   	    			}else if(row.getCell(4).getCellType()==HSSFCell.CELL_TYPE_STRING){
+	   	    				big = new BigDecimal(row.getCell(4).getStringCellValue().replace(" ", ""));
+   	    				}
+   	    				big = big.setScale(2, BigDecimal.ROUND_HALF_UP); 
+   	    				cwInvoiceF.setInvoiceMoney(big);
+   	    			}
+   	    			//开票人
+   	    			Cell Invoice_name=row.getCell(5);
+   	    			if(Invoice_name==null){
+   	    				cwInvoiceF.setInvoice_name("");
+   	    			}else{
+   	    				try {
+   	   	    				cwInvoiceF.setInvoice_name(row.getCell(5).getStringCellValue());
+   						} catch (Exception e) {
+   							e.printStackTrace();
+   						}
+   	    			}
+   	    			//开票时间
+   	    			if(row.getCell(6)==null) {
+   	    				cwInvoiceF.setInvoiceDate(null);
+   	    			}else {
+   	    				Date date2 = null;
+   	    				if(row.getCell(6).getCellType()==HSSFCell.CELL_TYPE_NUMERIC){
+   	    					if(HSSFDateUtil.isCellDateFormatted(row.getCell(6))) {
+   	    						date2 = row.getCell(6).getDateCellValue();
+   	    					}
+	   	    			}else if(row.getCell(6).getCellType()==HSSFCell.CELL_TYPE_STRING){
+	   	    				String date2Str = row.getCell(6).getStringCellValue().replace(" ", "");
+	   	    				if(StringUtil.isNotEmpty(date2Str)) {
+	   	    					date2 = new SimpleDateFormat("yyyy-MM-dd").parse(date2Str);
+	   	    				}
+   	    				}
+   	    				cwInvoiceF.setInvoiceDate(date2);
+   	    			}
+   	    			//领用人
+   	    			Cell lead_name=row.getCell(7);
+   	    			if(lead_name==null){
+   	    				cwInvoiceF.setLead_name("");
+   	    			}else{
+   	    				cwInvoiceF.setLead_name(row.getCell(7).getStringCellValue());
+   	    			}
+   	    			//领用时间
+   	    			if(row.getCell(8)==null) {
+   	    				cwInvoiceF.setLead_date(null);
+   	    			}else {
+   	    				Date date3 = null;
+   	    				if(row.getCell(8).getCellType()==HSSFCell.CELL_TYPE_NUMERIC){
+   	    					if(HSSFDateUtil.isCellDateFormatted(row.getCell(8))) {
+   	    						date3 = row.getCell(8).getDateCellValue();
+   	    					}
+	   	    			}else if(row.getCell(8).getCellType()==HSSFCell.CELL_TYPE_STRING){
+	   	    				String date3Str = row.getCell(8).getStringCellValue().replace(" ", "");
+	   	    				if(StringUtil.isNotEmpty(date3Str)) {
+	   	    					date3 = new SimpleDateFormat("yyyy-MM-dd").parse(date3Str);
+	   	    				}
+   	    				}
+   	    				cwInvoiceF.setLead_date(date3);
+   	    			}
+//   	    		cwInvoiceF.setInvoiceDate(new Date(row.getCell(5).getStringCellValue()));//开票时间
+   	    			//开票单位
+   	    			Cell InvoiceUnit=row.getCell(9);
+   	    			if(InvoiceUnit==null){
+   	    				cwInvoiceF.setInvoiceUnit("");
+   	    			}else{
+   	    				cwInvoiceF.setInvoiceUnit(row.getCell(9).getStringCellValue());
+   	    			}
+   	    			//受检单位
+   	    			Cell CheckoutUnit=row.getCell(10);
+   	    			if(CheckoutUnit==null){
+   	    				cwInvoiceF.setCheckoutUnit("");
+   	    			}else{
+   	    				cwInvoiceF.setCheckoutUnit(row.getCell(10).getStringCellValue());
+   	    			}
+   	    			String MoneyType = "";
+   	    			if(row.getCell(11)!=null && !"".equals(row.getCell(11))){
+	   	    			if(row.getCell(11).getStringCellValue().equals("现金缴费")){
+	   	    				MoneyType = "1";
+	   	    			}
+	   	    			if(row.getCell(11).getStringCellValue().equals("银行转账")){
+	   	    				MoneyType = "2";
+	   	    			}
+	   	    			if(row.getCell(11).getStringCellValue().equals("纠错报告")){
+	   	    				MoneyType = "3";
+	   	    			}
+	   	    			if(row.getCell(11).getStringCellValue().equals("现金及转账")){
+	   	    				MoneyType = "4";
+	   	    			}
+	   	    			if(row.getCell(11).getStringCellValue().equals("POS机刷卡")){
+	   	    				MoneyType = "5";
+	   	    			}
+	   	    			if(row.getCell(11).getStringCellValue().equals("现金及POS机刷卡")){
+	   	    				MoneyType = "6";
+	   	    			}
+	   	    			if(row.getCell(11).getStringCellValue().equals("转账及POS机刷卡")){
+	   	    				MoneyType = "7";
+	   	    			}
+	   	    			cwInvoiceF.setMoneyType(MoneyType);
+   	    			}else{
+   	    				cwInvoiceF.setMoneyType("");
+   	    			}
+//   	    			List<CwInvoiceF> cwInvoiceFlist = cwInvoiceFDao.querysByInvoice_no(code);
+//   	    				if(cwInvoiceFlist.size()<1){
+//   	    					cwInvoiceFDao.getHibernateTemplate().update(cwInvoiceF);
+//   	    				}else{
+//   	    				}
+   	    			try {//判断是否重复发票
+   	    				cwInvoiceFDao.getinvoiceCode(code);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}finally{
+						total = total + 1;
+						cwInvoiceFDao.save(cwInvoiceF);
+						// 写入系统日志
+		    			try {
+		    				logService.setLogs(cwInvoiceF.getId(), "发票导入", "发票导入（发票号："+cwInvoiceF.getInvoiceCode()+")", user.getId(), user.getName(),
+		    						new Date(),request.getRemoteAddr());
+		    			} catch (Exception e) {
+		    				e.printStackTrace();
+		    			}
+					}
+   	    		}
+   	    	}
+   	    }
+   	    content[0]=Integer.toString(total);
+	    content[1]=repData;
+		return content;
+   		
+   	}
+
+   	
+   	public String getSystemFilePath() {
+   		
+   		SysParaInf sp = Factory.getSysPara();
+   		String attachmentPath = sp.getProperty("attachmentPath");
+   		String attachmentPathType = sp.getProperty("attachmentPathType", "relative");
+   		
+   		if ("relative".equals(attachmentPathType)) {
+   			return Factory.getWebRoot() + File.separator + attachmentPath;
+   		}
+   		return attachmentPath;
+   	}
+    
+   	/**
+	 * 日期转换
+	 * @param st
+	 * @return
+	 * @throws ParseException
+	 */
+	@SuppressWarnings("finally")
+	public Date parseDate(String st) throws ParseException {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		Date dt=null;
+		String ymd="";
+		String hms="";
+		try {
+			ymd = st.substring(0,4)+"/"+st.substring(4,6)+"/"+st.substring(6,8);
+			hms = st.substring(8, st.length());
+			st = ymd+hms;
+			dt = sdf.parse(sdf.format(sdf.parse(st.trim().replaceAll("[./—]", "-"))));
+		} finally {
+			return dt;
+		}
+	}
+	/**保存发票修改信息并记录日志
+	 * @param cwInvoiceLead
+	 * @param user
+	 */
+	public void saveF(HttpServletRequest request,CwInvoiceF cwInvoiceF,CurrentSessionUser user){
+		CwInvoiceF cwInvoiceFnew = new CwInvoiceF();
+		cwInvoiceFnew = cwInvoiceFDao.get(cwInvoiceF.getId());
+		/*cwInvoiceFnew.setInvoiceCode(cwInvoiceF.getInvoiceCode());//发票编号
+		cwInvoiceFnew.setInvoiceType(cwInvoiceF.getInvoiceType());//发票类型
+*/		cwInvoiceFnew.setInvoiceMoney(cwInvoiceF.getInvoiceMoney());//发票金额
+		cwInvoiceFnew.setMoneyType(cwInvoiceF.getMoneyType());//交易类型
+		cwInvoiceFnew.setInvoiceUnit(cwInvoiceF.getInvoiceUnit());//开票单位
+		cwInvoiceFnew.setInvoiceDate(cwInvoiceF.getInvoiceDate());//开票时间
+		cwInvoiceFnew.setCheckoutUnit(cwInvoiceF.getCheckoutUnit());//受检单位
+		cwInvoiceFnew.setRemark(cwInvoiceF.getRemark());//备注
+		cwInvoiceFnew.setStatus(cwInvoiceF.getStatus());//状态
+		// 写入系统日志
+		try {
+			cwInvoiceFDao.save(cwInvoiceFnew);
+			logService.setLogs(cwInvoiceFnew.getId(), "发票基本信息修改", "发票基本信息修改（发票号："+cwInvoiceFnew.getInvoiceCode()+")", user.getId(), user.getName(),
+					new Date(),request.getRemoteAddr());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+    }
+}

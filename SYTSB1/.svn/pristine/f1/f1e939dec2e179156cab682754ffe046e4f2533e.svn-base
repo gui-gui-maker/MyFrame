@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<body>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<!--  		<input type="hidden" id="fk_report_id" name="fk_report_id"  value="${param.fk_report_id}"  > 		<input type="hidden" id="fk_inspection_info_id" name="fk_inspection_info_id"  value="${param.fk_inspection_info_id}"  >  -->
+	<input type="hidden" id="nextPage" name="nextPage" value="2" values="2"
+		title="" style="width: 99%;">
+	<br>
+	<!-- userBodyTop goes here -->
+	<div class="document">
+		<table id="docx4j_tbl_0"
+			style="border-bottom: 1px solid rgb(0, 0, 0); table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 6.45in; position: relative;"
+			class="">
+			<colgroup>
+				<col border="1" style="width: 50%;" class="">
+				<col border="1" style="width: 50%;" class="">
+			</colgroup>
+			<tbody>
+				<tr>
+					<td class="">
+						<p class="a DocDefaults" style="font-size: 14pt;">
+							<span class="a0" style="position: relative; font-size: 14pt;"><span
+								class=""
+								style="font-family: SimSun; position: relative; font-size: 14pt;">文件编号：</span></span><span
+								class="a0"
+								style="font-family: SimSun; position: relative; font-size: 14pt;">CTJB-0307-BG01</span>
+						</p>
+					</td>
+					<td class="">
+						<p class="a DocDefaults"
+							style="text-align: right; font-size: 14pt;">
+							<span class="a0" style="position: relative; font-size: 14pt;"><span
+								class=""
+								style="font-family: SimSun; position: relative; font-size: 14pt;">实施日期：</span></span><span
+								class="a0"
+								style="font-family: SimSun; position: relative; font-size: 14pt;">2015年11月1日</span>
+						</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<table id="docx4j_tbl_1"
+			style="table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 620px; position: relative; left: 1px; top: -1px; height: 741px;"
+			class="">
+			<colgroup>
+				<col border="1" style="width: 31.51%;" class="">
+				<col border="1" style="width: 34.92%;" class="">
+				<col border="1" style="width: 33.58%;" class="">
+			</colgroup>
+			<tbody>
+				<tr style="height: 10mm;">
+					<td colspan="2" class="">
+						<p class="a DocDefaults"
+							style="text-align: right; font-size: 16pt;">
+							<span class="a0"
+								style="font-size: 16pt; font-family: SimSun; position: relative;">报告编号</span><span
+								class="a0"
+								style="font-size: 16pt; font-family: &amp; amp; amp; amp; quot; Times New Roman&amp;amp; amp; amp; quot;; position: relative;">:</span>
+						</p>
+					</td>
+					<td class="">
+						<p class="a DocDefaults" style="padding: 1px;">
+							<input id="base__report_sn" name="base__report_sn" type="text"
+								ltype="text" value="" ligerui="{width:198}" readonly="readonly"
+								values="" title=""
+								style="width: 99%; font-size: 16pt; text-align: left;"
+								class="      ">
+						</p>
+					</td>
+				</tr>
+				<tr style="height: 25mm;">
+					<td colspan="3" class="">
+						<p class="a DocDefaults" style="text-align: center;">
+							<span class="a0 ui-draggable-dragging"
+								style="font-weight: bold; font-size: 22pt; font-family: SimSun; position: relative;">压力管道安装安全质量</span>
+						</p>
+						<p class="a DocDefaults" style="text-align: center;">
+							<span class="a0"
+								style="font-weight: bold; font-size: 22pt; font-family: SimSun; position: relative;">监督检验报告</span>
+						</p>
+					</td>
+				</tr>
+				<tr style="height: 1.3in;">
+					<td colspan="3" class="ui-resizable-resizing">
+						<!-- <p class="a DocDefaults ">							<input id="TBL00001" name="TBL00001" type="text" ltype="text"								value="" ligerui="{width:611}" />						</p> -->
+					</td>
+				</tr>
+				<tr style="height: 0.87in;">
+					<td class="" style="vertical-align: bottom;">
+						<p class="a DocDefaults"
+							style="text-align: right; font-size: 16pt;">
+							<span class="a0" style="font-size: 16pt; position: relative;">工程名称:</span>
+						</p>
+					</td>
+					<td colspan="2"
+						style="border-style: none none solid none; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: bottom; height: 41px; width: 189.562px;"
+						class="">
+						<p class="1-5-BR DocDefaults"
+							style="padding: 1px; text-align: left;">
+							<textarea id="base__gcxmmc" name="base__gcxmmc" type="text"
+								ltype="text" value="" ligerui="{width:415}" title=""
+								style="text-align: left; font-size: 16pt; font-family: 宋体; height: 20px; line-height: 20px; width: 99%;"
+								class="        " values=""></textarea>
+						</p>
+					</td>
+				</tr>
+				<tr style="height: 23mm;">
+					<td class="" style="vertical-align: bottom;">
+						<p class="a DocDefaults"
+							style="text-align: right; font-size: 16pt;">
+							<span class="a0" style="font-size: 16pt; position: relative;">建设单位:</span>
+						</p>
+					</td>
+					<td colspan="2"
+						style="border-style: none none solid none; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: bottom; height: 41px; width: 189.562px;"
+						class="">
+						<p class="1-5-BR DocDefaults"
+							style="padding: 1px; text-align: left;">
+							<textarea id="TBL00002" name="TBL00002" type="text" ltype="text"
+								value="" ligerui="{width:415}" title=""
+								style="width: 99%; text-align: left; font-size: 16pt; font-family: 宋体; height: 20px; line-height: 20px;"
+								class="        " values=""></textarea>
+						</p>
+					</td>
+				</tr>
+				<tr style="height: 0.86in;">
+					<td class="" style="vertical-align: bottom;">
+						<p class="a DocDefaults"
+							style="text-align: right; font-size: 16pt;">
+							<span class="a0" style="font-size: 16pt; position: relative;">监督检验单位:</span>
+						</p>
+					</td>
+					<td colspan="2"
+						style="border-style: none none solid none; border-width: 1px; border-color: rgb(0, 0, 0); padding: 0mm 1.91mm; vertical-align: bottom; height: 41px; width: 189.562px;"
+						class="">
+						<p class="1-5-BR DocDefaults"
+							style="padding: 1px; text-align: left;">
+							<textarea id="base__inspection_org" name="base__inspection_org"
+								type="text" ltype="text" value="" ligerui="{width:415}" title=""
+								style="width: 99%; text-align: left; font-size: 16pt; font-family: 宋体; height: 20px; line-height: 20px;"
+								class="        " values=""></textarea>
+						</p>
+					</td>
+				</tr>
+				<tr style="height: 23mm;">
+					<td class="" style="vertical-align: bottom;">
+						<p class="a DocDefaults"
+							style="text-align: right; font-size: 16pt;">
+							<span class="a0" style="font-size: 16pt; position: relative;">监督检验日期:</span>
+						</p>
+					</td>
+					<td colspan="2" class="" style="vertical-align: bottom;border-style: none none solid none; border-width: 1px; border-color: rgb(0, 0, 0);">
+						<p class="a DocDefaults" style="padding: 1px;">
+							<input id="base__inspect_date" name="base__inspect_date" value=""
+								values="" type="text" ltype="date"
+								style="width: 99%; font-size: 16pt; text-align: left;"
+								ligerui="{width:415}" title="" class="        ">
+						</p>
+					</td>
+				</tr>
+				<tr style="height: 22mm;">
+					<td colspan="3" class=""></td>
+				</tr>
+				<tr>
+					<td colspan="3" class="">
+						<p class="a DocDefaults" style="text-align: center;">
+							<span class="a0"
+								style="font-weight: bold; font-size: 22pt; font-family: SimSun; position: relative; left: -12px; top: 157px;">四川省特种设备检验研究院</span>
+						</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	</div>
+</body>
+</html>

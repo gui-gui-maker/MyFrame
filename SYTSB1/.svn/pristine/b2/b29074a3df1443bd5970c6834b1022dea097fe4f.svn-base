@@ -1,0 +1,363 @@
+<%@ page contentType="text/html;charset=UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+</head>
+
+<body>
+	<div id="layout2" style="width: 99.8%">
+		<input type="hidden" id="inputFocus" name="inputFocus" /> <input
+			type="hidden" id="thisPage" name="thisPage" value="?page=4">
+		<div position="center" class="wrapper"
+			style="overflow: auto; width: 100%" align="center">
+			<input type="hidden" id="fk_report_id" name="fk_report_id" value="">
+			<input type="hidden" id="fk_inspection_info_id"
+				name="fk_inspection_info_id" value=""> <br />
+			<p>
+				<a name="RTPAGE_3__检验依据"></a>
+			</p>
+			<table id="docx4j_tbl_4">
+				<colgroup>
+					<col style="width: 11.08%;" />
+					<col style="width: 3.13%;" />
+					<col style="width: 16.07%;" />
+					<col style="width: 2.97%;" />
+					<col style="width: 2.86%;" />
+					<col style="width: 13.82%;" />
+					<col style="width: 5.59%;" />
+					<col style="width: 8.25%;" />
+					<col style="width: 5.82%;" />
+					<col style="width: 8.14%;" />
+					<col style="width: 5.53%;" />
+					<col style="width: 16.74%;" />
+				</colgroup>
+				<tbody>
+					<tr style="height: 8mm; page-break-inside: avoid;">
+						<td colspan="12" style="text-align:center;">
+							<p>
+								<span>检验依据</span>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 10mm; page-break-inside: avoid;">
+						<td colspan="12" style="text-align:center;">
+							<p>
+								<span>《电梯监督检验和定期检验规则</span><span>—</span><span><span>杂物电梯》（</span></span><span>TSG
+									T7006－2012）</span>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 4mm; page-break-inside: avoid;">
+						<td colspan="12" style="text-align:center;">
+							<p>
+								<span>整机检验条件</span>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 32mm; page-break-inside: avoid;">
+						<td colspan="12">
+							<p>
+								<span>(1)</span><span><span>机房温度、电压符合杂物电梯设计文件的规定；</span></span>
+							</p>
+							<p>
+								<span>(2)</span><span><span>环境空气中没有腐蚀性和易燃性气体及导电尘埃；</span></span>
+							</p>
+							<p>
+								<span>(3)检验现场(主要指机房、井道、轿顶、底坑)</span><span><span>清洁，没有与杂物电梯工作无关的物品和设备，相关现场</span></span><span>(例如层站门口)</span><span><span>放置表明正在进行检验的警示牌；</span></span>
+							</p>
+							<p>
+								<span>(4)对井道进行了必要的封闭。</span><span> </span>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 8mm; page-break-inside: avoid;">
+						<td>
+							<p style="text-align:center;">
+								<span>检验条件确认</span>
+							</p>
+						</td>
+						<td colspan="11">
+							<p>
+								<input id="base__xcjytjqr" name="base__xcjytjqr" type="text"
+									ltype="select" value="" ligerui="{width:128,data:[{id:'符合',text:'符合'},{id:'不符合',text:'不符合'}]}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.34in; page-break-inside: avoid;">
+						<td rowspan="7" style="text-align:center;">
+							<p>
+								<span>检验</span>
+							</p>
+							<p>
+								<span>仪器</span>
+							</p>
+						</td>
+						<td colspan="4" style="text-align:center;">
+							<p>
+								<span><span>常用检验仪器设备箱号：</span></span>
+							</p>
+						</td>
+						<td colspan="7">
+							<p>
+								<input id="base__jyyqsbxh" name="base__jyyqsbxh" type="text"
+									ltype="text" value="" ligerui="{width:128}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.29in; page-break-inside: avoid;">
+						<td colspan="11" style="text-align:left;">
+							<p>
+								<span><span>其他检验仪器</span></span>
+							</p>
+						</td>
+						
+					</tr>
+					<tr style="height: 0.17in; page-break-inside: avoid;">
+						<td colspan="3" style="text-align:center;">
+							<p>
+								<span>设备种类</span>
+							</p>
+						</td>
+						<td colspan="3" style="text-align:center;">
+							<p>
+								<span>内部编号</span>
+							</p>
+						</td>
+						<td colspan="3" style="text-align:center;">
+							<p>
+								<span>设备种类</span>
+							</p>
+						</td>
+						<td colspan="2" style="text-align:center;">
+							<p>
+								<span>内部编号</span>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 4mm; page-break-inside: avoid;">
+						<td colspan="3">
+							<p>
+								<input id="TBL00006" name="TBL00006" type="text" ltype="text"
+									value="" ligerui="{width:133}" />
+							</p>
+						</td>
+						<td colspan="3">
+							<p>
+								<input id="TBL00007" name="TBL00007" type="text" ltype="text"
+									value="" ligerui="{width:133}" />
+							</p>
+						</td>
+						<td colspan="3">
+							<p>
+								<input id="TBL00008" name="TBL00008" type="text" ltype="text"
+									value="" ligerui="{width:133}" />
+							</p>
+						</td>
+						<td colspan="2">
+							<p>
+								<input id="TBL00009" name="TBL00009" type="text" ltype="text"
+									value="" ligerui="{width:134}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 4mm; page-break-inside: avoid;">
+						<td colspan="3">
+							<p>
+								<input id="TBL00010" name="TBL00010" type="text" ltype="text"
+									value="" ligerui="{width:133}" />
+							</p>
+						</td>
+						<td colspan="3">
+							<p>
+								<input id="TBL00011" name="TBL00011" type="text" ltype="text"
+									value="" ligerui="{width:133}" />
+							</p>
+						</td>
+						<td colspan="3">
+							<p>
+								<input id="TBL00012" name="TBL00012" type="text" ltype="text"
+									value="" ligerui="{width:133}" />
+							</p>
+						</td>
+						<td colspan="2">
+							<p>
+								<input id="TBL00013" name="TBL00013" type="text" ltype="text"
+									value="" ligerui="{width:134}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 4mm; page-break-inside: avoid;">
+						<td colspan="3">
+							<p>
+								<input id="TBL00014" name="TBL00014" type="text" ltype="text"
+									value="" ligerui="{width:133}" />
+							</p>
+						</td>
+						<td colspan="3">
+							<p>
+								<input id="TBL00015" name="TBL00015" type="text" ltype="text"
+									value="" ligerui="{width:133}" />
+							</p>
+						</td>
+						<td colspan="3">
+							<p>
+								<input id="TBL00016" name="TBL00016" type="text" ltype="text"
+									value="" ligerui="{width:133}" />
+							</p>
+						</td>
+						<td colspan="2">
+							<p>
+								<input id="TBL00017" name="TBL00017" type="text" ltype="text"
+									value="" ligerui="{width:134}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 4mm; page-break-inside: avoid;">
+						<td colspan="3">
+							<p>
+								<input id="TBL00018" name="TBL00018" type="text" ltype="text"
+									value="" ligerui="{width:133}" />
+							</p>
+						</td>
+						<td colspan="3">
+							<p>
+								<input id="TBL00019" name="TBL00019" type="text" ltype="text"
+									value="" ligerui="{width:133}" />
+							</p>
+						</td>
+						<td colspan="3">
+							<p>
+								<input id="TBL00020" name="TBL00020" type="text" ltype="text"
+									value="" ligerui="{width:133}" />
+							</p>
+						</td>
+						<td colspan="2">
+							<p>
+								<input id="TBL00021" name="TBL00021" type="text" ltype="text"
+									value="" ligerui="{width:134}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.06in; page-break-inside: avoid;">
+						<td style="text-align:center;">
+							<p>
+								<span>检验</span>
+							</p>
+							<p>
+								<span>结论</span>
+							</p>
+						</td>
+						<td colspan="11">
+							<p>
+								<input id="base__inspection_conclusion"
+									name="base__inspection_conclusion" type="text" ltype="select"
+									value="" ligerui="{width:579,code:'DTJYJL'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 1.55in; page-break-inside: avoid;">
+						<td style="text-align:center;">
+							<p>
+								<span>备注</span>
+							</p>
+						</td>
+						<td colspan="11">
+							<p>
+								<textarea rows="6" id="base__remarks4" name="base__remarks4" type="text" ltype="text" autoHeight="true"
+									value="" ligerui="{width:566}"></textarea>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 7mm; page-break-inside: avoid;">
+						<td colspan="12">
+							<p>
+								<span><span>注：本记录仅反映该设备检验时的状态</span></span>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 10mm; page-break-inside: avoid;">
+						<td colspan="2">
+							<p style="text-align:center;">
+								<span><span>检验日期：</span></span><span> </span>
+							</p>
+						</td>
+						<td colspan="4">
+							<p style="text-align:center;">
+								<input id="base__inspect_date" name="base__inspect_date"
+									type="text" ltype="date" value=""
+									ligerui="{isTextBoxMode:true,width:221}" required />
+							</p>
+						</td>
+						<td colspan="3">
+							<p style="text-align:center;">
+								<span><span>下次检验日期：</span></span>
+							</p>
+						</td>
+						<td colspan="3">
+							<p style="text-align:center;">
+								<input id="base__inspect_next_date"
+									name="base__inspect_next_date" type="text" ltype="date"
+									value="" ligerui="{format:'yyyy-MM',isTextBoxMode:true,width:186}" required />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.34in; page-break-inside: avoid;">
+						<td colspan="2">
+							<p style="text-align:center;">
+								<span><span>检验人员：</span></span>
+							</p>
+						</td>
+						<td colspan="10">
+							<p>
+								<input id="base__inspect_op" name="base__inspect_op" type="text"
+									ltype="select" value=""
+									ligerui="{isMultiSelect:true,width:545}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 11mm; page-break-inside: avoid;">
+						<td colspan="2">
+							<p style="text-align:center;">
+								<span><span>校核人员：</span></span><span> </span>
+							</p>
+						</td>
+						<td colspan="2">
+							<p>
+								<input id="base__confirm_op" name="base__confirm_op" type="text"
+									ltype="text" value="" ligerui="{width:179}" />
+							</p>
+						</td>
+						<td colspan="2">
+							<p>
+								<input id="base__confirm_time" name="base__confirm_time"
+									type="text" ltype="date" value=""
+									ligerui="{isTextBoxMode:true,width:221}" required />
+							</p>
+						</td>
+						<td colspan="2">
+							<p style="text-align:center;">
+								<span><span>审核人员：</span></span>
+							</p>
+						</td>
+						<td colspan="3">
+							<p>
+								<input id="base__audit_op" name="base__audit_op" type="text"
+									ltype="select" value="" ligerui="{width:116}" />
+							</p>
+						</td>
+						<td>
+							<p>
+								<input id="base__audit_time" name="base__audit_time" type="text"
+									ltype="date" value="" ligerui="{isTextBoxMode:true,width:221}"
+									required />
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>
+		</div>
+	</div>
+</body>
+</html>

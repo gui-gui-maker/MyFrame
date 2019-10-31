@@ -1,0 +1,37 @@
+package com.khnt.rtbox.config.dao;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.khnt.core.crud.dao.impl.EntityDaoImpl;
+import com.khnt.rtbox.config.bean.RtPersonDir;
+
+/**
+ * <p>
+ * 
+ * </p>
+ * 
+ * @ClassName RtPersonDirDao
+ * @JDK 1.5
+ * @author CODER_V3.0
+ * @date 2016-03-22 09:51:04
+ */
+@Repository("rtPersonDirDao")
+public class RtPersonDirDao extends EntityDaoImpl<RtPersonDir> {
+
+	public RtPersonDir getByBusinessId(String infoId) {
+		String hql = "from RtPersonDir where fkBusinessId = ?";
+		List<RtPersonDir> list = this.createQuery(hql, infoId).list();
+		if(list.size()>0) {
+			return list.get(0);
+		}
+		return null;
+	}
+	
+	public List<RtPersonDir> getDirByBusinessIdAndCode(String businessId,String rtCode) {
+		@SuppressWarnings("unchecked")
+		List<RtPersonDir> rpdList = this.createQuery("from RtPersonDir where fkBusinessId=? and rtCode=?", businessId, rtCode).list();
+		return rpdList;
+	}
+}

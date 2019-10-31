@@ -1,0 +1,147 @@
+function print(){
+	var id=Qm.getValueByName("id");
+	var zd=Qm.getValueByName("zd");
+ 	var LODOP=getLodop(document.getElementById('LODOP'),document.getElementById('LODOP_EM'));
+	LODOP.PRINT_INIT("");
+	LODOP.PRINT_INITA(0,0,1100,1730,"");					//、、
+	LODOP.SET_PRINT_PAGESIZE(1,0,0,"A4");
+	if(zd=='主动介入'){
+		LODOP.ADD_PRINT_IMAGE(0,0,1100,1114,"<img src='/app/discipline/images/gzd.jpg'/>");
+
+		$.ajax({								
+			cache:false,
+			type:"post",
+			async: false,
+			data:{"id":id},
+			dataTyp:"json",
+			url:"disciplineZdjrAction/detail.do",			
+			success:function(data) {
+			 	 console.log(data.data);
+			 	LODOP.ADD_PRINT_TEXT(212,177,432,27,data.data.szbm);
+			 	LODOP.SET_PRINT_STYLEA(0,"FontSize",13);
+			 	var jdlb="";
+			 	if(data.data.jdlb=='zdjc'){jdlb="重大决策";}
+			 	if(data.data.jdlb=='zygbrm'){jdlb="重要干部任免";}
+			 	if(data.data.jdlb=='zdxmap'){jdlb="重大项目安排";}
+			 	if(data.data.jdlb=='dedzjsy'){jdlb="大额度资金使用";}
+			 	
+			 	LODOP.ADD_PRINT_TEXT(297,189,157,19,jdlb);
+			 	LODOP.SET_PRINT_STYLEA(0,"FontSize",13);
+			 	var jdfs="";
+			 	if(data.data.jdfs=='sqyf'){jdfs="事情预防";}
+			 	if(data.data.jdfs=='szjr'){jdfs="事中介入";}
+			 	if(data.data.jdfs=='shjr'){jdfs="事后介入";}
+			 	if(data.data.jdfs=='qccy'){jdfs="全程参与";}
+			 	if(data.data.jdfs=='qt'){jdfs="其它";}
+			 	LODOP.ADD_PRINT_TEXT(294,552,131,21,jdfs);
+			 	LODOP.SET_PRINT_STYLEA(0,"FontSize",13);
+			 	LODOP.ADD_PRINT_TEXT(372,180,530,89,data.data.jdgzsy);
+			 	LODOP.SET_PRINT_STYLEA(0,"FontSize",13);
+			 	LODOP.ADD_PRINT_TEXT(493,191,254,20,data.data.jdsj.substring(0,10));
+			 	LODOP.SET_PRINT_STYLEA(0,"FontSize",13);
+			 	LODOP.ADD_PRINT_TEXT(537,182,527,57,data.data.bmyj);
+			 	LODOP.SET_PRINT_STYLEA(0,"FontSize",13);
+			 	LODOP.ADD_PRINT_TEXT(666,184,531,76,data.data.jjgzyj);
+			 	LODOP.SET_PRINT_STYLEA(0,"FontSize",13);
+			 	LODOP.ADD_PRINT_TEXT(594,568,125,21,data.data.bmyj_fzr);
+			 	LODOP.SET_PRINT_STYLEA(0,"FontSize",13);
+			 	LODOP.ADD_PRINT_TEXT(800,184,530,90,data.data.bljg);
+			 	LODOP.SET_PRINT_STYLEA(0,"FontSize",13);
+			 	LODOP.ADD_PRINT_TEXT(729,572,125,21,data.data.jjgzyj_fzr);
+			 	LODOP.SET_PRINT_STYLEA(0,"FontSize",13);
+			 	LODOP.ADD_PRINT_TEXT(750,511,45,21,data.data.jjgzyj_time.substring(0,4));
+			 	LODOP.SET_PRINT_STYLEA(0,"FontSize",13);
+			 	LODOP.ADD_PRINT_TEXT(896,497,45,23,data.data.bljg_time.substring(0,4));
+			 	LODOP.SET_PRINT_STYLEA(0,"FontSize",13);
+			 	LODOP.ADD_PRINT_TEXT(617,509,51,21,data.data.bmyj_time.substring(0,4));
+			 	LODOP.SET_PRINT_STYLEA(0,"FontSize",13);
+			 	LODOP.ADD_PRINT_TEXT(896,556,30,23,data.data.bljg_time.substring(5,7));
+			 	LODOP.SET_PRINT_STYLEA(0,"FontSize",13);
+			 	LODOP.ADD_PRINT_TEXT(897,594,30,23,data.data.bljg_time.substring(8,10));
+			 	LODOP.SET_PRINT_STYLEA(0,"FontSize",13);
+			 	LODOP.ADD_PRINT_TEXT(751,571,30,21,data.data.jjgzyj_time.substring(5,7));
+			 	LODOP.SET_PRINT_STYLEA(0,"FontSize",13);
+			 	LODOP.ADD_PRINT_TEXT(751,612,30,21,data.data.jjgzyj_time.substring(8,10));
+			 	LODOP.SET_PRINT_STYLEA(0,"FontSize",13);
+			 	LODOP.ADD_PRINT_TEXT(616,570,31,21,data.data.bmyj_time.substring(5,7));
+			 	LODOP.SET_PRINT_STYLEA(0,"FontSize",13);
+			 	LODOP.ADD_PRINT_TEXT(616,612,31,21,data.data.bmyj_time.substring(8,10));
+			 	LODOP.SET_PRINT_STYLEA(0,"FontSize",13);
+
+			 	 }
+			 })
+	}
+	if(zd=='申请介入'){
+
+		$.ajax({								
+			cache:false,
+			type:"post",
+			async: false,
+			data:{"id":id},
+			dataTyp:"json",
+			url:"com/zdsx/sqjr/detail.do",			
+			success:function(data) {
+			console.log(data.data);
+		
+		LODOP.ADD_PRINT_IMAGE(0,0,1100,1114,"<img src='/app/discipline/images/sqb.jpg'/>");
+		LODOP.ADD_PRINT_TEXT(200,179,242,23,data.data.sqr);
+		LODOP.SET_PRINT_STYLEA(0,"FontSize",10);
+		LODOP.ADD_PRINT_TEXT(202,540,188,23,data.data.szbm);
+		LODOP.SET_PRINT_STYLEA(0,"FontSize",10);
+		var jdlb="";
+		if(data.data.jdlb=='1'){jdlb='决策事项';}
+		if(data.data.jdlb=='2'){jdlb='干部任免';}
+		if(data.data.jdlb=='3'){jdlb='项目安排';}
+		if(data.data.jdlb=='4'){jdlb='资金使用';}
+		if(data.data.jdlb=='5'){jdlb='其它';}
+		LODOP.ADD_PRINT_TEXT(254,180,240,23,jdlb);
+		LODOP.SET_PRINT_STYLEA(0,"FontSize",10);
+		var jdzl="";
+		if(data.data.jdzl=='1'){jdzl="部门要求介入";}
+		if(data.data.jdzl=='2'){jdzl="事物工作需要全程监督";}
+		if(data.data.jdzl=='3'){jdzl="针对工作一环节的监督";}
+		if(data.data.jdzl=='4'){jdzl="其它";}
+		LODOP.ADD_PRINT_TEXT(253,546,184,23,jdzl);
+		LODOP.SET_PRINT_STYLEA(0,"FontSize",10);
+		LODOP.ADD_PRINT_TEXT(312,177,546,88,data.data.jdgzsy);
+		LODOP.SET_PRINT_STYLEA(0,"FontSize",10);
+		LODOP.ADD_PRINT_TEXT(425,177,546,27,data.data.jdsj.substring(0,10));
+		LODOP.SET_PRINT_STYLEA(0,"FontSize",10);
+		LODOP.ADD_PRINT_TEXT(481,294,431,66,data.data.bmfzryj);
+		LODOP.SET_PRINT_STYLEA(0,"FontSize",10);
+		LODOP.ADD_PRINT_TEXT(550,524,37,20,data.data.bmfzr_time.substring(0,4));
+		LODOP.SET_PRINT_STYLEA(0,"FontSize",10);
+		LODOP.ADD_PRINT_TEXT(550,575,24,20,data.data.bmfzr_time.substring(5,7));
+		LODOP.SET_PRINT_STYLEA(0,"FontSize",10);
+		LODOP.ADD_PRINT_TEXT(550,612,23,20,data.data.bmfzr_time.substring(8,10));
+		LODOP.SET_PRINT_STYLEA(0,"FontSize",10);
+		LODOP.ADD_PRINT_TEXT(585,294,434,78,data.data.bmfgyyj);
+		LODOP.SET_PRINT_STYLEA(0,"FontSize",10);
+		LODOP.ADD_PRINT_TEXT(670,530,37,20,data.data.bmfgy_time.substring(0,4));
+		LODOP.SET_PRINT_STYLEA(0,"FontSize",10);
+		LODOP.ADD_PRINT_TEXT(670,579,25,21,data.data.bmfgy_time.substring(5,7));
+		LODOP.SET_PRINT_STYLEA(0,"FontSize",10);
+		LODOP.ADD_PRINT_TEXT(670,619,24,22,data.data.bmfgy_time.substring(8,10));
+		LODOP.SET_PRINT_STYLEA(0,"FontSize",10);
+		LODOP.ADD_PRINT_TEXT(695,296,426,65,data.data.jjfgyyj);
+		LODOP.SET_PRINT_STYLEA(0,"FontSize",10);
+		LODOP.ADD_PRINT_TEXT(769,530,41,20,data.data.jjfgy_time.substring(0,4));
+		LODOP.SET_PRINT_STYLEA(0,"FontSize",10);
+		LODOP.ADD_PRINT_TEXT(768,578,26,20,data.data.jjfgy_time.substring(5,7));
+		LODOP.SET_PRINT_STYLEA(0,"FontSize",10);
+		LODOP.ADD_PRINT_TEXT(769,617,24,20,data.data.jjfgy_time.substring(8,10));
+		LODOP.SET_PRINT_STYLEA(0,"FontSize",10);
+		LODOP.ADD_PRINT_TEXT(825,185,531,72,data.data.bljg);
+		LODOP.SET_PRINT_STYLEA(0,"FontSize",10);
+		LODOP.ADD_PRINT_TEXT(910,508,37,20,data.data.bljg_time.substring(0,4));
+		LODOP.SET_PRINT_STYLEA(0,"FontSize",10);
+		LODOP.ADD_PRINT_TEXT(910,559,27,20,data.data.bljg_time.substring(5,7));
+		LODOP.ADD_PRINT_TEXT(910,601,24,20,data.data.bljg_time.substring(8,10));
+		LODOP.SET_PRINT_STYLEA(0,"FontSize",10);
+			}
+		});
+
+	}
+			//LODOP.PRINT_DESIGN();//打印设计
+		 LODOP.PRINT();//直接打印
+	}

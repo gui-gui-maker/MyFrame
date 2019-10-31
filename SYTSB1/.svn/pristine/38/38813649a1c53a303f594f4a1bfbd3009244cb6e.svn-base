@@ -1,0 +1,175 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn" xml:lang="zh-cn">
+	<head>
+		<%@include file="/k/kui-base-form.jsp"%>
+		<title>消息提醒</title>
+		<script type="text/javascript">
+			$.ajaxSetup({
+				cache: false
+			});
+			var isShell1=[false,0,0];
+			try{
+			    if(window.external.IsShell()){//外壳
+			    	$.getScript("pub/explorer/ui-ext/ui-ie-external.js");
+			    	isShell1=[true,2,20];
+			    }
+			    else{//非外壳
+			    	$.getScript("pub/explorer/ui-ext/ui-default.js");
+			    }
+			}
+			catch(e){//非外壳
+				$.getScript("pub/explorer/ui-ext/ui-default.js");
+			}
+			
+			function openMsgUrl(){
+				markread();
+				var current = $(".msg-item");
+				var url = current.attr("url");
+				if(url && url != "null") {
+	                openExtDialog(url,"消息处理");
+				};
+			}
+
+			$(function(){
+				if (isShell1[0]) {
+					$("#s-b-msg-page-main").addClass("border-1");
+					$("#s-b-msg-title").show();
+					$("#s-b-msg-title-close").click(function(){
+						//2014/11/14 11:16 lybide 关闭消息提示
+						//is_window_externall_msgUserClose=1;
+						var ret=window.external.WriteIni("user", "msgBoxUserClose", "1", "confing.user.ini");
+						var ret=window.external.StopTrayFlicker();
+						ret=window.external.ClosePopup("testkey");
+						if (!ret) {
+							alert(window.external.GetLastErrorMessage());
+						}
+					});
+				}
+				/*-parseInt($("#s-b-msg-page-main").css("border-left-width"))-parseInt($("#s-b-msg-page-main").css("border-right-width"))*/
+				$("#s-b-msg-page-main").width($(window).width()-isShell1[1]);
+				$("#s-b-msg-page-main").height($(window).height()-isShell1[1]);
+				var h1=$("#s-b-msg-page-main").height()-$("#s-b-msg-nav").outerHeight()-isShell1[2];
+				//alert([$("#s-b-msg-page-main").height(),$("#s-b-msg-nav").outerHeight(),h1]);
+				$(".s-b-msg-list").height(h1);
+				$.getJSON("pub/message/readSystemMsg.do",function(resp){
+					if(!resp.success){$("#s-b-msg-main").html("<div class='s-b-msg-error'>获取消息失败！</div>");}
+					if (!resp.data) {return;}
+					if(resp.data.length==0){
+						$("#noread").hide();
+						$("#s-b-msg-list").html("<div class='s-b-msg-error'><p>没有未读消息！</p></div>");
+						return;
+					}
+					//将消息集合存入本地全局
+					$(window).data("allMsg",resp.data);
+					
+					$("#c_count").text(resp.data.length);
+					var musicStr='<bgsound src="pub/explorer/img/newsms.wav" autostart="true" loop="1" name="gq"/>' +
+							'<audio src="pub/explorer/img/newsms.wav" autoplay="autoplay"></audio>';
+					$("body").append(musicStr);
+					if (isShell1[0]) {
+						window.external.StartTrayFlicker("Skin/kh1.ico;Skin/kh2.ico;",400,"您有新的消息");
+					} else {
+						api.data.window.startTrayFlicker(true);
+					}
+					$("#c_no").text("1");
+					var idx = resp.data.length-1;
+					var item = resp.data[idx];
+					var content  = $.kh.isNull(item.content)?item.msgContent:item.content;
+					var str1="<div class='msg-item' read='0' url='" + item.msgUrl + "' msgId='" + item.id + "' idx='" + idx + 
+    					"' read='0'><div class='msg-content'><a href='javascript:void(0);' onclick='openMsgUrl();'>" + content +
+    					"</a></div><div class='msg-info'><div class='a'>" + item.msgSender + "</div><div class='b'>" + item.sendTime + "</div></div></div>";
+					$("#s-b-msg-list").html(str1);
+
+					if (resp.data.length>0) {
+						$("#msg-btn-next,#msg-btn-no,#msg-btn-prev").show();
+					}
+					$("#s-b-msg-list .msg-item:first").show().addClass("msg-show");//.height($(window).height()-35);
+				});
+			});
+
+			function showMsgContent(idx){
+				var msgData = $(window).data("allMsg")[idx];
+				if(msgData.read==1){
+    				$("#readed").show();
+    				$("#noread").hide();
+				}else{
+    				$("#readed").hide();
+    				$("#noread").show();
+				}
+				$(".msg-item").attr("url",msgData.msgUrl);
+				$(".msg-item").attr("msgId",msgData.id);
+				$(".msg-item").attr("idx",idx);
+				$(".msg-item").attr("read",msgData.status);
+				$(".msg-item a").text(msgData.msgContent);
+				$(".msg-info .a").text(msgData.msgSender);
+				$(".msg-info .b").text(msgData.msgSendTime);
+				$("#c_no").text($(window).data("allMsg").length - idx);
+			}
+			
+			function preMsg(){
+				var idx = parseInt($(".msg-item").attr("idx"));
+				if(idx==$(window).data("allMsg").length-1) return;
+				showMsgContent(idx+1);
+			}
+
+			function nextMsg(){
+				var idx = parseInt($(".msg-item").attr("idx"));
+				if(idx==0) return;
+				showMsgContent(idx-1);
+			}
+			
+			function reloadMsg(arg) {
+				window.location.reload();
+			};
+
+			function markread(){
+				var current = $(".msg-item");
+				var msgData = $(window).data("allMsg")[current.attr("idx")];
+				if(msgData.read == 1)return;
+				$.getJSON("pub/message/markRead.do?msId=" + msgData.id,function(resp){
+					if(resp.success){
+						msgData.read = 1;
+						$("#noread").hide();
+						$("#readed").show();
+						if($("#s-b-msg-list>div[read='0']").size()==0) {
+							startTrayFlicker(false);
+						};
+					}
+				});
+			}
+			
+			function allMessage(){
+                openExtDialog("pub/message/user_message_all.jsp","所有消息",1000,550);
+			}
+		</script>
+		<style type="text/css">
+			.s-b-msg-nav-wrap a.l-button{margin:0 0 5px 10px;border:none!important;text-decoration:none;}
+			.l-button.no-read{background:url("k/kui/images/icons/16/check.png") no-repeat center;}
+			.l-button.refresh{background:url("k/kui/images/icons/16/f5.png") no-repeat center;}
+			.l-button.all-message{background:url("k/kui/images/icons/16/discuss.png") no-repeat center;}
+		</style>
+	</head>
+	<body>
+		<div id="s-b-msg-page-main" class="s-b-msg-page-main isshell" style="">
+			<div id="s-b-msg-page-wrap" class="s-b-msg-page-wrap">
+				<div id="s-b-msg-title" class="s-b-msg-title hide"><div class="title">系统消息</div><div class="close"
+						id="s-b-msg-title-close"><a href="#khsoft"><span>x</span></a></div></div>
+				<div id="s-b-msg-main" class="s-b-msg-main">
+					<div class="s-b-msg-list" id="s-b-msg-list"></div>
+					<div class="s-b-msg-nav" id="s-b-msg-nav">
+						<div id="s-b-msg-nav-wrap" class="s-b-msg-nav-wrap">
+							<a href="javascript:markread(false)" class="mark l-button no-read" id="noread" title="标为已读">&nbsp;&nbsp;</a>
+							<a class="readed" id="readed">已读</a>
+							<a class="mark l-button refresh" onclick="location.reload()" title="刷新">&nbsp;&nbsp;</a>
+                            <a href="javascript:allMessage();" class="mark l-button all-message" title="所有消息">&nbsp;&nbsp;</a>
+							<a id="msg-btn-next" class="next" href="javascript:nextMsg();" title="后一个消息"></a>
+							<div id="msg-btn-no" class="no"><span id="c_no">0</span>/<span id="c_count" class="count">0</span></div>
+							<a id="msg-btn-prev" class="prev" href="javascript:preMsg();" title="前一个消息"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

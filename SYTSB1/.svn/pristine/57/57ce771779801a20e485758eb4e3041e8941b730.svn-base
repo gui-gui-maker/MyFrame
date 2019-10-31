@@ -1,0 +1,420 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+</head>
+
+<body>
+	<input type="hidden" id="fk_report_id" name="fk_report_id"
+		value="${param.fk_report_id}">
+	<input type="hidden" id="fk_inspection_info_id"
+		name="fk_inspection_info_id" value="${param.fk_inspection_info_id}">
+
+	<input type="hidden" id="nextPage" name="nextPage" value="-1">
+	<br />
+	<!-- userBodyTop goes here -->
+	<div class="document">
+		<table id="docx4j_tbl_0"
+			style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 6.67in;">
+			<colgroup>
+				<col style="width: 14.76%;" />
+				<col style="width: 30.3%;" />
+				<col style="width: 31.67%;" />
+				<col style="width: 23.27%;" />
+			</colgroup>
+			<tbody>
+				<tr>
+					<td colspan="2"
+						style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000;">
+						<p class="a DocDefaults ">
+							<span class="a0 " style="font-size: 12.0pt;"><span
+								class="" style="font-family: 'SimSun'; text-align: right;">文件编号:CTJB-1001-BG01</span></span>
+						</p>
+					</td>
+					<!-- <td
+						style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000;">
+						<p class="a DocDefaults ">
+							<span class="a0 "
+								style="font-size: 12.0pt;; font-family: 'SimSun';">CTJB-1001-BG01</span>
+							<input id="TBL00016" name="TBL00016" type="text" ltype="text"
+								value="CTJB-1001-BG01" style="font-size: 12.0pt;; font-family: 'SimSun'; text-align: left;" 
+								ligerui="{width:139}" />
+						</p>
+					</td> -->
+					<td colspan="2"
+						style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000;">
+						<p class="a DocDefaults " style="text-align: right;">
+							<span class="a0 " style="font-size: 12.0pt;"><span
+								class="" style="font-family: 'SimSun';">实施日期:2014年8月1日</span></span>
+						</p>
+					</td>
+					<!-- <td
+						style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000;">
+						<p class="a DocDefaults " style="">
+							<span class="a0 "
+								style="font-size: 12.0pt;; font-family: 'SimSun';">2014年8月1日</span>
+							<input id="TBL00017" name="TBL00017" type="text" ltype="date"
+								value="2014-08-01"
+								style="font-size: 12.0pt;; font-family: 'SimSun'; text-align: left;" 
+								ligerui="{width:139}" />
+						</p>
+					</td> -->
+				</tr>
+			</tbody>
+		</table>
+		<p class="a DocDefaults " style="text-align: center;">
+			<span class="a0 "
+				style="font-weight: bold; font-size: 18.0pt;; font-family: 'SimSun';">四川省特种设备检验研究院</span>
+		</p>
+		<p class="a DocDefaults " style="text-align: center;">
+			<span class="a0 " style="font-size: 15.0pt;">安全阀安全性能监督检验证书</span>
+		</p>
+		<table id="docx4j_tbl_1"
+			style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; position: relative; margin-left: -1mm; table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 160mm;">
+			<colgroup>
+				<col style="width: 14.38%;" />
+				<col style="width: 1.57%;" />
+				<col style="width: 3.12%;" />
+				<col style="width: 3.13%;" />
+				<col style="width: 9.37%;" />
+				<col style="width: 5.36%;" />
+				<col style="width: 0.89%;" />
+				<col style="width: 3.13%;" />
+				<col style="width: 7.81%;" />
+				<col style="width: 1.23%;" />
+				<col style="width: 5.01%;" />
+				<col style="width: 10.93%;" />
+				<col style="width: 1.57%;" />
+				<col style="width: 3.12%;" />
+				<col style="width: 1.57%;" />
+				<col style="width: 3.12%;" />
+				<col style="width: 24.69%;" />
+			</colgroup>
+			<tbody>
+				<tr style="height: 12mm;">
+					<td colspan="16" style="vertical-align: middle;">
+						<p class="a DocDefaults "
+							style="text-align: right; line-height: 283%;">
+							<span class="a0 "
+								style="font-size: 12.0pt;; font-family: 'SimSun';">证书编号:</span>
+						</p>
+					</td>
+					<td style="vertical-align: middle;">
+						<p class="a DocDefaults ">
+							<input id="base__report_sn" name="base__report_sn" type="text" ltype="text"
+								style="text-align: left; font-size: 12.0pt;; font-family: 'SimSun';"
+								value="" ligerui="{width:139}" readonly />
+						</p>
+					</td>
+				</tr>
+				<tr style="height: 12mm;">
+					<td colspan="2" style="vertical-align: middle;">
+						<p class="a DocDefaults ">
+							<span class="a0 " style="font-size: 13.5pt; margin-left: 1mm;">制造单位:</span>
+						</p>
+					</td>
+					<td colspan="15" style="vertical-align: middle;">
+						<p class="a DocDefaults ">
+							<input id="base__make_units_name" name="base__make_units_name" type="text" ltype="text"
+								style="font-size: 13.5pt; text-align: left;"
+								value="" ligerui="{width:498}" />
+						</p>
+					</td>
+				</tr>
+				<tr style="height: 12mm;">
+					<td colspan="3" style="vertical-align: middle;">
+						<p class="a DocDefaults ">
+							<span class="a0 " style="font-size: 13.5pt; margin-left: 1mm;">许可证编号:</span>
+						</p>
+					</td>
+					<td colspan="14" style="vertical-align: middle;">
+						<p class="a DocDefaults ">
+							<input id="base__construction_licence_no" name="base__construction_licence_no" type="text" ltype="text"
+								style="font-size: 13.5pt; text-align: left;"
+								value="" ligerui="{width:479}" />
+						</p>
+					</td>
+				</tr>
+				<tr style="height: 12mm;">
+					<td colspan="2" style="vertical-align: middle;">
+						<p class="a DocDefaults ">
+							<span class="a0 " style="font-size: 13.5pt; margin-left: 1mm;">产品名称:</span>
+						</p>
+					</td>
+					<td colspan="8" style="vertical-align: middle;">
+						<p class="a DocDefaults ">
+							<input id="TBL00004" name="TBL00004" type="text" ltype="text"
+								style="font-size: 13.5pt; text-align: left;"
+								value="" ligerui="{width:195}" />
+						</p>
+					</td>
+					<td colspan="2" style="vertical-align: middle;">
+						<p class="a DocDefaults ">
+							<span class="a0 " style="font-size: 13.5pt; margin-left: 1mm;">产品型号:</span>
+						</p>
+					</td>
+					<td colspan="5" style="vertical-align: middle;">
+						<p class="a DocDefaults ">
+							<input id="TBL00005" name="TBL00005" type="text" ltype="text"
+								style="font-size: 13.5pt; text-align: left;"
+								value="" ligerui="{width:196}" />
+						</p>
+					</td>
+				</tr>
+				<tr style="height: 12mm;">
+					<td colspan="4" style="vertical-align: middle;">
+						<p class="a DocDefaults ">
+							<span class="a0 " style="font-size: 13.5pt; margin-left: 1mm;"><span
+								class="" style="">产品适用温度:</span></span>
+						</p>
+					</td>
+					<td colspan="6" style="vertical-align: middle;">
+						<p class="a DocDefaults ">
+							<input id="TBL00006" name="TBL00006" type="text" ltype="text"
+								style="font-size: 13.5pt; text-align: left;"
+								value="" ligerui="{width:158}" />
+						</p>
+					</td>
+					<td colspan="5" style="vertical-align: middle;">
+						<p class="a DocDefaults ">
+							<span class="a0 " style="font-size: 13.5pt; margin-left: 1mm;"><span
+								class="" style="">产品适用介质:</span></span>
+						</p>
+					</td>
+					<td colspan="2" style="vertical-align: middle;">
+						<p class="a DocDefaults ">
+							<input id="TBL00007" name="TBL00007" type="text" ltype="text"
+								style="font-size: 13.5pt; text-align: left;"
+								value="" ligerui="{width:158}" />
+						</p>
+					</td>
+				</tr>
+				<tr style="height: 12mm;">
+					<td colspan="3" style="vertical-align: middle;">
+						<p class="a DocDefaults ">
+							<span class="a0 " style="font-size: 13.5pt; margin-left: 1mm;"><span
+								class="" style="">出厂编号:从</span></span>
+						</p>
+					</td>
+					<td colspan="2" style="vertical-align: middle;">
+						<p class="a DocDefaults ">
+							<input id="base__factory_code" name="base__factory_code"
+								style="font-size: 13.5pt; text-align: center;"
+								type="text" ltype="text" value="" ligerui="{width:65}" />
+						</p>
+					</td>
+					<td style="vertical-align: middle;">
+						<p class="a DocDefaults " style="text-align: center;">
+							<span class="a0 " style="font-size: 13.5pt;">至</span>
+						</p>
+					</td>
+					<td colspan="3" style="vertical-align: middle;">
+						<p class="a DocDefaults ">
+							<input id="TBL00008" name="TBL00008" type="text" ltype="text"
+								style="font-size: 13.5pt; text-align: center;"
+								value="" ligerui="{width:61}" />
+						</p>
+					</td>
+					<td colspan="2" style="vertical-align: middle;">
+						<p class="a DocDefaults " style="text-align: center;">
+							<span class="a0 " style="font-size: 13.5pt;">共</span>
+						</p>
+					</td>
+					<td colspan="2" style="vertical-align: middle;">
+						<p class="a DocDefaults ">
+							<input id="TBL00009" name="TBL00009" type="text" ltype="text"
+								style="font-size: 13.5pt; text-align: center;"
+								value="" ligerui="{width:65}" />
+						</p>
+					</td>
+					<td colspan="4" style="vertical-align: middle;">
+						<p class="a DocDefaults ">
+							<span class="a0 " style="font-size: 13.5pt;">只</span>
+						</p>
+					</td>
+				</tr>
+				<tr style="height: 12mm;">
+					<td colspan="17" style="vertical-align: middle;">
+						<p class="a DocDefaults " style="display: none;">
+							<input id="TBL00010" name="TBL00010" type="text" ltype="text"
+								value="" ligerui="{width:594}" />
+						</p>
+					</td>
+				</tr>
+				<tr style="height: 12mm;">
+					<td colspan="17" style="vertical-align: middle;">
+						<p class="a DocDefaults "
+							style="position: relative; text-indent: 0.38in; margin-left: 1mm;">
+							<span class="a0 " style="font-size: 13.5pt;">根据《特种设备安全监察条例》的规定，该批产品经我单位监督检</span>
+						</p>
+					</td>
+				</tr>
+				<tr style="height: 12mm;">
+					<td style="vertical-align: middle;">
+						<p class="a DocDefaults " style="margin-left: 1mm;">
+							<span class="a0 " style="font-size: 13.5pt;"><span
+								class="" style="">验,</span>符合</span>
+						</p>
+					</td>
+					<td colspan="6"
+						style="border-top-style: none; vertical-align: middle;">
+						<p class="a DocDefaults ">
+							<input id="TBL00011" name="TBL00011" type="text" ltype="text"
+								style="font-size: 13.5pt; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000;"
+								value="" ligerui="{width:131}" />
+						</p>
+					</td>
+					<td colspan="10" style="vertical-align: middle;">
+						<p class="a DocDefaults ">
+							<span class="a0 " style="font-size: 13.5pt;">的规定，特发此证<span
+								class="" style="">，并在该批次产品铭牌</span></span>
+						</p>
+					</td>
+				</tr>
+				<tr style="height: 12mm;">
+					<td colspan="17" style="vertical-align: middle;">
+						<p class="a DocDefaults " style="margin-left: 1mm;">
+							<span class="a0 " style="font-size: 13.5pt;"><span
+								class="" style="">上打有如下监检钢印：</span></span>
+						</p>
+					</td>
+				</tr>
+				<tr style="height: 12mm;">
+					<td colspan="17" style="vertical-align: middle;">
+						<p class="a DocDefaults " style="display: none;">
+							<input id="TBL00012" name="TBL00012" type="text" ltype="text"
+								value="" ligerui="{width:594}" />
+						</p>
+					</td>
+				</tr>
+				<tr style="height: 12mm;">
+					<td colspan="17" style="vertical-align: middle;">
+						<p class="a DocDefaults " style="display: none;">
+							<input id="TBL00013" name="TBL00013" type="text" ltype="text"
+								value="" ligerui="{width:594}" />
+						</p>
+					</td>
+				</tr>
+				<tr style="height: 12mm;">
+					<td colspan="17" style="vertical-align: middle;">
+						<p class="a DocDefaults " style="display: none;">
+							<input id="TBL00014" name="TBL00014" type="text" ltype="text"
+								value="" ligerui="{width:594}" />
+						</p>
+					</td>
+				</tr>
+				<tr style="height: 12mm;">
+					<td colspan="4" style="vertical-align: middle;">
+						<p class="a DocDefaults " style="text-align: right;">
+							<span class="a0 " style="font-size: 13.5pt;">检验:</span>
+						</p>
+					</td>
+					<td colspan="7" style="vertical-align: middle;">
+						<p class="a DocDefaults " style="text-align: center;">
+							<input id="base__inspect_op" name="base__inspect_op" type="text" ltype="select"
+								style="font-size: 13.5pt;"
+								value="" ligerui="{width:167,isMultiSelect:true}" />
+						</p>
+					</td>
+					<td colspan="6" style="vertical-align: middle;">
+						<p class="a DocDefaults " style="text-align: center;">
+							<!-- <span class="a0 " style="font-size: 13.5pt;">四川省特种设备检验研究院</span> -->
+							<input id="TBL00018" name="TBL00018" type="text" ltype="text"
+								style="font-size: 13.5pt;"
+								value="四川省特种设备检验研究院" ligerui="{width:167}" />
+						</p>
+					</td>
+				</tr>
+				<tr style="height: 12mm;">
+					<td colspan="4" style="vertical-align: middle;">
+						<p class="a DocDefaults " style="text-align: right;">
+							<span class="a0 " style="font-size: 13.5pt;"><span
+								class="" style="">审核:</span></span>
+						</p>
+					</td>
+					<td colspan="7" style="vertical-align: middle;">
+						<p class="a DocDefaults " style="text-align: center;">
+							<input id="base__audit_op" name="base__audit_op" type="text" ltype="select"
+								style="font-size: 13.5pt;"
+								value="" ligerui="{width:167}" />
+						</p>
+					</td>
+					<td colspan="6" style="vertical-align: middle;">
+						<p class="a DocDefaults " style="text-align: center;">
+							<span class="a0 " style="font-size: 13.5pt;">（检验专用章）</span>
+						</p>
+					</td>
+				</tr>
+				<tr style="height: 12mm;">
+					<td colspan="4" style="vertical-align: middle;">
+						<p class="a DocDefaults " style="text-align: right;">
+							<span class="a0 " style="font-size: 13.5pt;"><span
+								class="" style="">批准:</span></span>
+						</p>
+					</td>
+					<td colspan="7" style="vertical-align: middle;">
+						<p class="a DocDefaults " style="text-align: center;">
+							<input id="base__sign_op" name="base__sign_op" type="text" ltype="text"
+								style="font-size: 13.5pt;"
+								value="" ligerui="{width:167}" />
+						</p>
+					</td>
+					<td colspan="6" style="vertical-align: middle;">
+						<p class="a DocDefaults " style="text-align: center;">
+							<!-- <span class="a0 " style="font-family: 'SimSun';">检验</span><span
+								class="a0 " style=""><span class=""
+								style="font-family: 'SimSun';">机构核准号：</span></span><span class="a0 "
+								style="font-family: 'Times New Roman';">TS7110306</span> -->
+							<input id="TBL00019" name="TBL00019" type="text" ltype="text"
+								style="font-family: 'SimSun';"
+								value="机构核准号：TS7110306" ligerui="{width:167}" />
+						</p>
+					</td>
+				</tr>
+				<tr style="height: 12mm;">
+					<td colspan="14" style="vertical-align: middle;">
+						<p class="a DocDefaults " style="text-align: right;">
+							<span class="a0 " style="font-size: 13.5pt;"><span
+								class="" style="">日期:</span></span>
+						</p>
+					</td>
+					<td colspan="3" style="vertical-align: middle;">
+						<p class="a DocDefaults ">
+							<input id="base__sign_time1" name="base__sign_time1" type="text" ltype="date"
+								style="font-size: 13.5pt;"
+								value="" ligerui="{width:167}" />
+						</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="a DocDefaults "></p>
+	</div>
+	<!-- userBodyTail goes here -->
+
+</body>
+<script type="text/javascript">
+	/* $(function(){
+		var d1 = $("#TBL00017").val();
+		alert(d1);
+	}); */
+	/* $("#TBL00017").ligerDateEditor({	   
+        onChangeDate(value){ 
+         	var str1 = value.replace('-', '年');
+         	var str2 = str1.replace('-', '月');
+         	str2=str2+"日";
+         	$("#TBL00017").val(str2);
+        } 
+	}); */
+	$("#base__sign_time").ligerDateEditor({	   
+        onChangeDate(value){ 
+         	var str1 = value.replace('-', '年');
+         	var str2 = str1.replace('-', '月');
+         	str2=str2+"日";
+         	$("#base__sign_time").val(str2);
+        } 
+	});
+</script>
+</html>

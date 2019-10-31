@@ -1,0 +1,42 @@
+date:2015-01-16
+
+权限参考模型 > 系统管理-rbac-安全管理（增加移动设备支持，密码策略）V1.0.24
+
+1.修改默认密码获取方式为从系统参数中获得。
+
+2.实现系统默认密码设置、密码强度规则、密码过期策略、初始密码强制修改功能。
+
+3.添加系统参数：
+  1) SYS_PWD_DEFAULT，初始密码
+  2) SYS_PWD_MMD_INIT，强制修改初始密码，1/0
+  3) SYS_PWD_RULE_USE，密码规则启用开关，1/0
+  4) SYS_PWD_RULE，密码规则，json格式{length:6,letter:1,number:1,other:1}
+  5) SYS_PWD_RULE_MSG，密码校验规则提示文本
+  6) SYS_PWD_EXPIRY_USE，密码过期启用开关，1/0
+  7) SYS_PWD_MAX_DAYS，密码有效时间（按天）
+  8) SYS_PWD_EXPIRY_MUST_MODPWD，密码过期是否必须修改，1/0
+  9) DEVICE_NUM，手机设备连接数
+   --need add
+  	select * from sys_param where name like 'SYS_PWD_RULE_MSG%';
+	select * from sys_param where name like 'SYS_PWD_EXPIRY_USE%';
+	select * from sys_param where name like 'SYS_PWD_MAX_DAYS%';
+	select * from sys_param where name like 'SYS_PWD_EXPIRY_MUST_MODPWD%';
+	select * from sys_param where name like 'DEVICE_NUM%';
+
+4.修改按钮权限菜单标签，新增ligerbutton方式的按钮权限。
+	使用方法：$("#toptoolbar").ligerToolBar(<tbar:toolBar type="ligerToolBar" code="org_manage_division"></tbar:toolBar>)
+
+5.增加手机端登录，账户与设备号绑定功能。
+
+6.增加QM：sysUserDevice（猛击下载）
+
+7.请更新web资源：k目录，pub目录，application.properties配置文件（增加SYS_PWD_DEFAULT参数）
+
+8.需要同步更新，khnt-framework-security1.0.13，khnt-framework1.0.11 ，khnt-component-sysparam1.0.4
+
+目前：
+khnt-framework-security 1.0.18 
+khnt-framework 1.0.14 
+khnt-component-sysparam 1.0.7
+无需更新
+

@@ -1,0 +1,151 @@
+/* 2017年12月04日 10:37:54 星期一 lyibde */
+
+.m-top {border-bottom:5px solid #fdc5a0; background:url("../images/brownline/m-top.jpg") no-repeat center top!important;}
+.m-top-div {background:none!important; border-bottom: 1px solid transparent;}
+
+
+.m-menu1 {background:none!important;}
+.m-menu1-div ul li {border-left:1px solid transparent;border-right:1px solid transparent;}
+.m-menu2-1-li-ul .m-menu2-1-li-div-click,.mm-deep-2-prve-select,.m-menu2-1-li-div-click {color:#8b5c7e;}
+.m-menu1-click {background-image: url(../images/brownline/arrow-active.png);}
+.m-menu1-click a .hasIcon .iconfont {color:#fdc5a0!important;}
+.m-menu1-click a {color:#fdc5a0!important;}
+.m-menu1-hover {background-image: url(../images/brownline/arrow-active.png);}
+.m-menu1-hover a:hover .hasIcon .iconfont {color:#fdc5a0!important;}
+.m-menu1-hover a:hover {color:#fdc5a0!important; }
+
+
+.l-panel-header {background:#8b5c7e;color:#fff;}
+.icon-item li div:hover {border:4px solid #8b5c7e;}
+.rtnum,.icon-item-des div:hover, .icon-item-des div.hover {background:#2288e6;}
+.text-color {color:#8b5c7e;}
+.ui-state-active a {color:#8b5c7e!important;}
+.progress .orangebar {background-color:#2288e6;}
+
+
+#mFootToolbar .iconfont {color:#fdc5a0!important;}
+.user-set-menu-a, .user-set-menu-a:link, .user-set-menu-a:visited {background:transparent url("../images/brownline/userinfoarrow.png") no-repeat right center!important;border-radius: 3px;border:1px solid #fdc5a0;color:#fdc5a0;}
+
+
+.tbl-tlbar th {border-top:2px solid #8b5c7e!important; border-bottom:1px solid #8b5c7e!important;}
+
+.l-selected .l-grid-row-cell {background:#8b5c7e!important; color:#fff!important;}/*00b3a1*/
+.l-a,.l-a:visited,.l-a:link {color:#8b5c7e;}
+.l-selected .l-a , .l-selected .l-a:visited , .l-selected .l-a:link {color:#fff!important;}
+
+.k-skin-brownline .l-grid-header {border-bottom:1px solid #8b5c7e; border-top:2px solid #8b5c7e; color:#333;}
+
+.l-grid-hd-cell-asc,.l-grid-hd-cell-desc {background:#8b5c7e!important; color:#fff!important;}
+.l-grid-hd-cell-sort-asc {/*上三角符号*/ background:url('../images/brownline/icon-sort-asc.png') no-repeat scroll center center transparent; }
+.l-grid-hd-cell-sort-desc {/*下三角符号*/ background:url('../images/brownline/icon-sort-desc.png') no-repeat scroll center center transparent; }
+
+
+.k-skin-brownline .m-menu2-1-li-ul .m-menu2-1-li-div-click,.k-skin-brownline .m-menu2-1-li-ul .m-menu2-1-li-div-over,.k-skin-brownline .m-menu2-1-li-ul .m-menu2-1-li-hasChildren-one-over,.k-skin-brownline .m-menu2-1-li-div-over,.k-skin-brownline .m-menu2-1-li-hasChildren-one-over {background: #8b5c7e; color:#fff;}
+
+.m-panel-tab .selected .item-wrap { background-color: #fff6f1; }
+.m-panel-tab .selected .jj3j { background-color: #8b5c7e; }
+.l-grid-row-over .l-grid-row-cell, .l-grid-row-over {background: #b99db2; }
+.l-panel-btn-over { background: #fff;border: 1px solid #8b5c7e; color:#8b5c7e;}
+.l-panel-btn-over:active {background:#8b5c7e;border:1px solid #8b5c7e; color:#fff;}
+.userdata ul li a:hover {background: #8b5c7e;}
+
+
+
+/*按钮 1*/
+.l-panel-btn { background: #fff; }
+.l-panel-btn .l-icon { color:#8b5c7e; }
+.l-panel-btn-over, .l-panel-btn-over:active {background:#8b5c7e;border:1px solid #8b5c7e; color:#fff;}
+.l-panel-btn-over .l-icon , .l-panel-btn-over:active .l-icon { color:#fff; }
+
+
+/*按钮 2*/
+.l-button { background:#fff; }
+.l-button .l-button-icon { color:#8b5c7e; }
+.l-button-hover, .l-button:hover, .l-button-over:active {background:#8b5c7e;border:1px solid #8b5c7e; color:#fff;}
+.l-button-hover .l-button-icon, .l-button:hover .l-button-icon, .l-button-over:active .l-button-icon { color:#fff; } 
+
+
+
+
+
+
+.l-tab-links { height: 45px; }
+.l-tab-links ul { padding-left: 15px;  }
+.l-tab-links li { border: 1px solid #ddd;background: #eee;/* border-radius: 0; margin:0;margin-left: -1px;*/ padding: 6px 15px; }
+.l-tab-links li a { color: #333;   }
+.l-tab-links li.l-selected { border-top:2px solid #8b5c7e; background:#8b5c7e;}
+.l-tab-links li.l-selected a, .l-tab-links li.l-selected a:link, .l-tab-links li.l-selected a:visited { color: #fff;  }
+.l-tab-links li.l-selected a:hover { color:#fff;  }
+
+#filters, .toolbar{ border-bottom: 1px #b99db2 solid !important; }
+
+
+.l-layout-header {color:#000; background: -moz-linear-gradient(top, #efd9e8 0%, #e7bcda 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#efd9e8), color-stop(100%,#e7bcda));
+    background: -webkit-linear-gradient(top, #efd9e8 0%,#e7bcda 100%);
+    background: -o-linear-gradient(top, #efd9e8 0%,#e7bcda 100%);
+    background: -ms-linear-gradient(top, #efd9e8 0%,#e7bcda 100%);
+    background: linear-gradient(to bottom, #efd9e8 0%,#e7bcda 100%);}
+.l-layout-left,.l-layout-right,.l-layout-center,.l-layout-top,.l-layout-bottom{border:1px solid #e2d1dd;}
+.l-fieldset {border:1px solid #e2d1dd;}
+.l-legend {border:1px solid #e2d1dd;background:#fff6f1;}
+
+.ztree li a.curSelectedNode {background-color:#8b5c7e; color:#ffffff; border:1px #6c3b5e solid;}
+
+.l-tree .l-over{background:#e9dae4;}
+.l-tree .l-selected {background:#cfa0c1;}
+.l-page-title-text h1 {color:#8b5c7e;}
+.l-page-title2-text h1 {color:#8b5c7e;}
+
+
+/* ----------------------- * 日期控件 ** ----------------------- */
+.l-box-dateeditor {border:1px solid #e7bcda;}/*20171208*/
+.l-box-dateeditor-header {background: -moz-linear-gradient(top, #efd9e8 0%, #e7bcda 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#efd9e8), color-stop(100%,#e7bcda));
+    background: -webkit-linear-gradient(top, #efd9e8 0%,#e7bcda 100%);
+    background: -o-linear-gradient(top, #efd9e8 0%,#e7bcda 100%);
+    background: -ms-linear-gradient(top, #efd9e8 0%,#e7bcda 100%);
+    background: linear-gradient(to bottom, #efd9e8 0%,#e7bcda 100%);}/*20171208*/
+.l-box-dateeditor-header-text{color:#333;}/*20171208*/
+.l-box-dateeditor-header-text a{color:#8b5c7e;}/*20171208*/
+.l-box-dateeditor-header-btn-over {background:#fff!important;}
+.l-box-dateeditor-header-prevmonth span{background: url("../images/brownline/icon-prev.png") no-repeat center;}
+.l-box-dateeditor-header-nextmonth span{background: url("../images/brownline/icon-next.png") no-repeat center;}
+.l-box-dateeditor-header-prevyear span{background: url("../images/brownline/icon-first.png") no-repeat center;}
+.l-box-dateeditor-header-nextyear span{background: url("../images/brownline/icon-last.png") no-repeat center;}
+.l-box-dateeditor-body{border:1px solid #e7bcda;}/*20171208*/
+.l-box-dateeditor-monthselector li:hover,.l-box-dateeditor-monthselector li.l-selected,.l-box-dateeditor-monthselector li.l-over,.l-box-dateeditor-yearselector li:hover,.l-box-dateeditor-yearselector li.l-selected,.l-box-dateeditor-yearselector li.l-over,.l-box-dateeditor-hourselector li:hover,.l-box-dateeditor-hourselector li.l-selected,.l-box-dateeditor-hourselector li.l-over,.l-box-dateeditor-minuteselector li:hover,.l-box-dateeditor-minuteselector li.l-selected,.l-box-dateeditor-minuteselector li.l-over{background-color:#e0fffc; border: solid 1px #8b5c7e;}/*20171208*/
+.l-box-dateeditor-body tbody td.l-box-dateeditor-today {background-color:#8b5c7e; color:#fff;}/*20171208*/
+.l-box-dateeditor-body tbody td.l-box-dateeditor-over,.l-box-dateeditor-body tbody td.l-box-dateeditor-selected { background-color: #8b5c7e; color:#fff;}/*20171208*/
+.l-box-dateeditor-toolbar {background:#e7bcda!important;}/*20171208*/
+
+
+.choosed-list-header .title {color:#8b5c7e!important;}
+.toolbar .org-type , .toolbar .search-name {border:1px solid #8b5c7e!important;}
+.new-group-wrap , .org-group-head {background:#fdf8f5!important;}
+.choose-item-div a.search-result-item {color:#333!important; border:1px solid #b99db2!important;}
+.choose-item-div a.checked { border: 1px solid #cc0000!important; }
+#choosed-list a.checked {background-color:#8b5c7e!important;}
+#choosed-list a.hover {background-color:#e9dae4!important;}
+
+.m-menu2-1-li-div-click {background:#8b5c7e;color:#fff;}
+
+.l-layout-collapse-left, .l-layout-collapse-right {border:1px solid #e2d1dd; background:#e9dae4;}
+
+.l-grid-row:nth-child(2n){background:#fff;} /* 偶数 */
+
+.m-m-children a, .m-m-children a:link, .m-m-children a:visited {color:#333;}
+.m-m-children a:hover, .m-m-children a.hover, .m-m-children .a-selected {background:#cd0e11!important;}
+
+/* 2018-01-02 grid表格边框为虚线样式 */
+.l-grid-row-cell {border-right:1px dashed #dbdbdb!important; border-bottom:1px dashed #dbdbdb!important;}
+.l-grid-hd-cell {border-right:1px dashed #dbdbdb!important;}
+
+/* 表格样式，普通 */
+.l-table {border:1px solid #e2d1dd; border-right:0; border-bottom:0; border-collapse:collapse;}
+.l-table-head {padding:6px 0; border:1px solid #e2d1dd; border-bottom:1px solid #e2d1dd; border-top:1px solid #e2d1dd; background:#f7f7f7; color:#333; font-weight:bold; text-align:center;}
+.l-table-head:first-child {border-left:1px solid #e2d1dd;}
+.l-table-head:last-child {border-right:1px solid #e2d1dd;}
+.l-table-tr {}
+.l-table-td {padding:6px 0;border:1px solid #e2d1dd; border-left:0; border-top:0;}
+.l-table-come {border:1px solid #e2d1dd; border-right:0; border-bottom:0; border-top:0;}/*紧接的第二表格*/

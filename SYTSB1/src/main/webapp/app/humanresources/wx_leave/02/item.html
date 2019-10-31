@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>申请单22</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<link rel="stylesheet" type="text/css" href="css/header.css">
+<link rel="stylesheet" type="text/css" href="css/content.css">
+<link rel="stylesheet" type="text/css" href="css/selectFilter.css">
+<script src="laydate/laydate.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/selectFilter.js"></script>
+</head>
+<body>
+<section id="web">
+	<header id="header"> <img src="images/tb.png" /> </header>
+	<section id="content">
+		<section class="number">
+			<section class="numberCenter"> <strong>编号：</strong> 
+				<!--<span>20180627</span>-->
+				<input class="bianhao" type="text" placeholder="20180627" disabled>
+				<strong>填表日期：</strong>
+				<div class="filter-box">
+					<div class="filter-text">
+						<input class="filter-title" type="text" readonly placeholder="pleace select" />
+						<i class="icon icon-filter-arrow"></i> </div>
+					<select name="filter">
+						<option value="unaudited">2018年6月27日</option>
+						<option value="nothrough" selected>2018年6月27日</option>
+						<option value="audit">2018年6月27日</option>
+						<option value="audited">2018年6月27日</option>
+						<option value="passed">2018年6月27日</option>
+					</select>
+				</div>
+			</section>
+		</section>
+		<section class="car">
+			<section class="numberCenter"> <strong>用车时间：</strong> <span>起</span>
+				<input type="text" class="demo-input" placeholder="请选择日期" id="test1">
+				<span>止</span>
+				<input type="text" class="demo-input" placeholder="请选择日期" id="test2">
+			</section>
+		</section>
+		<section class="department">
+			<section class="departmentCenter">
+				<section class="top"> <strong>用车部门：</strong> 
+					<!--<span>办公室</span>-->
+					<select>
+						<option>办公室</option>
+					</select>
+					<img src="images/dropDown.png"> </section>
+				<section class="bottom">
+					<input type="text" name="user" placeholder="联系人姓名">
+					<input type="text" name="phone" placeholder="请输入电话号码">
+				</section>
+			</section>
+		</section>
+		<section class="department">
+			<section class="departmentCenter">
+				<section class="top"> <strong>用车任务：</strong>
+					<input type="text" name="task" placeholder="" class="task">
+				</section>
+				<section class="bottom"> <strong>行驶路线：</strong>
+					<input type="text" name="task" placeholder="" class="task">
+				</section>
+			</section>
+		</section>
+		<section class="department">
+			<section class="departmentCenter">
+				<section>
+					<section class="user"> <img src="images/user.png"> </section>
+					<section class="dinput">
+						<input type="text" name="Usecar" placeholder="用车部门负责人意见">
+					</section>
+					<section class="clear"></section>
+				</section>
+				<section>
+					<section class="user"> <img src="images/user.png"> </section>
+					<section class="dinput">
+						<input type="text" name="Fleet" placeholder="车队负责人审核">
+					</section>
+					<section class="clear"></section>
+				</section>
+				<section>
+					<section class="user"> <img src="images/user.png"> </section>
+					<section class="dinput">
+						<input type="text" name="Office" placeholder="办公室负责人审核">
+					</section>
+					<section class="clear"></section>
+				</section>
+				<section>
+					<section class="user"> <img src="images/user.png"> </section>
+					<section class="dinput">
+						<input type="text" name="Division" placeholder="分管院领导审批" class="yjnone">
+					</section>
+					<section class="clear"></section>
+				</section>
+			</section>
+		</section>
+		<section class="department">
+			<section class="departmentCenter">
+				<section class="departmentT">
+					<section class="LicensePlate"> <strong>派车车牌号:</strong> <span>川A 0S96P</span> </section>
+					<section class="LicensePlatek">
+						<input type="text" name="Usename" placeholder="驾驶员姓名">
+					</section>
+					<section class="clear"></section>
+				</section>
+				<section class="departmentT">
+					<section class="outTime"> <strong>出车时间:</strong>
+						<input type="text" class="demo-input" placeholder="请选择日期" id="test3">
+					</section>
+					<section class="Count"> <strong>起数(KM):</strong>
+						<input type="text" name="Count" placeholder="">
+					</section>
+					<section class="clear"></section>
+				</section>
+				<section class="departmentTa">
+					<section class="outTime"> <strong>返回时间:</strong>
+						<input type="text" class="demo-input" placeholder="请选择日期" id="test4">
+					</section>
+					<section class="Count"> <strong>止数(KM):</strong>
+						<input type="text" name="Stop" placeholder="">
+					</section>
+					<section class="clear"></section>
+				</section>
+			</section>
+		</section>
+		<section class="Button1"> <a href="itemList.html">返回</a> </section>
+		<section class="Button2"> <a href="javascript:">提交</a> <a href="itemList.html">返回</a> </section>
+		<section class="Button3"> <a href="javascript:">保存</a> <a href="javascript:">提交</a> <a href="itemList.html">返回</a> </section>
+	</section>
+</section>
+</body>
+<script type="text/javascript" src="js/time.js"></script>
+<!--<script type="text/javascript" src="js/item.js"></script>-->
+</html>

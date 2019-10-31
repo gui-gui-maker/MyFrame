@@ -1,0 +1,309 @@
+<%@ page import="com.khnt.security.CurrentSessionUser" %>
+<%@ page import="com.khnt.security.util.SecurityUtil" %><%--
+  Created by IntelliJ IDEA.
+  User: latiflan
+  Date: 2018/8/21
+  Time: 10:57
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://khnt.com/tags/ui" prefix="u" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%
+    CurrentSessionUser user = SecurityUtil.getSecurityUser();
+    String goods_type_sql = "select t.lx_bh as code,t.lx_name as text from TJY2_CH_GOODS_TYPE t where create_org_id = '" + request.getParameter("orgId") + "'";
+%>
+<html>
+<head>
+    <title>存货领取</title>
+    <%@include file="/k/kui-base-form.jsp" %>
+    <script type="text/javascript">
+        var condition = {};
+        var choosedGrid;
+        var mainGrid;
+        var showSL = '${param.showSL}' == 'true' ? true : false;
+        $(function () {
+            $('#wpmc').bind('keyup', function(event) {
+                if (event.keyCode == "13") {
+                    //回车执行查询
+                    doSearch();
+                }
+            });
+            $('#warehousing_num').bind('keyup', function(event) {
+                if (event.keyCode == "13") {
+                    //回车执行查询
+                    doSearch();
+                }
+            });
+            $('#chlx').bind('keyup', function(event) {
+                if (event.keyCode == "13") {
+                    //回车执行查询
+                    doSearch();
+                }
+            });
+            $("#toolbar").ligerToolBar({
+                items: [
+                    {text: '确认', click: add, icon: 'check', align: 'right'},
+                    "-",
+                    {
+                        text: '取消', click: function () {
+                            api.close();
+                        }, icon: "cancel"
+                    }
+                ]
+            })
+            $("#layout").ligerLayout({
+                rightWidth: '600',
+                topHeight: '75',
+                space: 0
+            });
+            initGrid();
+            getData();
+            $("#form").initForm();
+            resetGridHeight();
+            $(window).resize(function () {
+                //这里setTimeout的原因是不知道就是没法直接设置高度。
+                //调用setTimeOut后就可以设置了。
+                setTimeout(function () {
+                    resetGridHeight();
+                }, 0)
+            });
+        });
+
+        function add() {
+            var result = chooseResult();
+            if (result != null) {
+                api.data.callback(result);
+                api.close();
+            }
+        }
+
+        function chooseResult() {
+            var choosed = choosedGrid.getData();
+            if (choosed.length == 0) {
+                $.ligerDialog.alert("您没有选择存货！");
+                return null;
+            }
+            return choosed;
+        }
+
+        function initGrid() {
+            mainGrid = $("#mainGrid").ligerGrid({
+                columns: [{display: "id", name: "id", hide: true, align: "left"},
+                    {display: "存货名称", name: "wpmc", width: 150, align: "center"},
+                    {
+                        display: "规格及型号", name: "ggjxh", width: 200, align: "center"
+                    }, {
+                        display: "类型", name: "goodstype.lx_name", width: 80, align: "center"
+                    },
+                    {display: "入库单号", name: "warehousing_num", width: 150, align: "left"},
+                    {display: "单价", name: "je", width: 80, align: "right"},
+                    /*{display: "税额", name: "se", width: 80, align: "right"},*/
+                    {display: "数量", name: "sl", width: 50, align: "right", hide: !showSL},
+                    {display: "单位", name: "dw", width: 50, align: "center"}
+                ],
+                checkbox: true,
+                isScroll: true,
+                width: '100%',
+                dateFormat: 'yyyy-MM-dd hh:mm',
+                data: [],
+                showTitle: false,
+                columnWidth: 100,
+                frozen: false,
+                rownumbers: true,
+                usePager: true,
+                pageSize:50,
+                pageSizeOptions: [50, 100, 150, 200, 250],
+                onSelectRow: onSelectedDetail,
+                onUnSelectRow: onUnSelectDetail
+            });
+            choosedGrid = $("#choosedGrid").ligerGrid({
+                columns: [{display: "id", name: "id", hide: true},
+                    {display: "存货名称", name: "wpmc", width: 150, align: "center"},
+                    {
+                        display: "数量",
+                        name: "sl",
+                        width: 50,
+                        align: "right",
+                        type: 'int',
+                        editor: {type: 'spinner', minValue: '1'},
+                        required: true,
+                        maxlength: 200,
+                    },
+                    {
+                        display: "规格及型号", name: "ggjxh", width: 200, align: "center"
+                    },
+                    {display: "入库单号", name: "warehousing_num", width: 150, align: "left"}
+                ],
+                checkbox: true,
+                isScroll: true,
+                enabledEdit: true,
+                width: '100%',
+                dateFormat: 'yyyy-MM-dd hh:mm',
+                data: {Row: []},
+                showTitle: false,
+                columnWidth: 100,
+                frozen: false,
+                rownumbers: true,
+                usePager: false
+            });
+            $("#goodsContent").html(api.data.goodsContent);
+        };
+        var ids = [];
+
+        function onSelectedDetail(a, b, c) {
+            var newRow = {
+                id: a["id"],
+                wpmc: a["wpmc"],
+                ggjxh: a["ggjxh"],
+                warehousing_num: a["warehousing_num"],
+                je: a["je"],
+                se: a["se"],
+                sl: 1,
+                kcsys: a["sl"]
+            };
+            if ($.inArray(a["id"], ids) > -1) {
+                //重复数据不添加。
+                return;
+            }
+            ids.push(a["id"]);
+            choosedGrid.addRow(newRow);
+        }
+
+        function onUnSelectDetail(a, b, c) {
+            var datas = choosedGrid.records;
+            for (var i in datas) {
+                if (a["id"] == datas[i]["id"]) {
+                    ids.splice($.inArray(a["id"], ids), 1);
+                    choosedGrid.remove(datas[i]);
+                }
+            }
+        }
+
+        function resetGridHeight() {
+            var height = $("#centerArea").outerHeight() - $("#header").outerHeight() - $("#form").outerHeight();
+            $("#mainGrid").height(height);
+            $("#mainGrid").find(".l-grid-body.l-grid-body2.l-scroll").each(function (a, b, c) {
+                if (a == 0) { //主grid里的重设高度。
+                    //54 = 24+31 ——字段高度和翻页的高度和
+                    $(b).height(height - 54);
+                }
+            });
+            $("#choosedGrid").height(height + $("#form").outerHeight());
+            $("#choosedGrid").find(".l-grid-body.l-grid-body2.l-scroll").each(function (a, b, c) {
+                if (a == 0) { //主grid里的重设高度。
+                    $(b).height(height + $(".toolbar.left").outerHeight());
+                }
+            });
+        }
+
+
+        function getData() {
+            $("body").mask("正在获取存货信息，请稍后");
+            $.extend(condition, {blqbmId: '${param.orgId}'})
+            $.ajax({
+                url: "/goods/getgoodsbysearch.do",
+                data: condition,
+                dataType: 'json',
+                contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+                type: "post",
+                async: true,
+                success: function (data) {
+                    $("body").unmask("");
+                    if (data.success) {
+                        mainGrid.loadData({Rows: data.data});
+                    } else {
+
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    $("body").unmask("");
+                }
+            });
+        }
+
+        function doSearch() {
+            condition = {
+                wpmc: $("#wpmc").val(),
+                gysmc: $("#gysmc").val(),
+                warehousing_num: $("#warehousing_num").val(),
+                chlx: $("#chlx").val()
+            };
+            getData();
+        }
+
+        function reset() {
+            $("#wpmc").val("");
+            $("#gysmc").val("");
+            $("#warehousing_num").val("");
+            $("#chlx").ligerGetCheckBoxManager().setValue("");
+        }
+
+        function clearAll() {
+            ids = [];
+            choosedGrid.loadData({Rows: []});
+        }
+
+        function clearSelected() {
+            var selected = choosedGrid.getSelectedRows();
+            for (var i = 0; i < selected.length; i++) {
+                ids.splice($.inArray(selected[i]["id"], ids), 1);
+                choosedGrid.remove(selected[i]);
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+<div id="toolbar">
+
+</div>
+<div id="layout">
+    <div position="top" style="padding:5px;">
+        <fieldset id="dlq" class="l-fieldset">
+            <legend class="l-legend">
+                <div>待领取的物品</div>
+            </legend>
+            <div id="goodsContent"></div>
+        </fieldset>
+    </div>
+    <div id="centerArea" position="center">
+        <div id="header" class="choosed-list-header l-tab-links">
+            <span class="title">存货列表</span>
+        </div>
+        <form id="form">
+            <table class="l-detail-table">
+                <tr>
+                    <td class="l-t-td-left">存货名称</td>
+                    <td class="l-t-td-right"><input type="text" ltype="text" id="wpmc" class="search-name"
+                                                    placeHolder="请输入存货名称"/></td>
+                    <td class="l-t-td-left">存货类型</td>
+                    <td class="l-t-td-right"><input type="text" id="chlx" name="chlx" ltype="select"
+                                                    ligerui="{data: <u:dict sql="<%=goods_type_sql.toString()%>"/>}"/>
+                    </td>
+                    <td class="l-t-td-left">入库单号</td>
+                    <td class="l-t-td-right"><input type="text" ltype="text" id="warehousing_num" class="search-name"
+                                                    placeHolder="请输入库单号"/>
+                    </td>
+                    <td><a class="seaech-button l-button3 has-icon" onclick="doSearch()"><span
+                            class="l-icon iconfont l-icon-search" style="top: 6px;"></span>搜索</a>
+                        <a class="seaech-button l-button3 has-icon" onclick="reset()"><span
+                                class="l-icon iconfont l-icon-f5" style="top: 6px;"></span>重置搜索条件</a></td>
+                </tr>
+            </table>
+        </form>
+        <div id="mainGrid"></div>
+    </div>
+    <div position="right">
+        <div id="choosed-list-header" class="choosed-list-header l-tab-links">
+            <span class="title">已选择(<span id="choosed-num">0</span>)个</span>
+            <span class="l-button" onclick="clearAll()">全部移除</span>
+            <span class="l-button" onclick="clearSelected()">移除</span>
+        </div>
+        <div id="choosedGrid"></div>
+    </div>
+
+</div>
+</body>
+</html>

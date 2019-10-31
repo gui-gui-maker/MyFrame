@@ -1,0 +1,59 @@
+
+/*2017年09月25日 14:08:55 星期一 lybide 菜单2 无图标*/
+.m-menu2-1-li-div {}
+.m-menu2-1-li-ul .m-menu2-1-li-div {padding-left:30px;}
+.m-menu2-1-li-ul .m-menu1-icon-16 {display:none;}
+.m-menu2-1-li-div-not-bb {}
+.m-menu2-1-li-ul .m-menu2-1-li-div-over,.m-menu2-1-li-ul .m-menu2-1-li-hasChildren-one-over {/*background:#fb9337;*/}
+.m-menu2-1-li-ul .m-menu2-1-li-div-click {/*background:#fb9337;color:#ffffff;*/}
+.m-menu2-1-li-ul .m-menu2-1-li-div-down {}
+.m-menu2-1-li-div .m-img {display:none;}
+.m-t-line.mm-deep-2-li {background:url("../images/menu-line2.png") no-repeat center center;background-position:0 center!important;width:26px;}
+.m-t-line.mm-deep-3-li {background:url("../images/menu-line2b.png") no-repeat center center;background-position:0 center!important;width:46px;}
+.m-t-line.mm-deep-4-li {background:url("../images/menu-line2c.png") no-repeat center center;background-position:0 center!important;width:66px;}
+.m-t-line.mm-deep-5-li {background:url("../images/menu-line2d.png") no-repeat center center;background-position:0 center!important;width:56px;}
+.m-menu2-1-div .m-mdeep1 {}
+.m-menu2-1-div .m-mdeep2 {padding-left:30px!important;}
+.m-menu2-1-div .m-mdeep3 {padding-left:50px!important;}
+.m-menu2-1-div .m-mdeep4 {padding-left:70px!important;}
+.m-menu2-1-div .m-mdeep5 {padding-left:90px!important;}
+.m-menu2-1-div .m-mdeep6 {padding-left:110px!important;}
+
+/* 一级菜单无图标 2018年04月17日 09:55:27 星期二 lybide */
+.m-mdeep1 .hasIcon .l-icon,.m-mdeep1 .hasIcon img {display:none;}
+.m-mdeep1 .hasIcon:before {content:"\e830";font-family:"iconfont";font-size:16px;font-style:normal;}
+
+.m-mdeep1 .hasIcon:before {color:#9a9a9a;}
+.mm-deep-2-prve-select .hasIcon:before,.m-menu2-1-li-div-click .hasIcon:before {color:#fb9337;}
+
+.k-skin-cyanline .m-mdeep1 .hasIcon:before {color:#9a9a9a;}
+.k-skin-cyanline .mm-deep-2-prve-select .hasIcon:before {color:#1abb9c;}
+.k-skin-cyanline .m-menu2-1-li-div-click .hasIcon:before {color:#ffffff;}
+
+.k-skin-blueline .m-mdeep1 .hasIcon:before {color:#9a9a9a;}
+.k-skin-blueline .mm-deep-2-prve-select .hasIcon:before {color:#0d7dc9;}
+.k-skin-blueline .m-menu2-1-li-div-click .hasIcon:before {color:#ffffff;}
+
+.k-skin-greenline .m-mdeep1 .hasIcon:before {color:#9a9a9a;}
+.k-skin-greenline .mm-deep-2-prve-select .hasIcon:before {color:#4e8743;}
+.k-skin-greenline .m-menu2-1-li-div-click .hasIcon:before {color:#ffffff;}
+
+.k-skin-pinkline .m-mdeep1 .hasIcon:before {color:#9a9a9a;}
+.k-skin-pinkline .mm-deep-2-prve-select .hasIcon:before {color:#d7346c;}
+.k-skin-pinkline .m-menu2-1-li-div-click .hasIcon:before {color:#ffffff;}
+
+.k-skin-kyunline .m-mdeep1 .hasIcon:before {color:#9a9a9a;}
+.k-skin-kyunline .mm-deep-2-prve-select .hasIcon:before {color:#00c1de;}
+.k-skin-kyunline .m-menu2-1-li-div-click .hasIcon:before {color:#ffffff;}
+
+.k-skin-custombg .m-mdeep1 .hasIcon:before {color:#9a9a9a;}
+.k-skin-custombg .mm-deep-2-prve-select .hasIcon:before {color:#00deff;}
+.k-skin-custombg .m-menu2-1-li-div-click .hasIcon:before {color:#ffffff;}
+
+.k-skin-redline .m-mdeep1 .hasIcon:before {color:#9a9a9a;}
+.k-skin-redline .mm-deep-2-prve-select .hasIcon:before {color:#cd0e11;}
+.k-skin-redline .m-menu2-1-li-div-click .hasIcon:before {color:#ffffff;}
+
+.k-skin-brownline .m-mdeep1 .hasIcon:before {color:#9a9a9a;}
+.k-skin-brownline .mm-deep-2-prve-select .hasIcon:before {color:#8b5c7e;}
+.k-skin-brownline .m-menu2-1-li-div-click .hasIcon:before {color:#ffffff;}

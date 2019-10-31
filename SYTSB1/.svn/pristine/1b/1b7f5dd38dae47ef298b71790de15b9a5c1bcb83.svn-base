@@ -1,0 +1,174 @@
+﻿/**
+ * add by ttaomeng
+ *
+ */
+
+(function ($)
+{
+
+    $.fn.ligerRadioGroup = function ()
+    {
+        return $.ligerui.run.call(this, "ligerRadioGroup", arguments);
+    };
+
+    $.fn.ligerGetRadioGroupManager = function ()
+    {
+        return $.ligerui.run.call(this, "ligerGetRadioGroupManager", arguments);
+    };
+
+    $.ligerDefaults.RadioGroup = {
+        disabled: false ,
+        lineWrap:true,
+        valueField:'id',
+        textField:'text',
+        split:','
+    };
+
+    $.ligerMethos.RadioGroup = {};
+
+    $.ligerui.controls.RadioGroup = function (element, options)
+    {
+        $.ligerui.controls.RadioGroup.base.constructor.call(this, element, options);
+    };
+    $.ligerui.controls.RadioGroup.ligerExtend($.ligerui.controls.Input, {
+        __getType: function ()
+        {
+            return 'RadioGroup';
+        },
+        __idPrev: function ()
+        {
+            return 'RadioGroup';
+        },
+        _extendMethods: function ()
+        {
+            return $.ligerMethos.RadioGroup;
+        },
+        _render: function ()
+        {
+            var g = this, p = this.options;
+            g.input = $(g.element);
+            g.wrapper = g.input.wrap('<div class="l-radio-group-wrapper"></div>').parent();
+            if(p.data){
+                g._parseData(p.data);
+            }else if(p.url){
+                $.ajax({
+                    async: false,
+                    dataType:'json',
+                    url: p.url,
+                    success: function(resData){
+                        g._parseData(resData);
+                    }
+                });
+            }
+
+        },
+        _parseData: function (data)
+        {
+            var g = this, p = this.options;
+            p.data=data;
+            $.each(data,function(i,d){
+                var id=$.ligerui.getId();
+                var ele;
+                if(i==0){
+                    ele=g.input;
+                    if(g.element.id){
+                        id=g.element.id;
+                    }else{
+                        ele.attr("id",id);
+                    }
+                    ele.addClass("l-radio-group");
+                    ele.val(d["id"]);
+                }else{
+                    ele=$('<input type="radio" id="'+id+'" class="l-radio-group" name="'+g.input.attr("name")+'" value="'+d["id"]+'" ltype="radioGroup" groupChild=true ligeruiid="'+g.id+'">');
+                    g.wrapper.append(ele);
+                }
+                ele.bind("change",function(){
+                    g.trigger('change',[g.getValue(),ele]);
+
+                });
+                if(!p.lineWrap){
+                    ele.wrap("<div class='l-checkbox-group-lineWrap'></div>")
+                }
+                ele.after('<label for="'+id+'">'+d["text"]+'</label>');
+            });
+            if(p.initValue|| p.value){
+                g.setValue(p.initValue|| p.value);
+            }
+            if(p.onSuccess){
+                p.onSuccess.call(this,data,p.initValue|| p.value);
+            }
+        },
+        findTextByValue: function (value)
+        {
+            var g = this, p = this.options;
+            if (value == undefined) return "";
+            var texts = "";
+            var contain = function (checkvalue)
+            {
+                var targetdata = value.toString().split(p.split);
+                for (var i = 0; i < targetdata.length; i++)
+                {
+                    if (targetdata[i] == checkvalue) return true;
+                }
+                return false;
+            };
+            $(p.data).each(function (i, item)
+            {
+                var val = item[p.valueField];
+                var txt = item[p.textField];
+                if (contain(val))
+                {
+                    texts += txt + p.split;
+                }
+            });
+            if (texts.length > 0) texts = texts.substr(0, texts.length - 1);
+            return texts;
+        },
+        setValue: function (value)
+        {
+            var g = this, p = this.options;
+            var lastValue=g.getValue();
+            if(lastValue==value)return;
+            g.getRadioGroup().each(function () {
+                if (this.value != value) {
+                    this.checked = false;
+                }
+                else {
+                    this.checked = true;
+                }
+            });
+            g.trigger('change',[lastValue]);
+        },
+        getValue: function ()
+        {
+            var g = this, p = this.options;
+            var str="";
+            g.getRadioGroup().each(function () {
+                if(this.checked)  {
+                    str= this.value;
+                    return false;
+                }
+            });
+            return str;
+        },
+        getRadioGroup: function ()
+        {
+            var g = this, p = this.options;
+            var formEle;
+            if (g.input[0].form) formEle = g.input[0].form;
+            else formEle = document;
+            return $("input:radio[name='" + g.input[0].name + "']", formEle);
+        },
+        setEnabled: function ()
+        {
+            this.getRadioGroup().attr('disabled', false);
+            this.options.disabled = false;
+        },
+        setDisabled: function ()
+        {
+            this.getRadioGroup().attr('disabled', true);
+            this.options.disabled = true;
+        }
+    });
+
+})(jQuery);

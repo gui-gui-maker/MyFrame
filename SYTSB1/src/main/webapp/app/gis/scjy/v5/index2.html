@@ -1,0 +1,66 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+   <meta charset="utf-8">  
+   <title>ECharts</title>  
+    <!-- 引入 echarts.js -->  
+    <script src="js/echarts.js"></script>  
+    <script src="js/jquery.min.js"></script>  
+    <style type="text/css">
+    html,body{
+    	width:100%;
+    	height:100%;
+    	margin:0;
+    	padding:0;
+    }
+    </style>
+</head>  
+<body>  
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->  
+    <div id="main" style="width: 100%;height:100%;"></div>  
+    <script type="text/javascript">  
+       $.get('js/cd.json', function (cdjson) {  
+       echarts.registerMap('成都市', cdjson);  
+       var chart = echarts.init(document.getElementById('main'));  
+         
+       option = {  
+           title: {  
+               text: '四色预警',  
+                x:'center'  
+            },  
+            dataRange:{  
+               min:0,  
+                max:500,  
+                text:['高','低'],  
+               realtime:true,  
+               calculable:true,  
+                color:['orangered','yellow','green']  
+           },  
+           series:[  
+                {  
+                    name:'犯罪数量',  
+                    type:'map',  
+                   map:'成都市',  
+                    mapLocation:{  
+                      y:60  
+                   },  
+                   itemSytle:{  
+                       emphasis:{label:{show:false}}  
+                    },  
+                    data:[  
+                       {name:'高新区',value:Math.round(Math.random()*500)},  
+                       {name:'武侯区',value:Math.round(Math.random()*500)},  
+                       {name:'双流区',value:Math.round(Math.random()*500)},  
+                       {name:'锦江县',value:Math.round(Math.random()*500)},  
+                       {name:'邛崃市',value:Math.round(Math.random()*500)},  
+                       {name:'金牛区',value:Math.round(Math.random()*500)}  
+                    ]  
+                }  
+            ],  
+              
+        };  
+        chart.setOption(option);  
+});  
+    </script>  
+</body>  
+</html> 

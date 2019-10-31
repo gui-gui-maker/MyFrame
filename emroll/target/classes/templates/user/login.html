@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>登陆</h3>
+	<div class="with:60%">
+		<div style="margin: 10px 90px;">
+			没有账户？先去<a th:href="@{/toRegister}">注册</a>
+		</div>
+
+		<form class="form-horizontal" th:action="@{/login}" method="post">
+			<div class="form-group">
+				<label for="username" class="col-sm-2 control-label">用户名：</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control" name="username"
+						id="username" placeholder="enter userName or email" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="password" class="col-sm-2 control-label">密码：</label>
+				<div class="col-sm-6">
+					<input type="password" class="form-control" name="password"
+						id="password" placeholder="enter password" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label"></label>
+				<div class="col-sm-6">
+					<div th:if="${msg != null}" class="alert alert-danger"
+						role="alert" th:text="${msg}"></div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-6">
+					<input type="submit" value="Submit" class="btn btn-info" />
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

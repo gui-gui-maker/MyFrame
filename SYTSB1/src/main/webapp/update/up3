@@ -1,0 +1,133 @@
+ 组件库 > 工作流引擎 > 工作流、消息等组件批量更新V1.2.3
+khnt-base 1.0.11  --> 1.0.11 (ok)
+    添加Factory.removeCache接口方法
+
+khnt-component-bpm 1.2.3 -->1.2.4 (ok)
+    修改消息发送策略，采用统一的消息订阅方式发送消息
+
+khnt-component-message 1.1.0 -->1.1.2 (ok)
+    增加消息订阅功能，实现按用户个性化订阅消息机制。
+
+khnt-component-sms 1.0.5 --> 1.0.5 (ok)
+    新增订阅消息短信发送接口实现。
+
+khnt-component-worktask 1.0.8 --> 1.0.10 (ok)
+    改用新的消息订阅机制发送任务消息
+
+khnt-framework 1.0.14 --> 1.0.14 (ok)
+    user接口添加getExtInfo方法，实现用户信息扩展存储
+
+khnt-rbac-impl 1.1.4 --> 1.1.12 (ok)
+    更新framework实现user接口添加getExtInfo方法，实现用户信息扩展存储
+
+添加数据字典：
+
+   系统消息业务模块【sys_message_module】
+
+   业务模块需要各业务系统按照各自业务情况自行配置，支持树形结构。
+
+
+   可订阅消息类型 【sys_message_types】
+
+   可订阅消息类型目前已支持：系统内消息(system)，短信(sms)。
+
+更新jsp：已更新
+
+ pub/bpm/flow_service_config_detail.jsp
+ pub/explorer/message.jsp
+ pub/pub/message/message_detail.jsp
+ pub/message/message_list.jsp
+ pub/message/image
+ pub/message/image/feed.png
+ pub/pub/message/js
+ pub/message/js/subscription.js
+ pub/message/subscription.jsp
+ pub/message/subscription_default.jsp
+ pub/message/subscription_workmsg.jsp
+ pub/message/work_message_map.jsp
+ k/*
+
+数据库更新：
+
+alter table PUB_MESSAGE add module VARCHAR2(32);
+alter table PUB_MESSAGE add attach_files VARCHAR2(4000);
+comment on column PUB_MESSAGE.module  is '模块';
+comment on column PUB_MESSAGE.attach_files  is '附件';
+(ok)
+
+alter table PUB_WORKTASK add handled_person_ids VARCHAR2(4000);
+comment on column PUB_WORKTASK.handled_person_ids  is '已处理的人员ID集合';
+(ok)
+
+create table PUB_WORKTASK_MSG_MODULE
+(
+  id          VARCHAR2(32) not null,
+  type_name   VARCHAR2(200),
+  module      VARCHAR2(32),
+  module_name VARCHAR2(200)
+);
+comment on column PUB_WORKTASK_MSG_MODULE.id  is '业务类别code';
+comment on column PUB_WORKTASK_MSG_MODULE.type_name  is '业务名称';
+comment on column PUB_WORKTASK_MSG_MODULE.module  is '模块code';
+comment on column PUB_WORKTASK_MSG_MODULE.module_name  is '模块名称';
+alter table PUB_WORKTASK_MSG_MODULE  add constraint PUB_WORKTASK_MSG_MODULE_PK primary key (ID);
+(ok)
+
+create table PUB_MESSAGE_SUBSCRIPTION
+(
+  id        VARCHAR2(32) not null,
+  user_id   VARCHAR2(32),
+  user_name VARCHAR2(100),
+  module    VARCHAR2(32),
+  config    VARCHAR2(100)
+);
+comment on table PUB_MESSAGE_SUBSCRIPTION  is '用户消息订阅';
+comment on column PUB_MESSAGE_SUBSCRIPTION.user_id  is '订阅人id';
+comment on column PUB_MESSAGE_SUBSCRIPTION.user_name  is '订阅人name';
+comment on column PUB_MESSAGE_SUBSCRIPTION.module  is '模块';
+comment on column PUB_MESSAGE_SUBSCRIPTION.config  is '消息推送方式';
+alter table PUB_MESSAGE_SUBSCRIPTION add constraint PUB_MESSAGE_SUBSCRIPTION primary key (ID);
+(ok)
+
+alter table SYS_USER add ext_config VARCHAR2(4000);
+comment on column SYS_USER.ext_config is '扩展信息，以JSON格式存储';
+(ok)
+
+insert into SYS_RESOURCE (ID, PARENT_ID, R_NAME, URL, IMAGE, SORT, TYPE, R_CODE, WIDTH, REMARK, COL_01, COL_02, COL_03, COL_04, COL_05, COL_06, COL_07, COL_08, COL_09, COL_10, IMAGE32, IMAGE48, IMAGE64, IMAGE128, IMAGE256, WIN_WH, ICON_CSS, DESKTOP_URL, DISPLAY, ISTEXT, CLICK, REFID, ISREF)
+values (sys_guid(), 'sys_run', '消息订阅管理', 'pub/message/subscription_workmsg.jsp', 'pub/message/image/feed.png', null, '0', 'sys_msg_subscription', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '1,2', 'false', null, null, '0');
+(no) 本地已经加上
+
+系统参数：工具条【mainToolbar】添加项目：
+
+{"text":"消息订阅","click":function(){
+ top.$.dialog({
+  width:700,
+  height:500,
+  lock:true,
+  title:"消息订阅",
+  content:"url:pub/message/subscription.jsp"
+ });
+},id:"subscription",image:"pub/message/image/feed.png"}
+
+(ok)
+
+配置资源权限 (no 本地已配置)
+
+将上面sql插入的一个系统资源【消息订阅管理】授权给系统管理权限。 (no 本地已配置)
+
+添加其他消息发送途径的方法：
+
+1、在数据字典【消息类型［sys_message_type］】中添加一个类别，名称和值自行确定。比如添加电子邮件，值为email。(no 本地已添加)
+
+2、在项目工程中添加一个java class，实现com.khnt.pub.message.SubscriptionMessageSender 接口，该接口定义了2个method：
+.sendMessage，消息发送方法。自行定义。
+.getType，消息类别，这就是自定义的消息发送器的分类标识，返回的值必须跟上一步添加数据字典值相同(email) (yes 系统中已有)
+
+     实现案例：
+     
+3、在项目spring配置文件（applicationContext-pub.xml）中添加一个bean配置，class就为第二步定义的class，例如现有的短信接口：
+
+<!-- 短信发送接口-基于订阅方式 -->
+<bean class="com.khnt.pub.sms.LingKaiSmsNewSender" /> (no 本地添加)
+     
+

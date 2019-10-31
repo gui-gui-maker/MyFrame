@@ -1,0 +1,371 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*==================================   20170619 巴中数字民政————公墓管理 样式  ========================================================*/
+
+
+.dibao {}
+
+
+.dibao .s-skin-container {background-color:#0d1c3d !important; background-image:none !important; background-size:cover;}
+
+.dibao .m-area-left , .dibao .m-area-right {position:absolute; top:115px; z-index:101; width:26%;}
+.dibao .m-area-left {left:20px; bottom:30px;}
+.dibao .m-area-right {right:20px; bottom:30px;}
+
+
+
+/* 总的统计数据几块 */
+.dibao .m-counts {position:absolute; left:28.5%; right:28.5%; top:115px; z-index:99; padding:25px 0px 23px; color:#fff; border:1px solid #18687a; background:#102247;}
+
+.dibao .m-counts .corner {position:absolute; width:10px; height:10px; border-style:solid; border-color:rgba(35,180,183,.8);}
+.dibao .m-counts .clt {left:-1px; top:-1px; border-width:2px 0 0 2px;}
+.dibao .m-counts .crt {right:-1px; top:-1px; border-width:2px 2px 0 0;}
+.dibao .m-counts .clb {left:-1px; bottom:-1px; border-width:0 0 2px 2px;}
+.dibao .m-counts .crb {right:-1px; bottom:-1px; border-width:0 2px 2px 0;}
+
+.dibao .m-b-clumn {position:relative; float:left; height:100px; /*margin:0 1%;*/ text-align:center; overflow:hidden;}
+.dibao .ren {width:29%;}
+.dibao .hu {width:31%;}
+.dibao .yuan {width:39%;}
+.dibao .m-b-tit {font-size:1.2rem; opacity:0.7; filter:alpha(opacity=70);}
+.dibao .m-b-data {padding:4px 0; font-size:3.4rem; font-family:"Impact", "Times New Roman", "Times", "serif"; letter-spacing:3px;}
+.dibao .ren .m-b-data {color:#42edf8;}
+.dibao .hu .m-b-data {color:#42f842;}
+.dibao .yuan .m-b-data {color:#f8d442;}
+
+.dibao .mbline {position:relative; float:left; width:1px; height:100px; background:#18687a;}
+.dibao .mbline span {display:block; position:absolute; left:0; width:1px; height:2px; background:#fff;}
+.dibao .mbline span.ttop {top:0;}
+.dibao .mbline span.bbot {bottom:0;}
+
+
+
+/*分区图表*/
+.dibao .m-a-boxes {height:48.2%; margin-bottom:30px; border:1px solid #144a62; background:#0c1b3b;}
+.dibao .m-a-boxes .corner {position:absolute; width:15px; height:15px; border-style:solid; border-color:rgba(35,180,183,.8);}
+.dibao .m-a-boxes .clt {left:0px; top:0px; border-width:3px 0 0 3px;}
+.dibao .m-a-boxes .crt {right:0px; top:0px; border-width:3px 3px 0 0;}
+.dibao .m-a-boxes .clb {left:0px; bottom:0px; border-width:0 0 3px 3px;}
+.dibao .m-a-boxes .crb {right:0px; bottom:0px; border-width:0 3px 3px 0;}
+
+.dibao .m-a-boxes-tit2 {position:relative; z-index:105; height:47px; margin:0 10px 3%; padding-left:20px; font-size:1.2rem; line-height:46px; color:#02eadd; overflow:hidden; border-bottom:1px solid #186879;}
+.dibao .no-title .m-a-boxes-tit2 {display:none;}
+
+
+
+/*低保农村城市统计*/
+.dibao .m-a-main2 {position:absolute; top:0; bottom:0px; width:100%;}
+
+.dibao .mbacb {position:relative; width:100%; padding-top:8%; margin-top:8%; font-size:1.2rem; text-align:center; color:#fff; background:url(../images/dibaoarrow.png) no-repeat; background-size:58%; zoom:1;}
+
+.dibao .town {/*height:38%; */ margin-bottom:20px; background-position:center 30%;}
+.dibao .city {/*height:38%; */ background-position:center 20%;}
+
+.dibao .mbacb .tit {}
+.dibao .town .tit {background:url(../images/dibaoc01.png) no-repeat center top; padding-top:75px;}
+.dibao .city .tit {background:url(../images/dibaoc02.png) no-repeat center top; padding-top:85px;}
+
+.dibao .numhu , .dibao .numpeo {position:absolute; /*width:440px; height:300px; width:100%; height:auto!important; margin-bottom:10%;*/ z-index:102; zoom:1; overflow:hidden;}
+.dibao .town .numhu , .dibao .town .numpeo {top:-14%;}
+.dibao .city .numhu , .dibao .city .numpeo {top:-20%;}
+.dibao .numhu {left:6%; padding-right:10%;}
+.dibao .numpeo {right:6%; padding-left:10%;}
+
+.dibao .mbacb span {display:block;}
+.dibao .mbacb span.icon {width:80px; height:80px; border:2px solid #15586d; border-radius:50%;}
+.dibao .mbacb .numhu span.icon {background:url("../images/dibaohc.png") no-repeat center;}
+.dibao .mbacb .numpeo span.icon {background:url("../images/dibaorc.png") no-repeat center;}
+
+.dibao .numss {font-size:2.25rem; font-family:"Arial", "Helvetica", "sans-serif"; color:#02eadd; margin-top:8px;}
+
+.dibao .unit {position:absolute; top:22%; font-size:1rem; color:#fff; opacity:0.7; filter:alpha(opacity=70);}
+.dibao .numhu .unit {right:0%;}
+.dibao .numpeo .unit {left:0%;}
+
+
+
+
+
+/*========== 1680 ====== 1440 ====== 1366 ======1280 ====== 1024 ================== 各分辨率兼容性 */
+
+/*========== 1680 ================== */
+
+/* 总的统计数据几块 */
+.dibao .m-counts {position:absolute; left:28.5%; right:28.5%; top:115px; z-index:99; padding:25px 0px 23px; color:#fff; border:1px solid #18687a; background:#102247;}
+
+.dibao .m-counts .corner {position:absolute; width:10px; height:10px; border-style:solid; border-color:rgba(35,180,183,.8);}
+
+.window-w-1680 .dibao .m-b-clumn {height:85px;}
+.dibao .ren {width:29%;}
+.dibao .hu {width:31%;}
+.dibao .yuan {width:39%;}
+.window-w-1680 .dibao .m-b-tit {font-size:1.0rem;}
+.window-w-1680 .dibao .m-b-data {padding:4px 0; font-size:3.0rem; letter-spacing:3px;}
+
+.window-w-1680 .dibao .mbline {height:85px;}
+
+
+
+/*分区图表*/
+.dibao .m-a-boxes {height:48.2%; margin-bottom:30px; border:1px solid #144a62; background:#0c1b3b;}
+.dibao .m-a-boxes .corner {position:absolute; width:15px; height:15px; border-style:solid; border-color:rgba(35,180,183,.8);}
+
+.window-w-1680 .dibao .m-a-boxes-tit2 {height:47px; margin:0 10px 3%; padding-left:20px; font-size:1.0rem; line-height:46px; border-bottom:1px solid #186879;}
+
+
+
+/*低保农村城市统计*/
+.dibao .m-a-main2 {position:absolute; top:0; bottom:0px; width:100%;}
+
+.window-w-1680 .dibao .mbacb {width:100%; padding-top:8%; margin-top:8%; font-size:1.0rem;}
+
+.dibao .town {/*height:38%; */ margin-bottom:20px; background-position:center 30%;}
+.dibao .city {/*height:38%; */ background-position:center 20%;}
+
+.window-w-1680 .dibao .town .tit {background-size:54px 54px; padding-top:55px;}
+.window-w-1680 .dibao .city .tit {background-size:54px 54px; padding-top:65px;}
+
+.dibao .numhu , .dibao .numpeo {position:absolute; /*width:440px; height:300px; width:100%; height:auto!important; margin-bottom:10%;*/ z-index:102; zoom:1; overflow:hidden;}
+.dibao .town .numhu , .dibao .town .numpeo {top:-14%;}
+.dibao .city .numhu , .dibao .city .numpeo {top:-20%;}
+.dibao .numhu {left:6%; padding-right:10%;}
+.dibao .numpeo {right:6%; padding-left:10%;}
+
+.window-w-1680 .dibao .mbacb span.icon {width:66px; height:66px; border:2px solid #15586d;}
+.dibao .mbacb .numhu span.icon {background:url("../images/dibaohc.png") no-repeat center;}
+.dibao .mbacb .numpeo span.icon {background:url("../images/dibaorc.png") no-repeat center;}
+
+.window-w-1680 .dibao .numss {font-size:1.8rem; margin-top:8px;}
+
+.dibao .unit {position:absolute; top:22%; font-size:1rem; color:#fff; opacity:0.7; filter:alpha(opacity=70);}
+.dibao .numhu .unit {right:0%;}
+.dibao .numpeo .unit {left:0%;}
+
+
+
+
+
+/*========== 1440 ================== */
+
+/* 总的统计数据几块 */
+.dibao .m-counts {position:absolute; left:28.5%; right:28.5%; top:115px; z-index:99; padding:25px 0px 23px; color:#fff; border:1px solid #18687a; background:#102247;}
+
+.dibao .m-counts .corner {position:absolute; width:10px; height:10px; border-style:solid; border-color:rgba(35,180,183,.8);}
+
+.window-w-1440 .dibao .m-b-clumn {height:85px;}
+.dibao .ren {width:29%;}
+.dibao .hu {width:31%;}
+.dibao .yuan {width:39%;}
+.window-w-1440 .dibao .m-b-tit {font-size:1.0rem;}
+.window-w-1440 .dibao .m-b-data {padding:4px 0; font-size:2.8rem; letter-spacing:3px;}
+
+.window-w-1440 .dibao .mbline {height:85px;}
+
+
+
+/*分区图表*/
+.dibao .m-a-boxes {height:48.2%; margin-bottom:30px; border:1px solid #144a62; background:#0c1b3b;}
+.dibao .m-a-boxes .corner {position:absolute; width:15px; height:15px; border-style:solid; border-color:rgba(35,180,183,.8);}
+
+.window-w-1440 .dibao .m-a-boxes-tit2 {height:47px; margin:0 10px 3%; padding-left:20px; font-size:1.0rem; line-height:46px; border-bottom:1px solid #186879;}
+
+
+
+/*低保农村城市统计*/
+.dibao .m-a-main2 {position:absolute; top:0; bottom:0px; width:100%;}
+
+.window-w-1440 .dibao .mbacb {width:100%; padding-top:8%; margin-top:8%; font-size:1.0rem; background-size:55%;}
+
+.dibao .town {/*height:38%; */ margin-bottom:20px; background-position:center 30%;}
+.dibao .city {/*height:38%; */ background-position:center 20%;}
+
+.window-w-1440 .dibao .town .tit {background-size:54px 54px; padding-top:55px;}
+.window-w-1440 .dibao .city .tit {background-size:54px 54px; padding-top:65px;}
+
+.dibao .numhu , .dibao .numpeo {position:absolute; /*width:440px; height:300px; width:100%; height:auto!important; margin-bottom:10%;*/ z-index:102; zoom:1; overflow:hidden;}
+.dibao .town .numhu , .dibao .town .numpeo {top:-14%;}
+.dibao .city .numhu , .dibao .city .numpeo {top:-20%;}
+.dibao .numhu {left:6%; padding-right:10%;}
+.dibao .numpeo {right:6%; padding-left:10%;}
+
+.window-w-1440 .dibao .mbacb span.icon {width:66px; height:66px; border:2px solid #15586d;}
+.dibao .mbacb .numhu span.icon {background:url("../images/dibaohc.png") no-repeat center;}
+.dibao .mbacb .numpeo span.icon {background:url("../images/dibaorc.png") no-repeat center;}
+
+.window-w-1440 .dibao .numss {font-size:1.6rem; margin-top:6px;}
+
+.window-w-1440 .dibao .unit {top:22%; font-size:0.8rem;}
+.dibao .numhu .unit {right:0%;}
+.dibao .numpeo .unit {left:0%;}
+
+
+
+
+
+
+/*========== 1366 ================== */
+
+/* 总的统计数据几块 */
+.dibao .m-counts {position:absolute; left:28.5%; right:28.5%; top:115px; z-index:99; padding:25px 0px 23px; color:#fff; border:1px solid #18687a; background:#102247;}
+
+.dibao .m-counts .corner {position:absolute; width:10px; height:10px; border-style:solid; border-color:rgba(35,180,183,.8);}
+
+.window-w-1366 .dibao .m-b-clumn {height:80px;}
+.dibao .ren {width:29%;}
+.dibao .hu {width:31%;}
+.dibao .yuan {width:39%;}
+.window-w-1366 .dibao .m-b-tit {font-size:1.0rem;}
+.window-w-1366 .dibao .m-b-data {padding:4px 0; font-size:2.5rem; letter-spacing:3px;}
+
+.window-w-1366 .dibao .mbline {height:80px;}
+
+
+
+/*分区图表*/
+.dibao .m-a-boxes {height:48.2%; margin-bottom:30px; border:1px solid #144a62; background:#0c1b3b;}
+.dibao .m-a-boxes .corner {position:absolute; width:15px; height:15px; border-style:solid; border-color:rgba(35,180,183,.8);}
+
+.window-w-1366 .dibao .m-a-boxes-tit2 {height:41px; margin:0 10px 3%; padding-left:20px; font-size:0.9rem; line-height:40px; border-bottom:1px solid #186879;}
+
+
+
+/*低保农村城市统计*/
+.dibao .m-a-main2 {position:absolute; top:0; bottom:0px; width:100%;}
+
+.window-w-1366 .dibao .mbacb {width:100%; padding-top:8%; margin-top:8%; font-size:0.9rem; background-size:59%;}
+
+.dibao .town {/*height:38%; */ margin-bottom:20px; background-position:center 30%;}
+.dibao .city {/*height:38%; */ background-position:center 20%;}
+
+.window-w-1366 .dibao .town .tit {background-size:40px 40px; padding-top:40px;}
+.window-w-1366 .dibao .city .tit {background-size:40px 40px; padding-top:45px;}
+
+.dibao .numhu , .dibao .numpeo {position:absolute; /*width:440px; height:300px; width:100%; height:auto!important; margin-bottom:10%;*/ z-index:102; zoom:1; overflow:hidden;}
+.dibao .town .numhu , .dibao .town .numpeo {top:-14%;}
+.dibao .city .numhu , .dibao .city .numpeo {top:-20%;}
+.dibao .numhu {left:6%; padding-right:10%;}
+.dibao .numpeo {right:6%; padding-left:10%;}
+
+.window-w-1366 .dibao .mbacb span.icon {width:50px; height:50px; border:2px solid #15586d;}
+.window-w-1366 .dibao .mbacb .numhu span.icon {background-size:30px 30px;}
+.window-w-1366 .dibao .mbacb .numpeo span.icon {background-size:30px 30px;}
+
+.window-w-1366 .dibao .numss {font-size:1.5rem; margin-top:6px;}
+
+.window-w-1366 .dibao .unit {top:22%; font-size:0.8rem;}
+.dibao .numhu .unit {right:0%;}
+.dibao .numpeo .unit {left:0%;}
+
+
+
+
+/*========== 1280 ================== */
+
+/* 总的统计数据几块 */
+.dibao .m-counts {position:absolute; left:28.5%; right:28.5%; top:115px; z-index:99; padding:25px 0px 23px; color:#fff; border:1px solid #18687a; background:#102247;}
+
+.dibao .m-counts .corner {position:absolute; width:10px; height:10px; border-style:solid; border-color:rgba(35,180,183,.8);}
+
+.window-w-1280 .dibao .m-b-clumn {height:80px;}
+.dibao .ren {width:29%;}
+.dibao .hu {width:31%;}
+.dibao .yuan {width:39%;}
+.window-w-1280 .dibao .m-b-tit {font-size:1.0rem;}
+.window-w-1280 .dibao .m-b-data {padding:4px 0; font-size:2.5rem; letter-spacing:3px;}
+
+.window-w-1280 .dibao .mbline {height:80px;}
+
+
+
+/*分区图表*/
+.dibao .m-a-boxes {height:48.2%; margin-bottom:30px; border:1px solid #144a62; background:#0c1b3b;}
+.dibao .m-a-boxes .corner {position:absolute; width:15px; height:15px; border-style:solid; border-color:rgba(35,180,183,.8);}
+
+.window-w-1280 .dibao .m-a-boxes-tit2 {height:41px; margin:0 10px 3%; padding-left:20px; font-size:0.9rem; line-height:40px; border-bottom:1px solid #186879;}
+
+
+
+/*低保农村城市统计*/
+.dibao .m-a-main2 {position:absolute; top:0; bottom:0px; width:100%;}
+
+.window-w-1280 .dibao .mbacb {width:100%; padding-top:8%; margin-top:8%; font-size:0.9rem; background-size:59%;}
+
+.dibao .town {/*height:38%; */ margin-bottom:20px; background-position:center 30%;}
+.dibao .city {/*height:38%; */ background-position:center 20%;}
+
+.window-w-1280 .dibao .town .tit {background-size:40px 40px; padding-top:40px;}
+.window-w-1280 .dibao .city .tit {background-size:40px 40px; padding-top:45px;}
+
+.dibao .numhu , .dibao .numpeo {position:absolute; /*width:440px; height:300px; width:100%; height:auto!important; margin-bottom:10%;*/ z-index:102; zoom:1; overflow:hidden;}
+.dibao .town .numhu , .dibao .town .numpeo {top:-14%;}
+.dibao .city .numhu , .dibao .city .numpeo {top:-20%;}
+.dibao .numhu {left:6%; padding-right:10%;}
+.dibao .numpeo {right:6%; padding-left:10%;}
+
+.window-w-1280 .dibao .mbacb span.icon {width:50px; height:50px; border:2px solid #15586d;}
+.window-w-1280 .dibao .mbacb .numhu span.icon {background-size:30px 30px;}
+.window-w-1280 .dibao .mbacb .numpeo span.icon {background-size:30px 30px;}
+
+.window-w-1280 .dibao .numss {font-size:1.5rem; margin-top:6px;}
+
+.window-w-1280 .dibao .unit {top:22%; font-size:0.8rem;}
+.dibao .numhu .unit {right:0%;}
+.dibao .numpeo .unit {left:0%;}
+
+
+
+
+
+/*========== 1024 ================== */
+
+/* 总的统计数据几块 */
+.dibao .m-counts {position:absolute; left:28.5%; right:28.5%; top:115px; z-index:99; padding:25px 0px 23px; color:#fff; border:1px solid #18687a; background:#102247;}
+
+.dibao .m-counts .corner {position:absolute; width:10px; height:10px; border-style:solid; border-color:rgba(35,180,183,.8);}
+
+.window-w-1024 .dibao .m-b-clumn {height:80px;}
+.dibao .ren {width:29%;}
+.dibao .hu {width:31%;}
+.dibao .yuan {width:39%;}
+.window-w-1024 .dibao .m-b-tit {font-size:1.0rem;}
+.window-w-1024 .dibao .m-b-data {padding:4px 0; font-size:2.5rem; letter-spacing:3px;}
+
+.window-w-1024 .dibao .mbline {height:80px;}
+
+
+
+/*分区图表*/
+.dibao .m-a-boxes {height:48.2%; margin-bottom:30px; border:1px solid #144a62; background:#0c1b3b;}
+.dibao .m-a-boxes .corner {position:absolute; width:15px; height:15px; border-style:solid; border-color:rgba(35,180,183,.8);}
+
+.window-w-1024 .dibao .m-a-boxes-tit2 {height:41px; margin:0 10px 3%; padding-left:20px; font-size:0.9rem; line-height:40px; border-bottom:1px solid #186879;}
+
+
+
+/*低保农村城市统计*/
+.dibao .m-a-main2 {position:absolute; top:0; bottom:0px; width:100%;}
+
+.window-w-1024 .dibao .mbacb {width:100%; padding-top:8%; margin-top:8%; font-size:0.9rem; background-size:59%;}
+
+.dibao .town {/*height:38%; */ margin-bottom:20px; background-position:center 30%;}
+.dibao .city {/*height:38%; */ background-position:center 20%;}
+
+.window-w-1024 .dibao .town .tit {background-size:40px 40px; padding-top:40px;}
+.window-w-1024 .dibao .city .tit {background-size:40px 40px; padding-top:45px;}
+
+.dibao .numhu , .dibao .numpeo {position:absolute; /*width:440px; height:300px; width:100%; height:auto!important; margin-bottom:10%;*/ z-index:102; zoom:1; overflow:hidden;}
+.dibao .town .numhu , .dibao .town .numpeo {top:-14%;}
+.dibao .city .numhu , .dibao .city .numpeo {top:-20%;}
+.dibao .numhu {left:6%; padding-right:10%;}
+.dibao .numpeo {right:6%; padding-left:10%;}
+
+.window-w-1024 .dibao .mbacb span.icon {width:50px; height:50px; border:2px solid #15586d;}
+.window-w-1024 .dibao .mbacb .numhu span.icon {background-size:30px 30px;}
+.window-w-1024 .dibao .mbacb .numpeo span.icon {background-size:30px 30px;}
+
+.window-w-1024 .dibao .numss {font-size:1.5rem; margin-top:6px;}
+
+.window-w-1024 .dibao .unit {top:22%; font-size:0.8rem;}
+.dibao .numhu .unit {right:0%;}
+.dibao .numpeo .unit {left:0%;}

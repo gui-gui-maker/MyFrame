@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* CSS Document */
+
+* { margin:0; padding:0; }
+body, html { margin:0; width:100%; height:100%; overflow:hidden;font-family:"Microsoft YaHei","宋体", "New York", serif;}
+body,input,button,select,textarea {font-family:"Microsoft YaHei","verdana","宋体"; font-size:12px;}
+button {overflow:visible;font-family:"Microsoft YaHei","verdana","宋体";}
+
+body.no-support-wpf { font-family: SimSun; }
+.k-login-layer{width:100%; height:550px; position:absolute; top:50%;margin-top:-260px; padding:0;}
+.k-login-top {width:100%; height:97px; overflow:hidden;margin: -260px 0px 0px 0px; text-align:center;margin-top:0px;}
+.k-login-middle {width:100%; overflow:hidden;height:365px;}
+.k-login-layout { height:365px; background: url(center-bg.png) repeat-x center ;}
+.k-login-foot { width:600px; height:70px; text-align:center; font-size:12px; line-height:18px; color:#fff; position:absolute; left:50%; margin-left:-230px; margin-top:-30px;}
+.k-login-foot div{ float:left; margin-right:15px;}
+.k-login-top-logo{ width:900px; height:72px; margin:auto;}
+.k-login-top-logo-btnbox{ width:auto; height:70px; float:right; display:none;}
+#k-login-top-logo-btn{ width:54px; height:60px;text-align:center; vertical-align:middle; float:left; margin:20px 5px 0 0;cursor:pointer;}
+#k-login-top-logo-btn:hover{ }
+.k-login-layout-content{margin:auto; width:990px; height:351px;position:relative;}
+.k-login-custom_img{ display:none;}
+.k-login-custom_mask{display:none;}
+.k-login-box{ width:612px; height:365px; position:absolute; right:180px;background:url(dlk-bg.png) no-repeat center center;}
+.k-login-box-title{width:612px; height:85px; line-height:85px; vertical-align:middle; text-align:left;font-size:30px; background:url(logo.png) no-repeat center center; margin-bottom:60px;}
+.k-login-box-title span{ font-family:"Microsoft YaHei","黑体"; display:none;}
+.k-login-inputbox{width:612px; height:39px; line-height:39px; vertical-align:middle; text-align:left;font-size:14px; margin-bottom:18px;}
+.k-login-inputname{width:190px; height:39px; line-height:39px; vertical-align:middle; text-align:right;font-size:18px; float:left; color:#004d83;}
+.k-login-inputleft{width:180px; height:37px; line-height:37px; background-color:#FFF; border:2px solid #D9D9D9; border-right:none; vertical-align:middle; text-align:left;font-size:14px; float:left;border-radius:5px 0px 0px 5px;}
+.k-login-inputleft input{width:170px; height:34px; line-height:34px;border:0px; margin-left:5px;}
+.k-login-inputright{width:100px; height:37px; line-height:37px; background-color:#fbfbfb;border:2px solid #D9D9D9; border-left:none; vertical-align:middle; text-align:left; padding-left:4px;font-size:12px; float:left; color:#999;border-radius:0px 5px 5px 0px;}
+.k-login-inputyz{width:100px; height:37px; background:#FFF; line-height:37px; float:left; border:2px solid #D9D9D9; border-right:0px;border-radius:5px 0px 0px 5px;}
+.k-login-inputyz input{width:90px; height:34px; background-color:#FFF; line-height:34px; border:0px; margin-left:5px;}
+.k-login-inputyzimg{width:80px; height:37px; background:#fbfbfb; line-height:37px;float:left;border:2px solid #D9D9D9; border-left:none;border-radius:0px 5px 5px 0px;}
+.k-login-inputbtn button{width:100px; height:41px; line-height:41px;vertical-align:middle; text-align:center; padding-left:4px;float:left; background:url(login.png) no-repeat center right; cursor:pointer; border:none; margin:0px 5px;font-family:"Microsoft YaHei","黑体"; font-size:18px; color:#fff;}
+.k-login-inputbtn button:hover{background:url(login_on.png) no-repeat center right;}
+.k-login-inputbox-only{margin-left:185px;}
+
+
+
+
+

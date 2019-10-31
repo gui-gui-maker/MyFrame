@@ -1,0 +1,142 @@
+package com.lsts.mobileapp.sign.web;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.khnt.core.crud.web.SpringSupportAction;
+import com.khnt.core.crud.web.support.JsonWrapper;
+import com.lsts.inspection.bean.InspectionInfo;
+import com.lsts.mobileapp.input.bean.RecordModelDir;
+import com.lsts.mobileapp.sign.service.SignService;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+@Controller
+@RequestMapping("signAction")
+public class SignAction extends SpringSupportAction<InspectionInfo, SignService>{
+	
+	@Autowired
+	SignService signService;
+	
+	// 保存报告签发
+	@RequestMapping(value = "pass")
+	@ResponseBody
+	public Map<String, Object> sign(HttpServletRequest request,String formObject,String businessArray) throws Exception {
+		Map<String, Object> map = new HashMap<String, Object>();
+		try {
+			JSONObject formData = JSONObject.fromString(formObject);
+			JSONArray businesses = JSONArray.fromString(businessArray);
+				
+			List<InspectionInfo> list = signService.pass(request,businesses,formData);
+			 
+			map.put("data",list);
+			map.put("success",true);
+		} catch (Exception e) {
+			e.printStackTrace();
+			map.put("msg",e.getMessage());
+			map.put("success",true);
+		}
+		return map;
+	}
+	@RequestMapping(value = "failed")
+	@ResponseBody
+	public Map<String, Object> failed(HttpServletRequest request,String formObject,String businessArray) throws Exception {
+		Map<String, Object> map = new HashMap<String, Object>();
+		try {
+			JSONObject formData = JSONObject.fromString(formObject);
+			JSONArray businesses = JSONArray.fromString(businessArray);
+			
+			List<InspectionInfo> list = signService.failed(request,businesses, formData);
+			
+			map.put("data",list);
+			map.put("success",true);
+		} catch (Exception e) {
+			e.printStackTrace();
+			map.put("msg",e.getMessage());
+			map.put("success",true);
+		}
+		return map;
+	}
+	@RequestMapping(value="getSignMission")
+	@ResponseBody
+	public HashMap<String, Object> getSignMission() throws Exception{
+		HashMap<String, Object> map = new HashMap<String,Object>();
+		try {
+			List<Object[]> list = signService.getSignMission();
+			map.put("success", true);
+			map.put("data", list);
+		} catch (Exception e) {//移动app业务信息列表和详情展示，调整样式
+			//调整业务信息样式，企业信息列表展示
+			e.printStackTrace();
+			map.put("success", true);
+			map.put("msg", e.getMessage());
+		}
+		return map;
+	}
+	@RequestMapping(value="loadReportDir")
+	@ResponseBody
+	public HashMap<String, Object> loadReportDir(String id, String code) throws Exception{
+		HashMap<String, Object> map = new HashMap<String,Object>();
+		try {
+			String dir = signService.loadReportDir(id,code);
+			JSONArray dirs = JSONArray.fromString(dir);
+			List<RecordModelDir> list = new ArrayList<RecordModelDir>();
+			list = getlistByJson(list,dirs.getJSONObject(0),0,id);
+			map.put("success", true);
+			map.put("data", list);
+		} catch (Exception e) {
+			e.printStackTrace();
+			map.put("success", true);
+			map.put("msg", e.getMessage());
+		}
+		return map;
+	}
+	private List<RecordModelDir> getlistByJson(List<RecordModelDir> list, JSONObject jsonObject,Integer n, String reportId) {
+		if(!"root".equals(jsonObject.getString("code"))) {
+			RecordModelDir dir = new RecordModelDir();
+			
+			dir.setFkModelId(reportId);
+			dir.setOrders(n+1);
+			dir.setPageCode(jsonObject.getString("code"));
+			dir.setPageName(jsonObject.getString("name"));
+			String pageNum = jsonObject.getString("code").split("__")[0];
+			dir.setPagePath("index"+pageNum+".jsp");
+			
+			list.add(dir);
+		}
+		if(jsonObject.has("children")&&jsonObject.get("children")!=null) {
+			JSONArray children = jsonObject.getJSONArray("children");
+			for (int i = 0; i < children.length(); i++) {
+				getlistByJson(list,children.getJSONObject(i),n++,reportId);
+			}
+		}else {
+			n++;
+		}
+		
+		return list;
+	}
+	/**
+	 * 查询业务信息详情
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping(value="getYwxxDetail")
+	@ResponseBody
+	private HashMap<String, Object> getYwxxDetail(String id){
+		InspectionInfo entity=signService.get(id);
+		HashMap<String, Object> map=JsonWrapper.successWrapper(entity);
+		map.put("check_type", entity.getInspection().getCheck_type());
+//		map.put(key, value)
+//		return signService.getYwxxDetail(id);
+		return map;
+	}
+}

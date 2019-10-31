@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>乐山市特种设备监督检验所</title>
+<link rel="stylesheet" type="text/css" href="/app/webmanage/CSS/style.css" />
+<script src="/app/webmanage/js/foucs.js" type="text/javascript"></script>
+<script src="/app/webmanage/js/iepng.js" type="text/javascript"></script>
+<script src="/app/webmanage/js/jquery.js" type="text/javascript"></script>
+<script src="/app/webmanage/js/Guestbook.js" type="text/javascript"></script>
+<script src="/app/webmanage/js/SearchData.js" type="text/javascript"></script>
+<script type="text/javascript">
+   EvPNG.fix('div, ul, img, li, input');  //EvPNG.fix('包含透明PNG图片的标签'); 多个标签之间用英文逗号隔开。
+</script>
+</head>
+<body>
+<div class="top">
+	<div class="logo" title="乐山市特种设备监督检验所"></div>
+	<div class="flash">
+		<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="998" height="240" id="noname1">
+			<param name="movie" value="/app/webmanage/images/top.swf" />
+			<!-- <param name="wmode" value="opaque" /> -->
+			<param name="wmode" value="transparent" />
+			<!-- JS弹窗和菜单被FLASH遮住解决方法 --> 
+			<!-- <param name="allowScriptAccess" value="sameDomain" /> --><!-- 始终在中间，页面上最关键的属性 -->
+			<param name="quality" value="High" />
+			<param name="menu" value="True" />
+			<param name="flashvars" value="bbb=1" />
+			<embed src="/app/webmanage/images/top.swf" width="998" height="240" name="noname1" wmode="transparent" quality="high" allowScriptAccess="sameDomain" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer_cn" />
+			<!-- 非IE调用方式 -->
+		</object>
+	</div>
+</div>
+<!--导航菜单-->
+<div class="menu">
+	<ul>
+		<li><a href="/rsc/index.html">网站首页</a></li>
+		<li><a href="/rsc/jysjj/index.html">检验所简介</a></li>
+		<li><a href="/rsc/ywzl/index.html">业务指南</a></li>
+		<li><a href="/rsc/zxbs/index.html">在线办事</a></li>
+		<li><a href="/rsc/xwzx/index.html">新闻中心</a></li>
+		<li><a href="/rsc/xzzx/index.html">下载中心</a></li>
+		<li><a href="/rsc/tsjy/index.html">投诉建议</a></li>
+		<li><a href="/rsc/lxfs/index.html">联系方式</a></li>
+	</ul>
+</div><div class="wrap"> 
+	<!--内页开始-->
+	<div class="pages"> 
+		<!--二级页面右边内容区-->
+		<div class="pg_wrap">
+			<div class="position">
+				<div class="pg_caption">公告公示</div>
+				<div class="yourpos">您的位置： <a href="/rsc/index.html">首页</a> >> <a href="/rsc/gggs/index.html">公告公示</a></div>
+			</div>
+			<div class="pg_content">
+				<div class="list">
+					<h1>关于实施新《电梯使用标志》有关问题的通知</h1>
+					<div class="pgtime">信息来源：  时间：2014年03月12日 </div>
+						<p><p>质检特函〔2013〕8号<br/><br/>　　关于实施新《电梯使用标志》有关问题的通知<br/></p><p><br/>　　各省、自治区、直辖市质量技术监督局，各有关单位：<br/><br/>　　为贯彻落实《质检总局关于进一步加强电梯安全工作的意见》（国质检特[2013]14号），做好新《电梯使用标志》的实施工作，现就有关要求通知如下：<br/><br/>　　一、标志的式样<br/><br/>　
+　新《电梯使用标志》（以下简称新标志）替代原电梯《安全检验合格》标志（以下简称原标志），明示电梯使用管理、维护保养、检验检测等相关信息，以及电梯
+故障应急报警电话，便于乘客使用和公众监督，也更好地体现电梯相关各方责任。新标志与原标志在尺寸、配色、字体等方面保持不变，仍旧使用原塑料外壳。为保
+证新标志的统一，各地可以选购北京中特安信息技术有限公司印制的空白标志。<br/><br/>　　二、标志的填写<br/><br/>　　新标志中“维保单位、
+检验单位”与原标志相同。“注册代码”即为原标志“设备代码”，填写设备注册使用登记时的编号代码；“使用单位设备编号”即为原标志“设备编号”，填写使
+用管理责任单位用以区别本单位多台电梯而自行进行的编号。调整“下次检验日期”，只填写至月，即在此月底之前应当进行定期检验。增加“登记机关”，填写实
+施电梯使用登记的质监部门名称；增加“使用管理责任单位”，填写对电梯进行日常管理并对电梯使用安全承担首负责任的单位名称；增加“制造单位”，填写电梯
+整机制造或改造单位名称；增加“应急救援电话”，填写使用管理责任单位或维保单位的值班电话号码，此电话应能保证在电梯运行的所有时间保持通话畅通，接话
+后可以立即进行安抚和组织救援。<br/><br/>　　三、标志的更换<br/><br/>　　新标志从2013年5月1日起开始更换，原标志同时停止使用,到
+明年5月1日前更换完毕。新装、改造或大修电梯在监督检验合格、在用电梯在定期检验合格后，由实施监督检验或定期检验的检验机构打印并核发给使用管理责任
+单位，在电梯轿厢内或自动扶梯与自动人行道入口处明显位置张贴。在此之前已核发且未到定期检验日期的原电梯《安全检验合格》标志仍然有效。<br/><br/>　
+　为方便各地打印新标志及实施信息化管理，北京中特安信息技术有限公司开发了电梯使用标志二维码打印识别及管理平台（网页http://www.pub-
+v.com/taskprint电话：010-82841070、82841065），实现在线打印和手机识别查询，有关检验检测机构可以加入此信息管理
+平台，实现电梯使用标志的信息化管理。<br/><br/>　　工作中存在的问题，请及时报我局。<br/><br/>　　质检总局特种设备局<br/><br/>　　2013年2月5日<br/></p><p><br/></p></p>
+					</div>
+			</div>
+		</div>
+	</div>
+<div class="foot">
+		<div class="footer">
+			<p>&copy; (C) 2004-2013 版权所有: 乐山市特种设备监督检验所</p>
+			<p>蜀ICP备12008332  地址：四川省乐山市中区龙游路北段269号</p>
+			<p>技术支持：<a href="http://www.khnt.com" target="_blank">成都川大科鸿新技术研究所</a></p>
+		</div>
+	</div>
+</div></body>
+</html>

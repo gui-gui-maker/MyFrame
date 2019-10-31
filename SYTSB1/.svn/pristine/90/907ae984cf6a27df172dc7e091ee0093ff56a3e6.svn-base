@@ -1,0 +1,519 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+</head>
+
+<body>
+	<div id="layout2" style="width: 99.8%">
+		<input type="hidden" id="inputFocus" name="inputFocus" /> <input
+			type="hidden" id="thisPage" name="thisPage" value="?page=10">
+		<div position="center" class="wrapper"
+			style="overflow: auto; width: 100%" align="center">
+			<input type="hidden" id="fk_report_id" name="fk_report_id" value="">
+			<input type="hidden" id="fk_inspection_info_id"
+				name="fk_inspection_info_id" value=""> <br />
+			<p>
+				<a name="RTPAGE_9__检验内容及要求7"></a>
+			</p>
+			<table class=""
+				style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; table-layout: fixed; vertical-align: top; border-collapse: collapse;">
+				<colgroup>
+					<col style="width: 50.03%;" />
+					<col style="width: 49.97%;" />
+				</colgroup>
+				<tbody>
+					<tr>
+						<td>
+							<p class="a DocDefaults " style="text-align: left; width: 100%;">
+								<span class="a0 " style=""><span class=""
+									style="font-family: 'SimSun';">文件编号：CTJB-</span></span><span
+									class="a0 " style="font-family: 'SimSun';">0412-B01</span>
+							</p>
+						</td>
+						<td>
+							<p class="a DocDefaults " style="text-align: right; width: 100%;">
+								<span class="a0 " style=""><span class=""
+									style="font-family: 'SimSun';">实施日期：2017年10月1日</span></span>
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table id="docx4j_tbl_11" rules="all" style="margin-top: 5mm; border-style: solid; border-color: black; border-width: 1px;">
+				<colgroup>
+					<col style="width: 6.22%;" />
+					<col style="width: 7.48%;" />
+					<col style="width: 8.38%;" />
+					<col style="width: 20%;" />
+					<col style="width: 10%;" />
+					<col style="width: 10%;" />
+					<col style="width: 10%;" />
+					<col style="width: 15.3%;" />
+					<col style="width: 12.62%;" />
+				</colgroup>
+				<thead>
+					<tr style=" page-break-inside: avoid;">
+						<th>
+							<p style="width: 100%; text-align: center;">
+								<span>序</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>号</span>
+							</p>
+						</th>
+						<th colspan="6">
+							<p style="width: 100%; text-align: center;" >
+								<span>检验内容及要求</span>
+							</p>
+						</th>
+						<th>
+							<p style="width: 100%; text-align: center;">
+								<span>检验</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>结果</span>
+							</p>
+						</th>
+						<th>
+							<p style="width: 100%; text-align: center;">
+								<span>检验</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>结论</span>
+							</p>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr style="height: 1.47in; page-break-inside: avoid;">
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>40</span>
+							</p>
+						</td>
+						<td rowspan="3">
+							<!-- <p>
+								<input id="record__C_405_10_110" name="record__C_405_10_110"
+									type="text" ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:36,initValue:'符合'}"
+									class="cC_405_10" onchange="changeRecord(this,this.value)" />
+							</p> -->
+						</td>
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>5.10</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>超载保</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>护装置</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>C</span>
+							</p>
+						</td>
+						<td colspan="4">
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>曳引式防爆电梯及液压式防爆电梯应当设置当轿厢内的载荷超过额定载重量时能够发出警示信号并使轿厢不能运行的超载保护装置。该装置最迟在轿厢内的载荷达到110%额定载重量（对于额定载重量小于750kg的电梯，最迟在超载量达到75kg）时动作，防止防爆电梯正常启动及再平层，并且轿内有音响或者发光信号提示，动力驱动的自动门完全打开，手动门保持在未锁状态。该装置还应当都会本规则防爆技术要求</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__C_5_10"
+									name="record__C_5_10" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;"> 
+								<input id="conclusion__C_5_10" name="conclusion__C_5_10" type="text" ltype="select"
+									value="" 
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'合格'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 16mm; page-break-inside: avoid;">
+						<td rowspan="2">
+							<p style="width: 100%; text-align: center;">
+								<span>41</span>
+							</p>
+						</td>
+						<td rowspan="2">
+							<p style="width: 100%; text-align: center;">
+								<span>5.11.1</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>安全</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span><span>钳B</span></span>
+							</p>
+						</td>
+						<td colspan="4">
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>(3)轿厢上应当装设一个在轿厢安全</span></span><span>钳</span><span><span>动作以前或同时动作，并应符合本规则防爆技术要求中相关要求的电气安全装置；</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__B_5_11_1_3"
+									name="record__B_5_11_1_3" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+						<td rowspan="2">
+							<p style="width: 100%;"> 
+								<input id="conclusion__B_5_11_1" name="conclusion__B_5_11_1" type="text" ltype="select"
+									value="" 
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'合格'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 4mm; page-break-inside: avoid;">
+						<td colspan="4">
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>(4)安全</span></span><span>钳工作面应采用无火花材质或应采取无火花措施</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__B_5_11_1_4"
+									name="record__B_5_11_1_4" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 5mm; page-break-inside: avoid;">
+						<td rowspan="13">
+							<p style="width: 100%; text-align: center;">
+								<span>42</span>
+							</p>
+						</td>
+						<td rowspan="15">
+							<p style="width: 100%; text-align: center;">
+								<span>6.</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>悬挂装置</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>、补</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>偿装</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>置及</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>旋转</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>部件</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>防护</span>
+							</p>
+						</td>
+						<td rowspan="13">
+							<p style="width: 100%; text-align: center;">
+								<span>6.1</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>悬挂装</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>置、补</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>偿装置</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>的磨损</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>、断丝</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>、变形</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>等情况</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>C</span>
+							</p>
+						</td>
+						<td colspan="4">
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>出现下列情况之一时，悬挂钢丝绳和补偿钢丝绳应当报废：</span></span>
+							</p>
+						</td>
+						<td rowspan="13">
+							<p style="width: 100%;">
+								<input id="record__C_6_1"
+									name="record__C_6_1" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+						<td rowspan="13">
+							<p style="width: 100%;"> 
+								<input id="conclusion__C_6_1" name="conclusion__C_6_1" type="text" ltype="select"
+									value="" 
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'合格'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.17in; page-break-inside: avoid;">
+						<td colspan="4">
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>(1)出现笼状畸变、</span></span><span>绳芯挤出</span><span><span>、扭结、部分压扁、弯折；</span></span>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.17in; page-break-inside: avoid;">
+						<td colspan="4">
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span>(2)一个捻距内</span><span><span>出现的断丝数大于下表列出的数值时：</span></span>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 6mm; page-break-inside: avoid;">
+						<td rowspan="2">
+							<p style="width: 100%; text-align: center;">
+								<span>断丝的形式</span>
+							</p>
+						</td>
+						<td colspan="3">
+							<p style="width: 100%; text-align: center;">
+								<span>钢丝绳类型</span>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.22in; page-break-inside: avoid;">
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>6</span><span>×</span><span>19</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>8</span><span>×</span><span>19</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>9</span><span>×</span><span>19</span>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.22in; page-break-inside: avoid;">
+						<td>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span>均布在外层绳股上</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>24</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>30</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>34</span>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.22in; page-break-inside: avoid;">
+						<td>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span>集中在一或者两根外层绳股上</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>8</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>10</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>11</span>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.22in; page-break-inside: avoid;">
+						<td>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span>一根外层绳股上相邻的断丝</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>4</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>4</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>4</span>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.22in; page-break-inside: avoid;">
+						<td>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>股谷（缝）断丝</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>1</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>1</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>1</span>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.22in; page-break-inside: avoid;">
+						<td colspan="4">
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>注：上述断丝数的参考长度为一个捻距，约为6d</span></span>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.17in; page-break-inside: avoid;">
+						<td colspan="4">
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>(3)磨损后的钢丝绳直径小于钢丝绳公称直径的90%；</span></span>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.17in; page-break-inside: avoid;">
+						<td colspan="4">
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>(4)钢丝绳严重锈蚀，铁锈填满</span></span><span>绳股间隙；</span>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.17in; page-break-inside: avoid;">
+						<td colspan="4">
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>采用其他类型悬挂装置的，悬挂装置的磨损、变形等应当不超过制造单位设定的报废指标</span></span>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.39in; page-break-inside: avoid;">
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>43</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>6.2</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>端部固</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span><span>定C</span></span>
+							</p>
+						</td>
+						<td colspan="4">
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>悬挂钢丝绳绳端固定应当可靠，弹簧、螺母、开口销等连接部件无缺损；</span></span>
+							</p>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>采用其他类型悬挂装置的，其端部固定应当符合制造单位的规定</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__C_6_2"
+									name="record__C_6_2" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;"> 
+								<input id="conclusion__C_6_2" name="conclusion__C_6_2" type="text" ltype="select"
+									value="" 
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'合格'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.41in; page-break-inside: avoid;">
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>44</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>6.3</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>补偿</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>装置</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>C</span>
+							</p>
+						</td>
+						<td colspan="4">
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>曳引式防爆电梯补偿链(绳)端部固定应当可靠，补偿链(绳)外部应采取无火花措施，运动时不得碰擦其它金属构件和底坑地面</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__C_6_3"
+									name="record__C_6_3" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;"> 
+								<input id="conclusion__C_6_3" name="conclusion__C_6_3" type="text" ltype="select"
+									value="" 
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'合格'}" />
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

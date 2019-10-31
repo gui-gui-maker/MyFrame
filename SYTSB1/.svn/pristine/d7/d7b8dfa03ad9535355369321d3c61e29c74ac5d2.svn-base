@@ -1,0 +1,82 @@
+/* 系统换肤设置 新改 2014-06-13 ================================================================================*/
+.slj-skin-wrap {}
+.slj-skin-wrap-inner {position:absolute; left:50%; top:50%; width:990px; hegiht:500px; margin:-250px 0px 0px -495px; overflow:hidden;}
+
+.slj-skin-top {height:24px; padding:0px 0px 0px 0px;/* border-bottom:1px solid #d7d7d7;*/ font-size:16px;}
+.slj-skin-top a {display:inline-block; font-size:12px; text-decoration:none; color:#000; position:absolute; top:2px; height:16px; overflow:hidden; padding-left:30px;}
+.slj-skin-top a:hover {text-decoration:underline; color:#2e93ec;}
+.slj-skin-top a.slj-redft {right:80px; background:url(slj-skin-top-bj.png) no-repeat left top;}
+.slj-skin-top a.slj-save {right:0px; background:url(slj-skin-top-bj.png) no-repeat left -16px;}
+
+.slj-skin-boxes {font-size:12px; border-top:1px solid #d7d7d7; padding:13px 0px 0px 0px; overflow:hidden;position: relative;}
+.slj-skin-boxes h3 {margin:0; padding:0px 0px 0px 35px; font-size:14px; font-weight:normal; height:24px; line-height:24px;}
+.gexinset {background:url(slj-skin-boxes-h3bj.png) no-repeat left top;}
+.skinset {background:url(slj-skin-boxes-h3bj.png) no-repeat left -24px;}
+.beigset {background:url(slj-skin-boxes-h3bj.png) no-repeat left -48px;}
+
+.slj-skin-boxes-wrap {margin:13px 35px;}
+.skin-userpic {max-width:32px; max-height:32px; cursor:pointer; vertical-align:middle;}
+.skin-userpic:hover {-moz-opacity:0.5; -webkit-opacity:0.5; opacity:0.5; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);}
+
+.slj-skin-gexin {padding-bottom:0px; overflow:hidden;}
+.slj-skin-gexin span {display:inline-block; float:left; overflow:hidden; line-height:32px; height:32px;}
+.slj-skin-gexin span.w01 {margin-right:35px; width:70px; position:relative;}
+.slj-skin-gexin span.w01 img {width:32px; height:32px; position:absolute; right:0px; top:0px;}
+.slj-skin-gexin span.w02 {margin-right:35px; width:140px;}
+.slj-skin-gexin span.w03 {margin-right:35px; width:190px;}
+.slj-skin-gexin span.w04 {width:415px; }
+.slj-skin-gexin .w01 input , .slj-skin-gexin .w03 input , .slj-skin-gexin .w04 input {*vertical-align:middle; line-height:24px; margin:0; padding:0;}
+.slj-skin-gexin input.niname , .slj-skin-gexin input.beizhu {height:24px; background:#fff; border:1px solid #d7d7d7; padding:0px 5px;}
+.slj-skin-gexin input.niname {width:130px;}
+.slj-skin-gexin input.beizhu {width:355px;}
+
+.slj-skin-sort {overflow:hidden; padding-bottom:0px;}
+.slj-skin-sort ul , .slj-skin-sort li {margin:0; padding:0; list-style:none;}
+.slj-skin-sort img {display:block; width:80px; height:60px; margin:0px auto 8px;}
+.slj-skin-sort ul {display:block; float:left; overflow:hidden; position:relative; padding-left:50px;}
+.slj-skin-sort li {float:left; width:80px; text-align:center; margin:0px 5px; position:relative; cursor:pointer;}
+.slj-skin-sort li a {color:#000; text-decoration:none;}
+.slj-skin-sort a:hover {text-decoration:underline; color:#2e93ec;}
+.slj-skin-sort li:hover,#userHeadFileList li:hover {-moz-opacity:0.5; -webkit-opacity:0.5; opacity:0.5; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);}
+.slj-sytit {position:absolute; left:0px; top:0px; width:12px; padding-right:25px; line-height:14px; background:url(zsarrow.png) no-repeat right center;}
+.slj-skin-sort ul.slj-system {margin-right:50px;}
+.slj-skin-sort ul.slj-system .slj-sytit {height:73px; padding-top:13px;}
+.slj-skin-sort ul.slj-menu .slj-sytit {height:73px; padding-top:13px;}
+
+.slj-skin-sort li.selected span.slj-ok,#userHeadFileList li.selected span.slj-ok {display:block; position:absolute; right:0px; top:50px; width:16px; height:16px; background:url(slj-ok.png) no-repeat;}
+
+.beigset div {float:left; margin-right:30px;}
+.beigset div:hover {cursor:pointer; border-bottom:2px solid #2e93ec;}
+.beigset .selected {border-bottom:2px solid #2e93ec;}
+.alltrans {font-size:14px; font-weight:normal;position:absolute;right:45px;top:15px}
+
+.bgset-table , .bgset-table tr , .bgset-table td {margin:0; padding:0;}
+.bgset-table {margin:0 auto; width:902px; text-align:center; border:1px solid #fff; border-collapse:collapse;}
+.bgset-table td {border:1px solid #fff;}
+.bgset-table td div {position:relative; overflow:hidden;width:100%;height: 100%}
+.bgset-table td.selected span.slj-ok {display:block; position:absolute; right:3px; bottom:3px; width:16px; height:16px; background:url(slj-ok.png) no-repeat;}
+.bgset-table .bgm , .bgset-table .bgm img {width:201px; height:121px;}
+.bgset-table .bgs , .bgset-table .bgs img {width:100px; height:60px;}
+.bgset-table img{width:100%;height: 100%; margin:0; padding:0; border:0 none; cursor:pointer;}
+.bgset-table img:hover {-moz-opacity:0.5; -webkit-opacity:0.5; opacity:0.5; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);}
+
+.slj-close {position:absolute; right:20px; top:20px; width:24px; height:24px; background:url(close.png) no-repeat left top; cursor:pointer;}
+.slj-close:hover {background:url(close.png) no-repeat left -24px;}
+
+
+/*修改头像=====================*/
+.dir-name {display: block;width: 80px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+.user-head-skin-wrap {-webkit-box-shadow:#000 0px 0px 20px; -moz-box-shadow:#000 0px 0px 20px; box-shadow:#000 0px 0px 20px;}
+.user-head-skin-top a {display:inline-block;}
+.user-head-skin-top .slj-close {text-indent:-999em; right:5px; top:5px;}
+.user-head-skin-top .slj-return {width:px; height:16px; background:url(return.png) no-repeat left center; color:#000; text-decoration:none; padding-left:20px; position:absolute; left:5px; top:8px;}
+.user-head-skin-top .slj-return:hover {color:#2e93ec;}
+.user-head-skin-top .self_upload {width:px; height:16px; background:url(head.png) no-repeat left center; color:#000; text-decoration:none; padding-left:20px;position:absolute; left:100px; top:8px;}
+.user-head-skin-top .self_upload:hover {color:#2e93ec;}
+
+.user-head-skin-wrap ul , .user-head-skin-wrap li {margin:0; padding:0; list-style:none;}
+.user-head-skin-wrap ul {margin:35px 0px 5px 0px; height:340px; overflow-y:auto;}
+.user-head-skin-wrap li {float:left; width:80px;/* height:80px;*/ line-height:50px; text-align:center; margin:3px 1px 3px 6px; cursor:pointer; position:relative;}
+.user-head-skin-wrap li img {vertical-align:middle;}
+
+.user-head-skin-wrap li.selected span.slj-ok , #userHeadFileList li.selected span.slj-ok {display:block; position:absolute; right:0px; top:0px; width:16px; height:16px; background:url(slj-ok.png) no-repeat;}

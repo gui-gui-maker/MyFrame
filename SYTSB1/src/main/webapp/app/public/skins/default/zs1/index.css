@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+body,html{ margin:0; padding:0; width:100%; height:100%; background:#fff;background-attachment:fixed;}
+
+.layer{width:550px; height:300px;background:#dfe5f1;}
+.zsinput{ background:#fff;}
+.zsinput input{ border-radius:5px; height:26px; width:120px; border:1px solid #9db6d9; font-size:16px; color:#666; margin-left:10px; padding:0 5px;}
+.yz a{font-family:"微软雅黑","黑体";font-size:16px;color:#004f9c; text-decoration:none;}
+.layer-title{font-family:"微软雅黑","黑体";font-size:28px;color:#09ade2;border-bottom:1px solid #9db6d9; background:url(../../Aqua/images/index/titlebg.jpg);text-decoration:none;}
+.layer-title a{ margin-left:80px;text-decoration:none;color:#09ade2;}
+.layer-txt{background:#f9fbfe; border-top:1px solid #d6deea;font-family:"微软雅黑","黑体"; font-size:14px;color:#666;text-decoration:none;}
+.layer-txt a{text-decoration:none;color:#004f9c;}
+.layer-top{ width:100%; height:60px; line-height:60px; vertical-align:middle; text-align:left; background:#dfe5f1; border-bottom:1px solid #9db6d9;}
+.layer-top a{ display:block; width:200px; height:60px; line-height:60px; vertical-align:middle; text-align:left;font-family:"微软雅黑","黑体"; font-size:18px;color:#004f9c; font-weight:bold; float:left; margin-left:10px;}
+
+.WordSection1{ width:550px; text-align:left;font-family:"微软雅黑","黑体"; font-size:16px;color:#006; margin-left:100px;}
+.ovfl{ width:800px; height:469px; overflow:auto;}
+#xt span,#yh span{ font-size:18px; color:#C00;}
+.WordSection2{ width:550px; text-align:left;font-family:"微软雅黑","黑体"; font-size:16px;color:#006; margin-left:50px;margin-top:50px; padding-top:50px; border-top:1px dotted #ccc;}
+.book{ width:40px; height:40px;float:left; margin-left:30px; margin-top:10px;}
+.onepage{ margin-left:20px; width:600px;}
+.MsoNormal{font-family:"微软雅黑","黑体";}
+.tab{}
+.tab tr td{ border-top:8px solid #e5e5e5;}
+.tablist{ text-align:center; vertical-align:middle;font-family:"微软雅黑","黑体"; font-size:36px;color:#00aafe;font-weight:bold; background:#f3f3f3; border-right:1px solid #e5e5e5;}

@@ -1,0 +1,71 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*=======================================
+	证书框样式 ====================================
+=======================================*/
+.k-login-box1{ width:454px; height:290px; position:absolute; right:50px; top:88px; z-index:9;}
+.k-login-box2{ width:454px; height:290px; position:absolute; right:10px; top:138px; z-index:9;}
+.k-login-box3{ width:360px; height:60px; position:absolute; right:0px; top:60px; z-index:9;}
+
+.k-login-btn{ width:200px; height:58px; line-height:58px; position:absolute; left:185px; top:18px; cursor:pointer; z-index:15; font-family:"微软雅黑"; font-size:18px; text-align:center; vertical-align:middle; color:#529cae;}
+.k-login-btn a{display:block; width:100%; height:100%;}
+.k-login-btn a:hover{ color:#b41300;}
+
+.k-login-btn3{ width:200px; height:58px; line-height:58px; position:absolute; left:40px; top:3px; cursor:pointer; z-index:15; font-family:"微软雅黑"; font-size:18px; text-align:center; vertical-align:middle; color:#529cae; }
+.k-login-btn3 a{display:block; width:100%; height:100%;}
+.k-login-btn3 a:hover{ color:#b41300;}
+
+.sd{ color:#999999; cursor:default;}
+.red{ color:#b41300;}
+.ok {color:#259c00;font-weight:bold;}
+
+.k-login-setuphelp{ width:58px; height:49px;background:url(setuphelp.png) no-repeat center center; position:absolute; z-index:100; left:360px; top:26px; cursor:pointer;display:none;}
+.k-login-setuphelp:hover{background:url(setuphelp-on.png) no-repeat center center;}
+
+.k-login-setuphelp3{ width:58px; height:49px;background:url(setuphelp.png) no-repeat center center; position:absolute; z-index:100; left:235px; top:11px; cursor:pointer;display:none;}
+.k-login-setuphelp3:hover{background:url(setuphelp-on.png) no-repeat center center;}
+.k-login-setuphelp3 a,.k-login-setuphelp3 a:link,.k-login-setuphelp3 a:visited {width:100%;height:100%;display:block;}
+.k-login-setuphelp3 a:hover {}
+
+.zslogo{ width:68px; height:74px; background:url(zslogo.png) no-repeat right center; position:absolute; right:80px; bottom:9px;_bottom:19px;}
+.k-login-top-logo{width:900px; height:75px; margin:25px auto 0px auto;_margin:12px auto 0px auto; position:relative;}
+/*系统证书*/
+.k-login-xtzs-btnno{width:454px; height:99px; background:url(xtzs-no.png) no-repeat center center; position:relative;}
+.k-login-xtzs-btnnohover{width:454px; height:99px; background:url(xtzs-no.png) no-repeat center center;position:relative;}
+.k-login-xtzs-ok{width:454px; height:99px; background:url(xtzs-ok.png) no-repeat center center;filter:alpha(opacity=50);-moz-opacity:0.5;-khtml-opacity: 0.5;opacity: 0.5;}
+/*用户证书*/
+.k-login-yhzs-btnno{width:454px; height:99px; background:url(yhzs-no.png) no-repeat center center; position:relative;}
+.k-login-yhzs-btnnohover{width:454px; height:99px; background:url(yhzs-no.png) no-repeat center center;position:relative;}
+.k-login-yhzs-ok{width:454px; height:99px; background:url(yhzs-ok.png) no-repeat center center;filter:alpha(opacity=50);-moz-opacity:0.5;-khtml-opacity: 0.5;opacity: 0.5;}
+/*登录*/
+.k-login-login-btnno{width:454px; height:99px; background:url(login-no.png) no-repeat center center; position:relative;}
+.k-login-login-btnnohover{width:454px; height:99px; background:url(login-no.png) no-repeat center center;position:relative;}
+.k-login-login-ok{width:454px; height:99px; background:url(login-ok.png) no-repeat center center; position:relative;}
+.k-login-login-okhover{width:454px; height:99px; background:url(login-ok.png) no-repeat center center;position:relative;}
+
+.k-login-zsok {position:absolute;display:none;top:117px;left:563px;z-index:10;}
+.k-login-zsok div {width:50px;height:50px;background:url("zsok.png") no-repeat center center;}
+.k-login-zsaz-text {padding:5px;color:#aa0000;background:#fffdbc;width:400px;height:20px;}
+.k-login-zsaz-text div {}
+
+/*3按钮样式*/
+.k-login-btnbg{width:287px; height:68px; background:url(btnbg.png) no-repeat center center; position:absolute; z-index:11; right:120px; top:240px;}
+.k-login-btnbghover{width:287px; height:68px; background:url(btnbg.png) no-repeat center center;position:absolute; z-index:11; right:120px; top:240px;}
+/*123状态样式*/
+.k-login-zt1-on{float:left;width:96px; height:60px;background:url(listzt.png) no-repeat ; background-position:-0px -0px;}
+.k-login-zt1-no{float:left;width:96px; height:60px;background:url(listzt.png) no-repeat ; background-position:-0px -60px;}
+.k-login-zt1-ok{float:left;width:96px; height:60px;background:url(listzt.png) no-repeat ; background-position:-0px -120px;margin-top:23px;}
+
+.k-login-zt2-on{float:left;width:96px; height:60px;background:url(listzt.png) no-repeat ; background-position:-96px -0px;margin-left:35px;}
+.k-login-zt2-no{float:left;width:96px; height:60px;background:url(listzt.png) no-repeat ; background-position:-96px -60px;margin-left:35px;}
+.k-login-zt2-ok{float:left;width:96px; height:60px;background:url(listzt.png) no-repeat ; background-position:-96px -120px;margin-top:23px;margin-left:35px;}
+
+.k-login-zt3-on{float:left;width:96px; height:60px;background:url(listzt.png) no-repeat ; background-position:-192px -0px;margin-left:35px;}
+.k-login-zt3-no{float:left;width:96px; height:60px;background:url(listzt.png) no-repeat ; background-position:-192px -60px;margin-left:35px;}
+.k-login-zt3-ok{float:left;width:96px; height:60px;background:url(listzt.png) no-repeat ; background-position:-192px -120px;margin-top:23px;margin-left:35px;}
+/*箭头样式*/
+.k-login-arrow {width:330px; height:80px;position:absolute; right:0px; top:150px;z-index:19;}
+.k-login-arrow1{width:154px; height:80px;background:url(arrow1.png) no-repeat; position:absolute; right:170px; top:0px;z-index:20;}
+.k-login-arrow2{width:27px; height:80px;background:url(arrow2.png) no-repeat; position:absolute; right:170px; top:0px;z-index:21;}
+.k-login-arrow3{width:154px; height:80px;background:url(arrow3.png) no-repeat; position:absolute; right:44px; top:0px;z-index:22;}

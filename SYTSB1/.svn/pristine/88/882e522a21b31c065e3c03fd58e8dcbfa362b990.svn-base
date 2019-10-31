@@ -1,0 +1,744 @@
+/** --------------------------------
+ * 以下函数为工作流客户端接口
+ *
+ * 1. startFlowProcess(flowId) 启动流程
+ * 2. submitActivity(activityId, serviceTitle, dataBus) 提交
+ * 3. returnedActivity(activityId, serviceTitle, dataBus) 退回
+ * 4. finishProcess(processId) 正常结束流程
+ * 5. terminateProcess(processId) 强制终止流程
+ * 6. trackProcess(processId) 查看、监控流程
+ *
+ * ------------------------------- */
+
+/**
+ * 选取指定业务编码、单位的工作流程。 参数callback为回调函数，回调函数定义如下： function callback(flowData){
+ * //flowData格式为：{id:'流程id',name:'流程名称'} //业务代码 }
+ */
+function getServiceFlowConfig(serviceCode, orgId, callback) {
+	$.getJSON("bpm/serviceConfig/getFlowServiceConfig.do", {
+		serviceCode : serviceCode,
+		orgId : orgId || ""
+	}, function(resp) {
+		if (resp.success) {
+			if (resp.data.length == 1)
+				callback(true, {
+					id : resp.data[0].flowId,
+					name : resp.data[0].flowName
+				});
+			else if (resp.data.length == 0)
+				callback(false, "该业务没有可使用的工作流定义");
+			else {
+				// 从多个流程配置中选取一个
+				top.$.dialog({
+					id : "flowConfigSel",
+					width : 700,
+					height : 350,
+					lock : true,
+					parent : api,
+					title : "选择业务流程",
+					content : "url:pub/bpm/flow_service_config_select_list.jsp",
+					cancel : true,
+					data : {
+						data : resp.data
+					},
+					ok : function() {
+						var flowData = this.iframe.contentWindow.getSelect();
+						callback(true, {
+							id : flowData.flowId,
+							name : flowData.flowName
+						});
+					}
+				});
+			}
+		} else {
+			callback(false, resp.msg);
+		}
+	});
+}
+
+/**
+ * 启动流程
+ * @param 参数对象：
+ * sid 业务标识ID；
+ * typeCode流程业务编码；
+ * orgId 单位id
+ * sTitle业务标题；
+ * dataBus 数据总线（json格式字符串或者json object）；
+ * isChoosePerson 是否启动时，选则人员信息（1：是，0否）
+ * callback回调函数，function(result,msg)，result为boolean值，表示成功与否，msg为操作信息，成功时为空，出错时为错误信息
+ */
+function startFlowProcess(options) {
+	var $options = {
+		serviceId : options.sid,
+		typeCode : options.typeCode,
+		orgId: options.orgId||"",
+		isChoosePerson: options.isChoosePerson||"0",
+		serviceTitle : options.sTitle||"",
+		dataBus:options.dataBus||{}
+	};
+	
+	getServiceFlowConfig($options.typeCode, $options.orgId, function(result, data) {
+		if (result) {
+			$options["flowId"]=data.id;
+			if($options.isChoosePerson=="1"){
+				//选择下一步参与人
+				top.$.notice("请选择下一步处理人！",4);
+				selectUnitOrUser(1, 0, null, null, function(datas){
+					if($.kh.isNull(datas.code)){
+						$.ligerDialog.warn("请选择至少一个人！");
+						return;
+					}
+					var codeArr = datas.code.split(",");
+					var nameArr = datas.name.split(",");
+					var jsonArr = [];
+					$.each(codeArr,function(i){
+						jsonArr.push({id:codeArr[i],name:nameArr[i]});
+					});
+					$options.dataBus["paticipator"]=jsonArr;
+
+					_startFlowProcess($options,options.callback);
+				});
+			}
+			else{
+				_startFlowProcess($options,options.callback);
+			}
+			
+		} else {
+		    if(options.callback) options.callback(false, data);
+		}
+	});
+}
+
+function _startFlowProcess(options,callback){
+	if(options.dataBus){
+	    if(typeof options.dataBus=="object")
+	    	options.dataBus=$.ligerui.toJSON(options.dataBus);
+	    else
+	    	options.dataBus=options.dataBus;
+	}
+	$.post("bpm/flowExt/startFlowProcess.do", options, function(resp) {
+	    if(callback) callback(resp.success, resp.msg||"");
+	},"json");
+}
+
+
+/**
+ * 活动环节提交
+ * 
+ * activityId 当前节点ID serviceTitle 业务标题 dataBus 数据总线（JSON字符串）
+ */
+function submitActivity(options) {
+	var $options = {
+		activityId : options.activityId,
+		serviceTitle : options.serviceTitle||""
+	};
+	if(options["dataBus"]){
+		if($.isPlainObject(options.dataBus)) $options["dataBus"] = $.ligerui.toJSON(options.dataBus);
+		else $options["dataBus"] = options.dataBus;
+	}
+	
+	$('body').mask("正在提交...");
+	$.post("bpm/flowExt/submitActivity.do", $options, function(response) {
+		if (options.callback){
+			if(response.success){
+				if(response.data["result_type"]=="6" && response.data["result_activity_list"].length == 1)
+					_submitChildProcessFirstActivity(response.data["result_activity_list"][0],options.callback);
+				else
+					options.callback(true, response.data);
+			}
+			else
+				options.callback(false, response.msg||"");
+		}else{
+			$.ligerDialog.error("提交失败！<br/>"+ (response.msg||""));
+		}
+		$('body').unmask();
+	}, "json");
+}
+
+/**
+ * 启动子流程后，需要立即启动子流程的第一个环节
+ * @param sfa
+ * @param cbk
+ */
+function _submitChildProcessFirstActivity(sfa,cbk){
+	chooseNextActivitySubmit({
+		forward: true,
+		activityId: sfa.id,
+		callback: cbk
+	});
+}
+
+/**
+ * 活动环节回退
+ * 
+ * activityId 当前节点ID serviceTitle 业务标题 dataBus 数据总线（JSON字符串）
+ */
+function returnedActivity(options) {
+	var $options = {
+		activityId : options.activityId,
+		dataBus : options.dataBus,
+		serviceTitle : options.serviceTitle||""
+	};
+	$('body').mask("正在退回...");
+	$.post("bpm/flowExt/returnedActivity.do", $options, function(response) {
+		if (options.callback){
+			if(response.success)
+				options.callback(true, response.data);
+			else
+				options.callback(false, response.msg||"");
+		}else{
+			$.ligerDialog.error("退回失败！<br/>"+ (response.msg||""));
+		}
+		$('body').unmask();
+	}, "json");
+}
+
+/**
+ * 正常结束流程
+ * 
+ * processId 工作流ID
+ */
+function finishProcess(processId, callback) {
+	$.post("bpm/flowExt/finishProcess.do", {
+		"processId" : processId
+	}, function(response) {
+		if (callback)
+			callback(response.success, response.success ? "" : response.msg);
+		else{
+			$.ligerDialog.error("结束流程失败！<br/>"+ (response.msg||""));
+		}
+	}, "json");
+}
+
+/**
+ * 强制终止流程
+ * 
+ * processId 工作流ID
+ */
+function terminateProcess(processId, callback) {
+	$.post("bpm/flowExt/terminateProcess.do", {
+		"processId" : processId
+	}, function(response) {
+		if (callback)
+			callback(response.success, response.success ? "" : response.msg);
+		else if(!response.success){
+			$.ligerDialog.error("终止流程失败！<br/>"+ (response.msg||""));
+		}
+	}, "json");
+}
+
+/**
+ * 选择目标环节再提交
+ * 
+ * @param options
+ */
+function chooseNextActivitySubmit(options){
+	var $options = $.extend({
+		serviceTitle : "",
+		callback : function(){top.$.notice("提交成功！");},
+		dataBus : {}
+	},options);
+	
+	$('body').mask("正在处理，请稍等...");
+	_chooseNextActivity({
+		activityId : $options.activityId,
+		forward : $options.forward,
+		dataBus: $options.dataBus,
+		ignorSubFlow : $options.ignorSubFlow || false,
+		callback: function(r,nextActivity,processDataBus,isSubflow){
+			if(isSubflow){
+				_preSubmitActivity($options);
+			}
+			else if(r){
+				// 延迟0.1秒执行下一步，避免出现dialog遮罩层问题
+				window.setTimeout(function(){
+					_checkNextActivityIsEndOfSubflow(nextActivity,$options,processDataBus||{});
+				},100);
+			}else{
+				//$.ligerDialog.error("获取可提交目标环节失败！");
+			}
+			$('body').unmask();
+		}
+	});
+}
+
+/**
+ * 检查下一环节是否子流程结束环节
+ * @param nextActivity
+ * @param options
+ * @param processDataBus
+ */
+function _checkNextActivityIsEndOfSubflow(nextActivity,options,processDataBus){
+	// 如果子流程结束，需要检查父流程下一步环节
+	if(nextActivity.type=="end" && !$.kh.isNull(nextActivity.process.pid)){
+		$('body').mask("正在处理，请稍等...");
+		_chooseNextActivity({
+			activityId : nextActivity.process.pid,
+			forward : options.forward,
+			ignorSubFlow : true,
+			callback : function(r,snextActivity,processDataBus,isSubflow){
+				if(r){
+					_checkNextActivityParticipateToSubmit(snextActivity,options,processDataBus);
+				}else{
+					$.ligerDialog.error("获取可提交目标环节失败！");
+				}
+				$('body').unmask();
+			}
+		});
+	}else{
+		_checkNextActivityParticipateToSubmit(nextActivity,options,processDataBus);
+	}
+}
+
+/**
+ * 提交下一步前检查下一步的参与人设置
+ * @param nextActivity
+ * @param options
+ */
+function _checkNextActivityParticipateToSubmit(nextActivity,options,processDataBus){
+	options.dataBus["nextActivityId"] = nextActivity.id;
+	if(options.forward && nextActivity.participateType=="databus"){
+		if(!$.kh.isNull(options.dataBus["paticipator"]) || !$.kh.isNull(processDataBus["paticipator"]))
+			_preSubmitActivity(options);
+		else{
+			var userRange = $.kh.isNull(options["userRange"])?"1":options["userRange"];
+			//选择下一步参与人
+			top.$.notice("请选择下一步处理人！",4);
+			selectUnitOrUser(userRange, (nextActivity.type=="subFlow"||nextActivity.signature=="1"||nextActivity.signature=="2"?"1":"0"), null, null, function(datas){
+				if($.kh.isNull(datas.code)){
+					$.ligerDialog.warn("请选择至少一个人！");
+					return;
+				}
+				var codeArr = datas.code.split(",");
+				var nameArr = datas.name.split(",");
+				var jsonArr = [];
+				$.each(codeArr,function(i){
+					jsonArr.push({id:codeArr[i],name:nameArr[i]});
+				});
+				options.dataBus["paticipator"]=jsonArr;
+				_preSubmitActivity(options);
+			});
+		}
+	}else if(options.forward && nextActivity.participateType=="role"){
+		// 参与者角色范围非数据总线指定，或则数据总线已存在范围值，直接下一步
+		if(nextActivity.participateRange!="databus" || (!$.kh.isNull(options.dataBus["roleRange"]) && !$.kh.isNull(processDataBus["roleRange"])))
+			_checkRolePersonChooseToSubmit(options,nextActivity);
+		else{
+			//其它情况，先要选择角色范围
+			var orgRange = $.kh.isNull(options["orgRange"])?"0":options["orgRange"];
+			selectUnitOrUser(orgRange, 0, null, null, function(datas){
+				options.dataBus["roleRange"]=datas.code;
+				window.setTimeout(function(){
+					_checkRolePersonChooseToSubmit(options,nextActivity);
+				},200);
+			});
+			top.$.notice("请选择下一步处理单位！",4);
+		}
+	}else{
+		_preSubmitActivity(options);
+	}
+}
+
+/**
+ * 检查环节角色参与者是否需要实时选择准确人员
+ * 
+ * @param options
+ * @param nextActivity
+ */
+function _checkRolePersonChooseToSubmit(options,nextActivity){
+	if(nextActivity["chooseRolePerson"]=="1"){//需要选择角色人员
+		var range = "", dataBus={};
+		if(options.dataBus["roleRange"]){
+			range = options.dataBus["roleRange"];
+		}
+		var multipart = nextActivity.signature=="1"||nextActivity.signature=="2"?"1":"0";
+		chooseRoleUser(nextActivity.participantId,range,multipart,"","",function(persons){
+			var participators = [];
+			for(var idx in persons.code){
+				participators.push({id: persons.code[idx],name: persons.name[idx]});
+			}
+			dataBus.paticipator = participators;
+			options.dataBus = dataBus;
+			_preSubmitActivity(options);
+		});
+	}else{
+		_preSubmitActivity(options);
+	}
+}
+
+/**
+ * 提交前准备数据总线
+ * @param options
+ * @param dataBus
+ */
+function _preSubmitActivity(options){
+	options.dataBus = $.ligerui.toJSON(options.dataBus);
+	if(options.forward)
+		submitActivity(options);
+	else
+		returnedActivity(options);
+}
+
+/**
+ * 选择后续环节,用于提交前进行选择
+ * 
+ *  @param activityId 当前环节id
+ * @param forward 提交还是退回 true/false
+ * @param callback 回调方法
+ * @param ignorSubFlow 是否忽略子流程
+ */
+function chooseNextActivity(activityId,forward,callback,ignorSubFlow){
+	_chooseNextActivity({
+		activityId : activityId,
+		forward : forward || true,
+		callback : callback,
+		ignorSubFlow : ignorSubFlow || false
+	});
+}
+function _chooseNextActivity(options){
+	if(options.dataBus){
+	    if(typeof options.dataBus=="object")
+	    	options.dataBus = $.ligerui.toJSON(options.dataBus);
+	    else
+	    	options.dataBus = options.dataBus;
+	}
+	$.getJSON("bpm/flowExt/nextActivities.do", {
+		"activityId" : options.activityId,
+		"forward": options.forward,
+		"dataBus": options.dataBus || ""
+	}, function(response) {
+		if(response.success){
+			if(response.subFlow && !options.ignorSubFlow){
+				//子流程，不能选择，直接提交启动子流程
+				callback(true,response.data[0],response.dataBus,true);
+			}
+			else if(!response.data || response.data.length==0){
+				$.ligerDialog.error("找不到可以到达的目标环节！<br/>可能的原因是"+(options.forward?"参数错误！":"此环节不允许退回！"));
+				options.callback(false);
+			}
+			else{
+				if(response.data.length==1)
+					options.callback(true,response.data[0],response.dataBus,false);
+				else{
+					top.winOpen({
+						lock: true,
+						data: response.data,
+						title: "选择下一步处理环节",
+						width: 420,
+						height: 210,
+						parent: api,
+						cancel: function(){
+							$("body").unmask();
+							return true;
+						},
+						content: "url:pub/bpm/_fun_choose_next_activity.jsp",
+						ok: function(){
+							var v = this.iframe.contentWindow.getSelected();
+							if($.kh.isNull(v)){
+								$.ligerDialog.warn("请选择目标环节！");
+								return false;
+							}else{
+								for(var i in response.data){
+									if(response.data[i].id==v){
+										options.callback(true,response.data[i],response.dataBus,false);//回调
+										return true;
+									}
+								}
+								return false;
+							}
+						}
+					});
+					top.$.notice("请选择下一步！",4);
+				}
+			}
+		}else{
+			$("body").unmask();
+			$.ligerDialog.error((response.msg||"获取目标环节失败！"));
+			options.callback(false);
+		}
+	});
+}
+
+/**
+ * 查看,监控指定流程的进度
+ * 
+ * @param  processId 工作流ID
+ */
+function trackProcess(processId) {
+	top.$.dialog({
+		width : $(top).width() * 0.9,
+		height : $(top).height() * 0.9,
+		lock : true,
+		parent : api,
+		title : "流程监控",
+		content : "url:bpm/flowExt/trackProcess.do?status=track&processId=" + processId + "&serviceId=",
+		cancel : true
+	});
+}
+
+/**
+ * 查看,监控指定业务的流程进度
+ * 
+ * @param  serviceId 业务ID
+ */
+function trackServiceProcess(serviceId) {
+	top.$.dialog({
+		width : $(top).width() * 0.9,
+		height : $(top).height() * 0.9,
+		lock : true,
+		parent : api,
+		title : "流程监控",
+		content : "url:bpm/flowExt/trackProcess.do?status=track&processId=&serviceId=" + serviceId,
+		cancel : true
+	});
+}
+
+/**
+ * 签署意见
+ * 
+ * @param  activityId 环节ID
+ * @param  callback 回调函数，只在成功时有效
+ * 
+ */
+function signOpinion(activityId, callback) {
+	top.$.dialog({
+		width : 650,
+		height : 400,
+		lock : true,
+		parent : api,
+		title : "签署意见",
+		content : "url:pub/bpm/flow_opinion_detail.jsp?isApp=no&activityId=" + activityId,
+		data : {
+			callback : callback
+		}
+	});
+}
+
+/**
+ * 签署意见，只能签署意见内容。
+ * 
+ * @param  activityId 环节ID
+ * @param  sid 业务id
+ * @param  workItem 业务标识
+ * @param  callback 回调函数，只在成功时有效
+ * 
+ */
+function signBusOpinion(activityId, sid, workItem, callback) {
+	top.$.dialog({
+		width : 650,
+		height : 400,
+		lock : true,
+		parent : api,
+		title : "签署意见",
+		content : "url:pub/bpm/flow_opinion_detail.jsp?isApp=no&activityId=" + activityId+"&serviceId=" + sid + "&workitem=" + workItem,
+		data : {
+			callback : callback
+		}
+	});
+}
+
+/**
+ * 签署审批意见。使用此方法签署带有选择意向的审批意见，会出现同意不同意的选项
+ * @param  activityId 环节ID
+ * @param  sid 业务id
+ * @param  workItem 业务标识
+ * @param  callback 回调函数，只在成功时有效
+ */
+function signBusAppOpinion(activityId, sid, workItem, callback) {
+	top.$.dialog({
+		width : 650,
+		height : 400,
+		lock : true,
+		parent : api,
+		title : "签署意见",
+		content : "url:pub/bpm/flow_opinion_detail.jsp?isApp=yes&activityId=" + activityId+"&serviceId=" + sid + "&workitem=" + workItem,
+		data : {
+			callback : callback
+		}
+	});
+}
+
+
+/**
+ * 签署审批意见。使用此方法签署带有选择意向的审批意见，会出现同意不同意的选项。
+ * 同时该方式会提供数字签名和电子印章功能。
+ * @param  参数对象
+ */
+function signSealOpinion(ops) {
+    var $ops = $.extend({seal:false,signature:0,callback:function(){}},ops);
+    top.$.dialog({
+        width : 900,
+        height : $(top).height()-50,
+        lock : true,
+        parent : api,
+        title : "签署意见",
+        content : "url:pub/bpm/flow_opinion_detail.jsp?isApp=false&activityId=" + $ops.activityId 
+                    + "&serviceId=" + $ops.sid + "&workitem=" + $ops.workItem + "&addSeal=" + $ops.seal + "&signature=" + $ops.signature+"&noReturn="+$ops.noReturn+"&noSeal="+$ops.noSeal+"&noSignature="+$ops.noSignature+"&noReturnSeal="+$ops.noReturnSeal+"&noReturnSignature="+$ops.noReturnSignature,
+        data : {callback : $ops.callback}
+    });
+}
+
+/**
+ * 检查环节是否签署过意见
+ */
+function checkActivitySignOpinion($options,callback){
+    var options = $.extend({sid: "",aid: "",item: ""},$options);
+    
+	// 检查是否已签署意见
+	$.getJSON("bpm/opinion/signOpinion.do",options,function(response){
+		if(response.success){
+		    var afunc = response.activity['function'];
+		    // 环节需要签意见并且尚未签写,返回false
+			if(afunc && (afunc.indexOf("pub_wf_approve") >= 0||afunc.indexOf("pub_wf_read_sign") >= 0) 
+			        && (response.data==null || response.data.id==null))
+				callback(false);
+			else 
+				callback(true,response.data);
+		}else{
+			$.ligerDialog.error("请求失败！<br/>" + response.msg);
+		}
+	});
+}
+
+/**
+ * 查看意见 列表，根据以下参数，参数可为null,但不能全为null
+ * 
+ * @param {Object}
+ *            serviceId 业务ID
+ * @param {Object}
+ *            activityId 环节ID
+ * @param {Object}
+ *            userId 用户ID
+ */
+function showOpinion(serviceId, activityId, userId) {
+	var condition = "";
+	if (serviceId)
+		condition += "&serviceId=" + serviceId;
+	if (activityId)
+		condition += "&activityId=" + activityId;
+	if (userId)
+		condition += "&signerId=" + userId;
+	if (condition == "") {
+		top.$.ligerDialog.error("参数错误！");
+		return;
+	}
+	condition = condition.replace(/^\&/, "?");
+	top.$.dialog({
+		width : 750,
+		height : 400,
+		lock : true,
+		parent : api,
+		title : "签署意见",
+		content : "url:pub/bpm/flow_opinion_list.jsp" + condition,
+		cancel : true
+	});
+}
+
+/**
+ * 展示流程意见
+ * @param container 显示区域
+ * @param sid 业务ID
+ * @param noseal 是否不显示印章签名
+ */
+function createOpinionView(container,sid,isSeal,style,callback){
+	if(kui.opinionViewStyle=='1'){
+		if(style=='1'){
+			createOpinionView1(container,sid,isSeal);
+		}else{
+			createOpinionView2(container,sid,isSeal,callback);
+		}
+	}else{
+		createOpinionView1(container,sid,isSeal);
+	}
+}
+function createOpinionView1(container,sid,isSeal,style){
+	var isShowSeal = null==isSeal?true:isSeal;
+	var headHtml = "<table class='l-table' id='bpmopiniontable' width='100%'><tr><td width='100' class='l-table-head' align='center'>环节</td><td width='70' class='l-table-head' align='center'>处理人</td><td width='130' class='l-table-head' align='center'>处理时间</td><td width='60' class='l-table-head' align='center'>处理结果</td><td class='l-table-head' align='center'>意见</td>";
+	if(isShowSeal){
+		headHtml += "<td width='60' class='l-table-head' align='center'>签名</td><td width='60' class='l-table-head' align='center'>印章</td>";
+	}
+	$("#" + container).append(headHtml + "<td width='200' class='l-table-head' align='center'>附件</td></tr></table>");
+	var rmap = {"0":"不同意","1":"同意","-1":"退回"};
+	$.getJSON("bpm/opinion/serviceOpinion.do",{serviceId:sid},function(resp){
+		if(resp.data.length > 0){
+			var html_str = "";
+			$.each(resp.data,function(){
+				html_str += "<tr><td class='l-table-td' align='center'>" + this.activityName + 
+						"</td><td class='l-table-td' align='center'>" + this.signerName + 
+						"</td><td class='l-table-td' align='center'>" + this.signDate + 
+						"</td><td class='l-table-td' align='center'>" + (rmap[this.result]||"") + 
+                        "</td><td class='l-table-td'>" + (this.opinion||"") + "</td>";
+				if(isShowSeal){
+					html_str +="<td class='l-table-td' align='center'>"+(this["signature"]?"<a  class='l-a l-icon-detail' href='javascript:viewSignature(\"" + this["signature"] + "\")'><span>查看</span></a>":"—") + 
+					"</td></td><td class='l-table-td' align='center'>" +
+					(this["seal"]?"<a class='l-a l-icon-detail' href='javascript:viewSeal(\"" + this["seal"] + "\")'><span>查看</span></a>":"—") + 
+					"</td>";
+				}
+				html_str += "<td class='l-table-td' align='center'>" + 
+						($.kh.isNull(this.attId)?"—":"<a target='_blank' href='fileupload/download.do?id=" + this.attId + "'>"+this.attName+"</a>") + "</td></tr>";
+			}); 
+			$("#bpmopiniontable").append(html_str);
+		}
+		else{
+			$("#bpmopiniontable").append("<tr><td class='l-table-td' colspan='"+(isShowSeal?8:6)+"'>没有数据</td></tr>");
+		}
+	});
+	
+}
+function createOpinionView2(container,sid,isSeal,callback){
+	$("#"+container).append("<iframe id='_frame' name='_frame' width='100%' height='100%' frameBorder='0' scrolling='auto' style='BACKGROUND-COLOR: transparent'  src='pub/bpm/timeline/opinion_timeline_blue.jsp?new="+Math.random()+"&serviceId="+sid+"&isSeal="+isSeal+"'></iframe>")
+    var iframe = document.getElementById("_frame");
+	if (iframe.attachEvent) {
+		iframe.attachEvent("onload", function() {
+			setHeight(callback);
+		});
+	} else {
+		iframe.onload = function() {
+			setHeight(callback);
+		};
+	}
+}
+function setHeight(callback){
+	$("#_frame").height($(window).height()-150)
+	if(callback){
+		callback();
+	}
+}
+/**
+ * 查看签名
+ * 
+ * @param signIds
+ */
+function viewSignature(signIds){
+	winOpen({
+		content: "url:pub/eseal/bc/view_sign_seal.jsp",
+		data: {ids:signIds},
+		width: 800,
+		height: 450,
+		title: "查看签名",
+		parent: api
+	});
+}
+
+/**
+ * 查看印章
+ * @param sealIds
+ */
+function viewSeal(sealIds){
+	winOpen({
+		content: "url:pub/eseal/bc/view_sign_seal.jsp",
+		data: {ids:sealIds},
+		width: 350,
+		height: 300,
+		title: "查看印章",
+		parent: api
+	});
+}
+
+//获取业务意见
+function getServiceOpinions(serviceId,callback){
+	$.getJSON("bpm/opinion/serviceOpinion.do?serviceId="+serviceId,function(resp){
+		if(resp.success)
+			callback(resp.data);
+	});
+}

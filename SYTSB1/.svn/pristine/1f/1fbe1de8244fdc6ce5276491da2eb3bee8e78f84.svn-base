@@ -1,0 +1,277 @@
+<%@ page contentType="text/html;charset=UTF-8"%>
+<%@page import="com.khnt.utils.StringUtil"%>
+<%@ taglib uri="http://khnt.com/tags/ui" prefix="u" %>
+<%@page import="com.khnt.security.util.SecurityUtil"%>
+<%@page import="com.khnt.security.CurrentSessionUser"%>
+<%@page import="com.khnt.rbac.impl.bean.User"%>
+<%
+
+CurrentSessionUser usee = SecurityUtil.getSecurityUser();
+User uu = (User)usee.getSysUser();
+com.khnt.rbac.impl.bean.Employee e = (com.khnt.rbac.impl.bean.Employee)uu.getEmployee();
+%> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>业务信息查询</title>
+		<%@include file="/k/kui-base-list.jsp"%>
+		<script type="text/javascript" src="pub/bpm/js/util.js"></script>
+		<script type="text/javascript" src="pub/worktask/js/worktask.js"></script>
+<%
+	CurrentSessionUser user = SecurityUtil.getSecurityUser();
+	String userId = user.getId();
+	String user_account = user.getSysUser().getAccount();
+	String userType = ((com.khnt.rbac.impl.bean.Org)(user.getDepartment())).getProperty();
+
+	String org_code = user.getDepartment().getOrgCode();
+	String isDt = "";
+%>
+		<script type="text/javascript">
+		var w = window.screen.availWidth;
+		var h = window.screen.availHeight;
+		var deviceType=<u:dict sql="select t.value id,t.name text from PUB_CODE_TABLE_VALUES t,pub_code_table t1 where t.code_table_id=t1.id and   t1.code = 'device_classify' "/>
+		var areas = <u:dict sql="select id,regional_name text from V_AREA_CODE where ID in ('510104','510106','510109','510122','510189')"></u:dict>;
+		var check_types = <u:dict code="BASE_CHECK_TYPE"></u:dict>;
+		var check_deps = <u:dict sql="select id code, ORG_NAME text from SYS_ORG where ORG_CODE like 'jd%' or ORG_CODE like 'cy%' order by orders "></u:dict>;
+		var reports = <u:dict sql='select id,report_name from base_reports'></u:dict>;
+		var payments = <u:dict code="PAYMENT_STATUS"></u:dict>;
+		
+        var qmUserConfig = {
+            sp_fields:[
+                {name:"sn",compare:"like",value:""},
+                {name:"jdlb",compare:"like",value:""},
+            	{name:"jdzl", id:"jdzl", compare:"like"},
+            	{name:"sqr", id:"enter_op_name", compare:"like"},
+            	{name:"state", id:"flow_note_name", compare:"="},
+                {group:[{name:"create_time",compare:">=", id:"", value:""},
+                        {label:"到",name:"create_time",compare:"<=",id:"", value:"",labelAlign:"center",labelWidth:20}]}
+            ],
+          tbar: [{ text:'详情', id:'detail',icon:'detail', click:detail },
+                 '-', 
+                 { text:'新增', id:'save',icon:'save', click: save},
+                
+                 { text:'修改', id:'modify',icon:'modify', click: update},
+                 
+                 //"-",{ text:'删除', id:'del',icon:'delete', click: showReport},
+                 "-",
+                 { text:'提交', id:'submit',icon:'submit', click: submit},
+                
+                 { text:'审批', id:'sp',icon:'dispose', click: spFlow},
+                 
+                 { text:'流转过程', id:'turnHistory',icon:'follow', click: turnHistory}
+                 ],
+          listeners: {
+                rowDblClick :function(rowData,rowIndex){
+                    detail();
+                    },
+                selectionChange :function(rowData,rowIndex){
+                    var count=Qm.getSelectedCount();
+            		var state=Qm.getValueByName("state");
+            		Qm.setTbar({
+    					detail : count == 1,
+    					modify :  count == 1 && (state=='未提交' || state=='审核通过'),
+    					submit : count ==1 && state=='未提交',
+    					sp : count ==1 && state!='未提交',
+    					del : count == 1 && state=='未提交',
+    					turnHistory:count==1
+    				});
+            		if(count>0){
+            			Qm.setTbar({
+        					sp : count ==1 && state!='未提交' && rowData.HANDLER_ID=='<%=uu.getId()%>'
+        				});
+            		}
+            		
+                },
+                rowAttrRender: function(rowData, rowid) {
+                	 var fontColor="black";
+                	if(rowData.state=='部门负责人审核' || rowData.state=='部门分管院领导审核'|| rowData.state=='纪检分管院领导审核'){
+                		 fontColor='orange';
+                     }
+                	if(rowData.state=='审核通过'){
+                		fontColor='blue';
+                	}
+                	if(rowData.state=='审核不通过'){
+                		fontColor='red';
+                	}
+                	if(rowData.state=='完结'){
+                		fontColor="green";
+                	}
+                	return "style='color:"+fontColor+"'";
+                }
+            }
+        };
+        function update(){
+        var type=Qm.getValueByName("state");
+        var a=0;
+        if(type=='审核通过'){
+        	a=4;
+        }
+		var id=Qm.getValueByName("id");
+			top.$.dialog({
+				width: 900,
+				height: 500, 
+				lock : true, 
+				title:"修改",
+				content: 'url:/app/discipline/apply_jr_detail.jsp?status=modify&type='+a+'&id='+id,
+				data : {"window" : window}
+			});
+        }
+		function submit(){
+			var id=Qm.getValueByName("id");
+            $("body").mask("正在提交请稍后...");
+			getServiceFlowConfig("ZDJC_SQJR_FLOW", "", function (result, dataflow) {
+                if ( result ) {
+                	 $.ajax({
+                         url: "com/zdsx/sqjr/subflow.do",
+                         data: {
+                             id: id,
+                             flowId: dataflow.id
+                         },
+                         dataType: 'json',
+                         contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+                         type: "post",
+                         async: true,
+                         success: function (data) {
+                        	 if(data.success){
+                  				top.$.notice("提交成功！");
+                        		 Qm.refreshGrid();
+                        		 $("body").unmask("");
+                        	 }
+                         }
+                	 });
+                }
+			});
+// 			selectUnitOrUser1(1,0, null, null, function(datas){
+//        			if(datas.code!=null&&datas.code.length>0&&datas.code!="undefined"){
+//        				doSumbit(id,datas.code,datas.name);
+//        			}else{
+//        				top.$.dialog.alert("请选择一个用户!");
+//        			}
+//     	   });
+			
+		}
+		//提交启动流程
+		function doSumbit(id,code,name){
+			getServiceFlowConfig("ZDJC_SQJR_FLOW", "", function (result, dataflow) {
+                if ( result ) {
+                	 $.ajax({
+                         url: "com/zdsx/sqjr/subflow.do",
+                         data: {
+                             id: id,
+                             nextPersonId: code,
+                             nextPersonName: name,
+                             flowId: dataflow.id
+                         },
+                         dataType: 'json',
+                         contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+                         type: "post",
+                         async: true,
+                         success: function (data) {
+                        	 if(data.success){
+                  				top.$.notice("提交成功！");
+                        		 Qm.refreshGrid();
+                        	 }
+                         }
+                	 });
+                }
+			});
+			
+		}
+		// 详情
+		function detail(id){
+		var id=Qm.getValueByName("id");
+			top.$.dialog({
+				width: 900,
+				height: 500, 
+				lock : true, 
+				title:"详情",
+				content: 'url:/app/discipline/apply_jr_detail.jsp?status=detail&type=0&id='+id,
+				data : {"window" : window}
+			});
+		}
+		
+		// 流转过程
+		function turnHistory(){	
+			top.$.dialog({
+	   			width : 400, 
+	   			height : 700, 
+	   			lock : true, 
+	   			title: "流程卡",
+	   			content: 'url:com/zdsx/sqjr/getFlowStep.do?id='+Qm.getValueByName("id")+'&sn='+Qm.getValueByName("sn"),
+	   			data : {"window" : window}
+	   		});
+		}
+		
+		
+		function save(){
+			top.$.dialog({
+				width: 900,
+				height: 500, 
+				lock : true, 
+				title:"新增",
+				content: 'url:/app/discipline/apply_jr_detail.jsp?type=0',
+				data : {"window" : window}
+			});
+		}
+		//审批流程
+		function spFlow(){
+			var id=Qm.getValueByName("id");
+			var activity_id=Qm.getValueByName("activity_id");
+			var type=Qm.getValueByName("state");
+			var process_id=Qm.getValueByName("process_id");
+			if(type=='纪检分管院领导审核'){
+				type="3";
+			}else if(type=='部门负责人审核'){
+				type="1"
+			}else if(type=='部门分管院领导审核'){
+				type="2";
+			}
+				top.$.dialog({
+					width: 900,
+					height: 500, 
+					lock : true, 
+					title:"审批",
+					content: 'url:/app/discipline/apply_jr_detail.jsp?status=modify&type='+type+'&id='+id+'&activity_id='+activity_id+'&process_id='+process_id,
+					data : {"window" : window}
+				});
+		}
+		// 查看报告
+		function showReport(){	
+		}
+		
+    </script>
+	</head>
+	<body>
+	<div class="item-tm" id="titleElement">
+    <div class="l-page-title">
+        <div class="l-page-title-note">提示：列表数据项
+            <font color="black">“黑色”</font>代表未提交；
+            <font color="orange">“橙色”</font>代表审核中；
+            <font color="blue">“蓝色”</font>代表审核通过；
+            <font color="green">“绿色”</font>代表完结；
+            <font color="red">“红色”</font>代表审核不通过。
+        </div>
+    </div>
+    </div>
+		<qm:qm pageid="zdjdsx_sqjr" singleSelect="true">
+			<% if(!user.getDepartment().getId().equals("100085")){ %> <!-- 纪检监察可以查看全部 -->
+			<qm:param name="HANDLER_ID" value="<%=uu.getId() %>" compare="=" logic="or"  />
+			<qm:param name="create_user_id" value="<%=uu.getId() %>" compare="="   logic="or"/>
+			<qm:param name="create_org_id" value="<%=uu.getOrg().getId() %>" compare="=" logic="or"   />
+			<qm:param name="state" value="" compare="=" />
+			<%} %>
+		</qm:qm>
+		
+	</body>
+	<script type="text/javascript">
+		 $(function(){
+			 getData();
+		 });
+		 function getData() {
+			 <% if(!user.getDepartment().getId().equals("100085")){ %>
+					Qm.config.defaultSearchCondition[3].value="6";
+					<%} %>
+// 					Qm.searchData();
+			 }
+		</script>
+</html>

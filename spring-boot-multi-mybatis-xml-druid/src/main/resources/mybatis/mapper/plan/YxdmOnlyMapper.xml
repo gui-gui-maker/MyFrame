@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.neo.mapper.plan.YxdmOnlyMapper" >
+    <resultMap id="BaseResultMap" type="com.neo.model.ext.YxdmOnly" >
+		<id column="yxdh" property="yxdh" jdbcType="VARCHAR" />
+		<id column="yxdm" property="yxdm" jdbcType="VARCHAR" />
+		<id column="yxmc" property="yxmc" jdbcType="VARCHAR" />
+    </resultMap>
+    
+    <sql id="Base_Column_List" >
+        yxdm,yxmc
+    </sql>
+
+    <select id="getAll" resultMap="BaseResultMap"  >
+       SELECT distinct
+       <include refid="Base_Column_List" />
+	   FROM t_zydh order by yxdm
+    </select>
+    
+    <select id="getAllYxdh" resultMap="BaseResultMap"  >
+       SELECT distinct yxdh,yxdm,yxmc FROM t_zydh order by yxdm
+    </select>
+    
+    <select id="findYxdmByYxdm" resultMap="BaseResultMap"  >
+       SELECT distinct yxdm,yxmc FROM t_zydh WHERE yxdm = #{yxdm} order by yxdm
+    </select>
+    
+    
+    <select id="findYxdhByYxdm" resultMap="BaseResultMap"  >
+       SELECT distinct yxdh,yxdm,yxmc FROM t_zydh WHERE yxdm = #{yxdm} 
+    </select>
+ 
+</mapper>

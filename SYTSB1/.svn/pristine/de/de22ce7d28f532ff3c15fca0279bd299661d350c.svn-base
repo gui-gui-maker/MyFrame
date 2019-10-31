@@ -1,0 +1,156 @@
+<%@page contentType="text/javascript;charset=UTF-8" language="java" trimDirectiveWhitespaces="true"%>
+
+
+var KUI_TREND_CONFIG={
+	//用户配置
+	user: {
+		<%--icon:"k/kui/images/head/default.gif",//用户头像
+		show:true,//用户头像是否显示
+		config:{
+			sysDeskBg:"k/kui/images/sys-desktop/bg/bg002.jpg",//用户自定义桌面背景图片
+			sysMainBg:"k/kui/images/sys-desktop/bg/bg006.jpg",//用户自定义框架背景图片
+			mainStyle:"default",
+			mainStyleSub:"",
+			frameStyle:"default",
+			frameStyleSub:"",
+			windowStyle:"default"
+		},
+		menu:{
+			style:"1"
+		},
+		end:null--%>
+	},
+	//loginOkUrl : "app/main.jsp",//登陆成功后跳转的页面
+	//loginCert:{account:"%=principal%",uname:"%=userName%",isCertErr:"%=isCertError%"},//安全证书登录 2015/1/5 9:59 lybide 因每页面都要调用此页面，固已移至 index.jsp 中
+	base : "${pageContext.request.scheme}://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}/",
+	menu : {
+		dataAdd : function(data) {//添加自定义菜单数组
+			//return data;//必须返回data
+			//使用原生数组方法添加自定义菜单，比如桌面、系统欢迎页面等。
+			<%--data[0]["children"].unshift(--%>
+				<%--{--%>
+					<%--"id" : "myIsIndexId",--%>
+					<%--"text" : "系统首页",--%>
+					<%--"url" : "javascript:(function(){mGetUrl('k/main-desktop.jsp');mPanelDispay({panel:'left',display:false,close:true});})();",--%>
+					<%--"image" : "k/kui/images/icons/16/menu-default.png",--%>
+					<%--"code" : "myIsIndex",--%>
+					<%--"isexpand" : "true"//,--%>
+					<%--//"html":'<div style="padding:5px;">'+kFrameConfig["name"]+'欢迎您，这里是自定义的html，当然，你可以干掉。</div>'--%>
+				<%--}/*,{--%>
+					<%--"id": "sys_run_managess",--%>
+					<%--"text": "菜单测试数据",--%>
+					<%--"url": "null",--%>
+					<%--"image": "k/kui/images/icons/16/menu-default.png",--%>
+					<%--"code": "m002",--%>
+					<%--"width":"400",--%>
+					<%--"isexpand": "false",--%>
+					<%--"html": "<div style='padding:5px;'><img src='k/kui/images/icons/once/Clock.png' /><br><br>此菜单数据，位于app/demo/menu1.js，请自行修改app/public/k-frame-main.js</div>"--%>
+				<%--}*/--%>
+			<%--);--%>
+			//2013-12-18 下午5:34 lybide 测试
+			<%--data[0]["children"].unshift({text:"演示系统",url:"",children:[
+				{id:"demo1-0a",text:"列表1","url":"demo/demo_list.jsp"},
+				{id:"demo1-0b",text:"列表2","url":"demo/demo_list2.jsp"},
+				{id:"demo1-0c",text:"列表3","url":"demo/demo_list_iframe.jsp"},
+				{id:"demo1-1",text:"统计图1","url":"demo/count_list.jsp"},
+				{id:"demo1-2",text:"统计图2","url":"demo/count_list2.jsp"},
+				{id:"demo1-2",text:"基本页面","url":"demo/temp1.jsp"},
+				{id:"demo1-dc",text:"我是第一层",children:[
+					{id:"demo1-dc1",text:"我是第二层",children:[
+						{id:"demo1-dc1a",text:"我是第三层"}
+					]},
+					{text:"我只是文字",isText:true,url:"demo/demo1.html"},
+					{text:"我只是文字我只是文字我只是文字我只是文字我只是文字我只是文字我只是文字",isText:true,image:"k/kui/images/icons/16/book.png"},
+					{text:"我只是文字",isText:true,image:"k/kui/images/icons/16/exclamation.png"},
+					{text:"我只是文字",isText:true,image:"k/kui/images/icons/16/time.png"},
+					{text:"我只是文字",isText:true,image:"k/kui/images/icons/16/process1.png"},
+					{text:"树形拖动1",url:"demo/tree_drag.jsp"},
+					{text:"我是第三1层"},
+					{text:"我是第三1层"}
+				]},
+				{text:"我是第一层",children:[
+					{text:"我是第二1层",children:[
+						{text:"我是第三1层"},
+						{text:"我是第三2层"},
+						{text:"我是第三3层"},
+						{text:"我是第三4层"},
+						{text:"我是第三5层"},
+						{text:"我是第三6层"}
+					]},
+					{text:"我是第二2层",children:[
+						{text:"我是第三21层",isText:true},
+						{text:"我是第三22层",isText:true},
+						{text:"我是第三23层",isText:true},
+						{text:"我是第三24层"},
+						{text:"我是第三25层"},
+						{text:"我是第三26层",children:[
+							{text:"我是第四1a层"},
+							{text:"我是第四1b层",children:[
+								{text:"我是第五1a层"},
+								{text:"我是第五1b层",children:[
+									{text:"我是第六1a层"},
+									{text:"我是第六1b层"}
+								]}
+							]}
+						]}
+					]}
+				]},
+				{id:"demo1-qm",text:"通用查询","url":"k/qm/page.jsp"}
+			]});--%>
+			if (kui["menu"].addData) {
+				data=kui["menu"].addData(data);
+			}
+			return data;//必须返回data
+		},
+		end : null
+	},
+	temp:null
+};
+
+//动态设置系统配置相应值
+//KUI_TREND_CONFIG.name="成都川大科鸿新技术研究所<div style='font-size:0.7em;padding:5px 0;text-align:center;'>科鸿基础开发平台</div>";
+//KUI_TREND_CONFIG.logoMode="text";
+
+var PAGE_KEYS=document.getElementsByTagName("head")[0].getAttribute("pageKeys");
+if (PAGE_KEYS!="login" && PAGE_KEYS!="sessionTimeOut" && window==top) {
+	//每个页面都需要执行，必须读取用户配置信息 2014年10月16日 15:49:48 星期四 lybide
+	document.write(unescape('%3Cscript type="text/javascript" src="pub/sysPersonalize/getPersonalize.do"%3E%3C/script%3E'));
+}
+
+
+<%--
+//用户配置项覆盖全局配置项 2014-3-19 下午5:07 lybide
+//LOGIN_SUCCESS_USER_INFO 从 main.jsp 中的 <script type="text/javascript" src="pub/sysPersonalize/getPersonalize.do"></script><!-- 读取用户配置信息 --> 来
+LOGIN_SUCCESS_USER_INFO={
+	user: {
+
+		icon:"k/kui/images/head/default.gif",//用户头像
+		show:true,//用户头像是否显示
+		config:{
+			sysDeskBg:"",//用户自定义桌面背景图片 k/kui/images/sys-desktop/bg/bg002.jpg
+			sysMainBg:"",//用户自定义框架背景图片 k/kui/images/sys-desktop/bg/bg002.jpg
+			welcomeMainBg:"",//用户自定义首页背景图片 k/kui/images/sys-desktop/bg/bg002.jpg
+			mainStyle:"default",
+			mainStyleSub:"",
+			frameStyle:"default",
+			frameStyleSub:"",
+			windowStyle:"default",
+
+		},
+		menu:{
+			style:"1"//,clickUseMask:false
+		},
+		end:null
+	}
+};
+//已移植到 main.js 进行统一配置项覆盖 2014年09月21日 09:48:42 星期日 lybide chengxiang
+if (typeof LOGIN_SUCCESS_USER_INFO!="undefined") {
+	kFrameConfig=$.extend(true,kFrameConfig,LOGIN_SUCCESS_USER_INFO["user"]["config"]);
+	kFrameConfig["user"]=$.extend(kFrameConfig["user"],LOGIN_SUCCESS_USER_INFO["user"]);
+	kFrameConfig["menu"]=$.extend(true,kFrameConfig["menu"],LOGIN_SUCCESS_USER_INFO["user"]["menu"]);
+}--%>
+
+
+
+
+

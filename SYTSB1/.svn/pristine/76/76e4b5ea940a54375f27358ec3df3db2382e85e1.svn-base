@@ -1,0 +1,55 @@
+package com.lsts.mobileapp.sign.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.khnt.core.crud.manager.impl.EntityManageImpl;
+import com.khnt.rtbox.config.bean.RtDir;
+import com.khnt.rtbox.config.bean.RtPersonDir;
+import com.khnt.rtbox.config.dao.RtDirDao;
+import com.khnt.security.CurrentSessionUser;
+import com.khnt.security.util.SecurityUtil;
+import com.khnt.utils.StringUtil;
+import com.lsts.inspection.bean.InspectionInfo;
+import com.lsts.mobileapp.sign.dao.SignDao;
+@Service
+public class SignService extends EntityManageImpl<InspectionInfo, SignDao>{
+
+	@Autowired
+	SignDao signDao;
+	@Autowired
+	private RtDirDao rtDirDao;
+	
+	public List<Object[]> getSignMission() throws Exception
+    {	
+		
+		CurrentSessionUser user = SecurityUtil.getSecurityUser();
+		@SuppressWarnings("unchecked")
+		List<Object[]> list = signDao.createSQLQuery("select v.definition_id FLOWID,v.FLOWNAME, "
+						+" v.ACTIVITY_ID,v.NAME,v.FUNCTION,v.NUM "
+						+" from V_WORK_INFO_PLATFORM v "
+						+" where v.HANDLER_ID='"+ user.getUserId()+"' and state='300' and v.function like '%sign%'").list();
+		
+		return list;
+    }
+
+
+	@SuppressWarnings("unchecked")
+	public String loadReportDir(String id,String code) throws Exception {
+		if (StringUtil.isNotEmpty(id)) {
+			List<RtPersonDir> rpd = this.rtDirDao.createQuery("from RtPersonDir where fkBusinessId=? and rtCode=?", id, code).list();
+			if (rpd != null && !rpd.isEmpty()) {
+				return rpd.get(0).getRtDirJson();
+			}
+		}
+		List<RtDir> rd = this.rtDirDao.createQuery("from RtDir where rtCode=?", code).list();
+		if (rd != null && !rd.isEmpty()) {
+			return rd.get(0).getRtDirJson();
+		}
+		throw new Exception("没有找到目录,code:" + code);
+
+	}
+	
+}

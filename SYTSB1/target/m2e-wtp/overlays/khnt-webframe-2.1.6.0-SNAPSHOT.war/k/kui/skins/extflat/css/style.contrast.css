@@ -1,0 +1,19 @@
+/* #ff4800 */
+
+.m-top {border-bottom:5px solid #ff4800;}
+.m-top-div {background:#222;border-bottom:1px solid #090909;}
+.m-menu2-1-li-ul .m-menu2-1-li-div-click,.mm-deep-2-prve-select,.m-menu2-1-li-div-click {color:#ff4800;}
+.m-menu1-click {background:url(../images/contrast/arrow-active.png) #272727 no-repeat bottom center;}
+.m-menu1-hover {background:url(../images/contrast/arrow-active.png) #272727 no-repeat bottom center;}
+.m-menu1 {background:#222;}
+.m-menu1-div ul li {border-left: 1px solid #333; border-right: 1px solid #171717;}
+.user-set-menu-a, .user-set-menu-a:link, .user-set-menu-a:visited {background:#333;border:1px solid #333;}
+.l-panel-header {background:#ff4800;color:#fff;}
+
+/*.k-skin-default .ui_title_bar .ui_title {background-color: #ff4800;}*/
+
+.icon-item li div:hover {border:4px solid #ff4800;}
+.rtnum,.icon-item-des div:hover, .icon-item-des div.hover {background:#ff4800;}
+.text-color {color:#ff4800;}
+.ui-state-active a {color:#ff4800!important;}
+.progress .orangebar {background-color:#ff4800;}

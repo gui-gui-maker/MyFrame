@@ -1,0 +1,678 @@
+﻿<%@page import="com.khnt.rbac.bean.User"%>
+<%@page import="com.khnt.security.util.SecurityUtil"%>
+<%@page import="util.ReportUtil"%>
+<%@page import="java.util.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@ page contentType="text/html;charset=UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+String today = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date());
+String weatherDate = new SimpleDateFormat("yyyy年MM月dd日").format(new Date());
+/* String news = ReportUtil.getNotice("内网新闻"); */
+User user =SecurityUtil.getSecurityUser().getSysUser();
+
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<%@include file="/k/kui-base-list.jsp"%>
+<title>四川省特种设备检验大数据</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" type="text/css"
+	href="app/gis/scjy/v1/css/stylegx.css" media="all" />
+<link rel="stylesheet" type="text/css"
+	href="app/gis/scjy/v1/css/animate.css" media="all" />
+<link href="app/gis/scjy/v1/css/jquery.mCustomScrollbar.css"
+	rel="stylesheet" type="text/css">
+<script src="app/gis/scjy/v1/js/main.js"></script>
+<script type="text/javascript"
+	src="http://api.map.baidu.com/api?v=2.0&ak=FDmrHK5fKK7ALGXCHRY4BMoT1ys8XO5U"></script>
+<script type="text/javascript"
+	src="http://api.map.baidu.com/library/AreaRestriction/1.2/src/AreaRestriction_min.js"></script>
+<script type="text/javascript"
+	src="http://api.map.baidu.com/library/GeoUtils/1.2/src/GeoUtils_min.js"></script>
+<script type="text/javascript"
+	src="http://api.map.baidu.com/library/TextIconOverlay/1.2/src/TextIconOverlay_min.js"></script>
+<script type="text/javascript" src="app/gis/scjy/v1/map/run.js"></script>
+<script type="text/javascript"
+	src="app/gis/scjy/v1/map/MarkerClusterer_min.js"></script>
+<script type="text/javascript" src="app/gis/scjy/v1/map/json.js"></script>
+<script type="text/javascript" src="app/gis/scjy/v1/map/initQuery.js"></script>
+<script type="text/javascript" src="app/gis/scjy/v1/map/clientQuery.js"></script>
+<script type="text/javascript" src="app/gis/scjy/v1/map/rtQuery.js"></script>
+<script type="text/javascript" src="app/gis/scjy/v1/map/wxQuery.js"></script>
+<script type="text/javascript" src="app/gis/scjy/v1/map/map.js"></script>
+<script type="text/javascript" src="app/gis/scjy/v1/map/MyOverlay.js"></script>
+<script type="text/javascript" src="app/gis/scjy/v1/map/SmallMap.js"></script>
+<style type="text/css">
+#miBackground {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: url(/app/gis/scjy/v1/images/bg.jpg);
+}
+
+.anchorBL {
+	display: none !important;
+}
+</style>
+<script type="text/javascript">
+var today = '<%=today%>';
+var weatherDate = '<%=weatherDate%>';
+$(function(){
+ 	$(".livemap-hostname").mouseover(function(){
+		$(".white_content").addClass("md-show");
+		$("#light,#tccontent").show();
+		var ligh=$(window).height()*0.8-155;
+		$(".tankuang").css({"height":ligh+"px"});
+		$("#fade").show();
+		var oneExe1=setTimeout(function(){
+			$(".livemap-hostname").addClass("hover");
+		},1);
+	});  
+	
+	$("#fade,#t-close-btn").click(function(){
+		$("#light,#tccontent,#fade").hide();
+		$("div.livemap-mark").removeClass("hover");
+	});
+
+	/* $("#light").mouseenter(function(){
+		$("#light").addClass("hovered");
+	});  */
+	$("#light").mouseleave(function(){
+		$("#light,#tccontent,#fade").hide();
+		$("div.livemap-mark").removeClass("hover");
+		//$("#light").removeClass("hovered");
+	}); 
+	
+}); 
+function closeFlowWindow(){
+	$("#light,#tccontent,#fade").hide();
+	$("div.livemap-mark").removeClass("hover");
+}
+/*
+ * 打开加载等待图层
+ */
+function openLoading()
+{
+	$("#loading").show();
+}
+//关闭加载等待图层
+function closeLoading()
+{
+	$("#loading").hide();
+	
+} 
+</script>
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="css/style-ie8.css" media="all" />
+<![endif]-->
+
+</head>
+<body>
+	<div id="loading" style="display: none">
+		<div class="loading">
+
+			<iframe src="app/gis/scjy/v1/svg.html" frameborder="0" width="300"
+				height="300"></iframe>
+
+		</div>
+		<div class="black2"></div>
+	</div>
+	<div id="tccontent">
+		<div id="light" class="white_content md-show">
+			<div class="close">
+				<a id="t-close-btn" class="iconfont icon-esc"
+					href="javascript:void(0)" title="关闭">x</a>
+			</div>
+			<div class="pro_head">
+				<div class="pro_bod">
+					<ul class="flow">
+						<li class="first">
+							<div class="f-box">
+								<span></span>
+							</div>
+							<div class="x-tt">开始</div>
+						</li>
+						<li>
+							<div class="f-box">
+								<span></span>
+							</div>
+							<div class="x-tt">任务分配</div>
+						</li>
+						<li>
+							<div class="f-box">
+								<span></span>
+							</div>
+							<div class="x-tt">报告录入</div>
+						</li>
+						<li>
+							<div class="f-box ">
+								<span></span>
+							</div>
+							<div class="x-tt">报告审核</div>
+						</li>
+						<li>
+							<div class="f-box ">
+								<span></span>
+							</div>
+							<div class="x-tt ">报告签发</div>
+						</li>
+						<li>
+							<div class="f-box">
+								<span></span>
+							</div>
+							<div class="x-tt">报告领取</div>
+						</li>
+						<li>
+							<div class="f-box">
+								<span></span>
+							</div>
+							<div class="x-tt">报告归档</div>
+						</li>
+						<li class="last">
+							<div class="f-box">
+								<span></span>
+							</div>
+							<div class="x-tt">结束</div>
+						</li>
+					</ul>
+					<div id="drCode" class="st1">注册代码：21335550000442</div>
+					<div id="qrCode" class="st1" style="margin-top: 5px;">二维码：21335550000442</div>
+				</div>
+				<div class="pro_bg"></div>
+			</div>
+			<div class="tankuang">
+				<!-- 流程 -->
+				<div class="progress">
+					<div class="ywlsh">
+						<table border="0" cellpadding="0" cellspacing="0" width=""
+							height="" align="center" class="ywlc_s">
+							<tbody>
+								<tr class="d_tr">
+									<td align="center">
+										<div class="st2">业务流水号：212542</div>
+										<div class="clear">
+											<div class="show0">
+												<div class="show1">操作步骤: 报告录入</div>
+												<div class="show1">操作人员: 王仁生</div>
+												<div class="show1">操作时间: 2017-12-07 16:49:11.0</div>
+												<div class="show1">操作说明: 从【报告录入】环节进入【报告送审】环节。</div>
+											</div>
+											<div class="jt1">
+												<img src="app/gis/scjy/v1/images/jt2.png">
+											</div>
+											<div class="show0">
+												<div class="show1">操作步骤: 报告送审</div>
+												<div class="show1">操作人员: 王仁生</div>
+												<div class="show1">操作时间: 2017-12-11 15:31:15.0</div>
+												<div class="show1">操作说明: 从【报告送审】环节进入【报告审批】环节。</div>
+											</div>
+										</div>
+
+										<div class="clear">
+											<div class="show0">
+												<div class="show1">操作步骤: 【报告送审】环节提交</div>
+												<div class="show1">操作人员: 王仁生</div>
+												<div class="show1">操作时间: 2017-12-11 15:31:15.0</div>
+												<div class="show1">操作说明: 提交至邹益平</div>
+											</div>
+											<div class="jt1">
+												<img src="app/gis/scjy/v1/images/jt2.png">
+											</div>
+											<div class="show0">
+												<div class="show1">操作步骤: 报告审批</div>
+												<div class="show1">操作人员: 邹益平</div>
+												<div class="show1">操作时间: 2017-12-12 11:37:52.0</div>
+												<div class="show1">操作说明: 从报告审批环节进入打印报告环节。结论：通过无</div>
+											</div>
+										</div>
+
+										<div class="clear">
+											<div class="show0">
+												<div class="show1">操作步骤: 打印报告</div>
+												<div class="show1">操作人员: 王川</div>
+												<div class="show1">操作时间: 2017-12-20 14:57:35.0</div>
+												<div class="show1">操作说明: 打印报告</div>
+											</div>
+											<div class="jt1">
+												<img src="app/gis/scjy/v1/images/jt2.png">
+											</div>
+											<div class="show0">
+												<div class="show1">操作步骤: 打印报告</div>
+												<div class="show1">操作人员: 王川</div>
+												<div class="show1">操作时间: 2017-12-20 14:57:35.0</div>
+												<div class="show1">操作说明: 从【打印报告】环节进入【报告领取】环节。</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="wtctbg"></div>
+		</div>
+		<div id="fade" class="black_overlay" style="display: none;"></div>
+	</div>
+	<div id="tccontent2">
+		<div class="small_map_close">
+			<a class="iconfont icon-esc" href="javascript:void(0)" title="关闭">x</a>
+		</div>
+		<div id="small_map"></div>
+	</div>
+	<div id="sysMain" class="sysmain systongji">
+		<!-- nav-left -->
+		<div class="nav ">
+			<div style="height:35%;">
+				<div class="nav-top">
+					<i></i><span>实时天气</span>
+				</div>
+				<div class="nav-weather">
+					<br>
+					<div id="date">周二 12月26日 (实时：16℃)</div>
+					<br>
+					<div style="height: 60px; padding: 5px 0;">
+						<img id="day" src="">
+						<img id="night" src=""> 
+					</div>
+					<div class="weather">
+						<div class="day">
+							<p id="dtemperature">5 ~ 12℃</p>
+							<p id="dweather">多云转阴</p>
+							<p id="dwind">微风3级</p>
+						</div>
+						<div class="night">
+							<p id="ntemperature">5 ~ 12℃</p>
+							<p id="nweather">多云转阴</p>
+							<p id="nwind">微风3级</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="current_data">
+				<div class="current_data_header">
+					<i></i><span>实时数据</span>
+				</div>
+				<div id="tzgglist" class="tzgglist" style="overflow: hidden;">
+					<div class="col1" id="notice_col1">
+						<div class="maxtt"></div>
+						<div class="maxtt"></div>
+						<div class="maxtt"></div>
+						<div class="maxtt"></div>
+						<div class="maxtt"></div>
+						<div class="maxtt"></div>
+						<div class="maxtt"></div>
+						<div class="maxtt"></div>
+					</div>
+					<div class="col2" id="notice_col2"></div>
+				</div>
+			</div>
+		</div>
+		<div class="s-skin-container s-skin-container-default"></div>
+		<div id="systemTitle" class="m-top-logo">
+			<div class="m-top-logo-txt">
+				<span id="systemTitleText" class="text1"> <span
+					class="m-top-logo-img"> <img
+						src="app/gis/scjy/v1/images/tjy_lo.png">
+				</span>四川省特检院智慧特检大数据-D1A
+				</span>
+			</div>
+			<div class="tj-logo-bg"></div>
+		</div>
+		<div id="map" class="main-map" style="height: 100%;"></div>
+		<!--总的统计数据-->
+		<div class="m-counts">
+			<div class="m_counts_bg">
+				<div class="m-c-clumn">
+					<div class="m-c-icon">
+						<img src="app/gis/scjy/v1/images/in_ico01.png">
+					</div>
+					<div class="m-c-tit">今年报检</div>
+					<div class="m-c-data fco1" id="m-ds1-num">0</div>
+				</div>
+				<div class="m-c-clumn">
+					<div class="m-c-icon">
+						<img src="app/gis/scjy/v1/images/in_ico02.png">
+					</div>
+					<div class="m-c-tit">昨日检验</div>
+					<div class="m-c-data fco2" id="m-ds2-num">0</div>
+				</div>
+				<div class="m-c-clumn">
+					<div class="m-c-icon">
+						<img src="app/gis/scjy/v1/images/in_ico03.png">
+					</div>
+					<div class="m-c-tit">今日检验</div>
+					<div class="m-c-data fco3" id="m-ds3-num">0</div>
+				</div>
+				<div class="m-c-clumn">
+					<div class="m-c-icon">
+						<img src="app/gis/scjy/v1/images/wx2.png">
+					</div>
+					<div class="m-c-tit">微信查询</div>
+					<div class="m-c-data fco4" id="m-ds0-num">0</div>
+				</div>
+				<div id="scroll_box" class="m-c-clumn">
+					<div class="col1" id="col1">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+					<div class="col2" id="col2"></div>
+				</div>
+			</div>
+		</div>
+		<div class="J-global-toolbar">
+			<div class="toolbar-wrap J-wrap toolbar-open">
+				<div class="toolbar">
+					<div class="toolbar-panels J-panel">
+						<div style="visibility: hidden;"
+							class="J-content toolbar-panel tbar-panel-cart toolbar-animate-out">
+
+							<div class="serch_wrap">
+
+								<div class="tit tbar-panel-header">
+									<i></i> <span>报告查询</span>
+									<!-- <span class="close-panel J-close"></span> -->
+								</div>
+								<div class="item_box">
+
+									<div class="in_serform">
+										<div style="display: none;">
+											<span>区划： </span> <select id="area" name="area"
+												style="width: 160px; height: 24px;">
+											</select>
+										</div>
+										<br>
+										<div>
+											<span>设备代码： </span><input id="device_registration_code"
+												name="device_registration_code" type="text" />
+										</div>
+										<br>
+										<div>
+											<span>金属二维码： </span><input id="device_qr_code"
+												name="device_qr_code" type="text" />
+										</div>
+										<br>
+										<div>
+											<span>使用单位： </span><input id="company_name"
+												name="company_name" type="text" />
+										</div>
+										<br>
+										<div class="btns">
+											<a href="javascript:void(0)" onclick="query();"
+												class="btn btn-big bt1" style="color:#fff;">查询</a> 
+											<a href="javascript:void(0)" onclick="clearQuery();" 
+												class="btn btn-big btn-gray bt1" style="left:150px;color:#fff;">重置</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="yw_item">
+								<div class="tit tbar-panel-header">
+									<i></i> <span id="need_deal">历史查询 </span>
+									<!-- <span class="close-panel J-close"></span> -->
+								</div>
+								<div class="item_box dcl_yw" style="height: 90%;">
+									<div id="content-2" class="content_2 content mCustomScrollbar"
+										style="height: 100%;">
+										<ul>
+
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div style="visibility: hidden;" data-name="follow"
+							class="J-content toolbar-panel tbar-panel-follow">
+							<h3 class="tbar-panel-header J-panel-header">
+								<i></i> <em class="title">操作手册</em> <span
+									class="close-panel J-close"></span>
+							</h3>
+							<div class="tbar-panel-main">
+								<div class="czsc">1.通过设备注册代码查询：输入设备注册代码，点击查询按钮即可查询指定的设备并显示到地图相应的设备使用地址的位子。</div>
+								<div class="czsc">2.通过金属二维码查询：输入设备金属二维码，点击查询按钮即可查询指定的设备并显示到地图相应的设备使用地址的位子。</div>
+								<div class="czsc">3.通过使用单位查询：在使用单位栏输入使用单位名称，点击查询按钮，后台将通过模糊查询查询该单位的所有设备，
+									并以列表的形式展示设备报检信息。</div>
+								<div class="czsc">说明：查询条件至少输入一个才能查询，同时输入多个查询条件时，优先以使用单位查询，同时只输入设备注册代码和金属二维码时，
+									后台以并且做处理，所以要通过设备注册代码或金属二维码查询时，只需输入其中一个。重置按钮清除所有已输入的条件。</div>
+							</div>
+						</div>
+					</div>
+					<div class="toolbar-header"></div>
+					<div class="toolbar-tabs J-tab">
+						<div class="toolbar-tab tbar-tab-cart tbar-tab-click-selected">
+							<i class="tab-ico"></i> <em class="tab-text ">特检云</em>
+						</div>
+						<div class=" toolbar-tab tbar-tab-follow">
+							<i class="tab-ico"></i> <em class="tab-text">操作手册</em>
+						</div>
+					</div>
+					<div class="toolbar-mini"></div>
+				</div>
+				<div id="J-toolbar-load-hook"></div>
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src='app/gis/scjy/v1/js/nav.js'></script>
+	<script>
+   	$(function(){
+        
+        //加载天气
+    	//跨域是浏览器的安全策略.
+    	//我现在是jQuery ，jQuery 怎么去解决
+    	//jQuery 解决的方式.
+    	$.ajax({
+    			url:"https://api.shenjian.io/weather/city?appid=a3b15f48a55349915d3a69ef9dc05969",
+    			type:"get",
+    			data:{
+  					city_name:"成都市",
+   				  	only_now:false
+    			},
+    			/*预期服务器端返回的数据类型，假设我现在跨域了，我就改成jsonp 就可以了 */
+    			dataType:"jsonp",
+    			success:function(data){
+    				var weather = data.data;
+    				//获取最近7天的天气
+    				var w7 = weather.forecast7;
+    				for(var i=0;i<w7.length;i++){
+    					//获取今天的天气
+    					if(w7[i].date==weatherDate.substring(5,11)){
+    						//获取今天的各个时间段的天气
+    						var hf3 = w7[i].hourForcast3;
+    						var nowHour = new Date().getHours();
+    						var nowWeather = {};
+    						if(nowHour>=8&&nowHour<11){
+    							nowWeather = hf3[0];
+    						}else if(nowHour>=11&&nowHour<14){
+    							nowWeather = hf3[1];
+    						}else if(nowHour>=14&&nowHour<17){
+    							nowWeather = hf3[2];
+    						}else if(nowHour>=17&&nowHour<20){
+    							nowWeather = hf3[3];
+    						}else if(nowHour>=20&&nowHour<23){
+    							nowWeather = hf3[4];
+    						}else if(nowHour>=23||nowHour<2){
+    							nowWeather = hf3[5];
+    						}else if(nowHour>=2&&nowHour<5){
+    							nowWeather = hf3[6];
+    						}else if(nowHour>=5&&nowHour<8){
+    							nowWeather = hf3[7];
+    						}
+    						
+		    				$("#date").html(w7[i].week+"&nbsp;"+weatherDate.substring(5,11)+"&nbsp;(实时："+nowWeather.temprature+")");
+    						$("#day").attr("src",w7[i].day[0].img);
+    	    				$("#dweather").html(w7[i].day[0].weather);
+    	    				$("#dtemperature").html(w7[i].day[0].temprature);
+    	    				$("#dwind").html(w7[i].day[0].power); 
+    	    				$("#night").attr("src",w7[i].night[0].img);
+    	    				$("#nweather").html(w7[i].night[0].weather);
+    	    				$("#ntemperature").html(w7[i].night[0].temprature);
+    	    				$("#nwind").html(w7[i].night[0].power); 
+    					}
+    				}
+    				
+    				
+    			}
+    	});
+
+        $.post("inspectionQueryHistory/getHistories.do",{size:15},function(res){
+        	if(res.success){
+        		var list = res.data;
+        		if(list.length>0){
+        			for(var i=0;i<list.length;i++){
+        				addHistory(list[i]);
+        			}
+        		}
+        	}
+        });
+    });
+   
+     //添加历史记录
+     function addHistory(history){
+    	 $('div.dcl_yw ul').append("<li class='mzyw_tabindex'>"+
+	        	 	"<a  href='javascript:void(0)' class='a-open'>"
+	        	 			+"<div class=' ywartitle' title=''>"
+	        	 			+history.query_content
+								/* +history.query_op+"通过查询"+(history.query_type==1?"设备注册代码":history.query_type==2?"设备二维码":"设备使用单位")
+		        	 			+"获取相关设备报告信息，返回了"+history.query_result+"条数据" */
+							+"</div>"
+							+"<span class='point'><b></b></span>"
+							+"<span class='yw_span'>"+history.query_time.substring(5,10)+"<br>"+history.query_time.substring(11,19)
+							+"</span>"+
+					"</a>"+
+				"</li>");	
+     }
+/**
+ * 左侧滚动信息
+ */
+var notice_height = 600;      // 一个完整滚动条的长度
+var notice_x = 0;//偏移量
+var notice_t;//定时器
+$(function(){
+	 $("#notice_col2").html($("#notice_col1").html());
+	 var notice_col1 = $("#notice_col1")[0];
+     var notice_col2 = $("#notice_col2")[0];
+
+     var fun = function(){
+    	 notice_col1.style.top = notice_x + 'px';
+    	 notice_col2.style.top = (notice_x + notice_height) + 'px';
+    	 notice_x -= 2;
+         if( (notice_x + notice_height) <= 0 ){
+        	 notice_x = 0;
+         }
+     };
+     notice_t = setInterval(fun,100);
+     
+     //事件注册
+     var notice_div = $("#tzgglist")[0];
+     notice_div.onmouseover = function(){
+    	 clearInterval(scroll_t);
+     }
+     notice_div.onmouseout = function(){
+    	 scroll_t = setInterval(fun,100);
+     }
+});
+function changeNoticeContent(str,style){
+	var arr = $("#notice_col1 div").get();
+	var flag = 0;
+	for(var i=0;i<arr.length;i++){
+		if($(arr[i]).hasClass("chg")){
+			flag = i;
+		}
+	}
+	$(arr).removeClass("chg");
+	if(flag == arr.length-1){
+		$(arr[0]).addClass("chg").css(style).html(str);
+	}else{
+		$(arr[flag+1]).addClass("chg").css(style).html(str);
+	}
+	$("#notice_col2").html($("#notice_col1").html());
+}
+
+/**
+ * 右侧滚动信息
+ */
+var scroll_height = 600;      // 一个完整滚动条的长度
+var scroll_x = 0;//偏移量
+var scroll_t;//定时器
+$(function(){
+	 var $col1 = $("#scroll_box #col1")[0];
+	 $("#scroll_box #col2").html($("#scroll_box #col1").html());
+     var $col2 = $("#scroll_box #col2")[0];
+
+     var fun = function(){
+         $col1.style.top = scroll_x + 'px';
+         $col2.style.top = (scroll_x + scroll_height) + 'px';
+         scroll_x -= 4;
+         if( (scroll_x + scroll_height) == 0 ){
+        	 scroll_x = 0;
+         }
+     };
+     scroll_t = setInterval(fun,50);
+     
+     function chain(){
+   		clearInterval(scroll_t);
+   		$.post("gis/device/timer.do",{},function(res){
+   			scroll_t = setInterval(fun,50);
+   			setTimeout(chain,5000+Math.floor(Math.random()*5000));
+   		});
+   	 }
+     setTimeout(chain, 10000);
+     
+     //事件注册
+    /*  var $box = $("#scroll_box")[0];
+     $box.onmouseover = function(){
+    	 clearInterval(scroll_t);
+     }
+     $box.onmouseout = function(){
+    	 scroll_t = setInterval(fun,100);
+     } */
+});
+
+function changeScrollContent(str){
+	var arr = $("#scroll_box #col1 div").get();
+	var flag = 0;
+	for(var i=0;i<arr.length;i++){
+		if($(arr[i]).hasClass("chg")){
+			flag = i;
+		}
+	}
+	$(arr).removeClass("chg");
+	if(flag == arr.length-1){
+		$(arr[0]).addClass("chg").html(str);
+	}else{
+		$(arr[flag+1]).addClass("chg").html(str);
+	}
+	$("#scroll_box #col2").html($("#scroll_box #col1").html());
+}
+</script>
+</body>
+</html>

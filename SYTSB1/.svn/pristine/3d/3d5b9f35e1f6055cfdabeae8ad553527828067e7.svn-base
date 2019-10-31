@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+</head>
+
+<body>
+	<div id="layout2" style="width: 99.8%">
+		<input type="hidden" id="inputFocus" name="inputFocus" /> <input
+			type="hidden" id="thisPage" name="thisPage" value="?page=13">
+		<div position="center" class="wrapper"
+			style="overflow: auto; width: 100%" align="center">
+			<input type="hidden" id="fk_report_id" name="fk_report_id" value="">
+			<input type="hidden" id="fk_inspection_info_id"
+				name="fk_inspection_info_id" value=""> <br />
+			<p>
+				<a name="RTPAGE_12__检验内容及要求10"></a>
+			</p>
+			<table class=""
+				style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; table-layout: fixed; vertical-align: top; border-collapse: collapse;">
+				<colgroup>
+					<col style="width: 50.03%;" />
+					<col style="width: 49.97%;" />
+				</colgroup>
+				<tbody>
+					<tr>
+						<td>
+							<p class="a DocDefaults " style="text-align: left; width: 100%;">
+								<span class="a0 " style=""><span class=""
+									style="font-family: 'SimSun';">文件编号：CTJB-</span></span><span
+									class="a0 " style="font-family: 'SimSun';">0412-B01</span>
+							</p>
+						</td>
+						<td>
+							<p class="a DocDefaults " style="text-align: right; width: 100%;">
+								<span class="a0 " style=""><span class=""
+									style="font-family: 'SimSun';">实施日期：2017年10月1日</span></span>
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table id="docx4j_tbl_14" rules="all" style="margin-top: 5mm; border-style: solid; border-color: black; border-width: 1px;">
+				<colgroup>
+					<col style="width: 6.22%;" />
+					<col style="width: 7.48%;" />
+					<col style="width: 8.38%;" />
+					<col style="width: 50%;" />
+					<col style="width: 15.3%;" />
+					<col style="width: 12.62%;" />
+				</colgroup>
+				<thead>
+					<tr style=" page-break-inside: avoid;">
+						<th>
+							<p style="width: 100%; text-align: center;">
+								<span>序</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>号</span>
+							</p>
+						</th>
+						<th colspan="3">
+							<p style="width: 100%; text-align: center;" >
+								<span>检验内容及要求</span>
+							</p>
+						</th>
+						<th>
+							<p style="width: 100%; text-align: center;">
+								<span>检验</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>结果</span>
+							</p>
+						</th>
+						<th>
+							<p style="width: 100%; text-align: center;">
+								<span>检验</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>结论</span>
+							</p>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr style="height: 1.8in; page-break-inside: avoid;">
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>56</span>
+							</p>
+						</td>
+						<td rowspan="5">
+							<p style="width: 100%; text-align: center;">
+								<span>10.</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>相关</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>试验</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>10.3</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>轿厢限</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span><span>速器－</span></span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>安全钳</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>动作试</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>验B</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>(2)定期检验：轿厢空载，以检修速度下行，进行限速器-安全</span></span><span>钳</span><span><span>联动试验，限速器、安全</span></span><span>钳</span><span><span>动作应当可靠；</span></span>
+							</p>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span>液压式防爆梯如采用</span><span><span>其他的防坠落装置，则需按照上述的试验条件进行试验</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__B_10_3_2"
+									name="record__B_10_3_2" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;"> 
+								<input id="conclusion__B_10_3" name="conclusion__B_10_3" type="text" ltype="select"
+									value="" 
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'合格'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 27mm; page-break-inside: avoid;">
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>57</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>10.4</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span><span>对重(平</span></span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>衡重</span><span><span>)限</span></span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span><span>速器－</span></span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>安全钳</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>动作试</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>验B</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>轿厢空载，以检修速度上行，进行限速器-安全</span></span><span>钳</span><span><span>联动试验，</span></span><span>限速器、安全钳动作应当可靠</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__B_10_4"
+									name="record__B_10_4" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;"> 
+								<input id="conclusion__B_10_4" name="conclusion__B_10_4" type="text" ltype="select"
+									value="" 
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'合格'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 45mm; page-break-inside: avoid;">
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>58</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>10.5 </span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>空载曳</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>引检查</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>B</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>曳引式防爆电梯及曳引式杂物防爆电梯的对重压在缓冲器上而曳引机按电梯上行方向旋转是，应当不能提升空载轿厢</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__B_10_5"
+									name="record__B_10_5" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;"> 
+								<input id="conclusion__B_10_5" name="conclusion__B_10_5" type="text" ltype="select"
+									value="" 
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'合格'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.91in; page-break-inside: avoid;">
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>59</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>10.6</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>运行试</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span><span>验C</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>轿厢分别空载、满载，以正常运行速度上、下运行，呼梯、楼层显示等信号系统功能有效、指示正确、动作无误，轿厢平层良好，无异常现象发生</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__C_10_6"
+									name="record__C_10_6" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;"> 
+								<input id="conclusion__C_10_6" name="conclusion__C_10_6" type="text" ltype="select"
+									value="" 
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'合格'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 17mm; page-break-inside: avoid;">
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>60</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>10.7</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>空载上</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>行制动</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span><span>试验B</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>曳引式防爆电梯及曳引式杂物防爆电梯符合以下要求：</span></span>
+							</p>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>轿厢空载以正常运行速度上行至行程上部，切断电动机与制动器供电，轿厢应当完全停止，并且无明显变形和损坏</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__B_10_7"
+									name="record__B_10_7" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;"> 
+								<input id="conclusion__B_10_7" name="conclusion__B_10_7" type="text" ltype="select"
+									value="" 
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'合格'}" />
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- userBodyTail goes here -->
+	</div>
+</body>
+</html>

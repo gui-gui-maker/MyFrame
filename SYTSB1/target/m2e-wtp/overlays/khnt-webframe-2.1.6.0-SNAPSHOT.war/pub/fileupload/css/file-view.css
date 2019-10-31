@@ -1,0 +1,420 @@
+body, html {
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	font-size: 14px;
+	font-family: "微软雅黑", "宋体";
+	box-sizing: border-box;
+	background: transparent;
+}
+div{
+	background: transparent;
+}
+.backgroud{
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100%;
+	height: 100%;
+	padding:0;
+	margin:0;
+	border:0;
+	background:rgba(0,0,0,0.7);
+	background: #000000\0; 
+	opacity: 0.7\0;
+	filter: alpha(opacity=70)\0;
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70)\0;
+	z-index: 0;
+}
+
+/* Contain floats: h5bp.com/q */
+.clearfix:before, .clearfix:after {
+	content: "";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.clearfix {
+	*zoom: 1;
+}
+
+/* ------------------ 文件预览视图 ------------------ */
+.file-viewer-wrap {
+	text-align: center;
+	width: 100%;
+	height: 100%;
+}
+
+.file-viewer-pre, .file-viewer-next {
+	position: absolute;
+	width: 50px;
+	height: 72px;
+	top: 50%;
+	margin-top:-56px;
+	background: url(../images/page_button.png) 0 0 no-repeat;
+	cursor: pointer;
+	text-indent: -9999px;
+	z-index: 99;
+}
+
+.file-viewer-pre {
+	left: 30px;
+	background-position: -20px 0;
+}
+
+.file-viewer-next {
+	right: 30px;
+	background-position: -88px 0;
+}
+
+.file-viewer-pre:hover {
+	background-position: -20px -72px;
+}
+
+.file-viewer-next:hover {
+	background-position: -88px -72px;
+}
+
+#file-viewer {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+}
+
+#image-viewer,#online-viewer,#download-viewer,#audio-player,#video-player{
+	display: none;
+	width: 100%;
+	height: 100%;
+	/* background: white; */
+}
+
+/* ----------------- 下载文件、在线预览效果 ----------------------- */
+#download-viewer,#online-viewer,#audio-player,#video-player{
+	text-align: center;
+}
+
+#download-viewer .view-icon a,#online-viewer .view-icon a{
+	display: inline-block; 
+	width: 225px;
+	line-height: 20px;
+	font-size: 14px;
+	padding: 168px 10px 10px 10px;
+	background-repeat: no-repeat;
+	background-position: center 20px;
+	background-image: url("../../../k/kui/images/file-type/64/file.png");
+	text-decoration: none;
+	color: #f5f5f5;
+}
+
+#online-viewer .view-button,
+#download-viewer .view-button{
+	text-align: center;
+	padding: 10px 0;
+}
+
+#online-viewer .view-button a,
+#download-viewer .view-button a{
+	width: 100px;
+	height: 32px;
+	color: #ffffff;
+	display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid #cccccc;
+    border-radius: 20px;
+    font-size: 16px;
+    line-height: 32px;
+    margin: 0 5px;
+    text-decoration: none;
+}
+#online-viewer .view-button a.preview{
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+    background-color: #5bb75b;
+    background-image: -moz-linear-gradient(top,#62c462,#51a351);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#62c462),to(#51a351));
+    background-image: -webkit-linear-gradient(top,#62c462,#51a351);
+    background-image: -o-linear-gradient(top,#62c462,#51a351);
+    background-image: linear-gradient(to bottom,#62c462,#51a351);
+    background-repeat: repeat-x;
+    border-color: #51a351 #51a351 #387038;
+    border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462',endColorstr='#ff51a351',GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+#download-viewer .view-button a.preview{
+	display: none;	
+}
+#online-viewer .view-button a.download,
+#download-viewer .view-button a.download{
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+    background-color: #49afcd;
+    background-image: -moz-linear-gradient(top,#5bc0de,#2f96b4);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#5bc0de),to(#2f96b4));
+    background-image: -webkit-linear-gradient(top,#5bc0de,#2f96b4);
+    background-image: -o-linear-gradient(top,#5bc0de,#2f96b4);
+    background-image: linear-gradient(to bottom,#5bc0de,#2f96b4);
+    background-repeat: repeat-x;
+    border-color: #2f96b4 #2f96b4 #1f6377;
+    border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+}
+
+/* ----------------------- 图片查看器 ----------------------------- */
+#image-viewer .image-wrap {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+}
+
+#image-viewer .image-wrap .image-rotate,
+#image-viewer .image-wrap .image-drag{
+	display: inline-block;
+}
+
+#image-viewer .image-wrap .image-drag{
+	position: absolute;
+}
+
+/* ----- 文件名称 -----*/
+#image-viewer .file-name {
+	text-align: center;
+	margin: 0 auto;
+	color: #eeeeee;
+	font-size: 12px;
+	height: 30px;
+	line-height: 30px;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 110px;
+}
+
+/* ----- 图片缩放比例文字、全屏退出提示 -----*/
+#image-viewer .zoom-text, #image-viewer .esc-tips {
+	width: 80px;
+	height: 36px;
+	line-height: 36px;
+	font-size: 18px;
+	font-weight: bold;
+	color: #efefef;
+	background: rgba(0,0,0,0.9);
+	border-radius: 18px;
+	position: absolute;
+	display: none;
+}
+
+#image-viewer .esc-tips{
+	width: 150px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 20px;
+	top: 20px;
+	left: 45%;
+}
+
+/*  --------------------- image viewer toolbar --------------------  */
+#image-viewer .image-tbar {
+	position: absolute;
+	bottom: 75px;
+	left: 0;
+	width: 100%;
+	height: 30px;
+	padding: 5px 0;
+	text-align: center;
+	/* background: #fafafa;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd; */
+} 
+
+#image-viewer .image-tbar a {
+	position: relative;
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	margin: 0 3px;
+	cursor: default;
+	border-radius: 50%;
+	background-color: rgba(100, 100, 100, .5);
+	background-color: #333333\9;
+	opacity: 0.5\9;
+	filter: opacity(0.5);
+	background-repeat: no-repeat;
+	background-image: url(../images/view-icon.png);
+	cursor:pointer;
+}
+
+#image-viewer .image-tbar a:hover {
+	background-color: rgba(200, 200, 200, .5);
+}
+
+#image-viewer .image-tbar a.rotate-left{
+	background-position: center 0;
+}
+
+#image-viewer .image-tbar a.rotate-right{
+	background-position: center -30px;
+}
+
+#image-viewer .image-tbar a.download{
+	background-position: center -240px;
+}
+
+#image-viewer .image-tbar a.full-screen{
+	background-position: center -150px;
+}
+
+#image-viewer .image-tbar a.resize-screen{
+	background-position: center -180px;
+}
+
+#image-viewer .image-tbar a.scalex{
+	background-position: center -270px;
+}
+
+#image-viewer .image-tbar a.scaley{
+	background-position: center -300px;
+}
+
+#image-viewer .image-tbar a.room-in{
+	background-position: center -60px;
+}
+
+#image-viewer .image-tbar a.room-out{
+	background-position: center -90px;
+}
+
+#image-viewer .image-tbar a.resize-original{
+	background-position: center -120px;
+}
+
+#image-viewer .image-tbar a.background{
+	background-position: center -210px;
+}
+
+/* ------------------- 音频播放器 --------------------- */
+#audio-player .player-title,
+#video-player .video-title{
+	height: 30px;
+	line-height: 30px;
+	margin-bottom: 30px;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 14px;
+}
+#audio-player .player-btn{
+	cursor: pointer;
+	width: 48px;
+	height: 48px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	background-image: url("../images/audio-btn.png");
+}
+
+#audio-player .player-btn-play{
+	background-position: 48px 0;
+}
+
+#audio-player .player-btn-play:hover{
+	background-position: 48px 48px;
+}
+
+#audio-player .player-btn-pause{
+	background-position: 0 0;
+}
+
+#audio-player .player-btn-pause:hover{
+	background-position: 0 48px;
+}
+
+/* ------------------- 视频频播放器 --------------------- */
+.video-js{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 40px;
+}
+.video-js .vjs-big-play-button{
+	left: 48%!important;
+	top: 48%!important;
+}
+/* ----------------------- 导航图片列表 --------------------------- */
+.small-img{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 70px;
+	background:rgba(0,0,0,0.5);
+}
+
+.small-img-box {
+	height: 70px;
+	width: 94%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.small-img-list {
+	position: relative;
+	margin-top: 3px;
+	padding: 0 0 0 0;
+	width: 3000px;
+	height: 60px;
+}
+.small-img-list li {
+	height: 56px;
+	width: 80px;
+	display: inline-block;
+	cursor: pointer;
+	margin: 2px 5px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	border: 1px solid white;
+	list-style: none;
+}
+
+.small-img-list li:hover,
+.small-img-list li.current {
+	border: 2px solid #0080ff;
+	height: 58px;
+	width: 78px;
+	height: 60px;
+	margin: 0 5px;
+}
+
+.small-img-pre, .small-img-next {
+	position: absolute;
+	top: 0;
+	height: 70px;
+	width: 28px;
+	margin: 0;
+	background: url(../images/album-arrow.png) 0 -10px no-repeat;
+	background-color: rgba(0,0,0,0.7);
+	cursor: pointer;
+	z-index: 99;
+}
+
+.small-img-pre {
+	left: 0;
+}
+
+.small-img-next {
+	right: 0;
+	background-position: 0 -104px;
+}
+
+.small-img-pre:hover {
+	background-position: -28px -10px;
+}
+
+.small-img-next:hover {
+	background-position: -28px -104px;
+}

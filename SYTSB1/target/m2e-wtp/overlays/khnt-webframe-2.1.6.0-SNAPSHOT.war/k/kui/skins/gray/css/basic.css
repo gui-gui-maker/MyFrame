@@ -1,0 +1,25 @@
+﻿/* 此样式，框架，列表，详情，都会调用 */
+
+/* title 效果 */
+.k-e-tooltip {position:absolute;z-index:9999;max-width:500px;overflow:hidden;}
+.k-e-tooltip-wrap {padding:5px;}
+.k-e-tooltip-trans {position:absolute;z-index:9998;border:1px solid #767676;background:#edeef5;opacity:0.5;filter:alpha(opacity=50);box-shadow:3px 3px 5px 0px #8E8E8E;filter:progid:DXImageTransform.Microsoft.shadow(direction=135,color=#8E8E8E,strength=5);box-shadow:0 0 6px rgba(0, 0, 0, 0.3);}
+
+/* 通用按钮类，窗口按钮、工具条按钮 2017年06月13日 10:55:27 星期二 lybide */
+/* =============================================================================== */
+.l-button-icon {position:absolute;top:50%;left:5px;height:16px;width:16px;margin-top:-8px;}
+.l-button,.l-button-disabled {display:inline-block;position:relative;padding:0 8px;margin:0px 4px 0px 4px;cursor:pointer;border-radius:5px 5px 5px 5px;border:solid 1px #7e7e7e;background:url(../images/controls/button-bg2.gif) #ffffff repeat-x center; text-align:center; color:#000055;box-shadow:1px 1px 0 rgba(255,255,255,.8) inset,-1px -1px 0 rgba(255,255,255,.8) inset;line-height:1.5;}
+.l-button-text {line-height:24px;}
+.l-button-warp {}
+.l-button-main {padding:0px 3px 0px 3px;white-space:nowrap;height:24px;display:inline-block;overflow:hidden;}
+
+.l-button {}
+.l-button-disabled {cursor:default;border:1px solid #adb2b5;background:#f4f4f4;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#f4f4f4,endColorstr=#f5f4ea);}
+.l-button-hasicon {padding:0px 5px 0px 15px !important;}
+.l-button-notText {padding:0px 5px 0px 5px !important;}
+.l-button-notText .l-button-icon {width:100%;}
+.l-button-hover,.l-button:hover {background: #FFBE76 url(../images/controls/button-bg-over.gif) repeat-x 0 0; border-color:#c64e00; color:#99262d;box-shadow:1px 1px 0 rgba(255,248,204,.8) inset,-1px -1px 0 rgba(255,248,204,.8) inset;}
+
+.l-btn-disabled .l-button-text,.l-button-disabled .l-button-text { color:#a0a0a0; }
+.l-btn-disabled .l-button-icon,.l-button-disabled .l-button-icon {opacity:0.5;text-shadow:1px 1px #FFFFFF;filter:url(gray.svg#grayscale);filter:progid:DXImageTransform.Microsoft.BasicImage(grayScale=1,opacity=0.5);-webkit-filter: grayscale(100%);-moz-filter: grayscale(100%);-ms-filter: grayscale(100%);-o-filter:grayscale(100%);}
+/* =============================================================================== */

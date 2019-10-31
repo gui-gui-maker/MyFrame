@@ -1,0 +1,252 @@
+/*body{*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+/*}*/
+html,body {overflow:hidden;}
+#web{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: absolute;
+}
+#header{
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: #fff;
+}
+#header img{
+    width: 100%;
+}
+#content{
+    width: 100%;
+    /*height: auto;*/
+    /*position: absolute;*/
+    /*top: 120px;*/
+    /*left: 0;*/
+    /*background: #f0f0f0;*/
+    /*overflow-y:scroll;*/
+}
+.tab{
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #30a3da;
+    background: #fff;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    z-index: 99;
+}
+.tab ul li{
+    float: left;
+    width: 33.33%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+    color: #000;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.active{
+    border-bottom:5px solid #30a3da;
+    box-sizing: border-box;
+}
+.handle{
+    width: 100%;
+    /*height: auto;*/
+    background: #f0f0f0;
+    display: none;
+    position: absolute;
+    top:120px;
+    bottom:60px;border:0px solid #FF2F2F;
+    overflow-y:scroll;
+}
+.handle ul li{
+    width: 100%;
+    height: 130px;
+    background: #fff;
+    margin-top: 2%;
+    line-height: 2.5em;
+    padding-top: 1px;
+    position: relative;
+}
+.handle ul li article{
+    width: 95%;
+    height: 60%;
+    margin: 5% auto;
+}
+.handleTitle{
+    font-size: 1.6rem;
+    color: #3d94b2;
+}
+.handle ul li article p{
+    color: #000;
+    font-size: 1.6rem;
+    height: 3rem;
+    
+}
+.handle ul li article p .art_border{
+	border-radius:0.2rem ;
+	height: 0.4rem;
+	width: 0.4rem;
+	background-color: #3d94b2;
+	margin-top: 1.3rem;
+	
+}
+.art_border1{display: none;}
+.art_first{
+	border-bottom: 0.1rem solid rgba(204, 204, 204, 0.32);
+	padding-bottom: 0.4rem;
+}
+.handle ul li article .timer_button{
+	float: right;
+    font-size: 1.5rem;
+    padding: 0.1rem;
+    color: #fff;
+    background-color: #249f00;
+    line-height: 2.5rem;
+    padding: 0 0.5rem;
+    margin-top: 0.3rem;
+    border-radius: 0.3rem;
+}
+.timer{
+    color: #828282;
+	font-size: 1.4rem!important;
+	margin-left: 5% !important;
+}
+.department{
+    color: #abaaa6;
+    font-size: 1.6rem;
+}
+.handle ul li article p small{
+    color: #e89046;
+    margin-left: 2%;
+    float: right;
+    font-size: 1.6rem;
+}
+.handle ul li article p span{
+    float: left;
+    margin-left: 2%;
+}
+.city{
+    position: absolute;
+    left: 1.5rem;
+}
+.handle ul li p.art_stamp{
+	position: relative;
+	color: #999;
+	margin-top: -0.7rem;
+	
+}
+.handle ul li p.art_stamp span{
+	font-size: 1.4rem;
+	margin-left: 0;
+}
+.handle ul li p .art_times{
+	position: absolute;
+	right: 0;
+}
+.handle ul li p.art_stamp .day1{
+	float: none;
+}
+/*.handle ul li p.art_stamp .day2{
+	margin-left: 1rem;
+}
+.handle ul li p.art_stamp .day3{
+	margin-left: 1rem;
+}*/
+.day{
+    color: #e89046; float: right!important;
+}
+.art_day{
+	float: right !important;
+	color: #999;
+}
+.Icon{
+	display: none;
+    width: 14px;
+    height: 24px;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    margin-top: -12px;
+}
+.bottom{
+    width: 100%;
+    height: auto;
+    background: #fff;
+    margin-top: 2%;
+}
+.btnBg{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background: #f0f0f0;
+    padding-bottom: 2%;
+}
+.btn{
+    width: 95%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 2%;
+}
+.btn a{
+    display: inline-block;
+    width: 100%;
+    color: #fff;
+    background: #006fa7;
+    text-align: center;
+    font-size: 2.0rem;
+    border-radius: 10px;
+    padding: 3% 0;
+}
+@media screen and (max-width: 325px) and (min-width: 240px){
+    .handle ul li article p{
+        font-size: 1.2rem;
+    }
+	
+	.yongcar1 {display:inline-block; width:34%; overflow: hidden; text-overflow:ellipsis; white-space: nowrap;}
+	.art_padding{padding-left: 0 !important;}
+	.city{
+		left: 0.5rem;
+	}
+}
+.art_padding{padding-left: 1rem;float: left;    width: 96%;}
+.art_name{font-size: 1.6rem;text-align: left;}
+.timer_button2{
+	background-color:#83c9e9 !important;
+}
+.timer_button3{
+	background-color: #ff5858 !important;
+}
+.clear {
+	margin: 0px auto;
+	width: 100%;
+	height: 1px;
+	font-size: 1px;
+	clear: both;
+	background: none;
+	overflow: hidden;
+}
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.clearfix {
+	display: inline-block;
+}
+* html .clearfix {
+	height: 1%;
+}
+.clearfix {
+	display: block;
+}

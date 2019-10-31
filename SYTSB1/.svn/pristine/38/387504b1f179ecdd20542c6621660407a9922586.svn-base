@@ -1,0 +1,645 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+</head>
+
+<body>
+	<!--  		<input type="hidden" id="fk_report_id" name="fk_report_id"  value="${param.fk_report_id}"  >
+ 		<input type="hidden" id="fk_inspection_info_id" name="fk_inspection_info_id"  value="${param.fk_inspection_info_id}"  >
+  -->
+	<input type="hidden" id="nextPage" name="nextPage" value="-1">
+	<br />
+	<p class="a DocDefaults " style="text-align: center;">
+		<a name="RTPAGE_9__电梯检验记录（七）"></a>
+	</p>
+	<table id="docx4j_tbl_13"
+		style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 6.91in;">
+		<colgroup>
+			<col style="width: 5.72%;" />
+			<col style="width: 7.57%;" />
+			<col style="width: 5.33%;" />
+			<col style="width: 12.73%;" />
+			<col style="width: 40.33%;" />
+			<col style="width: 15.07%;" />
+			<col style="width: 13.26%;" />
+		</colgroup>
+		<tbody>
+			<tr style="height: 0.48in; page-break-inside: avoid;">
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults "
+						style="text-align: center; padding:1px; line-height: 133%;padding:1px; ">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">序</span>
+					</p>
+					<p class="a DocDefaults "
+						style="text-align: center; padding:1px; line-height: 133%;padding:1px; ">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">号</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults "
+						style="text-align: center; padding:1px; line-height: 133%;padding:1px; ">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">检验</span>
+					</p>
+					<p class="a DocDefaults "
+						style="text-align: center; padding:1px; line-height: 133%;padding:1px; ">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">类别</span>
+					</p>
+				</td>
+				<td colspan="3"
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults "
+						style="text-align: center; padding:1px; line-height: 133%;padding:1px; ">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">检验项目及其内容</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults "
+						style="text-align: center; padding:1px; line-height: 133%;padding:1px;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">检验</span>
+					</p>
+					<p class="a DocDefaults "
+						style="text-align: center; padding:1px; line-height: 133%;padding:1px;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">结果</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="padding:1px; line-height: 133%; text-align: center;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">检验</span>
+					</p>
+					<p class="a DocDefaults " style="padding:1px;  line-height: 133%; text-align: center;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">结论</span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 1.8in; page-break-inside: avoid;">
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults "
+						style="text-align: center; line-height: 133%;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">27</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults "
+						style="text-align: center; line-height: 133%;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">B</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults "
+						style="text-align: center; line-height: 125%; text-align: center;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">6.7</span>
+					</p>
+					<p class="a DocDefaults " style="line-height: 133%; text-align: center;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">门的锁紧</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="padding: 2px;">
+						<span class="a0 " style=""><span class=""
+							style="font-family: 'SimSun';">★(3)门的锁紧应当由电气装置证实，只有在层门锁紧后杂物电梯才能运行。</span></span>
+					</p>
+					<p class="a DocDefaults " style="padding: 2px;">
+						<span class="a0 " style=""><span class=""
+							style="font-family: 'SimSun';">对于同时满足下列条件的杂物电梯：</span></span>
+					</p>
+					<p class="a DocDefaults " style="padding: 2px;">
+						<span class="a0 "
+							style="font-family: 'SimSun'; white-space: pre-wrap;">1 </span><span
+							class="a0 " style="font-family: 'SimSun';">额定速度不大于0.63m/s；</span>
+					</p>
+					<p class="a DocDefaults " style="padding: 2px;">
+						<span class="a0 "
+							style="font-family: 'SimSun'; white-space: pre-wrap;">2 </span><span
+							class="a0 " style="font-family: 'SimSun';">开门高度不大于1.20m；</span>
+					</p>
+					<p class="a DocDefaults " style="padding: 2px;">
+						<span class="a0 "
+							style="font-family: 'SimSun'; white-space: pre-wrap;">3 </span><span
+							class="a0 " style="font-family: 'SimSun';">层站地坎距地面高度不小于0.7m。</span>
+					</p>
+					<p class="a DocDefaults " style="line-height: 125%; padding: 2px;">
+						<span class="a0 " style=""><span class=""
+							style="font-family: 'SimSun';">门的锁紧可以不由电气装置电气证实。但当轿厢驶离开锁区域时，锁紧元件应自动关闭，而且除了正常锁紧位置外，无论证实层门关闭的电气装置是否起作用，都应至少有第二个锁紧位置。</span></span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000;">
+					<p class="a DocDefaults ">
+						<input id="record__B_6_7_S" name="record__B_6_7_S" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:93,initValue:'符合'}"
+							class="cB_6_7" onchange="changeRecord(this,this.value)" />
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="conclusion__B_6_7" name="conclusion__B_6_7"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:false,width:66,initValue:'合格'}" />
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.27in; page-break-inside: avoid;">
+				<td rowspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults "
+						style="text-align: center; line-height: 133%;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">28</span>
+					</p>
+				</td>
+				<td rowspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults "
+						style="text-align: center; line-height: 133%;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">B</span>
+					</p>
+				</td>
+				<td rowspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+				</td>
+				<td rowspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults "
+						style="text-align: center; line-height: 125%;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">6.8</span>
+					</p>
+					<p class="a DocDefaults "
+						style="text-align: center; line-height: 133%;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">门的闭合</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 133%; padding: 2px;">
+						<span class=""
+							style="font-family: 'SimSun';">(1)如果一个层门（或者多扇门中的任何一扇门）开着，在正常操作情况下，应当不能启动杂物电梯或者不能保持继续运行；</span></span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000;">
+					<p class="a DocDefaults ">
+						<input id="record__B_6_8_1" name="record__B_6_8_1" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:93,initValue:'符合'}"
+							class="cB_6_8" onchange="changeRecord(this,this.value)" />
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="conclusion__B_6_8_1" name="conclusion__B_6_8_1"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:false,width:66,initValue:'合格'}" />
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.8in; page-break-inside: avoid;">
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 133%; padding: 2px;">
+						<span class=""
+							style="font-family: 'SimSun';">★(2)每个层门的闭合都应当由电气安全装置来验证，如果滑动门是由数个间接机械连接的门扇组成，则未被锁住的门扇上也应当设置电气安全装置以验证其闭合状态。</span></span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000;">
+					<p class="a DocDefaults ">
+						<input id="record__B_6_8_2S" name="record__B_6_8_2S" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:93,initValue:'符合'}"
+							class="cB_6_8" onchange="changeRecord(this,this.value)" />
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="conclusion__B_6_8_2" name="conclusion__B_6_8_2"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:false,width:66,initValue:'合格'}" />
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 26mm; page-break-inside: avoid;">
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults "
+						style="text-align: center; line-height: 133%;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">29</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults "
+						style="text-align: center; line-height: 133%;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">B</span>
+					</p>
+				</td>
+				<td rowspan="6"
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults "
+						style="text-align: center; line-height: 133%;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">7</span>
+					</p>
+					<p class="a DocDefaults "
+						style="text-align: center; line-height: 133%;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">功</span>
+					</p>
+					<p class="a DocDefaults "
+						style="text-align: center; line-height: 133%;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';"></span>
+					</p>
+					<p class="a DocDefaults "
+						style="text-align: center; line-height: 133%;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">试</span>
+					</p>
+					<p class="a DocDefaults "
+						style="text-align: center; line-height: 133%;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">验</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 133%; text-align: center;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">7.1(2)
+						</span>
+					</p>
+					<p class="a DocDefaults " style="line-height: 133%; text-align: center;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">轿厢安全钳动作试验</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 133%; padding: 2px;">
+						<span class=""
+							style="font-family: 'SimSun';">(1)定期检验：轿厢装有额定载荷，以检修速度下行，进行限速器－安全钳联动试验；对于采用采用悬挂装置断裂、安全绳触发的轿厢安全钳，轿厢装有额定载荷，模拟悬挂装置断裂或者安全绳被触发的状态进行试验。限速器、安全钳动作应当可靠。</span></span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000;">
+					<p class="a DocDefaults ">
+						<input id="record__B_7_1_2" name="record__B_7_1_2" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:93,initValue:'符合'}"
+							class="cB_7_1" onchange="changeRecord(this,this.value)" />
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="conclusion__B_7_1_2" name="conclusion__B_7_1_2"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:false,width:66,initValue:'合格'}" />
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.99in; page-break-inside: avoid;">
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults "
+						style="text-align: center; line-height: 133%;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">30</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults "
+						style="text-align: center; line-height: 133%;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">B</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%; text-align: center;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">7.2
+						</span>
+					</p>
+					<p class="a DocDefaults " style="line-height: 125%; text-align: center;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">对重(平衡重)安全钳动作试验</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%; padding: 2px;">
+						<span class="a0 " style=""><span class=""
+							style="font-family: 'SimSun';">轿厢空载，以检修速度上行，进行限速器－安全钳联动试验；对于采用采用悬挂装置断裂、安全绳触发的安全钳，轿厢空载，模拟悬挂装置断裂或者安全绳被触发的状态进行试验。限速器、安全钳动作应当可靠。</span></span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000;">
+					<p class="a DocDefaults ">
+						<input id="record__B_7_2" name="record__B_7_2" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:93,initValue:'符合'}"
+							class="cB_7_2" onchange="changeRecord(this,this.value)" />
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="conclusion__B_7_2" name="conclusion__B_7_2" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:false,width:66,initValue:'合格'}" />
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.75in; page-break-inside: avoid;">
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults "
+						style="text-align: center; line-height: 133%;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">31</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults "
+						style="text-align: center; line-height: 133%;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">C</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 133%; text-align: center;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">7.4
+						</span>
+					</p>
+					<p class="a DocDefaults " style="line-height: 133%; text-align: center;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">运行试验</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 133%; padding: 2px;">
+						<span class="a0 " style=""><span class=""
+							style="font-family: 'SimSun';">轿厢分别空载、满载，以正常运行速度上、下运行，呼梯、楼层显示等信号系统功能有效、指示正确、动作无误，轿厢平层良好，无异常现象发生。</span></span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000;">
+					<p class="a DocDefaults ">
+						<input id="record__C_7_4" name="record__C_7_4" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:93,initValue:'符合'}"
+							class="cC_7_4" onchange="changeRecord(this,this.value)" />
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="conclusion__C_7_4" name="conclusion__C_7_4" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:false,width:66,initValue:'合格'}" />
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 15mm; page-break-inside: avoid;">
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults "
+						style="text-align: center; line-height: 133%;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">32</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults "
+						style="text-align: center; line-height: 133%;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">B</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 133%; text-align: center;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">7.5
+						</span>
+					</p>
+					<p class="a DocDefaults " style="line-height: 133%; text-align: center;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">上行制动试验</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 133%; padding: 2px;">
+						<span class=""
+							style="font-family: 'SimSun';">(2)对于曳引式杂物电梯，轿厢空载以正常运行速度上行至行程上部，切断电动机与制动器供电，轿厢应当完全停止。</span></span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000;">
+					<p class="a DocDefaults ">
+						<input id="record__B_7_5_2" name="record__B_7_5_2" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:93,initValue:'符合'}"
+							class="cB_7_5" onchange="changeRecord(this,this.value)" />
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="conclusion__B_7_5_2" name="conclusion__B_7_5_2"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:false,width:66,initValue:'合格'}" />
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.44in; page-break-inside: avoid;">
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults "
+						style="text-align: center; line-height: 133%;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">33</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults "
+						style="text-align: center; line-height: 133%;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">C</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 133%; text-align: center;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">7.6
+						</span>
+					</p>
+					<p class="a DocDefaults " style="line-height: 133%; text-align: center;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">沉降试验</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="padding: 2px;">
+						<span class="a0 " style=""><span class=""
+							style="font-family: 'SimSun';">载有额定载重量的轿厢停靠在最高服务站，停止</span></span><span
+							class="a0 " style="font-family: 'SimSun';">10min</span><span
+							class="a0 " style=""><span class=""
+							style="font-family: 'SimSun';">，下沉应当不超过</span></span><span class="a0 "
+							style="font-family: 'SimSun';">10mm。</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000;">
+					<p class="a DocDefaults ">
+						<input id="record__C_7_6_10" name="record__C_7_6_10" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:93,initValue:'符合'}"
+							class="cC_7_6" onchange="changeRecord(this,this.value)" />
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="conclusion__C_7_6" name="conclusion__C_7_6"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:false,width:66,initValue:'合格'}" />
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.55in; page-break-inside: avoid;">
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults "
+						style="text-align: center; line-height: 133%;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">34</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults "
+						style="text-align: center; line-height: 133%;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">B</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 133%; text-align: center;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">7.7
+						</span>
+					</p>
+					<p class="a DocDefaults " style="line-height: 133%; text-align: center;">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">破裂阀动作试验</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="padding: 2px;">
+						<span class="a0 " style=""><span class=""
+							style="font-family: 'SimSun';">轿厢载有均匀分布的额定载重量，超速下行，使破裂阀动作，轿厢应当可靠制停。</span></span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000;">
+					<p class="a DocDefaults ">
+						<input id="record__B_7_7" name="record__B_7_7" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:93,initValue:'符合'}"
+							class="cB_7_7" onchange="changeRecord(this,this.value)" />
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="conclusion__B_7_7" name="conclusion__B_7_7" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:false,width:66,initValue:'合格'}" />
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<p class="a7 a DocDefaults "
+		style="position: relative; text-indent: 8mm; line-height: 150%;"></p>
+	<p class="a7 a DocDefaults "
+		style="position: relative; text-indent: 8mm; line-height: 150%; width: 86%; text-align: left;">
+		<span class="a0 " style="font-size: 10.5pt;"><span class=""
+			style="font-family: 'SimSun';">注C-：一般情况下，除条文序号为2.6、5.4、7.6、7.7的检验项目之外，其余项目(共30项)适用于曳引驱动杂物电梯；除条文序号为2.6、7.5(2)、7.6、7.7的检验项目之外，其余项目(共30项)适用于强制驱动杂物电梯；除条文序号为2.5、7.5(2)的检验项目之外，其余项目(共32项)适用于液压杂物电梯。</span></span>
+	</p>
+	<p class="a7 a DocDefaults "
+		style="position: relative; text-indent: 8mm; line-height: 150%; width: 86%; text-align: left;">
+		<span class="a0 " style="font-size: 10.5pt;"><span class=""
+			style="font-family: 'SimSun';">如果检验中发现曳引轮绳槽的磨损可能影响曳引能力时[见附件A，2.5(3)]，应当进行附件A中7.5(1)要求的试验，在此情况下，应当将该项目列入检验报告。</span></span>
+	</p>
+	<p class="a7 a DocDefaults "
+		style="position: relative; text-indent: 8mm; line-height: 150%; width: 86%; text-align: left;">
+		<span class="a0 " style="font-size: 10.5pt;"><span class=""
+			style="font-family: 'SimSun';">检验机构可以根据不同的电梯类型、配置和检验情况，按照实际的项目及其内容编排检验报告。</span></span>
+	</p>
+	<p class="a7 a DocDefaults "
+		style="position: relative; text-indent: 8mm; line-height: 150%; width: 86%; text-align: left;">
+		<span class="a0 " style="font-size: 10.5pt;"><span class=""
+			style="font-family: 'SimSun';">注C-</span></span><span class="a0 "
+			style="font-size: 10.5pt;; font-family: 'SimSun';">2</span><span
+			class="a0 " style="font-size: 10.5pt;"><span class=""
+			style="font-family: 'SimSun';">：对于按照JG
+				135—2000及更早期标准生产的电梯，条文序号为6.6的项目可以仅检查端站层门是否设置紧急开锁装置；条文序号为6.8(2)的项目，间接机械连接的门扇中未被锁住门扇上的电气安全装置可以不检验；其他标有★的项目，可以不检验，其中条文序号为2.5(4)的项目，仅指可拆卸盘车手轮的电气安全装置可以不检验。</span></span>
+	</p>
+	<p class="a DocDefaults "></p>
+	<p class="a DocDefaults "></p>
+	</div>
+	
+	<!-- userBodyTail goes here -->
+
+</body>
+</html>

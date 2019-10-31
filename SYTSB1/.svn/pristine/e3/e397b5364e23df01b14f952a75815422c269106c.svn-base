@@ -1,0 +1,129 @@
+package com.lsts.office.web;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import sun.misc.Request;
+import sun.reflect.generics.tree.ReturnType;
+
+import com.khnt.core.crud.web.SpringSupportAction;
+import com.khnt.core.crud.web.support.JsonWrapper;
+import com.khnt.pub.fileupload.bean.Attachment;
+import com.khnt.pub.fileupload.service.AttachmentManager;
+import com.khnt.utils.StringUtil;
+import com.lsts.office.bean.MeetingRoomInfo;
+import com.lsts.office.service.MeetingRoomInfoManager;
+
+/**
+ * <p>
+ * 类说明
+ * </p>
+ * 
+ * @ClassName OrgAction
+ * @JDK 1.6
+ * @author
+ * @date
+ */
+@Controller
+@RequestMapping("oa/meetingRoom/info/")
+public class MeetingRoomInfoAction extends
+		SpringSupportAction<MeetingRoomInfo, MeetingRoomInfoManager> {
+
+	@Autowired
+	private MeetingRoomInfoManager meetingInfoManager;
+	
+	@Autowired
+	private AttachmentManager attachmentManager;
+
+	@Override
+	public HashMap<String, Object> detail(HttpServletRequest request, String id)
+			throws Exception {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		try {
+			MeetingRoomInfo info = meetingInfoManager.get(id);
+			map.put("data", info);
+			List<Attachment> files = new ArrayList<Attachment>();
+			if(StringUtil.isNotEmpty(info.getRoompic_id())){
+				String roompicIds = info.getRoompic_id();
+				String[] roompicIdsArr = roompicIds.split(",");
+				for(String roompicId : roompicIdsArr) {
+					Attachment attachment = attachmentManager.get(roompicId);
+					files.add(attachment);
+				}
+			}
+			map.put("files", files);
+			map.put("success", true);
+			return map;
+		} catch (Exception e) {
+			log.error(e.getMessage());
+			return JsonWrapper.failureWrapper();
+		}
+	}
+	@Override
+	public HashMap<String, Object> save(HttpServletRequest request, MeetingRoomInfo meeting){
+		try{
+			//判断会议室编号是否存在
+			if(meetingInfoManager.existMeetingRoom(meeting)){
+				return JsonWrapper.failureWrapperMsg("该会议室已经存在，请填写正确的会议室名称！");
+			}
+			else{
+				meeting.setCreate_time(new Date());
+				return super.save(request,meeting);
+			}
+		}
+		catch(Exception e){
+			return JsonWrapper.failureWrapperMsg("会议室信息保存出错："+e.getMessage());
+		}
+		
+	}
+
+	 @RequestMapping(value="delMeetingRoom")
+	 @ResponseBody
+	 public HashMap<String, Object> delMeetingRoom(String ids){
+		 try{
+			 HashMap<String, Object> mInfo=new HashMap<String,Object>();
+			 String notDelRoomCode=meetingInfoManager.delMeetingRoom(ids);
+			 if(StringUtil.isNotEmpty(notDelRoomCode)){
+				 notDelRoomCode="【"+notDelRoomCode+"】";
+				 mInfo.put("msg", notDelRoomCode+"会议室已经被使用，不能删除！");
+			 }
+			 return JsonWrapper.successWrapper(mInfo);
+		 }catch(Exception e){
+			 return JsonWrapper.failureWrapperMsg("删除会议室错误："+e.getMessage());
+		 }
+    }
+   
+	
+	@RequestMapping(value="saveUsedState")
+	@ResponseBody
+	public HashMap<String, Object> saveUsedState(String id,MeetingRoomInfo app) throws Exception{
+		if(this.meetingInfoManager.saveUsedState(id)){
+			return JsonWrapper.successWrapper();
+		}else{
+			return JsonWrapper.failureWrapper();
+		}
+	}
+	@RequestMapping(value="getRoomInfo")
+	@ResponseBody
+	public HashMap<String, Object> getRoomInfo(String id) throws Exception{
+		HashMap<String, Object> wrapper = new HashMap<String, Object>();
+		MeetingRoomInfo meetingRoomInfo = meetingInfoManager.get(id);
+		if(meetingRoomInfo!=null&&!meetingRoomInfo.equals("")){
+			wrapper.put("meetingRoomInfo", meetingRoomInfo);
+			wrapper.put("success", true);
+		}else{
+			wrapper.put("msg", "获取会议室信息失败");
+			wrapper.put("success", false);
+		}
+		return wrapper;
+	}
+}

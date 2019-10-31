@@ -1,0 +1,3 @@
+@import url("default/global.css");
+@import url("default/link.css");
+@import url("default/basic2.css");

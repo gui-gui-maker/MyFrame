@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>上传</title>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<link rel="stylesheet" href="/khoa/css/css1.css" type="text/css">
+<script language="javascript" src="/khoa/js/translate.js"></script>
+<script>
+var fileNo = 1;
+var sData;
+
+function loadThis()
+{
+	sData = window.dialogArguments
+	document.all.listFrame.src = "/cfdinfo?CONTROLLER=com.khnt.command.BlankSecuredCmd&NEXT_PAGE=UPLOAD_FILE";
+	
+}
+
+function changeStatus(getStatus)
+{
+	if(getStatus == "wait")
+	{
+		sendTr1.style.display = "none";
+		sendTr2.style.display = "none";
+		statusTr1.style.display = "";
+	}
+	else if(getStatus == "complete")
+	{
+		statusTr2.style.display = "";
+
+		var tmpStr = "<br>";
+		var upArr = listFrame.returnArr
+		var upArrLen = upArr.length;
+		for(var i=0;i<upArrLen;i++)
+		{
+			if(upArr[i][11]!="null")
+				tmpStr += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#336699'>"+(i+1)+"、 "+upArr[i][1]+" -- 上传成功</font><br><br>"
+			else
+				tmpStr += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#006633'>"+(i+1)+"、 "+upArr[i][1]+" -- "+upArr[i][9]+"</font><br><br>"
+		}
+		statusTd1.innerHTML = tmpStr;
+		setTimeout("windowClose()",2000)
+	}
+}
+window.returnValue = "";
+function windowClose()
+{
+	window.returnValue = listFrame.returnArr;
+	window.close();
+}
+</script>
+</head>
+
+
+
+<body class="openBody" onload="loadThis()">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%" valign="top" >
+  <tr id=sendTr1>
+    <td align="center" style="" colspan="2">
+		<fieldset style="height:150;width:100%" id="upField"> <legend>上传...</legend> 
+		<table width="100%" border="0" height="100%" cellspacing="0" cellpadding="0" align="center">
+		  <tr> 
+			<td align="center">
+			<iframe marginwidth="0" marginheight="0" frameborder="0"  valign=top src="about:blank" name="listFrame" width="100%" height="100%" allowTransparency ></iframe> 
+			</td>
+		  </tr>
+		</table>
+		</fieldset > 
+
+	</td>
+  </tr>
+  <tr height=25 id=sendTr2> 
+	<td align="right"  id="toolTd" colspan="2">
+	<input type="button" name="Submit" value=" 上传 " id="subBut" onclick="listFrame.doSub()">
+	</td>
+  </tr>
+  <tr style="display:none"  id=statusTr1> 
+    <td  colspan="2" > 
+	<div class="listDiv"  id=statusTd1   >
+		<img src="/khoa/images/send.gif">
+	    <br>
+		<br>
+		<font size="2">&nbsp;&nbsp;&nbsp;&nbsp;请稍候，正在上传文件....</font>
+    </td>
+	</div>
+  </tr>
+  <tr style="display:none"  id=statusTr2 height=30> 
+    <td  colspan="2" align="center" style="color:red">2秒后窗口将自动关闭 </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,6 @@
+﻿
+@import url("ligerui-kui.css");/* khnt框架样式 */
+@import url("ligerui-kui2.css");/* khnt框架样式 */
+@import url("ligerui-basic.css");
+
+

@@ -1,0 +1,62 @@
+var __area__tree;
+var __area__tree_dlg;
+var __last_select_area__tree_value;
+var __combo;
+var defaultAreacode=kFrameConfig.defaultAreaCode||'000000';
+document.write('<style type="text/css">.l-tree .l-tree-icon-none img {height: 16px;margin: 3px;width: 16px;}</style>');
+function showAreaList() {
+    __combo = this;
+    var areacode = $(this).data("areacode");
+    if (areacode == undefined || areacode=="null" || areacode==null) {
+        areacode = this.get("areacode");
+        if (areacode == undefined) {
+            areacode = defaultAreacode;
+        }
+    }
+    if (__area__tree_dlg) {
+        __area__tree_dlg.show();
+    } else {
+        __area__tree_dlg = $.ligerDialog.open({ title: '选择地址', width: 350, height: 300, content: "<div id='__area__tree_div'></div>", buttons: [
+            {
+                text: '确定', onclick: function (item, dialog) {
+                    var selected = __area__tree.getSelected();
+                    if (!selected) {
+                        $.ligerDialog.warn('请选择值！');
+                        return;
+                    }
+                    var data = __area__tree.getSelected().data;
+                    __last_select_area__tree_value = data["code"];
+                    __combo._changeValue(data["code"], data["fullName"]);
+                    dialog.hide();
+                }
+            },
+            {
+                text: '取消', onclick: function (item, dialog) {
+                    dialog.hide();
+                }
+            }
+        ]
+        });
+        var imgUrl = "pub/rbac/img/";
+        __area__tree = $("#__area__tree_div").ligerTree({
+            checkbox: false,
+            url: 'rbac/area/getAreaTreeWithAsync.do?code=' + areacode,
+            attribute: [ "pid", "fullName" ],
+            iconFieldName: "levels",
+            iconParse: function (data) {
+                return imgUrl + data["levels"] + ".png";
+            },
+            onBeforeExpand: function (node) {
+                if (node.data.children && node.data.children.length == 0) {
+                    __area__tree.loadData(node.target, "rbac/area/getAreaTreeByPid.do?id=" + node.data.id);
+
+
+                }
+            }
+        });
+    }
+    return false;
+}
+
+function showAreaListBy() {
+}

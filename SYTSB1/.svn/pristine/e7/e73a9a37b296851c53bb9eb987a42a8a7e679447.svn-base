@@ -1,0 +1,56 @@
+package com.lsts.mobileapp.input.bean;
+
+public class RecordModel {
+
+	private String id; //报告id
+	private String fkReportId; //报告id
+    private String code; //原始记录模板code
+    private String name; //模板名称
+    private String version; //版本号
+    private String path; //模板路劲
+    private String updateDate; //更新日期
+	public String getFkReportId() {
+		return fkReportId;
+	}
+	public void setFkReportId(String fkReportId) {
+		this.fkReportId = fkReportId;
+	}
+	public String getCode() {
+		return code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getVersion() {
+		return version;
+	}
+	public void setVersion(String version) {
+		this.version = version;
+	}
+	public String getPath() {
+		return path;
+	}
+	public void setPath(String path) {
+		this.path = path;
+	}
+	public String getUpdateDate() {
+		return updateDate;
+	}
+	public void setUpdateDate(String updateDate) {
+		this.updateDate = updateDate;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+    
+}

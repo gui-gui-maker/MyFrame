@@ -1,0 +1,291 @@
+/*
+* Create time: 2013-03-04 17:13:12
+* Create user: lybide
+* kui系统主框架样式表
+* 修改于 2013-10-28
+*/
+
+/* 重写框架主类 =========================================================================*/
+.m-top {position:absolute;top:0px;height:113px;background:url("images/menu-outlook/m-top.jpg") no-repeat center top;width:100%;z-index:5;}
+.m-top-div {}
+.m-top-logo {position:absolute;top:0px;left:0px;/*width:500px;*//*height:87px;*/z-index:2;display:none;background-position:0px 0px!important;}
+.m-top-logo-sub {}
+.m-top-left {display:none;}
+.m-top-right {display:none;}
+
+
+.m-center {top:113px;}
+
+.m-foot {position:absolute;bottom:0px;height:29px;border-top:1px solid #707070;background:#7a7a7a;width:100%;z-index:3;}
+
+/* 13-3-7 下午2:30 右上角系统配置小图标 13-3-12 上午11:00 lybide */
+.m-system-item {position:absolute;top:88px;right:25px;z-index:20;}
+.m-system-item ul {margin:0px;padding:0px;list-style-type:none;}
+.m-system-item ul li {float:left;position:relative;margin-right:0px;}
+.m-system-item-a,.m-system-item-a:link,.m-system-item-a:visited {color:#325A99;text-decoration:none;display:inline-block;width:24px;height:24px;position:relative;background:url("../../../images/icons/all/icon-tu1.png") no-repeat -24px -24px;padding:1px;}
+.m-system-item-a:hover {border:1px solid #7a7a7a;background-color:#a6a6a6;border-radius:5px 5px 5px 5px;padding:0;}
+.m-system-item-a.hover {border:1px solid #7a7a7a;background-color:#a6a6a6;border-radius:5px 5px 5px 5px;padding:0;}
+.m-system-item-a span {display:none;}
+
+.m-system-item .m-m-children-div {left:-20px;}
+
+.m-user-info {position:absolute;top:88px;left:30px;z-index:20;}
+.user-set-menu {position:absolute;top:20px;right:20px;left:auto;z-index:30;}
+.user-set-menu-a,.user-set-menu-a:link,.user-set-menu-a:visited {display:block;border:1px solid #787878;border-radius:5px 5px 5px 5px;width:40px;height:40px;overflow:hidden;}
+.user-set-menu-a:hover {}
+.user-set-menu-a.hover {border:1px solid #333;background-color:#6db7e2;box-shadow:3px 3px 5px 0px #8E8E8E;}
+.user-set-menu-a span {display:none;}
+.m-user-info-name {text-align:left;border:0px solid #FF0000;position:absolute;top:4px;left:0px;color:#ffffff;/*text-shadow:#000055 0 0 0px;filter:progid:DXImageTransform.Microsoft.Glow(color=#00469b,strength=2);*/white-space:nowrap; background:url(images/menu-outlook/user-infoimg.png) no-repeat left center; padding-left:20px;}
+
+.user-set-menu .m-m-children-div {top:50px;left:-20px;}
+
+/* 系统右上角，改变字体大小 */
+.m-change-style-font-wrap {position:absolute;top:88px;right:110px;border:0px solid #FF0000;z-index:20;font-size:12px;}
+.m-change-style-font-wrap a,.m-change-style-font-wrap a:link,.m-change-style-font-wrap a:visited {color:#000;text-decoration:none;display:inline-block;margin:0px 1px 0px 0px;padding:4px;}
+.m-change-style-font-wrap a:hover {color:#FF0000;text-decoration:underline; border:1px solid #505050;padding:3px;background:#eaeaea;}
+
+/* 折叠类 13-3-15 下午7:30 lybide ============================================================= */
+.m-fold-left {position:absolute;top:92px;left:5px;width:16px;height:16px;border:0px solid #FF0000;z-index:8;cursor:pointer;}
+.m-fold-left a,.m-fold-left a:link,.m-fold-left a:visited {display:block;width:16px;height:16px;background:url("images/menu-outlook/icon-sh2.png") no-repeat 0px -16px;}
+.m-fold-left a:hover {border:1px solid #ffffff;background-color:#7e7e7e;}
+.m-fold-left a span {display:none;}
+.m-fold-left2 {}
+.m-fold-left2 a,.m-fold-left2 a:link,.m-fold-left2 a:visited {display:block;width:16px;height:16px;background:url("images/menu-outlook/icon-sh2.png") no-repeat -16px -16px;}
+.m-fold-left2 a:hover {border:1px solid #ffffff;background-color:#7e7e7e;}
+.m-fold-left2 a span {display:none;}
+.m-fold-top {position:absolute;top:92px;right:5px;width:16px;height:16px;border:0px solid #FF0000;z-index:8;cursor:pointer;}
+.m-fold-top a,.m-fold-top a:link,.m-fold-top a:visited {display:block;width:16px;height:16px;background:url("images/menu-outlook/icon-sh2.png") no-repeat 0px 0px;}
+.m-fold-top a:hover {border:1px solid #ffffff;background-color:#7e7e7e;}
+.m-fold-top a span {display:none;}
+.m-fold-top2 {}
+.m-fold-top2 a,.m-fold-top2 a:link,.m-fold-top2 a:visited {display:block;width:16px;height:16px;background:url("images/menu-outlook/icon-sh2.png") no-repeat -16px 0px;}
+.m-fold-top2 a:hover {border:1px solid #ffffff;background-color:#7e7e7e;}
+.m-fold-top2 a span {display:none;}
+.m-fold-right {display:none;}
+.m-fold-buttom {display:none;}
+
+/* 一级菜单收缩 13-3-19 下午4:51 lybide 优化 */
+.m-menu1-more {position:absolute;top:58px;right:86px;z-index:21;cursor:pointer;}
+.m-menu1-more-a,.m-menu1-more-a:link,.m-menu1-more-a:visited {text-decoration:none;display:block;width:24px;height:24px;border:0px solid #FF0000;background:url("../../../images/icons/all/icon-tu1.png") no-repeat -1104px 0px;padding:1px;}
+.m-menu1-more-a:hover {border:1px solid #7a7a7a;background-color:#a6a6a6;border-radius:5px 5px 5px 5px;padding:0;}
+.m-menu1-more-a.hover {border:1px solid #7a7a7a;background-color:#a6a6a6;border-radius:5px 5px 5px 5px;padding:0;}
+.m-menu1-more-a span {display:none;}
+.m-menu1-more-title {display:none;padding:2px;background:#0b73db;color:#ffffff;text-align:center;margin-bottom:4px;}
+
+/* 重写框架主类 =========================================================================*/
+
+/* 菜单类 ===========================================================================*/
+.m-menu1 {border:0px solid #0000FF;top:18px;height:69px;left:350px;right:110px;position:absolute;z-index:6;padding:0px 0px 0px 0px;overflow:hidden;}
+
+.m-menu2 {border:0px solid #FF0000;bottom:30px;top:113px;left:0px;height:auto;width:180px;overflow:hidden;position:absolute;display:none;/*background-image:-moz-linear-gradient(top,#d7ecff,#ffffff);background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#d7ecff),color-stop(1,#ffffff));filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d7ecff',endColorstr='#ffffff',GradientType='0');*//*background:#ecf7ff;*/z-index:3;}
+
+/* ==============================================2013-10-28 一级菜单新样式 */
+.m-menu-outlook {position:absolute;top:0px;border:0px solid #FF0000;width:auto;overflow:hidden;left:0px;right:0px;}
+.m-menu-outlook ul {margin:0px;padding:0px;list-style:none;float:right;}
+.m-menu-outlook ul li {float:left; padding:0px; margin:0px 3px; list-style:none;position:relative;/*width:78px; height:69px; text-align:center;*/}
+.m-menu1-wrap {float:left; /*width:78px;*/height:69px; color:#fff;cursor:pointer;/* z-index:1; position:absolute; left:0px; top:10px;*/}
+.m-menu1-wrap a {color:#fff; text-decoration:none; display:block;height:22px; padding:47px 8px 0px;margin:0px 7px;}
+/*.m-menu1-bg {background:#fff; filter:alpha(opacity=30); opacity:0.3; border:#002f69 solid 0px; border-bottom:none; border-top-left-radius:5px; border-top-right-radius:5px; width:100%; padding:10px 0px 0px; height:59px; position:absolute; left:0px; top:0px; z-index:0;}*/
+/*#mMenu_li_myIsIndex .m-menu1-wrap {background:url(images/menu-outlook/house.png) no-repeat center 10px;}
+#mMenu_li_4028b8813bca5cef013bcb7b6da50001 .m-menu1-wrap {background:url(images/menu-outlook/user_comment.png) no-repeat center 10px;}
+#mMenu_li_4028e4c741fce9db0141fcff33320001 .m-menu1-wrap {background:url(images/menu-outlook/database_gear.png) no-repeat center 10px;}
+#mMenu_li_E9ED46EC3CB36073E040007F020012DF .m-menu1-wrap {background:url(images/menu-outlook/database_refresh.png) no-repeat center 10px;}
+#mMenu_li_sys_system .m-menu1-wrap {background:url(images/menu-outlook/widgets.png) no-repeat center 10px;}*/
+.m-menu1-left {display:none;}
+.m-menu1-right {display:none;}
+.m-menu1-3j {display:none;}
+
+.m-menu1-click .m-menu1-left {display:block;position:absolute;left:0px;top:0px;width:7px;height:69px;background:url("images/menu-outlook/menu1-hover.png") no-repeat;}
+.m-menu1-click .m-menu1-right {display:block;position:absolute;right:0px;top:0px;width:7px;height:69px;background:url("images/menu-outlook/menu1-hover.png") no-repeat -10px 0px;}
+.m-menu1-click .m-menu1-a {background:url("images/menu-outlook/menu1-hover2.png") repeat-x left top;}
+.m-menu1-click a {font-weight:bold;_font-weight:normal;color:#fbffc1;}
+.m-menu1-click .m-menu1-3j {display:block;border:0px solid #FF0000;position:absolute;left:50%;bottom:0px;width:11px;height:8px;background:url("images/menu-outlook/menu1-hover.png") no-repeat center -111px;margin-left:-5px;}
+
+.m-menu-outlook ul li:hover .m-menu1-left , .m-menu1-hover .m-menu1-left {display:block;position:absolute;left:0px;top:0px;width:7px;height:100%;background:url("images/menu-outlook/menu1-hover.png") no-repeat}
+.m-menu-outlook ul li:hover .m-menu1-right , .m-menu1-hover .m-menu1-right {display:block;position:absolute;right:0px;top:0px;width:7px;height:100%;background:url("images/menu-outlook/menu1-hover.png") no-repeat -10px 0px;}
+.m-menu-outlook ul li:hover .m-menu1-a , .m-menu1-hover .m-menu1-a {background:url("images/menu-outlook/menu1-hover2.png") repeat-x left top;}
+.m-menu-outlook ul li:hover a , .m-menu1-click a {font-weight:normal;_font-weig3ht:normal;color:#fbffc1;}
+.m-menu-outlook ul li:hover .m-menu1-3j , .m-menu1-hover .m-menu1-3j {/*display:none;border:0px solid #FF0000;position:absolute;left:50%;bottom:0px;width:11px;height:8px;background:url("images/menu-outlook/menu1-hover.png") no-repeat center -111px;margin-left:-5px;*/}
+
+.m-menu-outlook .hasIcon {position:absolute;left:50%;margin-left:-24px;top:0px;}
+
+.m-menu1-div {position:absolute;bottom:0px;border:0px solid #FF0000;width:auto;right:150px;height:69px;}
+.m-menu1-div ul {margin:0px;padding:0px;list-style-type:none;float:left;}
+.m-menu1-div ul li {float:left;margin-right:0px;position:relative;}
+.m-menu1-wrap {float:left;height:69px;color:#ffffff;border:0px solid #FF0000;cursor:pointer;}
+.m-menu1-icon-16 {position:absolute;width:16px;height:16px;top:50%;left:5px;margin:-8px 0 0 0;}
+.m-menu1-icon-32 {width:32px;height:32px; padding:8px; margin:0 auto 5px;}
+/*.m-menu1-icon {position:absolute;width:32px;height:32px;border:0px solid #FF0000;top:0px;left:50%;margin-left:-16px;}*/
+.m-menu1-a span {text-shadow:#000 0 0 5px;filter:progid:DXImageTransform.Microsoft.Glow(color=#00469b,strength=2);display:inline-block;}
+
+/*.m-menu1-down .m-menu1-left {display:block;position:absolute;left:0px;top:0px;width:7px;height:46px;background:url("images/menu-outlook/menu1-hover.png") no-repeat;}
+.m-menu1-down .m-menu1-right {display:block;position:absolute;right:0px;top:0px;width:7px;height:46px;background:url("images/menu-outlook/menu1-hover.png") no-repeat -7px 0px;}
+.m-menu1-down {background:url("images/menu-outlook/menu1-hover.png") no-repeat left -130px;}
+.m-menu1-down a {font-weight:bold;_font-weight:normal;}
+.m-menu1-down .m-menu1-3j {display:block;border:0px solid #FF0000;position:absolute;left:50%;bottom:0px;width:11px;height:8px;background:url("images/menu-outlook/menu1-hover.png") no-repeat center -111px;margin-left:-5px;}
+*/
+
+/*.m-foot-menu {position:absolute;left:20px;}*/
+/*.m-foot-toolbar {position:absolute;left:130px;}*/
+
+/*.m-foot-toolbar-div {position:relative;}*/
+/*.m-foot-toolbar-div ul {margin:0px;padding:0px;list-style-type:none;display:inline-block;}*/
+/*.m-foot-toolbar-div ul li {float:left;white-space:nowrap;margin-right:15px;position:relative;}*/
+/*.m-foot-toolbar-div ul li em {margin-top:2px;display:block;width:24px;height:24px;border:0px solid #FF0000;float:left;background:url("../../../images/icons/all/icon-tu1.png") no-repeat 0px 0px;}*/
+/*.m-foot-toolbar-li-div {*//*padding-top:5px;_padding-top:8px;*//*float:left;line-height:28px;_line-height:30px;}*/
+/*.m-foot-toolbar-li-div a,.m-foot-toolbar-li-div a:link,.m-foot-toolbar-li-div a:visited {color:#ffffff;text-decoration:none;}*/
+/*.m-foot-toolbar-li-div a:hover {color:#ffff00;text-decoration:underline;}*/
+/*.m-foot-toolbar-li-div a span {}*/
+
+/*.m-foot-copyright {position:absolute;right:5px;top:3px;border:0px solid #FF0000;}*/
+/*.m-foot-copyright div {}*/
+/*.m-foot-copyright a,.m-foot-copyright a:link,.m-foot-copyright a:visited {color:#325A99;text-decoration:none;display:block;width:24px;height:24px;background:url("images/menu-outlook/icon-sh1.png") no-repeat 0px -72px;}*/
+/*.m-foot-copyright a:hover {color:#FF0000;text-decoration:underline;background:url("images/menu-outlook/icon-sh1.png") no-repeat -24px -72px;}*/
+/*.m-foot-copyright a span {display:none;}*/
+
+/*================================= 2013-10-29 左边二级菜单新样式 */
+.m-menu2-outlook-wrap {border-right:#707070 solid 1px; height:100%;/*width:105px!important;*/overflow:hidden; /*background:#fff!important;*/}
+
+.m-menu2-1-div {cursor:default;overflow:auto;height:100%;/**/}
+
+.m-menu2-2 {overflow:auto; height:100%;}/*2013-10-30*/
+.m-menu2-1-div-ul {margin:0px;padding:0px;list-style:none;overflow:auto;position:relative;}
+.m-menu2-1-div-ul li {white-space:normal; margin:0px 0px;}
+/*.m-menu2-1-div-ul li:hover .m-menu1-icon-32 , .m-menu2-1-div-ul-li-over {background:url("images/menu-outlook/menu1-hover.png") no-repeat 0px -252px;color:#ff4e00!important;}2013-10-30 左边图标菜单鼠标移上去的效果*/
+.m-menu2-1-div-ul li ul {/*margin-left:10px;*/margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;list-style-type:none;overflow:hidden;}
+.m-menu2-1-li-ul {}
+
+.m-mdeep1 {}
+.m-mdeep2 {padding-left:0px!important;}
+.m-mdeep3 {padding-left:60px!important;}
+.m-mdeep4 {padding-left:75px!important;}
+.m-mdeep5 {padding-left:90px!important;}
+
+.mm-deep-2 {border-bottom:1px solid #707070;}
+.mm-deep-2-prve-select {background:url("images/menu-outlook/menu1-hover.png") repeat-x 0px -499px!important;}
+.mm-deep-2-prve-select .m-menu2-1-li-div-right {width:16px;height:16px;position:absolute;right:4px;top:50%;margin-top:-8px;background:#FF0000;background:url("images/menu-outlook/menu1-hover.png") no-repeat -32px -48px;}
+.mm-deep-2 li {padding:0px 0px;}
+
+.m-no-icon .m-menu2-1-li {padding:0;}
+.m-no-icon .m-menu2-1-li-div {}
+.m-no-icon .m-menu2-1-li-div a span {text-align:center;margin-left:0;}/*菜单文本没有图标*/
+.m-no-icon .m-mdeep1 {}
+.m-no-icon .m-mdeep2 {}
+.m-no-icon .m-mdeep3 {padding-left:0!important;}
+.m-no-icon .m-mdeep4 {padding-left:0!important;}
+.m-no-icon .m-mdeep5 {padding-left:0!important;}
+.m-no-icon .m-menu2-1-li-div-hasChildren {background:url("images/menu-outlook/menu1-hover.png") no-repeat -32px -27px;width:16px;height:16px;position:absolute;left:auto;top:50%;margin-top:-8px;left:-18px;border:0px solid #FF0000;}
+
+.m-no-icon .m-t-line {position:absolute;left:0px;top:0px;height:28px;width:100px;background:url("images/menu-outlook/menu-tree-1-no-icon.png") no-repeat -100px -100px;}
+.m-no-icon .m-t-line.mm-deep-1-li {}
+.m-no-icon .m-t-line.mm-deep-2-li {background-position:0px 0px!important;border:0px solid #FF0000;}
+.m-no-icon .m-t-line.mm-deep-3-li {background-position:0px -28px!important;border:0px solid #00ff00;}
+.m-no-icon .m-t-line.mm-deep-4-li {background-position:0px -56px!important;border:0px solid #0000ff;}
+.m-no-icon .m-t-line.mm-deep-5-li {background-position:0px -84px!important;border:0px solid #0000ff;}
+.m-no-icon .mm-deep-2-li.m-t-line-last {background-position:0px -140px!important;border:0px solid #FF0000!important;}
+.m-no-icon .mm-deep-3-li.m-t-line-last {background-position:0px -168px!important;border:0px solid #FF0000!important;}
+.m-no-icon .mm-deep-4-li.m-t-line-last {background-position:0px -196px!important;border:0px solid #FF0000!important;}
+.m-no-icon .mm-deep-5-li.m-t-line-last {background-position:0px -224px!important;border:0px solid #FF0000!important;}
+
+.m-t-line {position:absolute;left:0px;top:0px;height:28px;width:100px;background:url("images/menu-outlook/menu-tree-1.png") no-repeat -100px -100px;display:none;}
+.m-t-line.mm-deep-1-li {}
+.m-t-line.mm-deep-2-li {background-position:0px 0px!important;border:0px solid #FF0000;}
+.m-t-line.mm-deep-3-li {background-position:0px -28px!important;border:0px solid #00ff00;}
+.m-t-line.mm-deep-4-li {background-position:0px -56px!important;border:0px solid #0000ff;}
+.m-t-line.mm-deep-5-li {background-position:0px -84px!important;border:0px solid #0000ff;}
+.mm-deep-2-li.m-t-line-last {background-position:0px -140px!important;border:0px solid #FF0000!important;}
+.mm-deep-3-li.m-t-line-last {background-position:0px -168px!important;border:0px solid #FF0000!important;}
+.mm-deep-4-li.m-t-line-last {background-position:0px -196px!important;border:0px solid #FF0000!important;}
+.mm-deep-5-li.m-t-line-last {background-position:0px -224px!important;border:0px solid #FF0000!important;}
+
+/* 菜单容器与标题 13-3-18 下午3:44 lybide */
+.m-menu2-1-panel {overflow:hidden;}
+.m-menu2-1-title {position:relative;padding:0px;line-height:33px;height:33px; background:url("images/menu-outlook/menu1-hover.png") repeat-x 0px -200px;display:block;}
+.m-menu2-1-title .m-menu1-icon-16 {top:50%;margin-top:-8px;left:22px;}
+.m-menu2-1-title-text {font-weight:bold;color:#000;position:absolute;top:50%;margin-top:-16px;left:0px;white-space:nowrap;width:100%;overflow:hidden;text-align:center;cursor:default;}
+.m-menu2-1-title-text-left {position:absolute;border:0px solid #FF0000;width:6px;height:28px;top:0;left:0;}
+.m-menu2-1-title-text-right {position:absolute;border:0px solid #FF0000;width:28px;height:28px;top:0;right:0;}
+.m-menu2-1-title-text-3j {position:absolute;border:0px solid #FF0000;width:16px;height:7px;left:50%;margin-left:-8px;bottom:-7px;background:url("images/menu-outlook/menu1-hover.png") no-repeat 0px -464px;}
+.m-menu2-1-title .hasIcon {display:none;}
+
+.m-menu2-1-li {position:relative;}
+.m-menu2-1-li-div {/*padding:0px 5px 0px 30px;line-height:28px;*/height:auto; text-align:center;overflow:hidden;position:relative;z-index:3;}
+.m-menu2-1-li-div span {display:block;}/*20131029*/
+.m-menu2-1-li-div-left {}
+.m-menu2-1-li-div-right {}
+.m-menu2-1-li-div-3j {display:none;}
+.m-menu2-1-li-hasChildren {border-bottom:0px solid #FF0000;}
+.m-menu2-1-li-hasChildren-one {padding:10px 0px 10px auto;/*border:1px solid #b6bdc3;border-left:0px;*//*让有子类的菜单有边线*//*background-image:-moz-linear-gradient(top, #fcfcfb, #d6d3cb);background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fcfcfb), color-stop(1, #d6d3cb));filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfb', endColorstr='#d6d3cb', GradientType='0');*/}
+.m-menu2-1-li-hasChildren-one-over {paddind:0 auto 0 auto !important;background:url("images/menu-outlook/menu1-hover.png") repeat-x 0px -465px!important;color:#FFFFFF;}
+.m-menu2-1-li-hasChildren-one-over .m-menu2-1-li-div-3j {/*background:url("images/menu-outlook/menu1-hover.png") no-repeat -70px -2px;width:9px;height:28px;position:absolute;top:50%;margin-top:-14px;right:0px;*/display:none;}
+
+.m-menu2-1-li-div.m-mdeep1 {border-bottom:1px solid #979797;position:relative;padding:0px;line-height:32px;height:32px;background:url("images/menu-outlook/menu1-hover.png") repeat-x 0px -432px;text-align:left!important;cursor:default;}
+.m-menu2-1-li-div.m-mdeep1 span {margin-left:30px;}
+.m-menu2-1-li-div.m-mdeep1:hover {}
+
+.m-menu2-1-li-ul .m-menu2-1-li-div {border-bottom:0px; height:auto!important;}
+.m-menu2-1-li-div-not-bb {border-bottom:0px solid #9bb6cf;}
+.m-menu2-1-li-ul .m-menu2-1-li-div-over,.m-menu2-1-li-ul .m-menu2-1-li-hasChildren-one-over {}
+.m-menu2-1-li-ul .m-menu2-1-li-div-click {}
+.m-menu2-1-li-ul .m-menu2-1-li-div-down {}
+
+.m-menu2-1-li-div-hasChildren-div {display:none;position:absolute;left:0px;top:0px;right:1px;width:auto;height:23px;background-image:-moz-linear-gradient(top, #fcfcfb, #d6d3cb);background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fcfcfb), color-stop(1, #d6d3cb));filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfb', endColorstr='#d6d3cb', GradientType=0);z-index:1;border:1px solid #b6bdc3;border-left:0px;border-right:0px;}
+.m-menu2-1-li-div-hasChildren {background:url("images/menu-outlook/arrows.png") no-repeat 0px 0px;width:16px;height:16px;position:absolute;top:50%;margin-top:-8px;left:-23px;border:0px solid #FF0000;display:none;}
+.m-menu2-1-li-div-hasChildren2 {background-position:-20px 0px;}
+.m-menu2-1-li-div-hasChildren-line-top {position:absolute;top:-2px;left:3px;right:3px;width:auto;border-top:1px solid #adadad;height:1px;overflow:hidden;}
+.m-menu2-1-li-div-hasChildren-line-bottom {position:absolute;bottom:1px;left:3px;right:3px;width:auto;border-top:1px solid #adadad;height:1px;overflow:hidden;display:none;}
+.m-menu2-1-li-div a,.m-menu2-1-li-div a:link,.m-menu2-1-li-div a:visited {/*position:relative;*//*display:inline-block;width:100%;display:block;*/z-index:1; }
+.m-menu2-1-li-div a:hover {}
+
+.m-menu2-1-li-div-over {cursor:default;}
+.m-menu2-1-li-div-over .m-menu1-icon-32 {background:url("images/menu-outlook/menu1-hover.png") no-repeat 0px -252px;color:#ff4e00!important;}/*20131107*/
+.m-menu2-1-li-div-over .m-menu2-1-li-div-3j {/*background:url("images/menu-outlook/menu1-hover.png") no-repeat -70px -2px;width:9px;height:28px;position:absolute;top:50%;margin-top:-14px;right:0px;*/display:none;}
+.m-menu2-1-li-div-click {/*background:url("images/menu-outlook/menu1-hover.png") no-repeat 0px -252px;*/cursor:default;}
+.m-menu2-1-li-div-click .m-menu1-icon-32 {background:url("images/menu-outlook/menu1-hover.png") no-repeat 0px -252px;}
+.m-menu2-1-li-div-click span , .m-menu2-1-li-div-over span {color:#ff4e00!important;}
+.m-menu2-1-li-div-click .m-menu2-1-li-div-3j {/*background:url("images/menu-outlook/menu1-hover.png") no-repeat -70px -2px;width:9px;height:28px;position:absolute;top:50%;margin-top:-14px;right:0px;*/display:none;}
+.m-menu2-1-li-div-down {cursor:default;}
+.m-menu2-1-li-div-down .m-menu1-icon-32 {background:url("images/menu-outlook/menu1-hover.png") no-repeat 0px -300px;}/*20131107*/
+.m-menu2-1-li-div-down span {color:#c00;}
+.m-menu2-1-li-line {}
+.m-menu2-1-li-line-panle {margin:2px 10px 2px 10px;background:#ffffff;border-top:1px solid #aac9e5;height:1px;overflow:hidden;line-height:normal;}
+.m-menu2-1-li-line-left {display:none;}
+.m-menu2-1-li-line-right {display:none;}
+/* 菜单类 ===========================================================================*/
+
+/*2013-10-28 框架头部白色半透明横条*/
+.m-whitebg-bar {background:#fff; width:100%; height:24px; border-top:#fff solid 1px; border-bottom:#3f7ea9 solid 1px; position:absolute; left:0px; top:87px; filter:alpha(opacity=30); opacity:0.3; z-index:6;}
+
+/* outlook效果时，一级菜单 没有图标 2014-2-12 下午2:52 lybide */
+.m-menu1-is-outlook-noicon {height:30px;top:57px;}
+.m-menu1-is-outlook-noicon .hasIcon {display:none;}
+.m-menu1-is-outlook-noicon .m-menu-outlook {height:30px;}
+.m-menu1-is-outlook-noicon .m-menu1-wrap {height:30px;}
+.m-menu1-is-outlook-noicon .m-menu1-a {height:30px;padding:0px 8px 0px 8px;line-height:30px;}
+.m-menu1-is-outlook-noicon .m-menu1-left { height:30px;}
+.m-menu1-is-outlook-noicon .m-menu1-right {height:30px;}
+.m-menu1-is-outlook-noicon .m-menu1-3j {display:none;}
+
+/* 2014-3-10 11:47 lybide outlook支持多层显示，只显示文字与小图标 */
+.m-mdeep1.m-menu2-1-li-hasChildren-one-over span {color:#FFFFFF!important;}
+.m-mdeep1.m-menu2-1-li-div-click {background:url("images/menu-outlook/menu1-hover.png") repeat-x 0px -465px!important;}
+.m-mdeep1.m-menu2-1-li-div-click span {color:#ffffff!important;}
+.m-mdeep1.m-menu2-1-li-div-over {background:url("images/menu-outlook/menu1-hover.png") repeat-x 0px -465px;}
+.m-mdeep1.m-menu2-1-li-div:hover span {color:#ffffff;}
+.mm-deep-2 .m-menu2-1-li-hasChildren-one {border:1px solid #979797;position:relative;padding:0 !important;line-height:28px;height:28px;background:url("images/menu-outlook/menu1-hover.png") repeat-x 0px -432px;text-align:left!important;cursor:default;margin-top:-1px;}
+.mm-deep-2 .m-menu2-1-li-hasChildren {margin:0 5px;padding:0px 0;}
+.mm-deep-2 .m-menu2-1-li-hasChildren-one span {text-align:left;margin-left:25px;white-space:nowrap;}
+.m-mdeep3,.m-mdeep4,.m-mdeep5 {padding-left:0px!important;}
+.mm-deep-2 {}
+.mm-deep-3 {border:1px solid #aeaeaf;border-top:0px;/*三级框线条色*/}
+.mm-deep-4 {border:1px solid #aeaeaf;border-top:0px;/*三级框线条色*/}
+.m-menu2-1-li-ul .first.m-menu2-1-li-hasChildren {margin-top:5px;}
+.m-menu2-1-li-ul .last.m-menu2-1-li-hasChildren {margin-bottom:5px;}
+
+.m-menu2-1-li-div.is-text {padding:3px !important;margin:3px 3px;border:1px solid transparent;}
+.m-menu2-1-li-div.is-text .hasIcon {position:static;top:auto;left:auto;float:left;margin:auto;padding:auto;margin:auto -22px auto 3px;}
+.m-menu2-1-li-div.is-text span {text-align:center;margin:0;}
+.m-menu2-1-li-div.is-text.text-hasIcon span {text-align:left;margin-left:25px;}
+.m-menu2-1-li-div.is-text.m-menu2-1-li-div-over,.m-menu2-1-li-div.is-text.m-menu2-1-li-div-click {background-color:#fff6d6;border:1px solid #707070;}
+.m-menu2-1-li-div.is-text.m-menu2-1-li-div-click span {color:#000000 !important;}
+.m-menu2-1-li-div.m-mdeep2,.m-menu2-1-li-div.m-mdeep3,.m-menu2-1-li-div.m-mdeep4,.m-menu2-1-li-div.m-mdeep5 {padding:5px 0;}

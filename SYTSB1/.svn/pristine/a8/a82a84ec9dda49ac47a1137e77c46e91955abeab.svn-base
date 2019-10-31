@@ -1,0 +1,774 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<body>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<input type="hidden" id="nextPage" name="nextPage" value="-1"
+		values="-1" title="" style="width: 99%;">
+	<br>
+	<p class="a DocDefaults" style="text-align: right; line-height: 166%;">
+		<a name="RTPAGE_8__有机房曳引驱动电梯监督检验报告附页6"></a>
+	</p>
+	<table id="docx4j_tbl_8"
+		style="table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 6.3in; position: relative;"
+		class="">
+		<colgroup>
+			<col border="1" style="width: 6.42%;" class="">
+			<col border="1" style="width: 8.4%;" class="">
+			<col border="1" style="width: 8.44%;" class="">
+			<col border="1" style="width: 17.39%;" class="">
+			<col border="1" style="width: 1.57%;" class="">
+			<col border="1" style="width: 29.71%;" class="">
+			<col border="1" style="width: 14.04%;" class="">
+			<col border="1" style="width: 14.03%;" class="">
+		</colgroup>
+		<tbody>
+			<tr style="height: 8mm;">
+				<td colspan="6"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-right-style: none; border-top-style: none; padding-left: 0mm; padding-right: 0mm; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults"
+						style="text-align: right; position: relative; margin-left: 29mm; margin-top: 2mm;">
+						<span class="a0" style="font-size: 10pt; position: relative;"><span
+							class="" style="font-family: SimSun; position: relative;">报告编号：</span></span>
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-right-style: none; border-top-style: none; padding-left: 0mm; padding-right: 0mm; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="base__report_sn" name="base__report_sn" type="text"
+							ltype="text" value="" ligerui="{width:159}" readonly="readonly"
+							values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 11mm;">
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">序号</span></td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">检验类别</span></td>
+				<td colspan="4"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">检验项目及其内容</span></td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="TableParagraph a DocDefaults"
+						style="position: relative; margin-left: 3mm; margin-top: 2mm;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">检验结果</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="TableParagraph a DocDefaults"
+						style="position: relative; margin-left: 3mm; margin-top: 2mm;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">检验结论</span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in;">
+				<td rowspan="2"
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">58</span></td>
+				<td rowspan="2"
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">B</span></td>
+				<td rowspan="5"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm; vertical-align: middle;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">6.轿门与层门</span></td>
+				<td rowspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">6.10门的闭合</span></td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">(1)机电联锁</span></td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_6_10_1" name="record__B_6_10_1" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:74,initValue:'符合'}"
+							class="cB_6_10" onchange="changeRecord(this,this.value)"
+							values="" title="" style="width: 99%;">
+					</p>
+				</td>
+				<td rowspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__B_6_10_1" name="conclusion__B_6_10_1"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:74,initValue:'合格'}"
+							values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">(2)电气安全装置</span></td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_6_10_2" name="record__B_6_10_2" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:74,initValue:'符合'}"
+							class="cB_6_10" onchange="changeRecord(this,this.value)"
+							values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in;">
+				<td rowspan="2"
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">59</span></td>
+				<td rowspan="2"
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">B</span></td>
+				<td rowspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">6.11轿门开门限制装置及
+						轿门的开启</span></td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">(1)轿门开门限制装置</span></td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_6_11_1" name="record__B_6_11_1" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:74,initValue:'符合'}"
+							class="cB_6_11" onchange="changeRecord(this,this.value)"
+							values="" title="" style="width: 99%;">
+					</p>
+				</td>
+				<td rowspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__B_6_11_1" name="conclusion__B_6_11_1"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:74,initValue:'合格'}"
+							values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.31in;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">(2)轿门的开启</span></td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_6_11_2" name="record__B_6_11_2" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:74,initValue:'符合'}"
+							class="cB_6_11" onchange="changeRecord(this,this.value)"
+							values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in;">
+				<td
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">60</span></td>
+				<td
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">C</span></td>
+				<td colspan="3"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">6.12门刀、门锁滚轮与地坎间隙</span></td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__C_6_12" name="record__C_6_12" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:74,initValue:'符合'}"
+							class="cC_6_12" onchange="changeRecord(this,this.value)"
+							values="" title="" style="width: 99%;">
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__C_6_12" name="conclusion__C_6_12"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:74,initValue:'合格'}"
+							values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in;">
+				<td
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">61</span></td>
+				<td
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">B</span></td>
+				<td rowspan="16"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm; vertical-align: middle;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">8.试验</span></td>
+				<td colspan="3"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">8.1平衡系数试验</span></td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_8_1" name="record__B_8_1" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:74,initValue:'符合'}"
+							class="cB_8_1" onchange="changeRecord(this,this.value)" values=""
+							title="" style="width: 99%;">
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__B_8_1" name="conclusion__B_8_1" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:74,initValue:'合格'}"
+							values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in;">
+				<td
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">62</span></td>
+				<td
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">C</span></td>
+				<td colspan="3"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">8.2轿厢上行超速保护装置试验</span></td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__C_8_2" name="record__C_8_2" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:74,initValue:'符合'}"
+							class="cC_8_2" onchange="changeRecord(this,this.value)" values=""
+							title="" style="width: 99%;">
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__C_8_2" name="conclusion__C_8_2" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:74,initValue:'合格'}"
+							values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in;">
+				<td rowspan="2"
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">63</span></td>
+				<td rowspan="2"
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">B</span></td>
+				<td rowspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">8.3轿厢
+						意外移动保 护装置试验</span></td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">(1)制停情况</span></td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_8_3_1" name="record__B_8_3_1" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:74,initValue:'符合'}"
+							class="cB_8_3" onchange="changeRecord(this,this.value)" values=""
+							title="" style="width: 99%;">
+					</p>
+				</td>
+				<td rowspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__B_8_3_1" name="conclusion__B_8_3_1"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:74,initValue:'合格'}"
+							values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.31in;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">(2)自监测功能</span></td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_8_3_2" name="record__B_8_3_2" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:74,initValue:'符合'}"
+							class="cB_8_3" onchange="changeRecord(this,this.value)" values=""
+							title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in;">
+				<td
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">64</span></td>
+				<td
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">B</span></td>
+				<td colspan="3"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">8.4(1)轿厢限速器—安全钳试验</span></td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_8_4_1" name="record__B_8_4_1" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:74,initValue:'符合'}"
+							class="cB_8_4" onchange="changeRecord(this,this.value)" values=""
+							title="" style="width: 99%;">
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__B_8_4_1" name="conclusion__B_8_4_1"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:74,initValue:'合格'}"
+							values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in;">
+				<td
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">65</span></td>
+				<td
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">B</span></td>
+				<td colspan="3"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">8.5对重(平衡重)限速器—安全钳试验</span></td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_8_5" name="record__B_8_5" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:74,initValue:'符合'}"
+							class="cB_8_5" onchange="changeRecord(this,this.value)" values=""
+							title="" style="width: 99%;">
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__B_8_5" name="conclusion__B_8_5" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:74,initValue:'合格'}"
+							values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in;">
+				<td
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">66</span></td>
+				<td
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">C</span></td>
+				<td colspan="3"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">8.6运行试验</span></td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__C_8_6" name="record__C_8_6" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:74,initValue:'符合'}"
+							class="cC_8_6" onchange="changeRecord(this,this.value)" values=""
+							title="" style="width: 99%;">
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__C_8_6" name="conclusion__C_8_6" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:74,initValue:'合格'}"
+							values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in;">
+				<td rowspan="3"
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">67</span></td>
+				<td rowspan="3"
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">B</span></td>
+				<td colspan="2" rowspan="3"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">8.7应急救援试验</span></td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">(1)救援程序</span></td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_8_7_1" name="record__B_8_7_1" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:74,initValue:'符合'}"
+							class="cB_8_7" onchange="changeRecord(this,this.value)" values=""
+							title="" style="width: 99%;">
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__B_8_7_1" name="conclusion__B_8_7_1"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:74,initValue:'合格'}"
+							values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in;">
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">(2)救援通道</span></td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_8_7_2" name="record__B_8_7_2" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:74,initValue:'符合'}"
+							class="cB_8_7" onchange="changeRecord(this,this.value)" values=""
+							title="" style="width: 99%;">
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__B_8_7_2" name="conclusion__B_8_7_2"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:74,initValue:'合格'}"
+							values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in;">
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">(3)救援操作</span></td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_8_7_3" name="record__B_8_7_3" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:74,initValue:'符合'}"
+							class="cB_8_7" onchange="changeRecord(this,this.value)" values=""
+							title="" style="width: 99%;">
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__B_8_7_3" name="conclusion__B_8_7_3"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:74,initValue:'合格'}"
+							values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in;">
+				<td
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">68</span></td>
+				<td
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">C</span></td>
+				<td colspan="3"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">8.8电梯速度</span></td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__C_8_8" name="record__C_8_8" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:74,initValue:'符合'}"
+							class="cC_8_8" onchange="changeRecord(this,this.value)" values=""
+							title="" style="width: 99%;">
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__C_8_8" name="conclusion__C_8_8" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:74,initValue:'合格'}"
+							values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in;">
+				<td
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">69</span></td>
+				<td
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">B</span></td>
+				<td colspan="3"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">8.9空载曳引检查</span></td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_8_9" name="record__B_8_9" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:74,initValue:'符合'}"
+							class="cB_8_9" onchange="changeRecord(this,this.value)" values=""
+							title="" style="width: 99%;">
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__B_8_9" name="conclusion__B_8_9" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:74,initValue:'合格'}"
+							values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in;">
+				<td
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">70</span></td>
+				<td
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">B</span></td>
+				<td colspan="3"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">8.10上行制动工况曳引检查</span></td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_8_10" name="record__B_8_10" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:74,initValue:'符合'}"
+							class="cB_8_10" onchange="changeRecord(this,this.value)"
+							values="" title="" style="width: 99%;">
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__B_8_10" name="conclusion__B_8_10"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:74,initValue:'合格'}"
+							values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in;">
+				<td
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">71</span></td>
+				<td
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">A</span></td>
+				<td colspan="3"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">8.11下行制动工况曳引检查</span></td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__A_8_11" name="record__A_8_11" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:74,initValue:'符合'}"
+							class="cA_8_11" onchange="changeRecord(this,this.value)"
+							values="" title="" style="width: 99%;">
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__A_8_11" name="conclusion__A_8_11"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:74,initValue:'合格'}"
+							values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in;">
+				<td
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">72</span></td>
+				<td
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">A</span></td>
+				<td colspan="3"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">8.12静态曳引检查</span></td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__A_8_12" name="record__A_8_12" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:74,initValue:'符合'}"
+							class="cA_8_12" onchange="changeRecord(this,this.value)"
+							values="" title="" style="width: 99%;">
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__A_8_12" name="conclusion__A_8_12"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:74,initValue:'合格'}"
+							values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in;">
+				<td
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">73</span></td>
+				<td
+					style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); padding-left: 0mm; padding-right: 0mm; vertical-align: middle; text-align: center;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; text-align: center;">A</span></td>
+				<td colspan="3"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; font-family: SimSun; position: relative;">8.13制动试验</span></td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__A_8_13" name="record__A_8_13" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:74,initValue:'符合'}"
+							class="cA_8_13" onchange="changeRecord(this,this.value)"
+							values="" title="" style="width: 99%;">
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; padding-left: 0mm; padding-right: 0mm;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__A_8_13" name="conclusion__A_8_13"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:74,initValue:'合格'}"
+							values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<p class="a DocDefaults" style="line-height: 91%;"></p>
+	<!-- userBodyTail goes here -->
+	</div>
+</body>
+</html>

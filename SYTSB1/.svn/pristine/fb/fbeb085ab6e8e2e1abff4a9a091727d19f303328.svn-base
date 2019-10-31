@@ -1,0 +1,147 @@
+/*
+* Create time: 2013-08-28 10:58:12
+* kui系统主框架样式表
+*/
+
+html,body {margin:0px;padding:0px;}
+body {background:#FFFFFF;font-size:12px;font-family:"微软雅黑","宋体";margin:0px;padding:0px;}
+td {font-size:12px;cursor:default;}
+input,textarea,button {font-size:12px;}
+button {overflow:visible;}
+select {font-size:12px;}
+p {}
+form {margin:0px;}
+img {border:0;}
+table,tr,td,ul,li{padding:0; margin:0;}
+a {text-decoration:none;}
+a:hover {text-decoration:underline;}
+
+.show {display:block;}
+.hide {display:none;}
+
+html,body {/* *overflow-y:auto; _overflow-y:auto;*/}
+.dst-allbg {background:#3993d2 url(images/desktop/dsk2_p2.jpg) no-repeat;background-attachment:fixed;}
+
+
+.newwrap {border:0px solid #FF0000;width:100%;position:relative;margin:0px 0px 0px 0px;z-index:1;}
+
+.page-switcher {position:absolute; max-width:90px; min-width:90px; z-index:5; width:90px; height:100%;cursor:pointer;}
+#page-switcher-start {background:url(images/desktop/dsk2_switcherlt.png) no-repeat center; left:0; margin:0 -90px 0 0;}
+#page-switcher-start:hover {background:url(images/desktop/dsk2_switcherlt_h.png) no-repeat center;}
+#page-switcher-start div {display:none;width:56px;height:100%;border:0px solid #FF0000;float:right;}
+#page-switcher-start:hover div {display:block;background:url(images/desktop/dsk2_switcherrt_bgh.png) no-repeat 0px center;margin-right:15px;}
+#page-switcher-end {background:url(images/desktop/dsk2_switcherrt.png) no-repeat center; right:0; top:0;}
+#page-switcher-end:hover {background:url(images/desktop/dsk2_switcherrt_h.png) no-repeat center;}
+#page-switcher-end div {display:none;width:56px;height:100%;border:0px solid #FF0000;float:left;}
+#page-switcher-end:hover div {display:block;background:url(images/desktop/dsk2_switcherrt_bgh.png) no-repeat -56px center;margin-left:15px;}
+
+
+.btn_arlt {margin:0px 90px 0px 90px;border:0px solid #0000FF;}
+.task {}
+.task_caption {border-bottom:#c2c2c2 solid 1px; font-size:16px; font-weight:normal; line-height:32px; color:#2e93ec; position:relative;}
+.task_caption a {color:#363636;}
+.task_caption a:hover {color:#f00;}
+.task_caption span {position:absolute; right:0; top:2px; font-size:12px;}
+.task_caption2 {font-style:normal; font:18px "微软雅黑", "宋体"; color:#000; text-align:center; line-height:50px; border-bottom:#c2c2c2 solid 1px;}
+.task_lists {/*text-align:center; */height:140px; overflow:hidden;}
+.task_lists ul , .task_lists li {list-style:none; margin:0; padding:0;}
+.task_lists li {cursor:pointer;text-align:center; /*display:inline-block;*/ float:left; margin:20px 0; border:transparent solid 2px; padding:5px;}
+.task_lists li:hover , .task_lists li.hover {border:#f00 solid 2px;}
+.task_lists li .tskpic {text-align:center;}
+.task_lists li .tskpic .cl {width:40px; height:40px; background:#d5e9fb; padding:4px; position:relative; margin:0px auto;}
+.task_lists li .tskpic span.tskpic_icon {display:inline-block; width:40px; height:40px; text-align:center;}
+/*.tkbg01 {background:#2e93ec url(images/desktop/dsk2_icon1.png) no-repeat center;}
+.tkbg02 {background:#2e93ec url(images/desktop/dsk2_icon2.png) no-repeat center;}*/
+#db1 .tskpic_icon {background:#2e93ec url(images/desktop/dsk2_icon1.png) no-repeat center;}
+#db2 .tskpic_icon {background:#2e93ec url(images/desktop/dsk2_icon2.png) no-repeat center;}
+#db3 .tskpic_icon {background:#2e93ec url(images/desktop/dsk2_icon3.png) no-repeat center;}
+#db4 .tskpic_icon {background:#2e93ec url(images/desktop/dsk2_icon4.png) no-repeat center;}
+#db5 .tskpic_icon {background:#2e93ec url(images/desktop/dsk2_icon5.png) no-repeat center;}
+#db6 .tskpic_icon {background:#2e93ec url(images/desktop/dsk2_icon6.png) no-repeat center;}
+#db7 .tskpic_icon {background:#2e93ec url(images/desktop/dsk2_icon7.png) no-repeat center;}
+#db8 .tskpic_icon {background:#2e93ec url(images/desktop/dsk2_icon8.png) no-repeat center;}
+#db9 .tskpic_icon {background:#2e93ec url(images/desktop/dsk2_icon9.png) no-repeat center;}
+#db10 .tskpic_icon {background:#2e93ec url(images/desktop/dsk2_icon10.png) no-repeat center;}
+#db11 .tskpic_icon {background:#2e93ec url(images/desktop/dsk2_icon11.png) no-repeat center;}
+#db12 .tskpic_icon {background:#2e93ec url(images/desktop/dsk2_icon12.png) no-repeat center;}
+#db13 .tskpic_icon {background:#2e93ec url(images/desktop/dsk2_icon13.png) no-repeat center;}
+#db14 .tskpic_icon {background:#2e93ec url(images/desktop/dsk2_icon14.png) no-repeat center;}
+
+.task_lists li .tskpic span.tsk_data {position:absolute; right:-10px; top:-10px; width:25px; height:21px; background:url(images/desktop/dsk2_tdtbj.png) no-repeat; font-size:10px; color:#fff; line-height:21px;}
+.task_lists li .tsktxt {}
+.task_lists li .tsktxt .tsktxt1 {color:#547fb4;}
+.task_lists li .tsktxt .tsktxt2 {font-size:14px;}
+.task_lists li .tsktxt div {margin:0; padding:0; line-height:18px;}
+.task_lists li .tsktxt div.signet {color:#f00;}
+.tsk_data.n0 {background-image:url(images/desktop/dsk2_tdtbj2.png) !important;}
+/*20130927图标左右滚动样式================================ start */
+#product {width:100%;position:relative;margin:0 auto;}
+#content { position:relative;  margin:0px auto; width:94%; height:150px; /*display:inline-block;  */ overflow:hidden; }
+#content_list { position:relative;margin:0 auto; }
+#product .prev{ cursor:pointer; width:20px; height:150px; position:absolute;top:0px;left:0px;display:none;}
+#product .prev:hover {background:url(images/desktop/btn-bg.png) no-repeat left center;}
+#product .prev:active {}
+#product .prev span {width:100%;height:100%; background:url(images/desktop/btn02.gif) no-repeat center center;display:block;}
+#product .next{ cursor:pointer; width:20px; height:150px; position:absolute;top:0px;right:0px;display:none;}
+#product .next:hover {background:url(images/desktop/btn-bg.png) no-repeat right center;}
+#product .next:active {}
+#product .next span {width:100%;height:100%; background:url(images/desktop/btn01.gif) no-repeat center center;display:block;}
+/*20130927图标左右滚动样式================================ end */
+
+.dsk_flash {text-align:center; margin:0 auto; width:100%;}
+
+
+.nsinfor {width:100%; overflow:hidden;/* position:relative;*/}
+/*.worktips {margin:0px 300px 0 0px;/* overflow:hidden; float:left;}
+.wklist ul, .wklist li {margin:0; padding:0; list-style:none;}
+.wklist li {background:url(images/desktop/arrow.png) no-repeat left center; padding:5px 0px 5px 18px; color:#999; height:14px; overflow:hidden;}
+.wklist li a {color:#363636;}
+.wklist li a:hover {color:#f00;}
+.wklist li div {white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+.notice {margin:0px 0px 0px 0px; position:absolute; right:0px; top:0px; width:260px; overflow:hidden;}
+.notice ul, .notice li {margin:0; padding:0; list-style:none;}
+.notice li {background:url(images/desktop/arrow.png) no-repeat left center; padding:5px 0px 5px 18px; color:#999; height:14px; overflow:hidden;}
+.notice li a {color:#363636;}
+.notice li a:hover {color:#f00;}
+.notice li div {white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}*/
+.worktips {width:48%; overflow:hidden; float:left;}
+.notice {width:48%; overflow:hidden; float:right;}
+.wklist {overflow:hidden;}
+.wklist ul, .wklist li {margin:0; padding:0; list-style:none;}
+.wklist li {background:url(images/desktop/arrow.png) no-repeat left center; padding:5px 0px 5px 18px; color:#999; height:14px; overflow:hidden; position:relative;}
+.wklist li a {color:#363636;}
+.wklist li a:hover {color:#f00;}
+.wklist li div {white-space:nowrap; text-overflow:ellipsis; overflow:hidden; margin-right:50px;}
+.wklist li span.wttm {position:absolute; top:5px; right:0;}
+
+
+.footer{position:absolute;z-index: 18;bottom:0px;width:100%;text-align: center;height:50px;overflow:visible;}
+.footer div { width: 113px; height: 35px; display: inline-block; background-repeat:no-repeat;}
+.footer .footer-left { background:url(images/desktop/dsk_footer-left.png) no-repeat; margin-right:-3px;}
+.footer .footer-right {background:url(images/desktop/dsk_footer-right.png) no-repeat; margin-left: -3px;}
+#dot-list {display: inline-block;height: 35px;vertical-align: top;-webkit-padding-start: 0;-webkit-margin-after: 0;-webkit-margin-before: 0; background:url(images/desktop/dsk_dot-listbj.png) repeat-x;}
+#dot-list .selected{background-image:url(images/desktop/dsk_dot-listbj3.png) !important; background-repeat:repeat-x; background-position:bottom;}
+.dot {display: inline-block;cursor: pointer;width: 90px;outline: none;text-align: center;height: 34px;position: relative;}
+.dot:not(.selected):hover{background-image:url(images/desktop/dsk_dot-listbj3.png) !important; background-repeat:repeat-x; background-position:bottom;}
+.dot:not(.selected):active{background-image:url(images/desktop/dsk_dot-listbj3.png) !important; background-repeat:repeat-x; background-position:bottom;}
+.dot div {background-color:transparent; cursor:inherit; font-size:12px; width:100%; -webkit-appearance:caret; -webkit-transition:all 0.2s; text-align:center; margin-top:7px; border:0; color:#444;}
+.dot div:focus {  cursor: auto;}
+
+
+/**/
+.tongjipic {text-align:center; margin:50px auto;}
+
+
+/*统计信息20131017*/
+.systjdata {}
+.systjinfor {margin:0px auto;}
+.systjinfor table {margin-top:10px;}
+.systjinfor table th , .systjinfor table td {padding:2px 18px; line-height:240%;}
+.systjinfor table th {text-align:right; color:#da4300; font-weight:normal;}
+.systjinfor table td {color:#666;}
+.systjinfor table td span {color:#da4300; font-size:14px; font-family:Tahoma, Geneva, sans-serif; padding:0px 6px; text-decoration:underline;}
+.systjinfor table td span:hover {color:#2e93ec; text-decoration:underline;}
+.systjinfor table td span.noclk {color:#000; text-decoration:none;}
+.systjinfor table td span.noclk:hover {color:#000; text-decoration:none;}
+.systjinfor table {}
+.systjinfor table {}

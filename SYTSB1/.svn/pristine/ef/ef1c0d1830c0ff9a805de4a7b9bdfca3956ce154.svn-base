@@ -1,0 +1,1286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+</head>
+
+<body>
+	<input type="hidden" id="fk_report_id" name="fk_report_id"
+		value="${param.fk_report_id}">
+	<input type="hidden" id="fk_inspection_info_id"
+		name="fk_inspection_info_id" value="${param.fk_inspection_info_id}">
+
+	<input type="hidden" id="nextPage" name="nextPage" value="8">
+	<br />
+	<p class="a DocDefaults " style="">
+		<a name="RTPAGE_6__储气井组基础加固强度校核报告（续一）"></a>
+	</p>
+	<table
+		style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 168mm;">
+		<colgroup>
+			<col style="width: 49.98%;" />
+			<col style="width: 50.02%;" />
+		</colgroup>
+		<tbody>
+			<tr>
+				<td>
+					<p class="a DocDefaults " style="">
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'SimSun';">文件编号：</span>
+						<span class="a0 "
+							style="color: #000000; font-size: 12.0pt;; font-family: 'Times New Roman';">CTJB-0926-BG15</span>
+					</p>
+				</td>
+				<td>
+					<p class="a DocDefaults " style="text-align: right;">
+						<span class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'SimSun';">实施日期：</span></span><span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">2015</span><span
+							class="a0 " style="font-size: 12.0pt;; font-family: 'SimSun';">年</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">2</span><span
+							class="a0 " style="font-size: 12.0pt;; font-family: 'SimSun';">月</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">1</span><span
+							class="a0 " style="font-size: 12.0pt;; font-family: 'SimSun';">日</span>
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<p class="a DocDefaults "
+		style="text-align: center; position: relative; line-height: 125%; margin-top: 5mm; margin-bottom: 0.11in;">
+		<span class="a0 dtitle"
+			style="font-weight: bold; color: #000000; font-size: 15.0pt;; font-family: 'SimSun';">储气井组基础加固强度校核报告（续一）</span>
+	</p>
+	<table class="a8 a1 " id="docx4j_tbl_15"
+		style="border-bottom-style: none; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; position: relative; table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 160mm;">
+		<colgroup>
+			<col style="width: 25%;" />
+			<col style="width: 25%;" />
+			<col style="width: 25%;" />
+			<col style="width: 25%;" />
+		</colgroup>
+		<tbody>
+			<tr>
+				<td
+					style="border-bottom-style: none; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm; vertical-align: middle;">
+					<p class="a-a8-BR DocDefaults "
+						style="text-align: center; margin-bottom: 1mm;">
+						<span class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'SimSun';">储气井编号:</span></span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: none; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm; vertical-align: middle;">
+					<p class="a-a8-BR DocDefaults " style="margin-bottom: 1mm;">
+						<input id="TBL00002" name="TBL00002" type="text" ltype="text"
+							value="" ligerui="{width:141}" />
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: none; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm; vertical-align: middle;">
+					<p class="a-a8-BR DocDefaults "
+						style="text-align: center; margin-bottom: 1mm;">
+						<span class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'SimSun';">报告编号:</span></span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: none; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm; vertical-align: middle;">
+					<p class="a-a8-BR DocDefaults " style="margin-bottom: 1mm;">
+						<input id="base__report_sn" name="base__report_sn" type="text"
+							ltype="text" value="" ligerui="{width:141}" readonly="readonly" />
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<table id="docx4j_tbl_16"
+		style="background-color: #FFFFFF; border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 6.64in;">
+		<colgroup>
+			<col style="width: 8.85%;" />
+			<col style="width: 4.45%;" />
+			<col style="width: 4.45%;" />
+			<col style="width: 1.49%;" />
+			<col style="width: 1.49%;" />
+			<col style="width: 1.49%;" />
+			<col style="width: 4.45%;" />
+			<col style="width: 1.49%;" />
+			<col style="width: 2.96%;" />
+			<col style="width: 1.49%;" />
+			<col style="width: 1.49%;" />
+			<col style="width: 2.96%;" />
+			<col style="width: 1.49%;" />
+			<col style="width: 2.96%;" />
+			<col style="width: 1.49%;" />
+			<col style="width: 1.49%;" />
+			<col style="width: 1.49%;" />
+			<col style="width: 1.48%;" />
+			<col style="width: 1.49%;" />
+			<col style="width: 0.54%;" />
+			<col style="width: 0.54%;" />
+			<col style="width: 0.4%;" />
+			<col style="width: 2.96%;" />
+			<col style="width: 1.49%;" />
+			<col style="width: 2.97%;" />
+			<col style="width: 1.48%;" />
+			<col style="width: 1.49%;" />
+			<col style="width: 1.49%;" />
+			<col style="width: 2.96%;" />
+			<col style="width: 1.49%;" />
+			<col style="width: 1.49%;" />
+			<col style="width: 1.49%;" />
+			<col style="width: 1.48%;" />
+			<col style="width: 2.97%;" />
+			<col style="width: 1.49%;" />
+			<col style="width: 1.48%;" />
+			<col style="width: 2.97%;" />
+			<col style="width: 2.12%;" />
+			<col style="width: 2.32%;" />
+			<col style="width: 1.49%;" />
+			<col style="width: 1.49%;" />
+			<col style="width: 9.12%;" />
+			<col style="width: 3.42%;" />
+		</colgroup>
+		<tbody>
+			<tr style="height: 8mm; page-break-inside: avoid;">
+				<td colspan="8"
+					style="border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%; margin-left: 1mm;">
+						<span class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'SimSun';">混凝土加固池尺寸：</span></span><span class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">a</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">=</span>
+					</p>
+				</td>
+				<td colspan="5"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00120" name="TBL00120" type="text" ltype="text"
+							style="font-size: 12.0pt;; font-family: 'Times New Roman'; margin-left: -2mm;"
+							value="" ligerui="{width:56}" />
+					</p>
+				</td>
+				<td colspan="6"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">m</span><span
+							class="a0 " style="font-size: 12.0pt;; font-family: 'SimSun';">，</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">b</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">=</span>
+					</p>
+				</td>
+				<td colspan="7"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00121" name="TBL00121" type="text" ltype="text"
+							style="font-size: 12.0pt;; font-family: 'Times New Roman'; margin-left: -3mm;"
+							value="" ligerui="{width:56}" />
+					</p>
+				</td>
+				<td colspan="6"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">m</span><span
+							class="a0 " style="font-size: 12.0pt;; font-family: 'SimSun';">，</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">h</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">=</span>
+					</p>
+				</td>
+				<td colspan="5"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00122" name="TBL00122" type="text" ltype="text"
+							style="font-size: 12.0pt;; font-family: 'Times New Roman'; margin-left: -2mm;"
+							value="" ligerui="{width:56}" />
+					</p>
+				</td>
+				<td colspan="6"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">m</span><span
+							class="a0 " style="font-size: 12.0pt;; font-family: 'SimSun';">；</span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in; page-break-inside: avoid;">
+				<td colspan="11"
+					style="border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%; margin-left: 1mm;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">HRB335</span><span
+							class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'SimSun';">钢筋屈服强度：</span></span><span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">[</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">σ</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">]</span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">s</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">=</span>
+					</p>
+				</td>
+				<td colspan="8"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00123" name="TBL00123" type="text" ltype="text"
+							style="font-size: 12.0pt;; font-family: 'Times New Roman'; margin-left: -2mm;"
+							value="" ligerui="{width:84}" />
+					</p>
+				</td>
+				<td colspan="24"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">MPa</span><span
+							class="a0 " style="font-size: 12.0pt;; font-family: 'SimSun';">；</span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in; page-break-inside: avoid;">
+				<td colspan="4"
+					style="border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%; margin-left: 1mm;">
+						<span class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'SimSun';">钢筋直径：</span></span><span class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">d</span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">s</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">=</span>
+					</p>
+				</td>
+				<td colspan="5"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00124" name="TBL00124" type="text" ltype="text"
+							style="font-size: 12.0pt;; font-family: 'Times New Roman'; margin-left: -2mm;"
+							value="" ligerui="{width:65}" />
+					</p>
+				</td>
+				<td colspan="25"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">mm</span><span
+							class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'SimSun';">。储气井连线方向钢筋数量：</span></span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">n</span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">s</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">=</span>
+					</p>
+				</td>
+				<td colspan="5"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00125" name="TBL00125" type="text" ltype="text"
+							style="font-size: 12.0pt;; font-family: 'Times New Roman'; margin-left: -2mm;"
+							value="" ligerui="{width:56}" />
+					</p>
+				</td>
+				<td colspan="4"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">；</span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in; page-break-inside: avoid;">
+				<td colspan="43"
+					style="border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%; margin-left: 1mm;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">查建筑标准</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">JGJ94-2008</span><span
+							class="a0 " style="font-size: 12.0pt;; font-family: 'SimSun';">，</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">q</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">sik</span><span
+							class="a0 " style="font-size: 12.0pt;; font-family: 'SimSun';">取</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">10kPa</span><span
+							class="a0 " style="font-size: 12.0pt;; font-family: 'SimSun';">；</span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in; page-break-inside: avoid;">
+				<td colspan="25"
+					style="border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%; margin-left: 1mm;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">固井水泥密度</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">ρ</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">c</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">=1770kg/m</span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: top; font-size: xx-small;; font-family: 'Times New Roman';">3</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">;</span><span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">固井水泥填充系数</span><span
+							class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'Times New Roman';">ε=</span></span>
+					</p>
+				</td>
+				<td colspan="7"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00126" name="TBL00126" type="text" ltype="text"
+							style="font-size: 12.0pt;; font-family: 'Times New Roman'; margin-left: -4mm;"
+							value="" ligerui="{width:65}" />
+					</p>
+				</td>
+				<td colspan="11"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">;</span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in; page-break-inside: avoid;">
+				<td colspan="17"
+					style="border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%; margin-left: 1mm;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">查建筑标准</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">JGJ94-2008</span><span
+							class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'SimSun';">，拉拔系数</span></span><span class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">λ</span><span
+							class="a0 " style="font-size: 12.0pt;; font-family: 'SimSun';">取</span>
+					</p>
+				</td>
+				<td colspan="9"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00127" name="TBL00127" type="text" ltype="text"
+							style="font-size: 12.0pt;; font-family: 'Times New Roman'; margin-left: -5mm;"
+							value="" ligerui="{width:75}" />
+					</p>
+				</td>
+				<td colspan="17"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">；</span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in; page-break-inside: avoid;">
+				<td colspan="2"
+					style="border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%; margin-left: 1mm;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">井深</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">L</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">1</span><span
+							class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'Times New Roman';">
+								=</span></span>
+					</p>
+				</td>
+				<td colspan="4"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00128" name="TBL00128" type="text" ltype="text"
+							style="font-size: 12.0pt;; font-family: 'Times New Roman'; margin-left: -2mm;"
+							value="" ligerui="{width:46}" />
+					</p>
+				</td>
+				<td colspan="5"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">m</span><span
+							class="a0 " style="font-size: 12.0pt;; font-family: 'SimSun';">，</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">L</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">2</span><span
+							class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'Times New Roman';">
+								=</span></span>
+					</p>
+				</td>
+				<td colspan="4"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00129" name="TBL00129" type="text" ltype="text"
+							style="font-size: 12.0pt;; font-family: 'Times New Roman'; margin-left: -2mm;"
+							value="" ligerui="{width:46}" />
+					</p>
+				</td>
+				<td colspan="9"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">m</span><span
+							class="a0 " style="font-size: 12.0pt;; font-family: 'SimSun';">，</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">L</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">3</span><span
+							class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'Times New Roman';">
+								=</span></span>
+					</p>
+				</td>
+				<td colspan="5"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00130" name="TBL00130" type="text" ltype="text"
+							style="font-size: 12.0pt;; font-family: 'Times New Roman'; margin-left: -2mm;"
+							value="" ligerui="{width:56}" />
+					</p>
+				</td>
+				<td colspan="6"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">m</span><span
+							class="a0 " style="font-size: 12.0pt;; font-family: 'SimSun';">，</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">L</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">n</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">=</span>
+					</p>
+				</td>
+				<td colspan="5"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00131" name="TBL00131" type="text" ltype="text"
+							style="font-size: 12.0pt;; font-family: 'Times New Roman'; margin-left: -2mm;"
+							value="" ligerui="{width:56}" />
+					</p>
+				</td>
+				<td colspan="3"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">m</span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in; page-break-inside: avoid;">
+				<td colspan="5"
+					style="border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%; margin-left: 1mm;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">固井合格率</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">η</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">1
+						</span><span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">=</span>
+					</p>
+				</td>
+				<td colspan="5"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00132" name="TBL00132" type="text" ltype="text"
+							style="font-size: 12.0pt;; font-family: 'Times New Roman'; margin-left: -2mm;"
+							value="" ligerui="{width:65}" />
+					</p>
+				</td>
+				<td colspan="6"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">%</span><span
+							class="a0 " style="font-size: 12.0pt;; font-family: 'SimSun';">，</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">η</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">2
+						</span><span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">=</span>
+					</p>
+				</td>
+				<td colspan="8"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00133" name="TBL00133" type="text" ltype="text"
+							style="font-size: 12.0pt;; font-family: 'Times New Roman'; margin-left: -2mm;"
+							value="" ligerui="{width:56}" />
+					</p>
+				</td>
+				<td colspan="6"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">%</span><span
+							class="a0 " style="font-size: 12.0pt;; font-family: 'SimSun';">，</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">η</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">3
+						</span><span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">=</span>
+					</p>
+				</td>
+				<td colspan="6"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00134" name="TBL00134" type="text" ltype="text"
+							style="font-size: 12.0pt;; font-family: 'Times New Roman'; margin-left: -2mm;"
+							value="" ligerui="{width:56}" />
+					</p>
+				</td>
+				<td colspan="7"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">%</span><span
+							class="a0 " style="font-size: 12.0pt;; font-family: 'SimSun';">；</span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in; page-break-inside: avoid;">
+				<td colspan="15"
+					style="border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%; margin-left: 1mm;">
+						<span class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'SimSun';">本井外其他储气井深度求和：</span></span>
+						<span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">Σ</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">j∉z</span>
+						<span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">L</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">j</span>
+						<span
+							class="a0 " style="font-family: 'Times New Roman';">=</span>
+					</p>
+				</td>
+				<td colspan="8"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00135" name="TBL00135" type="text" ltype="text"
+							style="font-size: 12.0pt;; font-family: 'Times New Roman'; margin-left: -1mm;"
+							value="" ligerui="{width:56}" />
+					</p>
+				</td>
+				<td colspan="11"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">m,</span>
+						<span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">Σ</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">j∉z</span>
+						<span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">(η</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">j</span>
+						<span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">L</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">j</span>
+						<span
+							class="a0 " style="font-family: 'Times New Roman';">)=</span>
+					</p>
+				</td>
+				<td colspan="5"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00136" name="TBL00136" type="text" ltype="text"
+							style="font-size: 12.0pt;; font-family: 'Times New Roman'; margin-left: -2mm;"
+							value="" ligerui="{width:60}" />
+					</p>
+				</td>
+				<td colspan="4"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">m</span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in; page-break-inside: avoid;">
+				<td colspan="3"
+					style="border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%; margin-left: 1mm;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">减弱系数</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">ζ</span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">F1</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">=</span>
+					</p>
+				</td>
+				<td colspan="4"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00137" name="TBL00137" type="text" ltype="text"
+							style="font-size: 12.0pt;; font-family: 'Times New Roman'; margin-left: -2mm;"
+							value="" ligerui="{width:46}" />
+					</p>
+				</td>
+				<td colspan="5"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">，</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">ζ</span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">F3</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">=</span>
+					</p>
+				</td>
+				<td colspan="6"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00138" name="TBL00138" type="text" ltype="text"
+							style="font-size: 12.0pt;; font-family: 'Times New Roman'; margin-left: -2mm;"
+							value="" ligerui="{width:56}" />
+					</p>
+				</td>
+				<td colspan="7"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">，</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">ζ</span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">G1</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">=</span>
+					</p>
+				</td>
+				<td colspan="6"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00139" name="TBL00139" type="text" ltype="text"
+							style="font-size: 12.0pt;; font-family: 'Times New Roman'; margin-left: -2mm;"
+							value="" ligerui="{width:56}" />
+					</p>
+				</td>
+				<td colspan="5"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">,</span><span
+							class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'Times New Roman';">
+								ζ</span></span><span class="a0 "
+							style="font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">G2</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">=</span>
+					</p>
+				</td>
+				<td colspan="5"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00140" name="TBL00140" type="text" ltype="text"
+							style="font-size: 12.0pt;; font-family: 'Times New Roman'; margin-left: -2mm;"
+							value="" ligerui="{width:56}" />
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">，</span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in; page-break-inside: avoid;">
+				<td colspan="3"
+					style="border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults "
+						style="text-align: right; line-height: 125%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">ζ</span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">G3</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">=</span>
+					</p>
+				</td>
+				<td colspan="4"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00141" name="TBL00141" type="text" ltype="text"
+							style="font-size: 12.0pt;; font-family: 'Times New Roman'; margin-left: -2mm;"
+							value="" ligerui="{width:46}" />
+					</p>
+				</td>
+				<td colspan="5"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">，</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">ζ</span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">G4</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">=</span>
+					</p>
+				</td>
+				<td colspan="6"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00142" name="TBL00142" type="text" ltype="text"
+							style="font-size: 12.0pt;; font-family: 'Times New Roman'; margin-left: -2mm;"
+							value="" ligerui="{width:56}" />
+					</p>
+				</td>
+				<td colspan="7"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">，</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">ζ</span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">G5</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">=</span>
+					</p>
+				</td>
+				<td colspan="18"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00143" name="TBL00143" type="text" ltype="text"
+							style="font-size: 12.0pt;; font-family: 'Times New Roman'; margin-left: -2mm; text-align: left;"
+							value="" ligerui="{width:237}" />
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 4mm; page-break-inside: avoid;">
+				<td colspan="43"
+					style="border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="margin: 2mm 1mm;">
+						<span class="a0 "
+							style="font-weight: bold; font-size: 14.0pt;; font-family: 'Times New Roman';">3 </span><span class="a0 "
+							style="font-weight: bold; font-size: 14.0pt;; font-family: 'SimSun';">校核计算</span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.12in; page-break-inside: avoid;">
+				<td colspan="43"
+					style="border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="margin: 2mm 1mm;">
+						<span class="a0 "
+							style="font-weight: bold; font-size: 14.0pt;; font-family: 'Times New Roman';">3.1 </span><span
+							class="a0 "
+							style="font-weight: bold; font-size: 14.0pt;; font-family: 'SimSun';">混凝土对套管的胶结校核</span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in; page-break-inside: avoid;">
+				<td colspan="43"
+					style="border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%; margin-left: 1mm;">
+						<span class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'SimSun';">储气井工作时套管内气体的上冲力：</span></span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in; page-break-inside: avoid;">
+				<td colspan="10"
+					style="border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%; margin-left: 1mm;">
+						<span class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">F</span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">0</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">=</span><span
+							class="a0 " style="font-style: italic; font-size: 12.0pt;"><span
+							class="" style="font-family: 'Times New Roman';">πD</span></span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">i</span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: top; font-size: xx-small;; font-family: 'Times New Roman';">2</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">p</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">/4=</span><span
+							class="a0 " style="font-style: italic; font-size: 12.0pt;"><span
+							class="" style="font-family: 'Times New Roman';">π(D</span></span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">o</span><span
+							class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'Times New Roman';">-2×</span></span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">t</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">)</span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: top; font-size: xx-small;; font-family: 'Times New Roman';">2</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">×</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">p</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">/4=</span>
+					</p>
+				</td>
+				<td colspan="7"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00144" name="TBL00144" type="text" ltype="text"
+							style="font-size: 12.0pt;; font-family: 'Times New Roman'; margin-left: -2mm;"
+							value="" ligerui="{width:75}" />
+					</p>
+				</td>
+				<td colspan="26"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">KN</span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in; page-break-inside: avoid;">
+				<td colspan="43"
+					style="border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%; margin-left: 1mm;">
+						<span class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'SimSun';">套管与混凝土脱离需克服的剪切力（胶结力）：</span></span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in; page-break-inside: avoid;">
+				<td colspan="11"
+					style="border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%; margin-left: 1mm;">
+						<span class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">F</span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">1</span><span
+							class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'Times New Roman';">=ζ</span></span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">F1</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">×[</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">τ</span><span
+							class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'Times New Roman';">]×((</span></span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">π</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">×</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">D</span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">o</span><span
+							class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'Times New Roman';">)×</span></span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">h</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">×1000)=</span>
+					</p>
+				</td>
+				<td colspan="7"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00145" name="TBL00145" type="text" ltype="text"
+							style="font-size: 12.0pt;; font-family: 'Times New Roman'; margin-left: -2mm;"
+							value="" ligerui="{width:75}" />
+					</p>
+				</td>
+				<td colspan="25"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">KN</span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in; page-break-inside: avoid;">
+				<td colspan="43"
+					style="border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%; margin-left: 1mm;">
+						<span class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">F</span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">0</span><span
+							class="a0 " style="font-style: italic; font-size: 12.0pt;"><span
+							class=""
+							style="font-family: 'Times New Roman';">
+								&lt;F</span></span><span class="a0 "
+							style="font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">1</span><span
+							class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'SimSun';">，上冲力不能使套管脱离混凝土。</span></span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in; page-break-inside: avoid;">
+				<td colspan="43"
+					style="border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%; margin: 2mm 1mm;">
+						<span class="a0 "
+							style="font-weight: bold; font-size: 14.0pt;; font-family: 'Times New Roman';">3.2 </span><span
+							class="a0 "
+							style="font-weight: bold; font-size: 14.0pt;; font-family: 'SimSun';">依靠重力抵消上冲力的校核</span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in; page-break-inside: avoid;">
+				<td colspan="43"
+					style="border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%; margin-left: 1mm;">
+						<span class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'SimSun';">套管和混凝土一起脱离地面需要克服的阻力：</span></span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in; page-break-inside: avoid;">
+				<td colspan="43"
+					style="border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%; margin-left: 1mm;">
+						<span class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'SimSun';">混凝土重量：</span></span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in; page-break-inside: avoid;">
+				<td colspan="19"
+					style="border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%; margin-left: 1mm;">
+						<span class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">G</span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">1</span><span
+							class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'Times New Roman';">=ζ</span></span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">G1</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">×</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">ρ</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">×</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">g</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">×(</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">a</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">×</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">b</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">×</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">h</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">-</span><span
+							class="a0 " style="font-style: italic; font-size: 12.0pt;"><span
+							class=""
+							style="font-family: 'Times New Roman';">
+								π</span></span><span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">×(</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">D</span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">o</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">/1000)</span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: top; font-size: xx-small;; font-family: 'Times New Roman';">2</span><span
+							class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'Times New Roman';">/4×</span></span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">h</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">×</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">n</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">)=</span>
+					</p>
+				</td>
+				<td colspan="8"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00146" name="TBL00146" type="text" ltype="text"
+							style="font-size: 12.0pt;; font-family: 'Times New Roman'; margin-left: -2mm;"
+							value="" ligerui="{width:65}" />
+					</p>
+				</td>
+				<td colspan="16"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">KN</span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in; page-break-inside: avoid;">
+				<td colspan="43"
+					style="border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%; margin-left: 1mm;">
+						<span class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'SimSun';">套管重量：</span></span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in; page-break-inside: avoid;">
+				<td colspan="24"
+					style="border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%; margin-left: 1mm;">
+						<span class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">G</span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">2</span><span
+							class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'Times New Roman';">=ζ</span></span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">G2</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">×</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">ρ</span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">s</span><span
+							class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'Times New Roman';">×g×</span></span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">π</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">(</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">D</span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">o</span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: top; font-size: xx-small;; font-family: 'Times New Roman';">2</span><span
+							class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'Times New Roman';">
+								- (</span></span><span class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">D</span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">o</span><span
+							class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'Times New Roman';">-2×</span></span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">t</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">)</span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: top; font-size: xx-small;; font-family: 'Times New Roman';">2</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">)/4/10</span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: top; font-size: xx-small;; font-family: 'Times New Roman';">6</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">×</span>
+						<span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">Σ</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">j∉z</span>
+						<span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">L</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">j</span>
+						<span
+							class="a0 " style="font-family: 'Times New Roman';">=</span>
+					</p>
+				</td>
+				<td colspan="6"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00147" name="TBL00147" type="text" ltype="text"
+							style="font-size: 12.0pt;; font-family: 'Times New Roman'; margin-left: -2mm;"
+							value="" ligerui="{width:65}" />
+					</p>
+				</td>
+				<td colspan="13"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">KN</span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in; page-break-inside: avoid;">
+				<td colspan="43"
+					style="border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%; margin-left: 1mm;">
+						<span class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'SimSun';">混凝土与地层摩阻力：</span></span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in; page-break-inside: avoid;">
+				<td colspan="14"
+					style="border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%; margin-left: 1mm;">
+						<span class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">G</span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">3</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">=ζ</span><span
+							class="a0 "
+							style="font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">G3</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">×</span><span
+							class="a0 "
+							style="font-style: italic; font-size: 12.0pt;; font-family: 'Times New Roman';">λ</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">×0.5</span><span
+							class="a0 " style="font-style: italic; font-size: 12.0pt;"><span
+							class=""
+							style="font-family: 'Times New Roman';">
+								q</span></span><span class="a0 "
+							style="font-style: italic; font-size: 12.0pt; vertical-align: bottom; font-size: xx-small;; font-family: 'Times New Roman';">sik</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">×</span><span
+							class="a0 " style="font-size: 12.0pt;; font-family: 'SimSun';">（</span><span
+							class="a0 " style="font-size: 12.0pt;"><span class=""
+							style="font-family: 'Times New Roman';">2a×h+2b×h</span></span><span
+							class="a0 " style="font-size: 12.0pt;; font-family: 'SimSun';">）</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">=</span>
+					</p>
+				</td>
+				<td colspan="9"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="TBL00148" name="TBL00148" type="text" ltype="text"
+							style="font-size: 12.0pt;; font-family: 'Times New Roman'; margin-left: -2mm;"
+							value="" ligerui="{width:65}" />
+					</p>
+				</td>
+				<td colspan="20"
+					style="border-bottom-style: none; border-left-style: none; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: none; vertical-align: middle;">
+					<p class="a DocDefaults " style="line-height: 125%;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">KN</span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.28in; page-break-inside: avoid;">
+				<td colspan="43"
+					style="border-bottom-style: none; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: none; vertical-align: middle;">
+					<!-- <p class="a DocDefaults ">
+						<input id="TBL00149" name="TBL00149" type="text" ltype="text"
+							value="" ligerui="{width:605}" />
+					</p> -->
+				</td>
+			</tr>
+			<tr style="height: 0.37in; page-break-inside: avoid;">
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="margin-left: 1mm;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">校核</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">:</span>
+					</p>
+				</td>
+				<td colspan="9"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-right-style: none; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="base__confirm_op" name="base__confirm_op" type="text" ltype="select"
+							value="" ligerui="{width:141,isMultiSelect:true}" />
+					</p>
+				</td>
+				<td colspan="10"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="base__confirm_time" name="base__confirm_time" type="text" ltype="date"
+							value="" ligerui="{width:75}" />
+					</p>
+				</td>
+				<td colspan="5"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults " style="text-align: center;">
+						<span class="a0 "
+							style="font-size: 12.0pt;; font-family: 'SimSun';">审核</span><span
+							class="a0 "
+							style="font-size: 12.0pt;; font-family: 'Times New Roman';">:</span>
+					</p>
+				</td>
+				<td colspan="12"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-right-style: none; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="base__audit_op" name="base__audit_op" type="text"
+							ltype="select" value="" ligerui="{width:131}" />
+					</p>
+				</td>
+				<td colspan="6"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 0.26mm; border-top-color: #000000; vertical-align: middle;">
+					<p class="a DocDefaults ">
+						<input id="base__audit_time" name="base__audit_time" type="text" ltype="date"
+							value="" ligerui="{width:109}" values="" title=""
+							style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<!-- <tr>
+				<td colspan="21"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000;">
+					<p class="a DocDefaults " style=""> -->
+</body>
+<script type="text/javascript">
+$("#base__confirm_time").ligerDateEditor({	   
+    onChangeDate(value){ 
+     	var str1 = value.replace('-', '年');
+     	var str2 = str1.replace('-', '月');
+     	str2=str2+"日";
+     	$("#base__confirm_time").val(str2);
+    } 
+});
+$("#base__audit_time").ligerDateEditor({	   
+onChangeDate(value){ 
+ 	var str1 = value.replace('-', '年');
+ 	var str2 = str1.replace('-', '月');
+ 	str2=str2+"日";
+ 	$("#base__audit_time").val(str2);
+} 
+});
+</script>
+</html>

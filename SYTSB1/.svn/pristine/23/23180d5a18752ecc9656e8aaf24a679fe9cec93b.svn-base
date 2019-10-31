@@ -1,0 +1,388 @@
+function adjustHeight() {
+    var bodyHeight = $("body").height();
+    var height = bodyHeight - $("#mFoot").height() - $("#mTop").height();
+    $("#userSettingConId").height(bodyHeight);
+    $("#userSettingId").height(height);
+}
+
+function userSetInit() {
+
+
+    //背景
+    function parseBg(id) {
+        var kv = {
+            "indexBg": {"name": "welcomeMainBg", "data": kFrameConfig.skinObject.sysDeskBg, "def": kFrameConfig.welcomeMainBg},
+            "systemBg": {"name": "sysMainBg", "data": kFrameConfig.skinObject.sysMainBg, "def": kFrameConfig.sysMainBg},
+            "desktopBg": {"name": "sysDeskBg", "data": kFrameConfig.skinObject.welcomeMainBg, "def": kFrameConfig.sysDeskBg}
+        };
+        if (!$("#" + id).attr("init")) {
+            var table = $('<table width="100%" border="1" cellspacing="0" cellpadding="0" class="bgset-table">' +
+                '<tr>' +
+                '<td colspan="2" rowspan="2" class="bgm"></td>' +
+                '<td  class="bgs"></td>' +
+                '<td  class="bgs"></td>' +
+                '<td  class="bgs"></td>' +
+                '<td  class="bgs"></td>' +
+                '<td colspan="2" rowspan="2" class="bgm"></td>' +
+                '<td  class="bgs"></td>' +
+                '</tr>' +
+                '<tr>' +
+                '<td  class="bgs"></td>' +
+                '<td colspan="2" rowspan="2" class="bgm"></td>' +
+                '<td  class="bgs"></td>' +
+                '<td  class="bgs"></td>' +
+                '</tr>' +
+                '<tr>' +
+                '<td  class="bgs"></td>' +
+                '<td  class="bgs"></td>' +
+                '<td  class="bgs"></td>' +
+                '<td  class="bgs"></td>' +
+                '<td  class="bgs"></td>' +
+                '<td  class="bgs"></td>' +
+                '<td  class="bgs"></td>' +
+                '</tr>' +
+                '</table>');
+            var data = kv[id]["data"];
+            var def = kv[id]["def"];
+            var name = kv[id]["name"];
+            table.find("td").each(function (i) {
+                if (i < data.length) {
+                    $(this).append('<div data-skinname="' + data[i].imgUrl + '"><img src="' + data[i].imgx + '"/><span class="slj-ok"></span></div>')
+                        .attr("name", name)
+                        .click(function () {
+                            table.find("td").not(this).removeClass("selected");
+                            $(this).toggleClass("selected");
+                        });
+                    if (data[i].imgUrl == def) {
+                        $(this).addClass("selected");
+                    }
+                }
+
+            });
+            $("#" + id).append(table).attr("init", true);
+        }
+    }
+
+    var data = kFrameConfig["user"];
+    if ($("#userSettingConId").length == 0) {
+        var top = $("#mTop").height();
+        var html = '<div id="userSettingConId" style="position:absolute;display:none;left:0;top:-700px;width: 100%;height: 100%;z-index: 1000">' +
+            '<div id="userSettingId" class="slj-skin-wrap" style="position:relative;left:0;top:' + top + 'px;width: 100%;height:100%;background-color:#ffffff;">' +
+            '<div class="slj-close" onclick="closeSetting()"></div>' +
+            '<div class="slj-skin-wrap-inner">' +
+
+            '<div class="slj-skin-top">系统设置<a href="javascript:setDefaultPersonalizeSetting();" class="slj-redft"><span class="slj-skin-top-icon"></span><span class="slj-skin-top-tit">还原默认设置</span></a><a href="javascript:saveSetting();" class="slj-save"><span class="slj-skin-top-icon"></span><span class="slj-skin-top-tit">保存</span></a></div>' +
+            '<div class="slj-skin-boxes">' +
+            '<h3 class="gexinset">' +
+            '<div>个性设置</div>' +
+            '</h3>' +
+            '<div class="slj-skin-boxes-wrap">' +
+            '<div class="slj-skin-gexin">' +
+            '<span class="w01">头像：<img id="userHeadIcon" src="' + data["icon"] + '" onclick="showFiles(this)"  title="点击修改头像" style="cursor: pointer;"/>' +
+            '<input name ="userHeadIcon" type="hidden" value="' + data["icon"] + '"/>' +
+            '</span><span class="w02"> 头像显示：' +
+            '<input type="radio" name="userHeadDisplay" value="true" id="userHeadDisplay1"' + (data["show"] ? " checked" : "") + '/><label for="userHeadDisplay1">是</label><input type="radio" name="userHeadDisplay" value="false" id="userHeadDisplay0"' + (!data["show"] ? " checked" : "") + '/><label for="userHeadDisplay0">否</label></span>' +
+            '<span class="w03"> 昵称：<input name="userNc" type="text" class="niname" value="' + (data["nickName"] ? data["nickName"] : "") + '"/></span><span class="w04"> 备注：<input name="remark" type="text" class="beizhu"  value="' + (data["remark"] ? data["remark"] : "") + '"/></span></div></div></div>' +
+            '<div class="slj-skin-boxes"><h3 class="skinset"><div>皮肤设置</div></h3><div class="slj-skin-boxes-wrap">' +
+            '<div class="slj-skin-sort">' +
+            '<ul class="slj-system" id="colorSetId">' +
+            '<div class="slj-sytit">色彩方案</div>';
+        //系统样式
+        var skin = kFrameConfig.skinObject.skinShow;
+        for (var i = 0; i < skin.length; i++) {
+            var skinItems = skin[i];
+            html += '<li name="skinStyle" data-skinname="' + skinItems.skinName + '" ' + (skinItems.skinName == kFrameConfig.mainStyle ? 'class="selected"' : '') + '><img src="' + skinItems.imgx + '" />' + skinItems.name + '<span class="slj-ok"></span></li>';
+        }
+
+        html += '</ul>' +
+            '<ul class="slj-menu"  id="menuSetId">' +
+            '<div class="slj-sytit">菜单风格</div>';
+
+        //系统菜单样式
+        skin = kFrameConfig.skinObject.menuShow;
+        for (var i = 0; i < skin.length; i++) {
+            var skinItems = skin[i];
+            html += '<li name="menuStyle" data-skinname="' + skinItems.skinName + '" ' + (skinItems.skinName == kFrameConfig.menu.style ? 'class="selected"' : '') + '><img src="' + skinItems.imgx + '" />' + skinItems.name + '<span class="slj-ok"></span></li>';
+        }
+
+        html += '</ul>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '<div class="slj-skin-boxes">' +
+            '<h3 class="beigset" id="bgTitle">' +
+            '<div extId="indexBg">首页背景</div>' +
+            '<div extId="systemBg">系统背景</div>' +
+            //'<div extId="desktopBg">桌面背景</div>' +
+            '</h3>' +
+            '<div class="alltrans"> 背景透明：<input type="radio" name="sysMainBgAllTrans" value="true" id="sysMainBgAllTrans1"' + (kFrameConfig["sysMainBgAllTrans"] ? " checked" : "") + '/><label for="sysMainBgAllTrans1">是</label><input type="radio" name="sysMainBgAllTrans" value="false" id="sysMainBgAllTrans0"' + (!kFrameConfig["sysMainBgAllTrans"] ? " checked" : "") + '/><label for="sysMainBgAllTrans0">否</label></div>' +
+            '</div>' +
+            '<div id="bgBody">' +
+            '<div id="indexBg" class="slj-skin-boxes-wrap"></div>' +
+            '<div id="systemBg" class="slj-skin-boxes-wrap"></div>' +
+            '<div id="desktopBg" class="slj-skin-boxes-wrap"></div>' +
+            '</div>';
+
+        html += '</div></div></div>';
+
+        $(html).appendTo("body").click(closeSetting);
+        $("#bgTitle div").click(function () {
+            var id = $(this).attr("extId");
+            $(this).addClass("selected").siblings().removeClass("selected");
+            parseBg(id);
+            $("#" + id).siblings().hide();
+            $("#" + id).show();
+        });
+        $("#colorSetId li,#menuSetId li").click(function () {
+            $(this).addClass("selected").siblings().removeClass("selected");
+        });
+        $("#bgTitle div:first").trigger("click");
+        $("#userSettingId .slj-skin-wrap-inner").click(function (event) {
+            event.stopPropagation();
+        });
+        adjustHeight();
+    }
+    adjustHeight();
+    var container = $("#userSettingConId");
+    container.animate({top: '0', opacity: 'show'}, "slow");
+}
+function closeSetting() {
+    closeUserHeadSetting();
+    var container = $("#userSettingConId");
+    container.animate({top: (0 - container.height()), opacity: 'hide'}, "slow");
+}
+
+$(function(){//jQuery页面载入事件
+    adjustHeight();
+    $(window).resize(function(){
+        adjustHeight();
+    });
+});
+//还原默认值
+function setDefaultPersonalizeSetting() {
+    $.getJSON("pub/sysPersonalize/deletePersonalize.do", function (data) {
+        if (data["success"]) {
+            var url = window.location.href.split("?")[0];
+            window.location = url;
+        } else {
+            $.dialog.notice({
+                icon: 'k/kui/images/icons/dialog/32X32/fail.png', content: "操作失败，请重试！"
+            });
+        }
+    });
+    $.cookie("c_skinStyle",null);
+}
+function closeUserHeadSetting() {
+    $("#userHeadIconSettingConId").hide("slow", "swing");
+}
+var ICONDATA = {};
+function showFiles() {
+    var container = $("#userHeadIconSettingConId");
+    if (container.length == 0) {
+        var userContainer = $("#userSettingConId .slj-skin-wrap-inner");
+        var height = userContainer.height();
+
+        var html = '<div id="userHeadIconSettingConId" style="position:absolute;display:none;left:0;top:0;width: 100%;height:100%;z-index: 1005;">' +
+            '<div class="user-head-skin-wrap" style="position:relative;left:110px;top:80px;width:720px;height:380px;background-color:#fff;border:4px solid #666;">' +
+
+            '<div class="user-head-skin-top"><a href="javascript:upFileList();" class="slj-return">返回上一层</a> <a href="javascript:upfile();"  class="self_upload">自定义头像</a><a href="javascript:closeUserHeadSetting();" class="slj-close">关闭</a></div>' +
+            '<ul id="userHeadFileList" style="background-color: white"></ul>' +
+            '</div></div>';
+
+        container = $(html).appendTo(userContainer).click(closeUserHeadSetting);
+
+        $("#userHeadIconSettingConId .user-head-skin-wrap").click(function (event) {
+            event.stopPropagation();
+        });
+        getFileList("");
+    }
+    container.show("slow", "swing");
+}
+
+function upFileList() {
+    HEADICONLASTDIR = HEADICONLASTDIR.substring(0, HEADICONLASTDIR.lastIndexOf("/"));
+    if (HEADICONLASTDIR.length < DEFAULTHEADDIR.length) {
+        HEADICONLASTDIR = "";
+    }
+    getFileList(HEADICONLASTDIR);
+}
+function getFileList(dir) {
+    HEADICONLASTDIR = dir;
+    if (ICONDATA[dir]) {
+        parseFileList(ICONDATA[dir]);
+    } else {
+    	if(dir!=null&&dir!=''&&dir!=undefined){
+    		dir = encodeURIComponent(dir);
+            dir = dir.replace(/%2F/g,'/').replace(/%3F/g,'?').replace(/%3D/g,'=');
+    	}
+        $.getJSON("pub/sysPersonalize/getHeadPath.do?relatePath=" + dir, function (res) {
+            if (res["success"]) {
+                parseFileList(res["data"]);
+                ICONDATA[dir] = res["data"];
+                if (dir == "" && res["data"][0]) {
+                    DEFAULTHEADDIR = res["data"][0]["uprealtePath"];
+                }
+            }
+        });
+    }
+}
+var DEFAULTHEADSRC = "k/kui/images/head/default.gif";
+var HEADICONLASTDIR = "";
+var DEFAULTHEADDIR = "";
+function parseFileList(data) {
+    var dir = $("#userHeadFileList");
+    dir.empty();
+    for (var i in data) {
+        var file = data[i];
+        var tempSrc = "k/kui/public/sys-set/loading.gif";
+        var src = file.relatePath;
+        var imageName = src.substring(src.lastIndexOf("/") + 1);
+        if (file.isDirectory) {
+            src = "k/kui/images/file-type/48/folder.png";
+        }
+        dir.append("<li><img _src='" + src + "' isdir='" + file.isDirectory + "' " + (file.isDirectory ? "dir='" + file.relatePath + "'" : "") + " src='" + tempSrc + "'/>" + (file.isDirectory ? "<span class='dir-name'>" + imageName + "</span>" : "<span class='slj-ok'></span>") + "</li>");
+    }
+
+    $("img", dir).each(function () {
+        var img = $(this);
+        img.attr("src", $(this).attr("_src"));
+        img.on("load", function () {
+            if (img.width() > 80) {
+                img.width(80)
+            }
+        });
+    });
+    $("img", dir).click(function () {
+        var t = $(this);
+        if (t.attr("isdir") == "true") {
+            getFileList(t.attr("dir"));
+        } else {
+            var p = t.parent();
+            p.siblings().not(this).removeClass("selected");
+            p.toggleClass("selected");
+            var src = t.attr("_src");
+            if (!p.hasClass("selected")) {
+                src = DEFAULTHEADSRC;
+            }
+            $("#userHeadIcon").attr("src", src);
+            $("input[name=userHeadIcon]").val(src);
+        }
+    });
+    $("img", dir).dblclick(function () {
+        var t = $(this);
+        if (t.attr("isdir") == "true") {
+            getFileList(t.attr("dir"));
+        } else {
+            var p = t.parent();
+            p.siblings().not(this).removeClass("selected");
+            p.addClass("selected");
+            var src = t.attr("_src");
+
+            $("#userHeadIcon").attr("src", src);
+            $("input[name=userHeadIcon]").val(src);
+        }
+    });
+}
+
+var SETTINGDATA = {
+    "id": "",
+    "userHeadIcon": "",
+    "userHeadDisplay": true,
+    "userNc": "",
+    "remark": "",
+    "menuStyle": "1",
+    "sysMainBgAllTrans": false,
+    "skinStyle": null,
+    "sysDeskBg": kFrameConfig.sysDeskBg,
+    "sysMainBg": kFrameConfig.sysMainBg,
+    "welcomeMainBg": kFrameConfig.welcomeMainBg
+};
+function setSetting() {
+    $.getJSON("pub/sysPersonalize/detailPersonalize.do", function (data) {
+        if (data["success"]) {
+            $.extend(SETTINGDATA, data["data"]);
+            var context = $("#userSettingConId");
+            $("input[name=userHeadIcon]", context).val(SETTINGDATA["userHeadIcon"]);
+            $("#userHeadIcon").attr("src", SETTINGDATA["userHeadIcon"] == "" ? "k/kui/images/head/default.gif" : SETTINGDATA["userHeadIcon"]);
+
+            $("input[name=userNc]", context).val(SETTINGDATA["userNc"]);
+            $("input[name=remark]", context).val(SETTINGDATA["remark"]);
+            $("input[name=userHeadDisplay]", context).each(function () {
+                var t = $(this);
+                t.attr("checked", t.val() == SETTINGDATA["userHeadDisplay"]);
+            });
+            $("input[name=sysMainBgAllTrans]", context).each(function () {
+                var t = $(this);
+                t.attr("checked", t.val() == SETTINGDATA["sysMainBgAllTrans"]);
+            });
+        }
+    });
+}
+function setSelectedValue(id) {
+    var obj = $("#" + id + " .selected");
+    if (obj.length == 0) {
+        obj = $("#" + id + " td:first");
+        if(obj.length>0){
+            obj.each(function () {
+                    SETTINGDATA[$(this).attr("name")] = "";
+            });
+        }
+    } else {
+        obj.each(function () {
+            if (this.tagName.toLowerCase() == "li") {
+                SETTINGDATA[$(this).attr("name")] = $(this).attr("data-skinname");
+            } else if (this.tagName.toLowerCase() == "td") {
+                SETTINGDATA[$(this).attr("name")] = $("div", this).attr("data-skinname");
+            }
+
+        });
+    }
+}
+function saveSetting() {
+    var context = $("#userSettingConId");
+    $("input:checked", context).each(function () {
+        SETTINGDATA[$(this).attr("name")] = $(this).val();
+    });
+    setSelectedValue("colorSetId");
+    setSelectedValue("menuSetId");
+    setSelectedValue("indexBg");
+    setSelectedValue("systemBg");
+    setSelectedValue("desktopBg");
+    SETTINGDATA["userHeadIcon"] = $("input[name=userHeadIcon]", context).val();
+    SETTINGDATA["userNc"] = $("input[name=userNc]", context).val();
+    SETTINGDATA["remark"] = $("input[name=remark]", context).val();
+    $.dialog.loading("正在保存数据……");
+    //Cookies.setCookie("skinStyle", SETTINGDATA["skinStyle"]);
+    $.cookie("c_skinStyle",SETTINGDATA["skinStyle"],{expires:365});
+    if (SETTINGDATA["skinStyle"]=="default") {
+    	$.cookie("c_skinStyle",null);
+    }
+    $.post("pub/sysPersonalize/savePersonalize.do", SETTINGDATA, function () {
+        var url = window.location.href.split("?")[0];
+        window.location = url;
+    });
+}
+//接口美图秀秀
+function upfile(){
+	top.$.dialog({
+		width : 500, 
+		height : 220, 
+		lock : true, 
+		title : "自定义头像", 
+		max:false,
+		min:false,
+		data : {"window" : window},
+		content : 'url:pub/xiuxiu/head.jsp'
+	}).max();
+}
+function setIcon(src){
+	closeUserHeadSetting();
+	//删除原来的头像
+	/*var old = $("input[name=userHeadIcon]").val();
+	if(old.indexOf("fileupload/download.do")!=-1){
+		var tempid = old.substring(old.indexOf('=')+1,old.length);
+		$.getJSON("fileupload/deleteAtt.do",{id:tempid},function(res){})
+	}*/
+	$("#userHeadIcon").attr("src", src);
+	$("input[name=userHeadIcon]").val(src);
+}

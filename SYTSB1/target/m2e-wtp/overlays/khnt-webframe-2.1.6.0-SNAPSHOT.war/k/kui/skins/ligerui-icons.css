@@ -1,0 +1,228 @@
+
+/* 所有图标具有类 */
+.l-icon {width:16px;height:16px;overflow:hidden;background-position:center center;background-repeat:no-repeat;line-height:normal;}
+
+/* 基本按钮图标 */
+.l-icon-add {background:url('../images/icons/16/add.png') no-repeat center;}/*新增*/
+.l-icon-plus {background:url('../images/icons/16/plus.png') no-repeat center;}/*加号，加上，添加*/
+.l-icon-del {background:url('../images/icons/16/delete.png') no-repeat center;}/*删除*/
+.l-icon-delete {background:url('../images/icons/16/delete.png') no-repeat center;}/*删除*/
+.l-icon-modify {background:url('../images/icons/16/modify.png') no-repeat center;}/*修改*/
+.l-icon-detail {background:url('../images/icons/16/detail.png') no-repeat center;}/*详情*/
+
+.l-icon-copy {background:url('../images/icons/16/copy.png') no-repeat center;}/*复制*/
+.l-icon-cut {background:url('../images/icons/16/cut.png') no-repeat center;}/*剪切*/
+.l-icon-cancel {background:url('../images/icons/16/cancel.png') no-repeat center;}/*取消*/
+.l-icon-close {background:url('../images/icons/16/cancel.png') no-repeat center;}/*关闭*/
+.l-icon-submit {background:url('../images/icons/16/submit.png') no-repeat center;}/*提交*/
+.l-icon-submit-more {background:url('../images/icons/16/submit_more.png') no-repeat center;}/*批量提交*/
+.l-icon-save {background:url('../images/icons/16/save.png') no-repeat center;}/*保存*/
+.l-icon-save-disabled {background:url('../images/icons/16/save-disabled.png') no-repeat center;}/*禁止保存*/
+.l-icon-ok {background:url('../images/icons/16/ok.png') no-repeat center;}/*确定，确认*/
+.l-icon-print {background:url('../images/icons/16/print.png') no-repeat center;}/*打印*/
+.l-icon-edit {background:url('../images/icons/16/edit.png') no-repeat center;}/*编辑*/
+
+.l-icon-prev {background:url('../images/icons/16/prev.png') no-repeat center;}/*上一页*/
+.l-icon-nav-prev {background:url('../images/icons/16/nav-prev.png') no-repeat center;}/*上一个*/
+.l-icon-nav-next {background:url('../images/icons/16/nav-next.png') no-repeat center;}/*下一个*/
+.l-icon-up {background:url('../images/icons/16/up.png') no-repeat center;}/*向上*/
+.l-icon-right {background:url('../images/icons/16/right.png') no-repeat center;}/*正确，右边*/
+.l-icon-true {background:url('../images/icons/16/true.png') no-repeat center;}/*真实，正确*/
+
+.l-icon-check {background:url('../images/icons/16/check.png') no-repeat center;}/*检查，核对，审核*/
+.l-icon-check-in {background:url('../images/icons/16/info-edit.png') no-repeat center;}/*登记*/
+.l-icon-check-more {background:url('../images/icons/16/page_white_stack.png') no-repeat center;}/*批量登记*/
+.l-icon-selectbox {background:url('../images/icons/16/icon-down.png') no-repeat center;}/*下拉选项，下拉箭头*/
+
+.l-icon-accept {background:url('../images/icons/16/accept.png') no-repeat center;}/*启用*/
+.l-icon-forbid {background:url('../images/icons/16/forbid.png') no-repeat center;}/*禁用*/
+.l-icon-photo {background:url('../images/icons/16/photo.png') no-repeat center;}/*照片*/
+.l-icon-photograph {background:url('../images/icons/16/photograph.png') no-repeat center;}/*拍照，照相*/
+.l-icon-compare {background:url('../images/icons/16/database_link.png') no-repeat center;}/*比对*/
+.l-icon-error {background:url('../images/icons/16/error.png') no-repeat center;}/*错误*/
+
+.l-icon-book {background:url('../images/icons/16/book.png') no-repeat center;}/*图书，书籍*/
+.l-icon-book-5 {background:url('../images/icons/16/book2.png') no-repeat center;}/*图书，书籍，翻书*/
+.l-icon-bluebook {background:url('../images/icons/16/bluebook.png') no-repeat center;}/*蓝皮书*/
+.l-icon-bookpen {background:url('../images/icons/16/bookpen.png') no-repeat center;}/*翻书*/
+.l-icon-folder {background:url('../images/icons/16/folder.png') no-repeat center;}/*文件夹，目录*/
+.l-icon-standing-book {background:url('../images/icons/16/total_plan_cost.png') no-repeat center;}/*台账*/
+.l-icon-formula {background:url('../images/icons/16/pi_math.png') no-repeat center;}/*公式*/
+.l-icon-count {background:url('../images/icons/16/chart_pie.png') no-repeat center;}/*计数，计算*/
+
+/* user add,edit,del,view */
+.l-icon-logout {background:url('../images/icons/16/logout.png') no-repeat center;}/*退出*/
+.l-icon-user {background:url('../images/icons/16/user.png') no-repeat center;}/*用户*/
+.l-icon-userMove {background:url('../images/icons/16/user-move.png') no-repeat center;}/*传送*/
+.l-icon-userLock {background:url('../images/icons/16/lock.png') no-repeat center;}/*用户锁定*/
+.l-icon-userUnlock {background:url('../images/icons/16/lock-3-open.png') no-repeat center;}/*解除用户锁定*/
+.l-icon-lock {background:url('../images/icons/16/lock-3.png') no-repeat center;}/*锁定*/
+.l-icon-key {background:url('../images/icons/16/key.png') no-repeat center;}/*钥匙*/
+.l-icon-memeber {background:url('../images/icons/16/memeber.png') no-repeat center;}/*会员*/
+.l-icon-role {background:url('../images/icons/16/role.png') no-repeat center;}/*角色，任务*/
+.l-icon-customers {background:url('../images/icons/16/customers.png') no-repeat center;}/*客户，顾客*/
+.l-icon-myaccount {background:url('../images/icons/16/myaccount.png') no-repeat center;}/*我的帐户*/
+
+.l-icon-setting {background:url('../images/icons/16/setting.png') no-repeat center;}/*设置*/
+.l-icon-settings {background:url('../images/icons/16/settings.png') no-repeat center;}/*设置*/
+.l-icon-setting3 {background:url('../images/icons/16/setting2.png') no-repeat center;}/*设置*/
+
+.l-icon-org {background:url('../images/icons/16/org.png') no-repeat center;}/*域名，站点*/
+.l-icon-orgAdd {background:url('../images/icons/16/org-add.png') no-repeat center;}/*域名，站点 添加*/
+.l-icon-orgDel {background:url('../images/icons/16/org-del.png') no-repeat center;}/*域名，站点 删除*/
+
+.l-icon-time {background:url('../images/icons/16/time.png') no-repeat center;}/*时间*/
+.l-icon-date {background:url('../images/icons/16/date.png') no-repeat center;}/*日期，日历*/
+.l-icon-date-bz {background:url('../images/icons/16/date-4.png') no-repeat center;}
+.l-icon-date-by {background:url('../images/icons/16/date-4.png') no-repeat center;}
+.l-icon-date-bjd {background:url('../images/icons/16/date-4.png') no-repeat center;}
+.l-icon-date-bn {background:url('../images/icons/16/date-4.png') no-repeat center;}
+.l-icon-date-sz {background:url('../images/icons/16/date-4.png') no-repeat center;}
+.l-icon-date-sy {background:url('../images/icons/16/date-4.png') no-repeat center;}
+.l-icon-date-sjd {background:url('../images/icons/16/date-4.png') no-repeat center;}
+.l-icon-date-sn {background:url('../images/icons/16/date-4.png') no-repeat center;}
+.l-icon-calendar {background:url('../images/icons/16/calendar.png') no-repeat center;}/*日历*/
+
+.l-icon-f5 {background:url('../images/icons/16/f5.png') no-repeat center;}/*刷新*/
+
+.l-icon-find {background:url('../images/icons/16/find.png') no-repeat center;}/*发现，查找*/
+.l-icon-search {background:url('../images/icons/16/search.png') no-repeat center;}/*搜索*/
+.l-icon-search2 {background:url('../images/icons/16/search2.png') no-repeat center;}/*搜索*/
+.l-icon-search-list {background:url('../images/icons/16/search.png') no-repeat center;}/*搜索*/
+
+.l-icon-door {background:url('../images/icons/16/door.png') no-repeat center;}/*门，通道*/
+.l-icon-door-in {background:url('../images/icons/16/door_in.png') no-repeat center;}/*进入*/
+.l-icon-door-open {background:url('../images/icons/16/door_open.png') no-repeat center;}/*开门，打开*/
+.l-icon-door-out {background:url('../images/icons/16/door_out.png') no-repeat center;}/*退出，关闭*/
+.l-icon-logout {background:url('../images/icons/16/logout.png') no-repeat center;}/*退出，注销*/
+
+.l-icon-card {background:url('../images/icons/16/card.png') no-repeat center;}/*卡片，证件*/
+
+.l-icon-table {background:url('../images/icons/16/table.png') no-repeat center;}/*表格*/
+.l-icon-table-add {background:url('../images/icons/16/table_add.png') no-repeat center;}/*添加表格*/
+.l-icon-table-delete , .l-icon-table-del {background:url('../images/icons/16/table_delete.png') no-repeat center;}/*删除表格*/
+.l-icon-table-edit {background:url('../images/icons/16/table_edit.png') no-repeat center;}/*编辑表格*/
+.l-icon-table-excel {background:url('../images/icons/16/table_excel.png') no-repeat center;}/*excel表格*/
+.l-icon-excel-import {background:url('../images/icons/16/excel-import.png') no-repeat center;}/*导出excel*/
+.l-icon-excel-export {background:url('../images/icons/16/excel-export.png') no-repeat center;}/*导入excel*/
+.l-icon-table-export {background:url('../images/icons/16/table_export.png') no-repeat center;}/*导出表格*/
+.l-icon-table-import {background:url('../images/icons/16/table_import.png') no-repeat center;}/*导入表格*/
+.l-icon-table-set {background:url('../images/icons/16/table_gear.png') no-repeat center;}/*设置表格*/
+.l-icon-table-refresh {background:url('../images/icons/16/table_refresh.png') no-repeat center;}/*刷新表格*/
+.l-icon-table-save {background:url('../images/icons/16/table_save.png') no-repeat center;}/*保存表格*/
+.l-icon-table-select {background:url('../images/icons/16/table_select.png') no-repeat center;}/*选择表格*/
+
+.l-icon-link {background:url('../images/icons/16/link.png') no-repeat center;}/*链接，连接*/
+.l-icon-link-add {background:url('../images/icons/16/link_add.png') no-repeat center;}/*添加链接，添加连接*/
+.l-icon-link-delete {background:url('../images/icons/16/link_delete.png') no-repeat center;}/*删除链接，删除连接*/
+.l-icon-link-edit {background:url('../images/icons/16/link_edit.png') no-repeat center;}/*编辑链接，编辑连接*/
+.l-icon-link-break {background:url('../images/icons/16/link_break.png') no-repeat center;}/*断开链接，断开连接*/
+
+.l-icon-tel {background:url('../images/icons/16/tel.png') no-repeat center;}/*电话*/
+.l-icon-talk {background:url('../images/icons/16/talk.png') no-repeat center;}/*谈话，交谈，说说*/
+.l-icon-discuss {background:url('../images/icons/16/discuss.png') no-repeat center;}/*讨论，议论，辩论*/
+.l-icon-comment {background:url('../images/icons/16/comment.png') no-repeat center;}/*评论，注释*/
+
+.l-icon-back {background:url('../images/icons/16/back.png') no-repeat center;}/*后退，返回*/
+.l-icon-forward {background:url('../images/icons/16/go.png') no-repeat center;}/*向前*/
+.l-icon-refresh {background:url('../images/icons/16/refresh.png') no-repeat center;}/*刷新*/
+.l-icon-refurbish {background:url('../images/icons/16/refurbish.png') no-repeat center;}/*刷新*/
+.l-icon-return {background:url('../images/icons/16/return.png') no-repeat center;}/*返回，退回*/
+.l-icon-return-cause {background:url('../images/icons/16/ask_and_answer.png') no-repeat center;}/*退回原因*/
+
+.l-icon-coffee {background:url('../images/icons/16/coffee.png') no-repeat center;}/*咖啡*/
+
+.l-icon-graywarn {background:url('../images/icons/16/graywarn.png') no-repeat center;}/*灰色警告*/
+.l-icon-greenwarn {background:url('../images/icons/16/greenwarn.png') no-repeat center;}/*警告*/
+.l-icon-help {background:url('../images/icons/16/help.png') no-repeat center;}/*帮助*/
+
+.l-icon-home {background:url('../images/icons/16/home.png') no-repeat center;}/*首页，主页*/
+
+.l-icon-mail {background:url('../images/icons/16/mail.png') no-repeat center;}/*邮件*/
+.l-icon-email {background:url('../images/icons/16/email.png') no-repeat center;}/*邮件*/
+.l-icon-mailbox {background:url('../images/icons/16/mailbox.png') no-repeat center;}/*邮箱，信箱*/
+.l-icon-outbox {background:url('../images/icons/16/outbox.png') no-repeat center;}/*发件箱*/
+.l-icon-msn {background:url('../images/icons/16/msn.png') no-repeat center;}/*MSN*/
+.l-icon-qq {background:url('../images/icons/16/qq.png') no-repeat center;}/*QQ，腾讯*/
+.l-icon-communication {background:url('../images/icons/16/communication.png') no-repeat center;}/*通讯，沟通，通信*/
+
+.l-icon-pager {background:url('../images/icons/16/pager.png') no-repeat center;}/*纸张，页*/
+
+.l-icon-config {background:url('../images/icons/16/config.png') no-repeat center;}/*配置，布局*/
+
+.l-icon-address {background:url('../images/icons/16/address.png') no-repeat center;}/*地址*/
+
+.l-icon-process {background:url('../images/icons/16/process.png') no-repeat center;}/*进程，进度*/
+.l-icon-hd-process {background:url('../images/icons/16/process1.png') no-repeat center;}/*进程，进度*/
+
+.l-icon-archives {background:url('../images/icons/16/archives.png') no-repeat center;}/*档案*/
+
+.l-icon-attibutes {background:url('../images/icons/16/attibutes.png') no-repeat center;}/*属性*/
+
+.l-icon-busy {background:url('../images/icons/16/busy.png') no-repeat center;}/*忙碌，占用*/
+
+.l-icon-database {background:url('../images/icons/16/database.png') no-repeat center;}/*数据库*/
+.l-icon-compute-2 {background:url('../images/icons/16/computer.png') no-repeat center;}/*电脑，计算机*/
+
+.l-icon-info-add {background:url('../images/icons/16/info-add.png') no-repeat center;}/*添加信息*/
+.l-icon-info-edit {background:url('../images/icons/16/info-edit.png') no-repeat center;}/*编辑信息*/
+.l-icon-info-save {background:url('../images/icons/16/info-save.png') no-repeat center;}/*保存信息*/
+.l-icon-info-del {background:url('../images/icons/16/info-del.png') no-repeat center;}/*删除信息*/
+
+.l-icon-bulb {background:url('../images/icons/16/lightbulb.png') no-repeat center;}/*灯泡*/
+
+.l-icon-picture {background:url('../images/icons/16/picture.png') no-repeat center;}/*图片*/
+.l-icon-picture-add {background:url('../images/icons/16/picture_add.png') no-repeat center;}/*添加图片*/
+.l-icon-picture-del {background:url('../images/icons/16/picture_delete.png') no-repeat center;}/*删除图片*/
+.l-icon-picture-edit {background:url('../images/icons/16/picture_edit.png') no-repeat center;}/*编辑图片*/
+.l-icon-picture-go {background:url('../images/icons/16/picture_go.png') no-repeat center;}/*图片*/
+.l-icon-picture-link {background:url('../images/icons/16/picture_link.png') no-repeat center;}/*图片链接*/
+.l-icon-picture-save {background:url('../images/icons/16/picture_save.png') no-repeat center;}/*保存图片*/
+.l-icon-piechart {background:url('../images/icons/16/piechart.png') no-repeat center;}/*饼图，图表*/
+
+.l-icon-seal {background:url('../images/icons/16/stamp_pattern.png') no-repeat center;}/*印章*/
+
+.l-icon-appear {background:url('../images/icons/16/sort_ascending.png') no-repeat center;}/*上报，上升，升序*/
+.l-icon-follow {background:url('../images/icons/16/control_repeat_blue.png') no-repeat center;}/*流程跟踪，任务跟踪*/
+.l-icon-dispose {background:url('../images/icons/16/small_business.png') no-repeat center;}/*处理*/
+.l-icon-dispose-record {background:url('../images/icons/16/timeline_marker.png') no-repeat center;}/*处理记录*/
+.l-icon-take-notes {background:url('../images/icons/16/shape_square_edit.png') no-repeat center;}/*记录*/
+.l-icon-merge {background:url('../images/icons/16/arrow_join.png') no-repeat center;}/*合并*/
+.l-icon-issued {background:url('../images/icons/16/arrow_right.png') no-repeat center;}/*下发*/
+.l-icon-appropriation {background:url('../images/icons/16/arrow_down.png') no-repeat center;}/*下拨*/
+.l-icon-provide {background:url('../images/icons/16/arrow_inout.png') no-repeat center;}/*发放*/
+.l-icon-distribution {background:url('../images/icons/16/distribution_partnerships.png') no-repeat center;}/*分发*/
+.l-icon-release {background:url('../images/icons/16/ok.png') no-repeat center;}/*发布*/
+.l-icon-sign-in {background:url('../images/icons/16/page_edit.png') no-repeat center;}/*签收*/
+.l-icon-view {background:url('../images/icons/16/time_go.png') no-repeat center;}/*查看记录*/
+.l-icon-view-progress {background:url('../images/icons/16/timeline.png') no-repeat center;}/*查看处理进度*/
+.l-icon-cart-put {background:url('../images/icons/16/cart_put.png') no-repeat center;}/*购置*/
+.l-icon-consuming {background:url('../images/icons/16/coins_in_hand.png') no-repeat center;}/*领用*/
+.l-icon-give-back {background:url('../images/icons/16/table_replace.png') no-repeat center;}/*归还*/
+.l-icon-breakage {background:url('../images/icons/16/transform_shear.png') no-repeat center;}/*报损*/
+.l-icon-toolbox {background:url('../images/icons/16/toolbox.png') no-repeat center;}/*维修*/
+.l-icon-recycle {background:url('../images/icons/16/recycle_bag.png') no-repeat center;}/*报废*/
+.l-icon-balances {background:url('../images/icons/16/account_balances.png') no-repeat center;}/*调拨*/
+.l-icon-same {background:url('../images/icons/16/arrow_switch.png') no-repeat center;}/*同步*/
+.l-icon-generate {background:url('../images/icons/16/layers_map.png') no-repeat center;}/*生成*/
+.l-icon-apply-for {background:url('../images/icons/16/application_get.png') no-repeat center;}/*申请*/
+.l-icon-template {background:url('../images/icons/16/domain_template.png') no-repeat center;}/*模板*/
+.l-icon-basket-put {background:url('../images/icons/16/basket_put.png') no-repeat center;}/*入库*/
+.l-icon-preview {background:url('../images/icons/16/preview.png') no-repeat center;}/*预览*/
+.l-icon-export {background:url('../images/icons/16/layer_export.png') no-repeat center;}/*导出*/
+.l-icon-todolist {background:url('../images/icons/16/to_do_list.png') no-repeat center;}/*起草*/
+.l-icon-daily {background:url('../images/icons/16/page_white_text.png') no-repeat center;}/*日志*/
+.l-icon-adjustment {background:url('../images/icons/16/color_adjustment.png') no-repeat center;}/*调整*/
+.l-icon-change {background:url('../images/icons/16/change.png') no-repeat center;}/*变更*/
+.l-icon-feedback {background:url('../images/icons/16/feedback.png') no-repeat center;}/*反馈*/
+.l-icon-group {background:url('../images/icons/16/shape_group.png') no-repeat center;}/*汇总*/
+
+.l-icon-node-tree {background:url('../images/icons/16/node-tree.png') no-repeat center;}/*节点树*/
+.l-icon-win-okval {background:url('../images/icons/16/accept.png') no-repeat center;}/*确定按钮*/
+.l-icon-win-cancelVal {background:url('../images/icons/16/cancel.png') no-repeat center;}/*取消按钮*/
+
+.l-icon-word {background:url('../images/icons/16/word2.png') no-repeat center;}/*Word*/
+.l-icon-word-report {background:url('../images/icons/16/report_word.png') no-repeat center;}/*Word报告*/
+.l-icon-zoom_in {background:url('../images/icons/16/zoom_in.png') no-repeat center;}/*放大*/
+.l-icon-zoom_out {background:url('../images/icons/16/zoom_out.png') no-repeat center;}/*缩小*/
+.l-icon-pdf {background:url('../images/icons/16/pdf.png') no-repeat center;}/*pdf*/

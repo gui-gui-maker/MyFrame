@@ -1,0 +1,644 @@
+<%@ page contentType="text/html;charset=UTF-8"%>
+<%@ taglib uri="http://khnt.com/tags/ui" prefix="u" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>休假请假</title>
+	<%@include file="/k/kui-base-list.jsp"%>
+	<%@page import="com.khnt.security.util.SecurityUtil"%>
+	<%@page import="com.khnt.security.CurrentSessionUser"%>
+	<%@page import="com.khnt.rbac.impl.bean.User"%>
+	<script type="text/javascript" src="pub/bpm/js/util.js"></script>
+	<script type="text/javascript" src="pub/worktask/js/worktask.js"></script>   
+	<%
+	CurrentSessionUser curUser = SecurityUtil.getSecurityUser();
+	User uu = (User)curUser.getSysUser();
+	com.khnt.rbac.impl.bean.Employee e = (com.khnt.rbac.impl.bean.Employee)uu.getEmployee();
+	String userId=e.getId();
+	String uId = SecurityUtil.getSecurityUser().getId();
+	String depId = e.getOrg().getOrgCode();
+	%>
+	<script type="text/javascript">
+		var qmUserConfig = {
+				sp_defaults:{columnWidth:0.3,labelAlign:'right',labelSeparator:'',labelWidth:120},	// 默认值，可自定义
+	            sp_fields:[
+						   {name:'people_name',compare:'like'},
+	                       {name:'dep_name',compare:'like'},
+	                       {name:'leave_type',compare:'like'},
+	                       {name:'apply_status',compare:'like'},
+	       				   {name:"start_date", compare:">="},
+	       				   {name:"end_date", compare:"<="}
+	            ],
+				tbar:[
+		            	{ text:'详情', id:'detail',icon:'detail', click: detail},
+		                "-",
+		                { text:'增加', id:'add',icon:'add', click: add},
+		                "-",
+		                { text:'修改', id:'modify',icon:'modify', click:modify},
+		                "-",
+		                { text:'删除', id:'del',icon:'delete', click:del},
+		                "-",
+		                { text:'提交', id:'submit',icon:'submit',click:submit},
+		                "-",
+		                { text:'撤销', id:'revoke',icon:'delete',click:revoke}
+		            <sec:authorize access="hasRole('TJY2_RL_CLANKJ')">
+		            	,"-",{ text:'处理', id:'deal',icon:'dispose', click: deal }
+		            </sec:authorize> 
+		            <sec:authorize access="hasRole('TJY2_RL_XIAOJIA')">
+		    			,"-", { text:'销假', id:'back',icon:'delete',click:back}
+		    		</sec:authorize> 
+		    		<sec:authorize ifAnyGranted="sys_administrate,TJY2_RL_XIAOJIA">
+	    				,"-", { text:'补录', id:'add_record',icon:'add',click:add_record}
+	    			</sec:authorize> 
+	    			/* , "-",{text:'查看审批进度', id:'progress',icon:'detail', click:progress} */
+	    			, "-",
+	    		    {text:'流转过程', id:'turnHistory',icon:'follow', click: turnHistory}
+		            ],
+		            listeners: {
+		                selectionChange : function(rowData,rowIndex){
+		                	var count = Qm.getSelectedCount(); // 行选择个数
+		        				Qm.setTbar({
+		        					detail: count==1,
+		        					modify: count==1,
+		        					del: count>0,
+		        					submit: count==1,
+		        					deal: count==1,
+		        					turnHistory: count==1,
+		        					back: count>0,
+		        					revoke:count>0
+		        				});
+		        				if(count>0){
+		        					//判断按钮可用情况
+		        					var status =Qm.getValuesByName("apply_status").toString();
+		        					var strs= new Array(); //定义一数组
+		        	 				strs=status.split(","); //字符分割
+		        	 				//已提交的情况
+		        	 				for (i=0;i<count;i++){
+		        	 					if(strs[i] == '未提交'){
+		        							Qm.setTbar({
+		        								back:false,
+		        								deal:false,
+		        								turnHistory:false,
+		        								revoke:false
+		        							});
+		        						}else if(strs[i] == '已提交' ||strs[i] == '审批中'){
+		        							Qm.setTbar({
+		        								submit: false,
+		        								del:false,
+		        								modify:false,
+		        								back:false,
+		        								turnHistory:true,
+		        							});
+		        						}else if(strs[i] == '审批通过'){
+		        							Qm.setTbar({
+		        								submit: false,
+		        								del:false,
+		        								modify:false,
+		        								deal:false,
+		        								revoke:false,
+		        								turnHistory:true,
+		        							});
+		        						}else if(strs[i] == '已销假'){
+		        							Qm.setTbar({
+		        								submit: false,
+		        								del:false,
+		        								modify:false,
+		        								back:false,
+		        								deal:false,
+		        								revoke:false,
+		        								turnHistory:true,
+		        							});
+		        						}else if(strs[i] == '审批不通过'){
+		        							Qm.setTbar({
+		        								submit: false,
+		        								del:true,
+		        								modify:false,
+		        								back:false,
+		        								deal:false,
+		        								revoke:false,
+		        								turnHistory:true,
+		        							});
+		        						}else if(strs[i] == '已撤销'){
+		        							Qm.setTbar({
+		        								submit: false,
+		        								del:true,
+		        								modify:false,
+		        								back:false,
+		        								deal:false,
+		        								revoke:false,
+		        								turnHistory:true,
+		        							});
+		        						}
+		        					}
+		        				}
+		                },
+		        		rowDblClick :function(rowData,rowIndex){
+		        			detail(rowData.id);
+		        		},
+		        		rowAttrRender : function(rowData, rowid) {
+		        		    var fontColor="black";
+		        		    if(rowData.apply_status == '已提交'){
+		        				fontColor="blue";
+		        		    }else if(rowData.apply_status == '审批中'){
+		        				fontColor="orange";
+		        		    }else if(rowData.apply_status == '审批通过'){
+		        				fontColor="green";
+		        		    }else if(rowData.apply_status == '已销假'){
+		        				fontColor="#8E8E8E";
+		        		    }else if(rowData.apply_status == '审批不通过'||rowData.apply_status == '已撤销'){
+		        				fontColor="red";
+		        		    }
+		        		    return "style='color:"+fontColor+"'";
+		        		}
+		            }
+		};
+
+		function detail(){
+			var id = Qm.getValueByName("id").toString();
+			top.$.dialog({
+				width:800,
+				height:630,
+				lock:true,
+				title:"详情",
+				content: 'url:app/humanresources/leave/office_leave_detail.jsp?pageStatus=detail&id='+id+"&peopleId="+Qm.getValueByName("people_id").toString()+"&allow=1",
+				data:{window:window}
+			});
+		}
+        
+        //新增
+        function add(){
+        	var allow = "0";
+        	$.ajax({
+            	url: 'employeeBaseAction/getWorkTitle1.do?id=<%=userId%>',
+                type: "POST",
+                datatype: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                	var workTitle=data.workTitle;
+                	if(workTitle!=""&&workTitle!=null&&workTitle!="undefined"){
+                		if(workTitle.indexOf("部长")>=0 || workTitle.indexOf("副总工")>=0 || workTitle.indexOf("主持工作")>=0 || workTitle.indexOf("主任")>=0 || workTitle.indexOf("助理")>=0 || workTitle.indexOf("院长")>=0 ){
+                    		allow="1";
+                    	}
+                	}
+                	top.$.dialog({
+        				width: 800,
+        				height: 630,
+        				lock:true,
+        				title:"新增",
+        				data: {window:window},
+        				content: 'url:app/humanresources/leave/office_leave_detail.jsp?pageStatus=add&allow='+allow
+        			});
+                }
+            });
+        }
+        
+     	//补录
+        function add_record(){
+			top.$.dialog({
+				width: 800,
+				height: 630,
+				lock:true,
+				title:"新增",
+				data: {window:window},
+				content: 'url:app/humanresources/leave/leave_add_record.jsp?pageStatus=add'
+			});
+        }
+        
+        //修改
+        function modify(){
+        	var allow = "0";
+        	$.ajax({
+            	url: 'employeeBaseAction/getWorkTitle1.do?id=<%=userId%>',
+                type: "POST",
+                datatype: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                	var workTitle=data.workTitle;
+                	if(workTitle!=""&&workTitle!=null&&workTitle!="undefined"){
+                		if(workTitle.indexOf("部长")>=0 || workTitle.indexOf("副总工")>=0 || workTitle.indexOf("主持工作")>=0 || workTitle.indexOf("主任")>=0 || workTitle.indexOf("助理")>=0 || workTitle.indexOf("院长")>=0 ){
+                    		allow="1";
+                    	}
+                	}
+                	top.$.dialog({
+        				width: 800,
+        				height: 630,
+        				lock:true,
+        				title:"修改",
+        				data: {window:window},
+        				content: 'url:app/humanresources/leave/office_leave_detail.jsp?pageStatus=modify&id='+Qm.getValueByName("id")+"&peopleId="+Qm.getValueByName("people_id").toString()+"&allow="+allow
+        			});
+                }
+            });
+        } 
+        
+        //删除
+        function del(){
+        	var id = Qm.getValueByName("id");
+    		var people_id = Qm.getValueByName("people_id");
+    		if(people_id!="<%=userId%>"){
+                $.ligerDialog.alert("只能删除自己的申请！");
+                return;
+            }
+        	var ids = Qm.getValuesByName("id").toString();
+        	$.ligerDialog.confirm('您确定要删除所选数据吗？', function (yes){
+            	if(!yes){return false;}
+        		top.$.ajax({
+                    url: "BgLeaveAction/delete.do?ids="+ids,
+                    type: "POST",
+                    dataType:'json',
+                    async: false,
+                    success:function (data) {
+                       if(data.success){
+                          top.$.notice("操作成功");
+                           Qm.refreshGrid();//刷新
+                       }else{
+                           $.ligerDialog.warn("操作失败");
+                           Qm.refreshGrid();//刷新
+                       }
+                    },
+                    error:function () {
+                   	 $.ligerDialog.error("出错了！请重试！!");
+                    }
+                });
+        	});
+        }  
+        //提交
+        function submit(){
+    		var id = Qm.getValueByName("id");
+    		var people_id = Qm.getValueByName("people_id");
+    		var leave_count1 = Qm.getValueByName("leave_count1");
+    		var leave_type = Qm.getValueByName("leave_type");
+            if(!id){
+           	 	top.$.notice('请先选择要提交审核的数据！',3);
+                return;
+            }
+            $.ligerDialog.confirm('是否提交审核？', function (yes){
+            if(!yes){return false; }
+             $("body").mask("正在提交，请稍后！");
+             if(leave_type=="公务外出"){
+            	 getServiceFlowConfig("TJY2_RL_GWWC","",function(result,data){
+                	 if(result){
+                         top.$.ajax({
+                             url: "BgLeaveAction/subFolwGwwc.do?id="+id+"&people_id="+people_id+"&leave_count1="+leave_count1+"&flowId="+data.id+"&typeCode=TJY2_RL_GWWC",
+                             type: "GET",
+                             dataType:'json',
+                             async: false,
+                             success:function (data) {
+                                 if (data) {
+                                	$("body").unmask();
+                               	 	top.$.notice('提交成功！！！');
+                                    Qm.refreshGrid();
+                                 }
+                             },
+                             error:function () {
+                            	 $("body").unmask();
+                            	 $.ligerDialog.error('请出错了！请重试！!');
+                             }
+                         });
+                    }else{
+                    	$.ligerDialog.error('出错了！请重试！',3);
+                     $("body").unmask();
+                    }
+                 });
+             }else{
+            	 getServiceFlowConfig("TJY2_RL_LEAVE","",function(result,data){
+                	 if(result){
+                         top.$.ajax({
+                             url: "BgLeaveAction/subFolw.do?id="+id+"&people_id="+people_id+"&leave_count1="+leave_count1+"&flowId="+data.id+"&typeCode=TJY2_RL_LEAVE",
+                             type: "GET",
+                             dataType:'json',
+                             async: false,
+                             success:function (data) {
+                                 if (data) {
+                                	$("body").unmask();
+                               	 	top.$.notice('提交成功！！！');
+                                    Qm.refreshGrid();
+                                 }
+                             },
+                             error:function () {
+                            	 $("body").unmask();
+                            	 $.ligerDialog.error('请出错了！请重试！!');
+                             }
+                         });
+                    }else{
+                    	$.ligerDialog.error('出错了！请重试！',3);
+                     $("body").unmask();
+                    }
+                 });
+             }
+            });
+    	}
+        //撤销
+        function revoke(){
+        	var id = Qm.getValueByName("id");
+    		var people_id = Qm.getValueByName("people_id");
+    		if(people_id!="<%=userId%>"){
+                $.ligerDialog.alert("只能撤销自己的申请！");
+                return;
+            }
+    		$.ligerDialog.confirm('是否要撤销？', function (yes){
+    	         if(!yes){return false;}
+                 top.$.ajax({
+                     url: "BgLeaveAction/revokeLeave.do?id="+id,
+                     type: "GET",
+                     dataType:'json',
+                     async: false,
+                     success:function (res) {
+                         if (res.success) {
+                        	 top.$.notice("撤销成功！");
+                             Qm.refreshGrid();//刷新
+                          	}else{
+                          		top.$.notice("撤销失败！");
+                                Qm.refreshGrid();//刷新
+                         }
+                     },
+                     error:function () {
+                   	 $.ligerDialog.alert("出错了!！请重试！");
+                         $("body").unmask();
+                     }
+                 });
+    	     });
+        }
+        //销假
+        function back(){
+			top.$.dialog({
+				width: 800,
+				height: 630,
+				lock:true,
+				title:"销假",
+				data: {window:window},
+				content: 'url:app/humanresources/leave/office_leave_detail.jsp?modifyType=back&pageStatus=modify&id='+Qm.getValueByName("id")+"&startDate="+Qm.getValueByName("start_date")+"&peopleId="+Qm.getValueByName("people_id").toString()+"&allow=1"
+			});
+        }
+      //处理
+        function deal() {
+        	var list;
+        	var id;
+        	var title;
+        	var service_id = Qm.getValueByName("id");
+        	$.ajax({
+            	url: "equipMaintainAction/queryMainId.do?id="+service_id,
+                type: "POST",
+                success: function (resp) {
+                	if(resp.success){
+                		list = resp.list;
+                		id=list[0].id;
+            	        title=list[0].title;
+            	        //alert(title);
+                		var config={
+                    	        width :800,
+                    	        height : 630,
+                    	        id:id,
+                    	        title:title
+                    	    }
+                		// 调用流程的方法
+                   	    openWorktask(config);
+                	}else{
+                		$.ligerDialog.error('没有流程数据！');
+                	}
+                },
+                error: function (data,stats) {
+                    $.ligerDialog.error('提示：' + data.msg);
+                }
+            });
+         }
+        function progress(){
+        	var service_id = Qm.getValueByName("id");
+        	trackServiceProcess(service_id);
+        }
+     	// 流转过程
+    	function turnHistory(){	
+    		top.$.dialog({
+       			width : 400, 
+       			height : 700, 
+       			lock : true, 
+       			title: "流程卡",
+       			content: 'url:BgLeaveAction/getFlowStep.do?id='+Qm.getValueByName("id"),
+       			data : {"window" : window}
+       		});
+    	}
+	</script>
+<div class="item-tm" id="titleElement">
+        <div class="l-page-title">
+            <div class="l-page-title-note">提示：列表数据项
+                <font color="black">“黑色”</font>代表未提交，
+                <font color="blue">“蓝色”</font>代表已提交，
+                <font color="orange">“橙色”</font>代表审批中，
+                <font color="green">"绿色"</font>代表审批通过，
+                <font color="#8E8E8E">"灰色"</font>代表已销假，
+                <font color="red">“红色”</font>代表审批不通过或已撤销。
+            </div>
+        </div>
+    </div>
+
+<body>
+	<%StringBuffer sql = new StringBuffer();
+		String sql1="select b.* from TJY2_RL_LEAVE b where b.people_id = '" + userId +"' order by case when b.apply_status = 'SPZ' then 1 "+
+		        "when b.apply_status = 'YTJ' then 2 "+
+		        "when b.apply_status = 'WTJ' then 3 "+
+		        "when b.apply_status = 'SPTG' then 4 "+
+		        "when b.apply_status = 'YXJ' then 5 "+
+		        "when b.apply_status = 'YCX' then 6 "+
+		        "when b.apply_status = 'SPBTG' then 7 "+
+		        "end,b.create_date desc,b.dep_name,b.people_name";
+		String departmentid=SecurityUtil.getSecurityUser().getDepartment().getId();
+	%>
+	<!-- 部门负责人 -->
+    <sec:authorize access="hasRole('TJY2_BMFZR')">
+		<%sql1="select * from (select*from (select b.*,t.handler_id from TJY2_RL_LEAVE b, v_pub_worktask t "+
+    			"where b.id=t.SERVICE_ID   and  t.WORK_TYPE  like   '%TJY2_RL_%' "+  
+    			"and t.STATUS='0' ) s where s.handler_id = '"+uId+"' and s.dep_id = '" + departmentid +"' union "+
+    			"select b.*,people_id from TJY2_RL_LEAVE b where people_id = '" + userId +"' union "+
+    			"select b.*,people_id from TJY2_RL_LEAVE b where b.dep_id = '" + departmentid +"' and (APPLY_STATUS = 'SPTG' or APPLY_STATUS = 'YXJ')) order by case when apply_status = 'SPZ' then 1 "+
+                "when apply_status = 'YTJ' then 2 "+
+                "when apply_status = 'WTJ' then 3 "+
+                "when apply_status = 'SPTG' then 4 "+
+                "when apply_status = 'YXJ' then 5 "+
+                "when apply_status = 'YCX' then 6 "+
+                "when apply_status = 'SPBTG' then 7 "+
+                "end,create_date desc,dep_name,people_name";
+		if(e.getName().equals("孙宇艺")){
+			sql1="select * from (select*from (select b.*,t.handler_id from TJY2_RL_LEAVE b, v_pub_worktask_add_position t "+
+	    			"where b.id=t.SERVICE_ID   and  t.WORK_TYPE  like   '%TJY2_RL_%' "+  
+	    			"and t.STATUS='0' ) s where s.handler_id = '"+uId+"' and s.dep_id in ('100025','100048') union "+
+	    			"select b.*,people_id from TJY2_RL_LEAVE b where people_id = '" + userId +"' union "+
+	    			"select b.*,people_id from TJY2_RL_LEAVE b where b.dep_id in ('100025','100048') and (APPLY_STATUS = 'SPTG' or APPLY_STATUS = 'YXJ')) order by case when apply_status = 'SPZ' then 1 "+
+	                "when apply_status = 'YTJ' then 2 "+
+	                "when apply_status = 'WTJ' then 3 "+
+	                "when apply_status = 'SPTG' then 4 "+
+	                "when apply_status = 'YXJ' then 5 "+
+	                "when apply_status = 'YCX' then 6 "+
+	                "when apply_status = 'SPBTG' then 7 "+
+	                "end,create_date desc,dep_name,people_name";
+		}
+		if(e.getName().equals("韩绍义")){
+			sql1="select * from (select*from (select b.*,t.handler_id from TJY2_RL_LEAVE b, v_pub_worktask_add_position t "+
+	    			"where b.id=t.SERVICE_ID   and  t.WORK_TYPE  like   '%TJY2_RL_%' "+  
+	    			"and t.STATUS='0' ) s where s.handler_id = '"+uId+"' s.dep_id = '100030' union "+
+	    			"select b.*,people_id from TJY2_RL_LEAVE b where people_id = '" + userId +"' union "+
+	    			"select b.*,people_id from TJY2_RL_LEAVE b where b.dep_id = '100030' and (APPLY_STATUS = 'SPTG' or APPLY_STATUS = 'YXJ')) order by case when apply_status = 'SPZ' then 1 "+
+	                "when apply_status = 'YTJ' then 2 "+
+	                "when apply_status = 'WTJ' then 3 "+
+	                "when apply_status = 'SPTG' then 4 "+
+	                "when apply_status = 'YXJ' then 5 "+
+	                "when apply_status = 'YCX' then 6 "+
+	                "when apply_status = 'SPBTG' then 7 "+
+	                "end,create_date desc,dep_name,people_name";
+		}
+		if(e.getName().equals("李山桥")){
+			sql1="select * from (select*from (select b.*,t.handler_id from TJY2_RL_LEAVE b, v_pub_worktask_add_position t "+
+	    			"where b.id=t.SERVICE_ID   and  t.WORK_TYPE  like   '%TJY2_RL_%' "+  
+	    			"and t.STATUS='0' ) s where s.handler_id = '"+uId+"' and s.dep_id = '100044' union "+
+	    			"select b.*,people_id from TJY2_RL_LEAVE b where people_id = '" + userId +"' union "+
+	    			"select b.*,people_id from TJY2_RL_LEAVE b where b.dep_id = '100044' and (APPLY_STATUS = 'SPTG' or APPLY_STATUS = 'YXJ')) order by case when apply_status = 'SPZ' then 1 "+
+	                "when apply_status = 'YTJ' then 2 "+
+	                "when apply_status = 'WTJ' then 3 "+
+	                "when apply_status = 'SPTG' then 4 "+
+	                "when apply_status = 'YXJ' then 5 "+
+	                "when apply_status = 'YCX' then 6 "+
+	                "when apply_status = 'SPBTG' then 7 "+
+	                "end,create_date desc,dep_name,people_name";
+		}
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@部门负责人@@@@@@@@@@@@@@@@@@@@@@@@！");
+		System.out.println(sql1.toString());%>
+	</sec:authorize>
+	<!-- 人事部门负责人 -->
+	<sec:authorize access="hasRole('TJY2_RL_RSSH')">
+		<%sql1="select * from (select * from (select b.*,t.handler_id from TJY2_RL_LEAVE b, v_pub_worktask t "+
+    			"where b.id=t.SERVICE_ID   and  t.WORK_TYPE  like   '%TJY2_RL_%' "+  
+    			"and t.STATUS='0' ) s where s.handler_id = '"+uId+"' union "+
+    			"select b.*,people_id from TJY2_RL_LEAVE b where people_id = '" + userId +"' union "+
+    			"select b.*,people_id from TJY2_RL_LEAVE b where APPLY_STATUS = 'SPTG' or APPLY_STATUS = 'YXJ') "+
+    			"order by case when apply_status = 'SPZ' then 1 "+
+               "when apply_status = 'YTJ' then 2 "+
+               "when apply_status = 'WTJ' then 3 "+
+               "when apply_status = 'SPTG' then 4 "+
+               "when apply_status = 'YXJ' then 5 "+
+               "when apply_status = 'YCX' then 6 "+
+               "when apply_status = 'SPBTG' then 7 "+
+               "end,create_date desc,dep_name,people_name";%>
+		<%System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@人事部门负责人@@@@@@@@@@@@@@@@@@@@@@@@！");
+		System.out.println(sql1.toString());%>
+	</sec:authorize>
+	<!-- 分管领导 -->
+	<sec:authorize access="hasRole('TJY2_RL_FGLDSH')">
+	<%sql1="select * from (select s.* from ( "+
+				    "select b.*,t.handler_id from TJY2_RL_LEAVE b, v_pub_worktask t "+
+    			    "where b.id=t.SERVICE_ID   and  t.WORK_TYPE  like   '%TJY2_RL_%' and t.STATUS='0' ) s "+  
+    			"where s.handler_id = '"+uId+"' and instr((select d.fk_sys_org_id from TJY2_RL_ORGID_LEADERID d "+
+    					"where d.fk_rl_emplpyee_id='"+userId+"'), s.dep_id) > 0"+
+    			"union "+
+    			"select b.*,people_id from TJY2_RL_LEAVE b where people_id = '" + userId +"' "+
+    			"union "+
+    			"select b.*,people_id from TJY2_RL_LEAVE b "+
+				"where (b.apply_status = 'SPTG'  or APPLY_STATUS = 'YXJ') and "+
+				"instr((select d.fk_sys_org_id from TJY2_RL_ORGID_LEADERID d "+
+				"where d.fk_rl_emplpyee_id='"+userId+"'), b.dep_id) > 0) order by case when apply_status = 'SPZ' then 1 "+
+	            "when apply_status = 'YTJ' then 2 "+
+	            "when apply_status = 'WTJ' then 3 "+
+	            "when apply_status = 'SPTG' then 4 "+
+	            "when apply_status = 'YXJ' then 5 "+
+	            "when apply_status = 'YCX' then 6 "+
+	            "when apply_status = 'SPBTG' then 7 "+
+	            "end,create_date desc,dep_name,people_name";%>
+		<%System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@分管领导@@@@@@@@@@@@@@@@@@@@@@@@！");
+		System.out.println(sql1.toString());
+		%>
+	</sec:authorize>
+	<!-- 既包含部门负责人又包含 分管领导-->
+	<sec:authorize ifAllGranted="TJY2_BMFZR,TJY2_RL_FGLDSH">
+	<%sql1="select * from (select s.* from ( "+
+		    "select b.*,t.handler_id from TJY2_RL_LEAVE b, v_pub_worktask t "+
+		    "where b.id=t.SERVICE_ID   and  t.WORK_TYPE  like   '%TJY2_RL_%' and t.STATUS='0' ) s "+  
+		"where s.handler_id = '"+uId+"' and instr((select d.fk_sys_org_id from TJY2_RL_ORGID_LEADERID d "+
+				"where d.fk_rl_emplpyee_id='"+userId+"'), s.dep_id) > 0"+
+		"union "+
+		"select b.*,people_id from TJY2_RL_LEAVE b where people_id = '" + userId +"' "+
+		"union "+
+		"select b.*,people_id from TJY2_RL_LEAVE b "+
+		"where (b.apply_status = 'SPTG'  or APPLY_STATUS = 'YXJ') and "+
+		"instr((select d.fk_sys_org_id from TJY2_RL_ORGID_LEADERID d "+
+		"where d.fk_rl_emplpyee_id='"+userId+"'), b.dep_id) > 0) order by case when apply_status = 'SPZ' then 1 "+
+        "when apply_status = 'YTJ' then 2 "+
+        "when apply_status = 'WTJ' then 3 "+
+        "when apply_status = 'SPTG' then 4 "+
+        "when apply_status = 'YXJ' then 5 "+
+        "when apply_status = 'YCX' then 6 "+
+        "when apply_status = 'SPBTG' then 7 "+
+        "end,create_date desc,dep_name,people_name";
+		if(e.getName().equals("孙宇艺")){
+			sql1="select * from (select*from (select b.*,t.handler_id, t.org_id from TJY2_RL_LEAVE b, v_pub_worktask_add_position t "+
+	    			"where b.id=t.SERVICE_ID   and  t.WORK_TYPE  like   '%TJY2_RL_%' "+  
+	    			"and t.STATUS='0' ) s where s.handler_id = '"+uId+"' and s.dep_id in('100025','100048') union "+
+	    			"select s.* from ( "+
+	    				    "select b.*,t.handler_id,b.dep_id org_id from TJY2_RL_LEAVE b, v_pub_worktask t "+
+	    				    "where b.id=t.SERVICE_ID   and  t.WORK_TYPE  like   '%TJY2_RL_%' and t.STATUS='0'  and b.apply_status !='SPTG') s "+  
+	    				"where s.handler_id = '"+uId+"' and instr((select d.fk_sys_org_id from TJY2_RL_ORGID_LEADERID d "+
+	    						"where d.fk_rl_emplpyee_id='"+userId+"'), s.dep_id) > 0 union "+
+	    					"select b.*,b.people_id, b.dep_id org_id from TJY2_RL_LEAVE b where people_id = '" + userId +"' union "+
+	    			"select b.*,b.people_id,b.dep_id org_id from TJY2_RL_LEAVE b "+
+	    					"where (b.apply_status = 'SPTG'  or APPLY_STATUS = 'YXJ') and "+
+	    					"instr((select d.fk_sys_org_id from TJY2_RL_ORGID_LEADERID d "+
+	    					"where d.fk_rl_emplpyee_id='"+userId+"'), b.dep_id) > 0"+
+	    					" )";
+		}
+		if(e.getName().equals("韩绍义")){
+			sql1="select * from (select*from (select b.*,t.handler_id, t.org_id from TJY2_RL_LEAVE b, v_pub_worktask_add_position t "+
+	    			"where b.id=t.SERVICE_ID   and  t.WORK_TYPE  like   '%TJY2_RL_%' "+  
+	    			"and t.STATUS='0' ) s where s.handler_id = '"+uId+"' and s.dep_id = '100030' union "+
+	    			"select s.* from ( "+
+	    				    "select b.*,t.handler_id,b.dep_id org_id from TJY2_RL_LEAVE b, v_pub_worktask t "+
+	    				    "where b.id=t.SERVICE_ID   and  t.WORK_TYPE  like   '%TJY2_RL_%' and t.STATUS='0'  and b.apply_status !='SPTG') s "+  
+	    				"where s.handler_id = '"+uId+"' and instr((select d.fk_sys_org_id from TJY2_RL_ORGID_LEADERID d "+
+	    						"where d.fk_rl_emplpyee_id='"+userId+"'), s.dep_id) > 0 union "+
+	    					"select b.*,b.people_id, b.dep_id org_id from TJY2_RL_LEAVE b where people_id = '" + userId +"' union "+
+	    			"select b.*,b.people_id,b.dep_id org_id from TJY2_RL_LEAVE b "+
+	    					"where (b.apply_status = 'SPTG'  or APPLY_STATUS = 'YXJ') and "+
+	    					"instr((select d.fk_sys_org_id from TJY2_RL_ORGID_LEADERID d "+
+	    					"where d.fk_rl_emplpyee_id='"+userId+"'), b.dep_id) > 0"+
+	    					" )";
+		}
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@"+e.getName()+"@@@@@@@@@@@@@@@@@@@@@@@@！");
+		System.out.println(sql1.toString());
+		%>
+	</sec:authorize>
+	<!-- 院长 -->
+	<sec:authorize access="hasRole('TJY2_LEADER')">
+		<%sql1="select * from (select * from (select b.*,t.handler_id from TJY2_RL_LEAVE b, v_pub_worktask t "+
+    			"where b.id=t.SERVICE_ID   and  t.WORK_TYPE  like   '%TJY2_RL_%' "+  
+    			"and t.STATUS='0' and b.apply_status not in('SPTG','YXJ','YCX','SPBTG')) s where s.handler_id = '"+uId+"' union "+
+    			"select b.*,people_id from TJY2_RL_LEAVE b where people_id = '" + userId +"' union "+
+    			"select b.*,people_id from TJY2_RL_LEAVE b where APPLY_STATUS = 'SPTG' or APPLY_STATUS = 'YXJ') order by case when apply_status = 'SPZ' then 1 "+
+                "when apply_status = 'YTJ' then 2 "+
+                "when apply_status = 'WTJ' then 3 "+
+                "when apply_status = 'SPTG' then 4 "+
+                "when apply_status = 'YXJ' then 5 "+
+                "when apply_status = 'YCX' then 6 "+
+                "when apply_status = 'SPBTG' then 7 "+
+                "end,create_date desc,dep_name,people_name";%>
+		<%System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@院长 @@@@@@@@@@@@@@@@@@@@@@@@！");
+		System.out.println(sql1.toString());%>
+	</sec:authorize>
+	<!-- 销假权限 -->
+	<sec:authorize access="hasRole('TJY2_RL_XIAOJIA')">
+		<%sql1=" select * from (select b.* from TJY2_RL_LEAVE b where people_id = '" + userId +"' union "+
+		"select b.* from TJY2_RL_LEAVE b where b.apply_status !='WTJ') order by create_date desc,dep_name,people_name";%>
+		<%System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@销假权限 @@@@@@@@@@@@@@@@@@@@@@@@！");
+		System.out.println(sql1.toString());%>
+	</sec:authorize>
+	<!-- 没有流程处理权限 -->
+    <sec:authorize access="!hasRole('TJY2_RL_CLANKJ')">
+    	<%sql1="select b.* from TJY2_RL_LEAVE b where people_id = '" + userId +"' order by case when b.apply_status = 'SPZ' then 1 "+
+        "when b.apply_status = 'YTJ' then 2 "+
+        "when b.apply_status = 'WTJ' then 3 "+
+        "when b.apply_status = 'SPTG' then 4 "+
+        "when b.apply_status = 'YXJ' then 5 "+
+        "when apply_status = 'YCX' then 6 "+
+        "when b.apply_status = 'SPBTG' then 7 "+
+        "end,b.create_date desc,b.dep_name,b.people_name";%>
+		<%System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@没有流程处理权限@@@@@@@@@@@@@@@@@@@@@@@@！");%>
+	</sec:authorize>
+	<qm:qm pageid="TJY2_RL_LEAVE_LIST1" script="false" singleSelect="true" sql="<%=sql1.toString() %>">
+	</qm:qm>
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/itemList.css">
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+<section id="web">
+    <header id="header">
+        <img src="images/tb.png">
+    </header>
+    <section id="content">
+        <section class="tab">
+            <ul>
+                <li class="active">待办理</li>
+                <li>已办理</li>
+                <li>我的申请</li>
+            </ul>
+        </section>
+        <section class="handle block">
+            <ul>
+                <li>
+                    <a href="#">
+                        <article>
+                            <p class="art_first"><span class="handleTitle">年假</span><span class="timer">2018.12.13 08:50</span><span class="timer_button">审批通过</span></p>
+                            <p class="art_padding clearfix "><span class="art_border"></span><span class="art_name">程小雨</span><span class="art_day" style="font-size: 1.2rem;">天</span><small>5</small></p>
+                            <p class="art_stamp art_padding"><span class="city">产品监督检验事业部</span>
+                            	<span class="art_times">
+                            	<span class="day1 day2">2018.12.13 - </span><span class="day1 day3">2018.12.13</span>
+                            	</span>
+                            </p>
+                        </article>
+                        <section class="Icon">
+                            <img src="images/Icon_03.png" alt="">
+                        </section>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <article>
+                            <p class="art_first"><span class="handleTitle">年假</span><span class="timer">2018.12.13 08:50</span><span class="timer_button timer_button2">审批中</span></p>
+                            <p class="art_padding"><span class="art_border "></span><span class="art_name">程小雨</span><span class="art_day" style="font-size: 1.2rem;">天</span><small>5</small></p>
+                            <p class="art_stamp art_padding"><span class="city">产品监督检验事业部</span>
+                            	<span class="art_times">
+                            	<span class="day1 day2">2018.12.13 - </span><span class="day1 day3">2018.12.13</span>
+                            	</span>
+                            </p>
+                        </article>
+                        <section class="Icon">
+                            <img src="images/Icon_03.png" alt="">
+                        </section>
+                    </a>
+                </li>
+                 <li>
+                    <a href="#">
+                        <article>
+                            <p class="art_first"><span class="handleTitle">年假</span><span class="timer">2018.12.13 08:50</span><span class="timer_button timer_button3">审批不通过</span></p>
+                            <p class="art_padding"><span class="art_border"></span><span class="art_name">程小雨</span><span class="art_day" style="font-size: 1.2rem;">天</span><small>5</small></p>
+                            <p class="art_stamp art_padding"><span class="city">产品监督检验事业部</span>
+                            	<span class="art_times">
+                            	<span class="day1 day2">2018.12.13 - </span><span class="day1 day3">2018.12.13</span>
+                            	</span>
+                            </p>
+                        </article>
+                        <section class="Icon">
+                            <img src="images/Icon_03.png" alt="">
+                        </section>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <article>
+                            <p class="art_first"><span class="handleTitle">年假</span><span class="timer">2018.12.13 08:50</span><span class="timer_button">审批通过</span></p>
+                            <p class="art_padding clearfix "><span class="art_border"></span><span class="art_name">程小雨</span><span class="art_day" style="font-size: 1.2rem;">天</span><small>5</small></p>
+                            <p class="art_stamp art_padding"><span class="city">产品监督检验事业部</span>
+                            	<span class="art_times">
+                            	<span class="day1 day2">2018.12.13 - </span><span class="day1 day3">2018.12.13</span>
+                            	</span>
+                            </p>
+                        </article>
+                        <section class="Icon">
+                            <img src="images/Icon_03.png" alt="">
+                        </section>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <article>
+                            <p class="art_first"><span class="handleTitle">年假</span><span class="timer">2018.12.13 08:50</span><span class="timer_button">审批通过</span></p>
+                            <p class="art_padding clearfix "><span class="art_border"></span><span class="art_name">程小雨</span><span class="art_day" style="font-size: 1.2rem;">天</span><small>5</small></p>
+                            <p class="art_stamp art_padding"><span class="city">产品监督检验事业部</span>
+                            	<span class="art_times">
+                            	<span class="day1 day2">2018.12.13 - </span><span class="day1 day3">2018.12.13</span>
+                            	</span>
+                            </p>
+                        </article>
+                        <section class="Icon">
+                            <img src="images/Icon_03.png" alt="">
+                        </section>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <article>
+                            <p class="art_first"><span class="handleTitle">年假</span><span class="timer">2018.12.13 08:50</span><span class="timer_button">审批通过</span></p>
+                            <p class="art_padding clearfix "><span class="art_border"></span><span class="art_name">程小雨</span><span class="art_day" style="font-size: 1.2rem;">天</span><small>5</small></p>
+                            <p class="art_stamp art_padding"><span class="city">产品监督检验事业部</span>
+                            	<span class="art_times">
+                            	<span class="day1 day2">2018.12.13 - </span><span class="day1 day3">2018.12.13</span>
+                            	</span>
+                            </p>
+                        </article>
+                        <section class="Icon">
+                            <img src="images/Icon_03.png" alt="">
+                        </section>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section class="handle">
+            <ul>
+               <li>
+                    <a href="#">
+                        <article>
+                            <p class="art_first"><span class="handleTitle">用车申请：</span><span class="timer">2018.12.13 08:50</span><span class="timer_button">审批通过</span></p>
+                            <p class="art_padding"><span class="art_border"></span><span class="art_name">程小雨</span><span class="art_day" style="font-size: 1.2rem;">天</span><small>5</small></p>
+                            <p class="art_stamp art_padding"><span class="city">产品监督检验事业部</span>
+                            	<span class="art_times">
+                            	<span class="day1 day2">2018.12.13 - </span><span class="day1 day3">2018.12.13</span>
+                            	</span>
+                            </p>
+                        </article>
+                        <section class="Icon">
+                            <img src="images/Icon_03.png" alt="">
+                        </section>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <article>
+                            <p class="art_first"><span class="handleTitle">用车申请：</span><span class="timer">2018.12.13 08:50</span><span class="timer_button timer_button2">审批中</span></p>
+                            <p class="art_padding"><span class="art_border"></span><span class="art_name">程小雨</span><span class="art_day" style="font-size: 1.2rem;">天</span><small>5</small></p>
+                            <p class="art_stamp art_padding"><span class="city">产品监督检验事业部</span>
+                            	<span class="art_times">
+                            	<span class="day1 day2">2018.12.13 - </span><span class="day1 day3">2018.12.13</span>
+                            	</span>
+                            </p>
+                        </article>
+                        <section class="Icon">
+                            <img src="images/Icon_03.png" alt="">
+                        </section>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <article>
+                            <p class="art_first"><span class="handleTitle">用车申请：</span><span class="timer">2018.12.13 08:50</span><span class="timer_button timer_button3">审批不通过</span></p>
+                            <p class="art_padding"><span class="art_border"></span><span class="art_name">程小雨</span><span class="art_day" style="font-size: 1.2rem;">天</span><small>5</small></p>
+                            <p class="art_stamp art_padding"><span class="city">产品监督检验事业部</span>
+                            	<span class="art_times">
+                            	<span class="day1 day2">2018.12.13 - </span><span class="day1 day3">2018.12.13</span>
+                            	</span>
+                            </p>
+                        </article>
+                        <section class="Icon">
+                            <img src="images/Icon_03.png" alt="">
+                        </section>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <article>
+                            <p class="art_first"><span class="handleTitle">用车申请：</span><span class="timer">2018.12.13 08:50</span><span class="timer_button">审批通过</span></p>
+                            <p class="art_padding"><span class="art_border"></span><span class="art_name">程小雨</span><span class="art_day" style="font-size: 1.2rem;">天</span><small>5</small></p>
+                            <p class="art_stamp art_padding"><span class="city">产品监督检验事业部</span>
+                            	<span class="art_times">
+                            	<span class="day1 day2">2018.12.13 - </span><span class="day1 day3">2018.12.13</span>
+                            	</span>
+                            </p>
+                        </article>
+                        <section class="Icon">
+                            <img src="images/Icon_03.png" alt="">
+                        </section>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <article>
+                            <p class="art_first"><span class="handleTitle">用车申请：</span><span class="timer">2018.12.13 08:50</span><span class="timer_button">审批通过</span></p>
+                            <p class="art_padding"><span class="art_border"></span><span class="art_name">程小雨</span><span class="art_day" style="font-size: 1.2rem;">天</span><small>5</small></p>
+                            <p class="art_stamp art_padding"><span class="city">产品监督检验事业部</span>
+                            	<span class="art_times">
+                            	<span class="day1 day2">2018.12.13 - </span><span class="day1 day3">2018.12.13</span>
+                            	</span>
+                            </p>
+                        </article>
+                        <section class="Icon">
+                            <img src="images/Icon_03.png" alt="">
+                        </section>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <article>
+                            <p class="art_first"><span class="handleTitle">用车申请：</span><span class="timer">2018.12.13 08:50</span><span class="timer_button">审批通过</span></p>
+                            <p class="art_padding"><span class="art_border"></span><span class="art_name">程小雨</span><span class="art_day" style="font-size: 1.2rem;">天</span><small>5</small></p>
+                            <p class="art_stamp art_padding"><span class="city">产品监督检验事业部</span>
+                            	<span class="art_times">
+                            	<span class="day1 day2">2018.12.13 - </span><span class="day1 day3">2018.12.13</span>
+                            	</span>
+                            </p>
+                        </article>
+                        <section class="Icon">
+                            <img src="images/Icon_03.png" alt="">
+                        </section>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section class="handle">
+            <ul>
+                <li>
+                    <a href="#">
+                        <article>
+                            <p><span class="handleTitle">用车申请 :</span><span class="yongcar1">用车部门负责人申请</span><span class="timer">2018.12.13 08:50</span></p>
+                            <p><span>李小龙</span><span class="department">产品监督检验事业部</span><small>2018.12.14</small></p>
+                            <p><span class="city">德阳—青白江—金堂</span><span class="day">3天</span></p>
+                        </article>
+                        <section class="Icon">
+                            <img src="images/Icon_03.png" alt="">
+                        </section>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <article>
+                            <p><span class="handleTitle">用车申请 :</span><span class="yongcar1">用车部门负责人申请</span><span class="timer">2018.12.13 08:50</span></p>
+                            <p><span>李小龙</span><span class="department">产品监督检验事业部</span><small>2018.12.14</small></p>
+                            <p><span class="city">德阳—青白江—金堂</span><span class="day">3天</span></p>
+                        </article>
+                        <section class="Icon">
+                            <img src="images/Icon_03.png" alt="">
+                        </section>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <article>
+                            <p><span class="handleTitle">用车申请 :</span><span class="yongcar1">用车部门负责人申请</span><span class="timer">2018.12.13 08:50</span></p>
+                            <p><span>李小龙</span><span class="department">产品监督检验事业部</span><small>2018.12.14</small></p>
+                            <p><span class="city">德阳—青白江—金堂</span><span class="day">3天</span></p>
+                        </article>
+                        <section class="Icon">
+                            <img src="images/Icon_03.png" alt="">
+                        </section>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <article>
+                            <p><span class="handleTitle">用车申请 :</span><span class="yongcar1">用车部门负责人申请</span><span class="timer">2018.12.13 08:50</span></p>
+                            <p><span>李小龙</span><span class="department">产品监督检验事业部</span><small>2018.12.14</small></p>
+                            <p><span class="city">德阳—青白江—金堂</span><span class="day">3天</span></p>
+                        </article>
+                        <section class="Icon">
+                            <img src="images/Icon_03.png" alt="">
+                        </section>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <article>
+                            <p><span class="handleTitle">用车申请 :</span><span class="yongcar1">用车部门负责人申请</span><span class="timer">2018.12.13 08:50</span></p>
+                            <p><span>李小龙</span><span class="department">产品监督检验事业部</span><small>2018.12.14</small></p>
+                            <p><span class="city">德阳—青白江—金堂</span><span class="day">3天</span></p>
+                        </article>
+                        <section class="Icon">
+                            <img src="images/Icon_03.png" alt="">
+                        </section>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <article>
+                            <p><span class="handleTitle">用车申请 :</span><span class="yongcar1">用车部门负责人申请</span><span class="timer">2018.12.13 08:50</span></p>
+                            <p><span>李小龙</span><span class="department">产品监督检验事业部</span><small>2018.12.14</small></p>
+                            <p><span class="city">德阳—青白江—金堂</span><span class="day">3天</span></p>
+                        </article>
+                        <section class="Icon">
+                            <img src="images/Icon_03.png" alt="">
+                        </section>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </section>
+    <section class="btnBg">
+        <section class="btn">
+            <a href="item.html">申请</a>
+        </section>
+    </section>
+</section>
+</body>
+<script>
+    $('.tab ul li').click(function () {
+        var index = $(this).index();
+        $('.tab ul li').eq(index).addClass('active').siblings().removeClass('active');
+        $('.handle').eq(index).addClass('block').siblings().removeClass('block');
+    })
+</script>
+</html>

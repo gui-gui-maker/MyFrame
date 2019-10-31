@@ -1,0 +1,141 @@
+/* #78ce07 / #6cbc05 */
+
+.m-top {border-bottom:5px solid #0f3909; background:url("../images/greenline/m-top.jpg") no-repeat center top!important;}
+.m-top-div {background:none!important; border-bottom: 1px solid transparent;}
+
+
+.m-menu1 {background:none!important;}
+.m-menu1-div ul li {border-left:1px solid transparent;border-right:1px solid transparent;}
+/*.m-menu2-1-li-ul .m-menu2-1-li-div-click,.mm-deep-2-prve-select,.m-menu2-1-li-div-click {color:#4e8743;}*/
+.m-menu1-click {background-image: url("../images/greenline/arrow-active.png");}
+.m-menu1-click a .hasIcon .iconfont {color:#0f3909!important;}
+.m-menu1-click a {color:#0f3909!important;}
+.m-menu1-click span {text-shadow:0 0 5px #fff;}
+.m-menu1-hover {background: url("../images/greenline/bghover.png") no-repeat center bottom; color:#0f3909!important;}
+.m-menu1-hover .iconfont {color:#0f3909!important;}
+.m-menu1-hover span {text-shadow:0 0 5px #fff;}
+.l-panel-header {background:#4e8743;color:#fff;}
+
+.icon-item li div:hover {border:4px solid #78ce07;}
+.rtnum,.icon-item-des div:hover, .icon-item-des div.hover {background:#78ce07;}
+.text-color {color:#78ce07;}
+.ui-state-active a {color:#78ce07!important;}
+.progress .orangebar {background-color:#78ce07;}
+
+
+#mFootToolbar .iconfont {color:#fff!important;}
+
+.user-set-menu-a, .user-set-menu-a:link, .user-set-menu-a:visited {background:transparent url("../images/greenline/userinfoarrow.png") no-repeat right center!important;border-radius: 3px;border:1px solid #fff;color:#fff;}
+
+
+.tbl-tlbar th {border-top:2px solid #4e8743!important; border-bottom:1px solid #4e8743!important;}
+
+.l-selected .l-grid-row-cell {background:#4e8743!important; color:#fff!important;}/*4e8743*/
+.l-a,.l-a:visited,.l-a:link {color:#4e8743;}
+.l-selected .l-a , .l-selected .l-a:visited , .l-selected .l-a:link {color:#fff!important;}
+
+.l-grid-header {border-bottom:1px solid #4e8743; border-top:2px solid #4e8743; color:#333;}
+.l-grid-hd-cell-asc , .l-grid-hd-cell-desc {background:#4e8743!important; color:#fff!important;}
+.l-grid-hd-cell-sort-asc {/*上三角符号*/ background:url('../images/greenline/icon-sort-asc.png') no-repeat scroll center center transparent; }
+.l-grid-hd-cell-sort-desc {/*下三角符号*/ background:url('../images/greenline/icon-sort-desc.png') no-repeat scroll center center transparent; }
+
+
+.k-skin-greenline .m-menu2-1-li-ul .m-menu2-1-li-div-click {background: #4e8743;}
+
+.l-grid-row-over .l-grid-row-cell, .l-grid-row-over { background:#afd396; }/*20171206*/
+
+.k-skin-greenline .m-menu2-1-li-ul .m-menu2-1-li-div-click,.k-skin-greenline .m-menu2-1-li-ul .m-menu2-1-li-div-over,.k-skin-greenline .m-menu2-1-li-ul .m-menu2-1-li-hasChildren-one-over,.k-skin-greenline .m-menu2-1-li-div-over,.k-skin-greenline .m-menu2-1-li-hasChildren-one-over {background: #4e8743; color:#fff;}
+
+.mm-deep-2-prve-select {color:#4e8743;}
+
+.l-panel-btn .iconfont {color:#4e8743;}
+.l-panel-btn-over {background:#4e8743;border:1px solid #4e8743; color:#fff;}
+.l-panel-btn-over .iconfont {color:#fff;}
+.l-panel-btn-over:active {background:#0f3909;border:1px solid #0f3909; color:#fff;}
+
+.l-bar-button {color:#666;}
+.l-bar-button-over {color:#d66e1a;}
+
+.m-panel-tab .selected .item-wrap {background-color:#d3efbf;}
+.m-panel-tab .selected .jj3j {background-color:#4e8743;}
+
+.userdata ul li a:hover { background: #4e8743;}
+
+.l-tab-links { height: 45px;  }
+.l-tab-links ul { padding-left: 15px;  }
+.l-tab-links li { border: 1px solid #ddd;background: #eee;/* border-radius: 0; margin:0;margin-left: -1px;*/ padding: 6px 15px; }
+.l-tab-links li a { color: #333;   }
+.l-tab-links li.l-selected { border-top:2px solid #4e8743; background:#4e8743;}
+.l-tab-links li.l-selected a, .l-tab-links li.l-selected a:link, .l-tab-links li.l-selected a:visited { color: #fff;  }
+.l-tab-links li.l-selected a:hover { color:#fff;  }
+
+.l-box-select .l-table-nocheckbox td.l-selected {background: #4e8743;}
+.l-box-select .l-table-nocheckbox td:hover,.l-box-select .l-table-nocheckbox td.l-over{ background-color:#00a056;}
+.l-box-select .l-table-checkbox tr:hover,.l-box-select .l-table-checkbox tr.l-over{ background-color:#00a056!important;}
+
+.l-button .iconfont {color:#4e8743;}
+.l-button-hover,.l-button:hover {background:#4e8743;border:1px solid #4e8743; color:#fff;}
+.l-button-hover .iconfont , .l-button:hover .iconfont {color:#fff;}
+
+.l-layout-header {color:#000; background: -moz-linear-gradient(top, #f0fbee 0%, #cff1c8 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f0fbee), color-stop(100%,#cff1c8));
+    background: -webkit-linear-gradient(top, #f0fbee 0%,#cff1c8 100%);
+    background: -o-linear-gradient(top, #f0fbee 0%,#cff1c8 100%);
+    background: -ms-linear-gradient(top, #f0fbee 0%,#cff1c8 100%);
+    background: linear-gradient(to bottom, #f0fbee 0%,#cff1c8 100%);}
+.l-layout-left,.l-layout-right,.l-layout-center,.l-layout-top,.l-layout-bottom{border:1px solid #afd396;}
+.l-fieldset {border:1px solid #afd396;}
+.l-legend {border:1px solid #ace1dc;background:#e0fffc;}
+
+.ztree li a.curSelectedNode {background-color:#4e8743; color:#ffffff; border:1px #087d71 solid;}
+
+.l-tree .l-over{background:#e0f5f3;}
+.l-tree .l-selected {background:#b3ebe5;}
+
+.l-page-title-text h1 {color:#4e8743;}
+.l-page-title2-text h1 {color:#4e8743;}
+
+/* ----------------------- * 日期控件 ** ----------------------- */
+.l-box-dateeditor {border:1px solid #ace1dc;}/*20171208*/
+.l-box-dateeditor-header {background: -moz-linear-gradient(top, #f0fbee 0%, #cff1c8 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f0fbee), color-stop(100%,#cff1c8));
+    background: -webkit-linear-gradient(top, #f0fbee 0%,#cff1c8 100%);
+    background: -o-linear-gradient(top, #f0fbee 0%,#cff1c8 100%);
+    background: -ms-linear-gradient(top, #f0fbee 0%,#cff1c8 100%);
+    background: linear-gradient(to bottom, #f0fbee 0%,#cff1c8 100%);}/*20171208*/
+.l-box-dateeditor-header-text{color:#333;}/*20171208*/
+.l-box-dateeditor-header-text a{color:#4e8743;}/*20171208*/
+.l-box-dateeditor-header-btn-over {background:#fff!important;}
+.l-box-dateeditor-header-prevmonth span{background: url("../images/greenline/icon-prev.png") no-repeat center;}
+.l-box-dateeditor-header-nextmonth span{background: url("../images/greenline/icon-next.png") no-repeat center;}
+.l-box-dateeditor-header-prevyear span{background: url("../images/greenline/icon-first.png") no-repeat center;}
+.l-box-dateeditor-header-nextyear span{background: url("../images/greenline/icon-last.png") no-repeat center;}
+.l-box-dateeditor-body{border:1px solid #cff1c8;}/*20171208*/
+.l-box-dateeditor-monthselector li:hover,.l-box-dateeditor-monthselector li.l-selected,.l-box-dateeditor-monthselector li.l-over,.l-box-dateeditor-yearselector li:hover,.l-box-dateeditor-yearselector li.l-selected,.l-box-dateeditor-yearselector li.l-over,.l-box-dateeditor-hourselector li:hover,.l-box-dateeditor-hourselector li.l-selected,.l-box-dateeditor-hourselector li.l-over,.l-box-dateeditor-minuteselector li:hover,.l-box-dateeditor-minuteselector li.l-selected,.l-box-dateeditor-minuteselector li.l-over{background-color:#e0fffc; border: solid 1px #4e8743;}/*20171208*/
+.l-box-dateeditor-body tbody td.l-box-dateeditor-today {background-color:#4e8743; color:#fff;}/*20171208*/
+.l-box-dateeditor-body tbody td.l-box-dateeditor-over,.l-box-dateeditor-body tbody td.l-box-dateeditor-selected { background-color: #4e8743; color:#fff;}/*20171208*/
+.l-box-dateeditor-toolbar {background:#cff1c8!important;}/*20171208*/
+
+
+.choosed-list-header .title {color:#4e8743!important;}
+.toolbar .org-type , .toolbar .search-name {border:1px solid #4e8743!important;}
+.new-group-wrap , .org-group-head {background:#cff1c8!important;}
+.choose-item-div a.search-result-item {color:#4e8743!important; border:1px solid #ace1dc;}
+#choosed-list a.checked {background-color:#4e8743!important;}
+#choosed-list a.hover {background-color:#ace1dc!important;}
+
+.m-menu2-1-li-div-click {background:#4e8743;color:#fff;}
+
+.l-layout-collapse-left, .l-layout-collapse-right {border:1px solid #afd396; background:#cff1c8;}
+
+.l-grid-row:nth-child(2n) {background:#fff;}
+
+
+/* 表格样式，普通 */
+.l-table {border:1px solid #afd396; border-right:0; border-bottom:0; border-collapse:collapse;}
+.l-table-head {padding:6px 0; border:1px solid #afd396; border-bottom:1px solid #afd396; border-top:1px solid #afd396; background:#f7f7f7; color:#333; font-weight:bold; text-align:center;}
+.l-table-head:first-child {border-left:1px solid #afd396;}
+.l-table-head:last-child {border-right:1px solid #afd396;}
+.l-table-tr {}
+.l-table-td {padding:6px 0;border:1px solid #afd396; border-left:0; border-top:0;}
+.l-table-come {border:1px solid #afd396; border-right:0; border-bottom:0; border-top:0;}/*紧接的第二表格*/

@@ -1,0 +1,92 @@
+/* ---------------------------------------- 
+   ---------- 公式编辑页面样式表 ------------
+   ---------------------------------------*/
+form{
+	height : 100%;
+}
+.outer_tbl {
+	border: 1px solid #BED5F3;
+	height: 100%;
+	width: 100%;
+	padding : 0;
+}
+.theader{
+	height : 25px;
+}
+.tbody td {
+	height : 100%;
+}
+.outer_tbl td{
+	vertical-align: top;
+}
+
+/* --------------------------业务要素列表区样式-----------------------------*/
+#itemVariableTree{
+	list-style-type: none;
+}
+#itemVariableTree li{
+	padding: 3px 5px;
+	padding-left : 20px;
+	cursor: default;
+	background : url('../../../k/kui/images/icons/16/resultset_next.png') no-repeat 2px 3px;
+}
+
+/* --------------------------中间栏，操作按钮、数字按钮区样式-----------------------------*/
+.oper-table {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.oper-table td {
+	vertical-align: middle;
+	text-align: center;
+}
+
+.l-fieldset {
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.operator, .backSpace{
+	width: 60px;
+	height: 30px;
+	margin: 5px;
+	font-weight: bold;
+	font-size: 3mm;
+}
+.number-btn{
+	width: 50px;
+	height: 30px;
+	margin: 5px;
+	font-weight: bold;
+	font-size: 4mm;
+}
+
+/* --------------------------右边栏，公式描述、代码区样式-----------------------------*/
+.formulaDesc {
+	width: 98%;
+	height: 48%;
+	padding: 5px;
+	font-size : 3.5mm;
+	overflow : auto;
+	margin-bottom: 3px;
+	background-color: lemonchiffon;
+}
+.formulaDesc span{
+	color:purple;
+	font-weight: bold;
+}
+.formula {
+	width: 98%;
+	font-family : "Courier New";
+	line-height : 1.2em;
+	font-size : 4mm;
+	padding : 5px;
+	background-color: lemonchiffon;
+}
+
+/* ---------------------------------------- 
+   ---------- 公式浏览页面样式表 ------------
+   ---------------------------------------*/

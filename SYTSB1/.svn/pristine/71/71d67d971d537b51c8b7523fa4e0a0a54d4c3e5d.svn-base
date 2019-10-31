@@ -1,0 +1,57 @@
+
+kui 2.000 升级
+==================================================================================
+1、系统参数配置表，执行增大参数值字段：
+   ALTER TABLE SYS_PARAM MODIFY DEFAULT_VALUE varchar2(4000);
+   ALTER TABLE SYS_PARAM MODIFY VALUE varchar2(4000);
+   对应的文件：/pub/sysparam/param.jsp
+2、更改 main.jsp 中的 id="layout1" 为 id="sysMain"，//并用 sysDesktop 包裹 sysMain
+3、新增 app/sys_desktop.jsp 页面，系统桌面导航应用
+4、基本图标由 k/kui/skins/icons 至 k/kui/images/icons
+5、必须改变 WEB-INF/config/applicationContext-security.xml applicationContext-security.xml 中的 k/ 为你的 app/
+   xml 更改为：
+	<http pattern="/" security="none" />
+	<http pattern="/**/*.js" security="none" />
+	<http pattern="/**/*.gif" security="none" />
+	<http pattern="/**/*.jpg" security="none" />
+	<http pattern="/**/*.png" security="none" />
+	<http pattern="/**/*.css" security="none" />
+	<http pattern="/**/*.ico" security="none" />
+	<http pattern="/k/kui/**" security="none" />
+	<http pattern="/k/system-config.jsp" security="none" />
+	
+	<http pattern="/k/index.jsp" security="none" />
+	<http pattern="/k/errorpage/access_denied.jsp" security="none" />
+	<http pattern="/k/errorpage/session_time_out.jsp" security="none" />
+
+==================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

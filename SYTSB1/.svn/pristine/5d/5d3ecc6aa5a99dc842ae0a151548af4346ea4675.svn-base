@@ -1,0 +1,50 @@
+1.增加消息订阅模板
+
+2.消息订阅模块权限化
+
+3.增加消息订阅模块发送总开关。
+
+更新需要同步更新：
+
+同步更新khnt-component-worktask至1.0.9版本 -->1.0.10 (ok)
+
+同步更新khnt-component-bpm至1.2.4版本 --> 1.2.4 (ok)
+
+码表：资源类别sys_res_type增加码值99（消息订阅菜单） (no 本地已添加)
+
+更新pub/message/下面的jsp (本地已更新，无变化)
+
+
+更新脚本：
+
+alter table PUB_MESSAGE_SEND add content clob;
+-- Add comments to the columns 
+comment on column PUB_MESSAGE_SEND.content
+  is '不同类型不同内容'; (ok)
+  
+  
+   -- Add/modify columns 
+alter table PUB_MESSAGE_SUBSCRIPTION add send CHAR(1);
+-- Add comments to the columns 
+comment on column PUB_MESSAGE_SUBSCRIPTION.send
+  is '是否禁用发送';(ok)
+
+
+create table PUB_MESSAGE_TEMPLATE
+(
+  id       VARCHAR2(32) not null,
+  module   VARCHAR2(32),
+  type     VARCHAR2(32),
+  template CLOB
+);
+-- Add comments to the columns 
+comment on column PUB_MESSAGE_TEMPLATE.module
+  is '模块id';
+comment on column PUB_MESSAGE_TEMPLATE.type
+  is '模板类型';
+comment on column PUB_MESSAGE_TEMPLATE.template
+  is '模板内容';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table PUB_MESSAGE_TEMPLATE
+  add constraint PUB_MESSAGE_TEMPLATE_PK_ID primary key (ID); (ok)
+ 

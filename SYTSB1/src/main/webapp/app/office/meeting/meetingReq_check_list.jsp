@@ -1,0 +1,93 @@
+<%@ page contentType="text/html;charset=UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head >
+<title>待处理业务</title>
+<%@include file="/k/kui-base-list.jsp"%>
+<script type="text/javascript" src="pub/bpm/js/util.js"></script>
+<script type="text/javascript" src="pub/worktask/js/worktask.js"></script>    
+<script type="text/javascript">
+     var qmUserConfig = {
+        tbar:[ 
+              { text:'处理', id:'detail',icon:'detail', click: detail },
+               { text:'查看审批进度', id:'deal',icon:'detail', click:look},
+        ],
+        sp_defaults:{columnWidth:0.3,labelAlign:'right',labelSeparator:'',labelWidth:120},	
+        sp_fields : [
+     				{
+     					name : "sq_department", compare : "like"
+     				}, {
+     					name : "name", compare : "like"
+     				},{group: [
+								{name: "creater_time", compare: ">="},
+								{label: "到", name: "creater_time", compare: "<=", labelAlign: "center", labelWidth: 20}
+								]}, 	
+     		], 
+        listeners : {
+            rowDblClick : function(rowData, rowIndex) {
+                detail(rowData);
+            },
+            selectionChange : function(rowData, rowIndex) {
+                var count = Qm.getSelectedCount();//行选择数
+                Qm.setTbar({
+                    detail : count == 1,
+                    progress: count==1,
+                    deal:count==1
+                });
+            },
+            rowAttrRender : function(item, rowid) {
+                if (item.status == '逾期')
+                    return "style='color:red'";
+            },
+           afterQmReady: function() {
+                Qm.setCondition([
+              //      {name: "handler_id", compare: "=", value: "<sec:authentication property='principal.id'/>"}
+                ]);
+                Qm.searchData();
+            }
+        }
+    };
+    function detail() {
+    	alert(Qm.getValueByName("id"));
+                var config={
+                    width :900,
+                    height : 500,
+                    id:Qm.getValueByName("id"),
+                }
+                // 调用流程的方法
+                openWorktask(config);
+                
+            }
+     function look(){
+                var process_id=Qm.getValueByName("process_id");
+                var activityId=Qm.getValueByName("activity_id");
+                trackProcess(process_id);
+            }
+
+     
+     function deal() {
+    	 var title =Qm.getValueByName("title");
+    	 var id = Qm.getValueByName("id");
+        openWorktask({
+            width : $(top).width(),
+            height : $(top).height(),
+            id : id,
+            title:title,
+            close : function(){
+                Qm.refreshGrid();
+            },
+            data : {
+                "window" : window,
+          
+            }
+        });
+    }
+     function submitAction() {
+         Qm.refreshGrid();
+     } 
+   </script>
+</head>
+<body>
+	 <qm:qm pageid="TJY2_MEETING_DCL" singleSelect="true"></qm:qm>
+</body>
+</html>

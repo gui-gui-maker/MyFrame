@@ -1,0 +1,1197 @@
+.Csprites {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#header .nav .addToFav {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .wnl-title .select-data .pre a {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .wnl-title .select-data .pre a:hover {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .wnl-title .select-data .pre a:active {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .wnl-title .select-data .next a {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .wnl-title .select-data .next a:hover {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .wnl-title .select-data .next a:active {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .wnl-title .select-data .year-data .current-data {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .wnl-title .select-data .month-data .current-data {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .wnl-title .select-data #current-data:hover {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .wnl-title .select-data .hover#current-data {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .wnl-title .select-data #current-data:active {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .wnl-title .select-data .active#current-data {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .wnl-title .select-data #current-data-month:hover {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .wnl-title .select-data .hover#current-data-month {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .wnl-title .select-data #current-data-month:active {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .wnl-title .select-data .active#current-data-month {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .wnl-title .jin a {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .wnl-title .jin a:hover {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .wnl-title .holidays .a_2 {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .wnl-title .holidays .a_2:hover {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .wnl-title .holidays .a_2:active {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .wnl-title .todays .alarm-clock {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .wnl-title .todays .alarm-clock:hover i {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .mian .content-tb .nav-tlt {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .mian .content-tb .calendar td.holidays div i {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .mian .content-tb .calendar td.works div i {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .mian .content-tb .calendar td.now div i {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .mian .date_tips .red {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .mian .subar .today_almanac h3 {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .mian .subar .today_almanac h3 .explain i {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .mian .subar .today_almanac .yi .icon {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .mian .subar .today_almanac .ji .icon {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .mian .subar .today_luck .icon {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .mian .subar .today_event a {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#wrap .mian .subar .today_event i {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#spread dt {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#ji_search .Lmodule h3 {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#ji_search .Lmodule .select-year a {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#ji_search .Lmodule .select-year a:hover {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#ji_search .Lmodule .select-year a:active {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#ji_search .Lmodule .select-month a {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#ji_search .Lmodule .select-month a:hover {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#ji_search .Lmodule .select-month a:active {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#ji_search .Lmodule .select-day a {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#ji_search .Lmodule .select-day a:hover {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#ji_search .Lmodule .select-day a:active {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#ji_search .ji_day .data-lmanac .lmanac-cond-wrap a {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#ji_search .ji_day .data-lmanac .lmanac-cond-wrap a:hover {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#ji_search .ji_day .data-lmanac .lmanac-cond-wrap a:active {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#ji_search .ji_day .data-submit .btn_submit {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#ji_search .ji_day .data-submit .btn_submit:hover {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#ji_search .ji_day .data-submit a i {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#ji_search .ji_hour .js_yi dt {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#ji_search .ji_hour .js_ji dt {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#ji_search .ji_hour .gregorian .btn_submit {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#ji_search .ji_hour .gregorian .btn_submit:hover {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#ji_search .ji_point .hap dt {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+#ji_search .ji_point .mon dt {
+	background-image: url("../image/sprites.png"); background-repeat: no-repeat; _background-image: url(../image/sprites.gif);
+}
+.Csprites-dateStatus {
+	background-image: url("../image/sprites_date_status.png"); background-repeat: no-repeat;
+}
+#wrap .mian .content-tb .calendar td.holidays div {
+	background-image: url("../image/sprites_date_status.png"); background-repeat: no-repeat;
+}
+#wrap .mian .content-tb .calendar td.holidays div.line5 {
+	background-image: url("../image/sprites_date_status.png"); background-repeat: no-repeat;
+}
+#wrap .mian .content-tb .calendar td.holidays div:hover {
+	background-image: url("../image/sprites_date_status.png"); background-repeat: no-repeat;
+}
+#wrap .mian .content-tb .calendar td.holidays div.line5:hover {
+	background-image: url("../image/sprites_date_status.png"); background-repeat: no-repeat;
+}
+#wrap .mian .content-tb .calendar td.works div {
+	background-image: url("../image/sprites_date_status.png"); background-repeat: no-repeat;
+}
+#wrap .mian .content-tb .calendar td.works div.line5 {
+	background-image: url("../image/sprites_date_status.png"); background-repeat: no-repeat;
+}
+#wrap .mian .content-tb .calendar td.works div:hover {
+	background-image: url("../image/sprites_date_status.png"); background-repeat: no-repeat;
+}
+#wrap .mian .content-tb .calendar td.works div.line5:hover {
+	background-image: url("../image/sprites_date_status.png"); background-repeat: no-repeat;
+}
+#wrap .mian .content-tb .calendar td.today div {
+	background-image: url("../image/sprites_date_status.png"); background-repeat: no-repeat;
+}
+#wrap .mian .content-tb .calendar td.today div.line5 {
+	background-image: url("../image/sprites_date_status.png"); background-repeat: no-repeat;
+}
+#wrap .mian .content-tb .calendar td.today div:hover {
+	background-image: url("../image/sprites_date_status.png"); background-repeat: no-repeat;
+}
+#wrap .mian .content-tb .calendar td.today div.line5:hover {
+	background-image: url("../image/sprites_date_status.png"); background-repeat: no-repeat;
+}
+#wrap .mian .content-tb .calendar td.now div {
+	background-image: url("../image/sprites_date_status.png"); background-repeat: no-repeat;
+}
+#wrap .mian .content-tb .calendar td.now div.line5 {
+	background-image: url("../image/sprites_date_status.png"); background-repeat: no-repeat;
+}
+#wrap .mian .content-tb .calendar td.now div:hover {
+	background-image: url("../image/sprites_date_status.png"); background-repeat: no-repeat;
+}
+#wrap .mian .content-tb .calendar td.now div.hover {
+	background-image: url("../image/sprites_date_status.png"); background-repeat: no-repeat;
+}
+#wrap .mian .content-tb .calendar td.now div.line5:hover {
+	background-image: url("../image/sprites_date_status.png"); background-repeat: no-repeat;
+}
+#wrap .mian .content-tb .calendar td.now div.line5.hover {
+	background-image: url("../image/sprites_date_status.png"); background-repeat: no-repeat;
+}
+#wrap .mian .content-tb .calendar td.tradition div {
+	background-image: url("../image/sprites_date_status.png"); background-repeat: no-repeat;
+}
+#wrap .mian .content-tb .calendar td.tradition div.line5 {
+	background-image: url("../image/sprites_date_status.png"); background-repeat: no-repeat;
+}
+#wrap .mian .content-tb .calendar td.tradition div:hover {
+	background-image: url("../image/sprites_date_status.png"); background-repeat: no-repeat;
+}
+#wrap .mian .content-tb .calendar td.tradition div.line5:hover {
+	background-image: url("../image/sprites_date_status.png"); background-repeat: no-repeat;
+}
+.Csprites-animals {
+	background-image: url("../image/sprites_animals.png"); background-repeat: no-repeat; _background-image: url(../image/sprites_animals.gif);
+}
+.year_rat {
+	background-image: url("../image/sprites_animals.png"); background-repeat: no-repeat; _background-image: url(../image/sprites_animals.gif);
+}
+.year_ox {
+	background-image: url("../image/sprites_animals.png"); background-repeat: no-repeat; _background-image: url(../image/sprites_animals.gif);
+}
+.year_tiger {
+	background-image: url("../image/sprites_animals.png"); background-repeat: no-repeat; _background-image: url(../image/sprites_animals.gif);
+}
+.year_rabbit {
+	background-image: url("../image/sprites_animals.png"); background-repeat: no-repeat; _background-image: url(../image/sprites_animals.gif);
+}
+.year_dragon {
+	background-image: url("../image/sprites_animals.png"); background-repeat: no-repeat; _background-image: url(../image/sprites_animals.gif);
+}
+.year_snake {
+	background-image: url("../image/sprites_animals.png"); background-repeat: no-repeat; _background-image: url(../image/sprites_animals.gif);
+}
+.year_horse {
+	background-image: url("../image/sprites_animals.png"); background-repeat: no-repeat; _background-image: url(../image/sprites_animals.gif);
+}
+.year_goat {
+	background-image: url("../image/sprites_animals.png"); background-repeat: no-repeat; _background-image: url(../image/sprites_animals.gif);
+}
+.year_monkey {
+	background-image: url("../image/sprites_animals.png"); background-repeat: no-repeat; _background-image: url(../image/sprites_animals.gif);
+}
+.year_rooster {
+	background-image: url("../image/sprites_animals.png"); background-repeat: no-repeat; _background-image: url(../image/sprites_animals.gif);
+}
+.year_dog {
+	background-image: url("../image/sprites_animals.png"); background-repeat: no-repeat; _background-image: url(../image/sprites_animals.gif);
+}
+.year_boar {
+	background-image: url("../image/sprites_animals.png"); background-repeat: no-repeat; _background-image: url(../image/sprites_animals.gif);
+}
+span {
+	background-repeat: no-repeat;
+}
+a {
+	background-repeat: no-repeat;
+}
+div {
+	background-repeat: no-repeat;
+}
+li {
+	background-repeat: no-repeat;
+}
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+.red {
+	color: red;
+}
+.green {
+	color: green;
+}
+.blue {
+	color: blue;
+}
+body {
+	background: white; font: 12px/1.5 Arial, "ÀŒÃÂB8BÃÂ", san-serif; margin: 0px; padding: 0px; font-size-adjust: none; font-stretch: normal;
+}
+.wp {
+	margin: 0px auto; width: 990px;
+}
+.year_rat {
+	background-position: 8px 0px;
+}
+.year_ox {
+	background-position: 8px -50px;
+}
+.year_tiger {
+	background-position: 8px -100px;
+}
+.year_rabbit {
+	background-position: 28px -150px;
+}
+.year_dragon {
+	background-position: 8px -200px;
+}
+.year_snake {
+	background-position: 16px -250px;
+}
+.year_horse {
+	background-position: 12px -300px;
+}
+.year_goat {
+	background-position: 30px -350px;
+}
+.year_monkey {
+	background-position: 15px -400px;
+}
+.year_rooster {
+	background-position: 30px -450px;
+}
+.year_dog {
+	background-position: 10px -500px;
+}
+.year_boar {
+	background-position: 8px -550px;
+}
+#header {
+	background: url("../image/header_bg.png") no-repeat 50% 0px rgb(77, 168, 241); height: 87px; overflow: hidden;
+}
+#header .wp {
+	padding-top: 20px; padding-bottom: 13px; position: relative;
+}
+#header .bottom-line {
+	background: url("../image/bottom_line.png") repeat-x; height: 4px;
+}
+#header .logo {
+	width: 354px; height: 50px; background-image: url("../image/logo_tools_wnl.png"); _background: none;
+}
+#header .logo a {
+	width: 240px; height: 50px; text-indent: -9999em; display: block; _position: relative;
+}
+#header .nav {
+	top: 20px; right: 0px; line-height: 45px; position: absolute;
+}
+#header .nav a {
+	color: white;
+}
+#header .nav span {
+	margin: 0px 8px; color: rgb(153, 211, 255);
+}
+#header .nav .home {
+	margin-right: 10px;
+}
+#header .nav .addToFav {
+	background-position: 0px 13px; padding-left: 20px; font-size: 14px; margin-left: 28px; display: inline-block;
+}
+#CLD {
+	background: url("../image/cld_bg.png") no-repeat; padding-bottom: 6px; margin-top: 4px; zoom: 1;
+}
+#wrap {
+	padding: 8px; overflow: hidden; position: relative;
+}
+#wrap .wnl-title {
+	padding: 10px 0px 11px 95px; height: 23px; margin-bottom: 6px; position: relative; z-index: 5; zoom: 1;
+}
+#wrap .wnl-title .select-data {
+	float: left;
+}
+#wrap .wnl-title .select-data .select-wrap {
+	background: white; padding: 1px; border: 1px solid rgb(172, 219, 255); left: -1px; top: 21px; height: 240px; color: black; font-size: 14px; display: none; position: absolute;
+}
+#wrap .wnl-title .select-data .select-wrap ul {
+	float: none;
+}
+#wrap .wnl-title .select-data .select-wrap li {
+	float: none;
+}
+#wrap .wnl-title .select-data .select-wrap ul {
+	height: 240px; overflow-x: hidden; overflow-y: auto;
+}
+#wrap .wnl-title .select-data .select-wrap li {
+	height: 20px; line-height: 20px; white-space: nowrap; cursor: pointer;
+}
+#wrap .wnl-title .select-data .select-wrap li:hover {
+	background: rgb(203, 232, 255);
+}
+#wrap .wnl-title .select-data .select-wrap li.hover {
+	background: rgb(203, 232, 255);
+}
+#wrap .wnl-title .select-data .select-wrap .select-year {
+	width: 87px;
+}
+#wrap .wnl-title .select-data .select-wrap .select-year li {
+	padding-left: 6px;
+}
+#wrap .wnl-title .select-data .select-wrap .select-month {
+	width: 62px;
+}
+#wrap .wnl-title .select-data .select-wrap .select-month li {
+	padding-left: 6px;
+}
+#wrap .wnl-title .select-data .pre {
+	float: left;
+}
+#wrap .wnl-title .select-data .next {
+	float: left;
+}
+#wrap .wnl-title .select-data .pre a {
+	width: 30px; height: 23px; display: block;
+}
+#wrap .wnl-title .select-data .next a {
+	width: 30px; height: 23px; display: block;
+}
+#wrap .wnl-title .select-data .pre a {
+	background-position: -2px -502px;
+}
+#wrap .wnl-title .select-data .pre a:hover {
+	background-position: -2px -552px;
+}
+#wrap .wnl-title .select-data .pre a:active {
+	background-position: -2px -552px;
+}
+#wrap .wnl-title .select-data .next {
+	margin: 0px 10px; _display: inline;
+}
+#wrap .wnl-title .select-data .next a {
+	background-position: -52px -502px;
+}
+#wrap .wnl-title .select-data .next a:hover {
+	background-position: -52px -552px;
+}
+#wrap .wnl-title .select-data .next a:active {
+	background-position: -52px -552px;
+}
+#wrap .wnl-title .select-data .year-data {
+	margin: 0px 10px; border: 1px solid rgb(172, 219, 255); float: left; position: relative; _display: inline;
+}
+#wrap .wnl-title .select-data .year-data .current-data {
+	background-position: 71px -599px; width: 61px; height: 21px; color: black; line-height: 21px; padding-right: 20px; padding-left: 8px; font-size: 14px; cursor: pointer; background-color: white;
+}
+#wrap .wnl-title .select-data .month-data {
+	border: 1px solid rgb(172, 219, 255); float: left; position: relative;
+}
+#wrap .wnl-title .select-data .month-data .current-data {
+	background-position: 46px -599px; width: 36px; height: 21px; color: black; line-height: 21px; padding-right: 20px; padding-left: 8px; font-size: 14px; cursor: pointer; background-color: white;
+}
+#wrap .wnl-title .select-data #current-data:hover {
+	background-position: 71px -649px;
+}
+#wrap .wnl-title .select-data .hover#current-data {
+	background-position: 71px -649px;
+}
+#wrap .wnl-title .select-data #current-data:active {
+	background-position: 71px -649px;
+}
+#wrap .wnl-title .select-data .active#current-data {
+	background-position: 71px -649px;
+}
+#wrap .wnl-title .select-data #current-data-month:hover {
+	background-position: 46px -649px;
+}
+#wrap .wnl-title .select-data .hover#current-data-month {
+	background-position: 46px -649px;
+}
+#wrap .wnl-title .select-data #current-data-month:active {
+	background-position: 46px -649px;
+}
+#wrap .wnl-title .select-data .active#current-data-month {
+	background-position: 46px -649px;
+}
+#wrap .wnl-title .jin {
+	float: left; position: relative;
+}
+#wrap .wnl-title .jin a {
+	background-position: -2px -752px; width: 72px; height: 23px; text-align: center; color: rgb(46, 139, 210); line-height: 23px; display: block; cursor: pointer;
+}
+#wrap .wnl-title .jin a:hover {
+	background-position: -2px -802px; text-decoration: none;
+}
+#wrap .wnl-title .holidays {
+	border: 1px solid rgb(172, 219, 255); margin-left: 48px; float: left; position: relative; _display: inline;
+}
+#wrap .wnl-title .holidays .a_2 {
+	background-position: 116px -599px; width: 106px; height: 21px; color: black; line-height: 21px; padding-right: 20px; padding-left: 8px; font-size: 14px; text-decoration: none; display: block; white-space: nowrap; background-color: white;
+}
+#wrap .wnl-title .holidays .a_2:hover {
+	background-position: 116px -649px;
+}
+#wrap .wnl-title .holidays .a_2:active {
+	background-position: 116px -649px;
+}
+#wrap .wnl-title .holidays .holidays_ul {
+	background: white; padding: 1px; border: 1px solid rgb(172, 219, 255); left: -1px; top: 21px; width: 132px; font-size: 14px; display: none; position: absolute;
+}
+#wrap .wnl-title .holidays .holidays_ul li {
+	height: 20px; line-height: 20px; padding-left: 6px; white-space: nowrap; cursor: pointer;
+}
+#wrap .wnl-title .holidays .holidays_ul li:hover {
+	background: rgb(203, 232, 255);
+}
+#wrap .wnl-title .holidays .holidays_ul li.hover {
+	background: rgb(203, 232, 255);
+}
+#wrap .wnl-title .todays {
+	top: 10px; right: 0px; line-height: 22px; position: absolute; zoom: 1;
+}
+#wrap .wnl-title .todays .gmt {
+	color: rgb(32, 138, 217); font-size: 14px; margin-right: 10px;
+}
+#wrap .wnl-title .todays .gmt b {
+	font-weight: bold; margin-left: 5px;
+}
+#wrap .wnl-title .todays a {
+	color: rgb(51, 51, 51);
+}
+#wrap .wnl-title .todays a:hover {
+	color: rgb(253, 81, 81);
+}
+#wrap .wnl-title .todays .pipe {
+	padding: 0px 1px; color: rgb(181, 181, 181);
+}
+#wrap .wnl-title .todays .alarm-clock {
+	background-position: 0px -997px; width: 37px; height: 20px; float: left; zoom: 0;
+}
+#wrap .wnl-title .todays .alarm-clock i {
+	left: 0px; top: 20px; width: 37px; height: 23px; display: none; position: absolute;
+}
+#wrap .wnl-title .todays .alarm-clock:hover {
+	position: relative;
+}
+#wrap .wnl-title .todays .alarm-clock:hover i {
+	background-position: 0px -1017px; display: block;
+}
+#wrap .mian {
+	position: relative; zoom: 1;
+}
+#wrap .mian .content-c {
+	width: 694px; float: left;
+}
+#wrap .mian .content-tb .nav-tlt {
+	background-position: 0px -950px; border: 1px solid rgb(181, 224, 255); height: 23px; line-height: 23px; overflow: hidden; margin-bottom: 3px; background-repeat: repeat-x;
+}
+#wrap .mian .content-tb .nav-tlt span {
+	width: 98px; text-align: center; color: rgb(0, 127, 223); float: left; display: block;
+}
+#wrap .mian .content-tb .nav-tlt .weekend {
+	color: rgb(208, 47, 18);
+}
+#wrap .mian .content-tb .calendar {
+	background: white; border-width: 0px 1px 1px 0px; border-style: solid; border-color: rgb(208, 233, 255); height: 425px;
+}
+#wrap .mian .content-tb .calendar td {
+	border-width: 1px 0px 0px 1px; border-style: solid; border-color: rgb(208, 233, 255); padding: 1px; width: 96px; text-align: center; vertical-align: middle; cursor: pointer;
+}
+#wrap .mian .content-tb .calendar td div {
+	height: 68px; position: relative;
+}
+#wrap .mian .content-tb .calendar td div.line5 {
+	height: 72px; padding-top: 10px;
+}
+#wrap .mian .content-tb .calendar td div:hover {
+	background: rgb(231, 244, 255);
+}
+#wrap .mian .content-tb .calendar td div.hover {
+	background: rgb(231, 244, 255);
+}
+#wrap .mian .content-tb .calendar td div i {
+	left: 0px; top: 0px; width: 34px; height: 34px; display: block; position: absolute;
+}
+#wrap .mian .content-tb .calendar td strong {
+	height: 44px; color: rgb(102, 102, 102); line-height: 44px; font-size: 34px; font-weight: normal; display: block;
+}
+#wrap .mian .content-tb .calendar td strong.red {
+	color: rgb(208, 47, 18);
+}
+#wrap .mian .content-tb .calendar td strong.grad {
+	color: rgb(242, 197, 133);
+}
+#wrap .mian .content-tb .calendar td span {
+	height: 18px; color: rgb(153, 153, 153); line-height: 18px; font-size: 14px; display: block;
+}
+#wrap .mian .content-tb .calendar td span.grad {
+	color: rgb(219, 196, 141);
+}
+#wrap .mian .content-tb .calendar td span.red {
+	color: rgb(210, 59, 13);
+}
+#wrap .mian .content-tb .calendar td.holidays div {
+	background-position: 0px -700px; background-color: rgb(255, 238, 236);
+}
+#wrap .mian .content-tb .calendar td.holidays div.line5 {
+	background-position: 0px -200px;
+}
+#wrap .mian .content-tb .calendar td.holidays div i {
+	background-position: 0px -50px;
+}
+#wrap .mian .content-tb .calendar td.holidays div:hover {
+	background-position: 0px -600px; background-color: rgb(231, 244, 255);
+}
+#wrap .mian .content-tb .calendar td.holidays div.line5:hover {
+	background-position: 0px -100px;
+}
+#wrap .mian .content-tb .calendar td.works div {
+	background-position: 0px -900px; background-color: rgb(228, 228, 228);
+}
+#wrap .mian .content-tb .calendar td.works div.line5 {
+	background-position: 0px -400px;
+}
+#wrap .mian .content-tb .calendar td.works div i {
+	background-position: -100px -50px;
+}
+#wrap .mian .content-tb .calendar td.works div:hover {
+	background-position: 0px -600px; background-color: rgb(231, 244, 255);
+}
+#wrap .mian .content-tb .calendar td.works div.line5:hover {
+	background-position: 0px -100px;
+}
+#wrap .mian .content-tb .calendar td.today div {
+	background-position: 0px -600px; background-color: rgb(231, 244, 255);
+}
+#wrap .mian .content-tb .calendar td.today div.line5 {
+	background-position: 0px -100px;
+}
+#wrap .mian .content-tb .calendar td.today div:hover {
+	background-position: 0px -600px; background-color: rgb(231, 244, 255);
+}
+#wrap .mian .content-tb .calendar td.today div.line5:hover {
+	background-position: 0px -100px;
+}
+#wrap .mian .content-tb .calendar td.now div {
+	background-position: 0px -500px; background-color: rgb(32, 138, 217);
+}
+#wrap .mian .content-tb .calendar td.now div.line5 {
+	
+}
+#wrap .mian .content-tb .calendar td.now div strong {
+	color: white !important;
+}
+#wrap .mian .content-tb .calendar td.now div span {
+	color: white !important;
+}
+#wrap .mian .content-tb .calendar td.now div span font {
+	color: white !important;
+}
+#wrap .mian .content-tb .calendar td.now div i {
+	background-position: -50px -50px;
+}
+#wrap .mian .content-tb .calendar td.now div:hover {
+	background-position: 0px -500px; background-color: rgb(32, 138, 217);
+}
+#wrap .mian .content-tb .calendar td.now div.hover {
+	background-position: 0px -500px; background-color: rgb(32, 138, 217);
+}
+#wrap .mian .content-tb .calendar td.now div.line5:hover {
+	
+}
+#wrap .mian .content-tb .calendar td.now div.line5.hover {
+	
+}
+#wrap .mian .content-tb .calendar td.tradition div {
+	background-position: 0px -800px; background-color: rgb(243, 243, 243);
+}
+#wrap .mian .content-tb .calendar td.tradition div strong {
+	color: rgb(204, 204, 204);
+}
+#wrap .mian .content-tb .calendar td.tradition div span {
+	color: rgb(187, 187, 187);
+}
+#wrap .mian .content-tb .calendar td.tradition div span font {
+	color: rgb(187, 187, 187) !important;
+}
+#wrap .mian .content-tb .calendar td.tradition div.line5 {
+	background-position: 0px -300px;
+}
+#wrap .mian .content-tb .calendar td.tradition div:hover {
+	background-position: 0px -600px; background-color: rgb(231, 244, 255);
+}
+#wrap .mian .content-tb .calendar td.tradition div.line5:hover {
+	background-position: 0px -100px;
+}
+#wrap .mian .date_tips {
+	text-align: center; padding-top: 10px;
+}
+#wrap .mian .date_tips .red {
+	background-position: 0px -100px; padding-left: 20px; display: inline-block;
+}
+#wrap .mian .date_tips .pipe {
+	color: rgb(197, 200, 204);
+}
+#wrap .mian .date_tips a {
+	color: rgb(253, 81, 81);
+}
+#wrap .mian .subar {
+	background: white; width: 271px; padding-top: 50px; float: right; position: relative;
+}
+#wrap .mian .subar .sub-icon .gday {
+	background: url("../image/today_hd.png") no-repeat 0px 0px; left: 0px; top: 0px; width: 271px; height: 44px; text-align: center; color: rgb(255, 109, 37); padding-top: 6px; font-size: 14px; font-weight: bold; position: absolute;
+}
+#wrap .mian .subar .sub-icon .icon {
+	border-width: 0px 1px 1px; border-style: solid; border-color: rgb(181, 224, 255); top: -14px; height: 198px; overflow: hidden; padding-top: 14px; margin-bottom: -14px; position: relative; zoom: 1;
+}
+#wrap .mian .subar .sub-icon .icon span {
+	text-align: center; color: rgb(51, 51, 51); font-size: 14px; display: block;
+}
+#wrap .mian .subar .sub-icon .icon .diffday {
+	color: rgb(255, 109, 37); font-weight: bold;
+}
+#wrap .mian .subar .sub-icon .icon .tday {
+	padding: 16px 0px; color: rgb(102, 102, 102); line-height: 66px; font-size: 90px;
+}
+#wrap .mian .subar .sub-icon .icon .nday {
+	padding: 0px;
+}
+#wrap .mian .subar .sub-icon .icon .ganzhi {
+	padding: 0px;
+}
+#wrap .mian .subar .sub-icon .icon .jieri {
+	padding-top: 8px;
+}
+#wrap .mian .subar .sub-icon .icon .jieri .festival {
+	color: rgb(102, 102, 102); white-space: nowrap;
+}
+#wrap .mian .subar .sub-icon .icon .jieri .festival a {
+	color: rgb(208, 47, 18); font-weight: bold; margin-right: 4px;
+}
+#wrap .mian .subar .sub-icon .icon .jieri .festival b {
+	width: 4px; overflow: hidden; font-size: 0px; display: inline-block;
+}
+#wrap .mian .subar .today_almanac {
+	border-right-color: rgb(181, 224, 255); border-bottom-color: rgb(203, 232, 255); border-left-color: rgb(181, 224, 255); border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-style: solid; border-bottom-style: dashed; border-left-style: solid;
+}
+#wrap .mian .subar .today_luck {
+	border-right-color: rgb(181, 224, 255); border-bottom-color: rgb(203, 232, 255); border-left-color: rgb(181, 224, 255); border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-style: solid; border-bottom-style: dashed; border-left-style: solid;
+}
+#wrap .mian .subar .today_almanac h3 {
+	background-position: 0px -950px; border: 1px solid white; height: 26px; line-height: 26px; font-weight: normal; position: relative; background-repeat: repeat-x;
+}
+#wrap .mian .subar .today_almanac h3 span {
+	margin: 0px 12px; color: rgb(46, 139, 210); font-size: 14px; font-weight: bold;
+}
+#wrap .mian .subar .today_almanac h3 .explain {
+	color: rgb(153, 153, 153);
+}
+#wrap .mian .subar .today_almanac h3 .explain:hover {
+	color: rgb(253, 81, 81);
+}
+#wrap .mian .subar .today_almanac h3 .explain i {
+	background-position: -50px -100px; top: 6px; width: 14px; height: 14px; right: 90px; display: block; position: absolute;
+}
+#wrap .mian .subar .today_almanac h3 .more {
+	top: 0px; right: 10px; color: rgb(51, 102, 153); position: absolute;
+}
+#wrap .mian .subar .today_almanac h3 .more:hover {
+	color: rgb(253, 81, 81);
+}
+#wrap .mian .subar .today_almanac .yiji {
+	padding: 0px 26px 0px 30px; height: 107px; color: rgb(102, 102, 102); border-top-color: rgb(211, 236, 255); border-top-width: 1px; border-top-style: solid;
+}
+#wrap .mian .subar .today_almanac .yi {
+	padding: 12px 0px 0px 33px; height: 36px; line-height: 18px; overflow: hidden; position: relative; zoom: 1;
+}
+#wrap .mian .subar .today_almanac .ji {
+	padding: 12px 0px 0px 33px; height: 36px; line-height: 18px; overflow: hidden; position: relative; zoom: 1;
+}
+#wrap .mian .subar .today_almanac .yi .icon {
+	left: 0px; top: 10px; width: 29px; height: 21px; position: absolute;
+}
+#wrap .mian .subar .today_almanac .ji .icon {
+	left: 0px; top: 10px; width: 29px; height: 21px; position: absolute;
+}
+#wrap .mian .subar .today_almanac .yi .icon {
+	background-position: 0px -150px;
+}
+#wrap .mian .subar .today_almanac .ji .icon {
+	background-position: -50px -150px;
+}
+#wrap .mian .subar .today_luck {
+	padding: 7px 0px 4px 64px; height: 49px; position: relative;
+}
+#wrap .mian .subar .today_luck .icon {
+	background-position: 0px -199px; left: 6px; top: 5px; width: 50px; height: 52px; position: absolute;
+}
+#wrap .mian .subar .today_luck a {
+	color: rgb(102, 102, 102); line-height: 24px; display: block; white-space: nowrap;
+}
+#wrap .mian .subar .today_luck a:hover {
+	color: rgb(253, 81, 81);
+}
+#wrap .mian .subar .today_event {
+	height: 34px; text-align: center; line-height: 34px; border-right-color: rgb(181, 224, 255); border-bottom-color: rgb(181, 224, 255); border-left-color: rgb(181, 224, 255); border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; position: relative;
+}
+#wrap .mian .subar .today_event a {
+	background-position: -50px -198px; color: rgb(102, 102, 102); padding-left: 20px;
+}
+#wrap .mian .subar .today_event a:hover {
+	color: rgb(253, 81, 81);
+}
+#wrap .mian .subar .today_event i {
+	background-position: 0px -1050px; width: 25px; height: 20px; right: -1px; bottom: -1px; display: block; position: absolute; _right: -2px;
+}
+#spread {
+	background: rgb(242, 249, 255); padding: 6px 0px 6px 8px; border: 1px solid rgb(181, 224, 255); height: 23px; position: relative; z-index: 1;
+}
+#spread dt {
+	background: url("../image/tgarrow.png") no-repeat; left: 0px; top: 0px; width: 30px; height: 35px; text-align: center; color: white; text-indent: -9999em; padding-top: 3px; float: left; position: absolute;
+}
+#spread dt i {
+	color: yellow; font-size: 10px;
+}
+#spread dd {
+	height: 24px; overflow: hidden; padding-left: 50px; zoom: 1;
+}
+#spread dd a {
+	color: rgb(51, 51, 51); line-height: 24px; font-size: 14px; margin-right: 30px; white-space: nowrap;
+}
+#spread dd a:hover {
+	color: rgb(253, 81, 81);
+}
+#ji_search {
+	margin-bottom: 10px; position: relative; z-index: 999;
+}
+#ji_search .Lmodule {
+	background: white; border: 1px solid rgb(190, 227, 255); float: left; _display: inline;
+}
+#ji_search .Lmodule h3 {
+	background-position: 0px -950px; border: 1px solid white; height: 26px; color: rgb(46, 139, 210); line-height: 26px; padding-left: 18px; font-size: 14px; font-weight: bold; background-repeat: repeat-x;
+}
+#ji_search .Lmodule .section {
+	height: 158px; border-top-color: rgb(181, 224, 255); border-top-width: 1px; border-top-style: solid;
+}
+#ji_search .Lmodule .select-wrap {
+	font-size: 12px; margin-right: 5px; float: left; position: relative; z-index: 10;
+}
+#ji_search .Lmodule .select-wrap a {
+	border: 1px solid rgb(172, 219, 255); height: 21px; color: black; line-height: 21px; text-decoration: none; display: block;
+}
+#ji_search .Lmodule .select-wrap .select-data {
+	background: rgb(255, 255, 255); padding: 1px; border: 1px solid rgb(172, 219, 255); left: 0px; top: 22px; display: none; position: absolute; z-index: 999;
+}
+#ji_search .Lmodule .select-wrap .select-data ul {
+	background: white; overflow-x: hidden; overflow-y: auto; max-height: 240px; _height: 240px;
+}
+#ji_search .Lmodule .select-wrap .select-data li {
+	height: 20px; line-height: 20px; cursor: pointer;
+}
+#ji_search .Lmodule .select-wrap .select-data li:hover {
+	background: rgb(203, 232, 255);
+}
+#ji_search .Lmodule .select-wrap .select-data li.hover {
+	background: rgb(203, 232, 255);
+}
+#ji_search .Lmodule .select-year {
+	width: 75px;
+}
+#ji_search .Lmodule .select-year a {
+	background-position: 55px -599px; padding-left: 6px;
+}
+#ji_search .Lmodule .select-year a:hover {
+	background-position: 55px -649px;
+}
+#ji_search .Lmodule .select-year a:active {
+	background-position: 55px -649px;
+}
+#ji_search .Lmodule .select-year .select-data {
+	width: 71px;
+}
+#ji_search .Lmodule .select-year .select-data li {
+	padding-left: 4px;
+}
+#ji_search .Lmodule .select-month {
+	width: 52px;
+}
+#ji_search .Lmodule .select-month a {
+	background-position: 32px -599px; padding-left: 3px;
+}
+#ji_search .Lmodule .select-month a:hover {
+	background-position: 32px -649px;
+}
+#ji_search .Lmodule .select-month a:active {
+	background-position: 32px -649px;
+}
+#ji_search .Lmodule .select-month .select-data {
+	width: 48px;
+}
+#ji_search .Lmodule .select-month .select-data li {
+	padding-left: 2px;
+}
+#ji_search .Lmodule .select-day {
+	width: 49px;
+}
+#ji_search .Lmodule .select-day a {
+	background-position: 29px -599px; padding-left: 1px;
+}
+#ji_search .Lmodule .select-day a:hover {
+	background-position: 29px -649px;
+}
+#ji_search .Lmodule .select-day a:active {
+	background-position: 29px -649px;
+}
+#ji_search .Lmodule .select-day .select-data {
+	width: 45px;
+}
+#ji_search .Lmodule .select-day .select-data li {
+	padding-left: 1px;
+}
+#ji_search .ji_day {
+	width: 270px;
+}
+#ji_search .ji_day .section {
+	padding: 10px 18px; height: 138px;
+}
+#ji_search .ji_day .data-from {
+	margin-bottom: 8px; position: relative;
+}
+#ji_search .ji_day .data-to {
+	margin-bottom: 8px; position: relative;
+}
+#ji_search .ji_day .data-from em {
+	line-height: 21px; font-style: normal; margin-right: 10px; float: left;
+}
+#ji_search .ji_day .data-to em {
+	line-height: 21px; font-style: normal; margin-right: 10px; float: left;
+}
+#ji_search .ji_day .data-from {
+	padding-top: 6px; z-index: 3;
+}
+#ji_search .ji_day .data-from .select-data {
+	z-index: 9999;
+}
+#ji_search .ji_day .data-to {
+	z-index: 2;
+}
+#ji_search .ji_day .data-to .select-wrap .select-data {
+	z-index: 999;
+}
+#ji_search .ji_day .data-lmanac {
+	margin-bottom: 10px; position: relative; z-index: 1;
+}
+#ji_search .ji_day .data-lmanac .ipt-radio-wrap {
+	width: 82px; line-height: 22px; padding-left: 20px; float: left; _padding-top: 5px;
+}
+#ji_search .ji_day .data-lmanac .ipt-radio-wrap input {
+	margin: 0px 1px 0px 0px; padding: 0px; width: 13px; height: 13px; vertical-align: middle;
+}
+#ji_search .ji_day .data-lmanac .ipt-radio-wrap #lmanacUnLuck {
+	margin-left: 6px;
+}
+#ji_search .ji_day .data-lmanac .lmanac-cond-wrap {
+	width: 52px; height: 23px;
+}
+#ji_search .ji_day .data-lmanac .lmanac-cond-wrap a {
+	background-position: 32px -599px; padding-left: 4px;
+}
+#ji_search .ji_day .data-lmanac .lmanac-cond-wrap a:hover {
+	background-position: 32px -649px;
+}
+#ji_search .ji_day .data-lmanac .lmanac-cond-wrap a:active {
+	background-position: 32px -649px;
+}
+#ji_search .ji_day .data-lmanac .lmanac-cond-wrap .select-data {
+	width: 48px; z-index: 99;
+}
+#ji_search .ji_day .data-lmanac .lmanac-cond-wrap .select-data li {
+	padding-left: 2px;
+}
+#ji_search .ji_day .data-lmanac .lmanac-cond-wrap .select-data select {
+	display: none;
+}
+#ji_search .ji_day .data-submit {
+	overflow: hidden; padding-left: 20px; zoom: 1;
+}
+#ji_search .ji_day .data-submit input {
+	border: currentColor;
+}
+#ji_search .ji_day .data-submit .btn_submit {
+	background-position: 0px -850px; width: 54px; height: 27px; color: rgb(46, 139, 210); line-height: 27px; text-indent: -9999em; float: left; display: block;
+}
+#ji_search .ji_day .data-submit .btn_submit:hover {
+	background-position: 0px -900px;
+}
+#ji_search .ji_day .data-submit a {
+	height: 20px; color: rgb(51, 102, 153); padding-top: 5px; margin-left: 22px; float: left; display: block; _display: inline;
+}
+#ji_search .ji_day .data-submit a:hover {
+	color: rgb(253, 81, 81);
+}
+#ji_search .ji_day .data-submit a i {
+	background-position: -50px -100px; width: 14px; height: 14px; margin-left: 5px; display: inline-block;
+}
+#ji_search .ji_hour {
+	margin: 0px 10px; width: 347px;
+}
+#ji_search .ji_hour .section {
+	padding: 0px 18px;
+}
+#ji_search .ji_hour .chineseTime {
+	overflow: hidden; padding-top: 20px; white-space: nowrap;
+}
+#ji_search .ji_hour .chineseTime strong {
+	float: left;
+}
+#ji_search .ji_hour .chineseTime span {
+	float: left;
+}
+#ji_search .ji_hour .chineseTime a {
+	float: left;
+}
+#ji_search .ji_hour .chineseTime span {
+	width: 185px; overflow: hidden; margin-left: 5px; white-space: nowrap; text-overflow: ellipsis; _display: inline;
+}
+#ji_search .ji_hour .chineseTime .more {
+	color: rgb(51, 102, 153);
+}
+#ji_search .ji_hour .chineseTime .more:hover {
+	color: rgb(253, 81, 81);
+}
+#ji_search .ji_hour dl {
+	padding-top: 10px; padding-left: 30px; position: relative;
+}
+#ji_search .ji_hour dl dt {
+	left: 0px; width: 29px; height: 21px; position: absolute;
+}
+#ji_search .ji_hour dl dd {
+	height: 18px; line-height: 18px; overflow: hidden;
+}
+#ji_search .ji_hour .js_yi dt {
+	background-position: 0px -150px; top: 7px;
+}
+#ji_search .ji_hour .js_ji dt {
+	background-position: -50px -150px; top: 8px;
+}
+#ji_search .ji_hour .gregorian {
+	margin-top: 20px;
+}
+#ji_search .ji_hour .gregorian em {
+	line-height: 21px; font-style: normal; margin-right: 10px; float: left; _display: inline;
+}
+#ji_search .ji_hour .gregorian input {
+	border: currentColor;
+}
+#ji_search .ji_hour .gregorian .btn_submit {
+	background-position: 0px -850px; width: 54px; height: 27px; color: rgb(46, 139, 210); line-height: 27px; text-indent: -9999em; margin-top: -2px;
+}
+#ji_search .ji_hour .gregorian .btn_submit:hover {
+	background-position: 0px -900px;
+}
+#ji_search .ji_point {
+	width: 347px;
+}
+#ji_search .ji_point .section {
+	padding-left: 20px;
+}
+#ji_search .ji_point dl {
+	width: 163px; padding-top: 10px; float: left;
+}
+#ji_search .ji_point dl dt {
+	color: rgb(51, 51, 51); font-weight: bold; margin-bottom: 10px;
+}
+#ji_search .ji_point dl dd {
+	line-height: 18px;
+}
+#ji_search .ji_point dl .more {
+	padding-top: 8px;
+}
+#ji_search .ji_point dl .more a {
+	color: rgb(51, 102, 153);
+}
+#ji_search .ji_point dl .more a:hover {
+	color: rgb(253, 81, 81);
+}
+#ji_search .ji_point .hap dt {
+	background-position: 0px -300px; width: 71px; height: 34px; line-height: 34px; padding-left: 42px;
+}
+#ji_search .ji_point .mon dt {
+	background-position: 0px -350px; width: 68px; height: 36px; line-height: 36px; padding-left: 54px;
+}
+.banner a {
+	float: left; _display: inline;
+}
+#lichun {
+	background: white; padding: 34px 61px 0px; border: 1px solid rgb(203, 232, 255); margin-top: 5px;
+}
+#lichun h1 {
+	background: url("../image/lichun_h1_bg.png") no-repeat 50% 100%; height: 30px; text-align: center; color: rgb(46, 139, 210); line-height: 30px; padding-bottom: 16px; font-family: "Microsoft Yahei"; font-size: 30px; font-weight: normal; margin-bottom: 30px;
+}
+#lichun h2 {
+	color: rgb(102, 102, 102); line-height: 24px; text-indent: 2em; font-size: 14px;
+}
+#lichun h4 {
+	color: rgb(0, 127, 223); line-height: 26px; font-size: 14px; font-weight: bold;
+}
+#lichun p {
+	padding: 4px 0px; color: rgb(102, 102, 102); line-height: 26px; text-indent: 2em; font-size: 14px;
+}
+#lichun .example {
+	padding: 0px 140px 30px;
+}
+#lichun .example p {
+	text-align: center; color: rgb(255, 139, 0); line-height: 24px; padding-right: 16px; clear: left; font-size: 14px; margin-bottom: 10px;
+}
+#lichun .example .sub-icon {
+	margin: 0px 10px; width: 271px; float: left;
+}
+#lichun .example .sub-icon .gday {
+	background: url("../image/today_hd.png") no-repeat 0px 0px; width: 271px; height: 44px; text-align: center; color: rgb(255, 109, 37); padding-top: 6px; font-size: 14px; font-weight: bold;
+}
+#lichun .example .sub-icon .icon {
+	border-width: 0px 1px 1px; border-style: solid; border-color: rgb(181, 224, 255); top: -14px; height: 198px; overflow: hidden; padding-top: 14px; margin-bottom: -14px; position: relative;
+}
+#lichun .example .sub-icon .icon span {
+	text-align: center; color: rgb(51, 51, 51); font-size: 14px; display: block;
+}
+#lichun .example .sub-icon .icon .diffday {
+	color: rgb(255, 109, 37); font-weight: bold;
+}
+#lichun .example .sub-icon .icon .tday {
+	padding: 16px 0px; color: rgb(102, 102, 102); line-height: 66px; font-size: 90px;
+}
+#lichun .example .sub-icon .icon .nday {
+	padding: 0px;
+}
+#lichun .example .sub-icon .icon .ganzhi {
+	padding: 0px;
+}
+#lichun .example .sub-icon .icon .ganzhi b {
+	padding: 4px 0px; border: 2px solid red;
+}
+#lichun .example .sub-icon .icon .jieri {
+	color: rgb(208, 47, 18); padding-top: 8px; font-weight: bold; white-space: nowrap;
+}
+#lichun .mod_1b {
+	margin: 24px 0px 36px; border: 1px solid rgb(203, 232, 255);
+}
+#lichun .other {
+	font-size: 14px;
+}
+#lichun .other h3 {
+	background: rgb(237, 247, 255); height: 24px; color: rgb(52, 139, 207); padding-top: 3px; padding-left: 16px; font-size: 14px; font-weight: bold; border-bottom-color: rgb(203, 232, 255); border-bottom-width: 1px; border-bottom-style: solid; position: relative;
+}
+#lichun .other .other_tool {
+	margin-top: -1px;
+}
+#lichun .other .other_tool th {
+	text-align: left; font-weight: normal;
+}
+#lichun .other .other_tool td {
+	border-left-color: rgb(221, 240, 255); border-left-width: 1px; border-left-style: solid;
+}
+#lichun .other .other_tool th {
+	padding: 8px 15px; border-top-color: rgb(221, 240, 255); border-top-width: 1px; border-top-style: solid;
+}
+#lichun .other .other_tool td {
+	padding: 8px 15px; border-top-color: rgb(221, 240, 255); border-top-width: 1px; border-top-style: solid;
+}
+#lichun .other .other_tool th a {
+	color: rgb(102, 102, 102);
+}
+#lichun .other .other_tool td a {
+	color: rgb(102, 102, 102);
+}
+#lichun .other .other_tool th a:hover {
+	color: rgb(253, 81, 81);
+}
+#lichun .other .other_tool td a:hover {
+	color: rgb(253, 81, 81);
+}

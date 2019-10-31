@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>申请单</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<link rel="stylesheet" type="text/css" href="css/header.css">
+<link rel="stylesheet" type="text/css" href="css/content.css">
+<link rel="stylesheet" type="text/css" href="css/selectFilter.css">
+<script src="laydate/laydate.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/selectFilter.js"></script>
+</head>
+<body>
+<section id="web" class="holiday">
+	<header id="header"> <img src="images/tb.png"> </header>
+	<section id="content">
+		<section class="department">
+			<section class="departmentCenter">
+				<section class="top"><strong><b>*</b>姓名：</strong>
+					<input type="text" name="name" placeholder="" class="task">
+				</section>
+				<section class="top"><strong><b>*</b>种类：</strong>
+					<select>
+						<option>休假</option>
+					</select>
+					<span class="arrow"><img src="images/dropDown.png"></span></section>
+				<section class="top"><strong><b>*</b>开始时间：</strong>
+					<input type="text" class="task" placeholder="请选择日期" id="test1">
+				</section>
+				<section class="top"><strong><b>*</b>结束时间：</strong>
+					<input type="text" class="task" placeholder="请选择日期" id="test2">
+				</section>
+				<section class="top"><strong><b>*</b>天数：</strong>
+					<input type="text" name="dates" placeholder="" class="task">
+				</section>
+				<section class="top"><strong><b>*</b>请假记录：</strong>
+					<textarea class="task">bbbb</textarea>
+				</section>
+				<section class="bottom"><strong><b>*</b>理由：</strong>
+					<textarea class="task">bbbb</textarea>
+				</section>
+				<section class="add_bottom">
+					<ul>
+						<li>
+							<div class="add_fir">
+								<img src="images/user.png" />
+								<span class="add_distance">张三</span>
+								<span class="add_distance">发起申请</span>
+							</div>
+							<div class="add_sen">2018.08.21 08:21</div>
+							<div class="add_third"><span class="add_third2">同意</span></div>
+						</li>
+						<li>
+							<div class="add_fir">
+								<img src="images/user.png" />
+								<span class="add_distance">张三</span>
+								<span class="add_distance add_agree">已同意</span>
+							</div>
+							<div class="add_sen">2018.08.21 08:21</div>
+							<div class="add_third"><span class="add_third2">同意</span></div>
+						</li>
+						<li>
+							<div class="add_fir">
+								<img src="images/user.png" />
+								<span class="add_distance">张三</span>
+								<span class="add_distance add_agree">已同意</span>
+							</div>
+							<div class="add_sen">2018.08.21 08:21</div>
+							<div class="add_third"><span class="add_third2">同意</span></div>
+						</li>
+						<li>
+							<div class="add_fir">
+								<img src="images/user.png" />
+								<span class="add_distance">张三</span>
+								<span class="add_distance add_agree">已同意</span>
+							</div>
+							<div class="add_sen">2018.08.21 08:21</div>
+							<div class="add_third"><span class="add_third2">同意</span></div>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</section>
+	</section>
+	<!--<section class="Button1"> <a href="itemList.html">返回</a> </section>
+	<section class="Button2"> <a href="javascript:">提交</a> <a href="itemList.html">返回</a> </section>-->
+	<section class="Button3"> <a href="javascript:" onclick="add_name({name:['填写处理意见','保存'],empty:false,Verifyprompt:'名称不能为空'})">同意</a> <a href="javascript:" onclick="add_name({name:['填写处理意见','保存'],empty:false,Verifyprompt:'名称不能为空'})">不同意</a> <a href="itemList.html">返回</a> </section>
+</section>
+</body>
+<script type="text/javascript" src="js/time.js"></script>
+<!--<script type="text/javascript" src="js/item.js"></script>-->
+<script>
+	function add_name(options){
+	$(".info_err").hide();
+	var defaults={
+		name:[],
+		empty:true,
+		Verifyprompt:''
+	}
+	defaults= options;
+		_this = this;
+    	var strhtml = '<div class="maskbou"></div>'
+		+'<div class="add_name">'
+		+'<label class="pu_colse">x</label>'
+		+'<div class="title"><span>'+defaults.name[0]+'</span></div><div class="cont">'
+		+'<div class="int_mo"><textarea id="moc_int"></textarea></div></div>'
+		+'<div class="infobtn"><span class="info_err">'+defaults.Verifyprompt+'</span><button class="btn_one " onclick="cback(2)" data-name="取消">取消</button><button class="btn_two mleft12" onclick="cback(1)" data-name="下一步">'+defaults.name[1]+'</button></div></div>'
+		$("body").append(strhtml);
+		_this.cback=function(num){
+			if(num==1){
+				var tet = $("#moc_int").val();
+				if(!defaults.empty&&tet==''){
+					$(".info_err").show();
+					return false;
+				}
+			}else if(num==2){
+				_this.close1();
+			}
+		}
+		_this.close1=function(num){
+			$(".maskbou").remove();
+            $('.add_name').remove();
+		}
+		$(".pu_colse").click(function(){
+			_this.close1();
+		})
+		$("#moc_int").focus(function(){
+			$(".info_err").hide();
+			$(this).css("border-color","#409abb")
+		})
+    }
+</script>
+</html>

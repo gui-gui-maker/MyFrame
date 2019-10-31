@@ -1,0 +1,43 @@
+
+<#assign x=totalRec y=listNum>
+<#if (x>y)>
+<div class="pgcode">
+		<#if (pageNo-1>0)>
+			   <#if (pageNo-1==1)> 
+					<a href="index.html" class="pre" title="上一页"></a>
+				<#else> 
+					<a href="index${pageNo-1}.html" class="pre" title="上一页"></a>
+				</#if>
+		</#if>
+		<#if (totalPage<=10)>
+			<#list 1..totalPage as i>
+				<#if (i == pageNo)>
+					<#if i==1> 
+						<a href="index.html" class="current">${i}</a>
+					<#else> 
+						<a href="index${i}.html" class="current">${i}</a>
+					</#if>
+				<#else>
+					<#if i==1> 
+						<a href="index.html">${i}</a>
+					<#else> 
+						<a href="index${i}.html">${i}</a>
+					</#if>
+				</#if>
+			</#list>
+		<#else>
+			<#list pageNo..totalPage as i>
+				<#if (i == pageNo)> 
+					<a class='current'>${i}</a>
+				<#else>
+					<#if i==1>
+					     <a href="index.html">${i}</a>
+					<#else> 
+					    <a href="index${i}.html">${i}</a>
+					</#if>
+				</#if>
+			</#list>
+		</#if>	
+	   <#if (pageNo+1<=totalPage)><a href="index${pageNo+1}.html" class="next" title="下一页"></a> </#if>
+</div>
+</#if>

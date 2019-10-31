@@ -1,0 +1,160 @@
+/* --------------
+   *   login  2012年5月7日 修改的新版式  *
+* ------------ */
+/*------------------------------------global css----*/
+html, body {overflow:hidden; margin:0; padding:0; width:100%; height:100%;}
+body, input, button, select, textarea {}
+a, a:link, a:visited {text-decoration:none;	color:#0000FF;/*display:inline-block;*/}
+a:hover {text-decoration:underline;	color:#FF0000;}
+
+div, img, p, h1, h2, h3, h4, h5, h6, form, label, input, ul, ol, li, dl, dt, dd {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:none;
+}
+em {font-style:normal;}
+.fl {float:left;}
+.fr {float:right;}
+/**/
+.global {position:absolute; left:0px; top:0px; width:100%; height:100%; z-index:1; border:0px solid #96c2f1; overflow:hidden;}
+.top {background:url(../images/login/log_top_bj.png) repeat-x left top; height:32px;/* position:relative;*/ width:100%; overflow:hidden;}
+.top_txt {margin:0 auto; width:958px; overflow:hidden; font:12px "宋体"; line-height:30px; color:#656565;}
+.wel {background:url(../images/login/log_wel_icon.png) no-repeat left center; padding-left:24px;}
+.w-u-setting {background:url("../images/login/setting-3.gif") center center no-repeat; width:16px; margin-left:8px;display:none;}
+
+.foot{background:#f2f2f2; height:30px; line-height:30px; position:absolute; left:0px; border-top:1px solid #dddddd; width:100%;}
+.foot a , .top a {color:#656565;}
+* html .foot a:visited , * html .top a:visited {color:#656565;}
+.foot em.fr a {display:block; width:16px; height:30px; background:url(../images/login/khlogo.png) no-repeat left center;}
+.logimage {position:relative; left:5px; bottom:30px;}
+.foot em.fl a {display:inline-block; height:30px; padding-left:21px; margin-right:20px;}
+/*.ft_mail {background:url(../images/login/foot_icon.png) no-repeat left top;}
+.ft_date {background:url(../images/login/foot_icon.png) no-repeat left -30px;}
+.ft_book {background:url(../images/login/foot_icon.png) no-repeat left -60px;}
+.ft_online {background:url(../images/login/foot_icon.png) no-repeat left -90px;}
+.ft_soft {background:url(../images/login/foot_icon.png) no-repeat left -120px;}
+.ft_rank {background:url(../images/login/foot_icon.png) no-repeat left -150px;}
+.ft_check {background:url(../images/login/foot_icon.png) no-repeat left -180px;}
+.ft_msg {background:url(/webim/images/record1.gif) no-repeat left 8px;}
+.ft_msg_ss {background:url(/webim/images/face/92.gif) no-repeat -3px 4px;color:#FF0000!important;}*/
+
+/*------------------*/
+.main {overflow:auto; position:relative;}
+.w-main {margin:0 auto;/* width:998px;*/ background:#fff url(../images/login/wel_bj.png) no-repeat top center;}
+.w-main2 {margin:0 auto;/* width:998px;*/ background:#fff url(../images/login/wel_bj2.png) no-repeat top center; height:100%; position:relative;}/*第二次修改版式的背景(还增加了高度)————2012-06-01*/
+.w_m_width {width:998px; height:540px; left:50%; top:50%; position:absolute; margin:-280px 0 0 -499px; overflow:hidden;}/*新增整个中间内容的高度 居中++++++++++++++++++++++++++++++++++*/
+.w-main_1024 {margin:0 auto; position:relative; background:#fff url(../images/login/wel_bj_1024.png) no-repeat top center;} /*1024x768的背景*/
+
+.foot .m_bottom {background:none;}
+.foot .m_bottom a,.foot .m_bottom a:link,.foot .m_bottom a:visited {color:#325A99;text-decoration:none;}
+.foot .m_bottom a:hover {color:#FF0000;text-decoration:underline;}
+
+.caption {padding-top:20px; background:url(../images/login/wel_caption.png) no-repeat bottom center; height:170px;}
+.caption_1024 {background:url(../images/login/wel_caption_1024.png) no-repeat left top; height:106px; margin:0 auto; width:850px;} /*1024x768的标题*/
+
+.message {margin:0 auto; width:890px; overflow:hidden; line-height:30px; color:#626262; padding:17px 54px 0px 54px;}
+.message_1024 {padding:0px 54px 0px 54px;}
+.message .fl , .message .fr {width:408px; padding:5px 0px 0px 25px;}
+.message .fl li {background:url(../images/login/wel_mes_icon.png) no-repeat left center; padding-left:30px; _float:left; _width:403px;}
+.message .fl li strong {font-weight:bold; color:#af2727;}
+.oabj {background:url(../images/login/wel_oa_bj.png) no-repeat left top; height:130px; overflow:hidden;}
+/*新增控制消息的高度===============================*/
+.oabj h1 {font:14px "宋体"; font-weight:bold; color:#fff; line-height:32px; margin-bottom:10px; /*padding-left:24px;*/}
+/*.message .fl h1 {background:url(../images/login/my-account.png) no-repeat left center;}
+.message .fr h1 {background:url(../images/login/feed.png) no-repeat left center;}*/
+.oabj_hgt p {background:url(../images/login/Sound.png) no-repeat left center; padding-left:20px; width:360px; overflow:hidden; height:30px; zoom:1; margin:0;}
+.oabj_hgt {height:90px; overflow:hidden; zoom:1; white-space:nowrap;}
+.oabj_hgt p:hover {color:#f00; text-decoration:underline; cursor:pointer;}
+/**/
+#loginTimes {color:#f00;}
+#task_list a {color:#f00; text-decoration:underline;}
+.task-count{padding:0 5px;font-weight:bold;font-size:22px; color:#f00; text-decoration:underline;}
+.w-work {width:998px; margin:0px auto; overflow:hidden; height:auto!important; _height:250px; min-height:250px;border:0px solid #FF0000;}
+.w-c-main {clear:both; overflow:hidden; padding:0px 30px; height:auto;/* background:url(../images/login/w-c-iconbj.png) no-repeat top center;*/}
+.w-c-main ul {margin:0px; padding:0px 21px; list-style:none; overflow:hidden;}
+.w-c-main ul li {float:left; /*padding-top:101px; height:22px;line-height:22px;*/margin-top:0px;}
+.w-c-main ul li a,.w-c-main ul li a:link,.w-c-main ul li a:visited {color:#333333;font-size:14px;display:block;width:110px;height:120px;/*filter:progid:DXImageTransform.Microsoft.dropShadow(Color=#ffffff,offX=1,offY=1,positive=true);*/text-shadow:1px 1px #ffffff;}
+.w-c-main ul li a:hover {text-decoration:none;/*color:#af2727;font-weight:bold;*//*filter:progid:DXImageTransform.Microsoft.dropShadow(Color=#ffffff,offX=0,offY=0,positive=false);*/text-shadow:none;}
+/*.w-c-main ul li div {margin:0 auto; text-align:center;}*/
+.w-c-main ul li a div {padding-top:95px;text-align:center;}
+.w-c-li-over div span {border:1px solid #00397c;padding:4px 0px;display:block;background:#2e7dd9;color:#fff;font-weight:bold;}
+
+/*.w-c-main ul li div span {display:block; background:url("../images/login/w-c-icon.png") no-repeat -51px top; text-align:center;}*/
+/*.w-c-main ul li div span a , .w-c-main ul li div span a:link , .w-c-main ul li div span a:visited {color:#626262; display:block; margin-top:101px; height:22px;line-height:22px;overflow:hidden;outline:none;blr:expression(this.onFocus=this.blur());}*/
+/*.w-c-main ul li div span a:hover {*//*color:#af2727;*//* text-decoration:none;font-weight:bold; color:#fff; background:#2393d5;}*/
+/*.w-c-li-click {padding:0px!important;}*/
+/*.w-c-li-over {padding:1px!important;color:#003362;font-weight:bold;cursor:pointer;border:0px solid #FF0000;}*/
+
+#oaManage {background:url("../images/login/w-c-icon.png") no-repeat -58px -10px;} /*办公自动化*/
+#winManage {background:url("../images/login/w-c-icon.png") no-repeat -170px -10px;} /*行政审批*/
+#mjzzManage {background:url("../images/login/w-c-icon.png") no-repeat -275px -10px;} /*民间组织管理*/
+#yfazManage {background:url("../images/login/w-c-icon.png") no-repeat -387px -10px;} /*优抚安置管理*/
+#shjzManage {background:url("../images/login/w-c-icon.png") no-repeat -499px -10px;} /*社会救助管理*/
+#zqglManage {background:url("../images/login/w-c-icon.png") no-repeat -612px -10px;} /*灾情管理*/
+#cxsqManage {background:url("../images/login/w-c-icon.png") no-repeat -720px -10px;} /*城乡社区管理*/
+#flManage {background:url("../images/login/w-c-icon.png") no-repeat -828px -10px;} /*社会福利管理*/
+#shswManage {background:url("../images/login/w-c-icon.png") no-repeat -58px -133px;} /*社会事务管理*/
+#ltxryManage {background:url("../images/login/w-c-icon.png") no-repeat -170px -133px;} /*离退休人员管理*/
+#zmzfManage {background:url("../images/login/w-c-icon.png") no-repeat -275px -133px;} /*民政执法管理*/
+#disPlaceNameManage {background:url("../images/login/w-c-icon.png") no-repeat -387px -133px;} /*区划地名管理*/
+#cwtzFrame {background:url("../images/login/w-c-icon.png") no-repeat -499px -133px;} /*财务台账管理*/
+#wzglFrame {background:url("../images/login/w-c-icon.png") no-repeat -720px -133px;} /*网站管理*/
+#sysManage {background:url("../images/login/w-c-icon.png") no-repeat -827px -133px;} /*运维管理*/
+#utilityManage {background:url("../images/login/w-c-icon.png") no-repeat -608px -133px;} /*直属事业单位*/
+#kuiFrame {background:url("../images/login/w-c-icon.png") no-repeat -58px -10px;} /*kui框架*/
+#qm {background:url("../images/login/w-c-icon.png") no-repeat -51px -10px;} /*通用查询*/
+#list {background:url("../images/login/w-c-icon.png") no-repeat -51px -10px;} /*列表例子*/
+
+/* 2012年05月28日 星期一 17:04:34 lybide */
+#oaManage_ds {background:url("../images/login/w-c-icon.png") no-repeat -58px -276px;} /*办公自动化*/
+#winManage_ds {background:url("../images/login/w-c-icon.png") no-repeat -170px -276px;} /*行政审批*/
+#mjzzManage_ds {background:url("../images/login/w-c-icon.png") no-repeat -275px -276px;} /*民间组织管理*/
+#yfazManage_ds {background:url("../images/login/w-c-icon.png") no-repeat -387px -276px;} /*优抚安置管理*/
+#shjzManage_ds {background:url("../images/login/w-c-icon.png") no-repeat -499px -276px;} /*社会救助管理*/
+#zqglManage_ds {background:url("../images/login/w-c-icon.png") no-repeat -612px -276px;} /*灾情管理*/
+#cxsqManage_ds {background:url("../images/login/w-c-icon.png") no-repeat -720px -276px;} /*城乡社区管理*/
+#flManage_ds {background:url("../images/login/w-c-icon.png") no-repeat -828px -276px;} /*社会福利管理*/
+#shswManage_ds {background:url("../images/login/w-c-icon.png") no-repeat -58px -399px;} /*社会事务管理*/
+#ltxryManage_ds {background:url("../images/login/w-c-icon.png") no-repeat -170px -399px;} /*离退休人员管理*/
+#zmzfManage_ds {background:url("../images/login/w-c-icon.png") no-repeat -275px -399px;} /*民政执法管理*/
+#disPlaceNameManage_ds {background:url("../images/login/w-c-icon.png") no-repeat -387px -399px;} /*区划地名管理*/
+#cwtzFrame_ds {background:url("../images/login/w-c-icon.png") no-repeat -499px -399px;} /*财务台账管理*/
+#wzglFrame_ds {background:url("../images/login/w-c-icon.png") no-repeat -720px -399px;} /*网站管理*/
+#sysManage_ds {background:url("../images/login/w-c-icon.png") no-repeat -827px -399px;} /*运维管理*/
+#utilityManage_ds {background:url("../images/login/w-c-icon.png") no-repeat -608px -399px;} /*直属事业单位*/
+#kuiFrame_ds {background:url("../images/login/w-c-icon.png") no-repeat -58px -276px;} /*kui框架*/
+#qm_ds {background:url("../images/login/w-c-icon.png") no-repeat -51px -276px;} /*通用查询*/
+#list_ds {background:url("../images/login/w-c-icon.png") no-repeat -51px -276px;} /*列表例子*/
+
+.w-c-main-li1 {border:0px solid #0000FF; cursor:default;}
+.w-c-main-li1 a {text-shadow:1px 1px #ffffff;color:#a0a0a0!important;}
+
+/*=========================
+  2012年6月1日 登陆后进入的欢迎页面 消息提示 最新修改 ===============================
+============================*/
+.wel_wind {position:absolute; top:0; right:0; margin-top:-25px; background:url(../images/login/wel_wind.png) no-repeat left top; width:276px; height:120px; z-index:999;}
+.message_new {margin:0 auto; width:820px; height:200px; overflow:hidden; line-height:30px; color:#626262; padding:90px 89px 0px 89px; font:14px "宋体"; background:url(../images/login/wel_mes_bg.png) no-repeat left top;}
+.message_new h1 {font:14px "宋体"; font-weight:bold;}
+.message_new .fl {width:360px; overflow:hidden;}
+.message_new .fl h1 {line-height:34px;}
+.message_new .fl p {font-size:12px; padding-top:15px;}
+.message_new .fl div {padding:13px 0px 0px 0px; overflow:hidden; float:left; width:360px;}
+.message_new .fl ul {list-style:none;}
+.message_new .fl ul li {padding:0px 0px 0px 45px; height:52px; overflow:hidden; float:left; width:310px;}
+.message_new .fl ul li strong {font-weight:bold; width:115px; overflow:hidden; float:left; display:block; padding:12px 0px;}
+.message_new .fl ul li a,.message_new .fl ul li span {font:22px Arial, Helvetica, sans-serif; text-decoration:underline; float:left; /*display:block; width:195px;*/ margin-top:5px;}
+.message_new .fl ul li a:hover {color:#fff;}
+.message_new .fl ul li.ts1 {background:url(../images/login/task_icn.png) no-repeat left top;}
+.message_new .fl ul li.ts2 {background:url(../images/login/task_icn.png) no-repeat left -50px;}
+.message_new .fl ul li.ts3 {background:url(../images/login/task_icn.png) no-repeat left -100px;}
+/**/
+.message_new .fr {width:460px; overflow:hidden;}
+.message_new .fr h1 {background:url(../images/login/task_icn_n.png) no-repeat left top; padding:12px 0px 0px 50px; height:24px; color:#0965b0;}
+.worktime {padding-left:10px;}
+.message_new .fr h1 span {padding-right:5px; cursor:pointer;}
+.message_new .fr h1 span:hover {color:#f00;}
+.message_new .fr div {padding-left:10px; _padding-left:2px;}
+.message_new .fr div li {background:url(../images/login/Sound.png) no-repeat left center; padding:6px 0px 6px 26px;  padding:8px 0px 7px 26px\0; _padding:8px 0px 7px 26px; overflow:hidden; zoom:1; list-style:none;}
+.message_new .fr div li a {color:#000; display:inline-block; overflow:hidden; height:14px;}
+.message_new .fr div li a:hover {color:#f00; text-decoration:underline; cursor:pointer;}

@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+</head>
+
+<body>
+	<div id="layout2" style="width: 99.8%">
+		<input type="hidden" id="inputFocus" name="inputFocus" /> <input
+			type="hidden" id="thisPage" name="thisPage" value="?page=18">
+		<div position="center" class="wrapper"
+			style="overflow: auto; width: 100%" align="center">
+			<!--  		<input type="hidden" id="fk_report_id" name="fk_report_id"  value=""  >
+ 		<input type="hidden" id="fk_inspection_info_id" name="fk_inspection_info_id"  value=""  >
+  -->
+			<br />
+			<p class="a DocDefaults ">
+				<a name="RTPAGE_17__检验项目及其内容14"></a>
+			</p>
+			<table id="docx4j_tbl_17"
+				style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; position: relative; margin-left: 0.08in; table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 6.91in;">
+				<colgroup>
+					<col style="width: 27.5%;" />
+					<col style="width: 72.5%;" />
+				</colgroup>
+				<tbody>
+					<tr style="height: 0.3in;">
+						<td colspan="2"
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000;">
+							<p class="a DocDefaults "
+								style="text-align: center; line-height: 150%;">
+								<span class="a0 " style="font-size: 12.0pt;"><span
+									class="" style="">附表1 抽查层</span>站记录表</span>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.3in;">
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000;">
+							<p class="a DocDefaults "
+								style="text-align: center; line-height: 150%;">
+								<span class="a0 " style="font-family: 'SimSun';">项目</span>
+							</p>
+						</td>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000;">
+							<p class="a DocDefaults "
+								style="text-align: center; line-height: 150%;">
+								<span class="a0 "
+									style="font-size: 12.0pt;; font-family: 'SimSun';">楼层</span>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.3in;">
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;">
+							<p class="a DocDefaults "
+								style="position: relative; margin-left: 4mm; text-indent: -4mm; line-height: 150%;">
+								<span class="a0 " style=""><span class=""
+									style="font-family: 'SimSun';">6.7自动关闭</span></span><span class="a0 "
+									style="font-family: 'SimSun';">层门装置</span>
+							</p>
+						</td>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000;">
+							<p class="a DocDefaults ">
+								<input id="TBL00133" name="TBL00133" type="text" ltype="text"
+									value="" ligerui="{width:470}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.3in;">
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;">
+							<p class="a DocDefaults "
+								style="position: relative; margin-left: 0.14in; text-indent: -0.14in; line-height: 150%;">
+								<span class="a0 " style="font-family: 'SimSun';">6.8紧急开锁装置</span>
+							</p>
+						</td>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000;">
+							<p class="a DocDefaults ">
+								<input id="TBL00134" name="TBL00134" type="text" ltype="text"
+									value="" ligerui="{width:470}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.3in;">
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;">
+							<p class="a DocDefaults "
+								style="position: relative; margin-left: 4mm; text-indent: -4mm; line-height: 150%;">
+								<span class="a0 " style=""><span class=""
+									style="font-family: 'SimSun';">6.9门的锁紧</span></span>
+							</p>
+						</td>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000;">
+							<p class="a DocDefaults ">
+								<input id="TBL00135" name="TBL00135" type="text" ltype="text"
+									value="" ligerui="{width:470}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.3in;">
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;">
+							<p class="a DocDefaults ">
+								<span class="a0 " style=""><span class=""
+									style="font-family: 'SimSun';">6.10门的闭合</span></span>
+							</p>
+						</td>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000;">
+							<p class="a DocDefaults ">
+								<input id="TBL00136" name="TBL00136" type="text" ltype="text"
+									value="" ligerui="{width:470}" />
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="a DocDefaults "></p>
+			<p class="a DocDefaults "></p>
+			<table id="docx4j_tbl_18"
+				style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; position: relative; margin-left: 0.08in; table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 6.91in;">
+				<colgroup>
+					<col style="width: 27.14%;" />
+					<col style="width: 72.86%;" />
+				</colgroup>
+				<tbody>
+					<tr style="height: 8mm;">
+						<td colspan="2"
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-right-style: none; border-top-style: none;">
+							<p class="a DocDefaults "
+								style="text-align: center; line-height: 150%;">
+								<span class="a0 " style="font-size: 12.0pt;"><span
+									class="" style="">附表2 不合格数据记录表</span></span>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 8mm;">
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000;">
+							<p class="a DocDefaults "
+								style="text-align: center; line-height: 150%;">
+								<span class="a0 "
+									style="font-size: 12.0pt;; font-family: 'SimSun';">项目</span>
+							</p>
+						</td>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000;">
+							<p class="a DocDefaults "
+								style="text-align: center; line-height: 150%;">
+								<span class="a0 "
+									style="font-size: 12.0pt;; font-family: 'SimSun';">楼层及问题</span>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 8mm;">
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; vertical-align: middle;">
+							<p class="a DocDefaults " style="line-height: 150%;">
+								<span class="a0 " style=""><span class=""
+									style="font-family: 'SimSun';">3.7轿厢与井道壁距离（m</span></span><span
+									class="a0 " style="font-family: 'SimSun';">）</span>
+							</p>
+						</td>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000;">
+							<p class="a DocDefaults ">
+								<input id="TBL00137" name="TBL00137" type="text" ltype="text"
+									value="" ligerui="{width:473}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 8mm;">
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; vertical-align: middle;">
+							<p class="a DocDefaults " style="line-height: 150%;">
+								<span class="a0 " style=""><span class=""
+									style="font-family: 'SimSun';">6.3（1）</span></span><span class="a0 "
+									style="font-family: 'SimSun';">门间隙</span><span class="a0 "
+									style=""><span class="" style="font-family: 'SimSun';">（mm）</span></span>
+							</p>
+						</td>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000;">
+							<p class="a DocDefaults ">
+								<input id="TBL00138" name="TBL00138" type="text" ltype="text"
+									value="" ligerui="{width:473}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 8mm;">
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; vertical-align: middle;">
+							<p class="a DocDefaults " style="line-height: 150%;">
+								<span class="a0 " style=""><span class=""
+									style="font-family: 'SimSun';">6.3（2）施力</span></span><span class="a0 "
+									style="font-family: 'SimSun';">间隙</span><span class="a0 "
+									style=""><span class="" style="font-family: 'SimSun';">（mm）</span></span>
+							</p>
+						</td>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000;">
+							<p class="a DocDefaults ">
+								<input id="TBL00139" name="TBL00139" type="text" ltype="text"
+									value="" ligerui="{width:473}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 8mm;">
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; vertical-align: middle;">
+							<p class="a DocDefaults "
+								style="position: relative; margin-left: 4mm; text-indent: -4mm; line-height: 150%;">
+								<span class="a0 " style=""><span class=""
+									style="font-family: 'SimSun';">6.7自动关闭</span></span><span class="a0 "
+									style="font-family: 'SimSun';">层门装置</span>
+							</p>
+						</td>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000;">
+							<p class="a DocDefaults ">
+								<input id="TBL00140" name="TBL00140" type="text" ltype="text"
+									value="" ligerui="{width:473}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 8mm;">
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; vertical-align: middle;">
+							<p class="a DocDefaults "
+								style="position: relative; margin-left: 0.14in; text-indent: -0.14in; line-height: 150%;">
+								<span class="a0 " style="font-family: 'SimSun';">6.8紧急开锁装置</span>
+							</p>
+						</td>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000;">
+							<p class="a DocDefaults ">
+								<input id="TBL00141" name="TBL00141" type="text" ltype="text"
+									value="" ligerui="{width:473}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 8mm;">
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; vertical-align: middle;">
+							<p class="a DocDefaults "
+								style="position: relative; margin-left: 4mm; text-indent: -4mm; line-height: 150%;">
+								<span class="a0 " style=""><span class=""
+									style="font-family: 'SimSun';">6.9层门锁</span></span>
+							</p>
+						</td>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000;">
+							<p class="a DocDefaults ">
+								<input id="TBL00142" name="TBL00142" type="text" ltype="text"
+									value="" ligerui="{width:473}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 8mm;">
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; vertical-align: middle;">
+							<p class="a DocDefaults "
+								style="position: relative; margin-left: 4mm; text-indent: -4mm; line-height: 150%;">
+								<span class="a0 " style=""><span class=""
+									style="font-family: 'SimSun';">6.9轿门锁</span></span>
+							</p>
+						</td>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000;">
+							<p class="a DocDefaults ">
+								<input id="TBL00143" name="TBL00143" type="text" ltype="text"
+									value="" ligerui="{width:473}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 8mm;">
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; vertical-align: middle;">
+							<p class="a DocDefaults "
+								style="position: relative; margin-left: 4mm; text-indent: -4mm; line-height: 150%;">
+								<span class="a0 " style=""><span class=""
+									style="font-family: 'SimSun';">6.10（1）</span></span><span class="a0 "
+									style="font-size: 12.0pt;; font-family: 'SimSun';">机电联锁</span>
+							</p>
+						</td>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000;">
+							<p class="a DocDefaults ">
+								<input id="TBL00144" name="TBL00144" type="text" ltype="text"
+									value="" ligerui="{width:473}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 8mm;">
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; vertical-align: middle;">
+							<p class="a DocDefaults ">
+								<span class="a0 " style=""><span class=""
+									style="font-family: 'SimSun';">6.10（2）</span></span><span class="a0 "
+									style="font-size: 12.0pt;; font-family: 'SimSun';">电气安全装置</span>
+							</p>
+						</td>
+						<td
+							style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000;">
+							<p class="a DocDefaults ">
+								<input id="TBL00145" name="TBL00145" type="text" ltype="text"
+									value="" ligerui="{width:473}" />
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="a DocDefaults "></p>
+			<p class="a DocDefaults "></p>
+			<p class="a DocDefaults "></p>
+			<p class="a DocDefaults "></p>
+			<p class="a DocDefaults "></p>
+			<p class="a DocDefaults "></p>
+			<p class="a DocDefaults "></p>
+			<p class="a DocDefaults "></p>
+			<p class="a DocDefaults "></p>
+			<p class="a DocDefaults "></p>
+			<p class="a DocDefaults "></p>
+			<p class="a DocDefaults "></p>
+			<p class="a DocDefaults "></p>
+			<p class="a DocDefaults "></p>
+			<p class="a DocDefaults "></p>
+			<p class="a DocDefaults "></p>
+			<p class="a DocDefaults "></p>
+			<p class="a DocDefaults "></p>
+			<p class="a DocDefaults ">
+		</div>
+	</div>
+</body>
+</html>

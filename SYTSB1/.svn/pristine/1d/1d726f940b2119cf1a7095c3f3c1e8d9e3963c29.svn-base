@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+
+<head>
+<title>新建网页</title>
+
+<style type="text/css">
+.t1 {border:1px solid #9933FF;float:left;}
+.t2 {position:relative;border:1px solid #FF0000;float:left;width:400px;height:35px;}
+.t3 {position:absolute;right:10px;top:8px;border:1px solid #FF0000;}
+</style>
+
+
+</head>
+<body>
+
+<div class="t1">效果：</div>
+
+<div class="t2">
+	<div class="t3">这是定位出来的。</div>
+</div>
+
+</body>
+</html>

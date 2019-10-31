@@ -1,0 +1,589 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+</head>
+
+<body>
+	<div id="layout2" style="width: 99.8%">
+		<input type="hidden" id="inputFocus" name="inputFocus" /> <input
+			type="hidden" id="thisPage" name="thisPage" value="?page=7">
+		<div position="center" class="wrapper"
+			style="overflow: auto; width: 100%" align="center">
+			<input type="hidden" id="fk_report_id" name="fk_report_id" value="">
+			<input type="hidden" id="fk_inspection_info_id"
+				name="fk_inspection_info_id" value=""> <br />
+			<p>
+				<a name="RTPAGE_6__检验内容及要求4"></a>
+			</p>
+			<table class=""
+				style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; table-layout: fixed; vertical-align: top; border-collapse: collapse;">
+				<colgroup>
+					<col style="width: 50.03%;" />
+					<col style="width: 49.97%;" />
+				</colgroup>
+				<tbody>
+					<tr>
+						<td>
+							<p class="a DocDefaults " style="text-align: left; width: 100%;">
+								<span class="a0 " style=""><span class=""
+									style="font-family: 'SimSun';">文件编号：CTJB-</span></span><span
+									class="a0 " style="font-family: 'SimSun';">0412-B01</span>
+							</p>
+						</td>
+						<td>
+							<p class="a DocDefaults " style="text-align: right; width: 100%;">
+								<span class="a0 " style=""><span class=""
+									style="font-family: 'SimSun';">实施日期：2017年10月1日</span></span>
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table id="docx4j_tbl_8" rules="all" style="margin-top: 2mm; border-style: solid; border-color: black; border-width: 1px;">
+				<colgroup>
+					<col style="width: 6.22%;" />
+					<col style="width: 7.48%;" />
+					<col style="width: 8.38%;" />
+					<col style="width: 15%;" />
+					<col style="width: 20%;" />
+					<col style="width: 15%;" />
+					<col style="width: 15.3%;" />
+					<col style="width: 12.62%;" />
+				</colgroup>
+				<thead>
+					<tr style=" page-break-inside: avoid;">
+						<th>
+							<p style="width: 100%; text-align: center;">
+								<span>序</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>号</span>
+							</p>
+						</th>
+						<th colspan="5">
+							<p style="width: 100%; text-align: center;" >
+								<span>检验内容及要求</span>
+							</p>
+						</th>
+						<th>
+							<p style="width: 100%; text-align: center;">
+								<span>检验</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>结果</span>
+							</p>
+						</th>
+						<th>
+							<p style="width: 100%; text-align: center;">
+								<span>检验</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>结论</span>
+							</p>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr style="height: 1.75in; page-break-inside: avoid;">
+						<td rowspan="3">
+							<p style="width: 100%; text-align: center;">
+								<span>21</span>
+							</p>
+						</td>
+						<td rowspan="10">
+							<p style="width: 100%; text-align: center;">
+								<span>3.</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>机房</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span><span>(机器</span></span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span><span>设备)</span></span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>及相</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>关设</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>备</span>
+							</p>
+						</td>
+						<td rowspan="3">
+							<p style="width: 100%; text-align: center;">
+								<span>3.10.1</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>紧急</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>操作</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>B</span>
+							</p>
+						</td>
+						<td colspan="3">
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>(1)手动紧急操作装置：</span></span>
+							</p>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>①对于可拆卸盘车手轮，设有一个符合本规则防爆技术要求的电气安全装置，最迟在盘车手轮装上防爆电梯驱动主机时动作；</span></span>
+							</p>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span>②松闸扳手</span><span><span>涂成红色，盘车手轮是无辐条的并且涂成黄色，可拆卸盘车手轮放置在机房内容易接近的明显部位；</span></span>
+							</p>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>③在防爆电梯驱动主机上接近盘车手轮处，明显标出轿厢运行方向，如果手轮是不能拆卸的可在手轮上标出；</span></span>
+							</p>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>④能够通过操纵</span></span><span>手动松闸装置</span><span><span>松开制动器，并且需要以</span></span><span>一持续</span><span><span>力保持其松开状态；</span></span>
+							</p>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>⑤进行手动紧急操作时，易于观察到轿厢是否在开锁区；</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__B_3_10_1_1"
+									name="record__B_3_10_1_1" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+						<td rowspan="3">
+							<p style="width: 100%;"> 
+								<input id="conclusion__B_3_10_1" name="conclusion__B_3_10_1" type="text" ltype="select"
+									value="" 
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'合格'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.35in; page-break-inside: avoid;">
+						<td colspan="3">
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>(2)紧急电动运行装置除了符合本规则防爆技术要求中相关要求，还应当符合以下要求：</span></span>
+							</p>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>①依靠持续揿压按钮来控制轿厢运行，此按钮有防止误操作的保护，按钮上或其近旁标出相应的运行方向；</span></span>
+							</p>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>②一旦进入检修运行，紧急电动运行装置控制轿厢运行的功能由检修控制装置所取代；</span></span>
+							</p>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>③进行紧急电动运行操作时，易于观察到轿厢是否在开锁区；</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__B_3_10_1_2"
+									name="record__B_3_10_1_2" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.25in; page-break-inside: avoid;">
+						<td colspan="3">
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>(3)在机房内应当设有明晰的应急救援程序</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__B_3_10_1_3"
+									name="record__B_3_10_1_3" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 12mm; page-break-inside: avoid;">
+						<td rowspan="3">
+							<p style="width: 100%; text-align: center;">
+								<span>22</span>
+							</p>
+						</td>
+						<td rowspan="3">
+							<p style="width: 100%; text-align: center;">
+								<span>3.11</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>限速</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span><span>器B</span></span>
+							</p>
+						</td>
+						<td colspan="3">
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>(2)限速器或者其他装置上设有在轿厢上行或下行速度达到限速器动作速度之前动作的符合本规则防爆技术要求的电气安全装置，以及验证限速器复位状态的符合本规则防爆技术的电气安全装置；</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__B_3_11_2"
+									name="record__B_3_11_2" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+						<td rowspan="3">
+							<p style="width: 100%;"> 
+								<input id="conclusion__B_3_11" name="conclusion__B_3_11" type="text" ltype="select"
+									value="" 
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'合格'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.11in; page-break-inside: avoid;">
+						<td colspan="3">
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>(3)限速器各调节</span></span><span>部位封记完好</span><span><span>，运转时不得出现碰擦、卡阻、转动不灵活等现象，动作正常；</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__B_3_11_3"
+									name="record__B_3_11_3" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 5mm; page-break-inside: avoid;">
+						<td colspan="3">
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>(4)受检防爆电梯的维护保养单位应当每2年进行一次限速器动作速度校验，校验结果应当符合要求</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__B_3_11_4"
+									name="record__B_3_11_4" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.28in; page-break-inside: avoid;">
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>23</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>3.12</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>接地</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>C</span>
+							</p>
+						</td>
+						<td colspan="3">
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>(2)所有电气设备及线管、线槽的外露可以导电部分应当与保护线（PE，地线）可靠连接</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__C_3_12_2"
+									name="record__C_3_12_2" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;"> 
+								<input id="conclusion__C_3_12" name="conclusion__C_3_12" type="text" ltype="select"
+									value="" 
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'合格'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.22in; page-break-inside: avoid;">
+						<td rowspan="3">
+							<p style="width: 100%; text-align: center;">
+								<span>24</span>
+							</p>
+						</td>
+						<td rowspan="3">
+							<p style="width: 100%; text-align: center;">
+								<span>3.13</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>电气</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>绝缘</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>C</span>
+							</p>
+						</td>
+						<td colspan="3">
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>动力电路、照明电路和电气安全装置电路的绝缘电阻应符合：</span></span>
+							</p>
+						</td>
+						<td rowspan="3">
+							<p style="width: 100%;">
+								<input id="record__C_3_13"
+									name="record__C_3_13" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+						<td rowspan="3">
+							<p style="width: 100%;"> 
+								<input id="conclusion__C_3_13" name="conclusion__C_3_13" type="text" ltype="select"
+									value="" 
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'合格'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.15in; page-break-inside: avoid;">
+						<td>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>标称电压/V</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>测试电压(直流)/V</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>绝缘电阻/MΩ</span></span>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 9mm; page-break-inside: avoid;">
+						<td>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span>安全电压</span>
+							</p>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>≤500</span></span>
+							</p>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>＞500</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span>250</span>
+							</p>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span>500</span>
+							</p>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span>1000</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>≥0.25</span></span>
+							</p>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>≥0.50</span></span>
+							</p>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>≥1.00</span></span>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.25in; page-break-inside: avoid;">
+						<td rowspan="2">
+							<p style="width: 100%; text-align: center;">
+								<span>25</span>
+							</p>
+						</td>
+						<td rowspan="5">
+							<p style="width: 100%; text-align: center;">
+								<span>4.</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>井道</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>及相</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>关设</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>备</span>
+							</p>
+						</td>
+						<td rowspan="2">
+							<p style="width: 100%; text-align: center;">
+								<span>4.2</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>井道</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>安全</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span><span>门C</span></span>
+							</p>
+						</td>
+						<td colspan="3">
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>(3)门上应当装设用钥匙开启的锁，当门开启后不用钥匙能够将其关闭和锁住，在门锁住后，不用钥匙能够从井道内将门打开；</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__C_4_2_3"
+									name="record__C_4_2_3" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+						<td rowspan="2">
+							<p style="width: 100%;"> 
+								<input id="conclusion__C_4_2" name="conclusion__C_4_2" type="text" ltype="select"
+									value="" 
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'合格'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.21in; page-break-inside: avoid;">
+						<td colspan="3">
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>(4)应当设置符合本规则防爆技术要求的电气安全装置以验证门的关闭状态</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__C_4_2_4"
+									name="record__C_4_2_4" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.28in; page-break-inside: avoid;">
+						<td rowspan="2">
+							<p style="width: 100%; text-align: center;">
+								<span>26</span>
+							</p>
+						</td>
+						<td rowspan="2">
+							<p style="width: 100%; text-align: center;">
+								<span>4.3</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>井道</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>检修</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span><span>门C</span></span>
+							</p>
+						</td>
+						<td colspan="3">
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>(3)应当装设用钥匙开启的锁，当门开启后不用钥匙能够将其关闭和锁住，在门锁住后，不用钥匙也能够从井道内将门打开；</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__C_4_3_3"
+									name="record__C_4_3_3" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+						<td rowspan="2">
+							<p style="width: 100%;"> 
+								<input id="conclusion__C_4_3" name="conclusion__C_4_3" type="text" ltype="select"
+									value="" 
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'合格'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.14in; page-break-inside: avoid;">
+						<td colspan="3">
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>(4)应当设置符合本规则防爆技术要求的电气安全装置以验证门的关闭状态</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__C_4_3_4"
+									name="record__C_4_3_4" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 22mm; page-break-inside: avoid;">
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>27</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>4.7</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>轿厢与</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>井道壁</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>距离B</span>
+							</p>
+							<!-- <p style="width: 100%; text-align: center;">
+								<span></span>
+							</p> -->
+						</td>
+						<td colspan="3">
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>轿厢与面对轿厢入口的井道壁的间距不大于0.15m，对于局部高度小于0.50m或者采用垂直滑动门的载货防爆电梯，该间距可以增加到0.20m；</span></span>
+							</p>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>如果轿厢装有机械锁紧的门并且门只能在开锁区内打开时，则上述间距不受限制</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__B_4_7"
+									name="record__B_4_7" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;"> 
+								<input id="conclusion__B_4_7" name="conclusion__B_4_7" type="text" ltype="select"
+									value="" 
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'合格'}" />
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p></p>
+			<p></p>
+			<p>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<%@ page contentType="text/html;charset=UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<style type="text/css">
+    p {
+        text-align: center;
+    }
+	.cent{
+		width: 100px;
+		display: inline-block;
+		text-align: justify;
+		text-align-last: justify;
+	}
+	p:after {
+		display: inline-block;
+		content: '';
+		overflow: hidden;
+		width: 100%;
+		height: 0;
+	}
+</style>
+</head>
+
+<body>
+	<div id="layout2" style="width: 99.8%;">
+		<input type="hidden" id="inputFocus" name="inputFocus" /> <input
+			type="hidden" id="thisPage" name="thisPage" value="?page=1">
+		<div position="center" class="wrapper"
+			style="overflow: auto; width: 100%" align="center">
+			<input type="hidden" id="fk_report_id" name="fk_report_id" value="">
+			<input type="hidden" id="fk_inspection_info_id"
+				name="fk_inspection_info_id" value=""> <br />
+			<!-- userBodyTop goes here -->
+			<div class="header">
+				<p style="text-align: left;margin-left: 0.53in;">
+					<span>BZTJS/JL-JS19-2017</span>
+				</p>
+			</div>
+			<div class="document">
+				<p> </p>
+				<table id="docx4j_tbl_0">
+					<colgroup>
+						<col style="width: 26.33%;" />
+						<col style="width: 30%;" />
+						<col style="width: 17.14%;" />
+						<col style="width: 25.53%;" />
+					</colgroup>
+					<tbody>
+						<tr style="height: 7mm;">
+							<td style="border:1px solid black;">
+								<p>
+									<span>文件号:BZTJS/JL-JS19-2017</span>
+								</p>
+							</td>
+							<td></td>
+							<td rowspan="2">
+								<p>
+									<span><span>报告编号:</span></span>
+								</p>
+							</td>
+							<td rowspan="2">
+								<p>
+									<input id="base__report_sn" name="base__report_sn" type="text"
+										ltype="text" value="" ligerui="{width:197}"
+										readonly="readonly" />
+								</p>
+							</td>
+						</tr>
+						<tr style="height: 7mm;">
+							<td style="border: 1px solid black;">
+								<p>
+									<span>第<span> 5 </span>版
+									第<span> 0 </span>次修订</span>
+								</p>
+							</td>
+							<td></td>
+						</tr>
+						<tr style="height: 7mm;">
+							<td style="border: 1px solid black;">
+								<p>
+									<span><span>颁布日期：</span>2017-08-31</span>
+								</p>
+							</td>
+							<td></td>
+							<td>
+								<p>
+									<span><span>使用单位内部编号：</span></span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<input id="base__internal_num" name="base__internal_num"
+										type="text" ltype="text" value="" ligerui="{width:245}" />
+								</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<p> </p>
+				<p> </p>
+				<p class="dtitle" style="line-height: 26px;">
+					<span>曳引驱动杂物电梯</span>
+				</p>
+				<p class="dtitle" style="line-height: 26px;">
+					<span>定期检验原始记录</span>
+				</p>
+				<p> </p>
+				<p> </p>
+				<table id="docx4j_tbl_1" class="SY">
+					<colgroup>
+						<col style="width: 33%;" />
+						<col style="width: 67%;" />
+					</colgroup>
+					<tbody>
+						<tr style="height: 0.47in;">
+							<td>
+								<p>
+									<span class="a0 cent">使用单位名称</span>：
+								</p>
+							</td>
+							<td>
+								<p>
+									<input id="base__com_name" name="base__com_name" type="text"
+										ltype="text" value="" ligerui="{width:375}" />
+								</p>
+							</td>
+						</tr>
+						<tr style="height: 0.47in;">
+							<td>
+								<p>
+									<span class="a0 cent">设备代码</span>：
+								</p>
+							</td>
+							<td>
+								<p>
+									<input id="base__device_registration_code"
+										name="base__device_registration_code" type="text" ltype="text"
+										value="" ligerui="{width:375}" />
+								</p>
+							</td>
+						</tr>
+						<tr style="height: 0.47in;">
+							<td>
+								<p>
+									<span class="a0 cent">设备类别</span>：
+								</p>
+							</td>
+							<td>
+								<p>
+									<input id="base__device_type_name"
+										name="base__device_type_name" type="text" ltype="text"
+										value="" ligerui="{width:375}" />
+								</p>
+							</td>
+						</tr>
+						<tr style="height: 0.47in;">
+							<td>
+								<p>
+									<span class="a0 cent">设备品种</span>：
+								</p>
+							</td>
+							<td>
+								<p>
+									<input id="base__device_sort" name="base__device_sort"
+										type="text" ltype="text" value="" ligerui="{width:375}" />
+								</p>
+							</td>
+						</tr>
+						
+						<tr style="height: 0.47in;">
+							<td>
+								<p>
+									<span class="a0 cent">检验机构名称</span>：
+								</p>
+							</td>
+							<td>
+								<p>
+									<input id="base__inspection_org" name="base__inspection_org" type="text" ltype="text"
+										value="巴中市特种设备监督检验所" ligerui="{width:375}" />
+								</p>
+							</td>
+						</tr>
+						<tr style="height: 0.47in;">
+							<td>
+								<p>
+									<span class="a0 cent">检验日期</span>：
+								</p>
+							</td>
+							<td>
+								<p>
+									<input id="base__inspect_date" name="base__inspect_date"
+										type="text" ltype="date" value=""
+										ligerui="{isTextBoxMode:true,width:'100%'}" required />
+								</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<p> </p>
+				<p> </p>
+				<p> </p>
+				<p> </p>
+				<p> </p>
+				<p> </p>
+				<p> </p>
+				<p> </p>
+				<p> </p>
+				<p> </p>
+				<p> </p>
+				<p> </p>
+				<p> </p>
+				<p> </p>
+				<p> </p>
+				<p> </p>
+				<p>
+					<span class="dtitle">巴中市特种设备监督检验所</span>
+				</p>
+				<p> </p>
+				<p>
+			</div>
+		</div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>通用数据导入导出业务模版配置</title>
+    <%@include file="/k/kui-base-list.jsp"%>
+    <script type="text/javascript">
+        var qmUserConfig = {
+        	sp_defaults : {columnWidth:0.25},
+            sp_fields:[
+                {name:"name",compare:"like",labelWidth:45},
+                {name:"code",compare:"=",labelWidth:45},
+                {name:"source_type",compare:"="},
+                {name:"wrapper",compare:"="}
+            ],
+			<sec:authorize ifNotGranted="super_administrate">
+				<tbar:toolBar type="tbar" code="pub_expimp_cfg">
+				</tbar:toolBar>,
+			</sec:authorize>
+			<sec:authorize access="hasRole('super_administrate')">
+			tbar:[
+                { text:'详情', id:'detail', icon:'detail', click:detail},
+                "-",
+                { text:'新增', id:'add', icon:'add', click:add},
+                "-",
+                { text:'修改', id:'edit', icon:'modify', click:edit,disable:true},
+                "-",
+                { text:'删除', id:'del', icon:'delete', click:del,disable:true},
+                "-",
+                { text:'备份', id:'backstore', icon:'export', click: backstore},
+                "-",
+                { text:'恢复', id:'restore', icon:'basket-put', click: restore}
+            ],
+			</sec:authorize>
+            listeners: {
+                selectionChange :function(rowData,rowIndex){
+                    var count=Qm.getSelectedCount();
+                    Qm.setTbar({detail:count==1,edit:count==1,del:count>=1});
+                }
+            }
+        };
+
+        function add(){
+            top.$.dialog({
+                width: 1000,
+                height: $(top).height()>=550?500:$(top).height()-50,
+                lock: true,
+                max:false,
+                resize:false,
+                data: {Qm: Qm},
+                title: "新增数据导入导出业务配置",
+                content: 'url:pub/expimp/cfg_detail.jsp?status=add'
+            });
+        }
+        function edit(){
+            top.$.dialog({
+                width: 1000,
+                height: $(top).height()>=550?500:$(top).height()-50,
+                lock: true,
+                data:{Qm: Qm},
+                title: "修改数据导入导出业务配置",
+                content: 'url:pub/expimp/cfg_detail.jsp?status=edit&id=' + Qm.getValueByName("id")
+            });
+        }
+        function detail(){
+            top.$.dialog({
+                width: 1000,
+                height: $(top).height()>=550?500:$(top).height()-50,
+				lock: true,
+				title: "查看数据导入导出业务配置",
+				content: 'url:pub/expimp/cfg_detail.jsp?status=detail&id=' + Qm.getValueByName("id")
+            });
+        }
+        function del(){
+            $.del(kFrameConfig.DEL_MSG,"pub/expimp/cfg/delete.do",{"ids":Qm.getValuesByName("id").toString()});
+        }
+
+        //恢复
+        function restore(){
+    		winOpen({
+    			width: 450,
+    			height: 250,
+    			content: "url:pub/expimp/import.jsp?cfg=restore_backstore_expimp",
+    			lock: true,
+    			data:{callback: function(){Qm.refreshGrid();}}
+    		});
+        }
+        
+        function backstore(){
+        	window.location.href = $("base").attr("href") + "pub/expimp/export.do?config=restore_backstore_expimp&parameter=" + Qm.getValuesByName("id").toString();
+        }
+    </script>
+</head>
+<body>
+	<qm:qm pageid="pub_expimp_cfg" />
+</body>
+</html>

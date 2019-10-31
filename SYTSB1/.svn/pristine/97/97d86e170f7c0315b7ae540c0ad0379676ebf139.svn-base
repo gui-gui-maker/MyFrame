@@ -1,0 +1,129 @@
+<%@ page contentType="text/html;charset=UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>人员信息列表</title>
+<%@include file="/k/kui-base-list.jsp"%>
+<style type="text/css">
+        .man{
+            background-image: url("pub/rbac/img/man.gif");
+        }
+        .woman{
+            background-image: url("pub/rbac/img/woman.gif");
+        }
+        .photo{
+            display: block;
+            float: right;
+            height: 16px;
+            margin-left: 2px;
+            margin-top: 2px;
+            overflow: hidden;
+            width: 16px;
+        }
+    </style>
+<script type="text/javascript" src="pub/rbac/js/photo.js"></script>
+<script type="text/javascript">
+		
+			 var qmUserConfig = { 
+			        sp_defaults:{columnWidth:0.33,labelAlign:'right',labelSeparator:'',labelWidth:60},
+					sp_fields : [
+					 {label : "姓名", name : "name", compare : "like", value : ""}
+				],
+				<sec:authorize ifNotGranted="super_administrate">
+					<tbar:toolBar type="tbar" code="hrManage">
+					</tbar:toolBar>,
+				</sec:authorize>
+				<sec:authorize access="hasRole('super_administrate')">
+					tbar:[
+             		{ text:'详情', id:'detail',icon:'detail', click: detailEmployee},
+             		"-",
+             		{ text:'新增', id:'add',icon:'add', click: addEmployee},
+             		"-",
+             		{ text:'修改', id:'modify',icon:'modify', click: modifyEmployee},
+             		"-",
+             		{ text:'删除', id:'del',icon:'delete', click: delEmployee}
+        			],
+				</sec:authorize>
+				//提供以下4个事件
+				listeners: {
+					rowClick :function(rowData,rowIndex){},
+					rowDblClick :function(rowData,rowIndex){detailEmployee();}
+					,selectionChange :function(rowData,rowIndex){
+						var count=Qm.getSelectedCount();
+						var status={};
+						if(count==0){
+							status={detail:false, edit:false, del:false,produce:false};
+						}else if(count==1){
+							status={detail:true, edit:true, del:true,out:true,produce:true};							
+						}else{
+							status={detail:false, edit:false, del:true,produce:true};
+						}
+						Qm.setTbar(status);
+					}
+				}
+			};
+			 
+			function addEmployee(){
+				var org = parent.orgTreeManager.getSelected();
+				var windows=top.$.dialog({
+		            width: $(top).width(),
+		            height:$(top).height(),
+					lock:true,
+					parent:api,
+					data:{window:window} ,
+					title:"新增",
+					content: 'url:pub/rbac/employee_detail.jsp?pageStatus=add&orgid=' + org.data.id
+				});
+			}
+			function modifyEmployee(){
+				var id = Qm.getValueByName("id");
+				var windows=top.$.dialog({
+					width: $(top).width(),
+		            height: $(top).height(),
+					lock:true,
+					parent:api,
+					data:{window:window} ,
+					title:"修改",
+					content: 'url:pub/rbac/employee_detail.jsp?id='+id+'&pageStatus=modify'
+				});
+			}
+			function delEmployee(){
+				$.del(kFrameConfig.DEL_MSG,"rbac/employee/delete.do",{"ids":Qm.getValuesByName("id").toString()});
+			}
+			function detailEmployee(){
+				var id = Qm.getValueByName("id");
+				var windows=top.$.dialog({
+					width: $(top).width(),
+		            height: $(top).height(),
+					lock:true,
+					parent:api,
+					data:{window:window} ,
+					title:"详情",
+					content: 'url:pub/rbac/employee_detail.jsp?id='+id+'&pageStatus=detail'
+				});
+			}
+			
+			function parsePic(thisValue,row){
+	            if(row["idno"]!=""){
+	                return thisValue+" <span idn='"+row["idno"]+"' class='photo "+(row["gender"]=="男"?"man":"woman")+"'> </span>"
+	            }
+	            return thisValue;
+	        }
+			
+			function loadGridData(orgId){
+				Qm.config.defaultSearchCondition[0].value=orgId;
+				Qm.searchData();
+			}
+			function submitAction(o) {
+				Qm.refreshGrid();
+			}
+			
+		</script>
+</head>
+<body>
+	<qm:qm pageid="employee">
+	   <qm:param name="level_code" compare="llike" value="${param.levelCode}" />
+	   <qm:param name="polstatus" value="1" compare="!="/>
+	</qm:qm>
+</body>
+</html>

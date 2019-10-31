@@ -1,0 +1,609 @@
+package com.lsts.mobileapp.input.service;
+
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import org.apache.tools.zip.ZipEntry;
+import org.apache.tools.zip.ZipOutputStream;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.khnt.base.Factory;
+import com.khnt.base.SysParaInf;
+import com.khnt.core.crud.manager.impl.EntityManageImpl;
+import com.khnt.core.exception.KhntException;
+import com.khnt.rtbox.config.bean.RtDir;
+import com.khnt.rtbox.config.bean.RtPage;
+import com.khnt.rtbox.config.bean.RtPersonDir;
+import com.khnt.rtbox.config.dao.RtDirDao;
+import com.khnt.rtbox.config.dao.RtPageDao;
+import com.khnt.rtbox.config.dao.RtPersonDirDao;
+import com.khnt.rtbox.template.constant.RtPath;
+import com.khnt.rtbox.template.constant.RtRunPath;
+import com.khnt.security.CurrentSessionUser;
+import com.khnt.security.util.SecurityUtil;
+import com.lsts.inspection.bean.InspectionInfo;
+import com.lsts.inspection.dao.InspectionInfoDao;
+import com.lsts.mobileapp.input.bean.InspectRecordDir;
+import com.lsts.mobileapp.input.bean.RecordModel;
+import com.lsts.mobileapp.input.bean.RecordModelDir;
+import com.lsts.mobileapp.input.dao.InspectRecordDirDao;
+import com.lsts.report.bean.BaseReportsMenuConfig;
+import com.lsts.report.bean.Report;
+import com.lsts.report.dao.BaseReportsMenuConfigDao;
+import com.lsts.report.dao.ReportDao;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+import util.TS_Util;
+
+@Service("inspectRecordDirService")
+public class InspectRecordDirService extends EntityManageImpl<InspectRecordDir,InspectRecordDirDao> {
+
+	@Autowired
+	private InspectRecordDirDao recordDirDao;
+	@Autowired
+	private RtPersonDirDao rtPersonDirDao;
+	@Autowired
+	private InspectionInfoDao infoDao;
+	@Autowired
+	private ReportDao reportsDao;
+	@Autowired
+	private RtDirDao rtDirDao;
+	@Autowired
+	private RtPageDao rtPageDao;
+
+	@Autowired
+	private ReportDao ReportDao;
+	@Autowired
+	private BaseReportsMenuConfigDao menuConfigDao;
+	
+	/**
+	 * 修改目录信息
+	 * author pingZhou
+	 * @param infoId
+	 * @param recordDir
+	 */
+	public void changeDir(String infoId,JSONArray recordDir) {
+
+		CurrentSessionUser user  = SecurityUtil.getSecurityUser();
+		
+		//删除以前的目录信息
+		recordDirDao.deleteDir(infoId);
+		
+		
+		InspectionInfo info = infoDao.get(infoId);
+
+		//获取原始记录和报告目录配置信息
+		List<BaseReportsMenuConfig> menuList = menuConfigDao.getReportMenuConfig(info.getReport_type());
+		//报告目录set
+		Set<String> set = new HashSet<String> ();
+		
+		for (int i = 0; i < recordDir.length(); i++) {
+			JSONObject dir = recordDir.getJSONObject(i);
+			if(dir.has("fkModelId")) {
+				dir.remove("fkModelId");
+			}
+			if(dir.has("subFlag")) {
+				dir.remove("subFlag");
+			}
+			if(dir.has("inputFlag")) {
+				dir.remove("inputFlag");
+			}
+			InspectRecordDir dirBean = (InspectRecordDir) JSONObject.toBean(dir, InspectRecordDir.class);
+			dirBean.setId(null);
+			dirBean.setEnterOpId(user.getId());
+			dirBean.setEnterOpName(user.getName());
+			dirBean.setEnterTime(new Date());
+			dirBean.setFkRecordId(infoId);
+			dirBean.setDataStatus("0");
+			
+			//处理报告目录
+			String recordCode = dirBean.getPageCode();
+			String[] recordCodes = dirBean.getPageCode().split("__");
+			String recordCode1 = recordCodes[0];
+			String recordCode2 = null;
+			if(recordCodes.length>1) {
+				recordCode2 =  recordCodes[1];
+			}
+			
+			for (int j = 0; j < menuList.size(); j++) {
+				BaseReportsMenuConfig menuC = menuList.get(j);
+				if(recordCode1.equals(menuC.getRecordMenuCode())) {
+					//报告code
+					String reportCode = menuC.getReportMenuCode();
+					if(recordCode2!=null) {
+						//处理复制页
+						reportCode = reportCode +"__"+recordCode2.replace(recordCode1+"_", reportCode+"_");
+					}
+					//判断是否已有目录
+					if(!set.contains(reportCode)) {
+						set.add(reportCode);
+					}
+				}
+			}
+
+			recordDirDao.save(dirBean);
+			
+			
+		}
+		//生成报告目录
+		autoReportMenu(info,set);
+		
+	}
+	
+	
+	/**
+	 * 生成报告目录
+	 * author pingZhou
+	 * @return
+	 */
+	public void autoReportMenu(InspectionInfo info,Set<String> set) {
+
+		CurrentSessionUser user  = SecurityUtil.getSecurityUser();
+		
+		JSONArray json = new JSONArray();
+		JSONObject root = new JSONObject();
+		root.put("code", "root");
+		root.put("name", "文档目录");
+		JSONArray children = new JSONArray();
+		String preCode = "";
+		JSONObject prejson = null;
+		JSONArray childrenN = null;
+		Report report = reportsDao.get(info.getReport_type());
+		
+		RtPage rtPage = rtPageDao.getByCode(report.getRtboxCode());
+		//报告模板自带目录
+		JSONArray pMenus = JSONArray.fromString(rtPage.getRtDirJson());
+		JSONObject proot = (JSONObject)pMenus.get(0);
+		JSONArray pMenusC = (JSONArray) proot.get("children");
+		for (int i = 0; i < pMenusC.length(); i++) {
+			JSONObject pjson = (JSONObject)pMenusC.get(i);
+			String pCode = pjson.getString("code");
+			
+			for (String code : set) {
+				String [] codes =  code.split("__");
+				String code1 = codes[0];
+				String code2 = null;
+				if(codes.length>1) {
+					code2 = codes[1];
+				}
+				if(pCode.equals(code1)) {
+					JSONObject dirN = new JSONObject();
+
+					String page = code1;
+					
+					dirN.put("pageName", "index"+code+".html");
+					dirN.put("name",  pjson.getString("name")+(code2==null?"":code2.replace(page+"_", "")));
+					dirN.put("code", code);
+					if(page.equals(preCode)) {
+
+						if(childrenN==null) {
+							childrenN = new JSONArray();
+						}
+						preCode = page;
+						childrenN.put(dirN);
+					}else {
+						if(childrenN!=null) {
+							JSONArray childrenNN = new JSONArray();
+							for (int j = 0; j < childrenN.length(); j++) {
+								childrenNN.put(JSONObject.fromJSONObject(childrenN.getJSONObject(j)));
+							}
+									
+									
+							prejson.put("children", childrenN);
+							childrenN=null;
+							
+						}
+						if(prejson!=null) {
+							JSONObject prejsonN = JSONObject.fromJSONObject(prejson);
+							children.put(prejsonN);
+							
+						}
+						preCode = page;
+						
+						prejson = dirN;
+					}
+				}
+			}
+			
+		}
+		if(childrenN!=null) {
+			prejson.put("children", childrenN);
+		}
+		if(prejson!=null) {
+			JSONObject prejsonN = JSONObject.fromJSONObject(prejson);
+			children.put(prejsonN);
+			
+		}
+		root.put("children", children);
+		json.put(root);
+		
+		
+		RtPersonDir rtDir = rtPersonDirDao.getByBusinessId(info.getId());
+		if(rtDir==null) {
+			rtDir = new RtPersonDir();
+			rtDir.setFkBusinessId(info.getId());
+			rtDir.setFkCreateUserId(user.getUserId());
+			rtDir.setRtCode(report.getRecordModelCode());
+			rtDir.setCreateTime(new Date());
+			rtDir.setVersion(0);
+		}
+		
+		rtDir.setRtDirJson(json.toString());
+		rtPersonDirDao.save(rtDir);
+		
+		
+	}
+	
+public List<RecordModelDir> getRecordModelDir(String rtCode, String reportId) {
+		
+		List<RecordModelDir> list = new ArrayList<RecordModelDir>();
+		
+		//RtDir rtDir = rtDirDao.getByCode(rtCode);
+		RtPage rtPage = rtPageDao.getNewByCode(rtCode);
+		String dirJson = rtPage.getRtDirJson();//rtDir.getRtDirJson();
+		
+		
+		JSONArray dirs = JSONArray.fromString(dirJson);
+		list = getlistByJson(list,dirs.getJSONObject(0),0,reportId);
+		
+		
+		
+		return list;
+	}
+
+	private List<RecordModelDir> getlistByJson(List<RecordModelDir> list, JSONObject jsonObject,Integer n, String reportId) {
+		if(!"root".equals(jsonObject.getString("code"))) {
+			RecordModelDir dir = new RecordModelDir();
+			
+			dir.setFkModelId(reportId);
+			dir.setOrders(n+1);
+			dir.setPageCode(jsonObject.getString("code"));
+			dir.setPageName(jsonObject.getString("name"));
+			String pageNum = jsonObject.getString("code").split("__")[0];
+			dir.setPagePath("index"+pageNum+".html");
+			
+			list.add(dir);
+		}
+		if(jsonObject.has("children")&&jsonObject.get("children")!=null) {
+			JSONArray children = jsonObject.getJSONArray("children");
+			for (int i = 0; i < children.length(); i++) {
+				getlistByJson(list,children.getJSONObject(i),n++,reportId);
+			}
+		}else {
+			n++;
+		}
+		
+		return list;
+	}
+
+	public void getRecordModel(HashMap<String, Object> map, String rtCode) {
+		
+		RtPage rtPage = rtPageDao.getNewByCode(rtCode);
+		Report reports = ReportDao.getReportByRecordCode(rtCode);
+		if(rtPage!=null&&reports!=null) {
+			
+			//DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			
+			RecordModel model = new RecordModel();
+			model.setId(reports.getId());
+			model.setReportName(reports.getReport_name());
+			model.setCode(rtCode);
+			model.setName(rtPage.getRtName());
+			model.setPath(RtPath.tplRecordPageDir+"/"+rtCode);
+			model.setUpdateDate(getModelLustUpdate(RtPath.tplRecordPageDir+"/"+rtCode));
+			model.setVersion(rtPage.getVersion()+"");
+					
+			List<RecordModelDir> list =  getRecordModelDir(rtCode,reports.getId());
+			
+			map.put("report", reports);		
+			map.put("model", model);		
+			map.put("dirList", list);
+					
+		}
+		
+		
+	}
+	public void getRecordModelByReportId(HashMap<String, Object> map, String id) {
+		
+		Report report = ReportDao.get(id);
+		RtPage rtPage = rtPageDao.getNewByCode(report.getRecordModelCode());
+		if(rtPage!=null&&report!=null) {
+			String rtCode = report.getRecordModelCode();
+			RecordModel model = new RecordModel();
+			model.setId(report.getId());
+			model.setReportName(report.getReport_name());
+			model.setCode(rtCode);
+			model.setName(rtPage.getRtName());
+			model.setPath(RtPath.tplRecordPageDir+"/"+rtCode);
+			model.setUpdateDate(getModelLustUpdate(RtPath.tplRecordPageDir+"/"+rtCode));
+			model.setVersion(rtPage.getVersion()+"");
+			
+			List<RecordModelDir> list =  getRecordModelDir(rtCode,report.getId());
+			
+			map.put("report", report);		
+			map.put("model", model);		
+			map.put("dirList", list);
+			
+		}
+		
+		
+	}
+
+	
+	public String getModelLustUpdate(String path) {
+		
+		String lastUpdate = null;
+		
+		String filePath = RtRunPath.PROJECT_PATH+path;
+				
+				
+		Date date = getFiles(filePath,null);
+		
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		if(date==null) {
+			date = new Date();
+		}
+		lastUpdate = df.format(date);
+		
+		return lastUpdate;
+	}
+	
+	public Date getFiles(String filePath,Date lastDate) throws KhntException{
+
+		 File root = new File(filePath);
+	        if (!root.exists()) {
+	            log.info(filePath + " not exist!");
+	        } else {
+	            File[] files = root.listFiles();
+	            for (File file : files) {
+	            	
+	            
+	                if (file.isDirectory()) {
+	                	 getFiles(file.getAbsolutePath(),lastDate);
+	                   
+	                }else {
+	                	Date nDate = new Date(file.lastModified());
+		            	if(lastDate==null||lastDate.before(nDate)) {
+		            		lastDate = nDate;
+		            	};
+	                }
+	            }
+	        }
+	       
+	        return lastDate;
+	     
+	}
+
+	public String getFileContent(String filePath) {
+		String basePath = Factory.getWebRoot()+"/"+filePath;
+		// TODO Auto-generated method stub
+		return TS_Util.readFileString2(basePath);
+	}
+	
+	
+	public File downloadBusIds(String id) throws Exception {
+		Report report = ReportDao.get(id);
+		RtPage rtPage = rtPageDao.getByTemplateAndVersion(report.getRecordModelId(),null);
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+		String filePath = Factory.getWebRoot();
+		if("1".equals(rtPage.getModelType())) {
+			filePath = filePath+ RtPath.tplRecordPageDir+rtPage.getRtCode()+"/"+rtPage.getVersion();
+		}else {
+			filePath = filePath + RtPath.tplPageDir+rtPage.getRtCode()+"/"+rtPage.getVersion();
+		}
+		//List<File> fileList=getSourceAllFiles(filePath);  
+		//return zipFiles(fileList);
+		return createZipFile(filePath);
+	}
+
+/**
+ * 打包文件集合
+ *
+ * @param attachments
+ * @return
+ * @throws Exception
+ */
+protected File zipFiles(List<File> files) throws Exception {
+	byte[] buf = new byte[1024];
+	File zipfile = new File("package.zip");
+	ZipOutputStream out = new ZipOutputStream(new FileOutputStream(zipfile));
+	out.setEncoding("UTF-8");
+	SysParaInf sp = Factory.getSysPara();
+	Map<String, Object> attMap = new HashMap<String, Object>();
+	for (File file : files) {
+		// 检查是否有重复的文件名称，如果有即忽略掉
+		
+	 if (!(file.exists() && file.isFile() && file.canRead())) {
+				log.error("指定目录不存在: " + file.getPath());
+				continue;
+	 }
+			InputStream inputStream = new FileInputStream(file);
+	
+		BufferedInputStream bins = new BufferedInputStream(inputStream, 512);
+		out.putNextEntry(new ZipEntry(file.getName()));
+		int len;
+		while ((len = bins.read(buf)) != -1) {
+			out.write(buf, 0, len); // 关闭输入流
+		}
+		bins.close();
+		inputStream.close();
+	}
+	// 关闭输出流
+	out.close();
+	//out.setEncoding("UTF-8");
+	// 返回给调用者最终压缩的文件
+	return zipfile;
+}
+
+
+//创建一个压缩文件，并存放到新的路径中
+public  File createZipFile(String from){
+    List<File> fileList=getSourceAllFiles(from);
+	File zipfile = new File("package.zip");
+    ZipOutputStream zout=null;   //生成Zip输出流
+    try {
+         zout=new ZipOutputStream(new FileOutputStream(zipfile));
+         //将每个文件放入Zip流中
+         for (File f : fileList) {
+             InputStream is=new FileInputStream(f);
+             String name=getRelName(from, f); //获取文件相对路径  保持文件原有结构
+             ZipEntry en=new ZipEntry(name); 
+             en.setSize(f.length());
+             zout.putNextEntry(en);
+             zout.setComment("test");
+             //读取文件中的内容
+             int len=0;
+             byte[] buffer=new byte[1024];
+             while((len=is.read(buffer))!=-1){
+                 zout.write(buffer,0,len);
+             }
+             zout.flush();
+             is.close();
+        }
+         zout.close();
+    } catch (FileNotFoundException e) {
+        e.printStackTrace();
+    } catch (IOException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }finally{
+        if(zout!=null){
+            try {
+                zout.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+             }
+          }
+     }
+    
+    return zipfile;
+}
+
+//获取文件源中的所有文件
+private List<File> getSourceAllFiles(String from){
+    List<File> fileList=new ArrayList<File>();
+    File fromfile=new File(from);
+    File[] fileArr=fromfile.listFiles();
+    for (File file : fileArr) {
+        if(file.isFile()){
+            fileList.add(file);
+        }else{
+            //利用递归之法，获取路径中子路径中的所有文件
+            fileList.addAll(getSourceAllFiles(file.getPath()));
+        }
+    }
+    return fileList;
+}
+//获取文件源中的所有文件
+private List<File> getSourceAllFiles1(String from){
+  List<File> fileList=new ArrayList<File>();
+  File fromfile=new File(from);
+  File[] fileArr=fromfile.listFiles();
+  for (File file : fileArr) {
+      if(file.isFile()){
+          fileList.add(file);
+      }else{
+          //利用递归之法，获取路径中子路径中的所有文件
+          fileList.addAll(getSourceAllFiles(file.getPath()));
+      }
+  }
+  return fileList;
+}
+
+//得到文件在文件夹中的相对路径 保持原有结构    （也可以根据需求自己创建新的结构）
+private String getRelName(String from,File f){
+    String name=null;
+    from = from.substring(1).replace("/", "\\");
+    name=f.getAbsolutePath().replace(from+"\\", "");
+    name=name.replace("\\", "/");
+    System.out.println("文件相对路径是："+name);
+    return name;
+}
+
+
+public JSONArray getRecordDir(String rtCode, String id) {
+	List<InspectRecordDir> list =  recordDirDao.getDirByBid(id);
+	JSONArray json = new JSONArray();
+	JSONObject root = new JSONObject();
+	root.put("code", "root");
+	root.put("name", "文档目录");
+	JSONArray children = new JSONArray();
+	String preCode = "";
+	JSONObject prejson = null;
+	JSONArray childrenN = null;   
+
+		for (int i = 0; i < list.size(); i++) {
+			InspectRecordDir dir = list.get(i);
+			String code = dir.getPageCode();
+			String path = dir.getPagePath();
+			path = path.substring(path.indexOf("index"), path.length());
+			String[] codes = code.split("__");
+			String code1 = codes[0];
+
+			JSONObject dirN = new JSONObject();
+
+			String page = code1;
+
+			dirN.put("pageName", path);
+			dirN.put("name", dir.getPageName());
+			dirN.put("code", code);
+			if (page.equals(preCode)) {
+
+				if (childrenN == null) {
+					childrenN = new JSONArray();
+				}
+				preCode = page;
+				childrenN.put(dirN);
+			} else {
+				if (childrenN != null) {
+					JSONArray childrenNN = new JSONArray();
+					for (int j = 0; j < childrenN.length(); j++) {
+						childrenNN.put(JSONObject.fromJSONObject(childrenN.getJSONObject(j)));
+					}
+
+					prejson.put("children", childrenN);
+					childrenN = null;
+
+				}
+				if (prejson != null) {
+					JSONObject prejsonN = JSONObject.fromJSONObject(prejson);
+					children.put(prejsonN);
+
+				}
+				preCode = page;
+
+				prejson = dirN;
+
+			}
+
+		}
+	if(childrenN!=null) {
+		prejson.put("children", childrenN);
+	}
+	if(prejson!=null) {
+		JSONObject prejsonN = JSONObject.fromJSONObject(prejson);
+		children.put(prejsonN);
+		
+	}
+	root.put("children", children);
+	json.put(root);
+	return json;
+}
+
+}

@@ -1,0 +1,175 @@
+
+//===================================================================================
+
+//开始创建菜单，整个main程序第一入口
+function getMainMenuSrc() {
+	$("#framecenter").show();
+	top.$.dialog.loading();//2013-7-11 下午6:02 lybide
+	//var url = "rbac/user/userMenuTree.do";
+	var src = kFrameConfig.menu.src;
+	var url=src;
+	if (typeof src=="string") {
+		$.ajax({
+			url:url,
+			cache:false,
+			dataType:"json", //XML、html、json、jsonp、script、text
+			async:true,
+			success:function (data, textStatus, jqXHR) {
+				try{
+					data=kFrameConfig.menu.dataAdd(data);
+				}catch (e){}
+				createMenu(data);
+			},
+			error:function (XMLHttpRequest, textStatus, errorThrown) {
+				var eStr1 = "获取数据出错，请联系系统管理员";
+				eStr1 += XMLHttpRequest + "====" + textStatus + "====" + errorThrown;
+				alert(eStr1);
+			}
+		});
+	} else if (typeof src=="object") {//直接json
+		//13-3-22 上午10:23 lybide
+		var data=src;
+		data=kFrameConfig.menu.dataAdd(data);
+		createMenu(data);//创建一级栏目，第二入口
+	}
+};
+
+//===================================================================================
+
+//创建一级栏目，第二入口
+function createMenu(data) {
+	var loopCount=0;
+	var d=data;
+	var deep = 0;
+	var treeHTML = "";
+	var treeData = d[0].children;
+	TREEDATA=treeData;
+	var mul=$('<div id="mMenu2Div" class="m-menu-tree"><div class="m-menu2-tree-wrap"><ul id="tree" class="ztree"></ul></div></div>');$("#mMenu2").html(mul);
+	//$("#mMenu2Div").append('<ul id="tree" class="ztree"></ul>');
+	$("#mMenu1").hide();
+
+
+	var zTree;
+	var demoIframe;
+	//console.log(d[0].children);
+
+	var zNodes=TREEDATA;
+
+
+	var setting = {
+		view: {
+			dblClickExpand: false,
+			showLine: true,
+			selectedMulti: false,
+			expandSpeed: ($.browser.msie && parseInt($.browser.version)<=6)?"":"fast"
+			,cookieKey:true,cookieName:"kFrame_TreeMenu"//2014年08月07日 16:51:10 星期四 lybide
+		},
+		data: {
+			key:{
+				name: "text",
+				url:"xxxx"
+			}
+		},
+		callback: {
+			onClick: function(event,treeId, treeNode) {
+				var zTree = $.fn.zTree.getZTreeObj(treeId);
+				var url=treeNode.url ? treeNode.url : "";
+				//alert(JSON.stringify(treeNode));
+				var memuId=treeNode["code"] || treeNode["id"];
+				var text=treeNode["text"];
+				var icon=treeNode["image16"];
+				mGetUrlGo(url,memuId,text,icon,2);
+				return;
+				if (url.indexOf("javascript:")>=0) {
+					eval(url);//执行自定义javascript。eval("javascript:doMind(this);dews();");
+				} else {
+					mGetUrl(url);
+				}
+				//top.$.cookie(zTree.setting.view.cookieName+"2",treeNode.id);
+				//var zTree = $.fn.zTree.getZTreeObj("tree");
+				//zTree.expandNode(treeNode);
+			}
+		}
+	};
+
+	//2014年08月07日 16:56:45 星期四 lybide 新写法
+	var treeId="tree";
+	var zTree=$.fn.zTree.init($("#"+treeId), setting, zNodes);
+	zTree.initSelected();
+	
+	$("#mMenu2").show();
+	if ($("#mFoldLeft").attr("display")=="0") {//2014-3-24 下午6:07 lybide 如果是系统首页，将不显示左边栏
+		mPanelSize({leftWidth:200});
+	}
+
+	sysMenuCreateComplete();
+	
+	return;
+}
+
+//框架面版变换
+function mPanelDispay(obj) {//13-3-21 下午8:13 lybide
+	if (obj["panel"]=="left") {
+		if (obj["close"]) {//13-4-16 下午9:36 lybide
+			//$("#mFoldLeft").hide();//2014-3-21 上午11:31 lybide 树形菜单中不隐藏左上角收缩按钮
+		} else {
+			$("#mFoldLeft").show();
+		}
+		var width=obj["width"] || kFrameConfig["menu"]["style1Width"];
+		if (obj["display"]) {
+			$("#mFoldLeft").attr("display","0");
+			$("#mFoldLeft").removeClass("m-fold-left2");
+			$("#mFoldLeft").attr("title","收缩菜单工作区");
+			$("#mMenu2").css({"width":width+"px"});
+			$("#framecenter,#m-panel-tab").css({"left":width+"px"});
+		} else {
+			$("#mFoldLeft").attr("display","1");
+			$("#mFoldLeft").addClass("m-fold-left2");
+			$("#mFoldLeft").attr("title","打开菜单工作区");
+			$("#mMenu2").css({"width":"0"});
+			$("#framecenter,#m-panel-tab").css({"left":"0"});
+		}
+	}
+
+	if (obj["panel"]=="top") {
+		if (obj["display"]) {
+			$("#mFoldTop").attr("display","0");
+			$("#mFoldTop").removeClass("m-fold-top2");
+			$("#mFoldTop").attr("title","收缩顶部工作区");
+			$("#mTop").css({"height":""});
+			$("#mTopLeft").css({"height":""});
+			$("#mTopRight").css({"height":""});
+			$("#mMenu2").css({"top":""});
+			$("#framecenter").css({"top":""});
+			$("#m-panel-tab").css({"top":""});
+			$("#mFoldTop").css({"top":""});
+			$("#mFoldLeft").css({"top":""});
+			$("#mMenu1More").css({"top":""});
+			//$("#mMenu1").css({"top":"31px"});//tree效果中不需要
+			$("#mUserInfo,#mSystemItem,#systemTitle,#mcsfw1").show();
+		} else {
+			$("#mFoldTop").attr("display","1");
+			$("#mFoldTop").addClass("m-fold-top2");
+			$("#mFoldTop").attr("title","打开顶部工作区");
+			$("#mTop").css({"height":"40px"});
+			$("#mTopLeft").css({"height":"40px"});
+			$("#mTopRight").css({"height":"40px"});
+			$("#mMenu2").css({"top":"40px"});
+			$("#framecenter").css({"top":"40px"});
+			$("#m-panel-tab").css({"top":"39px"});
+			$("#mFoldTop").css({"top":"15px"});
+			$("#mFoldLeft").css({"top":"15px"});
+			$("#mMenu1More").css({"top":"10px"});
+			//$("#mMenu1").css({"top":"-9px"});
+			$("#mUserInfo,#mSystemItem,#systemTitle,#mcsfw1").hide();
+		}
+	}
+	//收缩右工作区
+	//收缩底工作区
+	mWinChangeSize();
+}
+
+
+
+//===================================================================================
+

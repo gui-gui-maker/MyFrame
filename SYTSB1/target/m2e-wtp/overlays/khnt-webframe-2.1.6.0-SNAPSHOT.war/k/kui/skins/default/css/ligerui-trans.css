@@ -1,0 +1,14 @@
+﻿/* 透明重构 2014年06月12日 18:23:43 星期四 lybide */
+/** {font-size:55px;}*/
+.p-body-trans {}
+.p-body-trans .l-page-title {background:none;}
+.p-body-trans .l-page-title-div {background:none;}
+.p-body-trans .l-page-note-div {background:none;/*background:rgba(235,195,132,0.1);*/}
+.p-body-trans .l-toolbar {background:none;background:rgba(255,255,255,0.6) !important;}
+.p-body-trans .l-grid-row-cell-rownumbers {background:none;}
+.p-body-trans .l-grid-header {background:none;background:rgba(255,255,255,0.5) !important;}
+.p-body-trans .l-panel-bar {background:rgba(255,255,255,0.5) !important;}
+.p-body-trans .l-selected .l-grid-row-cell, .l-selected {background:rgba(255,255,255,0.5) !important;}
+.p-body-trans .l-grid-row-over .l-grid-row-cell, .l-grid-row-over {background:rgba(255,255,255,0.3) !important;}
+.p-body-trans .l-text {}
+.p-body-trans .l-layout-header {background:none;}

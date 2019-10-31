@@ -1,0 +1,104 @@
+/* ------------- * commom 样式 ** ------------- */
+html { color:#000; background:#FFF; }
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td { margin:0; padding:0; }
+body,input,button,select,textarea {font-family:"微软雅黑","宋体";font-size:12px;}
+table {  }
+address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal; }
+li { list-style:none; }
+caption, th { text-align:left; }
+q:before, q:after { content:''; }
+abbr, acronym { border:0; font-variant:normal; }
+sup { vertical-align:text-top; }
+sub { vertical-align:text-bottom; }
+input, textarea, select { /*font-size:12px;font-family:"宋体","微软雅黑","Microsoft yahei","宋体","Lucida Grande","Verdana","Helvetica,Arial","Georgia";*/ }
+button {overflow:visible;}
+textarea {resize:none;} /*禁止拖放*/
+legend { color:#000; }
+del, ins { text-decoration:none; }
+
+/* 整个页面不能定义overflow:hidde;会造成手写签批用不起 2017年07月03日 13:14:10 星期一 lybide 删除所有隐藏滚动条 */
+html { /*overflow:hidden;*/  /*这个可以去掉IE6,7的滚动*/ /*_overflow-x:hidden;*/ /*去掉IE6横向滚动*/ /*height:100%;*/}
+body { overflow:hidden; /*这个可去掉IE5.5的滚动*/ /*_margin:0px;*/  /*去掉IE6的左边框空白*/ /*height:100%;*/ }
+body {padding:0px; margin:0px;}
+
+a,a:link,a:visited {color:#325A99;text-decoration:none;}
+a:hover {color:#FF0000;text-decoration:underline;}
+
+.l-clear { clear:both; width:1px; height:1px; overflow:hidden; }
+.l-hidden { display: none; }
+.l-loading { position: absolute; z-index: 91000; top:40%; left:50%; overflow:hidden; background:url('../images/common/loading.gif') no-repeat 0px 0px; width:24px; height:24px; display:none; }
+/* ------------- * 滚动条颜色 ** ------------- */
+ .l-scroll { /*scrollbar-face-color:#C6D7FF; scrollbar-3dlight-color:#B5CBF7; scrollbar-darkshadow-color:#B5CBF7; scrollbar-base-color:#B5CBF7; scrollbar-shadow-color: #FFF; scrollbar-highlight-color: #FFF; scrollbar-track-color:#FFF; scrollbar-arrow-color:#4A6184;*/ }
+.l-noscroll { overflow:hidden; }
+/* Draggable */
+.l-draggable { overflow:hidden; border-style:solid; border-width:1px; opacity:0.5; filter:alpha(opacity=50); position:absolute; top:0; left:0; z-index:10001; background:#f2f1f1; border-color:#aaa; }
+/* Resizable */
+.l-resizable { display:none; overflow:hidden; border-style:dashed; border-width:1px; opacity:0.5; filter:alpha(opacity=50); position:absolute; top:0; left:0; z-index:10002; background:#f2f1f1; }
+/* -------------- * icon ** ------------ */
+.l-icon-checkbox { background:url('../images/icon/checkbox.gif') no-repeat center; }
+.l-icon-cross { background:url('../images/icon/cross.gif') no-repeat center; width:16px; height:16px; line-height:16px; }
+/* ------------- * 按钮 ** ------------- */
+/*新改*/
+.be_l_btn { margin:60px 0px 0px 70px; }
+.be_l_btn td { padding-right:70px; }
+.l-button2 {display:block; border:solid 1px #fff; outline:#0e6490 solid 1px; padding:6px 12px; /*height:34px; overflow:hidden;*/ /*line-height:20px;*/ background: #E0EDFF url(../images/controls/nomarbj.png) repeat-x center; text-align:center; color:#fff; font-size:12px; font-weight:bold; text-decoration:none; cursor:pointer; }
+.l-button-over2, .l-button2:hover { background: #FFBE76 url(../images/controls/button-bg-over.gif) repeat-x center; border-color:#fff; outline-color:#f00; }
+/**/
+.l-button-del { display:block; border: solid 1px #A3C0E8; padding:2px; /*width:50px;*/ /*height:22px;*/ /*overflow:hidden;*/ /*line-height:20px;*/ background: #E0EDFF url(../images/controls/button-bg.gif) repeat-x center; text-align:center; color: #2C4D79; text-decoration:none; cursor:pointer; }
+/*.l-button { _display:block; border:solid 1px #0e6490; padding:5px; /*padding:5px 25px; width:50px; height:34px; overflow:hidden; line-height:20px; background: #E0EDFF url(../images/controls/nomarbj.png) repeat-x center; text-align:center; color:#fff; font-weight:bold; text-decoration:none; cursor:pointer; }===原先的按钮样式=============*/
+
+.l-button-warp {margin-right:5px;}
+.l-button {display:inline-block;position:relative;padding:0 8px;margin:0px 4px 0px 4px;border-radius:5px 5px 5px 5px;cursor:pointer;border:solid 1px #7e7e7e;background:url(../images/controls/button-bg2.gif) #ffffff repeat-x center; text-align:center; color:#000055;box-shadow:1px 1px 0 rgba(255,255,255,.8) inset,-1px -1px 0 rgba(255,255,255,.8) inset;line-height:1.5;}/*最新改的统一按钮样式==========================*/
+.l-button-over, .l-button:hover { background: #FFBE76 url(../images/controls/button-bg-over.gif) repeat-x 0 0; border-color:#c64e00; color:#99262d;box-shadow:1px 1px 0 rgba(255,248,204,.8) inset,-1px -1px 0 rgba(255,248,204,.8) inset;}
+.l-button-main {padding:0px 3px 0px 3px;white-space:nowrap;height:24px;display:inline-block;overflow:hidden;}
+.l-button-text {line-height:24px;} /*按钮文字*/
+.l-button-icon {position:absolute;top:50%;left:5px;height:16px;width:16px;margin-top:-8px;line-height:normal;}
+.l-button-hasicon {padding:0px 5px 0px 15px !important;}/*按钮有图标时*/
+.l-button-notText {padding:0px 5px 0px 5px !important;}/*没有文字时*/
+.l-button-split {display:inline-block;border-left: 1px solid #fff; border-right: 1px solid #ccc;height:24px;margin:0px 4px 0px 4px;}
+
+.l-btn-disabled,.l-button-disabled {display:inline-block;position:relative;padding:0 8px;margin:0px 4px 0px 4px;border-radius:5px 5px 5px 5px;cursor:default;/*因为在disabled中删除了l-button，固需要继承l-button的一些样式。*/cursor:default;border:1px solid #adb2b5;background:#f4f4f4;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#f4f4f4,endColorstr=#f5f4ea);}/*按钮禁用时*/
+.l-btn-disabled .l-button-text,.l-button-disabled .l-button-text { color:#a0a0a0; }
+.l-btn-disabled .l-button-icon,.l-button-disabled .l-button-icon {opacity:0.5;text-shadow:1px 1px #FFFFFF;filter:url(gray.svg#grayscale);filter:progid:DXImageTransform.Microsoft.BasicImage(grayScale=1,opacity=0.5);-webkit-filter: grayscale(100%);-moz-filter: grayscale(100%);-ms-filter: grayscale(100%);-o-filter:grayscale(100%);}
+
+.l-btn { display:block; height:21px; overflow:hidden; line-height:22px; position:relative; padding-left:15px; padding-right:15px; cursor:pointer; background: #E0EDFF url(../images/controls/btn.gif) repeat-x; text-align:center; color: #2C4D79; text-decoration:none; cursor:pointer; }
+/* 按钮左边部位 */
+.l-btn-l { position:absolute; width:3px; left:0px; top:0px; height:21px; background: #E0EDFF url(../images/controls/btn-l.gif) no-repeat; }
+/* 按钮右边部位 */
+.l-btn-r { position:absolute; width:3px; right:0px; top:0px; height:21px; background: #E0EDFF url(../images/controls/btn-r.gif) no-repeat; }
+
+/*a 标记按钮 2013-5-30 下午5:11 lybide*/
+.l-button3 {white-space:nowrap;padding:0px 12px;margin:0px;border-radius:5px 5px 5px 5px;cursor:pointer;border:solid 1px #7e7e7e;background:url(../images/controls/button-bg2.gif) #ffffff repeat-x center;position:relative;line-height:25px;display:inline-block;box-shadow:1px 1px 0 rgba(255,255,255,.8) inset,-1px -1px 0 rgba(255,255,255,.8) inset;text-decoration:none;color:#000000;}
+.l-button3.has-icon {padding-left:25px;}
+.l-button3 span {width:16px;height:16px;background-position:center center;display:inline-block;position:absolute;left:5px;top:50%;margin:-8px 0px 0px 0px;}
+.l-button3:hover,.l-button3-hover {background: #FFBE76 url(../images/controls/button-bg-over.gif) repeat-x 0 0; border-color:#c64e00; color:#99262d;box-shadow:1px 1px 0 rgba(255,248,204,.8) inset,-1px -1px 0 rgba(255,248,204,.8) inset;text-decoration:none;}
+.upload-button {width:32px;}
+
+/* Draggable*/
+.l-drag-proxy { border: 1px solid #BDD1EE; position: absolute; z-index: 1001; height:25px; line-height:25px; padding-left:19px; padding-right:4px; background:white; }
+.l-drag-proxy .l-drop-icon { position: absolute; top:5px; left:4px; width:16px; height:16px; }
+.l-drop-no { background: white url('../images/common/drop-icons.gif') no-repeat 0px -20px; width:16px; height:16px; overflow:hidden; }
+.l-drop-yes { background: white url('../images/common/drop-icons.gif') no-repeat 0px 0px; width:16px; height:16px; overflow:hidden; }
+.l-drop-add { background: white url('../images/common/drop-icons.gif') no-repeat -20px 0px; width:16px; height:16px; overflow:hidden; }
+.l-drag-coldroptip { width:9px; position:absolute; height:44px; z-index:1000; }
+.l-drop-move-up { background:transparent url('../images/common/drop-icons.gif') no-repeat -40px 0px; width:9px; height:9px; overflow:hidden; position:absolute; top:0px; }
+.l-drop-move-down { background: transparent url('../images/common/drop-icons.gif') no-repeat -60px 0px; width:9px; height:9px; overflow:hidden; position:absolute; bottom:0px; }
+.l-drag-nodedroptip, .l-drag-rowdroptip { width:9px; position:absolute; height:1px; background-color:red; z-index:1000; line-height:1px; overflow:hidden; }
+/* filter */
+table.l-filter-group { background:white; font-size:12px; }
+table.l-filter-group select, table.l-filter-group .valtxt { border:1px solid #d3d3d3; }
+table.l-filter-group .addgroup { }
+table.l-filter-group .addrule { }
+table.l-filter-group .deletegroup { }
+table.l-filter-group .deleterole { cursor:pointer; }
+table.l-filter-group-alt { background:#F2F2F2; }
+td.l-filter-groupcell { padding-left:20px; }
+td.l-filter-column { padding:2px; }
+td.l-filter-op { padding:2px; }
+td.l-filter-value { padding:2px; }
+tr.l-filter-rowlastcell { text-align:right; _width:300px; min-width:300px; padding:2px; }
+table.l-filter-group-alt, .l-panel table.l-filter-group-alt { background:#f5f5f5; margin-left:20px; margin-top:4px; padding:5px; border:1px solid #d3d3d3; }
+table.l-filter-group-alt .l-filter-value { padding-right:6px; }
+td.l-filter-cellgroup { padding:3px; }
+table.l-filter-group-alt table.l-filter-group { background:white; margin-left:20px; margin-top:4px; padding:5px; border:1px solid #d3d3d3; }
+

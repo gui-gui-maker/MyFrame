@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xmlns:aop="http://www.springframework.org/schema/aop"  
+    xmlns:tx="http://www.springframework.org/schema/tx"  
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+                        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+                        http://www.springframework.org/schema/aop  
+                        http://www.springframework.org/schema/aop/spring-aop-3.0.xsd  
+                        http://www.springframework.org/schema/tx  
+                        http://www.springframework.org/schema/tx/spring-tx-3.0.xsd  
+                        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd  
+                        ">  
+    <!-- 邮件发送器 163  -->  
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">  
+        <property name="host" value="smtp.qq.com" />  
+        <property name="username" value="250910247@qq.com" />  
+        <property name="password" value="***" />  
+        <property name="defaultEncoding" value="UTF-8"></property>  
+        <property name="javaMailProperties">  
+            <props>  
+                <prop key="mail.smtp.auth">true</prop>  
+                <prop key="mail.smtp.timeout">25000</prop>  
+            </props>  
+        </property>  
+    </bean>  
+    
+    <!-- pop3邮件接收  -->  
+    <bean id="mailReceive" class="com.khnt.mail.JavaMailReceiveImpl">  
+        <property name="host" value="pop.qq.com" />  
+        <property name="port" value="995" />
+        <property name="protocol" value="pop3" />    
+        <property name="username" value="250910247@qq.com" />  
+        <property name="password" value="****" /> 
+        <property name="javaMailProperties">  
+            <props>  
+            	<prop key="ssl">true</prop>
+                <prop key="mail.pop3.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>  
+                <prop key="mail.pop3.socketFactory.fallback">false</prop>
+                <prop key="mail.pop3.socketFactory.port">995</prop>
+            </props>  
+        </property>  
+    </bean>  
+    <!--  邮件发送器 gmail    
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">    
+        <property name="host" value="${mail.host}" />  
+        <property name="username" value="${mail.username}" />  
+        <property name="password" value="${mail.password}" />  
+        <property name="defaultEncoding" value="UTF-8"></property>  
+        <property name="javaMailProperties">    
+            <props>    
+                <prop key="mail.smtp.auth">${mail.smtp.auth}</prop>  
+                <prop key="mail.smtp.timeout">${mail.smtp.timeout}</prop>  
+                <prop key="mail.smtp.port">465</prop>    
+                <prop key="mail.smtp.socketFactory.port">465</prop>    
+                <prop key="mail.smtp.socketFactory.fallback">false</prop>    
+                <prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>    
+            </props>    
+        </property>    
+    </bean>    
+    -->  
+    <bean id="velocityEngine"  
+        class="org.springframework.ui.velocity.VelocityEngineFactoryBean">  
+    </bean>  
+  
+    <bean id="mailSenderImpl" class="com.khnt.mail.JavaMailSend">  
+        <property name="javaMailSender" ref="mailSender"></property>  
+        <property name="velocityEngine" ref="velocityEngine"></property>  
+    </bean>  
+</beans>  

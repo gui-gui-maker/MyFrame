@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">
+	<contextName>sytsApp</contextName>
+	<timestamp key="bySecond" datePattern="yyyyMMdd'T'HHmmss" />
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="khnt" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>D:/AppData/khframe/logs/khnt.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>D:/AppData/khframe/logs/khnt.log.%d{yyyy-MM-dd}</fileNamePattern>
+			<maxHistory>5</maxHistory>
+		</rollingPolicy>
+		<encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+    <appender name="demo" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>D:/AppData/khframe/logs/demo.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>D:/AppData/khframe/logs/demo.log.%d{yyyy-MM-dd}</fileNamePattern>
+            <maxHistory>5</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+	<appender name="spring" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>D:/AppData/khframe/logs/spring.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>D:/AppData/khframe/logs/spring.log.%d{yyyy-MM-dd}</fileNamePattern>
+			<maxHistory>5</maxHistory>
+		</rollingPolicy>
+		<encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="logstash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <includeCallerData>true</includeCallerData>
+        <destination>192.168.2.48:4856</destination>
+        <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder">
+        	<customFields>{"app_name":"khframe-webdemo"}</customFields>
+        </encoder>
+    </appender>
+	
+    <logger name="org.springframework" level="ERROR" additivity="false">
+        <appender-ref ref="spring" />
+		<appender-ref ref="logstash" />
+    </logger>
+    <logger name="demo" level="DEBUG" additivity="false">
+		<appender-ref ref="logstash" />
+    </logger>
+	<logger name="com.khnt" level="DEBUG" additivity="false">
+		<appender-ref ref="khnt" />
+	</logger>
+    <logger name="com.khnt" level="ERROR" additivity="false">
+		<appender-ref ref="logstash" />
+    </logger>
+	<root level="INFO">
+		<appender-ref ref="khnt" />
+	</root>
+</configuration>

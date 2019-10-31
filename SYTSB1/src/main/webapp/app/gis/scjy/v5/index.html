@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>工作组</title>
+<link rel="stylesheet" type="text/css" href="css/stylegx.css" media="all" />
+<link rel="stylesheet" type="text/css" href="css/animate.css" media="all" />
+<style type="text/css">
+#myCanvasDiv{
+	width:1200px;
+	height:800px;
+	margin:0 auto;
+	z-index:120;
+}
+#myCanvas{
+	width:1198px;
+	height:800px;
+	border:1px solid yellow;
+	
+}
+</style>
+<script type="" src="js2/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	setInterval(function(){
+		$("#jinniu img").attr("src","http://lasa.scsei.org.cn/cacti/graph_image.php?local_graph_id=168&c="+Math.random());
+		$("#gaoxin img").attr("src","http://lasa.scsei.org.cn/cacti/graph_image.php?local_graph_id=168&c="+Math.random());
+		$("#jinjiang img").attr("src","http://lasa.scsei.org.cn/cacti/graph_image.php?local_graph_id=168&c="+Math.random());
+		$("#shuangliu img").attr("src","http://lasa.scsei.org.cn/cacti/graph_image.php?local_graph_id=168&c="+Math.random());
+		$("#tianfu img").attr("src","http://lasa.scsei.org.cn/cacti/graph_image.php?local_graph_id=168&c="+Math.random());
+		$("#scsei img").attr("src","http://lasa.scsei.org.cn/cacti/graph_image.php?local_graph_id=168&c="+Math.random());
+	}, 5000);
+});
+</script>
+</head>
+<body>
+
+	<div id="sysMain" class="sysmain">
+		<div class="m-area-top">
+			<div class="m-a-tit">工作组实时数据</div>
+		</div>
+		<!--中间主要内容区  start -->
+		<div class="m-center">
+			<div class="m-center-wrap">
+				<div class="work_item">
+					<div class="scsei" style="left:58%;top:50%;">
+						<img src="images/scsei.png">
+						 <div class="w_t_line" style="width: 84px; height: 2px; left: -72px;top:-10px; transform: rotate(35deg); "></div>
+						<div id="scsei" class="w_t_box" style="top:-150px;left: 175px;">
+							<div class="tt_h">省院</div>
+							<img style="width:409px;height:155px" src="http://lasa.scsei.org.cn/cacti/graph_image.php?local_graph_id=168">
+						</div>
+					</div>
+					<div class="w_icon" style="position: absolute; left: 40%; top: 300px;">
+					 <div class="w_t_line" style="width: 84px; height: 2px; left: -72px;top:-10px; transform: rotate(35deg); "></div>
+						<div id="jinniu" class="w_t_box">
+							<div class="tt_h">金牛站</div>
+							<img style="width:409px;height:155px" src="http://lasa.scsei.org.cn/cacti/graph_image.php?local_graph_id=168">
+						</div>
+					</div>
+					<div class="w_icon" style="position: absolute; left: 54%; top: 490px;">
+					 <div class="w_t_line" style="width: 84px; height: 2px; left: -72px;top:-10px; transform: rotate(35deg); "></div>
+						<div id="jinjiang" class="w_t_box" style="top:-70px;left: 75px;">
+							<div class="tt_h">锦江站</div>
+							<img style="width:409px;height:155px" src="http://lasa.scsei.org.cn/cacti/graph_image.php?local_graph_id=168">
+						</div>
+					</div>
+					<div class="w_icon" style="position: absolute; left: 38%; top: 540px;">
+					 <div class="w_t_line" style="width: 84px; height: 2px; left: -72px;top:-10px; transform: rotate(35deg); "></div>
+						<div id="shuangliu" class="w_t_box" style="top:-75px;left: -550px;">
+							<div class="tt_h">双流站</div>
+							<img style="width:409px;height:155px" src="http://lasa.scsei.org.cn/cacti/graph_image.php?local_graph_id=168">
+						</div>
+					</div>
+					<div class="w_icon" style="position: absolute; left: 45%; top: 500px;">
+					 <div class="w_t_line" style="width: 84px; height: 2px; left: -72px;top:-10px; transform: rotate(35deg); "></div>
+						<div id="gaoxin" class="w_t_box" style="top:-300px;left: -750px;">
+							<div class="tt_h">高新站</div>
+							<img style="width:409px;height:155px" src="http://lasa.scsei.org.cn/cacti/graph_image.php?local_graph_id=168">
+						</div>
+					</div>
+					<div class="w_icon" style="position: absolute; left: 44%; top: 560px;">
+						<div id="tianfu" class="w_t_box" style="top:60px;left: -180px;">
+							<div class="tt_h">天府新区站</div>
+							<img style="width:409px;height:155px" src="http://lasa.scsei.org.cn/cacti/graph_image.php?local_graph_id=168">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="mapx"></div>
+		</div>
+		
+	</div>
+	<!-- <div id="myCanvasDiv">
+		<canvas id="myCanvas"></canvas>
+	</div>
+	
+	<script type="text/javascript">
+		var c=document.getElementById("myCanvas");
+		var ctx=c.getContext("2d");
+		ctx.fillStyle="yellow";
+		ctx.moveTo(0,0);
+		ctx.lineTo(200,100);
+		ctx.stroke();
+	</script> -->
+</body>
+</html>

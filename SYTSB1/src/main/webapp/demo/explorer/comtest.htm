@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=gbk"/>
+<title>新建网页</title>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+<script type="text/javascript">
+
+function getBrowserInfo(){
+	//浏览器判断 2013-5-15 下午10:07 lybide
+	var ie=$.browser.msie;
+	var iever=$.browser.version;
+	var dm=document.documentMode;//文档模式
+	var agent=navigator.userAgent.toLowerCase();//window.prompt("lybide提示",agent);
+	var xtms=agent.indexOf("win64")>=0||agent.indexOf("wow64")>=0?"x64":"x86";//操作系统类型
+	if (agent.indexOf("chrome")>0) {
+		//mozilla/5.0 (windows nt 6.1; wow64) applewebkit/535.20 (khtml, like gecko) chrome/19.0.1036.7 safari/535.20
+		var osVersion=agent.split(";")[0];
+	} else if (agent.indexOf("firefox")>0) {
+		//mozilla/5.0 (windows nt 6.1; wow64; rv:20.0) gecko/20100101 firefox/20.0
+		var osVersion=agent.split(";")[0];
+	} else {
+		//mozilla/5.0 (compatible; msie 10.0; windows nt 6.1; wow64; trident/6.0; slcc2; .net clr 2.0.50727; .net clr 3.5.30729; .net clr 3.0.30729; media center pc 6.0; infopath.3)
+		var osVersion=agent.split(";")[2];
+	}
+	var osV=osVersion.substr(osVersion.length-3,3);//alert(osV);
+	var xt;//系统名称
+	if (osV=="5.0") {
+		xt="win2000";
+	} else if (osV=="5.1") {
+		xt="winxp";
+	} else if (osV=="5.2") {
+		xt="Win2003";
+	} else if (osV=="6.2") {
+		xt="win8";
+	} else if (osV=="6.1") {
+		xt="win7";
+	} else {
+		xt="other";
+	};
+	return {ie:ie,system:xt,systemx:xtms,docMode:dm,ieversion:iever};
+}
+
+function ieChk(){
+	var bc=getBrowserInfo();
+	var ie=bc.ie,xt=bc.system,xtms=bc.systemx,dm=bc.docMode,iever=bc.ieversion;
+	if (ie) {
+		if (ie && parseFloat(iever) <=7) {//浏览器检测 2012年06月19日 星期二 14:04:54 lybide
+			var str1='提示：您的浏览器版本太低（Internet Explorer '+iever+'），请立即升级您的浏览器。推荐使用：<a href="http://www.microsoft.com/ie" target="_blank" style="color:#ffff00">（最新IE浏览器）</a>。';
+			if ((xt=="win7" || xt=="win8") && iever<=7) {
+				str1='提示：请按键 F12，选择“浏览器模式”，必须设置至 Internet Explorer 8 或以上。'
+			}
+			$("body").append('<div id="bosCk1" style="border:1px solid #000000;background:#ff0000;padding:15px;position:absolute;top:10px;right:10px;z-index:55;color:#ffffff;">'+str1+'<a href="javascript:void(0);" onclick="$(\'#bosCk1\').hide();" style="color:#ffffff">[关闭此提示]</a></div>');
+			$("#gts").html("不正常");
+			try{document.execCommand("BackgroundImageCache",false,true);}catch(e){}//ie6不缓存背景图片
+		};//alert([iever,dm,agent])
+		if (ie && parseInt(iever)>6 && (parseInt(iever) != parseInt(dm))) {
+			//alert("亲爱的，请不要使用ie怪义模式嘛");
+			$("body").append('<div id="bosCk1" style="border:1px solid #000000;background:#ff0000;padding:15px;position:absolute;top:10px;right:10px;z-index:55;color:#ffffff;">尊敬的用户，您当前的浏览器模式不正常，请按键盘上的 F12 键，简单设置一下即可。请选择：“浏览器模式”与“文档模式”，两种模式必须一致，建议设置至最高模式。<a href="javascript:void(0);" onclick="$(\'#bosCk1\').hide();" style="color:#ffffff">[关闭此提示]</a></div>');
+			//winOpen({id:"sss",content:'<img src="k/kui/images/iebug1.gif" border="0"/>',width:750,height:500,lock:true,title:"友情提示",max:false,min:false});
+			$("#gts").html("不正常");
+		} else {
+			//$("#gts").html("正常");
+		}
+	}
+};
+
+//jQuery页面载入事件
+$(function(){
+	ieChk();
+});
+
+</script>
+
+</head>
+<body>
+
+<div id="layer1" style="position:absolute;left:100px;top:100px;width:300px;height:100px;z-index:1;border:1px solid #96c2f1;background:#eff7ff;padding:5px;">页面<span id="gts">正常</span></div>
+
+</body>
+</html>

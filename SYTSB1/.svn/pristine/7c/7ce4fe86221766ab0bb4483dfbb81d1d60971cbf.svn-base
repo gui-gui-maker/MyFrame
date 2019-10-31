@@ -1,0 +1,1592 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<body>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<!--  		<input type="hidden" id="fk_report_id" name="fk_report_id"  value="${param.fk_report_id}"  > 		<input type="hidden" id="fk_inspection_info_id" name="fk_inspection_info_id"  value="${param.fk_inspection_info_id}"  >  -->
+	<input type="hidden" id="nextPage" name="nextPage" value="5" values="5"
+		title="" style="width: 99%;">
+	<br>
+	<p class="a DocDefaults">
+		<a name="RTPAGE_3__检验项目及其内容1"></a>
+	</p>
+	<table id=""
+		style="border-bottom: 1px solid rgb(0, 0, 0); table-layout: fixed; vertical-align: middle; border-collapse: collapse; width: 6.3in; position: relative;"
+		class="">
+		<colgroup>
+			<col border="1" style="width: 50%;" class="">
+			<col border="1" style="width: 50%;" class="">
+		</colgroup>
+		<tbody>
+			<tr>
+				<td style="vertical-align: middle;" class="">
+					<p class="a0 DocDefaults" style="">
+						<span class="a1" style="font-size: 12pt; position: relative;"><span
+							class="" style="font-family: SimSun; position: relative;">文件编号：CTJB-0402-BG02</span></span>
+					</p>
+				</td>
+				<td style="vertical-align: middle;" class="">
+					<p class="a0 DocDefaults" style="text-align: right;">
+						<span class="a1" style="font-size: 12pt; position: relative;"><span
+							class="" style="font-family: SimSun; position: relative;">实施日期：2017年10月1日</span></span>
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<table id="docx4j_tbl_3"
+		style="border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 6.3in; position: relative;"
+		class="">
+		<colgroup>
+			<col border="1" style="width: 6.39%;" class="">
+			<col border="1" style="width: 7.73%;" class="">
+			<col border="1" style="width: 9.33%;" class="">
+			<col border="1" style="width: 1.54%;" class="">
+			<col border="1" style="width: 9.44%;" class="">
+			<col border="1" style="width: 15.56%;" class="">
+			<col border="1" style="width: 17.02%;" class="">
+			<col border="1" style="width: 18%;" class="">
+			<col border="1" style="width: 15%;" class="">
+		</colgroup>
+		<tbody>
+			<tr style="height: 12mm;">
+				<td colspan="4"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: hidden; border-right-style: hidden; border-top-style: hidden; vertical-align: middle;"
+					class=""></td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: hidden; border-right-style: hidden; border-top-style: hidden; vertical-align: middle;"
+					class=""></td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: hidden; border-right-style: hidden; border-top-style: hidden; vertical-align: bottom;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">报告编号</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative;">:</span>
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: hidden; border-right-style: hidden; border-top-style: hidden; vertical-align: bottom;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="base__report_sn" name="base__report_sn" type="text"
+							ltype="text" value="" ligerui="{width:151}" readonly="readonly"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;"
+							class="  ">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">序</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">号</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">检验</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">类别</span>
+					</p>
+				</td>
+				<td colspan="5"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">检验项目及其内容</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">检验结果</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">检验结论</span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td rowspan="5"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">1</span>
+					</p>
+				</td>
+				<td rowspan="5"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">B</span>
+					</p>
+				</td>
+				<td rowspan="5"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">1</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">技术</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">资料</span>
+					</p>
+				</td>
+				<td colspan="2" rowspan="5"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">1.4</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">使用</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">资料</span>
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">(</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">1</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">)</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">使用登记资料</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_1_4_1" name="record__B_1_4_1" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cB_1_4        " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+				<td rowspan="5"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__B_1_4_1" name="conclusion__B_1_4_1"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:71,initValue:'合格'}"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;"
+							class="      ">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">(</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">2</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">)</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">安全技术档案</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_1_4_2" name="record__B_1_4_2" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cB_1_4      " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">(</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">3</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">)</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">管理规章制度</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_1_4_3" name="record__B_1_4_3" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cB_1_4        " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">(</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">4</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">)</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">日常维护保养合同</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_1_4_4" name="record__B_1_4_4" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cB_1_4      " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">(</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">5</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">)</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">特种设备作业人员证</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_1_4_5" name="record__B_1_4_5" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cB_1_4      " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td rowspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">2</span>
+					</p>
+				</td>
+				<td rowspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">C</span>
+					</p>
+				</td>
+				<td rowspan="19"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">2</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">机房</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative;">(</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">机器</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">设备</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">间</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative;">)</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">及</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">相关</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">设备</span>
+					</p>
+				</td>
+				<td colspan="2" rowspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">2.1</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">通道与</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">通道门</span>
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">(</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">1</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">)</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">通道设置</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__C_2_1_1" name="record__C_2_1_1" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cC_2_1      " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+				<td rowspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__C_2_1_1" name="conclusion__C_2_1_1"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:71,initValue:'合格'}"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;"
+							class="      ">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">(</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">2</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">)</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">通道照明</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__C_2_1_2" name="record__C_2_1_2" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cC_2_1      " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">3</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">C</span>
+					</p>
+				</td>
+				<td colspan="4"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">2.5
+						</span><span class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">(</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">1</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">)</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">照明、照明开关</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__C_2_5_1" name="record__C_2_5_1" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cC_2_5      " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__C_2_5_1" name="conclusion__C_2_5_1"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:71,initValue:'合格'}"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;"
+							class="    ">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">4</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">B</span>
+					</p>
+				</td>
+				<td colspan="4"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">2.6
+						</span><span class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">(</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">2</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">)</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">主开关与照明等电路的控制关系</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_2_6_2" name="record__B_2_6_2" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cB_2_6      " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__B_2_6_2" name="conclusion__B_2_6_2"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:71,initValue:'合格'}"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;"
+							class="    ">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td rowspan="3"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">5</span>
+					</p>
+				</td>
+				<td rowspan="3"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">B</span>
+					</p>
+				</td>
+				<td colspan="2" rowspan="3"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">2.7</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">驱动</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">主机</span>
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">(</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">2</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">)</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">工作状况</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_2_7_2" name="record__B_2_7_2" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cB_2_7      " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+				<td rowspan="3"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__B_2_7_2" name="conclusion__B_2_7_2"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:71,initValue:'合格'}"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;"
+							class="    ">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">(</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">3</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">)</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">轮槽磨损</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_2_7_3" name="record__B_2_7_3" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cB_2_7      " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">(</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">4</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">)</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">制动器动作情况</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_2_7_4" name="record__B_2_7_4" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cB_2_7      " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td rowspan="7"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">6</span>
+					</p>
+				</td>
+				<td rowspan="7"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">B</span>
+					</p>
+				</td>
+				<td colspan="2" rowspan="7"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">2.8</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">控制柜</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">、紧急</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">操作和</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">动态测</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">试装置</span>
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">(</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">2</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">)</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">断错相保护</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_2_8_2" name="record__B_2_8_2" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cB_2_8      " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+				<td rowspan="7"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__B_2_8_2" name="conclusion__B_2_8_2"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:71,initValue:'合格'}"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;"
+							class="    ">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">(</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">4</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">)</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">紧急电动运行装置</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_2_8_4" name="record__B_2_8_4" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cB_2_8      " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">(</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">5</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">)</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">紧急操作和动态测试装置</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_2_8_5" name="record__B_2_8_5" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cB_2_8      " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-family: SimSun; position: relative; text-align: left;">☆</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">(</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">6</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">)</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">层门和轿门旁路装置</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_2_8_6" name="record__B_2_8_6" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cB_2_8    " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-family: SimSun; position: relative; text-align: left;">☆</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">(</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">7</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">)</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">门回路检测功能</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_2_8_7" name="record__B_2_8_7" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cB_2_8    " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-family: SimSun; position: relative; text-align: left;">☆</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">(</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">8</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">)</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">制动器故障保护</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_2_8_8" name="record__B_2_8_8" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cB_2_8    " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-family: SimSun; position: relative; text-align: left;">☆</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">(</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">9</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">)</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">自动救援操作装置</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_2_8_9" name="record__B_2_8_9" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cB_2_8    " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td rowspan="3"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">7</span>
+					</p>
+				</td>
+				<td rowspan="3"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">B</span>
+					</p>
+				</td>
+				<td colspan="2" rowspan="3"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">2.9</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">限速器</span>
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">(</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">2</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">)</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">电气安全装置</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_2_9_2" name="record__B_2_9_2" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cB_2_9    " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+				<td rowspan="3"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__B_2_9_2" name="conclusion__B_2_9_2"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:71,initValue:'合格'}"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;"
+							class="      ">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">(</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">3</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">)</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">封记及运转情况</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_2_9_3" name="record__B_2_9_3" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cB_2_9    " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">(</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">4</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">)</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">动作速度校验</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_2_9_4" name="record__B_2_9_4" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cB_2_9    " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">8</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">C</span>
+					</p>
+				</td>
+				<td colspan="4"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">2.10
+						</span><span class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">(</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">2</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">)</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">接地连接</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__C_2_10_2" name="record__C_2_10_2" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cC_2_10    " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__C_2_10_2" name="conclusion__C_2_10_2"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:71,initValue:'合格'}"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;"
+							class="    ">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">9</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">C</span>
+					</p>
+				</td>
+				<td colspan="4"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">2.11
+						</span><span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">电气绝缘</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__C_2_11" name="record__C_2_11" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cC_2_11      " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__C_2_11" name="conclusion__C_2_11"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:71,initValue:'合格'}"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;"
+							class="    ">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td rowspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">10</span>
+					</p>
+				</td>
+				<td rowspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">C</span>
+					</p>
+				</td>
+				<td rowspan="7"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">3</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">井道</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">及相</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">关设</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">备</span>
+					</p>
+				</td>
+				<td colspan="2" rowspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">3.4</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">井道安</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">全门</span>
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">(</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">3</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">)</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">门锁</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__C_3_4_3" name="record__C_3_4_3" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cC_3_4    " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+				<td rowspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__C_3_4_3" name="conclusion__C_3_4_3"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:71,initValue:'合格'}"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;"
+							class="    ">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">(</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">4</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">)</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">电气安全装置</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__C_3_4_4" name="record__C_3_4_4" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cC_3_4    " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td rowspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">11</span>
+					</p>
+				</td>
+				<td rowspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">C</span>
+					</p>
+				</td>
+				<td colspan="2" rowspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">3.5</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">井道检</span>
+					</p>
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">修门</span>
+					</p>
+				</td>
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">(</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">3</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">)</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">门锁</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__C_3_5_3" name="record__C_3_5_3" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cC_3_5    " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+				<td rowspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__C_3_5_3" name="conclusion__C_3_5_3"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:71,initValue:'合格'}"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;"
+							class="    ">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td colspan="2"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">(</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">4</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: Calibri; position: relative; text-align: left;">)</span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">电气安全装置</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__C_3_5_4" name="record__C_3_5_4" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cC_3_5    " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">12</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">B</span>
+					</p>
+				</td>
+				<td colspan="4"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">3.7
+						</span><span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">轿厢与井道壁距离</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_3_7" name="record__B_3_7" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cB_3_7    " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__B_3_7" name="conclusion__B_3_7" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:71,initValue:'合格'}"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;"
+							class="    ">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">13</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">B</span>
+					</p>
+				</td>
+				<td colspan="4"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">3.10
+						</span><span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">极限开关</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_3_10" name="record__B_3_10" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cB_3_10    " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__B_3_10" name="conclusion__B_3_10"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:71,initValue:'合格'}"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;"
+							class="    ">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 7mm;">
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">14</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults" style="text-align: center;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">C</span>
+					</p>
+				</td>
+				<td colspan="4"
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="TableParagraph a DocDefaults  " style="text-align: left; margin-left: 1mm;">
+						<span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">3.11
+						</span><span class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative; text-align: left;">井道照明</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__C_3_11" name="record__C_3_11" type="text"
+							ltype="select" value=""
+							ligerui="{code:'dt_bg_record',isMultiSelect:false,data:<u:dict code='dt_bg_record'></u:dict>,isTextBoxMode:true,width:69,initValue:'符合'}"
+							class="cC_3_11      " onchange="changeRecord(this,this.value)"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;">
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: solid; border-left-width: 1px; border-left-color: #000000; border-right-style: solid; border-right-width: 1px; border-right-color: #000000; border-top-style: solid; border-top-width: 1px; border-top-color: #000000; vertical-align: middle;"
+					class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__C_3_11" name="conclusion__C_3_11"
+							type="text" ltype="select" value=""
+							ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:<u:dict code='dt_bg_conclusion'></u:dict>,isTextBoxMode:false,width:71,initValue:'合格'}"
+							values="" title=""
+							style="width: 99%; font-family: SimSun; font-size: 12pt;"
+							class="    ">
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<p class="a DocDefaults"></p>
+	<p class="a DocDefaults"></p>
+	</div>
+</body>
+</html>

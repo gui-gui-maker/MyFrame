@@ -1,0 +1,106 @@
+<%@page import="com.khnt.security.CurrentSessionUser"%>
+<%@page import="com.khnt.security.util.SecurityUtil"%>
+<%@ page contentType="text/html;charset=UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>业务流程工作任务配置管理</title>
+<%@include file="/k/kui-base-list.jsp"%>
+<script type="text/javascript">
+	var qmUserConfig = {
+		sp_fields : [ {
+			name : "work_type",
+			compare : "="
+		}, {
+			name : "title",
+			compare : "like"
+		}, {
+			name : "creater_name",
+			compare : "like"
+		}, {
+			label : "创建时间从",
+			name : "creater_time",
+			compare : ">="
+		}, {
+			label : "到",
+			name : "creater_time",
+			compare : "<="
+		}],
+		tbar : [ {
+			text : '详情 ',
+			id : 'detail',
+			icon : 'detail',
+			click : function() {
+				detail({
+					url : Qm.getValueByName("url"),
+					title : Qm.getValueByName("title"),
+					service_id : Qm.getValueByName("service_id"),
+					handler_id : Qm.getValueByName("handler_id"),
+					status : Qm.getValueByName("status")
+				});
+			}
+		}, {
+			line : true
+		}, {
+			text : '删除 ',
+			id : 'del',
+			icon : 'delete',
+			click : del
+		} ],
+		listeners : {
+			rowDblClick : function(rowData, rowIndex) {
+				detail(rowData);
+			},
+			selectionChange : function(rowData, rowIndex) {
+				var count = Qm.getSelectedCount();//行选择数
+				Qm.setTbar({
+					detail : count == 1,
+					del : count >= 1
+				});
+			},
+			rowAttrRender : function(item, rowid) {
+				if (item.status == '逾期')
+					return "style='color:red'";
+			}
+		}
+	};
+
+	function submitAction() {
+		Qm.refreshGrid();
+	}
+
+	function detail(rowData) {
+		var linkStr = "?activityId=";
+		if (rowData.url.indexOf("?") > -1)
+			linkStr = "&activityId=";
+		top.$.dialog({
+			width : $(top).width() * 0.7,
+			height : $(top).height() * 0.7,
+			lock : true,
+			title : "工作任务-" + rowData.title,
+			data : {
+				"window" : window,
+				"flowname" : rowData.flowname
+			},
+			content : 'url:' + rowData.url + linkStr + rowData.service_id
+					+ "&handlerId=" + rowData.handler_id + "&status=" + rowData.status
+		});
+	}
+
+	function del() {
+		$.del("你是否要删除", "pub/worktask/delete.do", {
+			"ids" : Qm.getValuesByName("id").toString()
+		});
+	}
+</script>
+</head>
+<body>
+	<%
+		CurrentSessionUser user = SecurityUtil.getSecurityUser();
+	%>
+	<qm:qm pageid="worktask" script="false" singleSelect="false">
+		<qm:param name="handler_id" value="<%=user.getId()%>" compare="=" />
+		<qm:param name="status" value="${param.status}" compare="=" />
+	</qm:qm>
+</body>
+</html>

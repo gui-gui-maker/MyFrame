@@ -1,0 +1,436 @@
+<%@ page contentType="text/html;charset=UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<style type="text/css">
+</style>
+</head>
+
+<body>
+	<div id="layout2" style="width: 99.8%">
+		<input type="hidden" id="inputFocus" name="inputFocus" /> <input
+			type="hidden" id="thisPage" name="thisPage" value="?page=3">
+		<div position="center" class="wrapper"
+			style="overflow: auto; width: 100%" align="center">
+			<input type="hidden" id="fk_report_id" name="fk_report_id" value="">
+			<input type="hidden" id="fk_inspection_info_id"
+				name="fk_inspection_info_id" value=""> <br />
+			<p style="">
+				<a name="RTPAGE_2__曳引驱动杂物电梯定期检验原始记录单"></a>
+			</p>
+			<p class="dtitle" style="line-height: 220%;">
+				<span>曳引驱动杂物电梯定期检验原始记录单</span>
+			</p>
+			<table id="docx4j_tbl_3" class="two" style="text-align: center;">
+				<colgroup>
+					<col style="width: 9.37%;" />
+					<col style="width: 14.88%;" />
+					<col style="width: 7.18%;" />
+					<col style="width: 3.66%;" />
+					<col style="width: 6.34%;" />
+					<col style="width: 4.49%;" />
+					<col style="width: 5.5%;" />
+					<col style="width: 1.43%;" />
+					<col style="width: 3.96%;" />
+					<col style="width: 14.62%;" />
+					<col style="width: 21.41%;" />
+					<col style="width: 7.15%;" />
+				</colgroup>
+				<tbody>
+					<tr style="height: 10mm;">
+						<td colspan="2" style="">
+							<p style="text-algin:center">
+								<span style="">设备品种</span>
+							</p>
+						</td>
+						<td colspan="7">
+							<p style="">
+								<input id="base__device_sort" name="base__device_sort"
+									type="text" ltype="text" value="" ligerui="{width:205}" />
+							</p>
+						</td>
+						<td>
+							<p style="">
+								<span>型号</span>
+							</p>
+						</td>
+						<td colspan="2">
+							<p style="">
+								<input id="base__device_model" name="base__device_model"
+									type="text" ltype="text" value="" ligerui="{width:178}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 10mm;">
+						<td colspan="2">
+							<p style="">
+								<span>产品编号</span>
+							</p>
+						</td>
+						<td colspan="7">
+							<p style="">
+								<input id="base__factory_code" name="base__factory_code"
+									type="text" ltype="text" value="" ligerui="{width:205}" />
+							</p>
+						</td>
+						<td>
+							<p style="">
+								<span>制造日期</span>
+							</p>
+						</td>
+						<td colspan="2">
+							<p style="">
+								<input id="base__make_date" name="base__make_date" type="text"
+									ltype="text" value="" ligerui="{width:178}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 10mm;">
+						<td colspan="2">
+							<p style="">
+								<span>制造单位名称</span>
+							</p>
+						</td>
+						<td colspan="10">
+							<p style="">
+								<input id="base__make_units_name" name="base__make_units_name"
+									type="text" ltype="text" value="" ligerui="{width:491}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 14mm;">
+						<td colspan="2">
+							<p style="">
+								<span>使用单位名称</span>
+							</p>
+						</td>
+						<td colspan="10">
+							<p style="">
+								<input id="base__com_name" name="base__com_name" type="text"
+									ltype="text" value="" ligerui="{width:491}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 14mm;">
+						<td colspan="2">
+							<p style="">
+								<span>使用单位代码</span>
+							</p>
+						</td>
+						<td colspan="7">
+							<p style="">
+								<input id="base__com_code" name="base__com_code" type="text"
+									ltype="text" value="" ligerui="{width:205}" />
+							</p>
+						</td>
+						<td>
+							<p style="">
+								<span>使用登记证编号</span>
+							</p>
+						</td>
+						<td colspan="2">
+							<p style="">
+								<input id="base__registration_num" name="base__registration_num"
+									type="text" ltype="text" value="" ligerui="{width:178}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 14mm;">
+						<td colspan="2">
+							<p style="">
+								<span>设备使用地点</span>
+							</p>
+						</td>
+						<td colspan="7">
+							<p style="">
+								<input id="base__device_use_place" name="base__device_use_place"
+									type="text" ltype="text" value="" ligerui="{width:205}" />
+							</p>
+						</td>
+						<td>
+							<p style="">
+								<span>单位内部编号</span>
+							</p>
+						</td>
+						<td colspan="2">
+							<p style="">
+								<input id="base__internal_num" name="base__internal_num"
+									type="text" ltype="text" value="" ligerui="{width:178}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 14mm;">
+						<td colspan="2">
+							<p style="">
+								<span>经度</span>
+							</p>
+						</td>
+						<td colspan="7">
+							<p style="">
+								<input id="base__longitude" name="base__longitude" type="text"
+									ltype="text" value="" ligerui="{width:205}" />
+							</p>
+						</td>
+						<td>
+							<p style="">
+								<span>纬度</span>
+							</p>
+						</td>
+						<td colspan="2">
+							<p style="">
+								<input id="base__latitude" name="base__latitude" type="text"
+									ltype="text" value="" ligerui="{width:178}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 14mm;">
+						<td colspan="2">
+							<p style="">
+								<span>使用</span>
+							</p>
+							<p style="">
+								<span>场所</span>
+							</p>
+						</td>
+						<td colspan="10" style="text-align: left;">
+							<p><div
+								id="base__use_place_type"
+								name="base__use_place_type"
+								type="text"
+								ltype="checkBox"
+								value=""
+								class="checkboxDiv"
+								ligerui="{data:[{'id':'学校(幼儿园)','text':'学校(幼儿园)'},{'id':'医院','text':'医院'},{'id':'车站(码头)','text':'车站(码头)'},{'id':'商场','text':'商场'},{'id':'公共场馆(体育馆\\展览馆\\公园\\酒店)','text':'公共场馆(体育馆\\展览馆\\公园\\酒店)'},{'id':'住宅楼','text':'住宅楼'}]}"
+							></div></p>
+						</td>
+					</tr>
+					<tr style="height: 14mm;">
+						<td colspan="2">
+							<p style="">
+								<span>安全管理人员</span>
+							</p>
+						</td>
+						<td colspan="7">
+							<p style="">
+								<input id="base__security_op" name="base__security_op"
+									type="text" ltype="text" value="" ligerui="{width:205}" />
+							</p>
+						</td>
+						<td>
+							<p style="">
+								<span>联系电话</span>
+							</p>
+						</td>
+						<td colspan="2">
+							<p style="">
+								<input id="base__check_tel" name="base__check_tel" type="text"
+									ltype="text" value="" ligerui="{width:178}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 14mm;">
+						<td colspan="2">
+							<p style="">
+								<span>改造单位名称</span>
+							</p>
+						</td>
+						<td colspan="7">
+							<p style="">
+								<input id="base__transform_unit_name"
+									name="base__transform_unit_name" type="text" ltype="text"
+									value="" ligerui="{width:205}" />
+							</p>
+						</td>
+						<td>
+							<p style="">
+								<span>改造日期</span>
+							</p>
+						</td>
+						<td colspan="2">
+							<p style="">
+								<input id="base__transform_date" name="base__transform_date"
+									type="text" ltype="date" value=""
+									ligerui="{isTextBoxMode:true,width:178}" required />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.66in;">
+						<td colspan="2">
+							<p style="">
+								<span>维护保养单位名称</span>
+							</p>
+						</td>
+						<td colspan="7">
+							<p style="">
+								<input id="base__maintain_unit_name"
+									name="base__maintain_unit_name" type="text" ltype="text"
+									value="" ligerui="{width:205}" />
+							</p>
+						</td>
+						<td>
+							<p style="">
+								<span>维护保养单位许可证明文件编号</span>
+							</p>
+						</td>
+						<td colspan="2">
+							<p style="">
+								<input id="base__maintain_unit_xkzmwjbh"
+									name="base__maintain_unit_xkzmwjbh" type="text" ltype="text"
+									value="" ligerui="{width:512}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.43in;">
+						<td colspan="2">
+							<p style="">
+								<span>维护保养单位联系人</span>
+							</p>
+						</td>
+						<td colspan="7">
+							<p style="">
+								<input id="base__maintenance_man" name="base__maintenance_man"
+									type="text" ltype="text" value="" ligerui="{width:198}" />
+							</p>
+						</td>
+						<td>
+							<p style="">
+								<span>维护保养单位联系电话</span>
+							</p>
+						</td>
+						<td colspan="2">
+							<p style="">
+								<input id="base__maintenance_tel" name="base__maintenance_tel"
+									type="text" ltype="text" value="" ligerui="{width:178}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.67in;">
+						<td rowspan="2">
+							<p style="">
+								<span>设备技术参数</span>
+							</p>
+						</td>
+						<td>
+							<p style="">
+								<span>额定载重量</span>
+							</p>
+						</td>
+						<td colspan="5">
+							<p style="">
+								<input id="base__p30002004" name="base__p30002004" type="text"
+									ltype="text" value="" ligerui="{width:169}" />
+							</p>
+						</td>
+						<td colspan="2">
+							<p style="">
+								<span>kg</span>
+							</p>
+						</td>
+						<td>
+							<p style="">
+								<span>额定速度</span>
+							</p>
+						</td>
+						<td>
+							<p style="">
+								<input id="base__p30002003" name="base__p30002003" type="text"
+									ltype="text" value="" ligerui="{width:131}" />
+							</p>
+						</td>
+						<td>
+							<p style="">
+								<span>m/s</span>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.51in;">
+						<td>
+							<p style="">
+								<span>层站门数</span>
+							</p>
+						</td>
+						<td>
+							<p style="">
+								<input id="base__p30002005" name="base__p30002005" type="text"
+									ltype="text" value="" ligerui="{width:34}" />
+							</p>
+						</td>
+						<td>
+							<p style="">
+								<span>层</span>
+							</p>
+						</td>
+						<td>
+							<p style="">
+								<input id="base__p_dtzs" name="base__p_dtzs" type="text"
+									ltype="text" value="" ligerui="{width:37}" />
+							</p>
+						</td>
+						<td>
+							<p style="">
+								<span>站</span>
+							</p>
+						</td>
+						<td colspan="2">
+							<p style="">
+								<input id="base__p_dtms" name="base__p_dtms" type="text"
+									ltype="text" value="" ligerui="{width:27}" />
+							</p>
+						</td>
+						<td>
+							<p style="">
+								<span>门</span>
+							</p>
+						</td>
+						<td>
+							<p style="">
+								<span>控制方式</span>
+							</p>
+						</td>
+						<td colspan="2">
+							<p style="">
+								<input id="base__p30001001" name="base__p30001001" type="text"
+									ltype="select" value=""
+									ligerui="{code:'devicez_elevator_contolModel',width:178}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 1.28in;">
+						<td colspan="2">
+							<p style="">
+								<span><span>备注：</span></span>
+							</p>
+						</td>
+						<td colspan="10">
+							<p style="">
+								<textarea rows="6" id="base__remarks3" name="base__remarks3" type="text" ltype="text"
+									value="" ligerui="{width:491}" ></textarea>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 14mm;">
+						<td colspan="2">
+							<p style="text-align:center;">
+								<span>注意事项</span>
+							</p>
+						</td>
+						<td colspan="10" style="text-align: left;">
+							<p>
+								<span>
+									<span>1.安装地点填写应详尽至使用单位内部编号；</span>
+								</span>
+							</p>
+							<p>
+								<span>
+									<span>2.控制方式可采用相关文件规定的字母简写。</span>
+								</span>
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p style="">
+		</div>
+	</div>
+</body>
+</html>

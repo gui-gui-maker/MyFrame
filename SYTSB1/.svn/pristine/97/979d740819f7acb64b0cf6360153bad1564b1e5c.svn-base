@@ -1,0 +1,321 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>四川省特种设备检验云</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" type="text/css" href="css/stylegx.css" media="all" />
+<link rel="stylesheet" type="text/css" href="css/bm.css" media="all" />
+<link rel="stylesheet" type="text/css" href="css/animate.css" media="all" />
+<script src="js/jquery.min.js"></script>
+<script src="js/main.js"></script>
+
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="css/style-ie8.css" media="all" />
+<![endif]-->
+
+</head>
+<body>
+<div id="sysMain" class="sysmain systongji">
+
+	<div class="s-skin-container s-skin-container-bm" ></div>
+
+	<div id="systemTitle" class="m-top-logo">
+		<div class="m-top-logo-txt"><span id="systemTitleText" class="text1"><span class="m-top-logo-img"><img src="images/tjy_lo.png"></span>四川省特种设备检验云</span></div>
+	</div>
+	<div class="m-top-lo-bg"></div>
+
+	<div class="m-top-upfun">
+		<div class="m-top-msg"><a href="">消息</a><span>5</span></div>
+		<div class="m-top-user">
+			<div class="m-user-photo" id="userHeadImg"><img src="images/3.gif"></div>
+			<div class="m-user-name" id="mUserInfoName">
+				<div>李小二</div>
+			</div>
+			<span class="m-user-xdnaw"></span> </div>
+		   <div class="m-top-set iconfont icon-set1" title="换肤" id="m-top-set"><img src="images/setie8.png"></div>
+	</div>
+	<div class="m-top-line"></div>
+	
+
+	<div class="main-map">
+		<div id="map1" class="chart-panel" style="background:url(images/map02.png) no-repeat center center;background-size: 45%; "></div>
+	</div>
+
+		
+
+
+
+	<div class="m-area-left">
+		<div class="m-a-boxes">
+			<div class="m-a-boxes-tit">全年收入来源占比分析</div>
+			<div class="m-a-main">
+				<div id="chart1" class="chart-panel" style="background:url(images/chart1.png) no-repeat center center; background-size: contain; "></div>
+			</div>
+			<div class="m-a-pl1"></div>
+			<div class="m-a-pl2"></div>
+			<div class="m-a-pr1"></div>
+			<div class="m-a-pr2"></div>
+			<div class="m-a-beij"></div>
+			<div class="m-a-border"></div>
+		</div>
+		<div class="m-a-boxes">
+			<div class="m-a-boxes-tit">月份对比分析</div>
+			<div class="m-a-main">
+				<div id="chart2" class="chart-panel" style="background:url(images/chart2.png) no-repeat center center; background-size: contain; "></div>
+			</div>
+			<div class="m-a-pl1"></div>
+			<div class="m-a-pl2"></div>
+			<div class="m-a-pr1"></div>
+			<div class="m-a-pr2"></div>
+			<div class="m-a-beij"></div>
+			<div class="m-a-border"></div>
+		</div>
+		<div class="m-a-boxes">
+			<div class="m-a-boxes-tit">每天收入对比分析</div>
+			<div class="m-a-main">
+				<div id="chart3" class="chart-panel" style="background:url(images/chart3.png) no-repeat center center; background-size: contain; "></div>
+			</div>
+			<div class="m-a-pl1"></div>
+			<div class="m-a-pl2"></div>
+			<div class="m-a-pr1"></div>
+			<div class="m-a-pr2"></div>
+			<div class="m-a-beij"></div>
+			<div class="m-a-border"></div>
+		</div>
+	</div>
+	<div class="m-area-right">
+		<div class="m-a-boxes">
+			<div class="m-a-boxes-tit">部门人员持证情况</div>
+			<div class="m-a-main">
+				<div id="chart4" class="chart-panel" style="background:url(images/chart4.png) no-repeat center center; background-size: contain; "></div>
+			</div>
+			<div class="m-a-pl1"></div>
+			<div class="m-a-pl2"></div>
+			<div class="m-a-pr1"></div>
+			<div class="m-a-pr2"></div>
+			<div class="m-a-beij"></div>
+			<div class="m-a-border"></div>
+		</div>
+		<div class="m-a-boxes">
+			<div class="m-a-boxes-tit">检验报告出具数据</div>
+			<div class="m-a-main" id="m-r-list-tab">
+				
+				<div class="m-r-list-tab">
+					<div class="ta-list-head">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td>区县</td>
+								<td>企业名称</td>
+								<td>日期</td>
+								<td>检查意见</td>
+							</tr>
+						</table>
+					</div>
+					<div class="ta-list-cont" id="demohq_a" style="overflow: hidden;">
+						<div id="demohq1" class="table-list1">
+							<ul>
+								<li>
+				                <div>
+				                    <div><span>简阳市</span></div>
+				                </div>
+				                <div>
+				                    <div><span>简阳三好农牧科技有限公司</span></div>
+				                </div>
+				                <div>
+				                    <div><span>02-18</span></div>
+				                </div>
+				                <div>
+				                    <div><span><span style="color:#FFFF33">表彰</span></span>
+				                    </div>
+				                </div>
+				            </li>
+				            <li>
+				                <div>
+				                    <div><span>邛崃市</span></div>
+				                </div>
+				                <div>
+				                    <div><span>金利养猪场</span></div>
+				                </div>
+				                <div>
+				                    <div><span>02-18</span></div>
+				                </div>
+				                <div>
+				                    <div><span><span style="color:#FFFF33">表彰</span></span>
+				                    </div>
+				                </div>
+				            </li>
+				            <li>
+				                <div>
+				                    <div><span>金堂县</span></div>
+				                </div>
+				                <div>
+				                    <div><span>金堂县星洋水产养殖专业合作社</span></div>
+				                </div>
+				                <div>
+				                    <div><span>02-10</span></div>
+				                </div>
+				                <div>
+				                    <div><span><span style="color:#FFFF33">表彰</span></span>
+				                    </div>
+				                </div>
+				            </li>
+				            <li>
+				                <div>
+				                    <div><span>新都区</span></div>
+				                </div>
+				                <div>
+				                    <div><span>曾章洪奶牛养殖场</span></div>
+				                </div>
+				                <div>
+				                    <div><span>02-07</span></div>
+				                </div>
+				                <div>
+				                    <div><span><span style="color:#FFFF33">表彰</span></span>
+				                    </div>
+				                </div>
+				            </li>
+				            <li>
+				                <div>
+				                    <div><span>邛崃市</span></div>
+				                </div>
+				                <div>
+				                    <div><span>成都市稼兴种植专业合作社</span></div>
+				                </div>
+				                <div>
+				                    <div><span>02-12</span></div>
+				                </div>
+				                <div>
+				                    <div><span><span style="color:#33FF99">投入品不合格</span></span>
+				                    </div>
+				                </div>
+				            </li>
+				            <li>
+				                <div>
+				                    <div><span>金堂县</span></div>
+				                </div>
+				                <div>
+				                    <div><span>金堂县广兴镇德安养殖场</span></div>
+				                </div>
+				                <div>
+				                    <div><span>02-12</span></div>
+				                </div>
+				                <div>
+				                    <div><span><span style="color:#FFFF33">表彰</span></span>
+				                    </div>
+				                </div>
+				            </li>
+				            <li>
+				                <div>
+				                    <div><span>邛崃市</span></div>
+				                </div>
+				                <div>
+				                    <div><span>成都市稼兴种植专业合作社</span></div>
+				                </div>
+				                <div>
+				                    <div><span>02-12</span></div>
+				                </div>
+				                <div>
+				                    <div><span><span style="color:#33FF99">投入品不合格</span></span>
+				                    </div>
+				                </div>
+				            </li>
+				            <li>
+				                <div>
+				                    <div><span>金堂县</span></div>
+				                </div>
+				                <div>
+				                    <div><span>金堂县广兴镇德安养殖场</span></div>
+				                </div>
+				                <div>
+				                    <div><span>02-12</span></div>
+				                </div>
+				                <div>
+				                    <div><span><span style="color:#FFFF33">表彰</span></span>
+				                    </div>
+				                </div>
+				            </li>
+
+
+
+
+							</ul>
+						</div>
+					</div>
+				</div>
+
+
+
+			</div>
+			<div class="m-a-pl1"></div>
+			<div class="m-a-pl2"></div>
+			<div class="m-a-pr1"></div>
+			<div class="m-a-pr2"></div>
+			<div class="m-a-beij"></div>
+			<div class="m-a-border"></div>
+		</div>
+		<div class="m-a-boxes">
+			<div class="m-a-boxes-tit">纠错报告统计</div>
+			<div class="m-a-main">
+				<div id="chart6" class="chart-panel" style="background:url(images/chart5.png) no-repeat center center; background-size: contain; "></div>
+			</div>
+			<div class="m-a-pl1"></div>
+			<div class="m-a-pl2"></div>
+			<div class="m-a-pr1"></div>
+			<div class="m-a-pr2"></div>
+			<div class="m-a-beij"></div>
+			<div class="m-a-border"></div>
+		</div>
+	</div>
+
+	<div class="m-area-top">
+
+		<div class="m-a-tit">机电设备检验一部</div>
+		<div class="m-top-l-img"></div>
+		<div class="m-top-r-img"></div>
+
+		<div class="tjcount">
+
+			<div class="date_year">
+			<span>2017-12</span>
+			<div class="m-a-pl1"></div>
+			<div class="m-a-pl2"></div>
+			<div class="m-a-pr1"></div>
+			<div class="m-a-pr2"></div>
+			<div class="m-a-beij"></div>
+			<div class="m-a-border"></div>
+			</div>	
+			<div class="date_money"> <span>今日收款:</span> <span class="today_data">24,566</span></div>
+			<div></div>
+
+		</div>
+
+
+		
+
+	</div>
+
+	<div class="m-area-bottom">
+		<div class="m-a-boxes-tit">年度同期收入占比分析</div>
+		<div id="chart7" class="chart-panel" style="background:url(images/chart7.png) no-repeat center center; background-size: contain; "></div>
+
+	</div>
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+</div>
+
+</body>
+</html>

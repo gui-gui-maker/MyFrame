@@ -1,0 +1,49 @@
+package com.lsts.mobileapp.code.web;
+
+import java.util.HashMap;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.khnt.core.crud.web.SpringSupportAction;
+import com.khnt.utils.StringUtil;
+import com.lsts.mobileapp.code.bean.Dict;
+import com.lsts.mobileapp.code.service.DictService;
+
+@Controller
+@RequestMapping("dictAction")
+public class DictAction extends SpringSupportAction<Dict,DictService>{
+	@Autowired
+	DictService dictService;
+	
+	@RequestMapping(value="getDictData")
+	@ResponseBody
+	public HashMap<String, Object> getDictData(HttpServletRequest request) throws Exception{
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		String code = request.getParameter("code");
+		String sql = request.getParameter("sql");
+		
+		try {
+			List list = null;
+			if(!StringUtil.isEmpty(code)){
+				list = dictService.getDictByCode(code);
+			}else if(!StringUtil.isEmpty(sql)){
+				list = dictService.getDictBySql(sql);
+			}
+			System.out.println(list.get(0).toString());
+			map.put("data", list);
+			map.put("success", true);
+		} catch (Exception e) {
+			e.printStackTrace();
+			map.put("success", false);
+			map.put("msg", e.getMessage());
+		}
+		return map;
+	}
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn" xml:lang="zh-cn">
+<head>
+  <title>Untitle</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link href="/favicon.ico" rel="shortcut icon">
+  <link href="" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="tag1">我的大小应该是500x500</div>
+<hr>
+<div id="tag2">运行run_test()这里的内容将被替换为图片</div>
+<script language="javascript">
+
+function test()
+{
+	document.getElementById('tag1').html('test函数被执行了，本次的随机数是：'+Math.random())
+}
+function run_test()
+{
+    document.getElementById('tag1').html('test函数被执行了，本次的随机数是：'+Math.random())
+}
+</script>
+<input type="button" value="关闭" onclick="window.close()">
+</body>
+</html>

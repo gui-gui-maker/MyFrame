@@ -1,0 +1,295 @@
+<%@ page contentType="text/html;charset=UTF-8" trimDirectiveWhitespaces="true" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://khnt.com/tags/ui" prefix="u" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%
+	//跳转参数
+	String skip=request.getParameter("skip");
+%>
+    <meta charset="UTF-8">
+    <title>手工出具检验报告申请</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="${pageContext.request.contextPath }/app/qualitymanage/manualReport/css/public.css" rel="stylesheet" media="all" />
+    <link href="${pageContext.request.contextPath }/app/qualitymanage/manualReport/css/itemList.css" rel="stylesheet" media="all" />
+    <script src="${pageContext.request.contextPath }/app/qualitymanage/manualReport/js/jquery.min.js"></script>
+    <script type="text/javascript">
+    	$(function(){
+    		if("pending"=="<%=skip%>"){
+    			
+    		}else if("handled"=="<%=skip%>"){
+    			document.getElementById("li1").className = "";
+    			document.getElementById("li2").className = "active";
+    			document.getElementById("section1").className = "handle";
+    			document.getElementById("section2").className = "handle block";
+    		}else if("mine"=="<%=skip%>"){
+    			document.getElementById("li1").className = "";
+    			document.getElementById("li3").className = "active";
+    			document.getElementById("section1").className = "handle";
+    			document.getElementById("section3").className = "handle block";
+    		}
+    		//我的申请
+    		$.ajax({
+    			url : "${pageContext.request.contextPath }/quality/sgcjjybg/myApply.do",
+    			type : "POST",
+    			async : false,
+    			success : function(data) {	
+    				if(data.success){
+    					fillMyApply(data.data);
+    				}
+    			} 
+    		 });
+			//待办理
+    		$.ajax({
+    			url : "${pageContext.request.contextPath }/quality/sgcjjybg/waitForDeal.do",
+    			type : "POST",
+    			async : false,
+    			success : function(data) {	
+    				if(data.success){
+    					fillWaitForDeal(data.data);
+    				}
+    			} 
+    		 });
+    		
+			//已办理
+    		$.ajax({
+    			url : "${pageContext.request.contextPath }/quality/sgcjjybg/dealed.do",
+    			type : "POST",
+    			async : false,
+    			success : function(data) {	
+    				if(data.success){
+    					fillDealed(data.data);
+    				}
+    			} 
+    		 }); 
+    		
+    		
+    	})
+    	function caculateCount(obj){
+    		var count = 0;
+    		for(var i=1;i<8;i++)
+    		{
+    			if(i==1){
+    				count+=parseInt(obj["NJTS"]==null?0:obj["NJTS"]);
+    			}else{
+    				count+=parseInt(obj["NJTS"+i]==null?0:obj["NJTS"+i]);
+    			}
+    		}
+    		return count;
+    	}
+    	 function fillMyApply(data){
+    		for(var i=0;i<data.length;i++){
+    			var data_status="";
+    			var time=data[i]['REGISTRANT_DATE'];
+    			if(time!=null && time!=""){
+    				time=data[i]['REGISTRANT_DATE'].substring(0,16).replace(/\-/g,'.');
+    			}else{time="";}
+    			$("#Three").append(
+    					"<li onclick='detail(\""+data[i]["ID"]+"\",\""+data[i]["STATUS"]+"\")' >"
+	    					+"<a href='#'>"
+	    						+"<article>"
+	                        		+"<p class='art_first'>"
+	                        			+"<span class='handleTitle'>手工出报告申请</span>"
+	                        			+"<span class='timer'>"+time+"</span>"
+	                        			+"<span class='"+getStatus(data[i]["STATUS"]).css+"'>"+getStatus(data[i]["STATUS"]).text+"</span>"
+	                       			+"</p>"
+	                        		+"<p class='art_padding'>"
+	                        			+"<span class='art_border'></span>"
+	                        			+"<span class='art_name'>"+data[i]["REGISTRANT"]+"</span>"
+	                        			+"<span class='art_day' style='font-size: 1.2rem;'>台</span><small>"+caculateCount(data[i])+"</small>"
+	                       			+"</p>"
+	                        		+"<p class='art_stamp art_padding'>"
+	                        			+"<span class='city'>"+data[i]["DEPARTMENT"]+"</span>"
+	                        			+"<span class='art_times'>"+
+	                        				"<span class='day1 day2'>"+data[i]["USER_NAME"]+"</span>"
+	                        			+"</span>"
+	                       			+"</p>"
+	                   			+"</article>"
+	                   			+"<section class='Icon'>"
+	                        		+"<img src='app/car/weixin/images/Icon_03.png' alt=''>"
+	                        	+"</section>"
+                        	+"</a>"
+                       	+"</li>");
+    			
+    		}
+    	}
+    	//已办理
+    	function fillDealed(data){
+    		for(var i=0;i<data.length;i++){
+    			var data_status="";
+    			var time=data[i]['REGISTRANT_DATE'];
+    			if(time!=null && time!=""){
+    				time=data[i]['REGISTRANT_DATE'].substring(0,16).replace(/\-/g,'.');
+    			}else{time="";}
+    			$("#two").append(
+    					"<li onclick='detail(\""+data[i]["ID"]+"\")' >"
+    						+"<a href='#'>"
+    							+"<article>"
+                        			+"<p class='art_first'>"
+	                        			+"<span class='handleTitle'>手工出报告申请</span>"
+	                        			+"<span class='timer'>"+time+"</span>"
+	                        			+"<span class='"+getStatus(data[i]["STATUS"]).css+"'>"+getStatus(data[i]["STATUS"]).text+"</span>"
+                        			+"</p>"
+                        			+"<p class='art_padding'>"
+	                        			+"<span class='art_border'></span>"
+	                        			+"<span class='art_name'>"+data[i]["REGISTRANT"]+"</span>"
+	                        			+"<span class='art_day' style='font-size: 1.2rem;'>台</span>"
+	                        			+"<small>"+caculateCount(data[i])+"</small>"
+                        			+"</p>"
+                        			+"<p class='art_stamp art_padding'>"
+                        				+"<span class='city'>"+data[i]["DEPARTMENT"]+"</span>"
+                        				+"<span class='art_times'>"
+                        					+"<span class='day1 day2'>"+data[i]["USER_NAME"]+"</span>"
+                        				+"</span>"
+                       				+"</p>"
+                   				+"</article>"
+                       				+"<section class='Icon'>"
+                        				+"<img src='app/car/weixin/images/Icon_03.png' alt=''>"
+                        			+"</section> "
+                   			+"</a> "
+             			+"</li>");
+    			
+    		}
+    	}
+    	//待办理
+    	function fillWaitForDeal(data){
+    		for(var i=0;i<data.length;i++){
+    			var data_status="";
+    			var time=data[i]['REGISTRANT_DATE'];
+    			if(time!=null && time!=""){
+    				time=data[i]['REGISTRANT_DATE'].substring(0,16).replace(/\-/g,'.');
+    			}else{time="";}
+    			$("#one").append(
+    					"<li onclick='check(\""+data[i]["ID"]+"\")' >"
+    					+"<a href='#'>"
+    						+"<article>"
+                            	+"<p class='art_first'><span class='handleTitle'>手工出报告申请</span><span class='timer'>"+time+"</span></p>"
+                            	+"<p class='art_padding'><span class='art_border'></span>"
+                            	+"<span class='art_name'>"+data[i]["REGISTRANT"]+"</span>"
+                            	+"<span class='art_day' style='font-size: 1.2rem;'>台</span><small>"+caculateCount(data[i])+"</small></p>"
+                            +"<p class='art_stamp art_padding'><span class='city'>"+data[i]["DEPARTMENT"]+"</span>"
+                            	+"<span class='art_times'>"
+                            		+"<span class='day1 day2'>"+data[i]["USER_NAME"]+"</span>"
+                            	+"</span></p>"
+                           	+"</article>"
+                           	+"<section class='Icon'>"
+                            +"<img src='app/car/weixin/images/Icon_03.png' alt=''>"
+                            +"</section>"
+                           +"</a>"
+                          +"</li>");
+    		}
+    	} 
+    	//申请
+    	function apply(){
+    		var selectedLi = $(".active").attr("id");
+    		var skip = "pending";
+    		if(selectedLi=="li1"){
+    			skip = "pending";
+    		}else if(selectedLi=="li2"){
+    			skip = "handled";
+    		}else if(selectedLi=="li3"){
+    			skip = "mine";
+    		}
+    		var url="${pageContext.request.contextPath }/app/qualitymanage/manualReport/mr-add.jsp?pageStatus=add&skip="+skip;
+    		location.href=url;
+    	}
+    	//详情
+    	function detail(id,status){
+    		var selectedLi = $(".active").attr("id");
+    		var skip = "pending";
+    		if(selectedLi=="li1"){
+    			skip = "pending";
+    		}else if(selectedLi=="li2"){
+    			skip = "handled";
+    		}else if(selectedLi=="li3"){
+    			skip = "mine";
+    		}
+    		var url="${pageContext.request.contextPath }/app/qualitymanage/manualReport/mr-add.jsp?pageStatus=detail&skip="+skip+"&id="+id+"&dataStatus="+status;
+    		location.href=url;
+    	}
+    	//审核
+    	function check(id){
+     		var selectedLi = $(".active").attr("id");
+    		var skip = "pending";
+    		if(selectedLi=="li1"){
+    			skip = "pending";
+    		}else if(selectedLi=="li2"){
+    			skip = "handled";
+    		}else if(selectedLi=="li3"){
+    			skip = "mine";
+    		}
+    		var url = "${pageContext.request.contextPath }/app/qualitymanage/manualReport/mr-add.jsp?pageStatus=check&id="+id+"&skip="+skip;
+    		location.href=url;
+    	}
+    	
+
+    	
+    	function getStatus(state){
+    		//WTJ、YTJ：未提交/已提交
+    		//SHZ：审核中
+    		//PASS：审核通过
+    		//NO_PASS:审核未通过
+    		if(state=='WTJ'){
+    			return {"text":"未提交","css":"timer_button timer_button2"};//用车部门负责人
+    		}
+			if(state=='YTJ'){
+				return {"text":"待审核","css":"timer_button timer_button2"};//用车部门负责人
+			}
+			if(state=='SHZ'){
+				return {"text":"审核中","css":"timer_button timer_button2"};
+			}
+			if(state=='PASS'){
+				return {"text":"审核通过","css":"timer_button"};
+			}
+			if(state=='NO_PASS'){
+				return {"text":"审核未通过","css":"timer_button timer_button3"};
+			}
+			return {"text":"作废","css":"timer_button timer_button2"};
+    	}
+    </script>
+</head>
+<body>
+<section id="web">
+    <header id="header">
+        <img src="${pageContext.request.contextPath }/app/car/weixin/images/tb.png">
+    </header>
+    <section id="content">
+        <section class="tab">
+            <ul>
+                <li id = "li1" class="active">待办理</li>
+                <li id = "li2" >已办理</li>
+                <li id = "li3" >我的申请</li>
+            </ul>
+        </section>
+        <section id = "section1" class="handle block">
+            <ul id="one">
+            </ul>
+        </section>
+        <section id = "section2" class="handle">
+            <ul id="two">
+                
+                
+            </ul>
+        </section>
+        <section id = "section3" class="handle">
+            <ul id="Three">
+                
+            </ul>
+        </section>
+    </section>
+    <section class="btnBg">
+        <section class="btn">
+            <a href="#" onclick="apply()">申请</a>
+        </section>
+    </section>
+</section>
+</body>
+<script>
+$('.tab ul li').click(function () {
+    var index = $(this).index();
+    $('.tab ul li').eq(index).addClass('active').siblings().removeClass('active');
+    $('.handle').eq(index).addClass('block').siblings().removeClass('block');
+})
+</script>

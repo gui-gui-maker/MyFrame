@@ -1,0 +1,140 @@
+/* #d7346c / #2286e2 */
+
+.m-top {border-bottom:5px solid #d7346c; background:url("../images/pinkline/m-top.jpg") no-repeat center top!important;}
+.m-top-div {background:none!important; border-bottom: 1px solid transparent;}
+
+
+.m-menu1 {background:none!important;}
+.m-menu1-div ul li {border-left:1px solid transparent;border-right:1px solid transparent;}
+/*.m-menu2-1-li-ul .m-menu2-1-li-div-click,.mm-deep-2-prve-select,.m-menu2-1-li-div-click {color:#d7346c;}*/
+.m-menu1-click {background-image: url("../images/pinkline/arrow-active.png");}
+.m-menu1-click a .hasIcon .iconfont {color:#cf2a2c!important;}
+.m-menu1-click a {color:#cf2a2c!important;}
+.m-menu1-hover {background: url("../images/pinkline/bghover.png") no-repeat center bottom; color:#cf2a2c!important;}
+.m-menu1-hover .iconfont {color:#cf2a2c!important;}
+.l-panel-header {background:#d7346c;color:#fff;}
+
+.m-menu1-a span {text-shadow:#880000 0 0 5px;}
+.m-menu1-click .m-menu1-a span {text-shadow:#fff 0 0 5px;}
+.m-menu1-hover .m-menu1-a span {text-shadow:#fff 0 0 5px;}
+
+.icon-item li div:hover {border:4px solid #d7346c;}
+.rtnum,.icon-item-des div:hover, .icon-item-des div.hover {background:#2288e6;}
+.text-color {color:#d7346c;}
+.ui-state-active a {color:#d7346c!important;}
+.progress .orangebar {background-color:#2288e6;}
+
+
+#mFootToolbar .iconfont {color:#fff!important;}
+
+.user-set-menu-a, .user-set-menu-a:link, .user-set-menu-a:visited {background:transparent url("../images/pinkline/userinfoarrow.png") no-repeat right center!important;border-radius: 3px;border:1px solid #fff;color:#fff;}
+
+
+.tbl-tlbar th {border-top:2px solid #d7346c!important; border-bottom:1px solid #d7346c!important;}
+
+.l-selected .l-grid-row-cell {background:#d7346c!important; color:#fff!important;}/*d7346c*/
+.l-a,.l-a:visited,.l-a:link {color:#d7346c;}
+.l-selected .l-a , .l-selected .l-a:visited , .l-selected .l-a:link {color:#fff!important;}
+
+.l-grid-header {border-bottom:1px solid #d7346c; border-top:2px solid #d7346c; color:#333;}
+.l-grid-row-over .l-grid-row-cell, .l-grid-row-over { background:#ffd3e2; }/*20171206*/
+
+.l-grid-hd-cell-asc , .l-grid-hd-cell-desc {background:#d7346c!important; color:#fff!important;}
+.l-grid-hd-cell-sort-asc {/*上三角符号*/ background:url('../images/pinkline/icon-sort-asc.png') no-repeat scroll center center transparent; }
+.l-grid-hd-cell-sort-desc {/*下三角符号*/ background:url('../images/pinkline/icon-sort-desc.png') no-repeat scroll center center transparent; }
+
+.k-skin-pinkline .m-menu2-1-li-ul .m-menu2-1-li-div-click,.k-skin-pinkline .m-menu2-1-li-ul .m-menu2-1-li-div-over,.k-skin-pinkline .m-menu2-1-li-ul .m-menu2-1-li-hasChildren-one-over,.k-skin-pinkline .m-menu2-1-li-div-over,.k-skin-pinkline .m-menu2-1-li-hasChildren-one-over {background: #d7346c; color:#fff;}
+
+.mm-deep-2-prve-select {color:#d7346c;}
+
+.l-panel-btn .iconfont {color:#d7346c;}
+.l-panel-btn-over {background:#d7346c;border:1px solid #d7346c; color:#fff;}
+.l-panel-btn-over .iconfont {color:#fff;}
+.l-panel-btn-over:active {background:#cf2a2c;border:1px solid #cf2a2c; color:#fff;}
+
+.l-bar-button {color:#666;}
+.l-bar-button-over {color:#d7346c;}
+
+.m-panel-tab .selected .item-wrap {background-color:#fef2f2;}
+.m-panel-tab .selected .jj3j {background-color:#d7346c;}
+
+.userdata ul li a:hover { background: #d7346c;}
+
+.l-tab-links { height: 45px;  }
+.l-tab-links ul { padding-left: 15px;  }
+.l-tab-links li { border: 1px solid #ddd;background: #eee;/* border-radius: 0; margin:0;margin-left: -1px;*/ padding: 6px 15px; }
+.l-tab-links li a { color: #333;   }
+.l-tab-links li.l-selected { border-top:2px solid #d7346c; background:#d7346c;}
+.l-tab-links li.l-selected a, .l-tab-links li.l-selected a:link, .l-tab-links li.l-selected a:visited { color: #fff;  }
+.l-tab-links li.l-selected a:hover { color:#fff;  }
+
+.l-box-select .l-table-nocheckbox td.l-selected {background: #d7346c;}
+.l-box-select .l-table-nocheckbox td:hover,.l-box-select .l-table-nocheckbox td.l-over{ background-color:#cf2a2c;}
+.l-box-select .l-table-checkbox tr:hover,.l-box-select .l-table-checkbox tr.l-over{ background-color:#cf2a2c!important;}
+
+.l-button .iconfont {color:#d7346c;}
+.l-button-hover , .l-button:hover {background:#d7346c;border:1px solid #d7346c; color:#fff;}
+.l-button-hover .iconfont , .l-button:hover .iconfont {color:#fff;}
+
+.l-layout-header {color:#000; background: -moz-linear-gradient(top, #fff4f7 0%, #ffd3e2 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff4f7), color-stop(100%,#ffd3e2));
+    background: -webkit-linear-gradient(top, #fff4f7 0%,#ffd3e2 100%);
+    background: -o-linear-gradient(top, #fff4f7 0%,#ffd3e2 100%);
+    background: -ms-linear-gradient(top, #fff4f7 0%,#ffd3e2 100%);
+    background: linear-gradient(to bottom, #fff4f7 0%,#ffd3e2 100%);}
+.l-layout-left,.l-layout-right,.l-layout-center,.l-layout-top,.l-layout-bottom{border:1px solid #f4bfd1;}
+.l-fieldset {border:1px solid #f4bfd1;}
+.l-legend {border:1px solid #f4bfd1;background:#fef2f2;}
+
+.ztree li a.curSelectedNode {background-color:#d7346c; color:#ffffff; border:1px #d7346c solid;}
+
+.l-tree .l-over{background:#fce7ee;}
+.l-tree .l-selected {background:#ffc7da;}
+
+.l-page-title-text h1 {color:#d7346c;}
+.l-page-title2-text h1 {color:#d7346c;}
+
+/* ----------------------- * 日期控件 ** ----------------------- */
+.l-box-dateeditor {border:1px solid #f4bfd1;}/*20171208*/
+.l-box-dateeditor-header {background: -moz-linear-gradient(top, #fff4f7 0%, #ffd3e2 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff4f7), color-stop(100%,#ffd3e2));
+    background: -webkit-linear-gradient(top, #fff4f7 0%,#ffd3e2 100%);
+    background: -o-linear-gradient(top, #fff4f7 0%,#ffd3e2 100%);
+    background: -ms-linear-gradient(top, #fff4f7 0%,#ffd3e2 100%);
+    background: linear-gradient(to bottom, #fff4f7 0%,#ffd3e2 100%);}/*20171208*/
+.l-box-dateeditor-header-text{color:#333;}/*20171208*/
+.l-box-dateeditor-header-text a{color:#d7346c;}/*20171208*/
+.l-box-dateeditor-header-btn-over {background:#fff!important;}
+.l-box-dateeditor-header-prevmonth span{background: url("../images/pinkline/icon-prev.png") no-repeat center;}
+.l-box-dateeditor-header-nextmonth span{background: url("../images/pinkline/icon-next.png") no-repeat center;}
+.l-box-dateeditor-header-prevyear span{background: url("../images/pinkline/icon-first.png") no-repeat center;}
+.l-box-dateeditor-header-nextyear span{background: url("../images/pinkline/icon-last.png") no-repeat center;}
+.l-box-dateeditor-body{border:1px solid #ffd3e2;}/*20171208*/
+.l-box-dateeditor-monthselector li:hover,.l-box-dateeditor-monthselector li.l-selected,.l-box-dateeditor-monthselector li.l-over,.l-box-dateeditor-yearselector li:hover,.l-box-dateeditor-yearselector li.l-selected,.l-box-dateeditor-yearselector li.l-over,.l-box-dateeditor-hourselector li:hover,.l-box-dateeditor-hourselector li.l-selected,.l-box-dateeditor-hourselector li.l-over,.l-box-dateeditor-minuteselector li:hover,.l-box-dateeditor-minuteselector li.l-selected,.l-box-dateeditor-minuteselector li.l-over{background-color:#fef2f2; border: solid 1px #d7346c;}/*20171208*/
+.l-box-dateeditor-body tbody td.l-box-dateeditor-today {background-color:#d7346c; color:#fff;}/*20171208*/
+.l-box-dateeditor-body tbody td.l-box-dateeditor-over,.l-box-dateeditor-body tbody td.l-box-dateeditor-selected { background-color: #d7346c; color:#fff;}/*20171208*/
+.l-box-dateeditor-toolbar {background:#ffd3e2!important;}/*20171208*/
+
+
+.choosed-list-header .title {color:#d7346c!important;}
+.toolbar .org-type , .toolbar .search-name {border:1px solid #d7346c!important;}
+.new-group-wrap , .org-group-head {background:#fef2f2!important;}
+.choose-item-div a.search-result-item {color:#d7346c!important; border:1px solid #f4bfd1;}
+#choosed-list a.checked {background-color:#d7346c!important;}
+#choosed-list a.hover {background-color:#f4bfd1!important;}
+
+.m-menu2-1-li-div-click {background:#d7346c;color:#fff;}
+
+.l-layout-collapse-left, .l-layout-collapse-right {border:1px solid #f4bfd1; background:#fce7ee;}
+
+.l-grid-row:nth-child(2n){background:#fff;} /* 偶数 */
+
+
+/* 表格样式，普通 */
+.l-table {border:1px solid #f4bfd1; border-right:0; border-bottom:0; border-collapse:collapse;}
+.l-table-head {padding:6px 0; border:1px solid #f4bfd1; border-bottom:1px solid #f4bfd1; border-top:1px solid #f4bfd1; background:#f7f7f7; color:#333; font-weight:bold; text-align:center;}
+.l-table-head:first-child {border-left:1px solid #f4bfd1;}
+.l-table-head:last-child {border-right:1px solid #f4bfd1;}
+.l-table-tr {}
+.l-table-td {padding:6px 0;border:1px solid #f4bfd1; border-left:0; border-top:0;}
+.l-table-come {border:1px solid #f4bfd1; border-right:0; border-bottom:0; border-top:0;}/*紧接的第二表格*/

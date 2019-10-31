@@ -1,0 +1,153 @@
+package com.khnt.rtbox.tools;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.alibaba.fastjson.JSONObject;
+import com.khnt.annotation.Comment;
+import com.khnt.base.Factory;
+import com.khnt.utils.StringUtil;
+
+public class NameConfigUtil {
+	
+	public static JSONObject getClassFieldComment(Class<?> cl) {
+		//Map<String,Object> map = new HashMap<String,Object>();
+		JSONObject json = new JSONObject();
+	    for (Field f : cl.getDeclaredFields()) {
+	        //获得注解的对象
+	    	Comment c = f.getAnnotation(Comment.class);
+	        if (c != null) {
+	        	System.out.println("Found Use Case:" + c.comment());
+	        	json.put(f.getName(), c.comment());
+	        }
+	    }
+	    return json;
+	}
+	
+	public static List<Map<String,Object>> objectToMap(Object o) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+		List<Map<String,Object>> list = new ArrayList<Map<String,Object>>();
+		Map<String,Object> map = new HashMap<String,Object>();
+		for (Field f : o.getClass().getDeclaredFields()) {
+			String fname = f.getName();
+			map.put("name", fname);
+			Method m = o.getClass().getMethod("get"+fname.substring(0,1).toUpperCase()+fname.substring(1,fname.length()));
+			map.put("value", m.invoke(o));
+			list.add(map);
+		}
+		return list;
+	}
+
+	/**
+	 * 取得检验业务命名信息
+	 * author pingZhou
+	 * @return
+	 */
+	public static JSONObject getInspectionNamed() {
+		JSONObject json = new JSONObject();
+		
+		json.put("sn", "业务流水号");
+		json.put("check_op", "检验联系人");
+		json.put("check_tel", "检验联系电话");
+		json.put("report_sn", "报告编号");
+		json.put("com_name", "使用单位名称");
+		json.put("com_address", "使用单位地址");
+		json.put("check_unit_id", "检验科室");
+		json.put("inspection_item_id", "项目负责人id");
+		json.put("inspection_item_name", "项目负责人姓名");
+		json.put("inspection_op", "检验人员");
+		json.put("enter_op", "录入人员");
+		json.put("audit_op", "审核人员");
+		json.put("sign_op", "签发人员");
+		json.put("enter_time", "录入时间");
+		json.put("audit_time", "审核时间");
+		json.put("sign_time", "签发时间");
+		json.put("sign_time_y", "签发时间年份");
+		json.put("sign_time_m", "签发时间月份");
+		json.put("sign_time_d", "签发时间日");
+		json.put("inspect_date", "检验日期");
+		json.put("inspect_date_y", "检验日期年份");
+		json.put("inspect_date_m", "检验日期月份");
+		json.put("inspect_date_d", "检验日期日");
+		json.put("inspect_next_date", "下次检验日期");
+		json.put("inspect_next_date_y", "下次检验日期年份");
+		json.put("inspect_next_date_m", "下次检验日期月份");
+		json.put("inspect_next_date_d", "下次检验日期日");
+		json.put("inspection_conclusion", "检验结论");
+		
+		
+		
+		return json;
+	}
+	
+	/**
+	 * 取得设备基础信息命名信息
+	 * author pingZhou
+	 * @return
+	 */
+	public static JSONObject getDeviceNamed() {
+		JSONObject json = new JSONObject();
+		
+		json.put("transform_date", "改造日期");
+		json.put("make_standard", "制造标准");
+		json.put("property_unit_name", "产权单位");
+		json.put("certificate_unit", "发证单位");
+		json.put("certificate_date", "发证时间");
+		json.put("apply_type", "应用类型");
+		json.put("car_owner", "车主");
+		
+		json.put("device_type", "设备类别");
+		json.put("device_sort", "设备品种");
+		return json;
+	}
+
+	
+	public static JSONObject getNamedByConfig(String type) {
+		Connection conn = Factory.getDB().getConnetion();
+    	String sql="select distinct t.code,t.name from BASE_NAME_CONFIG t where t.device_type is null order by t.code";
+    	if(type!=null&&StringUtil.isNotEmpty(type)) {
+    		sql="select distinct t.code,t.name from BASE_NAME_CONFIG t where t.device_type ='"+type+"' order by t.code";
+    	}
+    	Statement queryStatement = null ;
+		ResultSet executSet = null ;
+		JSONObject json = new JSONObject();
+		try {
+			
+			queryStatement=conn.createStatement();
+			executSet=queryStatement.executeQuery(sql);
+			while(executSet.next()){
+				String name = executSet.getString("name"); 
+				String code = executSet.getString("code"); 
+				
+				json.put(code, name);
+				
+			}
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+			return json;
+	}
+	
+	
+public static List<Map<String,Object>> jsonToMapList(JSONObject json) {
+	List<Map<String,Object>> list = new ArrayList<Map<String, Object>>();
+	for (String key : json.keySet()) {
+		Map<String,Object> map = new HashMap<String,Object>();
+		map.put("id", key);
+		map.put("text", json.get(key));
+		list.add(map);
+	}
+	return list;
+}
+
+
+}

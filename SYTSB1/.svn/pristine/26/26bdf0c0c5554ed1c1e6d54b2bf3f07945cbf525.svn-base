@@ -1,0 +1,80 @@
+<%@ page contentType="text/html;charset=UTF-8"%>
+<%@page import="com.khnt.utils.StringUtil"%>
+<%@ taglib uri="http://khnt.com/tags/ui" prefix="u" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="main_head">
+<title></title>
+<%@include file="/k/kui-base-list.jsp"%>
+<%
+	String data_status = request.getParameter("data_status");
+%>
+<script type="text/javascript">
+	var qmUserConfig = {
+		sp_defaults:{columnWidth:0.3,labelAlign:'right',labelSeparator:'',labelWidth:100},	// 默认值，可自定义
+		sp_fields : [ 
+			{name : "msg_type", compare : "=", value : "" },
+			{name : "mobile", compare : "like", value : "" },
+			{name : "content", compare : "like", value : "" },
+			{name : "user_name", compare : "like", value : "" },
+			{group:[
+				{name:"send_time", id:"send_time", compare:">=", format:"yyyy-MM-dd"},
+				{label:"到", name:"send_time", id:"send_time1", compare:"<=", labelAlign:"center", labelWidth:20, format:"yyyy-MM-dd"}
+			]},
+			{name:"status", id:"status", compare:"="}
+		],
+		tbar : [{
+			text : '详情',
+			id : 'detail',
+			click : detail,
+			icon : 'detail'
+		}],
+		listeners : {
+			rowClick : function(rowData, rowIndex) {
+			},
+			rowDblClick : function(rowData, rowIndex) {
+				detail();
+			},
+			selectionChange : function(rowData, rowIndex) {
+				
+			},
+			rowAttrRender : function(rowData, rowid) {
+
+			}
+		}
+	};
+
+	//行选择改变事件
+	function selectionChange() {
+		
+	}
+
+	//查看
+	function detail() {
+		top.$.dialog({
+			width : 600,
+			height : 300,
+			lock : true,
+			title : "详情",
+			data : {
+				"window" : window
+			},//把当前页面窗口传入下一个窗口，以便调用。
+			content : 'url:app/message/message_info_detail.jsp?status=detail&id='+ Qm.getValueByName("id")
+		});
+	}
+	
+	function refreshGrid() {
+		Qm.refreshGrid();
+	}
+</script>
+</head>
+<body>
+	<qm:qm pageid="message_info_list" script="false">
+	</qm:qm>
+	<script type="text/javascript">
+		// 根据 sql或码表名称获得Json格式数据
+		Qm.config.columnsInfo.status.binddata=<u:dict code="SEND_MSG_STATUS"></u:dict>;
+		Qm.config.columnsInfo.msg_type.binddata=<u:dict code="MSG_TYPE"></u:dict>;
+	</script>
+</body>
+</html>

@@ -1,0 +1,405 @@
+package com.lsts.mobileapp.insing.service;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.hibernate.transform.Transformers;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.khnt.core.crud.manager.impl.EntityManageImpl;
+import com.khnt.security.CurrentSessionUser;
+import com.khnt.security.util.SecurityUtil;
+import com.khnt.utils.StringUtil;
+import com.lsts.inspection.bean.Inspection;
+import com.lsts.inspection.bean.InspectionHallPara;
+import com.lsts.inspection.bean.InspectionInfo;
+import com.lsts.inspection.dao.InspectionDao;
+import com.lsts.inspection.dao.InspectionHallDao;
+import com.lsts.inspection.dao.InspectionHallParaDao;
+import com.lsts.inspection.dao.InspectionInfoDao;
+import com.lsts.inspection.service.InspectionService;
+import com.lsts.inspection.service.ReportItemValueService;
+import com.lsts.mobileapp.insing.dao.DeptInspectDao;
+import com.lsts.report.service.ReportService;
+
+import util.MapUtil;
+import util.TS_Util;
+@Service
+public class DeptInspectService extends EntityManageImpl<Inspection, DeptInspectDao>{
+	/**报检数据状态     使用状态*/
+	public static final String USRSTATUS="1";
+	/**报检数据状态     删除状态*/
+	public static final String DETSTATUS="2";
+
+	@Autowired
+	DeptInspectDao deptInspectDao;
+	@Autowired
+	InspectionDao inspectionDao;
+	@Autowired
+	private InspectionHallParaDao hallParaDao;
+	@Autowired
+	private InspectionHallDao inspectionHallDao;
+	@Autowired
+	ReportService ReportManager;
+
+	@Autowired
+	private ReportItemValueService reportItemValueService;
+
+	@Autowired
+	private InspectionInfoDao inspectionInfoDao;
+	@Autowired
+	InspectionService inspectionService;
+	
+	@SuppressWarnings("unchecked")
+	public List<HashMap<String, Object>> queryPagingDevices(Map<String, Object> params) throws Exception {
+		String sql = params.get("sql").toString();
+		String fk_company_info_use_id = params.get("fk_company_info_use_id").toString();
+		int pageSize = Integer.parseInt(params.get("pageSize").toString());
+		int start = Integer.parseInt(params.get("start").toString());
+		sql = "select * from (select v.*,rownum from ("+sql+") v where v.fk_company_info_use_id='"+fk_company_info_use_id+"' and rownum <= "+(start+pageSize)+") where rownum >"+start; 
+		
+		List<HashMap<String, Object>> list = inspectionDao.createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return MapUtil.keyToLowerCase(list);
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<HashMap<String, Object>> queryAllDevices(String device_type, String fk_company_info_use_id) throws Exception {
+		StringBuffer sql = new StringBuffer();
+		if("7310".equals(device_type)){
+			sql.append("	with device_code as	");
+			sql.append("	 (select id from base_device_classify  CONNECT BY prior id = pid START WITH id = '7310'	) ");
+			sql.append("	select t.fk_company_info_use_id,	");
+			sql.append("	       t.id,	");
+			sql.append("	       t.device_registration_code,	");
+			sql.append("	       t1.seal_number,	");
+			sql.append("	       t.device_sort_code,	");
+			sql.append("	       t.device_sort_code sort_code,	");
+			sql.append("	       t.make_date,	");
+			sql.append("	       t1.make_units,	");
+			sql.append("	       t1.accessory_type,	");
+			sql.append("	       '0' done,	");
+			sql.append("	       t1.accessory_name as device_name　	");
+			sql.append("	   from base_device_document t,	");
+			sql.append("	       base_device_accessory  t1 	");
+			sql.append("	    where t.id = t1.fk_tsjc_device_document_id 	");
+			sql.append("	          and t.device_status <> '99'      	");
+			sql.append("	          and exists (select 1	");
+			sql.append("	                         from device_code codes	");
+			sql.append("	                             where t.device_sort_code =	");
+			sql.append("	                          codes.id)	");
+			
+		}else{
+			sql.append("	with device_code as	");
+			sql.append("	 (select id from base_device_classify  CONNECT BY prior id = pid START WITH id = '"+device_type+"'	), ");
+			sql.append("	already_done as	");
+			sql.append("	 (select distinct info.fk_tsjc_device_document_id device_id	");
+			sql.append("	    from TZSB_INSPECTION ins, TZSB_INSPECTION_INFO info	");
+			sql.append("	   where ins.id = info.fk_inspection_id	and info.data_status='1' and info.sign_time is null )");
+			sql.append("	select t.*,	");
+			sql.append("	       t.device_sort_code sort_code,	");
+			sql.append("	       decode(t1.device_id, '', '0', '1') done　from base_device_document t,	");
+			sql.append("	       already_done t1 where t.device_status <> '99' and exists (select 1	");
+			sql.append("	 from device_code codes	");
+			sql.append("	where t.device_sort_code =	");
+			sql.append("	      codes.id)  and t.id = t1.device_id(+)	");
+		}
+		
+		String fsql = "select v.* from ("+sql.toString()+") v where v.fk_company_info_use_id='"+fk_company_info_use_id+"'"; 
+		
+		List<HashMap<String, Object>> list = inspectionDao.createSQLQuery(fsql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return  MapUtil.keyToLowerCase(list);
+	}
+
+	@SuppressWarnings({ "unchecked" })
+	public List<Object> querySelectedDevices(String id) throws Exception {
+		String sql="select b.fk_tsjc_device_document_id from tzsb_inspection a, tzsb_inspection_info b where a.id = b.fk_inspection_id and a.id=?";
+		return inspectionDao.createSQLQuery(sql, id).list();
+	}
+
+
+	public void saveInspection(HttpServletRequest request, Inspection inspection) throws Exception{
+		CurrentSessionUser user = SecurityUtil.getSecurityUser();
+		if(StringUtil.isNotEmpty(inspection.getId())){
+			String sql = "delete from tzsb_inspection_info t where t.id in "
+					+ "(select t.id from tzsb_inspection_info t,tzsb_inspection t1 "
+					+ "where t.fk_inspection_id = t1.id and t1.id = ?)";
+			//删除报检下面的所有info
+			inspectionDao.createSQLQuery(sql,inspection.getId()).executeUpdate();
+		}
+		InspectionHallPara hallPara = hallParaDao.get(inspection.getFk_hall_para_id());
+    	//报检业务表插入数据
+		int cont = 0;
+    	for (InspectionInfo info : inspection.getInspectionInfo()) {
+    		cont++;
+    		info.setData_status("1");
+    		info.setInspection(inspection);
+    		//检验日期
+    		info.setAdvance_time(inspection.getInspect_date());
+    		info.setIs_flow("0");//初始尚未进入流程标记
+    		info.setFlow_note_end("0");//初始尚未结束流程标记
+    		info.setIs_copy("0");//初始报告书尚未编辑标记(生成后或者复制后)
+    		info.setIs_input("0");//初始报告书尚未编辑标记
+    		info.setIs_error_correction("0");//初始未进入纠错流程标记
+    		info.setReceiveStatus("0");//0未接收1已接收
+    		if(info.getSn()==null){
+	    		//获取业务流水号
+	    	    String sn = ReportManager.getSn(cont) ; 
+	    		info.setSn(sn);
+    		}
+    		if(info.getCheck_unit_id()==null){
+    			info.setCheck_unit_id(user.getDepartment().getId());
+    		}
+    		if(hallPara!=null) {
+    			//人员信息
+    			info.setItem_op_id(hallPara.getInc_op_id());
+    			info.setItem_op_name(hallPara.getOp_name());
+    			info.setCheck_op_id(hallPara.getCheck_op_ids());
+    			info.setCheck_op_name(hallPara.getCheck_name());
+    		}
+    		//检验联系人
+    		info.setCheck_op(inspection.getContact());
+    		info.setCheck_tel(inspection.getContact_phone());
+    		
+    		//单位信息
+    		info.setReport_com_name(inspection.getCom_name());
+    		info.setReport_com_address(inspection.getCom_address());
+    		
+    		//报告模板信息
+    		info.setReport_type(inspection.getFk_report_id());
+    		 if(inspection.getInspect_date()!=null) {
+             	info.setAdvance_time(inspection.getInspect_date());
+             }
+    		inspectionInfoDao.save(info);
+		}
+    	inspection.setInspection_time(new Date());
+    	//设备状态
+    	inspection.setDevice_num(String.valueOf(cont));//报检数量
+    	inspection.setData_status(USRSTATUS);
+    	inspection.setEnter_op(user.getUserName());
+    	inspection.setAccepted_type("1");//部门报检
+    	if(com.khnt.utils.StringUtil.isEmpty(inspection.getId()))//修改操作
+    		inspection.setAccept_no(TS_Util.getDPNumber());//受理编号
+    	inspectionDao.save(inspection);
+    	//更新大厅任务
+	    String hallParamId = inspection.getFk_hall_para_id();
+	    if(hallPara!=null){
+        	if(hallPara.getInspection_num()!=null&&StringUtil.isNotEmpty(hallPara.getInspection_num())) {
+        		//修改已报检数量
+            	hallPara.setInspection_num((Integer.parseInt(hallPara.getInspection_num())+cont)+"");
+        	}else {
+        		//修改已报检数量
+            	hallPara.setInspection_num(cont+"");
+        	}
+        	hallParaDao.save(hallPara);
+	    };
+		
+	}
+
+
+    public void saveHallInspection(HttpServletRequest request, Inspection inspection) throws Exception{
+        CurrentSessionUser user = SecurityUtil.getSecurityUser();
+        if(StringUtil.isNotEmpty(inspection.getId())){
+            String sql = "delete from tzsb_inspection_info t where t.id in "
+                    + "(select t.id from tzsb_inspection_info t,tzsb_inspection t1 "
+                    + "where t.fk_inspection_id = t1.id and t1.id = ?)";
+            //删除报检下面的所有info
+            inspectionDao.createSQLQuery(sql,inspection.getId()).executeUpdate();
+        }
+        //报检业务表插入数据
+        //查询检验负责人和参检人员
+        InspectionHallPara para = hallParaDao.get(inspection.getFk_hall_para_id());
+        int cont = 0;
+        for (InspectionInfo info : inspection.getInspectionInfo()) {
+            cont++;
+            info.setCheck_op_id(para.getCheck_op_ids());
+            info.setCheck_op_name(para.getCheck_name());
+
+            info.setItem_op_id(para.getInc_op_id());
+            info.setItem_op_name(para.getOp_name());
+
+            info.setCheck_unit_id(para.getUnit_code());
+            info.setData_status("1");
+            info.setInspection(inspection);
+            info.setIs_flow("0");//初始尚未进入流程标记
+            info.setFlow_note_end("0");//初始尚未结束流程标记
+            info.setIs_copy("0");//初始报告书尚未编辑标记(生成后或者复制后)
+            info.setIs_input("0");//初始报告书尚未编辑标记
+            info.setIs_error_correction("0");//初始未进入纠错流程标记
+            info.setReceiveStatus("0");//0未接收1已接收
+            if(info.getSn()==null){
+                //获取业务流水号
+                String sn = ReportManager.getSn(cont) ;
+                info.setSn(sn);
+            }
+            if(info.getCheck_unit_id()==null){
+                info.setCheck_unit_id(user.getDepartment().getId());
+            }
+            if(inspection.getInspect_date()!=null) {
+            	info.setAdvance_time(inspection.getInspect_date());
+            }
+        }
+        inspection.setInspection_time(new Date());
+        //设备状态
+        inspection.setDevice_num(String.valueOf(cont));//报检数量
+        inspection.setData_status(USRSTATUS);
+        inspection.setEnter_op(user.getUserName());
+        inspection.setAccepted_type("1");//部门报检
+        inspection.setHall_no(para.getInspectionHall().getHall_no());
+        if(com.khnt.utils.StringUtil.isEmpty(inspection.getId()))//修改操作
+            inspection.setAccept_no(TS_Util.getDPNumber());//受理编号
+        inspectionDao.save(inspection);
+    
+        //更新大厅任务
+        String hallParamId = inspection.getFk_hall_para_id();
+        if(StringUtil.isNotEmpty(hallParamId)){
+        	InspectionHallPara hallPara = hallParaDao.get(hallParamId);
+        	if(hallPara.getInspection_num()!=null&&StringUtil.isNotEmpty(hallPara.getInspection_num())) {
+        		//修改已报检数量
+            	hallPara.setInspection_num((Integer.parseInt(hallPara.getInspection_num())+cont)+"");
+        	}else {
+        		//修改已报检数量
+            	hallPara.setInspection_num(cont+"");
+        	}
+        	hallParaDao.save(hallPara);
+        };
+
+    }
+	/**
+	 * 提交报检
+	 * @param request
+	 * @param ids
+	 */
+	public void submitInspection(HttpServletRequest request, String ids) {
+
+
+		String idss = ids.replace(",", "','");
+		String id[] = ids.split(",");
+		//inspectionDao.createSQLQuery("update tzsb_inspection set data_status = '2' where id in ('"+idss+"')").executeUpdate();
+		//更新大厅任务
+	    String sql = "update TZSB_INSPECTION_HALL_PARA set  is_rec='3' , is_plan = '3' where id in (select fk_hall_para_id from tzsb_inspection where id in ('"+idss+"'))";
+	    hallParaDao.createSQLQuery(sql).executeUpdate();
+		/*Session session= inspectionInfoDao.getSessionFactory().getCurrentSession();
+		String sql1 = "select t.* from TZSB_INSPECTION_INFO t where t.FK_INSPECTION_ID=?";
+		for (int i = 0; i < id.length; i++) {
+			List<InspectionInfo> list = session.createSQLQuery(sql1).addEntity(InspectionInfo.class).setParameter(0,id[i]).list();
+			InspectionInfo info = new InspectionInfo();
+			if(list.size() >0){
+				info = list.get(0);
+			}*/
+			/*//自动生成报告书编号
+			String reportsn = info.getReport_sn();
+			if (StringUtil.isEmpty(reportsn)) {
+				if ("402880e45af554e9015af56488a600gl".equals(info.getFk_tsjc_device_document_id())) {
+					reportsn = reportItemValueService.autoGeneratGLReportSn(info.getId());
+				} else {
+					reportsn = reportItemValueService.autoGeneratReportSn(info.getId());
+				}
+			}
+			info.setReportSn(reportsn);*/
+			
+		//}
+		
+
+	}
+
+	public void acceptMission(String ids) {
+		CurrentSessionUser user = SecurityUtil.getSecurityUser();
+	/*	inspectionInfo.setRecordHandleId(user.getId());
+		inspectionInfo.setRecordHandleOp(user.getName());
+		inspectionInfo.setReceiveStatus("1");*/
+		String idss = ids.replace(",", "','");
+		inspectionDao.createSQLQuery("update tzsb_inspection_info set RECORD_HANDLE_ID = ?,RECORD_HANDLE_OP=?,RECEIVE_STATUS='1',record_flow='0' where id in ('"+idss+"')",user.getId(),user.getName()).executeUpdate();
+		
+	}
+
+	public List<HashMap<String, Object>> getReportTypes(String fk_unit_id,String device_type, String check_type) throws Exception {
+		String sql = "select t1.id,t2.rt_name text from BASE_UNIT_FLOW T,BASE_REPORTS T1, RT_PAGE T2 "
+				+ "WHERE T.FK_REPORT_ID = T1.ID AND T1.RECORD_MODEL_ID = T2.ID "
+				+ "  AND T.DEVICE_TYPE=? AND T.CHECK_TYPE=? ";
+		List<HashMap<String, Object>> list = inspectionDao.createSQLQuery(sql,device_type,check_type).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).list();
+		return MapUtil.keyToLowerCase(list);
+	}
+
+	public void deleteInspection(HttpServletRequest request, String ids) throws Exception{
+		String[] idss = ids.split(",");
+		for (int i = 0; i < idss.length; i++) {
+			String id = idss[i];
+			String sql1 = "delete from tzsb_inspection where id= ?";
+			String sql2 = "delete from tzsb_inspection_info where fk_inspection_id = ?";
+			inspectionDao.createSQLQuery(sql2, id).executeUpdate();
+			inspectionDao.createSQLQuery(sql1, id).executeUpdate();
+		}
+		
+	}
+
+	public List<Inspection> getHallInspect(String hallParamId) throws Exception{
+		String hql = "from Inspection where fk_hall_para_id = ?";
+		
+		return deptInspectDao.createQuery(hql, hallParamId).list();
+	}
+
+	public void saveInspectionFromPc(HttpServletRequest request, Inspection inspection) throws Exception{
+		CurrentSessionUser user = SecurityUtil.getSecurityUser();
+		if(StringUtil.isNotEmpty(inspection.getId())){
+			String sql = "delete from tzsb_inspection_info t where t.id in "
+					+ "(select t.id from tzsb_inspection_info t,tzsb_inspection t1 "
+					+ "where t.fk_inspection_id = t1.id and t1.id = ?)";
+			//删除报检下面的所有info
+			inspectionDao.createSQLQuery(sql,inspection.getId()).executeUpdate();
+		}
+		//报检业务表插入数据
+		//查询检验负责人和参检人员
+		InspectionHallPara para = hallParaDao.get(inspection.getFk_hall_para_id());
+		int cont = 0;
+		for (InspectionInfo info : inspection.getInspectionInfo()) {
+			cont++;
+			info.setCheck_op_id(para.getCheck_op_ids());
+			info.setCheck_op_name(para.getCheck_name());
+
+			info.setItem_op_id(para.getInc_op_id());
+			info.setItem_op_name(para.getOp_name());
+
+			info.setCheck_unit_id(para.getUnit_code());
+			//通过id获取单位名称和二级项目
+			
+			info.setData_status("1");
+			info.setInspection(inspection);
+			info.setIs_flow("0");//初始尚未进入流程标记
+			info.setFlow_note_end("0");//初始尚未结束流程标记
+			info.setIs_copy("0");//初始报告书尚未编辑标记(生成后或者复制后)
+			info.setIs_input("0");//初始报告书尚未编辑标记
+			info.setIs_error_correction("0");//初始未进入纠错流程标记
+			info.setReceiveStatus("0");//0未接收1已接收
+			if(info.getSn()==null){
+				//获取业务流水号
+				String sn = ReportManager.getSn(cont) ;
+				info.setSn(sn);
+			}
+			if(info.getCheck_unit_id()==null){
+				info.setCheck_unit_id(user.getDepartment().getId());
+			}
+		}
+		inspection.setInspection_time(new Date());
+		//设备状态
+		inspection.setData_status(USRSTATUS);
+		inspection.setEnter_op(user.getUserName());
+		inspection.setAccepted_type("2");//标记来源于报检大厅
+		inspection.setHall_no(para.getInspectionHall().getHall_no());
+		inspection.setDevice_num(String.valueOf(cont));//报检数量
+		inspectionDao.save(inspection);
+		String sql = "";
+		if (para.getInspection_num() == null) {
+			sql = "update tzsb_inspection_hall_para t1 set  t1.inspection_num='" + cont + "' where t1.id='" + inspection.getFk_hall_para_id() + "'";
+		} else {
+			int inspection_num = cont + Integer.parseInt(para.getInspection_num());
+			sql = "update tzsb_inspection_hall_para t1 set  t1.inspection_num='" + inspection_num + "' where t1.id='" + inspection.getFk_hall_para_id() + "'";
+		}
+		inspectionHallDao.createSQLQuery(sql).executeUpdate();
+
+	}
+}

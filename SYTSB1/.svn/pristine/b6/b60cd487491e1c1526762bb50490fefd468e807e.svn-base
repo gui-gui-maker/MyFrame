@@ -1,0 +1,32 @@
+package com.scts.discipline.dao;
+
+import java.util.List;
+import java.util.Map;
+
+import org.hibernate.Criteria;
+import org.springframework.stereotype.Repository;
+
+import com.khnt.core.crud.dao.impl.EntityDaoImpl;
+import com.scts.discipline.bean.DisciplineZdjr;
+/**
+ * 主动介入
+ * @author Administrator
+ *
+ */
+@Repository("disciplineZdjrDao")
+public class DisciplineZdjrDao extends EntityDaoImpl<DisciplineZdjr>{
+	/**
+	 * 查询编号最大的一位
+	 * @param year
+	 * @return
+	 */
+	public Map<String, String> getBeanByMaxSn(String year){
+		String sql="SELECT * FROM ( SELECT substr(sn,15) as sn  FROM TJY2_DISCIPLINE_ZDSX_ZDJR WHERE sn LIKE  '"+year+"%'   ) order by sn desc";
+		List<Map<String, String>> list=this.createSQLQuery(sql).setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP).list();
+		if(list!=null && list.size()>0){
+			return list.get(0);
+		}else {
+			return null;
+		}
+	}
+}

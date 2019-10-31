@@ -1,0 +1,261 @@
+﻿<%@ page contentType="text/html;charset=UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head pageStatus="modify">
+<%@include file="/k/kui-base-form.jsp"%>
+<script type="text/javascript" src="pub/fileupload/js/fileupload.js"></script>
+<script type="text/javascript" src="pub/eseal/bc/seal.js"></script>
+<script type="text/javascript">
+	var funcstr = "";
+	$(function() {
+		$("#formObj").initForm({
+			success : function(response) {
+				if (response.success) {
+					if (api.data.callback) {
+						api.data.callback($("#formObj").getValues());
+					}else{
+					    top.$.notice("意见签署成功！", 3);
+					}
+					api.close();
+				} else {
+					$.ligerDialog.error("意见签失败！");
+				}
+			},
+			afterParse:function(){
+				$("input[name='result']").change(function(){
+					var value = $(this).val();
+					checkSignSealOption(funcstr,value);
+				})
+			},
+			getSuccess: function(response){
+		        if($("#oid").val()!=""){
+		            getBusinessAttachments($("#oid").val(),function(files){
+		                if(filess.length>0){
+		                    $("#uploadfilebtn").hide();
+		                    createFileView(files[0].id,files[0].name,true,"attList",false,function(fid){
+		                        $("#uploadfilebtn").show();
+		                        initUpload();
+		                    });
+		                }else{    
+		                    initUpload();
+		                }
+		            });
+		        }
+		        else initUpload();
+		        funcstr = response.hasOwnProperty("activity")?response.activity["function"]:"";
+		        if(response.data){
+		        	checkSignSealOption(funcstr,response.data.result);
+		        }else{
+		        	checkSignSealOption(funcstr,1);
+		        }
+		        
+		        
+		        if(response.data && response.data.signature){
+	                showSeal(response.data.signature,"signature_area");
+	            }
+		        if(response.data && response.data.seal){
+	                showSeal(response.data.seal,"seal_area");
+	            }
+			},
+			toolbar: [
+			    {text: "签名", icon: "myaccount", id: "signBtn", click: addSign},
+		        {text: "盖章", icon: "seal", id: "sealBtn", click: addSeal},
+                {text: "提交", icon: "submit", id: "submit", click: saveForm},
+                {text: "关闭", icon: "close", id: "close", click: function(){api.close();}}
+		    ]
+		});
+	});
+
+    function saveForm(){
+    	if($("input[name='result']").size()>0){
+            if($(window).data("addSeal") && $.kh.isNull($("#seal").val())){
+                $.ligerDialog.warn("请先盖章!");
+                return;
+            }
+            if($(window).data("addSign") && $.kh.isNull($("#signature").val())){
+                $.ligerDialog.warn("请先签字!");
+                return;
+            }
+    	}
+        $("form").submit();
+    }
+
+    function initUpload(){
+    	var _my_uploader = new KHFileUploader({
+            buttonId : "uploadfilebtn",
+            container : "upload-ctr",
+            fileSize: "100mb",
+            fileNum: 1,
+            extName : "doc,docx,rar,zip,png,jpg,gif,xls,xlsx,ppt,pptx,7z,pdf,epub,txt",
+            callback : function(files){
+                $("#attachments").val(files[0].id);
+                createFileView(files[0].id,files[0].name,true,"attList",false,function(fid){
+                    $("#uploadfilebtn").show();
+                	initUpload();
+                });
+                _my_uploader.destroy();
+                $("#uploadfilebtn").hide();
+            }
+        });
+    }
+	
+	function changeOption(s){
+		$("#opinion").val(s=="1"?"同意！":s=="0"?"不同意！":"");
+	}
+
+	// 页面选项检查,
+	// 根据该环节的选项设置，设置页面的审批选项、盖章、签字等功能
+	function checkSignSealOption(func,value){
+		checkSignSeal(func);
+		if(value==0){
+			//不同意
+			if(${param.noSeal}){
+				 $(window).data("addSeal",false);
+			     $("#add_seal_tr").hide();
+			     $("#sealBtn").hide();
+			}
+			//不同意
+			if(${param.noSignature}){
+				$("#add_sign_tr").hide();
+	            $(window).data("addSign",false);
+	            $("#signBtn").hide();
+			}
+		}
+		if(value==-1){
+			//退回
+			if(${param.noReturnSeal}){
+				 $(window).data("addSeal",false);
+			     $("#add_seal_tr").hide();
+			     $("#sealBtn").hide();
+			}
+			//退回
+			if(${param.noReturnSignature}){
+				$("#add_sign_tr").hide();
+	            $(window).data("addSign",false);
+	            $("#signBtn").hide();
+			}
+		}
+	}
+	
+	function checkSignSeal(func){
+		if(${!param.isApp} && func.indexOf("pub_wf_approve")==-1) $("#approve_tr").remove();
+	    else{
+    		if(func.indexOf("pub_wf_turnback")==-1&&${param.noReturn}){
+				$("input[name='result']:eq(2)").parent().remove();
+	        }
+	    }
+	    if(${param.addSeal} || func.indexOf("pub_seal") > -1) {
+            $(window).data("addSeal",true);
+	        $("#add_seal_tr").show();
+	        $("#sealBtn").show();
+	    }else{
+	    	$("#sealBtn").hide();
+	        //$("#sealBtn").remove();
+	    }
+	    if(${param.signature=='1' || param.signature=='2'}
+        || func.indexOf("pub_signature") > -1
+        || func.indexOf("pub_multi_signature") > -1){
+            $("#add_sign_tr").show();
+            $(window).data("addSign",true);
+            $("#signBtn").show();
+        }
+        else{
+            $("#signBtn").hide();
+        }
+	}
+	
+	
+	function addSign(){
+	    var signId = $("#signature").val();
+	    var signNum = signId?(signId.replace(/,$|^,/gi,"").split(",").length):0;
+	    configSetting(4,null,"","",function(data){
+	        $("#signature").val((signId==""?"":signId + ",") + data.id);
+	        <c:if test="${param.signature=='1'}">$("#signBtn").ligerGetTextBoxManager().setDisabled();</c:if>
+	    },function(data){
+	        $("#signature").val(signId.replace(data.id,"").replace(/,+/gi,",").replace(/,$|^,/gi,""));
+	        <c:if test="${param.signature=='1'}">$("#signBtn").ligerGetTextBoxManager().setEnabled();</c:if>
+		});
+	    InsertSeal("signature_area",false,180,100,signNum * 180 + 10,10);
+	} 
+
+	function addSeal(){
+	    configSetting(4,null,"","",function(data){
+	        $("#seal").val(data.id);
+	        $("#sealBtn").ligerGetTextBoxManager().setDisabled();
+	    },function(data){
+	        $("#sealBtn").ligerGetTextBoxManager().setEnabled();
+	    }); 
+	    InsertSeal("seal_area",true,100,100,10,10);
+	}
+
+	//显示印章或签名
+	function showSeal(Ids,sealStationId){
+	    $.post("pub/signseal/getListByIds.do",{Ids:Ids},function(sign){
+	         if(sign.success){
+	             //显示印章数据
+	             var signData=sign.data;
+	             for(var i in signData){
+	                 showSingleSeal(sealStationId,signData[i],i * 180 + 10,"10",0);
+	             }
+	         }
+	    },"json");
+	}
+</script>
+<style type="text/css">
+.apptable{width:100%;}
+.apptable,.apptable td{border-collapse:collapse;border-bottom:1px solid #cccccc;}
+.apptable td.tips{width:40px;padding:0 20px;font-size:16px;background:#eeeeee;text-align:center;border-right:1px solid #cccccc;}
+.apptable td.content{vertical-align:middle;}
+</style>
+</head>
+<body>
+	<form name="formObj" id="formObj" method="post" action="bpm/opinion/save.do" 
+	   getAction="bpm/opinion/signOpinion.do?sid=${param.serviceId}&aid=${param.activityId}&item=${param.workitem}">
+		<input name="id" type="hidden" id="oid" /> 
+		<input name="activityId" type="hidden" value="${param.activityId}" /> 
+		<input name="workitem" type="hidden" value="${param.workitem}" /> 
+		<input name="serviceId" type="hidden" value="${param.serviceId}" />
+        <input name="attachment" type="hidden" value="" id="attachments" />
+		<table class="apptable">
+			<tr style="height:50px;" id="approve_tr">
+				<td class="tips">审核结果</td>
+				<td class="content" style="padding-left:10px;font-size:16px;">
+				<c:if test="${param.noReturn==true}">
+				     <input name="result" type="radio" ltype="radioGroup" validate="{required:true}"
+						ligerui="{initValue:'1',data:[{id:'1',text:'同意'},{id:'0',text:'不同意'}]}" />
+				</c:if>
+				<c:if test="${param.noReturn!=true}">
+				 	<input name="result" type="radio" ltype="radioGroup" validate="{required:true}"
+						ligerui="{initValue:'1',data:[{id:'1',text:'同意'},{id:'0',text:'不同意'},{id:'-1',text:'退回'}]}" />
+			    </c:if>
+				</td>
+			</tr>
+			<tr>
+				<td class="tips">处理意见</td>
+				<td class="content">
+					<textarea name="opinion" id="opinion" rows="3"
+						style="height:100px;font-size:5mm;line-height:1.3em;height:100%;width:100%;border:none !important;"
+						validate="{maxlength:255}" placeholder="请填写审核意见！"></textarea>
+				</td>
+			</tr>
+			<tr style="height:120px;display:none;" id="add_sign_tr">
+				<td class="tips">签名<input type="hidden" name="signature" id="signature" /></td>
+				<td id="signature_area" class="content" style="position:relative;"></td>
+			</tr>
+            <tr style="height:180px;display:none;" id="add_seal_tr">
+				<td class="tips">盖章<input type="hidden" name="seal" id="seal" /></td>
+				<td id="seal_area" class="content" style="position:relative;"></td>
+			</tr>
+			<tr style="height:50px;">
+				<td class="tips">附件</td>
+				<td class="content">
+					<div class="l-upload-ok-list" id='upload-ctr'>
+						<input type="button" class="l-button3" value="+" id="uploadfilebtn" style="width:40px;height:40px;font-size:20px;" />
+	            		<ul id="attList"></ul>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

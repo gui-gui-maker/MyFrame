@@ -1,0 +1,42 @@
+﻿
+/*=========================
+  2012年5月23日 每个栏目进去后的欢迎主页--我的主页 样式 ===============================
+============================*/
+
+/*------------------------------------global css----*/
+html, body {overflow:hidden; margin:0; padding:0;/* width:100%;*/ height:100%;}
+select {margin:0; padding:0;}
+a, a:link, a:visited {text-decoration:none;/*	color:#0000FF;*/}
+a:hover {text-decoration:underline;	color:#FF0000;}
+div, img, form, label, input, table, td, th {margin:0; padding:0; border:0; outline:none;}
+em {font-style:normal;}
+ul , li {margin:0; padding:0;}
+
+/*=========================
+  网站管理系统--我的主页 ===========================================================================
+============================*/
+.layww_tbl {margin:10px auto 0 auto;} /*============整个大表格*/
+.layww_tbl fieldset {padding:0px 0px 0px 20px; margin:0 0 20px 0; border:#deeaf9 solid 5px;}
+.layww_tbl fieldset legend {font-size:14px; font-weight:bold; color:#1386d9; padding:0px 5px 0px 5px; height:20px\0;}
+.layww_tbl table {margin:20px 0;}
+.layww_tbl table td {line-height:30px;/* background:#f2f7fd;*/border:1px solid #f4f4f4;}
+.lay_load {text-align:center;} /*=========包含进度条的单元格*/
+.lay_load table {float:left;/* height:30px;*/}
+.lay_load table td {/*height:30px;*/ line-height:15px; border:0 none;}
+.layww_tbl table td .lay_bd_none {border:0 none; color:#f00;}/*=======进度条文字说明*/
+.padding td {padding:0px 20px;}/*单元格间距*/
+/*进度条--重新编写----------------------------------------------------------------*/
+.td_loading {width:460px;position:relative;}
+.loading_all {position:relative; height:58px; line-height:58px; margin:0px 10px;}
+.loading_all table td {height:19px; border:0 none;}
+.loading_txt {position:absolute; top:0px; right:0px; z-index:3; color:#f00; font-weight:bold;}
+/*最先正常显示的下面的条儿*/
+.loading_normal {position:absolute; left:0; top:0; width:100%; z-index:1;}
+.load_n_l {background:url(../img/loading_n_radius.png) no-repeat left top; width:15px;}
+.load_n_m {background:url(../img/loading_n_middle.png) repeat-x left top;}
+.load_n_r {background:url(../img/loading_n_radius.png) no-repeat right top; width:15px;}
+/*然后上面需要跑动百分比的条儿*/
+.loading_load {position:absolute; left:0px; top:0px; z-index:2;}
+.load_load_l {background:url(../img/loading_load_radius.png) no-repeat left top; width:15px; _background:url(../img/loading_load_radius.gif) no-repeat left top;}
+.load_load_m {background:url(../img/loading_load_middle.png) repeat-x left top;}
+.load_load_r {background:url(../img/loading_load_radius.png) no-repeat right top; width:15px; _background:url(../img/loading_load_radius.gif) no-repeat right top;}

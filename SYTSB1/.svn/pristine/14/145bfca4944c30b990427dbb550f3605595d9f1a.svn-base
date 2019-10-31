@@ -1,0 +1,184 @@
+package com.lsts.advicenote.web;
+
+import java.util.HashMap;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.khnt.core.crud.web.SpringSupportAction;
+import com.khnt.weixin.enums.EnumMethod;
+import com.khnt.weixin.interceptor.OAuthRequired;
+import com.khnt.weixin.pojo.AccessToken;
+import com.khnt.weixin.util.Constants;
+import com.khnt.weixin.util.HttpRequestUtil;
+import com.khnt.weixin.util.Result;
+import com.khnt.weixin.util.WxUtil;
+import com.lsts.advicenote.bean.MsgLinkAudit;
+import com.lsts.advicenote.service.MsgLinkAuditService;
+import com.lsts.humanresources.service.WxLeaveManager;
+
+import net.sf.json.JSONObject;
+
+
+@Controller
+@RequestMapping("msgLinkAuditAction")
+public class MsgLinkAuditAction extends SpringSupportAction<MsgLinkAudit, MsgLinkAuditService> {
+
+	@Autowired
+	private MsgLinkAuditService msgLinkAuditService;
+	@Autowired
+	private WxLeaveManager wxLeaveManager;
+	
+	
+	/**
+	 * 加载个人信息，此处添加了@OAuthRequired注解
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value = "weixinUserInfo")
+	@OAuthRequired
+	public String weixinUserInfo(HttpServletRequest request,Model model){
+		System.out.println("Load a User!");
+        System.out.println("getRequestURL = " + request.getSession().getId());
+        System.out.println("getRequestURL = " + request.getRequestURL());
+        System.out.println("getRequestURI = " + request.getRequestURI());
+        System.out.println("code = " + request.getParameter("code"));
+        System.out.println("businessId = " + request.getParameter("id"));
+        HttpSession session = request.getSession();
+        //System.out.println("1111111111111111111111111111111111111");
+        if(session.getAttribute("Userid")==null || ((String)session.getAttribute("Userid")).equals("noUserId")) {
+           AccessToken accessToken = WxUtil.getAccessToken(Constants.CORPID, Constants.SECRET);
+             System.out.println("----------accessToken:"+accessToken+"-------------- accessToken.getToken():"+ accessToken.getToken());
+            if (accessToken != null && accessToken.getToken() != null && request.getParameter("code")!=null) {
+            	//System.out.println("-----------------------------in--------------");
+                Result<String> result = WxUtil.oAuth2GetUserByCode(accessToken.getToken(), request.getParameter("code"), 7);
+                System.out.println("result=" + result);
+                String menuUrl = "https://qyapi.weixin.qq.com/cgi-bin/user/get?access_token="+accessToken.getToken()+"&userid="+result.getObj() ;
+                JSONObject jo = HttpRequestUtil.httpRequest(menuUrl, EnumMethod.GET.name(), null);
+                System.out.println("------------json:"+jo.toString());
+                if(jo!=null){
+                	session.setAttribute("Name", jo.getString("name"));
+                	session.setAttribute("Phone", jo.getString("mobile"));
+                	try {
+						session.setAttribute("Account", wxLeaveManager.getAccount(jo.getString("mobile")));
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						return "app/humanresources/wx_leave/leave_error_page";
+					}
+                    System.out.println("------------------------Name is :"+jo.getString("name"));
+                    System.out.println("------------------------Phone is :"+jo.getString("mobile"));
+                }
+                session.setAttribute("Userid", result.getObj());
+                //session.setAttribute("AccessToken", accessToken.getToken());
+                
+            } else {
+            	//System.out.println("-----------------------------out--------------");
+            	session.setAttribute("Userid", "noUserId");
+            	session.setAttribute("Name", "noUserName");
+            	session.setAttribute("Phone", "noUserPhone");
+            }
+        }
+    /*  session.setAttribute("Userid", "402884c4477c9bac01477fe0d188001b");
+        session.setAttribute("Account", wxLeaveManager.getAccount("1890818454"));
+    	session.setAttribute("Name", "高雅");
+    	session.setAttribute("Phone", "1890818454");*/
+        
+      /*  session.setAttribute("Userid", "402884c447802e51014780553e3b0012");
+        session.setAttribute("Account", wxLeaveManager.getAccount("13548199448"));
+    	session.setAttribute("Name", "黄坚");
+    	session.setAttribute("Phone", "13548199448");*/
+        
+        
+     /*  session.setAttribute("Userid", "402884c4477c9bac01477fe0ae7b001a");
+        session.setAttribute("Account", wxLeaveManager.getAccount("1355184410"));
+    	session.setAttribute("Name", "张展彬");
+    	session.setAttribute("Phone", "1355184410");*/
+        
+    /*	HashMap<String,Object> map = msgLinkAuditService.getAuditDetail(request.getParameter("id"));
+
+    	model.addAttribute("data", map.get("data"));
+    	model.addAttribute("datas", map.get("datas"));
+    	*/
+    	session.setAttribute("url", "msgLinkAuditAction/t.do?id="+request.getParameter("id"));
+        session.setAttribute("businessId", request.getParameter("id"));
+		model.addAttribute("Userid", session.getAttribute("Userid"));
+		System.out.println("!!!!!!!!!!!!!!!!!!!!!!"+session.getAttribute("Userid"));
+		//return "app/weixin/qxj/transfer_page";
+		return "app/message/weixin_transfer_page";
+	}
+	
+	/**
+	 * 标记待审核信息已经审核
+	 * author pingZhou
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping("setAuditStatus")
+	@ResponseBody
+	public HashMap<String,Object> setAuditStatus(String id){
+		HashMap<String,Object> map = new HashMap<String, Object>();
+		
+		try {
+			msgLinkAuditService.setAuditStatus(id);
+			map.put("success", true);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			map.put("success", false);
+			map.put("msg", "标记已处理失败！");
+		}
+		
+		return map;
+	}
+	
+	
+	@RequestMapping("t")
+	public ModelAndView testGetAudit(String id){
+		HashMap<String,Object> map = new HashMap<String, Object>();
+		
+		try {
+			map = msgLinkAuditService.getAuditDetail(id);
+			map.put("success", true);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			map.put("success", false);
+			map.put("msg", "查询失败！");
+		}
+		
+		return new ModelAndView("app/message/common_audit_detail",map);
+	}
+	
+	/**
+	 * 根据sql查询人员
+	 * author pingZhou
+	 * @param sql
+	 * @return
+	 */
+	@RequestMapping("getSqltabl")
+	@ResponseBody
+	public HashMap<String,Object>  getSqltabl(String sql) {
+		
+		HashMap<String,Object> map = new HashMap<String, Object>();
+		
+		try {
+			map = msgLinkAuditService.getSqltabl(sql);
+			map.put("success", true);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			map.put("success", false);
+			map.put("msg", "查询失败！");
+		}
+		
+		return map;
+	}
+	
+}

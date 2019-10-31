@@ -1,0 +1,406 @@
+//判断浏览器
+var browser={
+    versions:function(){
+        var u = navigator.userAgent, app = navigator.appVersion;
+        return {         //移动终端浏览器版本信息
+             trident: u.indexOf('Trident') > -1, //IE内核
+            presto: u.indexOf('Presto') > -1, //opera内核
+            webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+            mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或uc浏览器
+            iPhone: u.indexOf('iPhone') > -1 , //是否为iPhone或者QQHD浏览器
+            iPad: u.indexOf('iPad') > -1, //是否iPad
+            webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+        };
+     }(),
+     language:(navigator.browserLanguage || navigator.language).toLowerCase()
+}
+
+//13-5-8 下午2:22 lybide
+//查找是否有loginCss
+if (!document.getElementById("loginCss")) {
+	//alert("login-frame.js 问题 ： loginCss 不存在，请在当前登陆页面添加 loadCoreLibrary(\"login\"); 方法以解决登陆ch浏览器css加载出错的问题。");
+	//loadCoreLibrary("login");//如在这里调用，ch浏览器根本不能正常载入，因为document.write("css")会锁死浏览器。2014-3-13 上午9:46 lybide 移到登陆页去
+}
+//loadCoreLibrary({js:"lhgdialog.min.js",css:"app/public/skins/"+kFrameConfig["mainStyle"]+"/"+kFrameConfig["loginStyle"]+"/k-login.css k/kui/skins/lhgdialog/"+kFrameConfig["windowStyle"]+".css"});
+
+function init_login(){
+	if (top.location!==self.location) {
+		top.location=self.location;
+	}
+	if (kFrameConfig.loginOnLoadBefore()) {
+
+	} else {
+		var sysName=kFrameConfig["name"];
+		sysName=sysName.replace(/<[^>].*?>/g," ");
+		document.title=sysName;
+		$("#topSoftName").html("欢迎使用"+sysName);
+		$("html").css("overflow","hidden");//必须，解决窗口拖动时，滚动条的问题。
+		wChange();
+		$(window).resize(function(){
+			wChange();
+		});
+		if ($.browser.msie && parseFloat($.browser.version) <=6) {//浏览器检测 2012年06月19日 星期二 14:04:54 lybide
+			$(document.body).append('<div id="bosCk1" style="border:1px solid #000000;background:#ff0000;padding:15px;position:absolute;top:10px;right:10px;z-index:9999;color:#ffffff;">提示：您的浏览器版本太低，请立即升级您的浏览器。推荐使用：<a href="http://www.microsoft.com/ie" target="_blank" style="color:#ffff00">（最新IE浏览器）</a>。<a href="javascript:void(0);" onclick="$(\'#bosCk1\').hide();" style="color:#ffffff">[关闭此提示]</a></div>');
+			try{document.execCommand("BackgroundImageCache",false,true);}catch(e){}//ie6不缓存背景图片
+			DD_belatedPNG.fix("*");
+		}
+	}
+
+	function wChange(){
+		//return;
+		var dh1=$(window).height();
+		var dw1=$(window).width();
+		//$(".k-login-layer").height(dh1);
+		//$(".k-login-layer").width(dw1);
+
+		var h1=$(".k-login-top").height()+$(".k-login-middle").height()+$(".k-login-foot").height();//alert(h1);
+
+		if (h1>dh1) {
+			$(".k-login-layer").addClass("o1");
+			//$(".k-login-middle").height(dh1-$(".k-login-top").height()-$(".k-login-foot").height());
+		} else {
+			$(".k-login-layer").removeClass("o1");
+			//$(".k-login-middle").height(450)
+		}
+	}
+
+	if (kFrameConfig.loginOnLoadEnd()) {
+
+	} else {
+
+	}
+
+};
+
+function init_sessionTimeOut(){
+	$("html body").css("overflow","auto");//alert(kFrameConfig["loginLogo"]["src"]);
+	$(".caption2").css({"background-image":"url('"+kFrameConfig["loginLogo"]["src"]+"')"});
+	//ffffff
+	//loadCss("sdf")
+	if (top.location!=self.location) {
+		top.location=self.location;
+	}
+
+	window.setTimeout(function(){sysReloadLogin();},4000);
+
+
+};
+
+function sysReloadLogin() {
+	//判断是否外壳
+	if(browser.versions.android) {
+		try {
+			window.KHANJS.backLogin();
+			return;
+		} catch (e) {}
+	}
+	top.location.href=kFrameConfig["base"];
+	return false;
+}
+
+function sysLoginDoSubmit(fObj) {
+	if (kFrameConfig.loginSubmitDiy) {
+		return kFrameConfig.loginSubmit($("#loginForm"));
+		//return false;
+	} else {
+		//$("#loginLiButton input").attr("disabled",true);
+		if($("#TxtUserName").val()==""){
+			alert("请输入用户名！");$("#TxtUserName").focus();return false;
+		}
+
+		if($("#TxtPassword").val()==""){
+			alert("请输入密码！");$("#TxtPassword").focus();return false;
+		}
+
+		if(kFrameConfig["loginYZM"].toString().toLowerCase()=="false"){
+			if($("#validateCode").val()==""){
+				alert("请输入验证码！");$("#validateCode").focus();return false;
+			}
+		}
+		$("#loginLiButton").html("正在登录中……");
+		return false;
+	}
+	return false;
+}
+
+//2015/2/6 15:44 lybide	初始定义 再在 k-frame-login.js 里自定义
+kFrameConfig=$.extend(true,{},kFrameConfig,{
+	loginOnLoadBefore:function(){
+		return false;
+	},
+	loginOnLoadEnd:function(){
+		return false;
+	},
+	loginSubmitDiy: true,//是否自定义登录提交事件
+	loginSubmit: function(fObj){//登录提交事件
+		if($("#TxtUserName").val()==""){
+			alert("请输入用户名！");$("#TxtUserName").focus();return false;
+		}
+		if($("#TxtPassword").val()==""){
+			alert("请输入密码！");$("#TxtPassword").focus();return false;
+		}
+		if(kFrameConfig["loginYZM"]){
+			if($("#validateCode").val()==""){
+				alert("请输入验证码！");$("#validateCode").focus();return false;
+			}
+		}
+		//var html1=$("#userCodePanel .k-login-inputbtn").html();
+		var html2=$("#userButtonPanel").html();
+		//$("#userCodePanel .k-login-inputbtn").html("正在登录中……");
+		$("#userButtonPanel").html('<div class="k-login-submit-msg" id="k-login-submit-msg"><div>正在登录中……</div></div>');
+		$.post($("#loginForm").attr("action"),{
+			j_username:$("#TxtUserName").val(),
+			j_password:$("#TxtPassword").val(),
+			j_validate_code:$("#validateCode").val(),
+			_spring_security_remember_me:$("#remember_me").attr("checked")?true:false
+		},function(resp){
+			if(resp.success) {
+				$(".k-login-layer").hide();
+				// 检查密码策略
+				kFrameConfig.checkPasswordStrategy(resp.data);
+			} else {
+				//$(".exception_msg").text("无效的用户名、密码");
+				//$("#loginLiButton").show();
+				//$("#loging_").hide();
+				//2013-02-20 10:53:06 lybide
+				//$.dialog({id:"lErrorWMsg1",max:false,min:false,lock:true,width:350,height:100,ok:function(){$("#TxtUserName").focus();},title:'系统提示',content:resp.msg});
+				alert(resp.msg);
+				if(kFrameConfig["loginYZM"]){
+					$("#k-login-inputyzimg").find("img").attr("src","security/web/validateCodeImg.do?isNew=true"+"&r="+Math.random());
+				}
+				$("#TxtPassword").focus();
+				$("#userButtonPanel").html(html2);
+				//20150824 zhp 动态刷新验证码
+				if(kFrameConfig["loginYZM"]){
+					$("#_yzm_img").attr("src","security/web/validateCodeImg.do?isNew=true"+"&r="+Math.random());
+				}
+			}
+		});
+		return false;
+	},
+	// 2015-01-15  zhp
+	checkPasswordStrategy: function(respData){
+		//console.log(respData.pwdModify);
+		if(respData.pwdModify==0){
+			$.dialog.confirm("您的密码已经过期，是否马上设置新密码？",function(y){
+				if(y){
+					kFrameConfig.modifyUserPassword(respData);
+				}else{
+					kFrameConfig.afterLoginSuccess(respData);
+				}
+			});
+		}else if(respData.pwdModify==1){
+			$.dialog.alert("您的密码已经过期，请重设密码！",function(){
+				kFrameConfig.modifyUserPassword(respData);
+			});
+		}else if(respData.pwdModify==2){
+			$.dialog.alert("您的密码是初始密码，请修改！",function(tt){
+				kFrameConfig.modifyUserPassword(respData);
+			});
+		}else{
+			kFrameConfig.afterLoginSuccess(respData);
+		}
+	},
+	// 2015-01-15  zhp
+	modifyUserPassword: function(respData){
+		window.setTimeout(function(){
+			$.dialog({
+				width: 350,
+				height: 250,
+				title: "修改密码",
+				reSize: false,
+				max: false,
+				min: false,
+				lock: true,
+				content: "url:pub/rbac/user_config.jsp",
+				data:{callback:function(){
+					$.dialog.alert("密码修改成功，请重新登陆！",function(){
+						window.location = kFrameConfig["base"]+"security/authentication/logout.do";
+					});
+				}},
+				close: function(){
+					window.location = kFrameConfig["base"]+"security/authentication/logout.do";
+				}
+			});
+		},100);
+	},
+	// 2015-01-15  zhp 修改
+	afterLoginSuccess: function(respData){
+		//外壳专用 2014/11/13 11:45 lybide
+		var isShell=getkIsShell();
+		if (isShell) {
+			var ret;
+			/*var setting = {};
+			 var autoStart=window.external.ReadIni("user", "autoStart", "confing.user.ini");
+			 setting["autoStart"]=autoStart;
+			 var autoLogin=window.external.ReadIni("user", "autoLogin", "confing.user.ini");
+			 setting["autoLogin"]=autoLogin;
+			 var autoRememberPass=window.external.ReadIni("user", "autoRememberPass", "confing.user.ini");
+			 setting["autoRememberPass"]=autoRememberPass;*/
+			var autoRememberPass=$("#shell-autoRememberPass:checked").val();
+			if (autoRememberPass=="1") {
+				var base64=new Base64();
+				var u=base64.encode($("#TxtUserName").val()||"");
+				var p=base64.encode($("#TxtPassword").val()||"");//alert([u,p]);
+				window.external.WriteIni("user", "autoRememberPass","1", "confing.user.ini");
+				window.external.WriteIni("user", "autoRememberUserName",u, "confing.user.ini");
+				window.external.WriteIni("user", "autoRememberUserPass",p, "confing.user.ini");
+			} else {
+				window.external.WriteIni("user", "autoRememberPass","0", "confing.user.ini");
+				window.external.WriteIni("user", "autoRememberUserName","", "confing.user.ini");
+				window.external.WriteIni("user", "autoRememberUserPass","", "confing.user.ini");
+			}
+			var autoLogin=$("#shell-autoLogin:checked").val();
+			if (autoLogin=="1") {
+				window.external.WriteIni("user", "autoLogin","1", "confing.user.ini");
+			} else {
+				window.external.WriteIni("user", "autoLogin","0", "confing.user.ini");
+			}
+			var autoStart=$("#shell-autoStart:checked").val();
+			if (autoStart=="1") {
+				window.external.WriteIni("user", "autoStart","1", "confing.user.ini");
+				ret = window.external.SetAutoStartup(true);
+			} else {
+				window.external.WriteIni("user", "autoStart","0", "confing.user.ini");
+				ret = window.external.SetAutoStartup(false);
+			}
+			var softAutoHide = window.external.ReadIni("user", "softAutoHide", "confing.user.ini");
+			if (softAutoHide=="1") {
+				window.external.HideFrameWindow();
+			}
+		}
+		if(kui["ENTRUST_OPEN"]){
+			kFrameConfig.entrustLogin(respData);
+		}else if(kui["SYS_POSITION_SET"]){
+			kFrameConfig.positionLogin(respData);
+		}else{
+			location = kFrameConfig["base"]+kFrameConfig["loginOkUrl"];
+		}
+		return false;
+	},
+	positionLogin:function(respData,positionId){
+		$.getJSON("rbac/user/getUserPosition.do",{userId:respData.userId,positionId:positionId},function(pos){
+			if(pos.success&&pos.data&&pos.data.length>0){
+				if(pos.data.length>1){
+					top.$.dialog({
+						width: 300,
+						height: 130,
+						title: "选择岗位",
+						reSize: false,
+						max: false,
+						min: false,
+						lock: true,
+						content: "url:pub/rbac/position_select.jsp",
+						data : {"data" : pos.data},
+						cancel:true,
+						close:function(){
+							location = kFrameConfig["base"]+"security/authentication/logout.do";
+							return false;
+						},
+						ok:function(){
+							var data = this.iframe.contentWindow.getPostionId();
+							if(data==""||data==undefined||data==null){
+								$.dialog.alert("请选择要登录的岗位!");
+								return false;
+							}else{
+								$.getJSON("rbac/position/positionLogin.do",{positionId:data},function(res){
+									if(res.success){
+										location = kFrameConfig["base"]+kFrameConfig["loginOkUrl"];
+										return false;
+									}else{
+										$.dialog.alert("登录失败!");
+										location = kFrameConfig["base"]+"security/authentication/logout.do";
+										return false;
+									}
+								})
+							}
+							return false;
+						},okVal:'确定'
+					});
+				}else{
+					$.getJSON("rbac/position/positionLogin.do",{positionId:pos.data[0].id},function(res){
+						if(res.success){
+							location = kFrameConfig["base"]+kFrameConfig["loginOkUrl"];
+							return false;
+						}else{
+							$.dialog.alert("登录失败!");
+							location = kFrameConfig["base"]+"security/authentication/logout.do";
+							return false;
+						}
+					})
+				}
+			}
+			else{
+				//没有岗位直接登陆哇
+				location = kFrameConfig["base"]+kFrameConfig["loginOkUrl"];
+			}
+		})
+	},
+	entrustLogin:function(respData){
+		$.getJSON("entrust/user/getEntrustUser.do",{userId:respData.userId},function(data){
+			if(data.success){
+				top.$.dialog({
+					max:false,min:false,lock:true,width:250,height:100,
+					title:'委托登录',
+					lock:true,
+					reSize: false,
+					max: false,
+					min: false,
+					content:"url:pub/entrust/entrust_user.jsp?userid="+respData.userId,
+					button:[{
+						name: '委托登录',
+						callback: function () {
+							var data = this.iframe.contentWindow.getAccount();
+							if(data==""||data==undefined||data==null||"{}"==JSON.stringify(data)){
+								$.dialog.alert("选择委托项！");
+								return false;
+							}else{
+								$.getJSON("security/authentication/switchUser.do",{entrustId:respData.userId},function(res){
+									if(res.success){
+										//切换用户
+										$.post("j_spring_security_switch_user",{j_username:data.userAccount},function(){
+											if(kui["SYS_POSITION_SET"]){
+												kFrameConfig.positionLogin(data,data.positionId);
+											}else{
+												location = kFrameConfig["base"]+kFrameConfig["loginOkUrl"];
+											}
+											return;
+										});
+									}
+								})
+							}
+							return false;
+						}
+					},{
+						name: '个人登录',
+						callback: function () {
+							if(kui["SYS_POSITION_SET"]){
+								kFrameConfig.positionLogin(respData);
+							}else{
+								location = kFrameConfig["base"]+kFrameConfig["loginOkUrl"];
+							}
+							return false;
+						}
+					}],close:function(){
+						window.location = kFrameConfig["base"]+"security/authentication/logout.do";
+						return false;
+					}
+				});
+				return false;
+			}
+			else{
+				if(kui["SYS_POSITION_SET"]){
+					kFrameConfig.positionLogin(respData);
+				}else{
+					location = kFrameConfig["base"]+kFrameConfig["loginOkUrl"];
+				}
+			}
+		})
+	},
+	end:null
+});
+
+

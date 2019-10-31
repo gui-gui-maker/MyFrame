@@ -1,0 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ page import="com.khnt.base.UserInf" %>
+<%@ page import="com.khnt.w2wim.IMUtil" %>
+<%@ page import="java.util.ArrayList" %>
+
+<%@ page contentType="text/html;charset=UTF-8" %>
+
+<%
+    ArrayList<String> userid = new ArrayList<String>();
+    userid.add("user0");
+    userid.add("user1");
+    out.println(IMUtil.sendSystemMsg("测试111111111", "font-family: 黑体; font-size: 10pt; font-weight: normal; font-style: normal; text-decoration: none;", "日程模块", userid));
+    out.println(IMUtil.sendSystemMsg("测试11111111122222222", "color: red;font-family: 黑体; font-size: 10pt; font-weight: normal; font-style: normal; text-decoration: none;", "日程模块", userid));
+%>
+

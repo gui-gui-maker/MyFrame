@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>成都医学院人事管理系统</title>
+<link type="text/css" rel="stylesheet" href="/app/webmanage/CSS/style.css" />
+<script src="/app/webmanage/js/foucs.js" type="text/javascript"></script>
+<script src="/app/webmanage/js/jquery.js" type="text/javascript"></script>
+<script src="/app/webmanage/js/Vote.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".page-news li:last").css("border-bottom","0px");
+});
+</script>
+</head>
+<body>
+<#include "top.ftl" parse=true encoding="UTF-8">
+<!--主要内容区域-->
+<div class="main">
+	<div class="subbanner"><img src="/app/webmanage/images/subnewsimg.jpg" alt="" /></div>
+	<div class="content">
+		<div class="leftwrap"> 
+			<!--内页-->
+			<div class="pagebox">
+				<div class="position"><strong>当前位置：</strong> <a href="/${siteConfig.siteHtmlDir}/index.html">首页</a> &gt;<span>${classType.name}</span></div>
+				<div class="boxwrap">
+						<@kh_cms_vote_tag tagName='list_vote' classId='${classType.id}'>
+							<#list list_vote as vote>
+							<div class="pagecon" id="vote">
+							<form action="" id="voteForm" name="voteForm" method="get">
+								<h1 style="text-align:left;">${vote.title}</h1>
+								<div class="pgfrom" style="text-align:left;">起止日期：${vote.startTime?string("yyyy-MM-dd HH:mm")} - ${vote.endTime?string("yyyy-MM-dd HH:mm")}</div>
+								<div class="pgfrom" style="text-align:left;">内容介绍：${vote.description}</div>
+								<p>
+								<@kh_cms_vote_tag itemtagName='list_vote_item' voteId='${vote.id}'>
+								<#list list_vote_item as voteItem>
+									 <div>
+										<label><input type="radio" name="itemIds" value="1" onClick="check_votes('${vote.id}',${vote.multiSelect})" id="${voteItem.id}" group="${vote.id}"/>${voteItem.itemTitle} </label>
+									 </div>
+								</#list>
+								</@kh_cms_vote_tag>
+								</p>
+								<div>	<button type="button" class="vote" onClick="ReVoteSave('${nodeListDir}${classType.id}.html','${classType.id}');">投票</button>
+										<button type="button" class="look" onClick="getVoteResult('${classType.id}');">查看</button>
+								</div>
+							</form>
+							</div>
+							<div class="minyidc" id="vote_result"></div>
+							</#list>
+							</@kh_cms_vote_tag>
+				</div>
+			</div>
+		</div>
+		<!--右边栏-->
+		<div class="sidewrap">
+			<div class="special">
+				<div class="caption"><strong>专题栏目</strong><span></div>
+				<div class="special-list">
+					<ul>
+						<li><a href="#" target="_black"><img src="/app/webmanage/images/ztimg01.jpg" alt="" /></a></li>
+						<li><a href="http://qzlxw.cmc.edu.cn/" target="_black"><img src="/app/webmanage/images/ztimg02.jpg" alt="" /></a></li>
+						<li><a href="#" target="_black"><img src="/app/webmanage/images/ztimg03.jpg" alt="" /></a></li>
+						<li><a href="http://www.sichuan.newslake.cn/cmsAction!hostRequest.do?rand=1389835172880" target="_black"><img src="/app/webmanage/images/ztimg04.jpg" alt="" /></a></li>
+						<li><a href="#" target="_black"><img src="/app/webmanage/images/ztimg05.jpg" alt="" /></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="search">
+				<div class="caption"><strong>文件搜索</strong><span><a href="/${siteConfig.siteHtmlDir}/search.html">MORE &gt;</a></span></div>
+				<div class="search-opt">
+					<div class="schtit">请选择关键字：</div>
+					<form action="" method="get">
+						<div class="icn">
+							<label>
+								<input type="radio" name="search" value="file" id="search_0" checked="checked" />
+								文章</label>
+							<span class="s1"></span> </div>
+						<div class="icn">
+							<label>
+								<input type="radio" name="search" value="downld" id="search_1" />
+								下载</label>
+							<span class="s2"></span> </div>
+						<div class="icn">
+							<label>
+								<input type="radio" name="search" value="pict" id="search_2" />
+								图片</label>
+							<span class="s3"></span> </div>
+						<div>
+							<button type="button">点击搜索</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--主要内容区域-->
+<#include "bottom.ftl" parse=true encoding="UTF-8">
+</body>
+</html>

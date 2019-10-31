@@ -1,0 +1,48 @@
+﻿
+/*  编辑于 2012-04-06 09:36:02 (nframe)  */
+/*  修改于 Wednesday, 2012-04-11 3:53 PM  */
+
+/*html,body {overflow:hidden;padding:0px;margin:0px;}*/
+
+.sp-div-big {border:1px solid #f4f4f4; border-left:none; height:auto; float:left; width:92%; _width:90%; overflow:hidden; margin:0px 20px 15px 20px; _margin-left:10px; padding-bottom:6px; padding-left:50px;}
+.sp-div-big .spbtndiv {cursor:pointer; margin:6px 12px 0px 15px; _margin-left:8px; float:left; width:auto; border:#d7d7d7 solid 1px; border-bottom:#adadad solid 1px; padding:0px 12px; height:28px; line-height:30px; background:url(../images/kui/bj.jpg) repeat-x left top; overflow:hidden; font-size:12px;}
+.sp-div-big .spbtndiv:hover {color:#fff; background:url(../images/kui/bj_3.jpg)) repeat-x left top;}
+.sp-div-big .spbtndiv:visited {color:#000; background:url(../images/kui/bj.jpg) repeat-x left top;}
+/*添加小图标*/
+.sp-div-big .in_bj {background:url(../images/kui/in_bj.jpg) no-repeat left top;}
+
+.addbgimg {width:auto; height:auto; background:#fff url(../images/kui/sp_bj.jpg) no-repeat right bottom; /*overflow:auto!important;*/}
+.sp_div_caption {height:42px; line-height:42px; background:#f2f7fd; border:#deeaf9 solid 5px; margin:20px; text-align:center; font-size:22px; font-family:"微软雅黑","黑体"; font-weight:600; color:#1386d9; letter-spacing:6px;}
+.sp_icn_0 {background:url(../images/kui/sp_icn.jpg) no-repeat left top;}
+.sp_icn_1 {background:url(../images/kui/sp_icn.jpg) no-repeat -50px -100px;}
+.sp_icn_2 {background:url(../images/kui/sp_icn.jpg) no-repeat -100px -200px;}
+.sp_icn_3 {background:url(../images/kui/sp_icn.jpg) no-repeat -150px -300px;}
+.sp_icn_4 {background:url(../images/kui/sp_icn.jpg) no-repeat -200px -400px;}
+.sp_icn_5 {background:url(../images/kui/sp_icn.jpg) no-repeat -250px -500px;}
+.sp_icn_6 {background:url(../images/kui/sp_icn.jpg) no-repeat -300px -600px;}
+
+/* Tuesday, 2012-04-17 10:57 AM  窗口系统——未办理，，， */
+.bus_choose {width:auto; height:auto; text-align:center;}
+.bus_choose div {margin:2em auto 4em; width:66%; height:150px; text-align:center;}
+.bus_choose ul li {list-style:none; float:left; width:160px; height:160px; vertical-align:middle; /*padding:60px 10px;*/ background:url(../images/kui/wd_change_bj.png) no-repeat; line-height:18px; margin:10px; cursor:pointer; font-size:14px;}
+.bus_choose ul li a {text-decoration:none; color:#000; border:none;}
+/*.bus_choose ul li a:hover {color:#900; font-weight:bold; width:100%;}*/
+.bus_choose ul li:hover {background:#e8f0f5;}
+.bus_choose ul li:hover a {color:#900; font-weight:bold;}
+.bus_choose ul li a img {border:none; padding:22px 0px 10px 0px;}
+
+/*======================== 网站管理--生成管理 ===============================*/
+.generate {margin:3% auto 0;}
+.generate td {/*border:#ddd solid 1px; */padding:15px 22px; border-collapse:collapse;}
+.gnrt_txt {font:14px "宋体"; margin-top:10px; width:500px;}
+.gnrt_txt th , .gnrt_txt td {border:#ddd solid 1px; line-height:22px; border-collapse:collapse; padding:7px 20px;}
+.gnrt_txt th {text-align:right; font-weight:bold; font-size:12px;}
+
+/*======================== 办公自动化--信息公告 弹出窗口 ===============================*/
+.oa_global {overflow-y:auto;position:relative;}
+.oa_nt {margin:0; padding:0; height:auto;}
+.oa_nt_tit {/*height:6%;*/ text-align:center; margin:0px 0 6px 0; padding:20px 0 20px 0px; border-bottom:#1386d9 dashed 1px;}
+.oa_nt_con {padding:10px 2em; line-height:1.6em;/* height:auto;*/ overflow:auto; font-size:14px;}
+.oa_nt_edit {width:96%; margin:5px 2em 7px; border:0px solid #CFE3F8; word-break:break-all; table-layout:fixed; color:#999;}
+.oa_nt_edit td {padding:5px 15px;}
+.laleft {background:url(../images/kui/cv.png) no-repeat left center; margin:10px 0 3px 0; padding:7px 2em; height:16px; line-height:16px; border-top:#ccc solid 1px;}

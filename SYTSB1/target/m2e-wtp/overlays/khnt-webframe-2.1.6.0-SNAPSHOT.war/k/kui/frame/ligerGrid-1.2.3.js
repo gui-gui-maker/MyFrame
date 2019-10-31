@@ -1,0 +1,1 @@
+﻿document.write(unescape('%3Cscript type="text/javascript" src="'+kui["kuiBase"]+'kui/frame/ligerui/plugins-kh/ligerGrid.js"%3E%3C/script%3E'));

@@ -1,0 +1,6 @@
+/**
+ * Created by Administrator on 14-4-4.
+ */
+$(function(){//jQuery页面载入事件
+	//alert(123123)
+});

@@ -1,0 +1,66 @@
+body {overflow:hidden;}
+.l-frozen .l-grid2 .l-grid-body {overflow-x:auto;}
+.l-grid-empty {padding:10px;color:gray;font:bold 13px tahoma,arial,helvetica,sans-serif;text-align:center;height:40px;}
+.list-tf-div-1 {float:left;padding:5px;}
+.list-ft-td-1 {padding:3px;background:#51871B;color:#DFEFCF;height:25px;}
+.list-ft-td-2 {padding:3px;background:#FFFFFF;text-align:center;}
+.list-ft-td-2-button1 {background:#51871B;border:1px solid #27420D;color:#DFEFCF;padding:1px 0px 0px 0px;}
+#sorterTable select {width:100%;}
+#configPanelDiv input {width:50px;}
+#configPanelDiv select {width:100%;}
+#seachPanelTable input {width:100%;}
+#seachPanelTable select {width:100%;}
+#seachPanelTable td {text-align:right;}
+#editor-grid .x-grid-col-2 {text-align:right;}
+.x-resizable-pinned .x-resizable-handle-south {background:url("../images/default/sizer/s-handle-dark.gif");background-position:top;}
+.toolbar {height:30px;padding:5px;}
+.icon-grid {background-image:url("../images/icons/grid.png") !important;}
+#button-grid .x-panel-body {border:1px solid #99bbe8;border-top:0 none;}
+#qmtoolbar {height:5px;overflow:hidden;}
+/*.rowAdd {background-image:url("../images/icons/row_add.gif") !important;}
+.rowDel {background-image:url("../images/icons/row_del.gif") !important;}
+.add {background-image:url("../images/icons/page_add.gif") !important;}
+.edit {background-image:url("../images/icons/page_edit.gif") !important;}
+.delete {background-image:url("../images/icons/page_delete.gif") !important;}
+.copy {background-image:url("../images/icons/page_copy.gif") !important;}
+.view {background-image:url("../images/icons/page_view.gif") !important;}
+.pageset {background-image:url("../images/icons/page_set.gif") !important;}
+.advanced {background-image:url("../images/icons/advanced.gif") !important;}
+.searchtab {background-image:url("../images/icons/qm_search.png") !important;}
+.sorttab {background-image:url("../images/icons/qm_order.gif") !important;}
+.search {background:url("../images/icons/qm_search.png") no-repeat scroll 0 0 transparent;}
+.run {background-image:url("../images/icons/run.gif") !important;}
+.default {background-image:url("../images/icons/set_default.gif") !important;}
+.set {background-image:url("../images/icons/qm_set.gif") !important;}
+.order {background-image:url("../images/icons/qm_order.gif") !important;}*/
+.l-icon-exp {background:url("../images/icons/qm_exp.gif") no-repeat scroll center center transparent;}
+.l-icon-advanced {background:url("../images/icons/advanced.gif") no-repeat scroll center center transparent;}
+.l-icon-groupAdd {background:url("../images/icons/row_add2.png") no-repeat scroll center center transparent;}
+.l-icon-clear {background:url("../images/icons/row_del2.png") no-repeat scroll center center transparent;}
+.__qm__search__row_bar1 {display:inline-block;padding:2px;_zoom:1;_display:inline;}
+.__qm__search__row_bar1:hover {background-color:#ddf0ff;border:1px solid #aac8f1;padding:1px;}
+.l-icon-reset {background:url("../images/icons/set_default.gif") no-repeat scroll center center transparent;}
+.l-icon-run {background:url("../images/icons/run.gif") no-repeat scroll center center transparent;}
+.l-icon-left {position:absolute;left:2px;top:0px;}
+
+#qm-search-p {width:100%;}
+#qm-search-p td {padding:5px;}
+#qm-search-p .column {float:left;}
+#qm-search-p .label-left {float:left;line-height:28px;}
+#qm-search-p .label-top {float:left;margin:3px;}
+#qm-search-p .field-left-column {margin:3px;}
+#qm-search-p .field-left-column .l-radio-group-wrapper {margin-top:8px;}
+#qm-search-p .field-left-float {margin:3px;}
+#qm-search-p .field-left .l-radio-group-wrapper {line-height:24px;}
+#qm-search-p .field-top {float:left;margin:3px;}
+#qm-search-p .group {float:left;}
+.select-count{margin-top: 2px;}
+.select-count span{color: red;}
+
+
+
+.l-panel-bar {}
+.l-panel-bbar-inner {}
+.l-panel-bbar-inner .pcontrol input {border:1px solid #adadad;text-align:center;}
+
+.l-grid-col-panel .l-radio-group-wrapper .cgbox-item,.l-grid-col-panel .l-checkbox-group-wrapper .cgbox-item {min-width:80px;}

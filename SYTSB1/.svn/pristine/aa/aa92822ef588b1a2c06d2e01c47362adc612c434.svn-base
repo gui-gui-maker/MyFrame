@@ -1,0 +1,56 @@
+#模板文件和导出报告word等文件存放的位置
+basePath = D:/rtbox/
+
+
+#签名图片位置
+imagePath = 
+
+#模板存放地址
+templeteDocPath = templete/word/
+
+#模板存放地
+templeteXmlPath =templete/xml/
+
+#word输出地
+outputDocPath =output/word/
+
+#html输出地
+outputHtmlPath =output/html/
+
+#XML输出地
+outputXmlPath =output/xml/
+
+#用户级word输出地
+outputExportPath =output/export/
+#
+tplPageDir =rtbox/app/templates/
+#原始记录模板路劲
+tplRecordPageDir = rtbox/app/recordTemplates/
+
+#XML模板，代码.xml，完整版
+tplXmlPath =rtbox/app/xml/
+
+#初始化版本号
+#MINVERSION =0 
+
+#报表工具生成目录,最后“/”为必需 add 2017/04/14 zq 
+#D:/Server-TZSB/apache-tomcat-7.0.64/webapps/ROOT/
+PROJECT_PATH=
+
+
+#需要检验项目检验结果前缀的报告类型
+#2为默认机电类,多个“,”分开
+reportType = 2
+
+#检验项目检验结果前缀
+inspect_record = record
+
+#检验项目检验结论前缀
+inspect_conclusion = conclusion
+
+#人员签名命名
+signOp=enter_op;confirm_op;audit_op;sign_op;inspect_op;inspection_op
+
+#pdf 打印
+#RT_PRINT_PDF =
+#RT_PRINT_PDF_HOST = 

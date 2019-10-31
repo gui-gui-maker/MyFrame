@@ -1,0 +1,28 @@
+<html>
+<head><title>程序扩展接口调用</title></head>
+
+<script type="text/javascript">
+
+function open1()
+{
+	window.external.OpenUrl('http://192.168.0.40:8080/demo/demo_list2.jsp',0);
+}
+
+function open2()
+{
+	window.external.OpenUrl('http://192.168.0.40:8080/demo/demo_list2.jsp',1);
+}
+
+function open3()
+{
+	window.external.OpenUrl('http://192.168.0.40:8080/demo/demo_list2.jsp',2);
+}
+
+</script>
+
+<body>
+<input type="button" value="默认浏览器打开" onclick = "open1()" >
+<input type="button" value="IE浏览器打开" onclick = "open2()" >
+<input type="button" value="客户端打开" onclick = "open3()" >
+</body>
+</html>

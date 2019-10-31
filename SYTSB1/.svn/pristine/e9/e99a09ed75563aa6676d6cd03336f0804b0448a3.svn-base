@@ -1,0 +1,273 @@
+<%@ page contentType="text/html;charset=UTF-8"%>
+<%@ taglib uri="http://khnt.com/tags/ui" prefix="u"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>曳引驱动杂物电梯定期检验报告</title>
+<%
+	String infoId = request.getParameter("info_id");
+	String inspect_op402880ee5e123818015e1240e9d60003 = "select u.id,u.name from sys_user u, tzsb_inspection_info info where info.check_op_id like '%'||u.id||'%'  and info.id='"
+			+ infoId + "'";
+	String audit_op402880ee5e174aa8015e1766c7ed0000 = "select u.id,u.name from sys_user u,sys_user_role ur,sys_role r where r.id = ur.role_id and ur.user_id = u.id and r.name like '%管道审核%'";
+	String inspect_op402880485ea7db57015ea869c77c000a = "select u.id,u.name from sys_user u, tzsb_inspection_info info where info.check_op_id like '%'||u.id||'%'  and info.id='"
+			+ infoId + "'";
+	String inspect_op402880ee5e4a71ac015e4aeab46e0003 = "select u.id,u.name from sys_user u, tzsb_inspection_info info where info.check_op_id like '%'||u.id||'%'  and info.id='"
+			+ infoId + "'";
+	String audit_op402880ee5e4a71ac015e4b4815730007 = "select u.id,u.name from sys_user u,sys_user_role ur,sys_role r where r.id = ur.role_id and ur.user_id = u.id and r.name like '%电梯审核%'";
+	String audit_op402880ee5e174aa8015e17d0b3ad0028 = "select u.id,u.name from sys_user u,sys_user_role ur,sys_role r where r.id = ur.role_id and ur.user_id = u.id and r.name like '%容器审核%'";
+%>
+</head>
+<style type="text/css">
+	.cent{
+		width: 130px;
+		display: inline-block;
+		text-align: justify;
+		text-align-last: justify;
+	}
+	p:after {
+        display: inline-block;
+        content: '';
+        overflow: hidden;
+        width: 100%;
+        height: 0;
+    }
+</style>
+<script type="text/javascript">
+	$(function() {
+		var infoId = '${param.fk_inspection_info_id}';
+		if (infoId ==null || infoId == '') {
+			infoId = '${param.info_id}';
+		}
+		$.ajax({
+			url : 'reportItemValueAction/getWxQrCodeByInfoId.do?infoId='
+					+ infoId,
+			type : 'post',
+			dataType : 'json',
+			async : false,
+			success : function(res) {
+				var url = "fileupload/downloadByObjId.do?id=" + res.qrCodeId;
+				$("#qrCodeImg").attr("src", url);
+			}
+		});
+	});
+</script>
+<body>
+	<input type="hidden" id="fk_report_id" name="fk_report_id"
+		value="${param.fk_report_id}">
+	<input type="hidden" id="fk_inspection_info_id"
+		name="fk_inspection_info_id" value="${param.fk_inspection_info_id}">
+
+	<input type="hidden" id="nextPage" name="nextPage" value="2">
+	<br />
+	<!-- userBodyTop goes here -->
+	<div class="document">
+		<p class="a DocDefaults "
+			style="text-align: left; position: relative; text-indent: 0.25in; line-height: 160%;">
+			<span class="a0 " style="font-weight: bold; font-size: 12.0pt;">                        </span>
+		</p>
+		<table id="docx4j_tbl_0"
+			style="table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 150mm;">
+			<colgroup>
+				<col style="width: 70.36%;" />
+				<col style="width: 29.64%;" />
+			</colgroup>
+			<tbody>
+				<tr>
+					<td style="background-color: #FFFFFF;">
+						<p class="a DocDefaults " style="width: 100%;text-align: right;">
+							<span class="a0 " style=""><span class=""
+								style="font-family: 'SimSun';">报告编号：</span></span>
+						</p>
+					</td>
+					<td style="background-color: #FFFFFF;">
+						<p class="a DocDefaults ">
+							<input id="base__report_sn" name="base__report_sn" type="text"
+								ltype="text" value="" ligerui="{width:135}" readonly="readonly" />
+						</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="a DocDefaults "
+			style="text-align: left; position: relative; text-indent: 0.25in; line-height: 160%;"> </p>
+		<p class="a DocDefaults "
+			style="text-align: left; position: relative; text-indent: 0.25in; line-height: 160%;"> </p>
+		<p class="a DocDefaults " style="text-align: left; line-height: 160%;">
+			<span class="a0 "
+				style="font-size: 26.0pt;; font-family: 'Times New Roman';"> </span>
+		</p>
+		<p class="dtitle"
+			style="text-align: center;">
+			<span class="a0 "
+				style="font-weight: bold; font-size: 26.0pt;; font-family: 'SimSun';">曳引驱动杂物电梯</span>
+		</p>
+		<p class="dtitle"
+			style="text-align: center;">
+			<span class="a0 "
+				style="font-weight: bold; font-size: 26.0pt;; font-family: 'SimSun';">定期检验报告</span>
+		</p>
+		<p class="a DocDefaults " style="line-height: 160%;"> </p>
+		<p class="a DocDefaults "
+			style="text-align: center; line-height: 160%;"> </p>
+		<table id="docx4j_tbl_1"
+			style="table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 5.78in;">
+			<colgroup>
+				<col style="width: 34.03%;" />
+				<col style="width: 65.97%;" />
+			</colgroup>
+			<tbody>
+				<tr>
+					<td
+						style="background-color: #FFFFFF; border-bottom-style: none; border-right-style: none; border-top-style: none;">
+						<p class="a DocDefaults "
+							style="width: 100%;text-align: right;">
+							<span class="a0 " style="font-size: 15.0pt;"><span
+								class="a0 cent" style="font-family: 'SimSun';">使用单位名称</span>：</span>
+						</p>
+					</td>
+					<td
+						style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-right-style: none; border-top-style: none;">
+						<p class="a DocDefaults " style="line-height: 300%;">
+							<input id="base__com_name" name="base__com_name" type="text"
+								ltype="text" value="" ligerui="{width:356}" />
+						</p>
+					</td>
+				</tr>
+				<tr style="height: 8mm;">
+					<td
+						style="background-color: #FFFFFF; border-bottom-style: none; border-right-style: none; border-top-style: none;">
+						<p class="a DocDefaults "
+							style="width: 100%;text-align: right;">
+							<span class="a0 " style="font-size: 15.0pt;"><span
+								class="a0 cent" style="font-family: 'SimSun';">设备代码</span>：</span>
+						</p>
+					</td>
+					<td
+						style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000;">
+						<p class="a DocDefaults " style="line-height: 300%;">
+							<input id="base__device_registration_code"
+								name="base__device_registration_code" type="text" ltype="text"
+								value="" ligerui="{width:356}" />
+						</p>
+					</td>
+				</tr>
+				<tr style="height: 8mm;">
+					<td
+						style="background-color: #FFFFFF; border-bottom-style: none; border-right-style: none; border-top-style: none;">
+						<p class="a DocDefaults "
+							style="width: 100%;text-align: right;">
+							<span class="a0 " style="font-size: 15.0pt;"><span
+								class="a0 cent" style="font-family: 'SimSun';">设备类别</span>：</span>
+						</p>
+					</td>
+					<td
+						style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000;">
+						<p class="a DocDefaults " style="line-height: 300%;">
+							<input id="base__device_type_name" name="base__device_type_name"
+								type="text" ltype="text" value="" ligerui="{width:356}" />
+						</p>
+					</td>
+				</tr>
+				<tr style="height: 8mm;">
+					<td
+						style="background-color: #FFFFFF; border-bottom-style: none; border-right-style: none; border-top-style: none;">
+						<p class="a DocDefaults "
+							style="width: 100%;text-align: right;">
+							<span class="a0 " style="font-size: 15.0pt;"><span
+								class="a0 cent" style="font-family: 'SimSun';">设备品种</span>：</span>
+						</p>
+					</td>
+					<td
+						style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000;">
+						<p class="a DocDefaults " style="line-height: 300%;">
+							<input id="base__device_sort" name="base__device_sort"
+								type="text" ltype="text" value="" ligerui="{width:356}" />
+						</p>
+					</td>
+				</tr>
+				<tr style="height: 8mm;">
+					<td
+						style="background-color: #FFFFFF; border-bottom-style: none; border-right-style: none; border-top-style: none;">
+						<p class="a DocDefaults "
+							style="width: 100%;text-align: right;">
+							<span class="a0 " style="font-size: 15.0pt;"><span
+								class="a0 cent" style="font-family: 'SimSun';">检验机构名称</span>：</span>
+						</p>
+					</td>
+					<td
+						style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000;">
+						<p class="a DocDefaults " style="line-height: 300%;">
+							<input id="base__inspection_org" name="base__inspection_org" type="text" ltype="text"
+								value="" ligerui="{width:356}" />
+						</p>
+					</td>
+				</tr>
+				<tr style="height: 8mm;">
+					<td
+						style="background-color: #FFFFFF; border-bottom-style: none; border-right-style: none; border-top-style: none;">
+						<p class="a DocDefaults "
+							style="width: 100%;text-align: right;">
+							<span class="a0 " style="font-size: 15.0pt;"><span
+								class="a0 cent" style="font-family: 'SimSun';">检验日期</span>：</span>
+						</p>
+					</td>
+					<td
+						style="background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-right-style: none; border-top-style: solid; border-top-width: 1px; border-top-color: #000000;">
+						<p class="a DocDefaults " style="line-height: 300%;">
+							<input id="base__inspect_date" name="base__inspect_date"
+								type="text" ltype="date" value=""
+								ligerui="{isTextBoxMode:true,width:356}" required />
+						</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<p
+			class="a DocDefaults "
+			style="text-align: left; margin-top: 5mm; margin-bottom: 5mm; line-height: 150%;"
+		> </p>
+		<p
+			class="a DocDefaults "
+			style="line-height: 160%;"
+		> </p>
+		<p
+			class="a DocDefaults "
+			style="line-height: 160%;"
+		> </p>
+		<p class="a DocDefaults">
+			<img
+				id="qrCodeImg"
+				src=""
+				alt=""
+			>
+			<br />
+		</p>
+		<p
+			class="a DocDefaults "
+			style="line-height: 160%;"
+		> </p>
+		<p
+			class="a DocDefaults "
+			style="text-align: center; line-height: 160%;"
+		>
+			<span
+				class="a0 "
+				style="font-weight: bold; font-size: 22.0pt;; font-family: 'SimSun';"
+			>巴中市特种监督检验所</span>
+		</p>
+		<p
+			class="a DocDefaults "
+			style="text-align: left; line-height: 160%;"
+		>
+			<span
+				class="a0 "
+				style="font-size: 22.0pt;; font-family: 'Times New Roman';"
+			> </span>
+		</p>
+		<p
+			class="a DocDefaults "
+			style="text-align: center; line-height: 150%;"
+		></body>
+</html>

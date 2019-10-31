@@ -1,0 +1,606 @@
+package com.lsts.office.web;
+
+import java.net.URLDecoder;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import net.sf.json.JSONObject;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.khnt.bpm.communal.BpmOrg;
+import com.khnt.bpm.communal.BpmUser;
+import com.khnt.bpm.communal.BpmUserImpl;
+import com.khnt.bpm.ext.bean.FlowServiceConfig;
+import com.khnt.bpm.ext.service.FlowServiceConfigManager;
+import com.khnt.bpm.ext.support.FlowExtWorktaskParam;
+import com.khnt.core.crud.web.SpringSupportAction;
+import com.khnt.core.crud.web.support.JsonWrapper;
+import com.khnt.rbac.impl.bean.Employee;
+import com.khnt.rbac.impl.bean.User;
+import com.khnt.rbac.manager.OrgManager;
+import com.khnt.security.CurrentSessionUser;
+import com.khnt.security.util.SecurityUtil;
+import com.khnt.utils.StringUtil;
+import com.khnt.weixin.enums.EnumMethod;
+import com.khnt.weixin.interceptor.OAuthRequired;
+import com.khnt.weixin.pojo.AccessToken;
+import com.khnt.weixin.util.Constants;
+import com.khnt.weixin.util.HttpRequestUtil;
+import com.khnt.weixin.util.Result;
+import com.khnt.weixin.util.WxUtil;
+import com.lsts.employee.service.EmployeesService;
+import com.lsts.humanresources.bean.WxLeave;
+import com.lsts.humanresources.service.EmployeeBaseManager;
+import com.lsts.log.service.SysLogService;
+import com.lsts.office.bean.MeetingReq;
+import com.lsts.office.dao.MeetingReqDao;
+import com.lsts.office.dao.MeetingUserDao;
+import com.lsts.office.service.MeetUpdateYijinaManager;
+import com.lsts.office.service.MeetingReqManager;
+import com.lsts.office.service.MeetingRoomInfoManager;
+import com.scts.weixin.app.service.WeixinAppInfoManager;
+
+/**
+ * <p>
+ * 类说明
+ * </p>
+ * @ClassName OrgAction
+ * @JDK 1.6
+ * @author
+ * @date
+ */
+@Controller
+@RequestMapping("oa/meetingReq/info/")
+public class MeetingReqAction extends
+		SpringSupportAction<MeetingReq, MeetingReqManager> {
+
+	@Autowired
+	private MeetingReqManager meetingReqManager;
+	@Autowired
+	private MeetUpdateYijinaManager meetUpdateYijinaManager;
+	@Autowired
+	private MeetingReqDao meetingReqDao;
+	@Autowired
+	private MeetingUserDao meetingUserDao;
+	@Autowired
+	private OrgManager orgManager;
+	@Autowired
+	private EmployeeBaseManager  employeeBaseManager;
+	@Autowired
+	private EmployeesService  employeesService;
+	@Autowired
+	FlowServiceConfigManager flowServiceConfigManager;
+	@Autowired
+	MeetingRoomInfoManager meetingRoomInfoManager;
+	@Autowired
+	private SysLogService logService;
+	@Autowired
+    private WeixinAppInfoManager  weixinAppInfoManager;
+
+	//保存申请表信息
+	@RequestMapping(value="saveMeetingReq")
+	@ResponseBody
+	public HashMap<String,Object> saveMeetingReq(@RequestBody MeetingReq meetingReq,HttpServletRequest request) throws Exception{
+		HashMap<String,Object> wrapper = new HashMap<String,Object>();
+		//验证会议室是否被申请
+		//String roomId=meetingReq.getFkOaMeetingRoom();
+		//String roomName=meetingReq.getRoomCode();
+		//Date startTime=meetingReq.getStartTime();
+		//Date endTime=meetingReq.getEndTime();
+		//SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		//boolean isUse=meetingReqManager.useValidate(meetingReq.getId(),roomId,sdf.format(startTime),sdf.format(endTime));
+//		if(isUse){
+//			wrapper.put("success",false);
+//			wrapper.put("msg", "会议室【"+roomName+"】在"+sdf.format(startTime)+"-"+sdf.format(endTime)+"已经被使用！请更换会议室或修改会议时间。");
+//		}
+//		else{
+		System.out.println("-----------------");
+		CurrentSessionUser curUser = SecurityUtil.getSecurityUser();
+		User user = (User)curUser.getSysUser();
+		Employee emp = (com.khnt.rbac.impl.bean.Employee)user.getEmployee();
+		
+		String userId=emp.getId();
+		
+		
+		wrapper=meetingReqManager.saveMeetingMessage(meetingReq,request,userId);
+//		}
+		return wrapper;
+	}
+	//会议详情
+	@RequestMapping(value="detailMeeting")
+	@ResponseBody
+	public HashMap<String,Object> detailMeeting(HttpServletRequest request) throws Exception{
+		try {
+			 String reqId=request.getParameter("id");
+			 MeetingReq meetingReq=meetingReqManager.detailMeeting(reqId);
+			 return JsonWrapper.successWrapper(meetingReq);
+		} catch (Exception e) {
+		return JsonWrapper.failureWrapper();
+		}
+	}
+	//获取参会人信息
+	 @RequestMapping(value = "getUser")
+	 @ResponseBody
+	 public HashMap<String,Object> getUser(HttpServletRequest request) throws Exception{
+		 HashMap<String,Object> wrapper = new HashMap<String,Object>();
+			try {
+				 String reqId=request.getParameter("reqId");
+				 wrapper.put("success", true);
+				 wrapper.put("Rows", meetingReqManager.getUser(reqId));
+//				 return JsonWrapper.successWrapper(meetingReqManager.getUser(reqId));
+			} catch (Exception e) {
+				wrapper.put("success", false);
+//			return JsonWrapper.failureWrapper();
+			}
+			return wrapper;
+		}
+	//获取参会单位信息
+		 @RequestMapping(value = "getOrg")
+		 @ResponseBody
+		 public HashMap<String,Object> getOrg(HttpServletRequest request) throws Exception{
+			 HashMap<String,Object> wrapper = new HashMap<String,Object>();
+				try {
+					 String reqId=request.getParameter("reqId");
+					 wrapper.put("success", true);
+					 wrapper.put("Rows", meetingReqManager.getOrg(reqId));
+//					 return JsonWrapper.successWrapper(meetingReqManager.getUser(reqId));
+				} catch (Exception e) {
+					wrapper.put("success", false);
+//				return JsonWrapper.failureWrapper();
+				}
+				return wrapper;
+			}
+	
+		 
+		//删除会议室申请信息
+			@RequestMapping(value="deletes")
+			@ResponseBody
+			public HashMap<String,Object> deleteMeetingMessage(HttpServletRequest request) throws Exception{
+			         
+					String reqId=request.getParameter("ids");
+					meetingReqManager.deleteMeetingMessage(reqId);
+					return JsonWrapper.successWrapper(reqId);
+			
+			}
+	/*//发送会议通知
+	@RequestMapping(value="sendNotice")
+	@ResponseBody
+	public HashMap<String,Object> sendMeetingNotice(HttpServletRequest request) throws Exception{
+		 String reqId=request.getParameter("ids");
+		 MeetingReq meetingReq=meetingReqManager.get(reqId);
+		 meetingReqManager.sendMeetingNotice(meetingReq, this.getCurrentUser());
+	   return JsonWrapper.successWrapper(meetingReq);
+	}*/
+	
+	//发送会议通知
+	@RequestMapping(value="audit")
+	@ResponseBody
+	public HashMap<String,Object> audit(HttpServletRequest request) throws Exception{
+		 String reqId=request.getParameter("reqId");
+		 meetingReqManager.sendMessage(request);
+		 MeetingReq meetingReq=meetingReqManager.get(reqId);
+		 meetingReq.setMeeting_status("1");
+		 meetingReqManager.save(meetingReq);
+		 return JsonWrapper.successWrapper(meetingReq);
+	}
+	/**
+    /**
+	 * 提交审核
+	 * 
+	 * */
+	 @RequestMapping(value = "subFolws")
+	 @ResponseBody
+   	public HashMap<String, Object> subFolws(ServletRequest request,String id, String flowId,
+   		String typeCode, String status,String activityId) throws Exception {
+    	CurrentSessionUser user = SecurityUtil.getSecurityUser();
+   		Map<String, Object> map = new HashMap<String, Object>();
+   		//流程传参
+   		map.put(FlowExtWorktaskParam.SERVICE_ID, id);
+   		map.put(FlowExtWorktaskParam.ACTIVITY_ID, activityId);
+   		map.put(FlowExtWorktaskParam.SERVICE_TITLE, "会议室申请 -"+user.getName());
+   		map.put(FlowExtWorktaskParam.FLOW_DEFINITION_ID, flowId);
+   		map.put(FlowExtWorktaskParam.SERVICE_TYPE, typeCode);
+   		map.put(FlowExtWorktaskParam.IS_CURRENT_USER_TASK, true);
+   		
+   		
+   		if (StringUtil.isEmpty(id)) {
+   			return JsonWrapper.failureWrapper("参数错误！");
+   		} else {
+   			// 启动流程
+   			if (StringUtil.isNotEmpty(flowId)) {
+   				meetingReqManager.doStartPress(map);
+   				//改变状态
+   				MeetingReq meetingReq=meetingReqManager.get(id);
+   				meetingReq.setStatus(meetingReqManager.MEET_FLOW_DSH);
+   				meetingReqManager.save(meetingReq);
+   				logService.setLogs(id, "提交会议室申请", "提交会议室申请，操作结果：待审核。", user.getId(), user
+						.getName(), new Date(), request.getRemoteAddr());
+   			} else {
+   				return JsonWrapper.failureWrapper("流程ID为空！");
+   			}
+
+   			return JsonWrapper.successWrapper(id);
+   		}
+
+   	}
+	 
+	 /**
+		 * 通过请休假ID查询流程主键ID
+		 * 
+		 * @param request
+		 * @param id
+		 * @return
+		 * @throws Exception
+		 */
+		@RequestMapping(value = "queryMainId")
+		@ResponseBody
+		public HashMap<String, Object> queryMainId(HttpServletRequest request, String id) throws Exception {
+			HashMap<String, Object> wrapper = new HashMap<String, Object>();
+			String mainId = meetingReqManager.queryMainId(request, id);
+			System.out.println("会议室申请业务ID："+id);
+			System.out.println("查询得到的流程主键ID："+mainId);
+			wrapper.put("success", true);
+			wrapper.put("mainId", mainId);
+			return wrapper;
+
+		} 
+		/**
+		 * 通过请休假ID查询流程PROCESS_ID
+		 * 
+		 * @param request
+		 * @param id
+		 * @return
+		 * @throws Exception
+		 */
+		@RequestMapping(value = "queryProcessId")
+		@ResponseBody
+		public HashMap<String, Object> queryProcessId(HttpServletRequest request, String id) throws Exception {
+			HashMap<String, Object> wrapper = new HashMap<String, Object>();
+			String processId = meetingReqManager.queryProcessId(request, id);
+			System.out.println(processId);
+			wrapper.put("success", true);
+			wrapper.put("processId", processId);
+			return wrapper;
+
+		}
+		
+		/**
+		 * 验证会议室是否被申请
+		 * 
+		 * @param request
+		 * @param startTime
+		 * @param endTime
+		 * @return
+		 * @throws Exception
+		 */
+		@RequestMapping(value = "countReq")
+		@ResponseBody
+		public HashMap<String, Object> countReq(HttpServletRequest request, String startTime, String endTime, String id,String roomId) throws Exception {
+			HashMap<String, Object> wrapper = new HashMap<String, Object>();
+			String roomName=meetingRoomInfoManager.get(roomId).getCode();
+			boolean isUse=meetingReqManager.useValidate(id,roomId,startTime,endTime);
+			if(isUse){
+				wrapper.put("success",false);
+				wrapper.put("msg", "【"+roomName+"】在"+startTime+"至"+endTime+"已经被申请或使用！请更换会议室或修改会议时间。");
+			}else{
+				wrapper.put("success", true);
+			}
+			
+			
+			
+			/*List<MeetingReq> list = meetingReqManager.countReq(request,startTime,endTime,id);
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"+list+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			if(!list.isEmpty()&&list.size()>0){
+				wrapper.put("success", true);
+			}else{
+				wrapper.put("false", false);
+			}
+			wrapper.put("list", list);*/
+			return wrapper;
+
+		}
+		@RequestMapping(value = "wUserId")
+	    @ResponseBody
+		   public String  load(HttpServletRequest request,String code)throws Exception{
+	    	String id = null;
+	    	try{
+	    		  HttpSession session = request.getSession();
+	    	        if(session.getAttribute("Userid")==null || ((String)session.getAttribute("Userid")).equals("noUserId")) {
+	    	           AccessToken accessToken = WxUtil.getAccessToken(Constants.CORPID, Constants.SECRET);
+	    	            if (accessToken != null && accessToken.getToken() != null && request.getParameter("code")!=null) {
+	    	            	//System.out.println("-----------------------------in--------------");
+	    	                Result<String> result = WxUtil.oAuth2GetUserByCode(accessToken.getToken(), request.getParameter("code"), 7);
+	    	                //System.out.println("result=" + result);
+	    	                String menuUrl = "https://qyapi.weixin.qq.com/cgi-bin/user/get?access_token="+accessToken.getToken()+"&userid="+result.getObj() ;
+	    	                JSONObject jo = HttpRequestUtil.httpRequest(menuUrl, EnumMethod.GET.name(), null);
+	    	                //jo.
+	    	                if(jo!=null){
+	    	                	 id= employeeBaseManager.getByWechatId(jo.getString("mobile"));
+	    	                	/*session.setAttribute("Name", jo.getString("name"));
+	    	                	session.setAttribute("Phone", jo.getString("mobile"));
+
+	    	                    System.out.println("------------------------Name is :"+jo.getString("name"));
+	    	                    System.out.println("------------------------Phone is :"+jo.getString("mobile"));*/
+	    	                }
+	    	                //session.setAttribute("Userid", result.getObj());
+	    	                //session.setAttribute("AccessToken", accessToken.getToken());
+	    	                
+	    	            } else {
+	    	            	//System.out.println("-----------------------------out--------------");
+	    	            	//session.setAttribute("Userid", "noUserId");
+	    	            	//session.setAttribute("Name", "noUserName");
+	    	            	//session.setAttribute("Phone", "noUserPhone");
+	    	                //session.setAttribute("AccessToken", "");
+	    	            }
+	    	        }
+	    	}catch(Exception e){
+	  			
+	  			e.printStackTrace();	
+	  		} 
+	    	    
+		    	return id;
+		    }
+		 /**微信
+		 * 获取业务状态
+		 * 
+		 * */
+		@RequestMapping("getStatus")
+		@ResponseBody
+		public HashMap<String, Object> getStatus(HttpServletRequest request) throws Exception {
+			HashMap< String, Object> hso=new HashMap<String, Object>();
+			try {
+				String id=request.getParameter("id");
+				MeetingReq meetingReq=new MeetingReq();
+				meetingReq=meetingReqManager.get(id);
+				 hso.put("success", true);
+				 hso.put("status", meetingReq.getStatus());
+				//return JsonWrapper.successWrapper(meetingReqManager.getid(name));	
+			} catch (Exception e) {
+				 hso.put("success", false);
+			}
+			return hso;
+				
+		}
+		
+		/**
+		 * 加载个人信息，此处添加了@OAuthRequired注解
+		 * @param model
+		 * @return
+		 */
+		@RequestMapping(value = "weixinUserInfo")
+		@OAuthRequired
+		public String weixinUserInfo(HttpServletRequest request,Model model){
+			System.out.println("Load a User!");
+	        System.out.println("getRequestURL = " + request.getSession().getId());
+	        System.out.println("getRequestURL = " + request.getRequestURL());
+	        System.out.println("getRequestURI = " + request.getRequestURI());
+	        System.out.println("code = " + request.getParameter("code"));
+	        HttpSession session = request.getSession();
+	        //System.out.println("1111111111111111111111111111111111111");
+	        log.debug(this.getClass().getName() + " method weixinUserInfo Load a User start");
+	        if(session.getAttribute("Userid")==null || ((String)session.getAttribute("Userid")).equals("noUserId")) {
+	           //AccessToken accessToken = WxUtil.getAccessToken(Constants.CORPID, Constants.SECRET);
+	           String token = WxUtil.getAccessTokenString();
+	           log.debug(this.getClass().getName() + " method weixinUserInfo 获取到code："+request.getParameter("code"));
+	        	log.debug(this.getClass().getName() + " method weixinUserInfo 获取到token："+token);
+	            if (StringUtil.isNotEmpty(token) && request.getParameter("code")!=null) {
+	            	//System.out.println("-----------------------------in--------------");
+	                Result<String> result = WxUtil.oAuth2GetUserByCode(token, request.getParameter("code"), 7);
+	                //System.out.println("result=" + result);
+	                String menuUrl = "https://qyapi.weixin.qq.com/cgi-bin/user/get?access_token="+token+"&userid="+result.getObj() ;
+	                log.debug(this.getClass().getName() + " method weixinUserInfo menuUrl："+menuUrl);
+	                JSONObject jo = HttpRequestUtil.httpRequest(menuUrl, EnumMethod.GET.name(), null);
+	                //jo.
+	                if(jo!=null){
+	                	if(jo.has("mobile")) {
+							User user;
+							try {
+								user = weixinAppInfoManager.getUser(jo.getString("mobile"));
+								if(user!=null) {
+									session.setAttribute("Name", user.getName());
+									session.setAttribute("Phone", jo.getString("mobile"));
+									session.setAttribute("Account",user.getAccount());
+									log.debug(this.getClass().getName() + " method weixinUserInfo 获取到用户信息，用户姓名："+user.getName()+"，用户手机号：" + jo.getString("mobile")+"，用户Account:"+user.getAccount());
+								}else {
+									session.setAttribute("error_msg", "亲，检验平台中未找到与该手机号匹配的用户信息");
+									log.debug("亲，检验平台中未找到与该手机号匹配的用户信息");
+									return "app/weixininfo/app_info/weixin_error_page";
+								}
+							} catch (Exception e) {
+								log.debug(e.getMessage());
+								return "app/weixininfo/app_info/weixin_error_page";
+							}
+						}else {
+							session.setAttribute("error_msg", "亲，微信接口服务出现异常，未找到手机号");
+							log.debug("亲，微信接口服务出现异常，未找到手机号");
+							return "app/weixininfo/app_info/weixin_error_page";
+						}
+					}else {
+						session.setAttribute("error_msg", "亲，微信接口服务出现异常，未获取到微信企业用户信息");
+						log.debug("亲，微信接口服务出现异常，未获取到微信企业用户信息");
+						return "app/weixininfo/app_info/weixin_error_page";
+					}
+	                session.setAttribute("Userid", result.getObj());
+	                //session.setAttribute("AccessToken", accessToken.getToken());
+	                
+	            } else {
+	            	//System.out.println("-----------------------------out--------------");
+	            	session.setAttribute("Userid", "noUserId");
+	            	session.setAttribute("Name", "noUserName");
+	            	session.setAttribute("Phone", "noUserPhone");
+	                //session.setAttribute("AccessToken", "");
+	            }
+	        }
+	        log.debug(this.getClass().getName() + " method weixinUserInfo Load a User end");
+			model.addAttribute("Userid", session.getAttribute("Userid"));
+			System.out.println("!!!!!!!!!!!!!!!!!!!!!!"+session.getAttribute("Userid"));
+			return "app/weixin/hys/meeting_index";
+		}
+	   /**
+		* @throws Exception 
+		* 手机端提交流程，并改变业务状态
+		* @date 2016年6月23日10:54:32
+		* HashMap<String,Object>   
+		* @return    
+		* @throws
+		*/
+		@RequestMapping("mobileSubmit")
+		@ResponseBody
+		public HashMap<String, Object> mobileSubmit(HttpServletRequest request) throws Exception {
+			String id = request.getParameter("id");
+			//部门
+			String sqDepartment1 = request.getParameter("sqDepartment");
+			String sqDepartment = URLDecoder.decode(sqDepartment1,"utf-8");
+			
+			String startTime = request.getParameter("startTime");
+			String endTime = request.getParameter("endTime");
+			SimpleDateFormat ss=new SimpleDateFormat("yyyy-MM-dd hh:mm");
+			Date startDate=ss.parse(startTime);
+			Date endDate=ss.parse(endTime);
+			//会议名称
+			String name1 = request.getParameter("name");
+			String name = URLDecoder.decode(name1,"utf-8");
+			
+			//会议室名称
+			String roomCode1 = request.getParameter("roomCode");
+			String roomCode = URLDecoder.decode(roomCode1,"utf-8");
+			
+			String fkOaMeetingRoom = request.getParameter("fkOaMeetingRoom");
+			int pnumber = Integer.parseInt(request.getParameter("pnumber"));
+			//会议地址
+			String hyAdress1 = request.getParameter("hyAdress");	
+			String hyAdress = URLDecoder.decode(hyAdress1,"utf-8");
+			String hysbzxs = request.getParameter("hysbzxs");
+			String ifZzhb = request.getParameter("ifZzhb");
+			String ifHyby = request.getParameter("ifHyby");
+			String ifZzhyzp = request.getParameter("ifZzhyzp");
+			String ifZzjczp = request.getParameter("ifZzjczp");
+			String ifFlowers = request.getParameter("ifFlowers");
+			String ifFruits = request.getParameter("ifFruits");
+			//其他
+			String officeOtherPz1 = request.getParameter("officeOtherPz");
+			String officeOtherPz = URLDecoder.decode(officeOtherPz1,"utf-8");
+			//备注
+			String remarks1 = request.getParameter("remarks");
+			String remarks = URLDecoder.decode(remarks1,"utf-8");
+			//承办人
+			String compere1 = request.getParameter("compere");
+			String compere = URLDecoder.decode(compere1,"utf-8");
+			
+			MeetingReq meetingReq = new MeetingReq();
+			meetingReq.setSqDepartment(sqDepartment);
+			meetingReq.setStartTime(startDate);
+			meetingReq.setEndTime(endDate);
+			meetingReq.setName(name);
+			meetingReq.setRoomCode(roomCode);
+			meetingReq.setFkOaMeetingRoom(fkOaMeetingRoom);
+			meetingReq.setPnumber(pnumber);
+			meetingReq.setHyAdress(hyAdress);
+			meetingReq.setHysbzxs(hysbzxs);
+			meetingReq.setIfZzhb(ifZzhb);
+			meetingReq.setIfHyby(ifHyby);
+			meetingReq.setIfZzhyzp(ifZzhyzp);
+			meetingReq.setIfZzjczp(ifZzjczp);
+			meetingReq.setIfFlowers(ifFlowers);
+			meetingReq.setIfFruits(ifFruits);
+			meetingReq.setOfficeOtherPz(officeOtherPz);
+			meetingReq.setRemarks(remarks);
+			meetingReq.setCompere(compere);
+			
+			String meetingReq_id=meetingReqManager.saveWXMeetReq(meetingReq,request,id);
+			System.out.println("赶紧的保存并获取业务ID啦啦啦啦啦啦啦啦啦："+meetingReq_id);
+			List<FlowServiceConfig> listresult= flowServiceConfigManager.queryServiceConfig("TJY2_OFFICE_MEETREQ_FLOW", "");
+			String flowId=null; 
+			if(listresult.size()==1){
+				try {
+					FlowServiceConfig fc = listresult.get(0);
+					flowId = fc.getFlowId();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				String status = null;
+				String activityId = null;
+				String typeCode="TJY2_OFFICE_MEETREQ_FLOW";
+				
+				WxSubFolws(request,id,meetingReq_id,flowId,typeCode,status,activityId);
+				System.out.println("流程提交已经完成啦，这是一个成功提示→_→，为什么这个表情在代码里这么难看呢？");
+				return JsonWrapper.successWrapper(meetingReq_id);	
+			 }else{
+				 
+				 return JsonWrapper.failureWrapper("msg","错误！");	
+			 }
+			
+		}
+		
+		/**
+		 * 微信提交审核
+		 * 
+		 * */
+		 @RequestMapping(value = "WxSubFolws")
+		 @ResponseBody
+	   	public HashMap<String, Object> WxSubFolws(ServletRequest request,String eId,String id, String flowId,
+	   		String typeCode, String status,String activityId) throws Exception {
+	    	/*CurrentSessionUser user = SecurityUtil.getSecurityUser();*/
+			Employee employee = employeesService.get(eId);
+			BpmUserImpl bpmUser = new BpmUserImpl(flowId, employee.getName(), null, null, null);
+			/*((BpmUserImpl) bpmUser).setId(employee.getId());
+			((BpmUserImpl) bpmUser).setName(employee.getName());*/
+	   		Map<String, Object> map = new HashMap<String, Object>();
+	   		//流程传参
+	   		map.put(FlowExtWorktaskParam.BPM_USER, bpmUser);
+	   		map.put(FlowExtWorktaskParam.SERVICE_ID, id);
+	   		map.put(FlowExtWorktaskParam.ACTIVITY_ID, activityId);
+	   		map.put(FlowExtWorktaskParam.SERVICE_TITLE, "会议室申请 -");
+	   		map.put(FlowExtWorktaskParam.FLOW_DEFINITION_ID, flowId);
+	   		map.put(FlowExtWorktaskParam.SERVICE_TYPE, typeCode);
+	   		map.put(FlowExtWorktaskParam.IS_CURRENT_USER_TASK, true);
+	   		
+	   		
+	   		if (StringUtil.isEmpty(id)) {
+	   			return JsonWrapper.failureWrapper("参数错误！");
+	   		} else {
+	   			// 启动流程
+	   			if (StringUtil.isNotEmpty(flowId)) {
+	   				meetingReqManager.doStartPress(map);
+	   				//改变状态
+	   				MeetingReq meetingReq=meetingReqManager.get(id);
+	   				meetingReq.setStatus(meetingReqManager.MEET_FLOW_DSH);
+	   				meetingReqManager.save(meetingReq);
+	   			} else {
+	   				return JsonWrapper.failureWrapper("流程ID为空！");
+	   			}
+
+	   			return JsonWrapper.successWrapper(id);
+	   		}
+
+	   	}
+		// 查询流程步骤信息
+		@RequestMapping(value = "getFlowStep")
+		@ResponseBody
+		public ModelAndView getFlowStep(HttpServletRequest request)
+				throws Exception {
+
+			Map<String, Object> map = new HashMap<String, Object>();
+
+			map = meetingReqManager.getFlowStep(request.getParameter("meeting_req_id"));
+
+			ModelAndView mav = new ModelAndView("app/office/meeting/flow_card", map);
+
+			return mav;
+
+		}
+}

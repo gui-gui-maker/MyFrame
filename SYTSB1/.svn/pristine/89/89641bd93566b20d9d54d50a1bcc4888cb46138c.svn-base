@@ -1,0 +1,405 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+</head>
+
+<body>
+	<div id="layout2" style="width: 99.8%">
+		<input type="hidden" id="inputFocus" name="inputFocus" /> <input
+			type="hidden" id="thisPage" name="thisPage" value="?page=12">
+		<div position="center" class="wrapper"
+			style="overflow: auto; width: 100%" align="center">
+			<input type="hidden" id="fk_report_id" name="fk_report_id" value="">
+			<input type="hidden" id="fk_inspection_info_id"
+				name="fk_inspection_info_id" value=""> <br />
+			<p>
+				<a name="RTPAGE_11__检验内容及要求9"></a>
+			</p>
+			<table class=""
+				style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; table-layout: fixed; vertical-align: top; border-collapse: collapse;">
+				<colgroup>
+					<col style="width: 50.03%;" />
+					<col style="width: 49.97%;" />
+				</colgroup>
+				<tbody>
+					<tr>
+						<td>
+							<p class="a DocDefaults " style="text-align: left; width: 100%;">
+								<span class="a0 " style=""><span class=""
+									style="font-family: 'SimSun';">文件编号：CTJB-</span></span><span
+									class="a0 " style="font-family: 'SimSun';">0412-B01</span>
+							</p>
+						</td>
+						<td>
+							<p class="a DocDefaults " style="text-align: right; width: 100%;">
+								<span class="a0 " style=""><span class=""
+									style="font-family: 'SimSun';">实施日期：2017年10月1日</span></span>
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table id="docx4j_tbl_13" rules="all" style="margin-top: 5mm; border-style: solid; border-color: black; border-width: 1px;">
+				<colgroup>
+					<col style="width: 6.22%;" />
+					<col style="width: 7.48%;" />
+					<col style="width: 8.38%;" />
+					<col style="width: 50%;" />
+					<col style="width: 15.3%;" />
+					<col style="width: 12.62%;" />
+				</colgroup>
+				<thead>
+					<tr style=" page-break-inside: avoid;">
+						<th>
+							<p style="width: 100%; text-align: center;">
+								<span>序</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>号</span>
+							</p>
+						</th>
+						<th colspan="3">
+							<p style="width: 100%; text-align: center;" >
+								<span>检验内容及要求</span>
+							</p>
+						</th>
+						<th>
+							<p style="width: 100%; text-align: center;">
+								<span>检验</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>结果</span>
+							</p>
+						</th>
+						<th>
+							<p style="width: 100%; text-align: center;">
+								<span>检验</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>结论</span>
+							</p>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr style="height: 1.35in; page-break-inside: avoid;">
+						<td rowspan="2">
+							<p style="width: 100%; text-align: center;">
+								<span>51</span>
+							</p>
+						</td>
+						<td rowspan="7">
+							<p style="width: 100%; text-align: center;">
+								<span>7.</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>轿门</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>与层</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>门</span>
+							</p>
+						</td>
+						<td rowspan="2">
+							<p style="width: 100%; text-align: center;">
+								<span>7.8.1</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>门的</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>锁紧</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>B</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>曳引式防爆电梯及液压式防爆电梯符合以下要求：</span></span>
+							</p>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span>(1)每个层门都</span><span><span>设有符合下述要求的门锁装置：</span></span>
+							</p>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>①门锁装置上设有铭牌，标明制造单位名称、型号和型式试验机构的名称或者标志，铭牌和型式试验证书内容相符；</span></span>
+							</p>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>②锁紧动作应当由重力、永久磁铁或者弹簧来产生和保持，即使永久磁铁或者弹簧失效，重力亦不能导致开锁；</span></span>
+							</p>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>③轿厢应当在锁紧元件啮合不小于7mm时才能启动；</span></span>
+							</p>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>④门的锁紧应当由一个符合本规则防爆技术要求的电气安全装置来验证，</span></span><span>由锁紧元</span><span><span>件强制操作而没有中间机构，且能够防止误动作</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__B_7_8_1_1"
+									name="record__B_7_8_1_1" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+						<td rowspan="2">
+							<p style="width: 100%;"> 
+								<input id="conclusion__B_7_8_1" name="conclusion__B_7_8_1" type="text" ltype="select"
+									value="" 
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'合格'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.15in; page-break-inside: avoid;">
+						<td>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>（2）如果轿门采用了门锁装置该装置也应当符合本条（1）的要求</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__B_7_8_1_2"
+									name="record__B_7_8_1_2" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.98in; page-break-inside: avoid;">
+						<td rowspan="2">
+							<p style="width: 100%; text-align: center;">
+								<span>52</span>
+							</p>
+						</td>
+						<td rowspan="2">
+							<p style="width: 100%; text-align: center;">
+								<span>7.9</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>门的</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>闭合</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>B</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>(1)正常运行时应当不能打开层门，除非轿厢在该层门的开锁区域内停止或者停站；如果</span></span><span>一个层门或者</span><span><span>轿门（或者多扇门中的任何一扇门）开着，在正常操作情况下，应当不能启动防爆电梯或者不能保持继续运行；</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__B_7_9_1"
+									name="record__B_7_9_1" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+						<td rowspan="2">
+							<p style="width: 100%;"> 
+								<input id="conclusion__B_7_9" name="conclusion__B_7_9" type="text" ltype="select"
+									value="" 
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'合格'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.76in; page-break-inside: avoid;">
+						<td>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>（2）</span></span><span>每个层门和</span><span><span>轿门的闭合都应当有符合本规则防爆技术要求的电器安全装置来验证，如果滑动门是由数个间接机械连接的门扇组成，则未被锁住的门扇上也应当设置符合本规则防爆技术要求的电器安全装置来验证</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__B_7_9_2"
+									name="record__B_7_9_2" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.92in; page-break-inside: avoid;">
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>53</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>7.10</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>门刀、</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>门锁滚</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>轮与地</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>坎间隙</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>C</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>曳引式防爆电梯及液压式防爆电梯应符合以下要求：</span></span>
+							</p>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span>轿门门刀与层门地</span><span><span>坎，层门锁滚轮与轿厢地坎的间隙应当不小于5mm；防爆电梯运行时不得互相碰擦</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__C_7_10"
+									name="record__C_7_10" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;"> 
+								<input id="conclusion__C_7_10" name="conclusion__C_7_10" type="text" ltype="select"
+									value="" 
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'合格'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.71in; page-break-inside: avoid;">
+						<td rowspan="2">
+							<p style="width: 100%; text-align: center;">
+								<span>54</span>
+							</p>
+						</td>
+						<td rowspan="2">
+							<p style="width: 100%; text-align: center;">
+								<span>7.11</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>轿门开</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>门限制</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>装置及</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>轿门的</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span><span>开启B</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>曳引式防爆电梯及液压式防爆电梯应符合以下要求：</span></span>
+							</p>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>(1)设置轿门开门限制装置，当轿厢停在开锁区域外时，能够防止轿厢内的人员打开轿门离开轿厢；</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__B_7_11_1"
+									name="record__B_7_11_1" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+						<td rowspan="2">
+							<p style="width: 100%;"> 
+								<input id="conclusion__B_7_11" name="conclusion__B_7_11" type="text" ltype="select"
+									value="" 
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'合格'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.6in; page-break-inside: avoid;">
+						<td>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>（2）轿厢停在开锁区域内时，打开对应的层门后，能够不用工具（三角钥匙或永久性设置在现场的工具除外）</span></span><span>从层门外打开轿门</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__B_7_11_2"
+									name="record__B_7_11_2" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 1.01in; page-break-inside: avoid;">
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>55</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>10.</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>相关</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>试验</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: center;">
+								<span>10.2</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>轿厢上</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>行超速</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>保护装</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>置试验</span>
+							</p>
+							<p style="width: 100%; text-align: center;">
+								<span>C</span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%; text-align: left; margin: 1px;">
+								<span><span>当曳引式防爆电梯轿厢上行速度失控时，轿厢上行超速保护装置应当动作，</span></span><span>使厢制停或者</span><span><span>至少使其速度降低至对重缓冲器的设计范围；</span><span>该装置动作时，应当使一个电气安全装置动作</span></span>
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;">
+								<input id="record__C_10_2"
+									name="record__C_10_2" type="text" ltype="select"
+									value=""
+									ligerui="{code:'dt_jg_record',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'符合'}" />
+							</p>
+						</td>
+						<td>
+							<p style="width: 100%;"> 
+								<input id="conclusion__C_10_2" name="conclusion__C_10_2" type="text" ltype="select"
+									value="" 
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:true,width:120,initValue:'合格'}" />
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

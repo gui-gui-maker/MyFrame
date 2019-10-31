@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:b="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd"
+	default-autowire="byName" default-lazy-init="false">
+	<!-- 安全验证忽略的资源 -->
+
+	
+	<http pattern="/payment/payInfo/showTwoDim.do" security="none" />
+	<http pattern="/payment/payInfo/getMobileInfo.do" security="none" />
+	<!-- 单点登录 -->
+	<http pattern="/employee/basic/checkPass.do" security="none" />
+	
+	<!-- 微信端就餐管理主页跳过登录 -->
+	<http pattern="/weixinDining/diningClient.do" security="none" />
+<http pattern="/**/*.pdf" security="none" />
+<http pattern="/**/*.swf" security="none" />
+	<http pattern="/" security="none" />
+	<http pattern="/**/*.js" security="none" />
+	<http pattern="/**/*.gif" security="none" />
+	<http pattern="/**/*.jpg" security="none" />
+	<http pattern="/**/*.png" security="none" />
+	<http pattern="/**/*.css" security="none" />
+	<http pattern="/**/*.ico" security="none" />
+	<http pattern="/k/kui/**" security="none" />
+	<http pattern="/k/system-config.jsp" security="none" />
+	<http pattern="/demo/explorer/**" security="none" />
+	<http pattern="/pub/explorer/server.json" security="none" />
+
+	<http pattern="/k/go_index.jsp" security="none" />
+	<http pattern="/user/login.do" security="none" />
+<!-- 	<http pattern="/user/login.do" security="none" />  -->
+	<http pattern="/user/login_dialog.do" security="none" />
+	<http pattern="/k/errorpage/access_denied.jsp" security="none" />
+	<http pattern="/k/errorpage/session_time_out.jsp" security="none" />
+	<!-- <http pattern="/k/index.jsp" security="none" /> <http pattern="/k/errorpage/access_denied.jsp" 
+		security="none" /> <http pattern="/k/errorpage/session_time_out.jsp" security="none" 
+		/> -->
+	<http pattern="/pub/tools/dowloadSoft.jsp" security="none" />
+	<http pattern="/pub/tools/soft.jsp" security="none" />
+	<http pattern="/security/web/validateCodeImg.do" security="none" />
+	
+	<http pattern="/desk/over.jsp" security="none" />
+	<http pattern="/desk/kxbdMarquee.js" security="none" />
+	<http pattern="/inspection/basic/getMoney.do" security="none" />
+	<http pattern="/inspection/basic/getInfo.do" security="none" />
+	<http pattern="/affiche/getAffiches.do" security="none" />
+	<http pattern="/department/basic/getShowInfo.do" security="none" />  
+	<http pattern="/fileupload/downloadByFilePath.do" security="none" />
+	<http pattern="/picture/showPic.do" security="none" />
+	<http pattern="/desk/flvplayer.swf" security="none" />
+	<http pattern="/desk/**" security="none" />
+	<!-- webservice接口 -->
+	<http pattern="/ws/**" security="none" />
+	<!-- 移动检验软件升级 -->
+	<http pattern="/mobile_update/**" security="none" />
+	<http pattern="/coreServlet" security="none" />
+	
+	<!-- <http pattern="/oa/meetingReq/info/**" security="none" /> -->
+	
+	<!-- 微信投票 -->
+	<http pattern="/weixin/wUserInfo.do" security="none" />
+	<http pattern="/voteRoundOneAction/**" security="none" />
+	<http pattern="/votePlayAction/**" security="none" />
+	<http pattern="/voteGoodnewsAction/**" security="none" />
+	<http pattern="/voteFavoriteIcoAction/**" security="none" />
+	<http pattern="/goodnewsSeventeenAction/**" security="none" />
+
+	<!-- 人力资源微信端跳过验证 -->
+		<!--  公积金确认跳过验证  -->
+		<http pattern="/Tjy2GjjAction/RL/getywId.do" security="none" />
+		<http pattern="/Tjy2GjjAction/RL/detail.do" security="none" />
+		<http pattern="/Tjy2GjjAction/RL/submit1.do" security="none" />
+		<http pattern="/Tjy2GjjAction/RL/getcodetabl.do" security="none" />
+		<!-- 工资确认跳过验证 -->
+		<http pattern="/tjy2YwfwbgzqrbAction/getids.do" security="none" />
+		<http pattern="/tjy2YwfwbgzqrbAction/detail.do" security="none" />
+		<http pattern="/tjy2YwfwbgzqrbAction/queren.do" security="none" />
+		<http pattern="/tjy2YwfwbgzqrbAction/detail1.do" security="none" />
+		<http pattern="/tjy2YwfwbgzqrbAction/getcodetabl.do" security="none" />
+		
+	<http pattern="/employeeBaseAction/weixinUserInfo.do" security="none" />
+	<http pattern="/employeeBaseAction/weixinUserInfo1.do" security="none" />
+	<http pattern="/employeeBaseAction/getEmpOnWXById.do" security="none" />
+	<http pattern="/employeeBaseAction/getEmpOnWXByName.do" security="none" />
+	<http pattern="/employeeBaseAction/empByPhone.do" security="none" />
+	<http pattern="/app/weixin/rs/index.jsp" security="none" />
+	<!-- 办公管理会议室微信端跳过验证 -->
+	<http pattern="/WxLeaveAction/loadUser.do" security="none" />
+	<http pattern="/updates/yijina/ret1.do" security="none" />
+	<http pattern="/employee/basic/searchEmployee.do" security="none" />
+	<http pattern="/oa/meetingReq/info/mobileSubmit.do" security="none" />
+	<http pattern="/oa/meetingReq/info/weixinUserInfo.do" security="none" />
+	<http pattern="/oa/meetingReq/info/detail.do" security="none" />
+	<http pattern="/oa/meetingReq/info/countReq.do" security="none" />
+	<http pattern="/oa/meetingRoom/info/getRoomInfo.do" security="none" />
+	
+	<!-- 工作任务微信跳过验证  -->
+	<http pattern="/office/ywhbsgzAction/weixinUserInfo.do" security="none" />
+	<http pattern="/office/ywhbsgzAction/setjs.do" security="none" />
+	<http pattern="/office/ywhbsgz_fkAction/saveWXFK.do" security="none" />
+	<http pattern="/office/ywhbsgzAction/detail.do" security="none" />
+	
+	<!-- 重大任务微信跳过验证 -->
+	<http pattern="/weighty/Task/weixinUserInfo.do" security="none" />
+	<http pattern="/weighty/Task/detail.do" security="none" />
+	<http pattern="/task/Feedback/saveWXFK.do" security="none" />
+	<http pattern="/weighty/Task/receive.do" security="none" />
+	
+	<!-- 微信应用统一入口 -->
+	<http pattern="/weixin/app/info/getUserInfo.do" security="none" />
+	<http pattern="/app/humanresources/wx_leave/02/**" security="none" />
+	
+	<!-- 网上报名 跳过登陆验证 start -->
+	<http pattern="/app/humanresources/registration_datail.jsp" security="none" />
+	<http pattern="/employeeBaseAction/saveBasic.do" security="none" />
+	<http pattern="/workExperienceAction/detailWork.do" security="none" />
+	<http pattern="/fileupload/**" security="none" />
+	<http pattern="/uploadAction/**" security="none" />
+	<http pattern="/pub/fileupload/**" security="none" />
+	<!-- 网上报名 跳过登陆验证 end -->
+	<!--<http pattern="/j_spring_security_check/**" security="none" />-->
+	
+	<!-- 搜索微信端跳过登录验证 -->
+	<http pattern="/weiXinResearch/wUserInfoForResearch.do" security="none" />
+	<!-- 云平台 -->
+	<http pattern="/fileupload2/downloadCompress.do" security="none" />
+	
+	<!-- 合同微信端查询 -->
+	<http pattern="/weiXinContract/**" security="none" />
+	
+	<!-- 微信年度统计 -->
+	<http pattern="/app/statistics/weixin/**" security="none" />
+	<http pattern="/weiXinAnnualSta/**" security="none" />
+	
+	<http pattern="/cxfws/**" security="none" />
+	<http pattern="/appclient/**" security="none" />
+    <http pattern="/IReform/**" security="none" />
+    <http pattern="/ICheck/**" security="none" />
+	<http pattern="/IDevice/**" security="none" />
+	<http pattern="/employeeBaseAction/**" security="none" />
+	<http pattern="/app/weixin/**" security="none" />
+	<http pattern="/qmNoSecurity" security="none" />
+	<http pattern="/k/km/**" security="none" />
+	<http pattern="/k/jqm/**" security="none" />
+	<!-- <http pattern="/employeeBaseAction/wUserRs.do" security="none" /> -->
+	<!-- <http pattern="/oa/meetingReq/info/**" security="none" /> -->
+<!-- 	<http pattern="/updates/yijina/**" security="none" />
+	<http pattern="/updates/yijina/zltj.do" security="none" /> -->
+	<http pattern="/oa/meetingReq/info/getcodetabl.do" security="none" />
+	<!-- 领取申请 wx端处理 start -->
+	<http pattern="/chlq/wx/weixinUserInfo.do" security="none" />
+	<!-- 领取申请 wx端处理 end -->
+ 	<http pattern="/WxLeaveAction/weixinUserInfo.do" security="none" />
+ 	
+ 	
+ 	<!-- 查看新工具报告 -->
+	<http pattern="/rtbox/app/templates/**" security="none" />
+	<http pattern="/reportItemValueAction/detailMap.do" security="none" />
+	<http pattern="/fileupload/downloadByObjId.do" security="none" />
+
+	<http pattern="/fileupload/download.do" security="none" />
+
+	<http pattern="/rtbox/app/recordTemplates/**" security="none" />
+	<http pattern="/report/item/record/getInspData.do" security="none" />
+    <http pattern="/report/item/record/queryCodeTable.do" security="none" />
+    
+    
+	<http access-denied-page="/k/errorpage/access_denied.jsp"
+		use-expressions="true" entry-point-ref="authenticationProcessingFilterEntryPoint">
+		<intercept-url pattern="/**" access="isAuthenticated()" />
+		<!-- logout-success-url:成功注销后跳转到的页面; -->
+		<logout logout-success-url="/user/login.do" />
+<!-- 		<logout logout-success-url="/k/index.jsp" /> -->
+
+		<!-- session-fixation-protection="none" 防止伪造sessionid攻击. 用户登录成功后会销毁用户当前的session. 
+			创建新的session,并把用户信息复制到新session中 -->
+		<!-- <session-management invalid-session-url="/k/errorpage/session_time_out.jsp"
+			session-fixation-protection="newSession">
+			error-if-maximum-exceeded="true" true:禁止2次登陆; false:后登陆的账号会挤掉第一次登陆的账号
+			<concurrency-control max-sessions="100" expired-url="/k/errorpage/account_expired.jsp"
+				error-if-maximum-exceeded="false" session-registry-ref="sessionRegistry" />
+		</session-management> -->
+		
+		<session-management session-authentication-strategy-ref="sessionAuthStrategy" />
+		
+		<!-- remenber-me自动登录认证 <remember-me key="k_user_rem_cki" services-ref="khntRememberMeServices" 
+			authentication-success-handler-ref="remenberMeAuthenticationSuccessHandler" 
+			/> -->
+		<!-- 自定义filter 实现用户、角色、权限、资源的数据库管理。 -->
+		<!-- FILTER_SECURITY_INTERCEPTOR是Spring Security默认的Filter，自定义的Filter必须在它之前 -->
+		<custom-filter ref="khValidateCodeAuthenticationFilter" position="FORM_LOGIN_FILTER" />
+		<custom-filter ref="kHFilter" before="FILTER_SECURITY_INTERCEPTOR" />
+		<http-basic />
+		<custom-filter ref="switchUserProcessingFilter" position="SWITCH_USER_FILTER"/>
+	</http>
+	<!-- 用户切换功能 -->
+	<b:bean id="switchUserProcessingFilter"
+        class="org.springframework.security.web.authentication.switchuser.SwitchUserFilter">
+    	<b:property name="targetUrl" value="/security/authentication/loginSuccess.do"/>
+	</b:bean>
+	<!-- remenber-me认证服务提供器 -->
+	<b:bean id="khntRememberMeServices" class="com.khnt.security.KHTokenBasedRememberMeServices">
+		<b:constructor-arg name="key" value="k_user_rem_cki" />
+		<b:constructor-arg name="userDetailsService" ref="userDetailsService" />
+		<b:constructor-arg name="loginFailUrl" value="/user/login.do" />
+<!-- 		<b:constructor-arg name="loginFailUrl" value="/k/index.jsp" /> -->
+	</b:bean>
+
+	<!-- 认证入口 -->
+	<b:bean id="authenticationProcessingFilterEntryPoint"
+		class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">
+		<b:constructor-arg name="loginFormUrl" value="/k/go_index.jsp" />
+	</b:bean>
+	
+	<b:bean id="sessionAuthStrategy" class="org.springframework.security.web.authentication.session.ConcurrentSessionControlStrategy">
+		<b:constructor-arg name="sessionRegistry" ref="sessionRegistry" />
+		<b:property name="maximumSessions" value="1" />
+	</b:bean>
+	
+	<!-- 使用验证码和用户密码进行验证 -->
+	<b:bean id="khValidateCodeAuthenticationFilter"
+		class="com.khnt.security.ValidateCodeUsernamePasswordAuthenticationFilter">
+		<b:property name="authenticationSuccessHandler" ref="simpleUrlAuthenticationSuccessHandler" />
+		<b:property name="authenticationFailureHandler" ref="simpleUrlAuthenticationFailureHandler" />
+		<b:property name="authenticationManager" ref="authenticationManager" />
+		<b:property name="rememberMeServices" ref="khntRememberMeServices" />
+		<!-- 2018-12-19 升级后 -->
+		<!-- <b:property name="allowEmptyValidateCode" value="true" /> -->
+		<b:property name="sessionAuthenticationStrategy" ref="sessionAuthStrategy" />
+	</b:bean>
+
+	<!-- remenber-me认证成功处理 -->
+	<b:bean id="remenberMeAuthenticationSuccessHandler"
+		class="org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler">
+		<b:property name="defaultTargetUrl"
+			value="/security/authentication/autoLoginSuccess.do" />
+		<b:property name="alwaysUseDefaultTargetUrl" value="false" />
+	</b:bean>
+	<!-- 表单认证成功处理 -->
+	<b:bean id="simpleUrlAuthenticationSuccessHandler"
+		class="org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler">
+		<b:property name="defaultTargetUrl" value="/security/authentication/loginSuccess.do" />
+		<b:property name="alwaysUseDefaultTargetUrl" value="true" />
+	</b:bean>
+	<!-- 认证失败处理 -->
+	<b:bean id="simpleUrlAuthenticationFailureHandler"
+		class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler">
+		<b:property name="defaultFailureUrl" value="/security/authentication/loginFail.do" />
+		<b:property name="useForward" value="true" />
+	</b:bean>
+
+	<!-- 认证管理器，实现用户认证 -->
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider ref="khAuthenticationProvider" />
+	</authentication-manager>
+
+	<!-- DAO认证提供者 -->
+	<b:bean id="khAuthenticationProvider"
+		class="com.khnt.security.KHThirdAuthenticationProvider">
+		<!-- 用户信息提供器 -->
+		<b:property name="userDetailsService" ref="userDetailsService" />
+
+		<!-- 准确地报告异常 -->
+		<b:property name="hideUserNotFoundExceptions" value="false" />
+		<b:property name="passwordEncoder" ref="passwordEncoder" />
+		<b:property name="saltSource">
+			<b:bean class="com.khnt.security.util.KHSecuritySaltSource" />
+		</b:property>
+		  	<b:property name="thirdUserAuthenticator">
+		  	<!-- <b:bean class="com.khnt.security.ext.RtxAuthenticator" /> -->
+   			<b:bean class="com.lsts.util.TzsbSecurity" />
+  		</b:property> 
+	</b:bean>
+
+	<!-- 用户信息提供者：工作流用户信息提供器 -->
+	<b:bean id="userDetailsService" class="com.khnt.security.support.KHBpmUserDetailsService" />
+
+	<!-- 加载错误信息资源文件 -->
+	<b:bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<b:property name="basename"
+			value="classpath:com/khnt/security/messages_zh_CN" />
+	</b:bean>
+
+	<!-- 自定义filterr，必须包含authenticationManager,accessDecisionManager,securityMetadataSource三个属性。 -->
+	<b:bean id="kHFilter" class="com.khnt.security.KHFilterSecurityInterceptor">
+		<!-- 登陆的认证 -->
+		<b:property name="authenticationManager" ref="authenticationManager" />
+		<!-- 资源访问决策 -->
+		<b:property name="accessDecisionManager" ref="kHAccessDecisionManager" />
+		<!-- 资源和权限列表 -->
+		<b:property name="securityMetadataSource" ref="kHFilterInvocationSecurityMetadataSource" />
+	</b:bean>
+	<!-- 用户的密码加密或解密 -->
+	<b:bean id="passwordEncoder"
+		class="org.springframework.security.authentication.encoding.Md5PasswordEncoder" />
+	<b:bean id="sessionRegistry"
+		class="org.springframework.security.core.session.SessionRegistryImpl" />
+</b:beans>

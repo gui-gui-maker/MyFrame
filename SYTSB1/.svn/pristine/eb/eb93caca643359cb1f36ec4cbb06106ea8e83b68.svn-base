@@ -1,0 +1,188 @@
+package com.lsts.mobileapp.rcparse.web;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.khnt.core.crud.web.SpringSupportAction;
+import com.khnt.security.CurrentSessionUser;
+import com.khnt.security.util.SecurityUtil;
+import com.lsts.inspection.bean.InspectionInfo;
+import com.lsts.inspection.service.InspectionInfoService;
+import com.lsts.inspection.service.ReportItemValueService;
+import com.lsts.mobileapp.rcparse.bean.ReportRecordParseExt;
+import com.lsts.mobileapp.rcparse.service.ReportRecordParseExtManager;
+
+/** 
+ * @author 作者 廖增伟
+ * @JDK 1.8
+ * @version 创建时间：2018年6月10日 上午22:16:15  
+ * 类说明
+ */
+@Controller
+@RequestMapping("reportRecordParseExtAction")
+public class ReportRecordParseExtAction extends SpringSupportAction<ReportRecordParseExt, ReportRecordParseExtManager> {
+	
+	@Autowired
+	private ReportRecordParseExtManager reportRecordParseManager;
+	@Autowired
+	private ReportItemValueService reportItemValueService;
+	@Autowired
+	private InspectionInfoService inspectionInfoManager;
+	
+	/**
+	 * 原始记录转换生成报告
+	 * 
+	 * @param request
+	 * 
+	 * @return 
+	 * @throws 
+	 * @author GaoYa
+	 * @since 2018-08-06 17:19:00
+	 */
+	@ResponseBody
+	@RequestMapping("beginParse")
+	public HashMap<String, Object> beginParse(HttpServletRequest request) throws Exception {
+		HashMap<String, Object> returnMap = new HashMap<String, Object>();
+		try {
+
+			// 获取请求参数
+			Map<String, String> reqParamsMap = reportRecordParseManager.getReqParams(request);
+
+			// 获取报告业务ID
+			String fkInfoId = reqParamsMap.get("INFO_ID");
+
+			// 获取报告业务信息
+			InspectionInfo info = inspectionInfoManager.get(fkInfoId);
+
+			// 原始记录转换成报告
+			reportRecordParseManager.dealRecordToReport(request, fkInfoId);
+/*
+			// 处理报告书编号
+			if(StringUtil.isEmpty(info.getReport_sn())) {
+				reportItemValueService.saveReportSn(info);
+			}
+			*/
+			// 更新原始记录转换报告状态
+			reportRecordParseManager.updateRecordStatus(info);
+
+			// 设置返回参数	
+			returnMap.put("success", true);
+			returnMap.put("infoId", fkInfoId);
+			
+			/*// 启动流程
+			HashMap<String, Object> startFlowResultMap = reportRecordParseManager.startFlow(request, info);
+
+			// 自动提交审核，提交流程
+			boolean start_result = Boolean.valueOf(String.valueOf(startFlowResultMap.get("success")));
+			// 流程启动成功时，自动提交审核
+			if (start_result) {
+				HashMap<String, Object> subFlowResultMap = inspectionInfoManager.subFlow(request, reqParamsMap, info);
+				boolean sub_result = Boolean.valueOf(String.valueOf(subFlowResultMap.get("success")));
+				if (sub_result) {
+					// 更新原始记录状态并记录操作日志
+					reportRecordParseManager.updateRecord(request, info);
+				}
+				return subFlowResultMap;
+			} else {
+				return startFlowResultMap;
+			}*/
+		} catch (Exception e) {
+			e.printStackTrace();
+			returnMap.put("success", false);
+			returnMap.put("msg", "原始记录转换报告失败.");
+		}
+		return returnMap;
+	}
+	
+	/**
+	 * 启动流程并提交审核
+	 * 
+	 * @param request
+	 * 
+	 * @return 
+	 * @throws 
+	 * @author GaoYa
+	 * @since 2018-08-13 09:05:00
+	 */
+	@ResponseBody
+	@RequestMapping("startFlow")
+	public HashMap<String, Object> startFlow(HttpServletRequest request) throws Exception {
+		HashMap<String, Object> returnMap = new HashMap<String, Object>();
+		try {
+			
+			// 获取请求参数
+			Map<String, String> reqParamsMap = reportRecordParseManager.getReqParams(request);
+
+			// 获取报告业务ID
+			String fkInfoId = reqParamsMap.get("INFO_ID");
+
+			// 获取报告业务信息
+			InspectionInfo info = inspectionInfoManager.get(fkInfoId);
+			
+			CurrentSessionUser user = SecurityUtil.getSecurityUser();
+			info.setRecordConfirmId(user.getId());
+			info.setRecordConfirmOp(user.getName());
+			inspectionInfoManager.save(info);
+			// 启动流程
+			HashMap<String, Object> startFlowResultMap = reportRecordParseManager.startFlow(request, info);
+
+			// 自动提交审核，提交流程
+			boolean start_result = Boolean.valueOf(String.valueOf(startFlowResultMap.get("success")));
+			// 流程启动成功时，自动提交审核
+			if (start_result) {
+				HashMap<String, Object> subFlowResultMap = inspectionInfoManager.subFlow(request, reqParamsMap, info);
+				boolean sub_result = Boolean.valueOf(String.valueOf(subFlowResultMap.get("success")));
+				if (sub_result) {
+					info.setRecordFlow("2");
+					// 更新原始记录校核状态 有误。。。
+					//reportRecordParseManager.updateRecordFlow(info);
+					// 记录操作日志
+					reportRecordParseManager.addRecordLog(request, info);
+				}
+				return subFlowResultMap;
+			} else {
+				return startFlowResultMap;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			returnMap.put("success", false);
+			returnMap.put("msg", "提交失败！");
+		}
+		return returnMap;
+	}
+	
+	// 启用对应关系
+    @RequestMapping(value = "enable")
+    @ResponseBody
+    public HashMap<String, Object> enable(HttpServletRequest request) throws Exception {	
+        return reportRecordParseManager.enable(request);
+    }
+    
+    // 停用对应关系
+    @RequestMapping(value = "disable")
+    @ResponseBody
+    public HashMap<String, Object> disable(HttpServletRequest request) throws Exception {	
+        return reportRecordParseManager.disable(request);
+    }
+    
+    // 对比对应关系
+    @RequestMapping(value = "compare")
+    @ResponseBody
+    public HashMap<String, Object> compare(HttpServletRequest request) throws Exception {	
+        return reportRecordParseManager.compare(request);
+    }
+    
+    // 取消对应关系错误标记
+    @RequestMapping(value = "cancelTags")
+    @ResponseBody
+    public HashMap<String, Object> cancelTags(HttpServletRequest request) throws Exception {	
+        return reportRecordParseManager.cancelTags(request);
+    }
+}

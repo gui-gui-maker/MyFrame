@@ -1,0 +1,197 @@
+package com.fwxm.recipients.web;
+
+import com.fwxm.recipients.bean.Tjy2ChLq;
+import com.fwxm.recipients.service.Tjy2ChLqManager;
+import com.khnt.bpm.communal.BpmUser;
+import com.khnt.bpm.core.bean.Activity;
+import com.khnt.bpm.core.service.ActivityManager;
+import com.khnt.core.crud.web.SpringSupportAction;
+import com.khnt.core.crud.web.support.JsonWrapper;
+import com.khnt.rbac.impl.bean.User;
+import com.khnt.rbac.impl.dao.UserDao;
+import com.khnt.security.CurrentSessionUser;
+import com.khnt.security.util.SecurityUtil;
+import com.khnt.utils.StringUtil;
+import com.khnt.weixin.enums.EnumMethod;
+import com.khnt.weixin.interceptor.OAuthRequired;
+import com.khnt.weixin.util.HttpRequestUtil;
+import com.khnt.weixin.util.Result;
+import com.khnt.weixin.util.WxUtil;
+import com.lsts.humanresources.service.WxLeaveManager;
+
+import net.sf.json.JSONObject;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * 微信端处理领取申请
+ */
+@Controller
+@RequestMapping("/chlq/wx")
+public class Tjy2ChLqWexinAction extends
+        SpringSupportAction<Tjy2ChLq, Tjy2ChLqManager> {
+    @Autowired
+    private Tjy2ChLqManager tjy2ChLqManager;
+    @Autowired
+    private WxLeaveManager wxLeaveManager;
+
+    @Autowired
+    ActivityManager activityManager;
+    @Autowired
+    UserDao userDao;
+
+    @RequestMapping({"saveAndSubmit"})
+    @ResponseBody
+    public HashMap<String, Object> usualSave(HttpServletRequest request, @RequestBody Tjy2ChLq entity) throws Exception {
+        synchronized (this) {
+            return tjy2ChLqManager.saveAndSubmit(request, entity);
+        }
+    }
+
+    @RequestMapping(value = "getFlowStep")
+    @ResponseBody
+    public HashMap<String, Object> getFlowStep(HttpServletRequest request)
+            throws Exception {
+        Map<String, Object> map = tjy2ChLqManager.getFlowStep(request.getParameter("id"));
+        return JsonWrapper.successWrapper(map);
+    }
+
+    @RequestMapping(value = "shbtg")
+    @ResponseBody
+    public HashMap<String, Object> shbtg(HttpServletRequest request) throws Exception {
+        return tjy2ChLqManager.shbtg(request);
+    }
+
+    @RequestMapping(value = "shtg")
+    @ResponseBody
+    public HashMap<String, Object> shtg(HttpServletRequest request) throws Exception {
+        return tjy2ChLqManager.shtg(request);
+    }
+
+    @RequestMapping(value = "weixinUserInfo")
+    @OAuthRequired
+    public String weixinUserInfo(HttpServletRequest request, Model model) {
+        System.out.println("Load a User!");
+        System.out.println("getRequestURL = " + request.getSession().getId());
+        System.out.println("getRequestURL = " + request.getRequestURL());
+        System.out.println("code = " + request.getParameter("code")); //微信接口会传过来的东西。
+        System.out.println("businessId = " + request.getParameter("businessId")); //业务id
+        System.out.println("processId = " + request.getParameter("processId")); //业务id
+        System.out.println("activityId = " + request.getParameter("activityId")); //业务id
+        HttpSession session = request.getSession();
+        if (session.getAttribute("Userid") == null || ((String) session.getAttribute("Userid")).equals("noUserId")) {
+            String token = WxUtil.getAccessTokenString();
+            if (StringUtil.isNotEmpty(token) && request.getParameter("code") != null) {
+                Result<String> result = WxUtil.oAuth2GetUserByCode(token, request.getParameter("code"), 7);
+                String menuUrl = "https://qyapi.weixin.qq.com/cgi-bin/user/get?access_token=" + token + "&userid=" + result.getObj();
+                JSONObject jo = HttpRequestUtil.httpRequest(menuUrl, EnumMethod.GET.name(), null);
+                if (jo != null) {
+                    session.setAttribute("Name", jo.getString("name"));
+                    session.setAttribute("Phone", jo.getString("mobile"));
+                    System.out.println("------------------------Name is :" + jo.getString("name"));
+                    System.out.println("------------------------Phone is :" + jo.getString("mobile"));
+                    try {
+                        session.setAttribute("Account", wxLeaveManager.getAccount(jo.getString("mobile").replaceAll(" ", "")));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        log.debug(e.toString());
+                        return "app/humanresources/wx_leave/leave_error_page";
+                    }
+                }
+                session.setAttribute("Userid", result.getObj());
+            } else {
+                session.setAttribute("Userid", "noUserId");
+                session.setAttribute("Name", "noUserName");
+                session.setAttribute("Phone", "noUserPhone");
+            }
+        }
+        session.setAttribute("businessId", request.getParameter("businessId"));
+        session.setAttribute("businessStatus", request.getParameter("businessStatus"));
+        session.setAttribute("processId", request.getParameter("processId"));
+        session.setAttribute("activityId", request.getParameter("activityId"));
+        model.addAttribute("Userid", session.getAttribute("Userid"));
+        System.out.println("!!!!!!!!!!!!!!!!!!!!!!" + session.getAttribute("Userid"));
+        return "app/fwxm/recipients/wx/ch_wx_lq_index";
+    }
+
+    /**
+     * 获取待办理
+     *
+     * @param request
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "querycheck")
+    @ResponseBody
+    public HashMap<String, Object> queryCheck(HttpServletRequest request) throws Exception {
+        return tjy2ChLqManager.queryCheck(request);
+    }
+
+    @RequestMapping(value = "querychecked")
+    @ResponseBody
+    public HashMap<String, Object> queryChecked(HttpServletRequest request) throws Exception {
+        return tjy2ChLqManager.queryChecked(request);
+    }
+
+    @RequestMapping(value = "querymy")
+    @ResponseBody
+    public HashMap<String, Object> queryCheckMy(HttpServletRequest request) throws Exception {
+        return tjy2ChLqManager.queryCheckMy(request);
+    }
+
+    /**
+     * 检查是否可处理
+     *
+     * @param request
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "chekcCanProcess")
+    @ResponseBody
+    public HashMap<String, Object> checkCanProcess(HttpServletRequest request) throws Exception {
+        String activityId = request.getParameter("activityId");
+        String serviceId = request.getParameter("serviceId");
+        String createorgId = request.getParameter("createorgId");
+        List<Activity> activitys = activityManager.getCurrentServiceActivity(serviceId);        
+        CurrentSessionUser user = SecurityUtil.getSecurityUser();
+        for (Activity activity : activitys) {
+            if (activity.getId().equals(activityId)) {
+            	//环节参与者
+                List<BpmUser> list = activityManager.getBpmUserPaticipator(activityId);
+                for (BpmUser u : list) {
+                    if (u.getId().equals(user.getId())) {
+                    	return JsonWrapper.successWrapper("");
+                    }
+                }
+                User users =null;
+                if ("100025".equals(createorgId) || "100042".equals(createorgId)) {
+            		//部门100025(财务管理部),100042(四川省特种设备检验检测协会)的部门负责人是孙宇艺
+                	users = userDao.findLoginUser("孙宇艺", "1");
+            	}else if ("100030".equals(createorgId)) {
+                    //部门100030（科研技术管理部）的部门负责人是韩绍义
+            		users = userDao.findLoginUser("韩绍义", "1");
+            	}else if("100044".equals(createorgId)){
+                	//100044(司法鉴定中心)的部门负责人是李山桥
+            		users = userDao.findLoginUser("李山桥", "1");
+            	}
+                if(users!=null && user.getId().equals(users.getId())){
+                	return JsonWrapper.successWrapper("");
+                }
+                
+            }
+        }
+        return JsonWrapper.failureWrapper();
+    }
+}

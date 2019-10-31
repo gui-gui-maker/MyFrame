@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<body>
+	<div id="layout2" style="width: 99.8%">
+		<input type="hidden" id="inputFocus" name="inputFocus" values=""
+			value="" title="" style="height: 5mm;"> <input type="hidden"
+			id="thisPage" name="thisPage" value="?page=1" values="?page=1"
+			title="" style="height: 5mm;">
+		<div position="center" class="wrapper"
+			style="overflow: auto; width: 100%" align="center">
+			<input type="hidden" id="fk_report_id" name="fk_report_id" value=""
+				values="" title="" style="height: 5mm;"> <input
+				type="hidden" id="fk_inspection_info_id"
+				name="fk_inspection_info_id" value="" values="" title=""
+				style="height: 5mm;"> <br>
+			<!-- userBodyTop goes here -->
+			<table class=""
+				style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000; table-layout: fixed; vertical-align: top; border-collapse: collapse;">
+				<colgroup>
+					<col border="1" style="width: 50.03%;" class="">
+					<col border="1" style="width: 49.97%;" class="">
+				</colgroup>
+				<tbody>
+					<tr>
+						<td class="">
+							<p class="a DocDefaults" style="text-align: left; width: 100%;">
+								<span class="a0" style="position: relative;"><span
+									class="" style="font-family: SimSun; position: relative;">文件编号：CTJB-</span></span><span
+									class="a0" style="font-family: SimSun; position: relative;">0412-B01</span>
+							</p>
+						</td>
+						<td class="">
+							<p class="a DocDefaults" style="text-align: right; width: 100%;">
+								<span class="a0" style="position: relative;"><span
+									class="" style="font-family: SimSun; position: relative;">实施日期：2017年10月1日</span></span>
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="document">
+				<table id="docx4j_tbl_0" class="" style="margin-top: 5mm;">
+					<colgroup>
+						<col border="1" style="width: 76.89%;" class="">
+						<col border="1" style="width: 23.11%;" class="">
+					</colgroup>
+					<tbody>
+						<tr style="height: 0.3in;">
+							<td class="">
+								<p class="" style="text-align: right; width: 100%;">
+									<span class="" style="text-align: right; position: relative;">报告编号</span><span
+										class="" style="position: relative;">:</span>
+								</p>
+							</td>
+							<td class=""
+								style="padding: 1px; border-bottom: black solid 1px;">
+								<p style="padding: 1px; width: 100%;">
+									<input id="base__report_sn" name="base__report_sn" type="text"
+										ltype="text" value="" ligerui="{width:117}"
+										readonly="readonly" values="" title="" style="height: 5mm;">
+								</p>
+							</td>
+						</tr>
+						<tr style="height: 0.3in;">
+							<td class="">
+								<p class="" style="text-align: right; width: 100%;">
+									<span class="" style="text-align: right; position: relative;">使用单位内部编号</span><span
+										class="" style="position: relative;">:</span>
+								</p>
+							</td>
+							<td class=""
+								style="padding: 1px; border-bottom: black solid 1px;">
+								<p style="padding: 1px; width: 100%;" class="">
+									<input id="base__internal_num" name="base__internal_num"
+										type="text" ltype="text" value="" ligerui="{width:117}"
+										values="" title="" style="height: 5mm;">
+								</p>
+							</td>
+						</tr>
+						<tr style="height: 0.3in;">
+							<td class="">
+								<p class="" style="text-align: right; width: 100%;">
+									<span class="" style="text-align: right; position: relative;">二维码编号</span><span
+										class="" style="position: relative;">:</span>
+								</p>
+							</td>
+							<td class=""
+								style="padding: 1px; border-bottom: black solid 1px;">
+								<p style="padding: 1px; width: 100%;" class="">
+									<input id="base__device_qr_code" name="base__device_qr_code"
+										type="text" ltype="text" value="" ligerui="{width:117}"
+										values="" title="" style="height: 5mm;" class="    ">
+								</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<p style="height: 20mm;" class="">&nbsp;</p>
+				<p class="" style="width: 100%;">
+					<span class="dtitle" style="position: relative;">曳引式防爆电梯定期检验记录</span>
+				</p>
+				<p style="height: 20mm;"></p>
+				<p class="">
+					<span class="" style="position: relative;"> </span>
+				</p>
+				<p></p>
+				<table id="docx4j_tbl_1" class="two two two two two">
+					<colgroup>
+						<!-- <col border='1' border='1' border='1' border="1" style="width: 39.31%;" class=""></col></col border='1'></col></col border='1' border='1'></col></col border='1'></col>						<col border='1' border='1' border='1' border="1" style="width: 60.69%;" class=""></col></col border='1'></col></col border='1' border='1'></col></col border='1'></col> -->
+						<col border="1" style="width: 35%;" class="">
+						<col border="1" style="width: 40%;" class="">
+						<col border="1" style="width: 25%;" class="">
+					</colgroup>
+					<tbody>
+						<tr style="height: 0.38in;">
+							<td class=""
+								style="vertical-align: bottom; border-style: hidden;">
+								<p class="" style="text-align: right; width: 100%;">
+									<span class="" style="text-align: right; position: relative;">使用单位</span><span
+										class="" style="position: relative;">:</span>
+								</p>
+							</td>
+							<td class=""
+								style="padding: 1px; vertical-align: bottom; border-top: hidden; border-right: hidden;">
+								<p style="padding: 1px; width: 100%;">
+									<input id="base__com_name" name="base__com_name" type="text"
+										ltype="text" value="" ligerui="{width:325}" values="" title=""
+										style="height: 5mm; text-align: center;" class="  ">
+								</p>
+							</td>
+							<td class=""
+								style="vertical-align: bottom; border-style: hidden;"></td>
+						</tr>
+						<tr style="height: 0.38in;">
+							<td class=""
+								style="vertical-align: bottom; border-style: hidden;">
+								<p class="" style="text-align: right; width: 100%;">
+									<span class="" style="text-align: right; position: relative;">设备代码</span><span
+										class="" style="position: relative;">:</span>
+								</p>
+							</td>
+							<td class=""
+								style="padding: 1px; vertical-align: bottom; border-right: hidden;">
+								<p style="padding: 1px; width: 100%;">
+									<input id="base__device_registration_code"
+										name="base__device_registration_code" type="text" ltype="text"
+										value="" ligerui="{width:325}" values="" title=""
+										style="height: 5mm; text-align: center;" class="  ">
+								</p>
+							</td>
+							<td class=""
+								style="vertical-align: bottom; border-style: hidden;"></td>
+						</tr>
+						<tr style="height: 0.38in;">
+							<td class=""
+								style="vertical-align: bottom; border-style: hidden;">
+								<p class="" style="text-align: right; width: 100%;">
+									<span class="" style="text-align: right; position: relative;">设备类别</span><span
+										class="" style="position: relative;">:</span>
+								</p>
+							</td>
+							<td class=""
+								style="padding: 1px; vertical-align: bottom; border-right: hidden;">
+								<p style="padding: 1px; width: 100%;" class="">
+									<input id="base__device_sort" name="base__device_sort"
+										type="text" ltype="select" value=""
+										ligerui="{width:325,										data:[{'id':'曳引与强制驱动电梯','text':'曳引与强制驱动电梯'},{'id':'液压驱动电梯','text':'液压驱动电梯'},										{'id':'自动扶梯与自动人行道','text':'自动扶梯与自动人行道'},{'id':'其它类型电梯','text':'其它类型电梯'}]}"
+										values="" title="" style="height: 5mm; text-align: center;"
+										class="                          ">
+								</p>
+							</td>
+							<td class=""
+								style="vertical-align: bottom; border-style: hidden;"></td>
+						</tr>
+						<tr style="height: 0.38in;">
+							<td class=""
+								style="vertical-align: bottom; border-style: hidden;">
+								<p class="" style="text-align: right; width: 100%;">
+									<span class="" style="text-align: right; position: relative;">设备品种</span><span
+										class="" style="position: relative;">:</span>
+								</p>
+							</td>
+							<td class=""
+								style="padding: 1px; vertical-align: bottom; border-right: hidden;">
+								<p style="padding: 1px; width: 100%;">
+									<input id="base__device_sort_code"
+										name="base__device_sort_code" type="text" ltype="text"
+										value="" ligerui="{width:325}" values="" title=""
+										style="height: 5mm; text-align: center;"
+										class="                                                ">
+								</p>
+							</td>
+							<td class=""
+								style="vertical-align: bottom; border-style: hidden;"></td>
+						</tr>
+						<tr style="height: 0.38in;">
+							<td class=""
+								style="vertical-align: bottom; border-style: hidden;">
+								<p class="" style="text-align: right; width: 100%;">
+									<span class="" style="text-align: right; position: relative;">检验机构</span><span
+										class="" style="position: relative;">:</span>
+								</p>
+							</td>
+							<td class=""
+								style="vertical-align: bottom; border-right: hidden; padding: 1px;">
+								<p class=""
+									style="text-align: center; width: 100%; padding: 1px;">
+									<!-- <span class="" style=" text-align: center;">四川省特种设备检验研究院</span> -->
+									<input id="base__inspection_org" name="base__inspection_org"
+										type="text" ltype="text" value="四川省特种设备检验研究院"
+										ligerui="{width:325}" values="四川省特种设备检验研究院" title=""
+										style="height: 5mm; text-align: center;" class="  ">
+								</p>
+							</td>
+							<td class=""
+								style="vertical-align: bottom; border-style: hidden;"></td>
+						</tr>
+						<tr style="height: 0.38in;">
+							<td class=""
+								style="vertical-align: bottom; border-style: hidden;">
+								<p class="" style="text-align: right; width: 100%;">
+									<span class="" style="text-align: right; position: relative;">检验日期</span><span
+										class="" style="position: relative;">:</span>
+								</p>
+							</td>
+							<td class=""
+								style="padding: 1px; vertical-align: bottom; border-right: hidden;">
+								<p style="padding: 1px; width: 100%;">
+									<input id="base__inspect_date1" name="base__inspect_date1"
+										type="text" ltype="date" value=""
+										ligerui="{isTextBoxMode:true,width:325}" required="" values=""
+										title="" style="height: 5mm; text-align: center;" class="    ">
+								</p>
+							</td>
+							<td class=""
+								style="vertical-align: bottom; border-style: hidden;"></td>
+						</tr>
+					</tbody>
+				</table>
+				<p>&nbsp;</p>
+				<p class="">&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>
+					<span class="" style="position: relative;">&nbsp;</span>
+				</p>
+				<p class="" style="margin-top: 20%; width: 100%;">
+					<span class="" style="text-align: center; position: relative;">四川省特种设备检验研究院制</span>
+				</p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+			</div>
+		</div>
+	</div>
+	</div>
+</body>
+</html>

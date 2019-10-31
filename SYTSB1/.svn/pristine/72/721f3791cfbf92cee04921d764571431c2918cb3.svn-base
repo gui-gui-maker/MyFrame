@@ -1,0 +1,43 @@
+
+/* 在线留言 2009年03月11日 星期三 16:05:43 lybide */
+.lybtitle {font-size:14px;font-weight:bold;color:#2567D3;padding:10px 0px 10px 0px;margin:5px 0px 5px 0px;}
+.lybbig {width:100%;float:left;}
+.lybbig1 {border-top:1px solid #D7D7D7;padding:5px 0px 5px 0px;margin:5px 0px 0px 0px;}
+.lyb0 {}
+.lyb1 {border-left:1px solid #92ADD3;border-top:1px solid #92ADD3;word-break:break-all;table-layout:fixed;}
+.lyb1 td {border-right:1px solid #92ADD3;border-bottom:1px solid #92ADD3;}
+.lyb1 td div {padding:5px 5px 5px 5px;}
+.lyb10 {padding:5px 0px 5px 50px;border:0px solid #FF0000;}
+.lyb10 table {word-break:break-all;table-layout:fixed;}
+.lyb1a1 {padding:5px 5px 5px 5px;border:1px solid #3485C4;background:#3485C4;color:#FFFFFF;}
+.lyb1a2 {padding:5px 5px 5px 5px;border:1px solid #3485C4;background:#E6F0F9;font-size:14px;}
+.lyb1g0 {padding:5px 0px 5px 0px;}
+.lyb1g1 {padding:3px 0px 0px 0px;}
+.lyb1g2 {text-align:right;}
+.lyb1h1 {padding:5px 0px 5px 0px;line-height:18px;border:1px solid #628BCA;background:#F2F5FB;overflow:hidden;margin-top:5px;}
+.lyb1h1a {padding:5px;font-size:14px;}
+.lyb1h1b {border:1px solid #DDB100;padding:5px;margin:5px;background:#FFFCEF;}
+.lyb1h1b1 {padding:5px 0px 0px 0px;}
+.lyb1h1b2 {padding:5px 0px 0px 0px;}
+.lyb1h1b3 {padding:5px 0px 0px 0px;}
+.lybadd {font-size:14px;font-weight:bold;color:#2567D3;padding:10px 0px 10px 0px;margin:5px 0px 5px 0px;border-top:1px solid #CFD0D6;border-bottom:1px solid #CFD0D6;}
+.lybUi {}
+.lybUi ul {padding:0px;margin:0px;list-style-type:none;}
+.lybUi ul li {float:left;}
+.lybUi ul li .lybUid1 {border:1px solid #CFD0D6;padding:3px;margin-right:5px;}
+.lybUi ul li .lybUid2 {border-left:1px solid #CFD0D6;border-right:1px solid #CFD0D6;border-bottom:1px solid #CFD0D6;padding:0px;margin:0px 5px 5px 0px;text-align:center;}
+.lybBQ {}
+.lybBQ ul {padding:0px;margin:0px;list-style-type:none;}
+.lybBQ ul li {float:left;}
+.lybBQ ul li .lybBQ1 {border:1px solid #CFD0D6;padding:5px;margin-right:5px;}
+.lybBQ ul li .lybBQ2 {border-left:1px solid #CFD0D6;border-right:1px solid #CFD0D6;border-bottom:1px solid #CFD0D6;padding:0px;margin:0px 5px 5px 0px;text-align:center;}
+
+/* 在线反馈 2009年03月11日 星期三 16:05:32 lybide */
+.suggesttitle {font-size:14px;font-weight:bold;color:#2567D3;padding:10px 0px 10px 0px;margin:5px 0px 5px 0px;}
+
+/* 会员中心 2009年04月01日 星期三 10:13:40 lybide */
+.userRegTitle {padding:8px 0px 8px 0px;font-size:14px;font-weight:bold;color:#2266A4;}
+.userLogin {padding:8px 0px 8px 0px;font-size:14px;font-weight:bold;color:#2266A4;}
+
+
+

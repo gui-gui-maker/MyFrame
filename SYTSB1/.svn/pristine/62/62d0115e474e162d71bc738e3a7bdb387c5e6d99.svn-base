@@ -1,0 +1,54 @@
+<%@page import="javax.wsdl.extensions.http.HTTPUrlEncoded"%>
+<%@page import="java.net.URLEncoder"%>
+<%@page import="java.io.FileInputStream"%>
+<%@page import="java.io.File"%>
+<%@ page contentType="text/html;charset=UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<base href="${pageContext.request.scheme}://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}/"/>
+<link href="k/qm/ligerui/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.table-up-filelist {border:1px solid #96c2f1;border-right:0px;border-bottom:1px;border-collapse:collapse;}
+.table-up-filelist td {padding:5px;border:1px solid #96c2f1;border-top:0px;border-left:1px;}
+.table-up-filelist-tr td {font-weight:bold}
+.table-up-filelist-td {border:1px solid #96c2f1;background:#eff7ff;text-align:center;}
+.table-up-filelist-e-td1 {width:450px;}
+.table-up-filelist-e-td2 {text-align:right;width:120px}
+.table-up-filelist-e-td3 {text-align:center;}
+</style>
+</head>
+<body>
+	<table  width="100%" height="24" class="table-up-filelist">
+		<tr class="table-up-filelist-tr">
+			<td width="450" class="table-up-filelist-td">文件名称</td>
+			<td width="120" class="table-up-filelist-td">大小</td>
+			<td class="table-up-filelist-td">下载</td>
+		</tr>
+	</table>
+	<div  id="filelist" style="overflow:auto;height:474px;border:none">
+	<table  width="100%" class="table-up-filelist">
+			<%File file = new File(request.getRealPath("/pub/tools/soft"));
+			if(file.isDirectory()){
+				File [] fileList = file.listFiles();
+				for(File f: fileList){
+					//不读取隐藏文件
+					if(!f.isHidden()){
+						FileInputStream fis = new FileInputStream(f);
+						String fileName = URLEncoder.encode(URLEncoder.encode(f.getName(), "UTF-8"), "UTF-8");
+			%>
+			<tr class="table-up-filelist-e-tr">
+				<td class="table-up-filelist-e-td1">&nbsp;<%=f.getName()%></td>
+				<td class="table-up-filelist-e-td2"><%=fis.available()/1024%>KB</td>
+				<td class="table-up-filelist-e-td3"><input type="button" value="下载" class="l-button" 
+					onclick="location.href='${pageContext.request.contextPath}/pub/tools/dowloadSoft.jsp?fpath=<%=fileName%>'"></td>
+			</tr>
+			<%   
+			     }
+				}
+			}
+			%>
+	</table>
+	</div>
+</body>
+</html>

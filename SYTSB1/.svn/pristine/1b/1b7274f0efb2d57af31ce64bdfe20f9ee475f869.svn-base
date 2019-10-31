@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<body>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<!--  		<input type="hidden" id="fk_report_id" name="fk_report_id"  value="${param.fk_report_id}"  > 		<input type="hidden" id="fk_inspection_info_id" name="fk_inspection_info_id"  value="${param.fk_inspection_info_id}"  >  -->
+	<input type="hidden" id="nextPage" name="nextPage" value="3" values="3"
+		title="" style="width: 99%;">
+	<br>
+	<table id="docx4j_tbl_0"
+		style="border-bottom: 1px solid rgb(0, 0, 0); table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 6.45in; position: relative;"
+		class="">
+		<colgroup>
+			<col border="1" style="width: 50%;" class="">
+			<col border="1" style="width: 50%;" class="">
+		</colgroup>
+		<tbody>
+			<tr>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000;"
+					class="">
+					<p class="a DocDefaults">
+						<span class="a0" style="font-size: 12pt; position: relative;"><span
+							class="" style="font-family: SimSun; position: relative;">文件编号：</span></span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">CTJB-0208-BG01</span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #000000;"
+					class="">
+					<p class="a DocDefaults" style="text-align: right;">
+						<span class="a0" style="font-size: 12pt; position: relative;"><span
+							class="" style="font-family: SimSun; position: relative;">实施日期：201</span></span><span
+							class="a0"
+							style="font-size: 12pt; font-family: SimSun; position: relative;">7年8</span><span
+							class="a0" style="font-size: 12pt; position: relative;"><span
+							class="" style="font-family: SimSun; position: relative;">月1日</span></span>
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<p class="a DocDefaults" style="text-align: center;">
+		<span class="a0"
+			style="font-size: 14pt; position: relative; top: 110px; left: -6px;">注意事项</span>
+	</p>
+	<p class="a DocDefaults">
+		<span class="a0"
+			style="font-weight: bold; font-size: 14pt; position: relative;"><span
+			class="" style="white-space: pre-wrap; position: relative;"> </span></span>
+	</p>
+	<p class="a DocDefaults" style="text-align: center;"></p>
+	<table class="a7 a1" id="docx4j_tbl_4"
+		style="border-style: none; border-width: 1px; border-color: rgb(0, 0, 0); position: relative; margin-left: 0.76in; table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 147mm; left: -32.04px; top: 241px;">
+		<colgroup>
+			<col border="1" style="width: 100%;" class="">
+		</colgroup>
+		<tbody>
+			<tr>
+				<td
+					style="border-bottom-style: none; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; position: relative;"><span class=""
+						style="font-family: SimSun; line-height: 30px; position: relative;"><span
+							style="font-weight: bold; position: relative;" class="">1、</span>本报告为依据《氧舱安全技术监察规程》对在用氧舱进行定期检验的结论</span></span>
+					<span class="a0" style="font-size: 12pt; position: relative;"><span
+						class=""
+						style="font-family: SimSun; line-height: 30px; position: relative; left: 26px; top: -3px;">报告，检验结论代表该氧舱在检验时的安全状况。</span></span>
+				</td>
+			</tr>
+			<tr>
+				<td
+					style="border-bottom-style: none; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; position: relative;"><span class=""
+						style="font-family: SimSun; line-height: 30px; position: relative;"><span
+							style="font-weight: bold; position: relative;" class="">2、</span>本报告应当由计算机打印输出，或者用钢笔、签字笔填写，字迹要工整涂</span></span>
+					<span class="a0" style="font-size: 12pt; position: relative;"><span
+						class=""
+						style="font-family: SimSun; line-height: 30px; position: relative; left: 26px; top: 1px;">改无效。</span></span>
+				</td>
+			</tr>
+			<tr>
+				<td
+					style="border-bottom-style: none; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; position: relative;"><span class=""
+						style="font-family: SimSun; line-height: 30px; position: relative;"><span
+							style="font-weight: bold; position: relative;" class="">3、</span>结论报告无编制、审核、批准人员等签字，以及检验机构核准证号、检验</span></span>
+					<span class="a0" style="font-size: 12pt; position: relative;"><span
+						class=""
+						style="font-family: SimSun; line-height: 30px; position: relative; left: 23px; top: -1px;">专用章或者公章无效。</span></span></td>
+			</tr>
+			<tr>
+				<td
+					style="border-bottom-style: none; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm;"
+					class=""><ol>
+						<li class="12-a7-BR DocDefaults "
+							style="display: list-item; text-align: left; line-height: 150%;"><span
+							class="a0" style="font-size: 12pt; position: relative;"><span
+								class=""
+								style="font-family: SimSun; line-height: 30px; position: relative;"><span
+									style="font-weight: bold; position: relative;" class="">4、</span>本报告一式两份，由检验机构和使用单位分别保存。</span></span></li>
+					</ol></td>
+			</tr>
+			<tr>
+				<td
+					style="border-bottom-style: none; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm;"
+					class=""><span class="a0"
+					style="font-size: 12pt; position: relative;"><span class=""
+						style="font-family: SimSun; line-height: 30px; position: relative;"><span
+							style="font-weight: bold; position: relative;" class="">5、</span>使用单位对本报告结论如有异议，请在收到报告书之日起15日内，向检验</span></span>
+					<span class="a0"
+					style="font-size: 12pt; position: relative; left: 23px; top: 4px;"><span
+						class=""
+						style="font-family: SimSun; line-height: 30px; position: relative;">机构提出书面意见。</span></span></td>
+			</tr>
+		</tbody>
+	</table>
+	<p class="a DocDefaults" style="text-align: center;"></p>
+	<p class="a DocDefaults" style="text-align: center;"></p>
+	<p class="a DocDefaults" style="text-align: center;"></p>
+	<p class="a DocDefaults" style="text-align: center;"></p>
+	<table class="a7 a1" id="docx4j_tbl_5"
+		style="border-style: none; border-width: 1px; border-color: rgb(0, 0, 0); position: relative; margin-left: 0in; table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 166mm; left: -16px; top: 353px;">
+		<colgroup>
+			<col border="1" style="width: 50%;" class="">
+			<col border="1" style="width: 50%;" class="">
+		</colgroup>
+		<tbody>
+			<tr>
+				<td
+					style="border-bottom-style: none; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm;"
+					class="">
+					<p class="a-a7-BR DocDefaults"
+						style="text-align: right; line-height: 250%;">
+						<span class="a0" style="font-size: 12pt; position: relative;"><span
+							class=""
+							style="font-family: SimSun; position: relative; line-height: 40px;">检验机构地址：</span></span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: none; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm;"
+					class="">
+					<p class="a-a7-BR DocDefaults" style="padding: 1px;">
+						<input id="TBL00001" name="TBL00001" type="text" ltype="text"
+							value="" ligerui="{width:304}" values="" title=""
+							style="width: 99%;font-size: 12pt; ">
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td
+					style="border-bottom-style: none; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm;"
+					class="">
+					<p class="a-a7-BR DocDefaults"
+						style="text-align: right; line-height: 250%;">
+						<span class="a0" style="font-size: 12pt; position: relative;"><span
+							class=""
+							style="font-family: SimSun; position: relative; line-height: 40px;">邮政编码：</span></span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: none; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm;"
+					class="">
+					<p class="a-a7-BR DocDefaults" style="padding: 1px;">
+						<input id="base__com_zip_code" name="base__com_zip_code"
+							type="text" ltype="text" value="" ligerui="{width:304}" values=""
+							title="" style="width: 99%;font-size: 12pt; ">
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td
+					style="border-bottom-style: none; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm;"
+					class="ui-resizable-resizing">
+					<p class="a-a7-BR DocDefaults"
+						style="text-align: right; line-height: 250%;">
+						<span class="a0" style="font-size: 12pt; position: relative;"><span
+							class=""
+							style="font-family: SimSun; position: relative; line-height: 40px;">联系电话：</span></span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: none; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm;"
+					class="">
+					<p class="a-a7-BR DocDefaults" style="padding: 1px;">
+						<input id="base__check_tel" name="base__check_tel" type="text"
+							ltype="text" value="" ligerui="{width:304}" values="" title=""
+							style="width: 99%;font-size: 12pt; ">
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td
+					style="border-bottom-style: none; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm;"
+					class="">
+					<p class="a-a7-BR DocDefaults"
+						style="text-align: right; line-height: 250%;">
+						<span class="a0" style="font-size: 12pt; position: relative;"><span
+							class=""
+							style="font-family: SimSun; position: relative; line-height: 40px;">电子邮件：</span></span>
+					</p>
+				</td>
+				<td
+					style="border-bottom-style: none; border-bottom-width: 1px; border-bottom-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; padding-bottom: 0mm; padding-left: 1.91mm; padding-right: 1.91mm; padding-top: 0mm;"
+					class="">
+					<p class="a-a7-BR DocDefaults" style="padding: 1px;">
+						<input id="TBL00002" name="TBL00002" type="text" ltype="text"
+							value="" ligerui="{width:304}" values="" title=""
+							style="width: 99%;font-size: 12pt; ">
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<p class="a DocDefaults" style="text-align: center;"></p>
+	<p class="a DocDefaults" style="text-align: center;"></p>
+	<p class="a DocDefaults" style="text-align: center;"></p>
+	<p class="a DocDefaults" style="text-align: center;"></p>
+	</div>
+</body>
+</html>

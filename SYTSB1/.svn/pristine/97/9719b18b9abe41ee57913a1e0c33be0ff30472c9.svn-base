@@ -1,0 +1,794 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><body><meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>电梯定期检验报告</title>
+
+
+
+	<input type="hidden" id="fk_report_id" name="fk_report_id" value="" values="" title="" style="width: 99%;">
+	<input type="hidden" id="fk_inspection_info_id" name="fk_inspection_info_id" value="" values="" title="" style="width: 99%;">
+
+	<input type="hidden" id="nextPage" name="nextPage" value="5" values="5" title="" style="width: 99%;">
+	<br>
+	<p class="a5 a DocDefaults" style="position: relative; margin-left: 7mm; text-indent: 0in;">
+		<a name="RTPAGE_3__检验项目及其内容（一）"></a>
+	</p>
+	<table id="docx4j_tbl_3" style="background-color: rgb(255, 255, 255); border-style: none; table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 629px; position: relative;" class="">
+		<colgroup>
+			<col border="1" style="width: 34px;" class="">
+			<col border="1" style="width: 35px;" class="">
+			<col border="1" style="width: 37px;" class="">
+			<col border="1" style="width: 62px; height: 17px;" class="">
+			<col border="1" style="width: 38.87%;" class="">
+			<col border="1" style="width: 10px; height: 22px;" class="">
+			<col border="1" style="width: 49px; height: 25px;" class="">
+			<col border="1" style="width: 4.37%;" class="">
+			<col border="1" style="width: 4.38%;" class="">
+			<col border="1" style="width: 13.53%;" class="">
+			<col border="1" style="width: 0.09%;" class="">
+		</colgroup>
+		<tbody>
+			<tr style="height: 7mm;">
+				<td colspan="6" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: right;">
+						<span class="a0" style="font-size: 12pt; position: relative;"><span class="" style="font-family: SimSun; position: relative;">报告编号：</span></span>
+					</p>
+				</td>
+				<td colspan="5" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: none; border-right-style: none; border-top-style: none; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="base__report_sn" name="base__report_sn" type="text" ltype="text" value="" ligerui="{width:138}" readonly="readonly" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 112%;">
+						<span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">序号</span>
+					</p>
+				</td>
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 112%;">
+						<span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">检验类别</span>
+					</p>
+				</td>
+				<td colspan="3" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 112%;">
+						<span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">检验项目及其内容</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 112%;">
+						<span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">检验结果</span>
+					</p>
+				</td>
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 112%;">
+						<span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">检验结论</span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td rowspan="5" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">1</span>
+					</p>
+				</td>
+				<td rowspan="5" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">B</span>
+					</p>
+				</td>
+				<td rowspan="5" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">1</span>
+					</p>
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">技术资料</span>
+					</p>
+				</td>
+				<td rowspan="5" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">1.4</span>
+					</p>
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">使用</span>
+					</p>
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">资料</span>
+					</p>
+				</td>
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">(1)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">使用登记资料</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_1_4_1" name="record__B_1_4_1" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cB_1_4_1" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+				<td rowspan="5" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__B_1_4_1" name="conclusion__B_1_4_1" type="text" ltype="select" value="" ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:[{'id':'合格','text':'合格'},{'id':'不合格','text':'不合格'},{'id':'复检合格','text':'复检合格'},{'id':'复检不合格','text':'复检不合格'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:71,initValue:'合格'}" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">(2)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">安全技术档案</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_1_4_2" name="record__B_1_4_2" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cB_1_4_2" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">(3)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">管理规章制度</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_1_4_3" name="record__B_1_4_3" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cB_1_4_3" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">(4)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">日常维护保养合同</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_1_4_4" name="record__B_1_4_4" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cB_1_4_4" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">(5)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">特种设备作业人员证</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_1_4_5" name="record__B_1_4_5" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cB_1_4_5" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td rowspan="3" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">2</span>
+					</p>
+				</td>
+				<td rowspan="3" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">C</span>
+					</p>
+				</td>
+				<td rowspan="21" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">2</span>
+					</p>
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">机房</span>
+					</p>
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">(</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">机器设备间</span><span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">及相关设备</span>
+					</p>
+				</td>
+				<td rowspan="3" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">2.1</span>
+					</p>
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">通道与通道门</span>
+					</p>
+				</td>
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">(1)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">通道设置</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__C_2_1_1" name="record__C_2_1_1" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cC_2_1_1" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+				<td rowspan="3" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__C_2_1_1" name="conclusion__C_2_1_1" type="text" ltype="select" value="" ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:[{'id':'合格','text':'合格'},{'id':'不合格','text':'不合格'},{'id':'复检合格','text':'复检合格'},{'id':'复检不合格','text':'复检不合格'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:71,initValue:'合格'}" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">(2)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">通道照明</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__C_2_1_2" name="record__C_2_1_2" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cC_2_1_2" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">(3)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">通道门</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__C_2_1_3" name="record__C_2_1_3" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cC_2_1_3" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">3</span>
+					</p>
+				</td>
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">C</span>
+					</p>
+				</td>
+				<td colspan="2" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">2.5(1)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">照明、照明开关</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__C_2_5_1" name="record__C_2_5_1" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cC_2_5_1" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__C_2_5_1" name="conclusion__C_2_5_1" type="text" ltype="select" value="" ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:[{'id':'合格','text':'合格'},{'id':'不合格','text':'不合格'},{'id':'复检合格','text':'复检合格'},{'id':'复检不合格','text':'复检不合格'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:71,initValue:'合格'}" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">4</span>
+					</p>
+				</td>
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">B</span>
+					</p>
+				</td>
+				<td colspan="2" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">2.6(2)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">主开关与照明等电路的控制关系</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_2_6_2" name="record__B_2_6_2" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cB_2_6_2" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__B_2_6_2" name="conclusion__B_2_6_2" type="text" ltype="select" value="" ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:[{'id':'合格','text':'合格'},{'id':'不合格','text':'不合格'},{'id':'复检合格','text':'复检合格'},{'id':'复检不合格','text':'复检不合格'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:71,initValue:'合格'}" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td rowspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">5</span>
+					</p>
+				</td>
+				<td rowspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">B</span>
+					</p>
+				</td>
+				<td rowspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">2.7</span>
+					</p>
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">驱动</span>
+					</p>
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">主机</span>
+					</p>
+				</td>
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">(2)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">工作状况</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_2_7_2" name="record__B_2_7_2" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cB_2_7_2" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+				<td rowspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__B_2_7_2" name="conclusion__B_2_7_2" type="text" ltype="select" value="" ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:[{'id':'合格','text':'合格'},{'id':'不合格','text':'不合格'},{'id':'复检合格','text':'复检合格'},{'id':'复检不合格','text':'复检不合格'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:71,initValue:'合格'}" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">(3)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">轮槽磨损</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_2_7_3" name="record__B_2_7_3" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cB_2_7_3" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">(4)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">制动器动作情况</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_2_7_4" name="record__B_2_7_4" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cB_2_7_4" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">★</span><span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">(5)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">手动紧急操作装置</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_2_7_5S" name="record__B_2_7_5S" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cB_2_7_5S" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td rowspan="7" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">6</span>
+					</p>
+				</td>
+				<td rowspan="7" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">B</span>
+					</p>
+				</td>
+				<td rowspan="7" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">2.8</span>
+					</p>
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">控制柜、紧急操作和动态测试装置</span>
+					</p>
+				</td>
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: left; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">(2)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">断错相保护</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_2_8_2" name="record__B_2_8_2" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cB_2_8_2" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+				<td colspan="2" rowspan="7" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__B_2_8_2" name="conclusion__B_2_8_2" type="text" ltype="select" value="" ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:[{'id':'合格','text':'合格'},{'id':'不合格','text':'不合格'},{'id':'复检合格','text':'复检合格'},{'id':'复检不合格','text':'复检不合格'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:72,initValue:'合格'}" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: left; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">(4)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">紧急电动运行装置</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_2_8_4" name="record__B_2_8_4" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cB_2_8_4" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: left; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">(5)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">紧急操作和动态测试装置</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_2_8_5" name="record__B_2_8_5" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cB_2_8_5" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: left; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">☆</span><span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">(6)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">层门和轿门旁路装置</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_2_8_6" name="record__B_2_8_6" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cB_2_8_6" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: left; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">☆</span><span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">(7)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">门回路检测功能</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_2_8_7" name="record__B_2_8_7" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cB_2_8_7" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: left; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">☆</span><span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">(8)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">制动器故障保护</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_2_8_8" name="record__B_2_8_8" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cB_2_8_8" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: left; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">☆</span><span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">(9)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">自动救援操作装置</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_2_8_9" name="record__B_2_8_9" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cB_2_8_9" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td rowspan="3" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">7</span>
+					</p>
+				</td>
+				<td rowspan="3" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">B</span>
+					</p>
+				</td>
+				<td rowspan="3" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">2.9</span>
+					</p>
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">限速器</span>
+					</p>
+				</td>
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">(2)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">电气安全装置</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_2_9_2" name="record__B_2_9_2" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cB_2_9_2" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+				<td rowspan="3" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__B_2_9_2" name="conclusion__B_2_9_2" type="text" ltype="select" value="" ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:[{'id':'合格','text':'合格'},{'id':'不合格','text':'不合格'},{'id':'复检合格','text':'复检合格'},{'id':'复检不合格','text':'复检不合格'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:71,initValue:'合格'}" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">(3)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">封记及运转情况</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_2_9_3" name="record__B_2_9_3" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cB_2_9_3" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">(4)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">动作速度校验</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_2_9_4" name="record__B_2_9_4" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cB_2_9_4" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">8</span>
+					</p>
+				</td>
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">C</span>
+					</p>
+				</td>
+				<td colspan="2" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">2.10(2)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">接地连接</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__C_2_10_2" name="record__C_2_10_2" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cC_2_10_2" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__C_2_10_2" name="conclusion__C_2_10_2" type="text" ltype="select" value="" ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:[{'id':'合格','text':'合格'},{'id':'不合格','text':'不合格'},{'id':'复检合格','text':'复检合格'},{'id':'复检不合格','text':'复检不合格'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:71,initValue:'合格'}" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">9</span>
+					</p>
+				</td>
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">C</span>
+					</p>
+				</td>
+				<td colspan="2" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">2.11
+						</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">电气绝缘</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__C_2_11" name="record__C_2_11" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cC_2_11" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__C_2_11" name="conclusion__C_2_11" type="text" ltype="select" value="" ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:[{'id':'合格','text':'合格'},{'id':'不合格','text':'不合格'},{'id':'复检合格','text':'复检合格'},{'id':'复检不合格','text':'复检不合格'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:71,initValue:'合格'}" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td rowspan="2" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">10</span>
+					</p>
+				</td>
+				<td rowspan="2" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">C</span>
+					</p>
+				</td>
+				<td rowspan="7" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">3</span>
+					</p>
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">井道及</span>
+					</p>
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">相关设备</span>
+					</p>
+				</td>
+				<td rowspan="2" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">3.4</span>
+					</p>
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">井道</span>
+					</p>
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">安全门</span>
+					</p>
+				</td>
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">(3)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">门锁</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__C_3_4_3" name="record__C_3_4_3" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cC_3_4_3" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+				<td rowspan="2" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__C_3_4_3" name="conclusion__C_3_4_3" type="text" ltype="select" value="" ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:[{'id':'合格','text':'合格'},{'id':'不合格','text':'不合格'},{'id':'复检合格','text':'复检合格'},{'id':'复检不合格','text':'复检不合格'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:71,initValue:'合格'}" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">(4)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">电气安全装置</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__C_3_4_4" name="record__C_3_4_4" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cC_3_4_4" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td rowspan="2" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">11</span>
+					</p>
+				</td>
+				<td rowspan="2" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">C</span>
+					</p>
+				</td>
+				<td rowspan="2" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">3.5</span>
+					</p>
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">井道</span>
+					</p>
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">检修门</span>
+					</p>
+				</td>
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">(3)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">门锁</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__C_3_5_3" name="record__C_3_5_3" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cC_3_5_3" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+				<td rowspan="2" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__C_3_5_3" name="conclusion__C_3_5_3" type="text" ltype="select" value="" ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:[{'id':'合格','text':'合格'},{'id':'不合格','text':'不合格'},{'id':'复检合格','text':'复检合格'},{'id':'复检不合格','text':'复检不合格'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:71,initValue:'合格'}" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">(4)</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">电气安全装置</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__C_3_5_4" name="record__C_3_5_4" type="text" ltype="select" value="" ligerui="{code:'dt_bg_record',isMultiSelect:false,data:[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:69,initValue:'符合'}" class="cC_3_5_4" onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">12</span>
+					</p>
+				</td>
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">B</span>
+					</p>
+				</td>
+				<td colspan="2" style="border-style: solid; border-width: 0.35mm; border-color: rgb(0, 0, 0); vertical-align: middle; height: 11.05px;" class="">
+					<p class="a DocDefaults" style="line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">3.7
+						</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">轿厢与井道壁距离</span>
+					</p>
+				</td>
+				<td colspan="2" style="border-style: solid none solid solid; border-bottom-width: 0.35mm; border-bottom-color: rgb(0, 0, 0); border-left-width: 0.35mm; border-left-color: rgb(0, 0, 0); border-top-width: 0.35mm; border-top-color: rgb(0, 0, 0); width: 18.025px;" class="">
+					<p class="a DocDefaults" style="line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; position: relative;">≤</span>
+					</p>
+				</td>
+				<td style="border-style: solid none; border-bottom-width: 0.35mm; border-bottom-color: rgb(0, 0, 0); border-top-width: 0.35mm; border-top-color: rgb(0, 0, 0); width: 30px; height: 15.05px;" class="pclicktd">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_3_7" name="record__B_3_7" value="" values="" type="text" ltype="text" style="width: 99%;" ligerui="{}" title="" class="        ">
+					</p>
+				</td>
+				<td style="border-style: solid solid solid none; border-bottom-width: 0.35mm; border-bottom-color: rgb(0, 0, 0); border-right-width: 0.35mm; border-right-color: rgb(0, 0, 0); border-top-width: 0.35mm; border-top-color: rgb(0, 0, 0); width: 33.025px; height: 22.05px;" class="">
+					<p class="a DocDefaults" style="line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative; left: 7px; top: -1.025px;">m</span>
+					</p>
+				</td>
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__B_3_7" name="conclusion__B_3_7" type="text" ltype="select" value="" ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:[{'id':'合格','text':'合格'},{'id':'不合格','text':'不合格'},{'id':'复检合格','text':'复检合格'},{'id':'复检不合格','text':'复检不合格'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:71,initValue:'合格'}" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">13</span>
+					</p>
+				</td>
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">B</span>
+					</p>
+				</td>
+				<td colspan="2" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">3.10
+						</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">极限开关</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__B_3_10" name="record__B_3_10" type="text" ltype="select" value="" ligerui="{'code':'dt_bg_record','isMultiSelect':false,'data':[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],'isTextBoxMode':false,'width':69,'initValue':'符合'}" class="cB_3_10              " onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__B_3_10" name="conclusion__B_3_10" type="text" ltype="select" value="" ligerui="{'code':'dt_bg_conclusion','isMultiSelect':false,'data':[{'id':'合格','text':'合格'},{'id':'不合格','text':'不合格'},{'id':'复检合格','text':'复检合格'},{'id':'复检不合格','text':'复检不合格'},{'id':'无此项','text':'无此项'}],'isTextBoxMode':false,'width':71,'initValue':'合格'}" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+			<tr style="height: 0.24in; page-break-inside: avoid;">
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">14</span>
+					</p>
+				</td>
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="text-align: center; line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">C</span>
+					</p>
+				</td>
+				<td colspan="2" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="line-height: 116%;">
+						<span class="a0" style="font-size: 12pt; font-family: &amp; quot; Times New Roman&amp;quot;; position: relative;">3.11
+						</span><span class="a0" style="font-size: 12pt; font-family: SimSun; position: relative;">井道照明</span>
+					</p>
+				</td>
+				<td colspan="4" style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="record__C_3_11" name="record__C_3_11" type="text" ltype="select" value="" ligerui="{'code':'dt_bg_record','isMultiSelect':false,'data':[{'id':'符合','text':'符合'},{'id':'不符合','text':'不符合'},{'id':'资料确认符合','text':'资料确认符合'},{'id':'无此项','text':'无此项'}],'isTextBoxMode':false,'width':69,'initValue':'符合'}" class="cC_3_11  " onchange="changeRecord(this,this.value)" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+				<td style="border-bottom-style: solid; border-bottom-width: 0.35mm; border-bottom-color: #000000; border-left-style: solid; border-left-width: 0.35mm; border-left-color: #000000; border-right-style: solid; border-right-width: 0.35mm; border-right-color: #000000; border-top-style: solid; border-top-width: 0.35mm; border-top-color: #000000; vertical-align: middle;" class="">
+					<p class="a DocDefaults" style="padding: 1px;">
+						<input id="conclusion__C_3_11" name="conclusion__C_3_11" type="text" ltype="select" value="" ligerui="{code:'dt_bg_conclusion',isMultiSelect:false,data:[{'id':'合格','text':'合格'},{'id':'不合格','text':'不合格'},{'id':'复检合格','text':'复检合格'},{'id':'复检不合格','text':'复检不合格'},{'id':'无此项','text':'无此项'}],isTextBoxMode:false,width:71,initValue:'合格'}" values="" title="" style="width: 99%;">
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<p class="a DocDefaults" style="text-align: center;">&nbsp;</p>
+	<p class="a DocDefaults" style="text-align: center; line-height: 166%;">
+
+
+
+	</p></div></body></html>

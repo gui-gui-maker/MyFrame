@@ -1,0 +1,142 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*上中下高度固定页面居中，两头白边高度浮动*/
+* { margin:0; padding:0; }
+body, html { margin:0; width:100%; height:100%; overflow:auto;}
+body.no-support-wpf { font-family: SimSun; }
+body,input,button,select,textarea {font-family:"Microsoft YaHei","verdana","宋体"; font-size:12px;}
+button {overflow:visible;}
+.show {display:;}
+.hide {display:none;}
+
+.k-login-layer{width:100%; height:auto; position:absolute; top:50%;margin-top:-300px; padding:0;}
+.k-login-layer.o1 {overflow:hidden;top:0px;margin-top:0px;position:relative;height:auto;}
+.k-login-top { background:url(app/public/13/top-bg.png) repeat-x center bottom; width:100%; height:116px; overflow:hidden;margin: 0px 0px 0px 0px; text-align:center;_margin-top:12px;}
+.k-login-middle {width:100%; overflow:hidden;height:440px;position:relative;/*background:#206aaf;*/}
+.k-login-layout {width:990px; height:470px;  position:relative; margin:0 auto;}
+.k-login-swf1{ position:absolute; z-index:1;}
+.k-login-swf2{ position:absolute; z-index:2;}
+.k-login-ztzs{width:60px; height:30px; position:absolute; top:117px; left:510px; z-index:3;}
+.k-login-foot { background:#9CF; width:100%; height:50px; text-align:center; vertical-align:bottom;background:url(app/public/13/foot-bg.png) repeat-x; font-size:12px; line-height:18px; padding-top:6px;}
+.k-login-foot-copy {margin:5px 0px 0px 0px;}
+.k-login-top-logo{ /*background:url(logo.png) no-repeat left center;*/ width:100%; height:116px; margin:0px auto 0px auto;_margin:0px auto 0px auto;}
+.k-login-top-logo-btnbox{ width:auto; height:75px; float:right;}
+.k-login-top-logo-btnbox div{ width:64px; height:64px; line-height:64px;margin-top:-10px; float:left;background:url(app/public/13/button.png) no-repeat top center;cursor:pointer;_margin-top:15px;}
+.k-login-top-logo-btnbox div a{display:block; width:64px; height:40px; padding-top:28px; color:#666; text-align:center; text-decoration:none;}
+.k-login-top-logo-btnbox div a:hover{ color:#CCC;}
+.k-login-layout-content{margin:auto; width:998px; height:470px;position:relative;background:url("center-bg1.jpg");}
+.k-login-layout-left {height:470px;width:510px;top:0px;background:url("center-bg-left.jpg") no-repeat right top;position:absolute;right:990px;}
+.k-login-layout-right {height:470px;width:510px;top:0px;background:url("center-bg-right.jpg") no-repeat left top;position:absolute;left:998px;}
+.k-login-custom_img{margin:auto; width:998px; height:470px; /*background:url(bt.jpg) no-repeat center center; background-repeat:no-repeat;background-position:center center;*/ /*background:url(daopic.png) no-repeat left top;*/ position:absolute; left:0px; top:0px;}
+.k-login-custom_mask{width:533px; height:338px;background:url(app/public/13/mask.png) no-repeat center center;display:none;}
+.k-login-box{ width:410px; height:290px; position:absolute; right:100px; top:90px;/*background:url(dlgb.png) repeat;*//*box-shadow: #666 0px 0px 10px;border-radius:5px 5px 5px 5px;*/ z-index:10;}
+.k-login-box-title{width:380px; height:105px; line-height:105px; vertical-align:middle; text-align:left; padding-left:30px;  font-size:30px; /*background:url(title_img_mz.png) no-repeat right top;*/background-repeat:no-repeat;background-position:right top;}
+.k-login-box-title span{ font-family:"Microsoft YaHei","黑体";}
+.k-login-inputbox{width:380px; height:39px; line-height:39px; vertical-align:middle; text-align:left; padding-left:30px;font-size:14px; margin-bottom:18px;}
+.k-login-inputbox input{background-color:#ffffff;}
+.k-login-inputbox-only{width:280px; height:39px; line-height:39px; vertical-align:middle;margin-left:88px;}
+.k-login-inputbox-only.is-yzm{width:130px;margin:0;margin:-57px 0 0 280px;text-align:center;}
+.k-login-inputname{width:auto; height:39px; line-height:39px; vertical-align:middle; text-align:left;font-size:16px; float:left; font-weight:bold;margin-right:16px;}
+.k-login-inputleft{width:180px; height:37px; line-height:37px; background-color:#FFF; border:2px solid #D9D9D9; border-right:none; vertical-align:middle; text-align:left;font-size:14px; float:left;border-radius:5px 0px 0px 5px;}
+.k-login-inputleft input{width:170px; height:34px; line-height:34px;border:0px; margin-left:5px;font-size:1.2em;font-weight:bold;color:#333;font-family:"verdana","Microsoft yahei","微软雅黑";}
+.k-login-inputright{width:100px; height:37px; line-height:37px; background-color:#fbfbfb;border:2px solid #D9D9D9; border-left:none; vertical-align:middle; text-align:left; padding-left:4px;font-size:12px; float:left; color:#999;border-radius:0px 5px 5px 0px;}
+.k-login-inputyz{width:100px; height:37px; background:#FFF; line-height:37px; float:left; border:2px solid #D9D9D9; border-right:0px;border-radius:5px 0px 0px 5px;}
+.k-login-inputyz input{width:90px; height:34px; background-color:#FFF; line-height:34px; border:0px; margin-left:5px;font-size:1.4em;font-weight:bold;color:#333;font-family:"Times New Roman","Microsoft yahei","微软雅黑";}
+.k-login-inputyzimg{width:80px; height:37px; background:#fbfbfb; line-height:37px;float:left;border:2px solid #D9D9D9; border-left:none;border-radius:0px 5px 5px 0px;}
+.k-login-inputbtn{width:100px; height:41px;vertical-align:middle; text-align:center; padding-left:4px;float:left; margin-right:20px;}
+.k-login-inputbtn input{width:130px; height:41px; line-height:41px; text-align:center; background-color:transparent; border:none; font-size:18px; color:#fff;cursor:pointer;background:url(login.png) no-repeat center right; cursor:pointer;_padding-top:6px;}
+.k-login-inputbtn-button-hover,.k-login-inputbtn input:hover{background:url(login_on.png) no-repeat center right!important;width:130px;}
+
+.k-login-style {display:none;}
+.k-login-msg-panel {display:none;}
+.k-login-btnbox {display:none;}
+.k-login-top-logo-text{font-family:"Microsoft YaHei","黑体";font-size:34px; color:#666;  font-weight:bold;letter-spacing:5px;display:none;}
+
+#userCodePanel,#userButtonPanel {display:none;}
+
+/*登录大图 2014年10月18日 13:04:29 星期六 lybide*/
+.k-login-dt-image-loading {position:absolute;top:50%;width:580px;height:20px;margin-top:-10px;text-align:center;}
+.k-login-dt-image-loading div {color:#FFFF99;}
+.k-login-dt-image-loading div span {}
+.k-login-dt-image {}
+.k-login-dt-image {}
+.k-login-dt-image ul {margin:0px;padding:0px;list-style-type:none;overflow:hidden;width:580px;height:470px;border:0px solid #FF0000;position:relative;}
+.k-login-dt-image ul li {position:absolute;left:580px;border:1px solid #bebebe;width:580px;height:470px;border:0px solid #0000FF;}
+.k-login-dt-image-count {position:absolute;bottom:60px;width:580px;border:0px solid #FF0000;text-align:center;}
+.k-login-dt-image-count {}
+.k-login-dt-image-count ul {margin:0px;padding:0px;list-style-type:none;overflow:hidden;}
+.k-login-dt-image-count ul li {display:inline;margin:0 5px;}
+.k-login-dt-image-count ul li div {display:inline;}
+.k-login-dt-image-count a,.k-login-dt-image-count a:link,.k-login-dt-image-count a:visited {color:#325A99;text-decoration:none;display:inline-block;background:#f5f5f5;width:10px;height:10px;border:1px solid #003366;border-radius:5px 5px 5px 5px;}
+.k-login-dt-image-count a:hover,.k-login-dt-image-count a.hover {color:#FF0000;text-decoration:underline;background:#A0A0A0;}
+.k-login-dt-image-count a span {display:none;}
+
+.k-login-isshell {width:300px;height:30px;border:0px solid #FF0000;margin:15px 0 0 95px;}
+.k-login-isshell span {float:left;}
+.k-login-isshell span.a {margin-right:47px;}
+.k-login-isshell span.b {margin-right:47px;}
+.k-login-isshell span.c {}
+.k-login-isshell span input {margin:2px 3px 0 0;float:left;}
+.k-login-isshell span label {margin-top:0px;}
+
+/*=======================================
+	重新登录 页面样式 ====================================
+=======================================*/
+.timeout {background:url("error2.jpg") no-repeat top center; width:100%; height:100%; position:relative;}
+.timeout .caption2 {width:998px; height:300px; left:50%; top:30%; position:absolute; margin:-150px 0 0 -499px;background-position:center center;background-repeat:no-repeat;} /*2012-09-05添加+++++++++*/
+.timeout .caption2 div {display:none;}
+.timeout .caption {width:80%;height:50px;position:absolute;top:50%;left:50%;margin:-100px 0px 0px -40%;}
+.timeout .caption h1 {padding:0px;margin:0px;font-size:28px;text-align:center;color:#2544AA; }
+.tmot_center {background:url("app/public/13/icon1.png") no-repeat;width:300px; height:100px; left:50%; top:50%; position:absolute; margin:0px 0 0 -150px; font-size:14px; font-weight:bold; padding:10px 0 0 100px;}
+.tmot_center p {line-height:30px; color:#929397;}
+.tmot_center p a {color:#be0000; outline:0 none;}
+.tmot_center p a:hover {color:#06F; outline:0 none;}
+.tmot_center p a:focus {outline:0 none;}
+
+.k-login-box-b-ie8 {border:0px solid #a1a1a1;}
+.k-login-box {color:#FFFFFF;}
+#userNamePanel {height:45px;}
+#userPassPanel {height:45px;}
+
+.is-cert {}
+.is-cert .k-login-inputbox-only {margin-left:27px;}
+.is-cert .k-login-isshell {margin-left:33px;}
+
+
+
+/*2018-03-02 10:00:40*/
+.k-login-box-title { display:none;  }
+.k-login-box { background-color:rgba(255,255,255,.2); background-image:url("k/kui/public/images/login1/title_img_default.png") no-repeat top right ;box-shadow: 0px 2px 5px rgba(0,0,0,.1); border-radius: 5px ;top: 60px; height: 320px;  }
+.k-tabeffect { position: relative;top: 0;right: 0; width: 100%; /*background:url("title_img_default.png") no-repeat right top;  */height:80px; }
+.k-tabeffect ul {display:block;width:100%; height: 100%;position:relative; /*overflow: hidden;*/}
+.k-tabeffect ul , .k-tabeffect li {margin:0; padding:0; list-style:none;}
+.k-tabeffect li {display:inline-block;text-align:center; }
+.k-tabeffect li a { position:absolute;width:50px;height: 100%; display: block; right:0;}
+.k-tabeffect li.k-smdl a{ display:block; width: 46px; height: 46px;position: absolute; right: 0; top:0;background: url(app/public/13/tubiao_52x53.png) no-repeat 0 0;cursor: pointer; }
+.k-tabeffect li.k-zhdl a{  display:block; width: 46px;height: 46px; position: absolute; right: 0; top:0;cursor: pointer;background: url(app/public/13/erweima_46x46.png) no-repeat; }
+.k-tabeffect li span { font-size: 18px; font-weight: bold; color: #fff; line-height: 24px; width: 100px; position: absolute; top: 30px; left: 20px; display: block; }
+.k-tabeffect li.k-tabactive { display: none !important; }
+
+.k-qrcode-img{width: 130px;height: 130px;margin: 0 auto;padding: 0;box-shadow: 0 0 8px #DDD; padding:5px;background:#fff;}
+.k-qrcode-img img{width: 130px;height: 130px;}
+.k-qrcode-desc,.k-qrcode-confirm,.k-qrcode-invalid{ font-size:14px;color:#fff;line-height:30px;text-align:center;padding-bottom:10px;margin-top:15px;overflow:hidden; font-weight:bold;}
+.k-qrcode-confirm {display:none;}
+.k-qrcode-invalid {margin-top:30%;line-height:2em;cursor: pointer;color:#666;padding:0;}
+.k-qrcode-other { text-align:right; padding-right: 20px;}
+.k-qrcode-other a { color: #fff;  font-size: 14px; text-decoration: none;  }
+.k-qrcode-other a:hover{ color: #333;  }
+
+.k-login-check-mobile { display: none; background: url("app/public/13/title_img_default.png") no-repeat }
+.k-lcm-img { background:url(app/public/13/shouji_01.png) no-repeat center center; width: 100%;height: 141px;text-align: center;   }
+.k-lcm-txt { text-align: center; color: #fff; font-size: 14px;  line-height: 40px;}
+.k-lcm-txt a { color: #fff; font-size: 14px; text-decoration: none; text-align: right; float: right; padding-right: 20px; margin-top: 20px; }
+.k-lcm-txt a:hover{ color: #333;  }||||||| .r2263
+.k-login-check-mobile { display: none; }
+.k-lcm-img { background:url(app/public/13/shouji_01.png) no-repeat center center; width: 100%;height: 141px;text-align: center;   }
+.k-lcm-txt { text-align: center; color: #fff; font-size: 14px;  line-height: 40px;}=======
+.k-login-check-mobile {display:none;padding-top: 60px;background: url(app/public/13/title_img_default.png) no-repeat right top;}
+.k-lcm-img { background:url(app/public/13/shouji_01.png) no-repeat center center; width: 100%;height: 141px;text-align: center;}
+.k-lcm-txt { text-align: center; color: #fff; font-size: 14px;  line-height: 40px;}
+.k-lcm-txt a {color: #fff;font-size: 14px;text-decoration: none;text-align: right;float: right;padding-right: 20px;margin-top: 20px;}
+.k-lcm-txt a :hover{ color:#333; }

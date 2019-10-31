@@ -1,0 +1,70 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*上中下高度固定页面居中，两头白边高度浮动*/
+* { margin:0; padding:0; }
+body, html { margin:0; width:100%; height:100%; overflow:auto;}
+body.no-support-wpf { font-family: SimSun; }
+body,input,button,select,textarea {font-family:"Microsoft YaHei","verdana","宋体"; font-size:12px;}
+button {overflow:visible;}
+.show {display:;}
+.hide {display:none;}
+
+.k-login-layer{width:100%; height:1px; position:absolute; top:50%;margin-top:-320px; padding:0;}
+.k-login-top { background:url(top-bg.png) repeat-x center bottom; width:100%; height:115px; overflow:hidden;margin: 0px 0px 0px 0px; text-align:center;_ margin-top:12px;}
+.k-login-middle {width:100%; overflow:hidden;height:470px;position:relative;background:#206aaf;}
+.k-login-layout {width:990px; height:470px;  position:relative; margin:0 auto;}
+.k-login-swf1{ position:absolute; z-index:1;}
+.k-login-swf2{ position:absolute; z-index:2;}
+.k-login-ztzs{width:60px; height:30px; position:absolute; top:117px; left:510px; z-index:3;}
+.k-login-foot { background:#9CF; width:100%; height:70px; text-align:center; vertical-align:bottom;background:url(foot-bg.png) repeat-x; font-size:12px; line-height:18px; padding-top:6px;}
+.k-login-foot-copy {margin:5px 0px 0px 0px;}
+.k-login-top-logo{ /*background:url(logo.png) no-repeat left center;*/ width:900px; height:115px; margin:0px auto 0px auto;_margin:0px auto 0px auto;}
+.k-login-top-logo-btnbox{ width:auto; height:75px; float:right;}
+.k-login-top-logo-btnbox div{ width:64px; height:64px; line-height:64px;margin-top:-10px; float:left;background:url(button.png) no-repeat top center;cursor:pointer;_margin-top:15px;}
+.k-login-top-logo-btnbox div a{display:block; width:64px; height:40px; padding-top:28px; color:#666; text-align:center; text-decoration:none;}
+.k-login-top-logo-btnbox div a:hover{ color:#CCC;}
+.k-login-layout-content{margin:auto; width:998px; height:470px;position:relative;/*background:url("center-bg1.jpg");*/}
+.k-login-layout-left {height:470px;width:510px;top:0px;background:url("center-bg-left.jpg") #206aaf no-repeat right top;position:absolute;right:990px;}
+.k-login-layout-right {height:470px;width:510px;top:0px;background:url("center-bg-right.jpg") #206aaf no-repeat left top;position:absolute;left:998px;}
+.k-login-custom_img{margin:auto; width:998px; height:470px; /*background:url(bt.jpg) no-repeat center center; */background-repeat:no-repeat;background-position:center center; position:absolute; left:0px; top:0px;}
+.k-login-custom_mask{width:533px; height:338px;background:url(mask.png) no-repeat center center;display:none;}
+.k-login-box{ width:410px; height:290px; position:absolute; right:100px; top:90px;/*background:url(dlgb.png) repeat;*//*box-shadow: #666 0px 0px 10px;border-radius:5px 5px 5px 5px;*/ z-index:10;}
+.k-login-box-title{width:380px; height:105px; line-height:105px; vertical-align:middle; text-align:left; padding-left:30px;  font-size:30px; /*background:url(title_img_mz.png) no-repeat right top;*/background-repeat:no-repeat;background-position:right top;}
+.k-login-box-title span{ font-family:"Microsoft YaHei","黑体";}
+.k-login-inputbox{width:380px; height:39px; line-height:39px; vertical-align:middle; text-align:left; padding-left:30px;font-size:14px; margin-bottom:18px;}
+.k-login-inputbox input{background-color:#ffffff;}
+.k-login-inputbox-only{width:280px; height:39px; line-height:39px; vertical-align:middle; text-align: center;margin-top:30px; margin-left:88px;}
+.k-login-inputname{width:auto; height:39px; line-height:39px; vertical-align:middle; text-align:left;font-size:16px; float:left; font-weight:bold;margin-right:16px;}
+.k-login-inputleft{width:180px; height:37px; line-height:37px; background-color:#FFF; border:2px solid #D9D9D9; border-right:none; vertical-align:middle; text-align:left;font-size:14px; float:left;border-radius:5px 0px 0px 5px;}
+.k-login-inputleft input{width:170px; height:34px; line-height:34px;border:0px; margin-left:5px;}
+.k-login-inputright{width:100px; height:37px; line-height:37px; background-color:#fbfbfb;border:2px solid #D9D9D9; border-left:none; vertical-align:middle; text-align:left; padding-left:4px;font-size:12px; float:left; color:#999;border-radius:0px 5px 5px 0px;}
+.k-login-inputyz{width:100px; height:37px; background:#FFF; line-height:37px; float:left; border:2px solid #D9D9D9; border-right:0px;border-radius:5px 0px 0px 5px;}
+.k-login-inputyz input{width:90px; height:34px; background-color:#FFF; line-height:34px; border:0px; margin-left:5px;}
+.k-login-inputyzimg{width:80px; height:37px; background:#fbfbfb; line-height:37px;float:left;border:2px solid #D9D9D9; border-left:none;border-radius:0px 5px 5px 0px;}
+.k-login-inputbtn{width:100px; height:41px;vertical-align:middle; text-align:center; padding-left:4px;float:left; margin-right:20px;}
+.k-login-inputbtn button{width:100px; height:41px; line-height:41px; text-align:center; background-color:transparent; border:none; font-size:18px; color:#fff;cursor:pointer;background:url(login.png) no-repeat center right; cursor:pointer;_padding-top:6px;}
+.k-login-inputbtn-button-hover,.k-login-inputbtn button:hover{background:url(login_on.png) no-repeat center right!important;}
+
+.k-login-style {display:none;}
+.k-login-msg-panel {display:none;}
+.k-login-btnbox {display:none;}
+.k-login-top-logo-text{font-family:"Microsoft YaHei","黑体";font-size:34px; color:#666; margin:36px 520px 0 0; font-weight:bold;letter-spacing:5px;display:none;}
+
+#userCodePanel,#userButtonPanel {display:none;}
+
+/*=======================================
+	重新登录 页面样式 ====================================
+=======================================*/
+.timeout {background:url("error2.gif") no-repeat center; width:100%; height:100%; position:relative;}
+.timeout .caption2 {width:700px; height:300px; left:50%; top:30%; position:absolute; margin:-150px 0 0 -350px;background-position:center center;background-repeat:no-repeat;} /*2012-09-05添加+++++++++*/
+.tmot_center {width:284px; height:66px; left:50%; top:50%; position:absolute; margin:-33px 0 0 -142px; font-size:14px; font-weight:bold; padding:110px 0px 0px 96px;}
+.tmot_center p {line-height:30px; color:#929397;}
+.tmot_center p a {color:#be0000; outline:0 none;}
+.tmot_center p a:hover {color:#06F; outline:0 none;}
+.tmot_center p a:focus {outline:0 none;}
+
+.k-login-box-b-ie8 {border:0px solid #a1a1a1;}
+.k-login-box {color:#FFFFFF;}
+#userNamePanel {height:45px;}
+#userPassPanel {height:30px;}

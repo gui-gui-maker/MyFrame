@@ -1,0 +1,207 @@
+﻿<%@ page contentType="text/html;charset=UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>文件上传</title>
+<%@include file="/k/kui-base-list.jsp" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<script type="text/javascript" src="pub/fileupload/js/plupload.js"></script>
+<script type="text/javascript" src="pub/fileupload/js/plupload.flash.js"></script>
+<script type="text/javascript" src="pub/fileupload/js/plupload.html5.js"></script>
+<script type="text/javascript">
+//创建一个上传实例
+window.onerror = function(e) {return true;};
+var fileUploader = new plupload.Uploader({
+	runtimes : 'html5,flash',
+	browse_button : 'pickfiles',
+	container: 'container',
+	max_file_size : "10mb",
+	url : '<%=request.getContextPath()%>/androidfileupload/doAndroidUpload.do?businessId=',
+	flash_swf_url : '<%=request.getContextPath()%>/pub/fileupload/js/plupload.flash.swf',
+	silverlight_xap_url : '<%=request.getContextPath()%>/pub/fileupload/js/plupload.silverlight.xap',
+	filters : [
+		{title : "all files", extensions : "*"}
+	]
+});
+var uploadedFiles = [];
+$(function(){
+	if(api.data){
+		fileUploader.settings.filters=[{title : api.data.filter, extensions : api.data.filter}];
+		fileUploader.settings.url += api.data.sid + "&workItem=" + api.data.workItem + "&attType=" + api.data.attType+"&resolution="+api.data.resolution+"&sizeInfo="+api.data.sizeInfo+"&applyTime="+api.data.applyTime+"&divice="+api.data.divice;
+		fileUploader.settings.max_file_size = api.data.maxSize;
+	}
+	
+	//添加一个文件
+	fileUploader.bind('FilesAdded', function(up, files) {
+		if(api.data.fileNum==1){
+			if(files.length > 1){
+				$.ligerDialog.alert("只能选择一个文件!");
+				return;
+			}
+			$(".table-up-filelist-e-tr").remove();
+			$.each(fileUploader.files,function(i,el){
+				fileUploader.removeFile(el);
+			});
+		}
+		for (var i in files) {
+			if(files[i].size > up.settings.max_file_size)return;//验证大小
+			var str1='<tr class="table-up-filelist-e-tr" id="' + files[i].id + '">';
+			str1+='<td class="table-up-filelist-e-td1">'+files[i].name+'<div id="' + files[i].id + '_pos_text" class="table-up-filelist-e-td1-div-text">&nbsp;</div><div id="' + files[i].id + '_pos" class="table-up-filelist-e-td1-div"><div></div></div></td>';
+			str1+='<td class="table-up-filelist-e-td2">' + plupload.formatSize(files[i].size) + '</td>';
+			str1+='<td class="table-up-filelist-e-td3"><input type="button" value="删除" class="l-button" onclick="removeAddedFile(\''+files[i].id+'\');"></td>'
+			str1+='</tr>';
+			var r = $('#filelist').append(str1);
+		}
+	});
+
+	//文件上传进行中
+	fileUploader.bind('UploadProgress', function(up, file) {
+		//$("#" + file.id + " b").html('<span>' + file.percent + "%</span>");
+		var t=$("#" + file.id + "_pos_text");
+		t.html('<span>' + file.percent + "%</span>");
+		var p=$("#" + file.id + "_pos");
+		var q=$("div","#" + file.id + "_pos");//2012年05月21日 星期一 17:17:13 lybide
+		var pHeight=p.show().parent("td").outerHeight();
+		var top1=pHeight/2-q.outerHeight()/2;
+		p.css("top",top1);
+		q.width(file.percent+"%");
+		t.css("top",top1);
+	});
+
+	//文件列表发生变化
+	fileUploader.bind('QueueChanged', function(uploader) {
+		if(uploader.files.length > 0) {
+			$("#uploadfiles").attr("disabled",false);
+		}
+		else{
+			$("#uploadfiles").attr("disabled",true);
+		}
+	});
+	
+	//单个文件上传完成
+	fileUploader.bind('FileUploaded', function(uploader,file,resObj) {
+		var json = $.parseJSON(resObj.response);
+		if(json.success){//上传成功
+			$("#uploadFileList").val($("#uploadFileList").val() + "," + json.data.id);
+			uploadedFiles[uploadedFiles.length] = {"id":json.data.id,"name":file.name,"path":json.data.path};
+			$("#" + file.id+" td:first").append("<span class='fid' style='display:none'>" + json.data.id +"</span>");
+		}
+		else{//上传失败
+			$.ligerDialog.error("上传失败:" + json.msg);
+			file.status = plupload.FAILED;
+			removeAddedFile(file.id);
+		}
+	});
+
+	//所有文件上传完成
+	fileUploader.bind("UploadComplete",function(up,files){
+		if(api.data.callback){
+			api.data.callback($("#uploadFileList").val(),uploadedFiles);
+		}
+		top.$.notice("上传完成!",2);
+		api.close();
+	});
+	
+	//发生错误时
+	fileUploader.bind('Error', function(uploader,error) {
+		$("#uploadfiles").attr("disabled",true);
+		if(error.code == plupload.FILE_SIZE_ERROR){
+			alert("所选的文件太大，超过了限制(" + uploader.settings.max_file_size/1024 + "KB)！");
+		}
+		else if(error.code == plupload.FILE_EXTENSION_ERROR){
+			//删除格式不符的文件
+			for(var i in uploader.files){
+				var fileName = uploader.files[i].name;
+			}
+			alert("文件类型错误！\n\n注：只能选择的文件类型是[" + fileUploader.settings.filters[0].extensions + "]");
+		}
+		else
+			alert("发生错误：" + error.code);
+	});
+	
+	//执行上传
+	$('#uploadfiles').bind("click",function() {
+		fileUploader.start();
+		return false;
+	});
+	
+	//执行初始化
+	fileUploader.init();
+	
+	window.onunload = function(){
+		fileUploader.destroy();
+	};
+});
+
+//根据文件ID删除文件对象
+function removeAddedFile(id){
+	var file = fileUploader.getFile(id);
+	if(file != null && file.status==plupload.DONE)//如果文件已经上传，从服务器删除文件
+		$.get('fileupload/deleteAtt.do?id='+$("#" + id + " .fid").text());
+	fileUploader.removeFile(fileUploader.getFile(id));
+	$("#" + id).remove();
+	$("#uploadFileList").val($("#uploadFileList").val().replace(id,"").replace(",,",","));
+	$.each(uploadedFiles,function(i,el){
+		if(el.id == id) uploadedFiles[i] = null;
+	});
+}
+
+//自定义设置上传参数:文件大小限制、文件类型限制、业务ID
+function configSetting(fileSize,filtersTitle,ext_name,businessId){
+	if(fileSize!=null)
+		fileUploader.settings.max_file_size = fileSize;
+	if(filtersTitle != null && ext_name != null)
+		fileUploader.settings.filters = [{title : filtersTitle, extensions : ext_name}];
+	if(businessId){
+		fileUploader.settings.url += businessId;
+	}
+}
+</script>
+</head>
+<body>
+<style type="text/css">
+.table-up {}
+.table-up-td1 {}
+.table-up-td2 {border:0px solid #96c2f1;}
+.table-toolbar td {padding:5px 5px 5px 0px;}
+.table-up-filelist {border:1px solid #96c2f1;border-right:0px;border-bottom:1px;}
+.table-up-filelist td {padding:5px;border:1px solid #96c2f1;border-top:0px;border-left:1px;}
+.table-up-filelist-tr {}
+.table-up-filelist-td {border:1px solid #96c2f1;background:#eff7ff;text-align:center;}
+.table-up-filelist-e-td1 {position:relative;}
+.table-up-filelist-e-td1-div-text {position:absolute;right:115px;top:5px;text-align:right;}
+.table-up-filelist-e-td1-div {position:absolute;right:5px;top:5px;width:100px;border:1px solid #3075e7;display:none;}
+.table-up-filelist-e-td1-div div {width:1px;height:8px;overflow:hidden;background:#c8daf9;}
+.table-up-filelist-e-td2 {text-align:right;}
+.table-up-filelist-e-td3 {text-align:center;}
+</style>
+
+<div id="container" style="height:100%">
+	<table border="0" cellpadding="0" cellspacing="0" 
+		width="100%" height="100%" align="center" class="table-up">
+		<tr>
+			<td valign="top" class="table-up-td1">
+				<div class="table-up-divlist" style="overflow:auto;padding:5px;height:295px">
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" 
+						height="" align="center" id="filelist" class="table-up-filelist">
+						<tr class="table-up-filelist-tr">
+							<td class="table-up-filelist-td">上传文件</td>
+							<td class="table-up-filelist-td" width="80">大小</td>
+							<td class="table-up-filelist-td" width="50">操作</td>
+						</tr>
+					</table>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="table-up-td2 toolbar-tm" style="padding:5px;height:30px">
+				<input type="hidden" name="uploadFileList" value="" id="uploadFileList" />
+				<input type="button" value="选择文件" class="l-button" id="pickfiles" />
+				<input type="button" value="开始上传" class="l-button" id="uploadfiles" disabled />&nbsp;&nbsp;
+				<input type="button" value="关 闭" class="l-button" onclick="api.close()" style="float:right" />
+			</td>
+		</tr>
+	</table>
+</div>
+</body>
+</html>

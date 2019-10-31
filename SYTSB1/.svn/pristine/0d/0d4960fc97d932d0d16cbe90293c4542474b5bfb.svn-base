@@ -1,0 +1,574 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+</head>
+
+<body>
+	<div id="layout2" style="width: 99.8%">
+		<input type="hidden" id="inputFocus" name="inputFocus" /> <input
+			type="hidden" id="thisPage" name="thisPage" value="?page=12">
+		<div position="center" class="wrapper"
+			style="overflow: auto; width: 100%" align="center">
+			<br />
+			<p class="a DocDefaults ">
+				<a name="RTPAGE_11__检验项目及其内容8"></a>
+			</p>
+			<table id="docx4j_tbl_11"
+				style="border: solid 1px #000000; position: relative; margin-left: 0.08in; table-layout: fixed; vertical-align: top; border-collapse: collapse; width: 6.69in;">
+				<colgroup>
+					<col style="width: 5.59%;" />
+					<col style="width: 7.48%;" />
+					<col style="width: 7.47%;" />
+					<col style="width: 8.87%;" />
+					<col style="width: 2.44%;" />
+					<col style="width: 41.68%;" />
+					<col style="width: 13.24%;" />
+					<col style="width: 13.23%;" />
+				</colgroup>
+				<tbody>
+					<tr style="height: 10mm; page-break-inside: avoid;">
+						<td style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults "
+								style="text-align: center; line-height: 83%;">
+								<span class="a0 "
+									style="font-weight: bold; font-size: 12.0pt; font-family: 'SimSun';">序号</span>
+							</p>
+						</td>
+						<td style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults "
+								style="text-align: center; line-height: 83%;">
+								<span class="a0 "
+									style="font-weight: bold; font-size: 12.0pt; font-family: 'SimSun';">检验类别</span>
+							</p>
+						</td>
+						<td colspan="4"
+							style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults "
+								style="text-align: center; line-height: 83%;">
+								<span class="a0 "
+									style="font-weight: bold; font-size: 12.0pt; font-family: 'SimSun';">检验项目及其内容</span>
+							</p>
+						</td>
+						<td style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults "
+								style="text-align: center; line-height: 83%;">
+								<span class="a0 "
+									style="font-weight: bold; font-size: 12.0pt; font-family: 'SimSun';">检验结果</span>
+							</p>
+						</td>
+						<td style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults "
+								style="text-align: center; line-height: 83%;">
+								<span class="a0 "
+									style="font-weight: bold; font-size: 12.0pt; font-family: 'SimSun';">检验结论</span>
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.26in; page-break-inside: avoid;">
+						<td style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults " style="text-align: center;">
+								<span class="a0 "
+									style="font-size: 12.0pt; font-family: 'SimSun';">32</span>
+							</p>
+						</td>
+						<td style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults " style="text-align: center;">
+								<span class="a0 "
+									style="font-size: 12.0pt; font-family: 'SimSun';">B</span>
+							</p>
+						</td>
+						<td style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults "></p>
+						</td>
+						<td style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults " style="text-align: center;">
+								<span class="a0 " style="font-size: 12.0pt;"><span
+									class="" style="font-family: 'SimSun';">3.16 井道</span></span><span
+									class="a0 " style="font-size: 12.0pt; font-family: 'SimSun';">下方空间的防护</span>
+							</p>
+							<p class="a DocDefaults " style="text-align: center;"></p>
+						</td>
+						<td colspan="2"
+							style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults ">
+								<span class="a0 " style="font-size: 12.0pt;"><span
+									class="" style="font-family: 'SimSun'; ">如果井道下方有人能够到达的空间，应当将对重缓
+								</span></span><span class="a0 "
+									style="font-size: 12.0pt; font-family: 'SimSun';">冲器安装</span><span
+									class="a0 " style="font-size: 12.0pt;"><span class=""
+									style="font-family: 'SimSun';">于(或者平衡重运行区域下面是)一直延伸
+										到坚固地面上的实心桩墩，或者在对重(平衡重)上 装设安全钳</span></span>
+							</p>
+						</td>
+						<td style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults ">
+								<input id="record__B_3_16" name="record__B_3_16" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:75,initValue:'符合'}"
+									class="cB_3_16" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+						<td style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults ">
+								<input id="conclusion__B_3_16" name="conclusion__B_3_16"
+									type="text" ltype="select" value=""
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:false,width:75,initValue:'合格'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0mm; page-break-inside: avoid;">
+						<td rowspan="3"
+							style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults " style="text-align: center;">
+								<span class="a0 "
+									style="font-size: 12.0pt; font-family: 'SimSun';">33</span>
+							</p>
+						</td>
+						<td rowspan="3"
+							style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults " style="text-align: center;">
+								<span class="a0 "
+									style="font-size: 12.0pt; font-family: 'SimSun';">C</span>
+							</p>
+						</td>
+						<td rowspan="13"
+							style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults " style="text-align: center;">
+								<span class="a0 "
+									style="font-size: 12.0pt; font-family: 'SimSun';">4</span>
+							</p>
+							<p class="a DocDefaults " style="text-align: center;">
+								<span class="a0 "
+									style="font-size: 12.0pt; font-family: 'SimSun';">轿</span>
+							</p>
+							<p class="a DocDefaults " style="text-align: center;">
+								<span class="a0 "
+									style="font-size: 12.0pt; font-family: 'SimSun';">厢</span>
+							</p>
+							<p class="a DocDefaults " style="text-align: center;">
+								<span class="a0 "
+									style="font-size: 12.0pt; font-family: 'SimSun';">与</span>
+							</p>
+							<p class="a DocDefaults " style="text-align: center;">
+								<span class="a0 "
+									style="font-size: 12.0pt; font-family: 'SimSun';">对</span>
+							</p>
+							<p class="a DocDefaults " style="text-align: center;">
+								<span class="a0 " style="font-size: 12.0pt;"><span
+									class="" style="font-family: 'SimSun';">重（平衡重）</span></span>
+							</p>
+						</td>
+						<td rowspan="3"
+							style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults " style="text-align: center;">
+								<span class="a0 "
+									style="font-size: 12.0pt; font-family: 'SimSun';">4.1</span>
+							</p>
+							<p class="a DocDefaults " style="text-align: center;">
+								<span class="a0 "
+									style="font-size: 12.0pt; font-family: 'SimSun';">轿顶电气装置</span>
+							</p>
+						</td>
+						<td colspan="2"
+							style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults " style="text-align: left;">
+								<span class="a0 " style="font-size: 12.0pt;"><span
+									class="" style="font-family: 'SimSun';">(1)检修装置</span></span>
+							</p>
+						</td>
+						<td style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults ">
+								<input id="record__C_4_1_1" name="record__C_4_1_1" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:75,initValue:'符合'}"
+									class="cC_4_1" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+						<td rowspan="3"
+							style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults ">
+								<input id="conclusion__C_4_1_1" name="conclusion__C_4_1_1"
+									type="text" ltype="select" value=""
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:false,width:75,initValue:'合格'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0mm; page-break-inside: avoid;">
+						<td colspan="2"
+							style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults " style="text-align: left;">
+								<span class="a0 " style="font-size: 12.0pt;"><span
+									class="" style="font-family: 'SimSun';">(2)停止装置</span></span>
+							</p>
+							<p class="a DocDefaults ">
+								<span class="a0 " style="font-size: 9.0pt;"><span
+									class="" style="font-family: 'SimSun';">为双稳态、红色并标以</span><span
+									class="" style="font-family: 'MS Gothic';">“</span><span
+									class="" style="font-family: 'SimSun';">停止</span><span class=""
+									style="font-family: 'MS Gothic';">”</span><span class=""
+									style="font-family: 'SimSun';">字样，并且有防止误操作的保护</span><span
+									class="" style="font-family: 'SimSun';">。如果检修运行控制装置设在从入口处易于接近的位置，该停止装置也可以设在检修运行控制装置上</span></span>
+							</p>
+						</td>
+						<td style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults ">
+								<input id="record__C_4_1_2" name="record__C_4_1_2" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:75,initValue:'符合'}"
+									class="cC_4_1" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0mm; page-break-inside: avoid;">
+						<td colspan="2"
+							style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults " style="text-align: left;">
+								<span class="a0 "
+									style="font-size: 12.0pt; font-family: 'SimSun';">(3)</span><span
+									class="a0 " style="font-size: 12.0pt;"><span class=""
+									style="font-family: 'SimSun';">应当装设2P+PE型电源插座</span></span>
+							</p>
+						</td>
+						<td style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults ">
+								<input id="record__C_4_1_3" name="record__C_4_1_3" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:75,initValue:'符合'}"
+									class="cC_4_1" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0mm; page-break-inside: avoid;">
+						<td rowspan="4"
+							style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults " style="text-align: center;">
+								<span class="a0 "
+									style="font-size: 12.0pt; font-family: 'SimSun';">34</span>
+							</p>
+						</td>
+						<td rowspan="4"
+							style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults " style="text-align: center;">
+								<span class="a0 "
+									style="font-size: 12.0pt; font-family: 'SimSun';">C</span>
+							</p>
+						</td>
+						<td rowspan="4"
+							style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults " style="text-align: center;">
+								<span class="a0 "
+									style="font-size: 12.0pt; font-family: 'SimSun'; ">4.2轿顶护栏
+								</span>
+							</p>
+						</td>
+						<td colspan="2"
+							style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults " style="text-align: left;">
+								<span class="a0 " style="font-size: 12.0pt;"><span
+									class="" style="font-family: 'SimSun';">(1)护栏的组成</span></span>
+							</p>
+							<p class="a DocDefaults ">
+								<span class="a0 "
+									style="font-size: 9.0pt; font-family: 'SimSun';">由扶手、0.10m高的护脚板和位于护栏高度一半处的中间栏杆组成</span>
+							</p>
+						</td>
+						<td style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults ">
+								<input id="record__C_4_2_1" name="record__C_4_2_1" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:75,initValue:'符合'}"
+									class="cC_4_2" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+						<td rowspan="4"
+							style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults ">
+								<input id="conclusion__C_4_2_1" name="conclusion__C_4_2_1"
+									type="text" ltype="select" value=""
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:false,width:75,initValue:'合格'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0mm; page-break-inside: avoid;">
+						<td colspan="2"
+							style="border: solid 1px #000000;vertical-align: middle;">
+							<p class="a DocDefaults " style="text-align: left;">
+								<span class="a0 "
+									style="font-size: 12.0pt; font-family: 'SimSun';">(2)扶手高度</span>
+							</p>
+							<p class="a DocDefaults " style="text-align: left;">
+								<span class="a0 " style="font-size: 9.0pt;"><span
+									class="" style="font-family: 'SimSun';">当自由距离不大于0.85m时，扶手高度不小于0.70m，当自由距离大于0.85m时，扶手高度不小于1.10m；</span></span>
+							</p>
+						</td>
+						<td style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults ">
+								<input id="record__4_2_2" name="record__4_2_2" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:75,initValue:'符合'}"
+									class="c0_85_0.700" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0mm; page-break-inside: avoid;">
+						<td colspan="2" style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults " style="text-align: left;">
+								<span class="a0 " style="font-size: 12.0pt; font-family: 'SimSun';">(3)装设位置</span>
+							</p>
+							<p class="a DocDefaults ">
+								<span class="a0 " style="font-size: 9.0pt;"><span
+									class="" style="font-family: 'SimSun';">护栏装设在距轿顶边缘最大为0.15m之内，并且其扶手外缘和井道中的任何部件之间的水平距离不小于0.10m；</span></span>
+							</p>
+						</td>
+						<td style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults ">
+								<input id="record__4_2_3" name="record__4_2_3"
+									type="text" ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:75,initValue:'符合'}"
+									class="c0_15_0.100" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0mm; page-break-inside: avoid;">
+						<td colspan="2"
+							style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults " style="text-align: left;">
+								<span class="a0 "
+									style="font-size: 12.0pt; font-family: 'SimSun';">(4)护栏上有关于俯伏或斜靠护栏危险的警示符号或须知</span>
+							</p>
+						</td>
+						<td style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults ">
+								<input id="record__4_2_4" name="record__4_2_4" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:75,initValue:'符合'}"
+									class="c0_10_4" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0mm; page-break-inside: avoid;">
+						<td rowspan="3"
+							style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults " style="text-align: center;">
+								<span class="a0 "
+									style="font-size: 12.0pt; font-family: 'SimSun';">35</span>
+							</p>
+						</td>
+						<td rowspan="3"
+							style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults " style="text-align: center;">
+								<span class="a0 "
+									style="font-size: 12.0pt; font-family: 'SimSun';">C</span>
+							</p>
+						</td>
+						<td rowspan="3"
+							style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults " style="text-align: center;">
+								<span class="a0 "
+									style="font-size: 12.0pt; font-family: 'SimSun';">4.3</span>
+							</p>
+							<p class="a DocDefaults " style="text-align: center;">
+								<span class="a0 "
+									style="font-size: 12.0pt; font-family: 'SimSun';">安全窗</span><span
+									class="a0 " style="font-size: 12.0pt;"><span class=""
+									style="font-family: 'SimSun';">(门)</span></span>
+							</p>
+						</td>
+						<td colspan="2"
+							style="border: solid 1px #000000; vertical-align: middle;">
+								<p class="a DocDefaults " style="text-align: left;">
+								 <span class="a0 " style="font-size: 12.0pt; font-family: 'SimSun';">(1)手动上锁装置</span>
+							 </p>
+							<p class="a DocDefaults ">
+								<span class="a0 " style="font-size: 9.0pt;"><span
+									class="" style="font-family: 'SimSun';">能够不用钥匙从轿厢外开启，用规定的三角钥匙从轿厢内开启</span></span>
+							</p></td>
+						<td style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults ">
+								<input id="record__C_4_3_1" name="record__C_4_3_1" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:75,initValue:'符合'}"
+									class="cC_4_3" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+						<td rowspan="3"
+							style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults ">
+								<input id="conclusion__C_4_3_1" name="conclusion__C_4_3_1"
+									type="text" ltype="select" value=""
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:false,width:75,initValue:'合格'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0mm; page-break-inside: avoid;">
+						<td colspan="2"
+							style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults " style="text-align: left;">
+								<span class="a0 " style="font-size: 12.0pt;font-family: 'SimSun';">(2)</span>
+								<span class="a0 " style="font-size: 12.0pt; font-family: 'SimSun';">轿厢安全窗设置</span>
+							</p>
+							<p class="a DocDefaults ">
+								<span class="a0 " style="font-size: 9.0pt;"><span
+									class="" style="font-family: 'SimSun';">不能向轿厢内开启，并且开启位置不超出轿厢的边缘</span></span><span
+									class="a0 " style="font-size: 9.0pt; font-family: 'SimSun';">，</span><span
+									class="a0 " style="font-size: 9.0pt;"><span class=""
+									style="font-family: 'SimSun';">轿厢安全门不能向轿厢外开启，并且出入路径没有对重或者障碍物</span></span>
+							</p>
+						</td>
+						<td style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults ">
+								<input id="record__C_4_3_2" name="record__C_4_3_2" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:75,initValue:'符合'}"
+									class="cC_4_3" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0mm; page-break-inside: avoid;">
+						<td colspan="2"
+							style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults ">
+								<span class="a0 "
+									style="font-size: 12.0pt; font-family: 'SimSun';">(3)其锁紧由电气安全装置予以验证</span>
+							</p>
+						</td>
+						<td style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults ">
+								<input id="record__C_4_3_3" name="record__C_4_3_3" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:75,initValue:'符合'}"
+									class="cC_4_3" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.89in; page-break-inside: avoid;">
+						<td style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults " style="text-align: center;">
+								<span class="a0 "
+									style="font-size: 12.0pt; font-family: 'SimSun';">36</span>
+							</p>
+						</td>
+						<td style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults " style="text-align: center;">
+								<span class="a0 "
+									style="font-size: 12.0pt; font-family: 'SimSun';">C</span>
+							</p>
+						</td>
+						<td colspan="3"
+							style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults ">
+								<span class="a0 " style="font-size: 12.0pt;"><span
+									class="" style="font-family: 'SimSun';">4.4 轿厢和对重（平衡重）间距</span></span>
+							</p>
+							<p class="a DocDefaults ">
+								<span class="a0 "
+									style="font-size: 9.0pt; font-family: 'SimSun';">轿厢及关联部件与对重</span><span
+									class="a0 " style="font-size: 9.0pt;"><span class=""
+									style="font-family: 'SimSun';">（平衡重）</span><span class=""
+									style="font-family: 'SimSun';">之间的距离应当不小于50mm</span></span>
+							</p>
+						</td>
+						<td style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults ">
+								<input id="record__C_4_4" name="record__C_4_4" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:75,initValue:'符合'}"
+									class="cC_4_4" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+						<td style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults ">
+								<input id="conclusion__C_4_4" name="conclusion__C_4_4"
+									type="text" ltype="select" value=""
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:false,width:75,initValue:'合格'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.43in; page-break-inside: avoid;">
+						<td rowspan="2"
+							style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults " style="text-align: center;">
+								<span class="a0 "
+									style="font-size: 12.0pt; font-family: 'SimSun';">37</span>
+							</p>
+						</td>
+						<td rowspan="2"
+							style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults " style="text-align: center;">
+								<span class="a0 "
+									style="font-size: 12.0pt; font-family: 'SimSun';">B</span>
+							</p>
+						</td>
+						<td colspan="2" rowspan="2"
+							style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults " style="text-align: center;">
+								<span class="a0 "
+									style="font-size: 12.0pt; font-family: 'SimSun';">4.5</span>
+							</p>
+							<p class="a DocDefaults " style="text-align: center;">
+								<span class="a0 "
+									style="font-size: 12.0pt; font-family: 'SimSun';">对重</span>
+							</p>
+							<p class="a DocDefaults " style="text-align: center;">
+								<span class="a0 " style="font-size: 12.0pt;"><span
+									class="" style="font-family: 'SimSun';">(平衡</span></span>
+							</p>
+							<p class="a DocDefaults " style="text-align: center;">
+								<span class="a0 " style="font-size: 12.0pt;"><span
+									class="" style="font-family: 'SimSun';">重)块</span></span>
+							</p>
+						</td>
+						<td style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults ">
+								<span class="a0 " style="font-size: 12.0pt;"><span
+									class="" style="font-family: 'SimSun';">(1)对重(平衡重)块可靠固定；</span></span>
+							</p>
+						</td>
+						<td style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults ">
+								<input id="record__B_4_5_1" name="record__B_4_5_1" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:75,initValue:'符合'}"
+									class="cB_4_5" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+						<td rowspan="2"
+							style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults ">
+								<input id="conclusion__B_4_5_1" name="conclusion__B_4_5_1"
+									type="text" ltype="select" value=""
+									ligerui="{code:'dt_jl_conclusion',isMultiSelect:false,isTextBoxMode:false,width:75,initValue:'合格'}" />
+							</p>
+						</td>
+					</tr>
+					<tr style="height: 0.43in; page-break-inside: avoid;">
+						<td style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults ">
+								<span class="a0 " style="font-size: 12.0pt;"><span
+									class="" style="font-family: 'SimSun';">(2)具有能够快速识别对重(平衡重)块数量的措施</span></span>
+							</p>
+							<p class="a DocDefaults ">
+								<span class="a0 " style="font-size: 12.0pt;"><span
+									class="" style="font-family: 'SimSun';">(例如标明对重块的数量或者总高度)</span></span>
+							</p>
+						</td>
+						<td style="border: solid 1px #000000; vertical-align: middle;">
+							<p class="a DocDefaults ">
+								<input id="record__B_4_5_2" name="record__B_4_5_2" type="text"
+									ltype="select" value=""
+									ligerui="{code:'dt_jl_record',isMultiSelect:false,isTextBoxMode:true,width:75,initValue:'符合'}"
+									class="cB_4_5" onchange="changeRecord(this,this.value)" />
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="a DocDefaults " style="line-height: 150%;"></p>
+			<p class="a DocDefaults " style="line-height: 150%;"></p>
+			<p class="a DocDefaults " style="line-height: 150%;"></p>
+			<p class="a DocDefaults " style="line-height: 150%;">
+		</div>
+	</div>
+</body>
+</html>

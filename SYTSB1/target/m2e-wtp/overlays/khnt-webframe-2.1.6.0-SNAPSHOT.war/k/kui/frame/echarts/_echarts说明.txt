@@ -1,0 +1,6 @@
+http://echarts.baidu.com/download.html
+echarts.min.js       包含所有图表组件
+echarts-x.js         ECharts-X 的定位是 ECharts 的扩展
+map3d.js             ECharts-X 中 map3d 的地图绘制基于 ECharts 中的 map
+theme                主题
+map                  地图
